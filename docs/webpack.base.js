@@ -20,7 +20,7 @@ module.exports = {
       path.resolve(__dirname, 'app')
     ],
     alias: {
-      'nukleus': path.resolve(__dirname, '..', 'components'),
+      nukleus: path.resolve(__dirname, '..', 'components'),
       react: path.join(__dirname, 'node_modules', 'react')
     }
   },
