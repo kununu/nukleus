@@ -1,0 +1,48 @@
+@import '~kununu-theme/scss/base/variables';
+
+.tableContainer {
+  margin-bottom: 15px;
+
+  @media (max-width: $screen-md-max) {
+    overflow: scroll;
+  }
+}
+
+.table {
+  width: 100%;
+  min-width: 1060px;
+  margin-bottom: 25px;
+
+  & > thead > tr > th {
+    padding: 10px 20px;
+    background-color: $teal;
+
+    span {
+      color: $white;
+    }
+  }
+
+  & > tbody > tr {
+    min-height: 50px;
+  }
+
+  & > tbody > tr > td {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $font-size-base;
+  }
+
+  .emptyHeader {
+    height: 40px;
+    background-color: #e7e9e9;
+  }
+
+  .emptyTd {
+    height: 50px;
+  }
+
+  .highlighted {
+    background-color: #fcf8e3;
+  }
+}

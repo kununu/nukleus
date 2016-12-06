@@ -1,0 +1,62 @@
+@import '~kununu-theme/scss/base/variables';
+@import '~kununu-theme/scss/base/functions';
+@import '~kununu-theme/scss/base/mixins';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
+
+.datePickerContainer {
+  input {
+    @extend .form-control;
+    cursor: pointer;
+
+    + a {
+      position: absolute;
+      right: 30px;
+      width: 100%;
+
+      &:after {
+        background-color: $gray-base-80;
+        margin-top: -30px;
+        padding-right: 3px;
+        padding-top: 0;
+        font-size: $font-size-base;
+        right: 10px;
+      }
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  font-size: $font-size-lg;
+  color: $gray-base-60;
+  top: 9px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.inline {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+
+  label {
+    margin-right: 10px;
+    width: 140px;
+    margin-bottom: 0;
+    text-align: left;
+
+    + div {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $screen-xs-min) {
+    display: block;
+  }
+}

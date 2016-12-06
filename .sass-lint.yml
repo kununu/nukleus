@@ -1,0 +1,113 @@
+files:
+  include: 'components/**/*.scss'
+  ignore:
+    - 'node_modules/**/*.*'
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  border-zero: 2
+  brace-style:
+    - 2
+    - allow-single-line: true
+  class-name-format:
+    - 2
+    - convention: camelcase
+      convention-explanation: We use camelCase for class names because we are using CSS Modules.
+  clean-import-paths:
+    - 2
+    - filename-extension: false
+      leading-underscore: false
+  empty-line-between-blocks:
+    - 2
+    - ignore-single-line-rulesets: true
+  extends-before-declarations: 2
+  extends-before-mixins: 2
+  final-newline:
+    - 2
+    - include: true
+  force-attribute-nesting: 2
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  function-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  hex-length:
+    - 2
+    - style: short
+  hex-notation:
+    - 2
+    - style: lowercase
+  id-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  indentation:
+    - 2
+    - size: 2
+  leading-zero:
+    - 2
+    - include: false
+  mixin-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  mixins-before-declarations: 2
+  nesting-depth:
+    - 2
+    - max-depth: 4
+  no-css-comments: 2
+  no-debug: 2
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-ids: 2
+  no-invalid-hex: 2
+  no-mergeable-selectors: 2
+  no-misspelled-properties:
+    - 2
+    - extra-properties: []
+  no-qualifying-elements:
+    - 0
+    - allow-element-with-attribute: false
+      allow-element-with-class: false
+      allow-element-with-id: false
+  no-trailing-zero: 2
+  no-url-protocols: 2
+  placeholder-in-extend: 0
+  placeholder-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  property-sort-order:
+    - 0
+    - ignore-custom-properties: false
+  quotes:
+    - 2
+    - style: single
+  shorthand-values: 2
+  single-line-per-selector: 2
+  space-after-bang:
+    - 2
+    - include: false
+  space-after-colon:
+    - 2
+    - include: true
+  space-after-comma: 2
+  space-before-bang:
+    - 2
+    - include: true
+  space-before-brace:
+    - 2
+    - include: true
+  space-before-colon: 0
+  space-between-parens:
+    - 2
+    - include: false
+  trailing-semicolon: 2
+  url-quotes: 0
+  variable-for-property:
+    - 2
+    - properties:
+        - color
+        - font
+  variable-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  zero-unit: 2

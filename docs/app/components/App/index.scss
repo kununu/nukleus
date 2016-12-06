@@ -1,0 +1,88 @@
+@import '~kununu-theme/scss/base/variables';
+
+.header {
+  background-color: $teal-dark;
+}
+
+.navigationContainer {
+  border-right: 2px solid #e6eaed;
+  text-align: right;
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.flexChild {
+  &:first-child {
+    flex: 1;
+
+    @media (min-width: $screen-sm-min) {
+      border-right: 1px solid #ccc;
+      text-align: right;
+    }
+  }
+
+  &:last-child {
+    flex: 7;
+  }
+}
+
+.navigation {
+  list-style: none;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-bottom: 15px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding: 15px 0;
+      border-bottom: 1px solid #ecebeb;
+    }
+  }
+}
+
+.link {
+  display: block;
+  cursor: pointer;
+  transition: all .3s;
+  color: $blue;
+
+  i {
+    float: right;
+    padding-left: 10px;
+  }
+}
+
+.active,
+.active:visited,
+.active:active,
+.active:hover,
+.active:focus {
+  @media (min-width: $screen-sm-min) {
+    color: $teal-dark;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.activeMobile {
+  > a {
+    @media (max-width: $screen-xs-max) {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.mobileContent {
+  margin-top: 10px;
+}

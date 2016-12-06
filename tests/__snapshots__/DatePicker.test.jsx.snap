@@ -1,0 +1,29 @@
+exports[`test Renders datepicker without crashing 1`] = `
+<div
+  className="form-group inline datePickerContainer">
+  <label
+    className="control-label"
+    htmlFor="date-picker">
+    DatePicker
+  </label>
+  <div
+    className="relative">
+    <Datepicker
+      disabled={false}
+      id="date-picker"
+      isClearable={true}
+      name="date-picker"
+      onChange={[Function]}
+      placeholderText=""
+      required={false}
+      selected={null}
+      showYearDropdown={true} />
+    <span
+      className="icon">
+      <i
+        aria-hidden="true"
+        className="fa fa-calendar" />
+    </span>
+  </div>
+</div>
+`;

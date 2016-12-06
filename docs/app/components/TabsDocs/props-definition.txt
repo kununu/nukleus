@@ -1,0 +1,4 @@
+  propType: {
+    pages: PropTypes.array.isRequired,
+    pathname: PropTypes.string.isRequired
+  }

@@ -1,0 +1,3 @@
+<Logo
+  href="/playground"
+  pendingRequests={3} />

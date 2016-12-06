@@ -1,0 +1,253 @@
+exports[`test Change status of checkboxes change 1`] = `
+<CheckboxGroup
+  checkboxes={
+    Array [
+      Object {
+        "id": "option-1",
+        "isChecked": false,
+        "label": "option 1",
+        "value": "option-1",
+      },
+      Object {
+        "id": "option-2",
+        "isChecked": false,
+        "label": "option 2",
+        "value": "option-2",
+      },
+      Object {
+        "id": "option-3",
+        "isChecked": false,
+        "label": "option 3",
+        "value": "option-2",
+      },
+      Object {
+        "id": "option-4",
+        "isChecked": false,
+        "label": "option 4",
+        "value": "option-4",
+      },
+    ]
+  }
+  heading="CheckboxGroup"
+  headingStyle="control-label"
+  inputStyle="inline"
+  name="checkbox-group[]"
+  query={Object {}}>
+  <div
+    className="inline form-group">
+    <div
+      className="control-label">
+      CheckboxGroup
+    </div>
+    <div
+      className="inputContainer">
+      <div
+        className="checkbox checkbox">
+        <input
+          checked={true}
+          className="form-control"
+          id="checkbox-group[]option-1"
+          name="checkbox-group[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-1" />
+        <label
+          htmlFor="checkbox-group[]option-1">
+          option 1
+        </label>
+      </div>
+      <div
+        className="checkbox checkbox">
+        <input
+          checked={false}
+          className="form-control"
+          id="checkbox-group[]option-2"
+          name="checkbox-group[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-2" />
+        <label
+          htmlFor="checkbox-group[]option-2">
+          option 2
+        </label>
+      </div>
+      <div
+        className="checkbox checkbox">
+        <input
+          checked={false}
+          className="form-control"
+          id="checkbox-group[]option-3"
+          name="checkbox-group[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-2" />
+        <label
+          htmlFor="checkbox-group[]option-3">
+          option 3
+        </label>
+      </div>
+      <div
+        className="checkbox checkbox">
+        <input
+          checked={true}
+          className="form-control"
+          id="checkbox-group[]option-4"
+          name="checkbox-group[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-4" />
+        <label
+          htmlFor="checkbox-group[]option-4">
+          option 4
+        </label>
+      </div>
+    </div>
+  </div>
+</CheckboxGroup>
+`;
+
+exports[`test Changes status on checkbox change 1`] = `
+<CheckboxGroup
+  checkboxes={
+    Array [
+      Object {
+        "id": "option-1",
+        "isChecked": false,
+        "label": "test",
+        "value": "test",
+      },
+    ]
+  }
+  heading="Test"
+  headingStyle="control-label"
+  inputStyle="inline"
+  name="checkbox-group[]"
+  query={Object {}}>
+  <div
+    className="inline form-group">
+    <div
+      className="control-label">
+      Test
+    </div>
+    <div
+      className="inputContainer">
+      <div
+        className="checkbox checkbox">
+        <input
+          checked={true}
+          className="form-control"
+          id="checkbox-group[]option-1"
+          name="checkbox-group[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="test" />
+        <label
+          htmlFor="checkbox-group[]option-1">
+          test
+        </label>
+      </div>
+    </div>
+  </div>
+</CheckboxGroup>
+`;
+
+exports[`test Renders checkbox without crashing 1`] = `
+<div
+  className="inline form-group">
+  <div
+    className="control-label">
+    Test
+  </div>
+  <div
+    className="inputContainer">
+    <div
+      className="checkbox checkbox">
+      <input
+        checked={false}
+        className="form-control"
+        id="checkbox-group[]option-1"
+        name="checkbox-group[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="test" />
+      <label
+        htmlFor="checkbox-group[]option-1">
+        test
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Renders checkboxes without crashing 1`] = `
+<div
+  className="inline form-group">
+  <div
+    className="control-label">
+    CheckboxGroup
+  </div>
+  <div
+    className="inputContainer">
+    <div
+      className="checkbox checkbox">
+      <input
+        checked={false}
+        className="form-control"
+        id="checkbox-group[]option-1"
+        name="checkbox-group[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-1" />
+      <label
+        htmlFor="checkbox-group[]option-1">
+        option 1
+      </label>
+    </div>
+    <div
+      className="checkbox checkbox">
+      <input
+        checked={false}
+        className="form-control"
+        id="checkbox-group[]option-2"
+        name="checkbox-group[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-2" />
+      <label
+        htmlFor="checkbox-group[]option-2">
+        option 2
+      </label>
+    </div>
+    <div
+      className="checkbox checkbox">
+      <input
+        checked={false}
+        className="form-control"
+        id="checkbox-group[]option-3"
+        name="checkbox-group[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-2" />
+      <label
+        htmlFor="checkbox-group[]option-3">
+        option 3
+      </label>
+    </div>
+    <div
+      className="checkbox checkbox">
+      <input
+        checked={false}
+        className="form-control"
+        id="checkbox-group[]option-4"
+        name="checkbox-group[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-4" />
+      <label
+        htmlFor="checkbox-group[]option-4">
+        option 4
+      </label>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,5 @@
+defaultProps: {
+  headingStyle: 'control-label',
+  inputStyle: 'inline',
+  query: {}
+}

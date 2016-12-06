@@ -1,0 +1,122 @@
+@import '~kununu-theme/scss/base/variables';
+@import '~kununu-theme/scss/base/functions';
+@import '~kununu-theme/scss/base/mixins';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
+
+.input {
+  @extend .form-control;
+  cursor: pointer;
+}
+
+.inline {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 100%;
+
+  label {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 140px;
+
+    @media (max-width: $screen-xs-min) {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: $screen-xs-min) {
+    display: block;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  line-height: 1.65;
+
+  // Inline error definition
+  // Consider abstracting out to another component if we start using this a lot
+  .error {
+    border-radius: 4px;
+    font-size: 11px;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    font-weight: $font-weight-regular;
+    color: $white;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 45px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -5px;
+      right: 45%;
+      bottom: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 6px 6px;
+      border-color: transparent transparent $brand-danger;
+    }
+  }
+}
+
+.itemsContainer {
+  @include box-shadow(0 5px 10px rgba($black, .2));
+  border-radius: $border-radius-base;
+  background-clip: padding-box;
+  font-size: $font-size-base;
+  min-width: 250px;
+  width: 100%;
+  margin-top: 2px;
+  background-color: $white;
+  max-height: 300px;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+
+  @media (max-width: $screen-xs-min) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.suggestionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestion {
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.suggestionFocused {
+  background: $blue;
+  color: $white;
+  cursor: pointer;
+}
+
+.smallText {
+  color: $gray-base-40;
+  font-style: italic;
+}
+
+.handle {
+  position: absolute;
+  pointer-events: none;
+  right: 10px;
+  top: 10px;
+
+  i {
+    color: $gray;
+    font-size: $font-size-base;
+  }
+}

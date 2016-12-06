@@ -1,0 +1,5 @@
+defaultProps: {
+  error: null,
+  inputStyle: 'inline',
+  query: {}
+}

@@ -1,0 +1,102 @@
+@import '~kununu-theme/scss/base/variables';
+
+.container {
+  width: 320px;
+  padding: 20px;
+  height: auto;
+  min-height: 80px;
+  background-color: $teal;
+  border-radius: $border-radius-large;
+  border: 1px solid $teal-dark;
+  position: fixed;
+  left: 20px;
+  z-index: $zindex-popover;
+  display: none;
+
+  span {
+    padding-right: 8px;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  p {
+    color: $gray-base-30;
+    margin-bottom: 6px;
+  }
+}
+
+.closeButton {
+  color: $gray-base-30;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.container.error {
+  background-color: $brand-danger;
+  border-color: $red-dark;
+
+  p {
+    color: $white;
+    font-weight: $font-weight-semibold;
+  }
+
+  .closeButton {
+    color: $red-dark;
+  }
+}
+
+.success {
+  color: $green;
+}
+
+.container.visible {
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 1;
+  bottom: 20px;
+  display: block;
+}
+
+.container.hidden {
+  display: none;
+}
+
+@keyframes slideUp {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translateY(3000px);
+  }
+
+  60% {
+    transform: translateY(-20px);
+  }
+
+  75% {
+    transform: translateY(10px);
+  }
+
+  90% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+

@@ -1,0 +1,4 @@
+<DatePicker
+  id="date-picker"
+  name="date-picker"
+  title="DatePicker" />

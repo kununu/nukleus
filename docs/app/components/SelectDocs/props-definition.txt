@@ -1,0 +1,15 @@
+propTypes: {
+  autoFocus: PropTypes.bool,
+  defaultItem: PropTypes.string,
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  inputStyle: PropTypes.string,
+  items: PropTypes.object,
+  labelHidden: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  query: PropTypes.object,
+  required: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  value: PropTypes.any
+}

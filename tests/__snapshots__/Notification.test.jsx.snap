@@ -1,0 +1,66 @@
+exports[`test Closes when the close button is clicked 1`] = `
+<Notification
+  closeMethod="onClick"
+  duration={5000}
+  message="Test"
+  visible={true}>
+  <div
+    className="
+            container
+            hidden
+            false
+          ">
+    <p>
+      <button
+        className="fa fa-times closeButton"
+        onClick={[Function]} />
+      <span>
+        <i
+          className="fa fa-check success" />
+      </span>
+    </p>
+  </div>
+</Notification>
+`;
+
+exports[`test Does not close on click when the close method is timeout 1`] = `
+<Notification
+  closeMethod="onTimeout"
+  duration={8000}
+  message="Test"
+  visible={true}>
+  <div
+    className="
+            container
+            visible
+            false
+          ">
+    <p>
+      <span>
+        <i
+          className="fa fa-check success" />
+      </span>
+    </p>
+  </div>
+</Notification>
+`;
+
+exports[`test Renders Notification without crashing 1`] = `
+<div
+  className="
+          container
+          visible
+          false
+        ">
+  <p>
+    <button
+      className="fa fa-times closeButton"
+      onClick={[Function]} />
+    <span>
+      <i
+        className="fa fa-check success" />
+    </span>
+    Test
+  </p>
+</div>
+`;

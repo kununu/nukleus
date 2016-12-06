@@ -1,0 +1,6 @@
+defaultProps: {
+  defaultRowCount: 8,
+  defaultTitleCount: 5,
+  items: {},
+  tableStyle: 'full-panel'
+}

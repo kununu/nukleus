@@ -1,0 +1,23 @@
+exports[`test Renders Stars without crashing 1`] = `
+<rating
+  className="rating rate-inline">
+  <div
+    className="rating-2-5">
+    <span
+      className="sr-only">
+      Rating 
+      2.5
+    </span>
+    <i
+      className="rating-star rating-star-1 fa" />
+    <i
+      className="rating-star rating-star-2 fa" />
+    <i
+      className="rating-star rating-star-3 fa" />
+    <i
+      className="rating-star rating-star-4 fa" />
+    <i
+      className="rating-star rating-star-5 fa" />
+  </div>
+</rating>
+`;

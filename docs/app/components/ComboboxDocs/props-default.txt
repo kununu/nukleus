@@ -1,0 +1,7 @@
+defaultProps: {
+  error: null,
+  inputStyles: 'inline',
+  inputValue: '',
+  placeholder: '',
+  required: false
+}

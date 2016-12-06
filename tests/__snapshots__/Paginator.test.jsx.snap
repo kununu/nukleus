@@ -1,0 +1,82 @@
+exports[`test Renders Paginator without crashing 1`] = `
+<div
+  className="paginator">
+  <ul
+    aria-label="Pagination"
+    className="pagination"
+    role="navigation">
+    <li
+      className="disabled pointer-disabled">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <
+      </a>
+    </li>
+    <li
+      className="active pointer-disabled">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        1
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        2
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        3
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        4
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        5
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        6
+      </a>
+    </li>
+    <li
+      className="inActive">
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        7
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        >
+      </a>
+    </li>
+  </ul>
+</div>
+`;

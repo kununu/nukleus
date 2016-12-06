@@ -1,0 +1,32 @@
+exports[`test Renders Tabs without crashing 1`] = `
+<ul
+  className="tabs clearfix">
+  <li
+    className="">
+    <a
+      className="active"
+      onClick={[Function]}
+      style={Object {}}>
+      Fist tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      className={false}
+      onClick={[Function]}
+      style={Object {}}>
+      Second tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      className={false}
+      onClick={[Function]}
+      style={Object {}}>
+      Third tab
+    </a>
+  </li>
+</ul>
+`;

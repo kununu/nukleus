@@ -1,0 +1,52 @@
+@import '~kununu-theme/scss/base/variables';
+
+.title {
+  margin-top: 0;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.tile {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flexContainer {
+  @media (min-width: 750px) {
+    display: flex;
+  }
+
+  pre {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.flexChild {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 750px) {
+    margin-bottom: 10px;
+  }
+
+  &:first-child {
+    flex: 3;
+
+    @media (min-width: 750px) {
+      margin-right: 10px;
+    }
+  }
+
+  &:last-child {
+    flex: 1;
+  }
+}
+
+.propsDefinitions {
+  margin-bottom: 10px;
+}

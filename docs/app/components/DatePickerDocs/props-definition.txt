@@ -1,0 +1,13 @@
+propTypes: {
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  inputStyles: PropTypes.string,
+  isClearable: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  query: PropTypes.object,
+  required: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string
+}

@@ -1,0 +1,28 @@
+propTypes: {
+  autoComplete: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  disable: PropTypes.bool,
+  error: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  inputStyle: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  labelHidden: PropTypes.bool,
+  maxLength: PropTypes.number,
+  multiLine: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  pattern: PropTypes.string,
+  placeholder: PropTypes.string,
+  query: PropTypes.object,
+  required: PropTypes.bool,
+  requiredLabel: PropTypes.bool,
+  rows: PropTypes.number,
+  title: PropTypes.string,
+  type: PropTypes.oneOf([
+    'email',
+    'password',
+    'text',
+    'url'
+  ]),
+  value: PropTypes.string
+}

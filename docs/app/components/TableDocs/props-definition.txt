@@ -1,0 +1,6 @@
+propTypes: {
+  defaultRowCount: PropTypes.number,
+  defaultTitleCount: PropTypes.number,
+  items: PropTypes.object,
+  tableStyle: PropTypes.string
+}

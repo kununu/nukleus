@@ -1,0 +1,234 @@
+exports[`test Renders Table without crashing 1`] = `
+<div
+  className="tableContainer full-panel">
+  <table
+    className="table-striped table-bordered table">
+    <thead>
+      <tr>
+        <th>
+          <span>
+            id
+          </span>
+        </th>
+        <th>
+          <span>
+            in hiragana
+          </span>
+        </th>
+        <th>
+          <span>
+            in kanji
+          </span>
+        </th>
+        <th>
+          <span>
+            in words
+          </span>
+        </th>
+        <th>
+          <span>
+            link
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="">
+        <td>
+          1
+        </td>
+        <td>
+          いち
+        </td>
+        <td>
+          一
+        </td>
+        <td>
+          one
+        </td>
+        <td>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            One
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="">
+        <td>
+          2
+        </td>
+        <td>
+          に
+        </td>
+        <td>
+          二
+        </td>
+        <td>
+          two
+        </td>
+        <td>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            Two
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="">
+        <td>
+          3
+        </td>
+        <td>
+          さん
+        </td>
+        <td>
+          三
+        </td>
+        <td>
+          three
+        </td>
+        <td>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            Three
+          </a>
+        </td>
+      </tr>
+      <tr
+        className="">
+        <td>
+          4
+        </td>
+        <td>
+          よん
+        </td>
+        <td>
+          四
+        </td>
+        <td>
+          four
+        </td>
+        <td>
+          Four
+        </td>
+      </tr>
+      <tr
+        className="">
+        <td>
+          5
+        </td>
+        <td>
+          ご
+        </td>
+        <td>
+          五
+        </td>
+        <td>
+          five
+        </td>
+        <td>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            Five
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`test Renders empty Table without crashing 1`] = `
+<div
+  className="tableContainer full-panel">
+  <table
+    className="table-striped table-bordered table">
+    <thead>
+      <tr>
+        <th
+          className="emptyHeader" />
+        <th
+          className="emptyHeader" />
+        <th
+          className="emptyHeader" />
+        <th
+          className="emptyHeader" />
+        <th
+          className="emptyHeader" />
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="emptyTd">
+        <td />
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

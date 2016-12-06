@@ -1,0 +1,55 @@
+@import '~kununu-theme/scss/base/variables';
+
+.logo {
+  background-image: url(./kununu-logo-light-no-star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 126px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 128px;
+  height: 60px;
+
+  &.dark {
+    background-image: url(./kununu-logo-dark-no-star.svg);
+    background-size: 126px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 830px) {
+    background-image: url(./kununu-k-no-star-light.svg);
+    background-size: 45px;
+    width: 38px;
+    background-position: -5px 10px;
+
+    &.dark {
+      background-image: url(./kununu-k-no-star-dark.svg);
+      background-size: 45px;
+    }
+
+    &::after {
+      top: 5px;
+      right: 2px;
+    }
+  }
+}
+
+.starSpinner {
+  content: '';
+  background: url(./kununu-star-light.svg) no-repeat 0;
+  display: inline-block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 17px;
+  right: 5px;
+
+  &.dark {
+    background: url(./kununu-star-dark.svg) no-repeat 0;
+  }
+}

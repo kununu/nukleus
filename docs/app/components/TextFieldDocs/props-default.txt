@@ -1,0 +1,10 @@
+defaultProps: {
+  autoComplete: 'off',
+  error: null,
+  inputStyle: 'inline',
+  multiLine: false
+  placeholder: '',
+  rows: 5,
+  query: {},
+  type: 'text'
+}

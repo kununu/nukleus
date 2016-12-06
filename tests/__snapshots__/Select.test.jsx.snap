@@ -1,0 +1,86 @@
+exports[`test Changes status on value change 1`] = `
+<Select
+  error={null}
+  id="select"
+  inputStyle="inline"
+  items={
+    Object {
+      "option": "Option",
+      "option-2": "Option 2",
+      "option-3": "Option 3",
+    }
+  }
+  name="select"
+  query={Object {}}
+  required={true}
+  title="Select"
+  value="option">
+  <div
+    className="form-group inline">
+    <label
+      className="control-label undefined"
+      htmlFor="select">
+      Select
+    </label>
+    <div
+      className="inputContainer">
+      <select
+        className="form-control select"
+        id="select"
+        name="select"
+        onChange={[Function]}
+        required={true}
+        value="option-2">
+        <option
+          value="option">
+          Option
+        </option>
+        <option
+          value="option-2">
+          Option 2
+        </option>
+        <option
+          value="option-3">
+          Option 3
+        </option>
+      </select>
+    </div>
+  </div>
+</Select>
+`;
+
+exports[`test Renders Select without crashing 1`] = `
+<div
+  className="form-group inline">
+  <label
+    className="control-label undefined"
+    htmlFor="select">
+    Select
+  </label>
+  <div
+    className="inputContainer">
+    <select
+      autoFocus={undefined}
+      className="form-control select"
+      disabled={undefined}
+      id="select"
+      name="select"
+      onChange={[Function]}
+      required={true}
+      value="option">
+      <option
+        value="option">
+        Option
+      </option>
+      <option
+        value="option-2">
+        Option 2
+      </option>
+      <option
+        value="option-3">
+        Option 3
+      </option>
+    </select>
+  </div>
+</div>
+`;

@@ -1,0 +1,48 @@
+@import '~kununu-theme/scss/base/variables';
+
+.checkbox {
+  input {
+    &[type='checkbox'] + label {
+      text-transform: none;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.inline {
+  @media (min-width: $screen-xs-min) {
+    display: flex;
+    flex-flow: row;
+    align-items: base;
+  }
+
+  > div:first-child {
+    margin-right: 10px;
+    width: 140px;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  .checkbox:first-child {
+    margin-top: 0;
+  }
+
+  .checkbox:last-child {
+    margin-bottom: 0;
+  }
+}
+
+form .inline {
+  > div:first-child {
+    color: $gray-base-60;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    min-width: 60px;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}

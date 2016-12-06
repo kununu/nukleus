@@ -1,0 +1,7 @@
+@import '~kununu-theme/scss/base/variables';
+
+@media (max-width: $screen-xs-min) {
+  .paginator ul > li > a {
+    padding: 11px;
+  }
+}

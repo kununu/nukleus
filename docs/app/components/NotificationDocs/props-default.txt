@@ -1,0 +1,6 @@
+defaultProps: {
+  closeMethod: 'onClick',
+  duration: 5000,
+  message: '',
+  visible: false
+}

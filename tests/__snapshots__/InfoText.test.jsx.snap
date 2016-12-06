@@ -1,0 +1,6 @@
+exports[`test Renders InfoText without crashing 1`] = `
+<div
+  className="infoText inline">
+  test
+</div>
+`;

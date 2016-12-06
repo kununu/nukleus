@@ -1,0 +1,12 @@
+propTypes: {
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  id: PropTypes.string,
+  inputStyles: PropTypes.string,
+  inputValue: PropTypes.string,
+  items: PropTypes.array,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool
+}

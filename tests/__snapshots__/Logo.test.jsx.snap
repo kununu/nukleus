@@ -1,0 +1,19 @@
+exports[`test Renders Logo without crashing 1`] = `
+<a
+  className="logo light"
+  onClick={[Function]}
+  style={Object {}}>
+  <h1
+    className="sr-only">
+    kununu
+  </h1>
+  <span
+    aria-hidden="true"
+    className="starSpinner light"
+    style={
+      Object {
+        "transform": "rotate(0deg)",
+      }
+    } />
+</a>
+`;

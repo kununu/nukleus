@@ -1,0 +1,2 @@
+<InfoText
+  text="I am an info text, commonly used below inputs." />

@@ -1,0 +1,107 @@
+exports[`test Changes output on value change manipulation 1`] = `
+<TextField
+  autoComplete="off"
+  error={null}
+  id="text-field"
+  inputStyle="inline"
+  label="TextField"
+  multiLine={false}
+  name="text-field"
+  placeholder=""
+  query={Object {}}
+  required={true}
+  requiredLabel={true}
+  rows={5}
+  type="text"
+  value="test">
+  <div
+    className="form-group inline">
+    <span
+      className="control-note requiredLabel">
+      Required
+    </span>
+    <label
+      className="control-label undefined"
+      htmlFor="text-field">
+      TextField
+    </label>
+    <div
+      className="inputContainer">
+      <input
+        autoComplete="off"
+        className="form-control"
+        id="text-field"
+        name="text-field"
+        onChange={[Function]}
+        placeholder=""
+        required={true}
+        type="text"
+        value="UGH" />
+    </div>
+  </div>
+</TextField>
+`;
+
+exports[`test Renders TextField with multiline without crashing 1`] = `
+<div
+  className="form-group inline">
+  <span
+    className="control-note requiredLabel">
+    Required
+  </span>
+  <label
+    className="control-label undefined"
+    htmlFor="text-field">
+    TextField
+  </label>
+  <div
+    className="inputContainer">
+    <textarea
+      autoFocus={undefined}
+      className="form-control textarea"
+      disabled={undefined}
+      id="text-field"
+      maxLength={undefined}
+      name="text-field"
+      onChange={[Function]}
+      pattern={undefined}
+      placeholder=""
+      required={true}
+      rows={5}
+      value="test2" />
+  </div>
+</div>
+`;
+
+exports[`test Renders TextField without crashing 1`] = `
+<div
+  className="form-group inline">
+  <span
+    className="control-note requiredLabel">
+    Required
+  </span>
+  <label
+    className="control-label undefined"
+    htmlFor="text-field">
+    TextField
+  </label>
+  <div
+    className="inputContainer">
+    <input
+      autoComplete="off"
+      autoFocus={undefined}
+      className="form-control"
+      disabled={undefined}
+      id="text-field"
+      maxLength={undefined}
+      name="text-field"
+      onChange={[Function]}
+      pattern={undefined}
+      placeholder=""
+      required={true}
+      title={undefined}
+      type="text"
+      value="test" />
+  </div>
+</div>
+`;

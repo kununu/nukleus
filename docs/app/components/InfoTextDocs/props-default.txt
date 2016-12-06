@@ -1,0 +1,3 @@
+defaultProps: {
+  infoStyle: 'inline'
+}

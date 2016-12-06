@@ -1,0 +1,9 @@
+propTypes: {
+  duration: PropTypes.number,
+  href: PropTypes.string.isRequired,
+  pendingRequests: PropTypes.number.isRequired,
+  shade: PropTypes.oneOf(
+    ['dark', 'light']
+  ).isRequired
+  title: PropTypes.string.isRequired
+}

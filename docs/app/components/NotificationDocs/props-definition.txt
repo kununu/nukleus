@@ -1,0 +1,11 @@
+propTypes: {
+  closeMethod: PropTypes.oneOf(
+    ['onClick', 'onTimeout']
+  ),
+  duration: PropTypes.number,
+  message: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(
+    ['ERROR', 'SUCCESS']
+  ),
+  visible: PropTypes.bool
+}

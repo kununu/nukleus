@@ -1,0 +1,8 @@
+{
+  "presets": ["react", "es2015", "stage-0"],
+  "env": {
+    "dist": {
+      "plugins": [["transform-rename-import", { original: './index.scss', replacement: './index.css' }]]
+    }
+  }
+}

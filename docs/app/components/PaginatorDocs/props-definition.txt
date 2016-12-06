@@ -1,0 +1,5 @@
+propTypes: {
+  pathname: PropTypes.string.isRequired,
+  query: PropTypes.object.isRequired,
+  totalPages: PropTypes.number.isRequired
+}

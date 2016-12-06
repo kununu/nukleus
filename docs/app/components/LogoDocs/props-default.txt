@@ -1,0 +1,7 @@
+defaultProps: {
+  duration: 1400,
+  href: '/',
+  pendingRequests: 0,
+  shade: 'dark',
+  title: 'kununu GmbH'
+}

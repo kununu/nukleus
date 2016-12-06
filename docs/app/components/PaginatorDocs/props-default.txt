@@ -1,0 +1,4 @@
+defaultProps: {
+  pathname: '/',
+  query: {}
+}
