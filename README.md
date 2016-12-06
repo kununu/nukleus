@@ -1,6 +1,8 @@
 # nukleus
 
-## kununu's shared ui components.
+[![Build Status](https://travis-ci.org/kununu/nukleus.svg?branch=master)](https://travis-ci.org/kununu/nukleus)
+
+## kununu's shared ui components
 
 ### Install and run
 
