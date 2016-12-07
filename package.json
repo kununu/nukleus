@@ -23,7 +23,8 @@
   "homepage": "https://github.com/kununu/nukleus#readme",
   "license": "ISC",
   "files": [
-    "dist/"
+    "dist/",
+    "package.json"
   ],
   "devDependencies": {
     "autoprefixer": "6.5.3",
