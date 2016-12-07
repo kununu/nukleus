@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import toJson from 'enzyme-to-json';
 import Combobox from 'Combobox'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const combobox = (
@@ -24,5 +24,5 @@ test('Renders Combobox without crashing', () => {
 test('Causes dropdown to show when input is focused', () => {
   const component = mount(combobox);
   component.find('input#name').simulate('focus');
-  expect(mountToJson(component)).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 });

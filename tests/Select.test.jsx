@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import toJson from 'enzyme-to-json';
 import Select from 'Select'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const select = (
@@ -22,5 +22,5 @@ test('Renders Select without crashing', () => {
 test('Changes status on value change', () => {
   const component = mount(select);
   component.find({value: 'option-2'}).simulate('change');
-  expect(mountToJson(component)).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 });

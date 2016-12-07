@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount, shallow} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import toJson from 'enzyme-to-json';
 import Notification from 'Notification'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const notification = (
@@ -25,13 +25,13 @@ test('Renders Notification without crashing', () => {
 test('Closes when the close button is clicked', () => {
   const component = mount(notification);
   component.find('.closeButton').simulate('click');
-  expect(mountToJson(component)).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Does not close on click when the close method is timeout', () => {
   const component = mount(timeoutNotification);
   expect(component.find('.closeButton').props.onClick).toThrow();
-  expect(mountToJson(component)).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 });
 
 test('It closes on timeout when the close method is timeout', () => {

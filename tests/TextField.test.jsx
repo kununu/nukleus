@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import toJson from 'enzyme-to-json';
 import TextField from 'TextField'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const textField = (
@@ -24,7 +24,7 @@ test('Renders TextField without crashing', () => {
 test('Changes output on value change manipulation', () => {
   const component = mount(textField);
   component.find('input').simulate('change', {target: {value: 'UGH'}});
-  expect(mountToJson(component)).toMatchSnapshot();
+  expect(toJson(component)).toMatchSnapshot();
 });
 
 // textarea
