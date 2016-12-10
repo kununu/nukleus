@@ -57,7 +57,7 @@
     "in-publish": "2.0.0",
     "jest": "17.0.3",
     "less": "2.7.1",
-    "node-sass": "3.13.0",
+    "node-sass": "4.0.0",
     "node-sass-module-importer": "0.1.0",
     "postcss-loader": "1.2.0",
     "react-addons-test-utils": "15.4.1",
