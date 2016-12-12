@@ -28,7 +28,7 @@
   ],
   "readme": "README.md",
   "devDependencies": {
-    "autoprefixer": "6.5.3",
+    "autoprefixer": "6.5.4",
     "babel-cli": "6.18.0",
     "babel-eslint": "7.1.1",
     "babel-jest": "17.0.2",
