@@ -111,24 +111,24 @@ const App = ({location: {pathname, query}}) => (
                 label: 'option 1',
                 value: 'option-1'
               },
-                {
-                  id: 'option-2',
-                  isChecked: false,
-                  label: 'option 2',
-                  value: 'option-2'
-                },
-                {
-                  id: 'option-3',
-                  isChecked: false,
-                  label: 'option 3',
-                  value: 'option-2'
-                },
-                {
-                  id: 'option-4',
-                  isChecked: false,
-                  label: 'option 4',
-                  value: 'option-4'
-                }]
+              {
+                id: 'option-2',
+                isChecked: false,
+                label: 'option 2',
+                value: 'option-2'
+              },
+              {
+                id: 'option-3',
+                isChecked: false,
+                label: 'option 3',
+                value: 'option-2'
+              },
+              {
+                id: 'option-4',
+                isChecked: false,
+                label: 'option 4',
+                value: 'option-4'
+              }]
               } />
           </div>
         </div>
