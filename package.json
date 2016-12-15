@@ -95,7 +95,7 @@
     "dist": "npm run build && npm run sass && npm run main-sass && ./scripts/copy-logos.sh",
     "build": "cross-env NODE_ENV=dist npm run babel",
     "eslint": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js",
-    "eslint-fix": "eslint ./components ./playground --max-warnings 0 --ext jsx --ext js --fix",
+    "eslint-fix": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js --fix",
     "prepublish": "in-publish && npm run dist && ./scripts/publish-gh-pages.sh",
     "clean": "rimraf ./dist",
     "sasslint": "sass-lint --verbose",
