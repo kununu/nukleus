@@ -128,8 +128,7 @@ const App = ({location: {pathname, query}}) => (
                 isChecked: false,
                 label: 'option 4',
                 value: 'option-4'
-              }]
-              } />
+              }]} />
           </div>
         </div>
 

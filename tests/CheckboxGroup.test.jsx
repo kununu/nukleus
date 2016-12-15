@@ -48,8 +48,7 @@ const checkboxes = (
       isChecked: false,
       label: 'option 4',
       value: 'option-4'
-    }]
-    } />
+    }]} />
 );
 
 test('Renders checkbox without crashing', () => {
