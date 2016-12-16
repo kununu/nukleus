@@ -29,14 +29,15 @@ In the latter case, you will just need to update the snapshot.
 
 ### Publish a new version
 
-`npm publish` from your terminal, given you have the right credentials.
-
-### Publish a new version (UPCOMING)
-
-In order to update the npm version we must create and push a new tag. Pushing a new tag will cause Travis to automatically publish the new npm version ([docs](https://docs.travis-ci.com/user/deployment/npm)).
+In order to update the npm version we must create and push a new tag and run the publish command. This will work given you have the right credentials.
 
 ```bash
 # Do the following on the master branch
 git tag -a vX.Y.Z -m "<what changed in this version>"
 git push --tags
+npm publish
 ```
+
+### Publish a new version (UPCOMING)
+
+ Pushing a new tag will cause Travis to automatically publish the new npm version ([docs](https://docs.travis-ci.com/user/deployment/npm)).
