@@ -4,7 +4,26 @@
 [![Dependencies](https://david-dm.org/kununu/nukleus/master/status.svg)](https://david-dm.org/kununu/nukleus/master)
 [![Dev dependencies](https://david-dm.org/kununu/nukleus/master/dev-status.svg)](https://david-dm.org/kununu/nukleus/master)
 
-## kununu's shared ui components
+> React UI components by [@kununu](https://github.com/kununu)
+
+## [Documentation](https://kununu.github.io/nukleus)
+
+A collection of React user interface components.
+
+Components include:
+
+- CheckboxGroup
+- Combobox
+- DatePicker
+- InfoText
+- Logo
+- Notification
+- Paginator
+- Select
+- Stars
+- Table
+- Tabs
+- TextField
 
 ### Install and run
 
