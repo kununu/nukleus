@@ -6,7 +6,7 @@ test('Renders Tabs without crashing', () => {
   const component = renderer.create(
     <Tabs
       pages={[
-        {path: 'test', query: 'test', title: 'Fist tab'},
+        {path: 'test', query: 'test', title: 'First tab'},
         {path: '/test/2', query: 'test', title: 'Second tab'},
         {path: '/test/3', query: 'test', title: 'Third tab'}
       ]}

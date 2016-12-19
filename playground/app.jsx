@@ -44,7 +44,7 @@ const App = ({location: {pathname, query}}) => (
             <div className="clearfix relative">
               <Tabs
                 pages={[
-                  {path: '/playground/', query, title: 'Fist tab'},
+                  {path: '/playground/', query, title: 'First tab'},
                   {path: '/playground/2', query, title: 'Second tab'},
                   {path: '/playground/3', query, title: 'Third tab'}
                 ]}
