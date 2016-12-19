@@ -7,7 +7,7 @@ exports[`test Renders Tabs without crashing 1`] = `
       className="active"
       onClick={[Function]}
       style={Object {}}>
-      Fist tab
+      First tab
     </a>
   </li>
   <li

@@ -8,7 +8,7 @@ import {default as propsDefault} from './props-default.txt';
 import styles from './index.scss';
 
 const TabsDocs = ({location: {pathname}}) => {
-  const example = `${'<'}Tabs${'\n  '}pages={[${'\n    '}{title: 'Fist tab', path: '/'},${'\n    '}{title: 'Second tab', path: '/2'},${'\n    '}{title: 'Third tab', path: '/3'}${'\n  '}]}${'\n  '}pathname="${pathname}" ${'/>'}`;
+  const example = `${'<'}Tabs${'\n  '}pages={[${'\n    '}{title: 'First tab', path: '/'},${'\n    '}{title: 'Second tab', path: '/2'},${'\n    '}{title: 'Third tab', path: '/3'}${'\n  '}]}${'\n  '}pathname="${pathname}" ${'/>'}`;
 
   return (
     <DocsRoot
@@ -17,7 +17,7 @@ const TabsDocs = ({location: {pathname}}) => {
         <div className={styles.tabsContainer}>
           <Tabs
             pages={[
-              {path: '/tabs', title: 'Fist tab'},
+              {path: '/tabs', title: 'First tab'},
               {path: '/tabs/2', title: 'Second tab'},
               {path: '/tabs/3', title: 'Third tab'}
             ]}
