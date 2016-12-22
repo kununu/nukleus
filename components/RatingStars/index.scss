@@ -1,0 +1,29 @@
+@import '~kununu-theme/scss/base/variables';
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.hiddenInput:focus + label .star {
+  text-shadow: 0 2px 2px rgba($black, .2);
+}
+
+.star {
+  cursor: pointer;
+}
+
+.ratingStarsContainer {
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+.ratingStar {
+  display: inline-block;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
