@@ -6,12 +6,78 @@
   z-index: -1;
 }
 
-.hiddenInput:focus + label .star {
-  text-shadow: 0 2px 2px rgba($black, .2);
-}
-
 .star {
   cursor: pointer;
+  transition: transform .4s;
+
+  path {
+    opacity: 0;
+    transition: all .2s ease;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+}
+
+.hiddenInput:checked + label {
+  .star {
+    animation: pulse 1s cubic-bezier(.215, .61, .355, 1);
+  }
+}
+
+.ratingStar:first-child {
+  .hiddenInput:checked + label .star .full {
+    animation: darkenRed 1s;
+  }
+
+  path.full {
+    fill: $red;
+  }
+}
+
+.ratingStar:nth-child(2) {
+  .hiddenInput:checked + label .star .full {
+    animation: darkenOrange 1s;
+  }
+
+  path.full {
+    fill: $orange;
+  }
+}
+
+.ratingStar:nth-child(3) {
+  .hiddenInput:checked + label .star .full {
+    animation: darkenYellow 1s;
+  }
+
+  path.full {
+    fill: #fed417;
+  }
+}
+
+.ratingStar:nth-child(4) {
+  .hiddenInput:checked + label .star .full {
+    animation: darkenLightGreen 1s;
+  }
+
+  path.full {
+    fill: $green-light;
+  }
+}
+
+.ratingStar:nth-child(5) {
+  .hiddenInput:checked + label .star .full {
+    animation: darkenDarkGreen 1s;
+  }
+
+  path.full {
+    fill: $green-dark;
+  }
+}
+
+.star:hover {
+  transform: scale(1.15);
 }
 
 .ratingStarsContainer {
@@ -22,8 +88,49 @@
 
 .ratingStar {
   display: inline-block;
+  padding: 0 5px;
 
   @supports (display: flex) {
     display: flex;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  17% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes darkenRed {
+  15% {
+    fill: darken($red, 15%);
+  }
+}
+
+@keyframes darkenOrange {
+  15% {
+    fill: darken($orange, 15%);
+  }
+}
+
+@keyframes darkenYellow {
+  15% {
+    fill: darken(#fed417, 15%);
+  }
+}
+
+@keyframes darkenLightGreen {
+  15% {
+    fill: darken($green-light, 15%);
+  }
+}
+
+@keyframes darkenDarkGreen {
+  15% {
+    fill: darken($green-dark, 15%);
   }
 }
