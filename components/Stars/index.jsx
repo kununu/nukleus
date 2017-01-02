@@ -17,53 +17,50 @@ function formatValue (number) {
 export default class Stars extends Component {
   static propTypes = {
     color: PropTypes.string,
-    fillColors: PropTypes.array,
+    multiColors: PropTypes.array,
+    name: PropTypes.string,
     selectable: PropTypes.bool,
-    name: PropTypes.string.isRequired,
     totalStars: PropTypes.number,
     value: PropTypes.number
   }
 
   static defaultProps = {
     color: 'currentColor',
-    fillColors: [],
+    multiColors: [],
     selectable: false,
     totalStars: 5,
     value: 0
   }
 
   state = {
-    hoverValue: 0,
+    multiColors: this.props.multiColors && this.props.multiColors[this.props.value],
     value: formatValue(this.props.value)
   }
 
+
   onClick = e => {
-    const newVal = e.target.value;
+    const newVal = Number(e.target.value);
 
     if (newVal === this.state.value) {
       return this.deselectStar();
     }
 
+    if (this.props.multiColors) {
+      this.setCurrentColor(newVal);
+    }
+
     return this.updateValue(newVal);
   }
 
-  onMouseEnter = value => {
-    this.setHoverValue(value);
-  }
-
-  onMouseLeave = () => {
-    this.setHoverValue(0);
-  }
-
-  setHoverValue (value) {
+  setCurrentColor (value) {
     this.setState({
-      hoverValue: value
+      multiColors: this.props.multiColors[value - 1]
     });
   }
 
   getFillValue = starNumber => {
     const value = roundToHalves(this.state.value);
-    const wholeStarFill = this.props.color;
+    const wholeStarFill = this.state.multiColors || this.props.color;
     const halfStarFill = 'url(#half)';
     const emptyStarFill = 'transparent';
 
@@ -79,10 +76,6 @@ export default class Stars extends Component {
   }
 
   isFullStar (key) {
-    if (this.state.hoverValue && this.state.hoverValue > this.state.value && this.state.hoverValue >= key) {
-      return true;
-    }
-
     if (this.state.value && this.state.value >= key) {
       return true;
     }
@@ -100,7 +93,6 @@ export default class Stars extends Component {
 
   deselectStar () {
     this.updateValue(0);
-    this.setHoverValue(0);
   }
 
   updateValue (newValue) {
@@ -112,7 +104,6 @@ export default class Stars extends Component {
   render () {
     const {
       color,
-      fillColors,
       selectable,
       name,
       totalStars
@@ -123,9 +114,7 @@ export default class Stars extends Component {
         {[...Array(totalStars)].map((star, key) =>
           <div
             key={key}
-            className={styles.starsGroup}
-            onMouseEnter={selectable && (() => this.onMouseEnter(key + 1))}
-            onMouseLeave={selectable && this.onMouseEnter}>
+            className={styles.starsGroup}>
 
             {selectable &&
               <input
@@ -161,7 +150,7 @@ export default class Stars extends Component {
                 <path
                   className={`${styles.path} ${styles[this.isFullStar(key + 1) && 'fill']}`}
                   fill={this.getFillValue(key + 1)}
-                  stroke={color}
+                  stroke={this.isFullStar(key + 1) ? (this.state.multiColors || this.state.color) : this.state.color}
                   d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7
                 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4
                 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22
