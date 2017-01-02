@@ -1,1 +1,6 @@
-None.
+defaultProps: {
+  color: 'currentColor',
+  selectable: false,
+  totalStars: 5,
+  value: 0
+}

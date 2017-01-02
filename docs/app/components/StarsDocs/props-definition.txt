@@ -1,3 +1,8 @@
 propTypes: {
+  color: PropTypes.string,
+  multiColors: PropTypes.array,
+  name: PropTypes.string,
+  selectable: PropTypes.bool,
+  totalStars: PropTypes.number,
   value: PropTypes.number.isRequired
 }

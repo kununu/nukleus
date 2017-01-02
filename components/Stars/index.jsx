@@ -21,7 +21,7 @@ export default class Stars extends Component {
     name: PropTypes.string,
     selectable: PropTypes.bool,
     totalStars: PropTypes.number,
-    value: PropTypes.number
+    value: PropTypes.number.isRequired
   }
 
   static defaultProps = {
@@ -32,7 +32,7 @@ export default class Stars extends Component {
   }
 
   state = {
-    multiColors: this.props.multiColors && this.props.multiColors[this.props.value],
+    multiColors: this.props.multiColors && this.props.multiColors[this.props.value - 1],
     value: formatValue(this.props.value)
   }
 
