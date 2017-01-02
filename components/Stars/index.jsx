@@ -36,7 +36,6 @@ export default class Stars extends Component {
     value: formatValue(this.props.value)
   }
 
-
   onClick = e => {
     const newVal = Number(e.target.value);
 
