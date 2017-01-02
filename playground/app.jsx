@@ -22,7 +22,7 @@ const App = ({location: {pathname, query}}) => (
       <div className="panel-body">
 
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-xs-12 col-sm-5 col-md-2">
             <RatingStars value={3} name="test" />
           </div>
         </div>
