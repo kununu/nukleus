@@ -14,9 +14,17 @@
 
 .starsContainer {
   max-width: 250px;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
 
   @supports (display: flex) {
     display: flex;
+  }
+
+  label {
+    margin: 0;
+    line-height: 0;
   }
 }
 
@@ -24,8 +32,16 @@
   max-width: 90px;
 }
 
+.starsRow {
+  display: table-row;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
 .starsGroup {
-  display: inline-block;
+  display: table-cell;
   padding: 0 5px;
 
   @supports (display: flex) {

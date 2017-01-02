@@ -26,6 +26,8 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <br />
+
         <div className="row">
           <div className="col-md-8">
             <Logo
