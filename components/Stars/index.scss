@@ -6,28 +6,21 @@
   z-index: -1;
 }
 
-.star {
-  cursor: pointer;
-  transition: transform .4s;
-}
-
 .hiddenInput:checked + label {
   .star {
     animation: pulse 1s cubic-bezier(.215, .61, .355, 1);
   }
 }
 
-.star:hover {
-  transform: scale(1.15);
-}
+.starsContainer {
+  max-width: 300px;
 
-.ratingStarsContainer {
   @supports (display: flex) {
     display: flex;
   }
 }
 
-.ratingStar {
+.starsGroup {
   display: inline-block;
   padding: 0 5px;
 
@@ -36,6 +29,30 @@
   }
 }
 
+.path {
+  stroke-linejoin: round;
+  stroke-width: 40px;
+}
+
+.ratingStar {
+  cursor: pointer;
+  transition: transform .4s;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  .path {
+    fill-opacity: 0;
+    transition: all .2s ease;
+
+    &.fill {
+      fill-opacity: 1;
+    }
+  }
+}
+
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -43,17 +60,5 @@
 
   17% {
     transform: scale(1.3);
-  }
-}
-
-
-.path {
-  stroke-linejoin: round;
-  stroke-width: 40px;
-  fill-opacity: 0;
-  transition: all .2s ease;
-
-  &.fill {
-    fill-opacity: 1;
   }
 }

@@ -13,7 +13,6 @@ import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
-import RatingStars from 'components/RatingStars';
 
 
 const App = ({location: {pathname, query}}) => (
@@ -23,7 +22,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-2">
-            <RatingStars value={3} name="test" />
+            <Stars value={3} name="test" selectable />
           </div>
         </div>
 
