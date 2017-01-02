@@ -13,11 +13,15 @@
 }
 
 .starsContainer {
-  max-width: 300px;
+  max-width: 250px;
 
   @supports (display: flex) {
     display: flex;
   }
+}
+
+.staticStars {
+  max-width: 90px;
 }
 
 .starsGroup {
@@ -27,6 +31,10 @@
   @supports (display: flex) {
     display: flex;
   }
+}
+
+.staticStars .starsGroup {
+  padding: 0 2px;
 }
 
 .path {

@@ -26,7 +26,6 @@ export default class Stars extends Component {
 
   static defaultProps = {
     color: 'currentColor',
-    multiColors: [],
     selectable: false,
     totalStars: 5,
     value: 0
@@ -110,7 +109,7 @@ export default class Stars extends Component {
     } = this.props;
 
     return (
-      <div className={styles.starsContainer}>
+      <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
         {[...Array(totalStars)].map((star, key) =>
           <div
             key={key}
@@ -126,7 +125,7 @@ export default class Stars extends Component {
                 id={`star${key}`} />
             }
 
-            <label htmlFor={`star${key}`}>
+            <label htmlFor={selectable && `star${key}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -157,7 +156,7 @@ export default class Stars extends Component {
                 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z" />
               </svg>
               <span className="sr-only">
-                5
+                {key - 1}
               </span>
             </label>
           </div>
