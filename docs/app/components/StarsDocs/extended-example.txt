@@ -1,7 +1,7 @@
 <Stars
   value={2}
   selectable
-  multiColors={[
+  colors={[
     'red',
     'orange',
     'yellow',

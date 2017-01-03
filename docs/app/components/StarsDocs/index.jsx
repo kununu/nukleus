@@ -20,7 +20,7 @@ const StarsDocs = () => (
     <br /><br />
     <DocsRoot
       title="Selectable stars"
-      component={<Stars value={2} selectable multiColors={['red', 'orange', 'yellow', 'green', 'blue']} />}
+      component={<Stars value={2} selectable colors={['red', 'orange', 'yellow', 'green', 'blue']} />}
       example={extendedExample}
       propsDefinition={propsDefinition}
       propsDefault={propsDefault} />
