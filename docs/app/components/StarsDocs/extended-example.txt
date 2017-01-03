@@ -1,0 +1,9 @@
+<Stars
+  value={2}
+  selectable
+  colors={[
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue']} />

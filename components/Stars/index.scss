@@ -1,0 +1,88 @@
+@import '~kununu-theme/scss/base/variables';
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.hiddenInput:checked + label {
+  .star {
+    animation: pulse 1s cubic-bezier(.215, .61, .355, 1);
+  }
+}
+
+.starsContainer {
+  max-width: 250px;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  label {
+    margin: 0;
+    line-height: 0;
+  }
+}
+
+.staticStars {
+  max-width: 90px;
+}
+
+.starsRow {
+  display: table-row;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+.starsGroup {
+  display: table-cell;
+  padding: 0 5px;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+.staticStars .starsGroup {
+  padding: 0 2px;
+}
+
+.path {
+  stroke-linejoin: round;
+  stroke-width: 40px;
+}
+
+.ratingStar {
+  cursor: pointer;
+  transition: transform .4s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  .path {
+    fill-opacity: 0;
+    transition: all .2s ease;
+
+    &.fill {
+      fill-opacity: 1;
+    }
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  17% {
+    transform: scale(1.3);
+  }
+}
