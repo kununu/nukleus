@@ -60,7 +60,7 @@ export default class Stars extends Component {
     const halfStarFill = 'url(#half)';
     const emptyStarFill = 'transparent';
 
-    if (this.isFullStar(starNumber)) {
+    if (this.isFullStar(starNumber, value)) {
       return this.state.color;
     }
 
@@ -71,8 +71,8 @@ export default class Stars extends Component {
     return emptyStarFill;
   }
 
-  isFullStar (key) {
-    if (this.state.value && this.state.value >= key) {
+  isFullStar = (starNumber, value) => {
+    if (value && value >= starNumber) {
       return true;
     }
 
