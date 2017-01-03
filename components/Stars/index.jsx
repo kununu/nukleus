@@ -2,16 +2,12 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-function isWholeNumber (number) {
-  return number % 1 === 0;
-}
-
 function roundToHalves (number) {
   return Math.round(number * 2) / 2;
 }
 
 function formatValue (number) {
-  return Math.round(number * 100) / 100;
+  return roundToHalves(Math.round(number * 100) / 100);
 }
 
 export default class Stars extends Component {
@@ -56,31 +52,32 @@ export default class Stars extends Component {
   }
 
   getFillValue = starNumber => {
-    const value = roundToHalves(this.state.value);
     const halfStarFill = 'url(#half)';
     const emptyStarFill = 'transparent';
 
-    if (this.isFullStar(starNumber, value)) {
+    if (this.isFullStar(starNumber)) {
       return this.state.color;
     }
 
-    if (this.isHalfStar(starNumber, value)) {
+    if (this.isHalfStar(starNumber)) {
       return halfStarFill;
     }
 
     return emptyStarFill;
   }
 
-  isFullStar = (starNumber, value) => {
-    if (value && value >= starNumber) {
+  isWholeNumber = number => number % 1 === 0
+
+  isFullStar = starNumber => {
+    if (this.state.value && this.state.value >= starNumber) {
       return true;
     }
 
     return false;
   }
 
-  isHalfStar (starNumber, value) {
-    if (!this.props.selectable && value + 1 >= starNumber && !isWholeNumber(value)) {
+  isHalfStar (starNumber) {
+    if (!this.props.selectable && this.state.value + 1 >= starNumber && !this.isWholeNumber(this.state.value)) {
       return true;
     }
 
