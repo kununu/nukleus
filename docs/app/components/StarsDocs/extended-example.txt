@@ -1,1 +1,9 @@
-<Stars value={2} selectable multiColors={['red', 'orange', 'yellow', 'green', 'blue']}/>
+<Stars
+  value={2}
+  selectable
+  multiColors={[
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue']} />
