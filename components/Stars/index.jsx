@@ -112,7 +112,7 @@ export default class Stars extends Component {
           {[...Array(totalStars + 1)].map((star, key) =>
             <div
               key={key}
-              className={styles.starsGroup}>
+              className={key > 0 && styles.starsGroup}>
 
               {selectable &&
                 <input
