@@ -12,7 +12,7 @@ function formatValue (number) {
 
 export default class Stars extends Component {
   static propTypes = {
-    colors: PropTypes.array,
+    colors: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string,
     selectable: PropTypes.bool,
     strokeColor: PropTypes.string,
@@ -109,7 +109,7 @@ export default class Stars extends Component {
           {[...Array(totalStars + 1)].map((star, key) =>
             <div
               key={key}
-              className={key > 0 && styles.starsGroup}>
+              className={Boolean(key) && styles.starsGroup}>
 
               {selectable &&
                 <input
@@ -120,7 +120,7 @@ export default class Stars extends Component {
                   onChange={this.onClick}
                   id={`star${key}`} /> }
 
-              {key > 0 &&
+              {Boolean(key) &&
                 <label htmlFor={selectable && `star${key}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
