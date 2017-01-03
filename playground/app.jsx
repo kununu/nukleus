@@ -22,7 +22,11 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-2">
-            <Stars value={3} name="test" selectable />
+            <Stars
+              value={3}
+              name="test"
+              selectable
+              colors={['red', 'green']} />
           </div>
         </div>
 

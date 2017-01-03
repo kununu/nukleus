@@ -16,23 +16,24 @@ function formatValue (number) {
 
 export default class Stars extends Component {
   static propTypes = {
-    color: PropTypes.string,
-    multiColors: PropTypes.array,
+    colors: PropTypes.array,
     name: PropTypes.string,
     selectable: PropTypes.bool,
+    strokeColor: PropTypes.string,
     totalStars: PropTypes.number,
     value: PropTypes.number.isRequired
   }
 
   static defaultProps = {
-    color: 'currentColor',
+    colors: ['currentColor'],
     selectable: false,
+    strokeColor: 'currentColor',
     totalStars: 5,
     value: 0
   }
 
   state = {
-    multiColors: this.props.multiColors && this.props.multiColors[this.props.value - 1],
+    color: this.props.colors[this.props.value - 1] || this.props.strokeColor,
     value: formatValue(this.props.value)
   }
 
@@ -43,27 +44,24 @@ export default class Stars extends Component {
       return this.deselectStar();
     }
 
-    if (this.props.multiColors) {
-      this.setCurrentColor(newVal);
-    }
+    this.setCurrentColor(newVal);
 
     return this.updateValue(newVal);
   }
 
   setCurrentColor (value) {
     this.setState({
-      multiColors: this.props.multiColors[value - 1]
+      color: this.props.colors[value - 1] || this.props.strokeColor
     });
   }
 
   getFillValue = starNumber => {
     const value = roundToHalves(this.state.value);
-    const wholeStarFill = this.state.multiColors || this.props.color;
     const halfStarFill = 'url(#half)';
     const emptyStarFill = 'transparent';
 
     if (this.isFullStar(starNumber)) {
-      return wholeStarFill;
+      return this.state.color;
     }
 
     if (this.isHalfStar(starNumber, value)) {
@@ -101,11 +99,12 @@ export default class Stars extends Component {
 
   render () {
     const {
-      color,
       selectable,
       name,
-      totalStars
+      totalStars,
+      strokeColor
     } = this.props;
+    const {color} = this.state;
 
     return (
       <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
@@ -132,7 +131,7 @@ export default class Stars extends Component {
                   xmlSpace="preserve"
                   viewBox="-20 -20 541.8 518.6"
                   width="100%"
-                  stroke={color}
+                  stroke={strokeColor}
                   preserveAspectRatio="none"
                   className={`${styles.star} ${selectable && styles.ratingStar}`}
                   x="0" y="0">
@@ -149,7 +148,7 @@ export default class Stars extends Component {
                   <path
                     className={`${styles.path} ${styles[this.isFullStar(key + 1) && 'fill']}`}
                     fill={this.getFillValue(key + 1)}
-                    stroke={this.isFullStar(key + 1) ? (this.state.multiColors || this.state.color) : this.state.color}
+                    stroke={this.isFullStar(key + 1) ? color : strokeColor}
                     d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7
                   c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4
                   c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22
