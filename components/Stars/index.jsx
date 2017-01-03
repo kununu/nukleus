@@ -16,7 +16,7 @@ function formatValue (number) {
 
 export default class Stars extends Component {
   static propTypes = {
-    colors: PropTypes.array,
+    colors: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string,
     selectable: PropTypes.bool,
     strokeColor: PropTypes.string,
