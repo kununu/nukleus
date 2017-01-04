@@ -10,7 +10,7 @@
   transform: scale(1);
 }
 
-.hiddenInput:checked + label {
+.hiddenInput:focus + label {
   .star {
     animation: pulse 1s cubic-bezier(.215, .61, .355, 1);
   }
