@@ -1,1 +1,13 @@
+// static stars
 <Stars value={2.5} />
+
+// selectable stars
+<Stars
+  value={2}
+  selectable
+  colors={[
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue']} />
