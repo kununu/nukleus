@@ -58,13 +58,13 @@
 
 .path {
   stroke-linejoin: round;
-  stroke-width: 40px;
+  stroke-width: 35px;
 }
 
 .ratingStar {
   cursor: pointer;
   transform: scale(1);
-  transition: transform .4s;
+  transition: transform .2s;
 
   &:hover {
     @media (min-width: $screen-md-min) {
@@ -75,6 +75,7 @@
   .path {
     fill-opacity: 0;
     transition: all .2s ease;
+    stroke-width: 30px;
 
     &.fill {
       fill-opacity: 1;
