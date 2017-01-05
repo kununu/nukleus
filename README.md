@@ -39,6 +39,12 @@ If you omit the argument, the installation will go through but you'll receive an
 
 As for npm@5, this behaviour should change so we can get rid of the `in-publish` package.
 
+### Run docker version
+
+```
+docker run -ti -p 3000:3000 --rm --name nukleus kununu/nukleus
+```
+
 ### Test
 
 In order to run the tests, run `npm run test`.
