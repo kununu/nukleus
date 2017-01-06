@@ -1,0 +1,4 @@
+defaultProps: {
+  buttonStyle: 'primary',
+  disabled: false
+}

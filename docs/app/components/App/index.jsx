@@ -6,6 +6,7 @@ import {Logo} from 'nukleus';
 import styles from './index.scss';
 
 const components = [
+  'Button',
   'CheckboxGroup',
   'Combobox',
   'DatePicker',

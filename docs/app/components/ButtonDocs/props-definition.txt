@@ -1,0 +1,9 @@
+propTypes: {
+  buttonStyle: PropTypes.oneOf(
+    ['default', 'primary', 'secondary',
+    'info', 'danger', 'link']
+  ),
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  text: PropTypes.string.isRequired
+}
