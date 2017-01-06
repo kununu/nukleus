@@ -1,3 +1,4 @@
+export Button from './Button';
 export CheckboxGroup from './CheckboxGroup';
 export Combobox from './Combobox';
 export DatePicker from './DatePicker';

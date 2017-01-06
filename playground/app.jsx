@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
+import Button from 'components/Button';
 import CheckboxGroup from 'components/CheckboxGroup';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
@@ -13,7 +14,6 @@ import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
-
 
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
@@ -208,6 +208,50 @@ const App = ({location: {pathname, query}}) => (
             <Table
               defaultRowCount={2}
               defaultTitleCount={2} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-2">
+            <Button buttonStyle="default" text="Default Button" />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="primary" text="Primary Button" />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="secondary" text="Success Button" />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="info" text="Info Button" />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="danger" text="Danger Button" />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="link" text="Link Button" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-2">
+            <Button buttonStyle="default" text="Default Button" disabled />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="primary" text="Primary Button" disabled />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="secondary" text="Success Button" disabled />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="info" text="Info Button" disabled />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="danger" text="Danger Button" disabled />
+          </div>
+          <div className="col-md-2">
+            <Button buttonStyle="link" text="Link Button" disabled />
           </div>
         </div>
 

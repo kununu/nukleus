@@ -1,0 +1,111 @@
+@import '~kununu-theme/scss/base/variables';
+
+// Common styles
+.button {
+  border-radius: 2px;
+  font-weight: 600;
+  box-shadow: none;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 10px 12px;
+  user-select: none;
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      cursor: not-allowed;
+    }
+  }
+}
+
+@mixin button-variant(
+  $color,
+  $background,
+  $hover-background : lighten($background, 5%),
+  $active-background: darken($background, 5%)
+) {
+  transition: background .15s;
+  color: $color;
+  background-color: $background;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $hover-background;
+  }
+
+  &:active,
+  &.active {
+    color: $color;
+    background-color: $active-background;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      opacity: .65;
+    }
+  }
+}
+
+
+
+// Apply the mixin to the buttons
+.default {
+  @include button-variant($btn-default-color, $btn-default-bg);
+}
+
+.primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg);
+}
+
+.secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg);
+}
+
+.info {
+  @include button-variant($btn-info-color, $btn-info-bg);
+}
+
+.danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg);
+}
+
+.link {
+  @include button-variant($btn-secondary-bg, $btn-info-bg);
+
+  &:hover {
+    text-decoration: underline;
+    border-color: transparent;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      text-decoration: none;
+    }
+  }
+}
