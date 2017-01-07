@@ -18,7 +18,7 @@ const StarsDocs = () => (
           </div>&nbsp;
           <br /><br />
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-sm-4 col-md-3">
               <Stars
                 value={2}
                 selectable

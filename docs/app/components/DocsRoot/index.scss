@@ -2,10 +2,6 @@
 
 .title {
   margin-top: 0;
-
-  @media (max-width: 750px) {
-    display: none;
-  }
 }
 
 .tile {
@@ -35,7 +31,7 @@
   }
 
   &:first-child {
-    flex: 3;
+    flex: 1;
 
     @media (min-width: 750px) {
       margin-right: 10px;

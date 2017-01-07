@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
@@ -25,7 +27,8 @@ export default class App extends Component {
     components: components.map(component => ({
       name: component,
       visible: false
-    }))
+    })),
+    menuVisible: false
   }
 
   componentDidUpdate () {
@@ -39,6 +42,18 @@ export default class App extends Component {
           comp :
           {...comp, visible: !comp.visible}
       )
+    });
+  }
+
+  onClickToggleMenu = () => {
+    this.setState({
+      menuVisible: !this.state.menuVisible
+    });
+  }
+
+  onClickCloseMenu = () => {
+    this.setState({
+      menuVisible: false
     });
   }
 
@@ -58,34 +73,36 @@ export default class App extends Component {
         <div className="app-container container-fluid">
           <header className={`${styles.header} navbar navbar-fixed-top`}>
             <div className="container-fluid">
-              <Logo shade="light" />
+              <div className={styles.flexMenuContainer}>
+                <button className={styles.mobileMenuButton} onClick={this.onClickToggleMenu}>
+                  <i className="fa fa-bars" aria-hidden="true" />
+                </button>
+                <div>
+                  <Logo shade="light" />
+                </div>
+              </div>
             </div>
           </header>
-          <div className="panel padding-top padding-bottom clearfix container-fluid">
+          <div className={`panel padding-bottom clearfix container-fluid ${styles.container}`}>
             <div className={styles.flexContainer}>
-              <div className={`container-fluid ${styles.flexChild}`}>
-                <navigation>
-                  <ul className={styles.navigation}>
-                    {componentList.map(({name, link}, index) =>
-                      <li key={name} className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
-                        <Link
-                          to={link}
-                          onClick={(() => this.onClickToggleComponent(name))}
-                          className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
-                          <i className={`fa fa-caret-${this.state.components.find(comp => comp.name === name).visible ? 'up' : 'down'} visible-xs`} />
-                        </Link>
-
-                        { this.state.components.find(comp => comp.name === name).visible &&
-                          <div className={`visible-xs ${styles.mobileContent}`}>
-                            {children}
-                          </div>
-                          }
-                      </li>
-                    )}
-                  </ul>
-                </navigation>
+              <div className={`${styles.flexChild} ${styles.menuContainer}`}>
+                <div onClick={this.onClickCloseMenu} className={`${styles.menu} ${this.state.menuVisible && styles.open}`}>
+                  <navigation>
+                    <ul className={styles.navigation}>
+                      {componentList.map(({name, link}, index) =>
+                        <li key={name} className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
+                          <Link
+                            to={link}
+                            onClick={(() => this.onClickToggleComponent(name))}
+                            className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
+                          </Link>
+                        </li>
+                      )}
+                    </ul>
+                  </navigation>
+                </div>
               </div>
-              <div className={`container-fluid hidden-xs ${styles.flexChild}`}>
+              <div className={`${styles.flexChild}`}>
                 {children}
               </div>
             </div>
