@@ -1,1 +1,7 @@
-None.
+defaultProps: {
+  colors: ['currentColor'],
+  selectable: false,
+  strokeColor: 'currentColor',
+  totalStars: 5,
+  value: 0
+}

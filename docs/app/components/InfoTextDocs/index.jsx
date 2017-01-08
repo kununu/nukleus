@@ -40,7 +40,7 @@ export default class InfoTextDocs extends Component {
 
               {this.state.infoTextVisible &&
                 <div>
-                  <InfoText text="I am an info text, commonly used below inputs." />
+                  <InfoText text="I am an info text." />
                 </div>
               }
             </div>

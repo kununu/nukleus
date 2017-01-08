@@ -1,0 +1,104 @@
+@import '~kununu-theme/scss/base/variables';
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.starsContainer {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  label {
+    margin: 0;
+    line-height: 0;
+  }
+}
+
+.staticStars {
+  max-width: 90px;
+}
+
+.starsRow {
+  display: table-row;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+.starsGroup {
+  display: table-cell;
+  padding: 0 5px;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+.staticStars .starsGroup {
+  padding: 0 2px;
+}
+
+.path {
+  stroke-linejoin: round;
+  stroke-width: 35px;
+}
+
+.ratingStar {
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform .2s;
+
+  &:hover {
+    @media (min-width: $screen-md-min) {
+      transform: scale(1.2);
+    }
+  }
+
+  .path {
+    fill-opacity: 0;
+    transition: all .2s ease;
+    stroke-width: 30px;
+
+    &.fill {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.star {
+  transform: scale(1);
+}
+
+.hiddenInput:focus + label,
+.hiddenInput:checked + label {
+  .star {
+    animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+  }
+
+  17% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
