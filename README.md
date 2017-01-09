@@ -25,6 +25,21 @@ Components include:
 - Tabs
 - TextField
 
+Get it from npm:
+
+```bash
+npm i nukleus --save
+```
+
+And include components and the main css (once) this way:
+
+```javascript
+import {Logo, Select} from 'nukleus';
+import 'nukleus/main.css';
+```
+
+## Development
+
 ### Install and run
 
 ```bash
