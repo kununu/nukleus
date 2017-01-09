@@ -14,18 +14,16 @@
   }
 }
 
-.regionText {
+.suggestionInfo {
   color: $gray-base-40;
   font-size: $font-size-sm;
   display: inline-block;
+}
 
-  &:before {
-    content: '(';
-  }
-
-  &:after {
-    content: ')';
-  }
+.requiredLabel {
+  position: absolute;
+  bottom: 45px;
+  right: 2px;
 }
 
 .input {
@@ -88,7 +86,7 @@
   color: $white;
   cursor: pointer;
 
-  .regionText {
+  .suggestionInfo {
     color: $white;
   }
 }

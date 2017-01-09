@@ -92,7 +92,7 @@ export default class Autocomplete extends React.Component {
       [];
   }
 
-  getSuggestionValue = suggestion => suggestion.item;
+  getSuggestionValue = suggestion => suggestion.item
 
   checkIfNoSuggestions (nextProps) {
     const noSuggestions = !nextProps.data.items.length && this.state.value.length;
@@ -153,7 +153,7 @@ export default class Autocomplete extends React.Component {
     </div>
   );
 
-  renderSuggestion = suggestion => <span>{suggestion.item}, <span className={styles.itemInfo}>{suggestion.itemInfo}</span></span>;
+  renderSuggestion = suggestion => <span>{suggestion.item} <span className={styles.suggestionInfo}>({suggestion.itemInfo})</span></span>;
 
   render () {
     const {
