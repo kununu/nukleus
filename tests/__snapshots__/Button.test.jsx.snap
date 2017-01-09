@@ -1,0 +1,8 @@
+exports[`test Renders Button without crashing 1`] = `
+<button
+  className="button primary"
+  disabled={false}
+  onClick={[Function]}>
+  Test
+</button>
+`;

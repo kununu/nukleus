@@ -15,6 +15,7 @@ import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
 
+
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
@@ -211,23 +212,25 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <br />
+
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="default" text="Default Button" />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="primary" text="Primary Button" />
           </div>
-          <div className="col-md-2">
-            <Button buttonStyle="secondary" text="Success Button" />
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="secondary" text="Secondary Button" />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="info" text="Info Button" />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="danger" text="Danger Button" />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="link" text="Link Button" />
           </div>
         </div>
@@ -235,22 +238,22 @@ const App = ({location: {pathname, query}}) => (
         <br />
 
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="default" text="Default Button" disabled />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="primary" text="Primary Button" disabled />
           </div>
-          <div className="col-md-2">
-            <Button buttonStyle="secondary" text="Success Button" disabled />
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="secondary" text="Secondary Button" disabled />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="info" text="Info Button" disabled />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="danger" text="Danger Button" disabled />
           </div>
-          <div className="col-md-2">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button buttonStyle="link" text="Link Button" disabled />
           </div>
         </div>
