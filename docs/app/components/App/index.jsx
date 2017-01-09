@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
@@ -86,7 +84,9 @@ export default class App extends Component {
           <div className={`panel padding-bottom clearfix container-fluid ${styles.container}`}>
             <div className={styles.flexContainer}>
               <div className={`${styles.flexChild} ${styles.menuContainer}`}>
-                <div onClick={this.onClickCloseMenu} className={`${styles.menu} ${this.state.menuVisible && styles.open}`}>
+                <div // eslint-disable-line jsx-a11y/no-static-element-interactions
+                  onClick={this.onClickCloseMenu}
+                  className={`${styles.menu} ${this.state.menuVisible && styles.open}`}>
                   <navigation>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
