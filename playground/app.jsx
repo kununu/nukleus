@@ -258,6 +258,27 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="default" text="Default Button" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="primary" text="Primary Button" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="secondary" text="Secondary Button" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="info" text="Info Button" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="danger" text="Danger Button" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button buttonStyle="link" text="Link Button" outline />
+          </div>
+        </div>
+
       </div>
     </div>
 

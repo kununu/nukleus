@@ -33,7 +33,8 @@
   $color,
   $background,
   $hover-background : lighten($background, 5%),
-  $active-background: darken($background, 5%)
+  $active-background: darken($background, 5%),
+  $hover-color: darken($color, 5%)
 ) {
   transition: background .15s;
   color: $color;
@@ -66,23 +67,45 @@
   }
 }
 
+@mixin button-outline(
+  $color,
+  $background,
+  $hover-color: darken($color, 5%)
+) {
 
+  &.outline {
+    color: $color;
+    background-color: $background;
+    border: 1px solid $color;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $hover-color;
+      border-color: $hover-color;
+    }
+  }
+}
 
 // Apply the mixin to the buttons
 .default {
   @include button-variant($btn-default-color, $btn-default-bg);
+  @include button-outline($btn-default-color, $btn-info-bg);
 }
 
 .primary {
   @include button-variant($btn-primary-color, $btn-primary-bg);
+  @include button-outline($btn-primary-bg, $btn-primary-color);
 }
 
 .secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg);
+  @include button-outline($btn-secondary-bg, $btn-secondary-color);
 }
 
 .info {
   @include button-variant($btn-info-color, $btn-info-bg);
+  @include button-outline($btn-info-color, $btn-info-bg);
 }
 
 .danger {
@@ -91,6 +114,7 @@
 
 .link {
   @include button-variant($btn-secondary-bg, $btn-info-bg);
+  @include button-outline($btn-secondary-bg, $btn-info-bg);
 
   &:hover {
     text-decoration: underline;

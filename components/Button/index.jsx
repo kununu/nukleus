@@ -7,12 +7,14 @@ export default class Button extends Component {
     buttonStyle: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link']),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    outline: PropTypes.bool,
     text: PropTypes.string.isRequired
   };
 
   static defaultProps = {
     buttonStyle: 'primary',
-    disabled: false
+    disabled: false,
+    outline: false
   };
 
   onClickHandler = e => {
@@ -27,7 +29,7 @@ export default class Button extends Component {
   render () {
     return (
       <button
-        className={`${styles.button} ${styles[this.props.buttonStyle]}`}
+        className={`${styles.button} ${styles[this.props.buttonStyle]} ${this.props.outline && styles.outline} `}
         disabled={this.props.disabled}
         onClick={this.onClickHandler}>
         {this.props.text}
