@@ -1,0 +1,131 @@
+@import '~kununu-theme/scss/base/variables';
+@import '~kununu-theme/scss/base/functions';
+@import '~kununu-theme/scss/base/mixins';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
+
+.spinner {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  color: $gray-base-50;
+
+  i {
+    font-size: $font-size-lg;
+  }
+}
+
+.regionText {
+  color: $gray-base-40;
+  font-size: $font-size-sm;
+  display: inline-block;
+
+  &:before {
+    content: '(';
+  }
+
+  &:after {
+    content: ')';
+  }
+}
+
+.input {
+  @extend .form-control;
+}
+
+.inline {
+  position: relative;
+
+  @media (min-width: $screen-xs-min) {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  label {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 140px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.suggestionsContainer {
+  @include box-shadow(0 2px 10px rgba($black, .2));
+  border-radius: $border-radius-base;
+  background-clip: padding-box;
+  font-size: $font-size-base;
+  width: 100%;
+  margin-top: 1px;
+  background-color: $white;
+  max-height: 300px;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+
+  @media (max-width: $screen-xs-min) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.suggestion {
+  text-align: left;
+  padding: 8px 15px;
+}
+
+.suggestionFocused {
+  background: $blue;
+  color: $white;
+  cursor: pointer;
+
+  .regionText {
+    color: $white;
+  }
+}
+
+.autoCompleteContainer {
+  position: relative;
+  width: 100%;
+}
+
+// Inline error definition
+// Consider abstracting out to another component if we start using this a lot
+.error {
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  font-weight: $font-weight-regular;
+  color: $white;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 45px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -5px;
+    right: 45%;
+    bottom: auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px;
+    border-color: transparent transparent $brand-danger;
+  }
+}
