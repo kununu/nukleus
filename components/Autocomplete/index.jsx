@@ -54,6 +54,7 @@ export default class Autocomplete extends React.Component {
 
   onChange = (event, {newValue}) => {
     this.setState({
+      noSuggestions: false,
       value: newValue
     });
     this.hideError();

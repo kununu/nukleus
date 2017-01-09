@@ -59,7 +59,7 @@ export default class App extends React.Component {
           }
         });
       }
-    }, 200);
+    }, 500);
   }
 
   render () {
