@@ -41,9 +41,11 @@ As for npm@5, this behaviour should change so we can get rid of the `in-publish`
 
 ### Run docker version
 
-```
+```bash
 docker run -ti -p 3000:3000 --rm --name nukleus kununu/nukleus
 ```
+Open [http://localhost:3000/playground](http://localhost:3000/playground).
+Open [http://localhost:3000/docs](http://localhost:3000/docs).
 
 ### Test
 
