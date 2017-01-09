@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
+import Scroll from 'react-scroll';
 
 import styles from './index.scss';
 
@@ -17,6 +18,7 @@ export default class Autocomplete extends React.Component {
     placeholder: PropTypes.string,
     query: PropTypes.object,
     required: PropTypes.bool,
+    scrollTo: PropTypes.bool,
     submitOnEnter: PropTypes.bool,
     suggestionsFooter: PropTypes.any,
     value: PropTypes.string
@@ -30,6 +32,7 @@ export default class Autocomplete extends React.Component {
     placeholder: '',
     query: {},
     required: false,
+    scrollTo: true,
     submitOnEnter: false,
     suggestionsFooter: false
   }
@@ -107,6 +110,13 @@ export default class Autocomplete extends React.Component {
     });
   }
 
+  scrollToElement = isMobile => {
+    if (this.props.scrollTo && isMobile) {
+      const scroll = Scroll.animateScroll;
+      scroll.scrollTo(Number(this.node.offsetParent.offsetTop) + 65);
+    }
+  }
+
   needsUpdate ({value, query}) {
     return (
       value !== this.props.value ||
@@ -153,6 +163,7 @@ export default class Autocomplete extends React.Component {
 
     const {value, noSuggestions} = this.state;
     const suggestions = this.props.data.items.length ? this.props.data.items : [];
+    const isMobile = window.outerWidth < 550;
 
     const inputProps = {
       disabled,
@@ -160,13 +171,16 @@ export default class Autocomplete extends React.Component {
       name,
       onBlur: this.hideNoSuggestions,
       onChange: this.onChange,
+      onFocus: () => this.scrollToElement(isMobile),
       placeholder,
       required,
       value
     };
 
     return (
-      <div className={`form-group ${styles[this.props.inputStyle]}`}>
+      <div
+        ref={node => this.node = node}
+        className={`form-group ${styles[this.props.inputStyle]}`}>
         <label
           className="control-label"
           htmlFor={name}>
@@ -177,6 +191,7 @@ export default class Autocomplete extends React.Component {
             suggestions={suggestions}
             theme={styles}
             focusFirstSuggestion
+            focusInputOnSuggestionClick={!isMobile}
             onSuggestionSelected={this.handleSelection}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
