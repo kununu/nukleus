@@ -12,11 +12,13 @@ export default class Autocomplete extends React.Component {
     inputStyle: PropTypes.string,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    noSuggestionText: PropTypes.string.isRequired,
     onGetSuggestions: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
     required: PropTypes.bool,
     submitOnEnter: PropTypes.bool,
+    suggestionsFooter: PropTypes.any,
     value: PropTypes.string
   };
 
@@ -24,10 +26,12 @@ export default class Autocomplete extends React.Component {
     disabled: false,
     error: null,
     inputStyle: 'inline',
+    noSuggestionText: 'No results found',
     placeholder: '',
     query: {},
     required: false,
-    submitOnEnter: false
+    submitOnEnter: false,
+    suggestionsFooter: false
   }
 
   state = {
@@ -42,27 +46,22 @@ export default class Autocomplete extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log('updating', nextProps);
-    const noSuggestions = !nextProps.data.items.length && this.state.value.length;
-    this.setState({noSuggestions});
+    this.checkIfNoSuggestions(nextProps);
     if (!this.needsUpdate(nextProps)) return;
     if (nextProps.error) this.showError();
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
   }
 
   onChange = (event, {newValue}) => {
-    this.setState({value: newValue});
+    this.setState({
+      value: newValue
+    });
     this.hideError();
   }
 
   onSuggestionsFetchRequested = ({value}) => {
     this.getSuggestions(value);
 
-    // const inputIsFilled = value.trim() !== '';
-    // const noSuggestions = !this.props.data.items.length && inputIsFilled;
-    // console.log('data length', this.props.data.items.length);
-    // console.log('Input is filled', inputIsFilled);
-    // console.log('no suggestions', noSuggestions);
     this.setState({
       suggestions: this.props.data
     });
@@ -83,12 +82,28 @@ export default class Autocomplete extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.item;
 
+  checkIfNoSuggestions (nextProps) {
+    const noSuggestions = !nextProps.data.items.length && this.state.value.length;
+
+    this.setState({noSuggestions});
+  }
+
+  hideNoSuggestions = () => {
+    this.setState({
+      noSuggestions: false
+    });
+  }
+
   showError () {
-    this.setState({showError: true});
+    this.setState({
+      showError: true
+    });
   }
 
   hideError () {
-    this.setState({showError: false});
+    this.setState({
+      showError: false
+    });
   }
 
   needsUpdate ({value, query}) {
@@ -111,12 +126,11 @@ export default class Autocomplete extends React.Component {
   renderSuggestionsContainer = ({children, ...rest}) => (
     <div {...rest}>
       {children}
-      {
-      children === null ? null :
-      <div className="footer">
-          Powered by react-autosuggest
+      {this.props.suggestionsFooter && children &&
+        <div className={styles.suggestionsFooter}>
+          {this.props.suggestionsFooter}
         </div>
-    }
+      }
     </div>
   );
 
@@ -129,8 +143,10 @@ export default class Autocomplete extends React.Component {
       label,
       id,
       name,
+      noSuggestionText,
       placeholder,
-      required
+      required,
+      suggestionsFooter
     } = this.props;
 
 
@@ -141,6 +157,7 @@ export default class Autocomplete extends React.Component {
       disabled,
       id,
       name,
+      onBlur: this.hideNoSuggestions,
       onChange: this.onChange,
       placeholder,
       required,
@@ -176,7 +193,8 @@ export default class Autocomplete extends React.Component {
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>
-                  No suggestions
+                  {suggestionsFooter || noSuggestionText
+                  }
                 </li>
               </ul>
             </div>

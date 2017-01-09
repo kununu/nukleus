@@ -39,6 +39,14 @@ export default class App extends React.Component {
             isFetching: false,
             items: [
               {item: 'meow', itemInfo: 'hard'},
+              {item: 'meowing', itemInfo: 'harder'},
+              {item: 'meow', itemInfo: 'hard'},
+              {item: 'meowing', itemInfo: 'harder'},
+              {item: 'meow', itemInfo: 'hard'},
+              {item: 'meowing', itemInfo: 'harder'},
+              {item: 'meow', itemInfo: 'hard'},
+              {item: 'meowing', itemInfo: 'harder'},
+              {item: 'meow', itemInfo: 'hard'},
               {item: 'meowing', itemInfo: 'harder'}
             ]
           }
@@ -126,6 +134,7 @@ export default class App extends React.Component {
                   id="test"
                   onGetSuggestions={this.getCities}
                   placeholder="Type something..."
+                  suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
                   label="Autocomplete"
                   name="autocomplete" />
               </div>
