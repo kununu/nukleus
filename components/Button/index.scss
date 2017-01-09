@@ -84,6 +84,20 @@
       color: $hover-color;
       border-color: $hover-color;
     }
+
+    &.disabled,
+    &[disabled] {
+      &,
+      &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        color: $color;
+        background-color: $background;
+        opacity: .65;
+      }
+    }
   }
 }
 
@@ -110,6 +124,7 @@
 
 .danger {
   @include button-variant($btn-danger-color, $btn-danger-bg);
+  @include button-outline($btn-danger-bg, $btn-danger-color);
 }
 
 .link {
