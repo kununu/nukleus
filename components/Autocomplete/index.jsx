@@ -4,6 +4,8 @@ import Scroll from 'react-scroll';
 
 import styles from './index.scss';
 
+const isMobile = window.outerWidth < 550;
+
 export default class Autocomplete extends React.Component {
   static propTypes = {
     data: PropTypes.object,
@@ -12,12 +14,14 @@ export default class Autocomplete extends React.Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     label: PropTypes.string.isRequired,
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     noSuggestionText: PropTypes.string.isRequired,
     onGetSuggestions: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
     required: PropTypes.bool,
+    requiredLabel: PropTypes.string,
     scrollTo: PropTypes.bool,
     submitOnEnter: PropTypes.bool,
     suggestionsFooter: PropTypes.any,
@@ -25,16 +29,12 @@ export default class Autocomplete extends React.Component {
   };
 
   static defaultProps = {
-    disabled: false,
     error: null,
     inputStyle: 'inline',
     noSuggestionText: 'No results found',
     placeholder: '',
     query: {},
-    required: false,
-    scrollTo: true,
-    submitOnEnter: false,
-    suggestionsFooter: false
+    scrollTo: true
   }
 
   state = {
@@ -61,6 +61,14 @@ export default class Autocomplete extends React.Component {
       value: newValue
     });
     this.hideError();
+  }
+
+  onFocus = () => {
+    this.scrollToElement();
+  }
+
+  onBlur = () => {
+    this.hideNoSuggestions();
   }
 
   onSuggestionsFetchRequested = ({value}) => {
@@ -110,7 +118,7 @@ export default class Autocomplete extends React.Component {
     });
   }
 
-  scrollToElement = isMobile => {
+  scrollToElement = () => {
     if (this.props.scrollTo && isMobile) {
       const scroll = Scroll.animateScroll;
       scroll.scrollTo(Number(this.node.offsetParent.offsetTop) + 65);
@@ -149,29 +157,35 @@ export default class Autocomplete extends React.Component {
 
   render () {
     const {
+      data: {isFetching},
       disabled,
       error,
       label,
+      labelHidden,
       id,
       name,
       noSuggestionText,
       placeholder,
       required,
+      requiredLabel,
       suggestionsFooter
     } = this.props;
 
+    const {
+      noSuggestions,
+      showError,
+      value
+    } = this.state;
 
-    const {value, noSuggestions} = this.state;
     const suggestions = this.props.data.items.length ? this.props.data.items : [];
-    const isMobile = window.outerWidth < 550;
 
     const inputProps = {
       disabled,
       id,
       name,
-      onBlur: this.hideNoSuggestions,
+      onBlur: this.onBlur,
       onChange: this.onChange,
-      onFocus: () => this.scrollToElement(isMobile),
+      onFocus: this.onFocus,
       placeholder,
       required,
       value
@@ -181,30 +195,47 @@ export default class Autocomplete extends React.Component {
       <div
         ref={node => this.node = node}
         className={`form-group ${styles[this.props.inputStyle]}`}>
+
+        {requiredLabel &&
+          <span className={`control-note ${styles.requiredLabel}`}>
+            {requiredLabel}
+          </span>
+        }
+
+        {labelHidden &&
+          <span className="sr-only">
+            {label}
+          </span>
+        }
+
         <label
-          className="control-label"
-          htmlFor={name}>
+          className={`control-label ${labelHidden && 'hidden'}`}
+          htmlFor={id}>
           {label}
         </label>
+
         <div className={styles.autoCompleteContainer}>
           <Autosuggest
-            suggestions={suggestions}
-            theme={styles}
             focusFirstSuggestion
             focusInputOnSuggestionClick={!isMobile}
+            getSuggestionValue={this.getSuggestionValue}
+            inputProps={inputProps}
             onSuggestionSelected={this.handleSelection}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
             renderSuggestionsContainer={this.renderSuggestionsContainer}
-            inputProps={inputProps} />
+            suggestions={suggestions}
+            theme={styles} />
 
-          {this.props.data.isFetching &&
+          {isFetching &&
             <span className={styles.spinner}>
-              <i className="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true" />
+              <i
+                className="fa fa-spinner fa-pulse fa-3x fa-fw"
+                aria-hidden="true" />
             </span>
           }
+
           {noSuggestions ?
             <div className={styles.suggestionsContainer}>
               <ul>
@@ -216,8 +247,12 @@ export default class Autocomplete extends React.Component {
             </div>
             : ''
           }
-          {this.state.showError &&
-            <span className={`${styles.error} label-danger`}>{error}</span>}
+
+          {showError &&
+            <span className={`${styles.error} label-danger`}>
+              {error}
+            </span>
+          }
         </div>
       </div>
     );

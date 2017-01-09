@@ -25,41 +25,22 @@ export default class App extends React.Component {
   }
 
   getCities = val => {
-    this.setState({
-      data: {
-        isFetching: true,
-        items: []
-      }
-    });
+    const fakeData = [
+      {item: 'meow', itemInfo: 'hard'},
+      {item: 'meowing', itemInfo: 'harder'}
+    ];
+
+    this.setData([], true);
 
     setTimeout(() => {
-      if (val.length < 2) {
-        this.setState({
-          data: {
-            isFetching: false,
-            items: [
-              {item: 'meow', itemInfo: 'hard'},
-              {item: 'meowing', itemInfo: 'harder'},
-              {item: 'meow', itemInfo: 'hard'},
-              {item: 'meowing', itemInfo: 'harder'},
-              {item: 'meow', itemInfo: 'hard'},
-              {item: 'meowing', itemInfo: 'harder'},
-              {item: 'meow', itemInfo: 'hard'},
-              {item: 'meowing', itemInfo: 'harder'},
-              {item: 'meow', itemInfo: 'hard'},
-              {item: 'meowing', itemInfo: 'harder'}
-            ]
-          }
-        });
-      } else {
-        this.setState({
-          data: {
-            isFetching: false,
-            items: []
-          }
-        });
-      }
+      this.setData(val.length < 2 && fakeData, false);
     }, 500);
+  }
+
+  setData (items = [], isFetching) {
+    this.setState({
+      data: {isFetching, items}
+    });
   }
 
   render () {
@@ -132,10 +113,13 @@ export default class App extends React.Component {
                 <Autocomplete
                   data={this.state.data}
                   id="test"
+                  value="purrr"
+                  query={query}
                   onGetSuggestions={this.getCities}
                   placeholder="Type something..."
                   suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
                   label="Autocomplete"
+                  requiredLabel="Required"
                   name="autocomplete" />
               </div>
             </div>
