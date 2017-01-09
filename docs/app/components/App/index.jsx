@@ -72,7 +72,9 @@ export default class App extends Component {
           <header className={`${styles.header} navbar navbar-fixed-top`}>
             <div className="container-fluid">
               <div className={styles.flexMenuContainer}>
-                <button className={styles.mobileMenuButton} onClick={this.onClickToggleMenu}>
+                <button
+                  className={styles.mobileMenuButton}
+                  onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
                 <div>
@@ -90,7 +92,9 @@ export default class App extends Component {
                   <navigation>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
-                        <li key={name} className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
+                        <li
+                          key={name}
+                          className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
                           <Link
                             to={link}
                             onClick={(() => this.onClickToggleComponent(name))}
