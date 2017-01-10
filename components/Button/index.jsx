@@ -107,10 +107,10 @@ export default class Button extends Component {
         style={style}
         disabled={this.props.disabled}
         onClick={this.onClickHandler}
-        onMouseOver={this.onMouseOverHandler}
-        onMouseOut={this.onMouseOutHandler}
-        onMouseDown={this.onMouseDownHandler}
-        onMouseUp={this.onMouseUpHandler}>
+        onMouseOver={this.props.type === 'custom' && this.onMouseOverHandler}
+        onMouseOut={this.props.type === 'custom' && this.onMouseOutHandler}
+        onMouseDown={this.props.type === 'custom' && this.onMouseDownHandler}
+        onMouseUp={this.props.type === 'custom' && this.onMouseUpHandler}>
         {this.props.text}
       </button>
     );
