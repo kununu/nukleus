@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import {Link} from 'react-router';
 
 import styles from './index.scss';
 
@@ -8,6 +9,7 @@ export default class Button extends Component {
   static propTypes = {
     buttonStyle: PropTypes.object,
     disabled: PropTypes.bool,
+    link: PropTypes.string,
     onClick: PropTypes.func,
     outline: PropTypes.bool,
     text: PropTypes.string.isRequired,
@@ -101,16 +103,29 @@ export default class Button extends Component {
       style = {};
     }
 
+    const props = {
+      className: `${styles.button} ${styles[this.props.type]}${this.props.outline ? ` ${styles.outline}` : ''}`,
+      disabled: this.props.disabled,
+      onClick: this.props.onClick && this.onClickHandler,
+      onMouseDown: this.props.type === 'custom' && this.onMouseDownHandler,
+      onMouseOut: this.props.type === 'custom' && this.onMouseOutHandler,
+      onMouseOver: this.props.type === 'custom' && this.onMouseOverHandler,
+      onMouseUp: this.props.type === 'custom' && this.onMouseUpHandler,
+      style
+    };
+
+    if (this.props.link && !this.props.disabled) {
+      return (
+        <Link
+          {...props}
+          to={this.props.link}>
+          {this.props.text}
+        </Link>
+      );
+    }
     return (
       <button
-        className={`${styles.button} ${styles[this.props.type]}${this.props.outline ? ` ${styles.outline}` : ''}`}
-        style={style}
-        disabled={this.props.disabled}
-        onClick={this.onClickHandler}
-        onMouseOver={this.props.type === 'custom' && this.onMouseOverHandler}
-        onMouseOut={this.props.type === 'custom' && this.onMouseOutHandler}
-        onMouseDown={this.props.type === 'custom' && this.onMouseDownHandler}
-        onMouseUp={this.props.type === 'custom' && this.onMouseUpHandler}>
+        {...props}>
         {this.props.text}
       </button>
     );

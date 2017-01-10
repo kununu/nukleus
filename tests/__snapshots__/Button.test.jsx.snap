@@ -1,7 +1,49 @@
-exports[`test Renders Button without crashing 1`] = `
+exports[`test Renders Button with anchor crashing 1`] = `
+<a
+  className="button primary"
+  disabled={false}
+  onClick={[Function]}
+  onMouseDown={false}
+  onMouseOut={false}
+  onMouseOver={false}
+  onMouseUp={false}
+  style={Object {}}>
+  Test
+</a>
+`;
+
+exports[`test Renders Button with button without crashing 1`] = `
 <button
   className="button primary"
   disabled={false}
+  onClick={[Function]}
+  onMouseDown={false}
+  onMouseOut={false}
+  onMouseOver={false}
+  onMouseUp={false}
+  style={Object {}}>
+  Test
+</button>
+`;
+
+exports[`test Renders Button with outline 1`] = `
+<button
+  className="button primary outline"
+  disabled={false}
+  onClick={[Function]}
+  onMouseDown={false}
+  onMouseOut={false}
+  onMouseOver={false}
+  onMouseUp={false}
+  style={Object {}}>
+  Test
+</button>
+`;
+
+exports[`test Renders a disabled Button 1`] = `
+<button
+  className="button primary"
+  disabled={true}
   onClick={[Function]}
   onMouseDown={false}
   onMouseOut={false}
