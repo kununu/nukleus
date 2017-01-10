@@ -39,6 +39,16 @@
       opacity: .65;
     }
   }
+
+  &.fullWidth {
+    width: 100%;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .button.mobileFullWidth {
+    width: 100%;
+  }
 }
 
 @mixin button-variant(

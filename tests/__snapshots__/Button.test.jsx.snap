@@ -53,3 +53,31 @@ exports[`test Renders a disabled Button 1`] = `
   Test
 </button>
 `;
+
+exports[`test Renders a full width button 1`] = `
+<button
+  className="button primary fullWidth"
+  disabled={false}
+  onClick={[Function]}
+  onMouseDown={false}
+  onMouseOut={false}
+  onMouseOver={false}
+  onMouseUp={false}
+  style={Object {}}>
+  Test
+</button>
+`;
+
+exports[`test Renders a full width button 2`] = `
+<button
+  className="button primary mobileFullWidth"
+  disabled={false}
+  onClick={[Function]}
+  onMouseDown={false}
+  onMouseOut={false}
+  onMouseOver={false}
+  onMouseUp={false}
+  style={Object {}}>
+  Test
+</button>
+`;

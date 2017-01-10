@@ -9,7 +9,9 @@ export default class Button extends Component {
   static propTypes = {
     buttonStyle: PropTypes.object,
     disabled: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     link: PropTypes.string,
+    mobileFullWidth: PropTypes.bool,
     onClick: PropTypes.func,
     outline: PropTypes.bool,
     text: PropTypes.string.isRequired,
@@ -18,6 +20,8 @@ export default class Button extends Component {
 
   static defaultProps = {
     disabled: false,
+    fullWidth: false,
+    mobileFullWidth: false,
     outline: false,
     type: 'primary'
   };
@@ -104,7 +108,7 @@ export default class Button extends Component {
     }
 
     const props = {
-      className: `${styles.button} ${styles[this.props.type]}${this.props.outline ? ` ${styles.outline}` : ''}`,
+      className: `${styles.button} ${styles[this.props.type]}${this.props.outline ? ` ${styles.outline}` : ''}${this.props.fullWidth ? ` ${styles.fullWidth}` : ''}${this.props.mobileFullWidth ? ` ${styles.mobileFullWidth}` : ''}`,
       disabled: this.props.disabled,
       onClick: this.props.onClick && this.onClickHandler,
       onMouseDown: this.props.type === 'custom' && this.onMouseDownHandler,

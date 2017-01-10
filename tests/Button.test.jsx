@@ -39,6 +39,25 @@ test('Renders Button with outline', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders a full width button', () => {
+  const component = renderer.create(
+    <Button text="Test" onClick={() => {}} fullWidth />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+
+test('Renders a full width button', () => {
+  const component = renderer.create(
+    <Button text="Test" onClick={() => {}} mobileFullWidth />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Fires onClick function when clicked', () => {
   const spyFunc = jest.fn();
   const component = mount(

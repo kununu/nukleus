@@ -344,6 +344,22 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Full width Button" onClick={() => {}} fullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+          </div>
+        </div>
+
       </div>
     </div>
 
