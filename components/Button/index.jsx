@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
+import classSet from 'react-classset';
 
 import styles from './index.scss';
 
@@ -107,8 +108,17 @@ export default class Button extends Component {
       style = {};
     }
 
+    const classes = classSet({
+      [styles[this.props.type]]: true,
+      [styles.button]: true,
+      [styles.fullWidth]: this.props.fullWidth,
+      [styles.mobileFullWidth]: this.props.mobileFullWidth,
+      [styles.outline]: this.props.outline
+
+    });
+
     const props = {
-      className: `${styles.button} ${styles[this.props.type]}${this.props.outline ? ` ${styles.outline}` : ''}${this.props.fullWidth ? ` ${styles.fullWidth}` : ''}${this.props.mobileFullWidth ? ` ${styles.mobileFullWidth}` : ''}`,
+      className: classes,
       disabled: this.props.disabled,
       onClick: this.props.onClick && this.onClickHandler,
       onMouseDown: this.props.type === 'custom' && this.onMouseDownHandler,
