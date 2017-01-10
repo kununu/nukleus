@@ -2,7 +2,12 @@ exports[`test Renders Button without crashing 1`] = `
 <button
   className="button primary"
   disabled={false}
-  onClick={[Function]}>
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}>
   Test
 </button>
 `;

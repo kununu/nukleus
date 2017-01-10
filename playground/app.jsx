@@ -216,45 +216,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="default" text="Default Button" />
+            <Button type="default" text="Default Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="primary" text="Primary Button" />
+            <Button type="primary" text="Primary Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="secondary" text="Secondary BTN" />
+            <Button type="secondary" text="Secondary BTN" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="info" text="Info Button" />
+            <Button type="info" text="Info Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="danger" text="Danger Button" />
+            <Button type="danger" text="Danger Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="link" text="Link Button" />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="default" text="Default Button" disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="primary" text="Primary Button" disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="secondary" text="Secondary BTN" disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="info" text="Info Button" disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="danger" text="Danger Button" disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="link" text="Link Button" disabled />
+            <Button type="link" text="Link Button" />
           </div>
         </div>
 
@@ -262,22 +239,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="default" text="Default Button" outline />
+            <Button type="default" text="Default Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="primary" text="Primary Button" outline />
+            <Button type="primary" text="Primary Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="secondary" text="Secondary BTN" outline />
+            <Button type="secondary" text="Secondary BTN" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="info" text="Info Button" outline />
+            <Button type="info" text="Info Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="danger" text="Danger Button" outline />
+            <Button type="danger" text="Danger Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="link" text="Link Button" outline />
+            <Button type="link" text="Link Button" disabled />
           </div>
         </div>
 
@@ -285,22 +262,62 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="default" text="Default Button" outline disabled />
+            <Button type="default" text="Default Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="primary" text="Primary Button" outline disabled />
+            <Button type="primary" text="Primary Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="secondary" text="Secondary BTN" outline disabled />
+            <Button type="secondary" text="Secondary BTN" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="info" text="Info Button" outline disabled />
+            <Button type="info" text="Info Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="danger" text="Danger Button" outline disabled />
+            <Button type="danger" text="Danger Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button buttonStyle="link" text="Link Button" outline disabled />
+            <Button type="link" text="Link Button" outline />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary BTN" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" outline disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
           </div>
         </div>
 

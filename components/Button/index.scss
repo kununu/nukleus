@@ -15,6 +15,7 @@
   white-space: nowrap;
   padding: 10px 12px;
   user-select: none;
+  transition: background .15s;
 
   &.disabled,
   &[disabled] {
@@ -25,6 +26,7 @@
     &:active,
     &.active {
       cursor: not-allowed;
+      opacity: .65;
     }
   }
 }
@@ -33,23 +35,19 @@
   $color,
   $background,
   $hover-background : lighten($background, 5%),
-  $active-background: darken($background, 5%),
-  $hover-color: darken($color, 5%)
+  $active-background: darken($background, 5%)
 ) {
-  transition: background .15s;
   color: $color;
   background-color: $background;
 
   &:hover,
   &:focus,
   &.focus {
-    color: $color;
     background-color: $hover-background;
   }
 
   &:active,
   &.active {
-    color: $color;
     background-color: $active-background;
   }
 
@@ -62,7 +60,6 @@
     &:active,
     &.active {
       background-color: $background;
-      opacity: .65;
     }
   }
 }
@@ -70,7 +67,8 @@
 @mixin button-outline(
   $color,
   $background,
-  $hover-color: darken($color, 5%)
+  $hover-color: darken($color, 5%),
+  $active-color: lighten($color, 5%)
 ) {
 
   &.outline {
@@ -85,6 +83,12 @@
       border-color: $hover-color;
     }
 
+    &:active,
+    &.active {
+      color: $active-color;
+      border-color: $active-color;
+    }
+
     &.disabled,
     &[disabled] {
       &,
@@ -95,7 +99,6 @@
       &.active {
         color: $color;
         background-color: $background;
-        opacity: .65;
       }
     }
   }
