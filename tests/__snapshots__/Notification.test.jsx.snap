@@ -18,6 +18,7 @@ exports[`test Closes when the close button is clicked 1`] = `
         <i
           className="fa fa-check success" />
       </span>
+      Test
     </p>
   </div>
 </Notification>
@@ -40,6 +41,7 @@ exports[`test Does not close on click when the close method is timeout 1`] = `
         <i
           className="fa fa-check success" />
       </span>
+      Test
     </p>
   </div>
 </Notification>

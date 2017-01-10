@@ -112,7 +112,7 @@ export default class Stars extends Component {
       totalStars,
       strokeColor
     } = this.props;
-    const {color} = this.state;
+    const {color, value} = this.state;
 
     return (
       <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
@@ -128,6 +128,7 @@ export default class Stars extends Component {
                   type="radio"
                   name={name}
                   value={key}
+                  checked={key === value}
                   onChange={this.onClick}
                   id={`star${key}`} /> }
 
