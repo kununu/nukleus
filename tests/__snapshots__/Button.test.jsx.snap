@@ -1,6 +1,6 @@
 exports[`test Renders Button with anchor crashing 1`] = `
 <a
-  className="button primary"
+  className="primary button"
   disabled={false}
   onClick={[Function]}
   onMouseDown={false}
@@ -14,7 +14,7 @@ exports[`test Renders Button with anchor crashing 1`] = `
 
 exports[`test Renders Button with button without crashing 1`] = `
 <button
-  className="button primary"
+  className="primary button"
   disabled={false}
   onClick={[Function]}
   onMouseDown={false}
@@ -28,7 +28,7 @@ exports[`test Renders Button with button without crashing 1`] = `
 
 exports[`test Renders Button with outline 1`] = `
 <button
-  className="button primary outline"
+  className="primary button outline"
   disabled={false}
   onClick={[Function]}
   onMouseDown={false}
@@ -42,7 +42,7 @@ exports[`test Renders Button with outline 1`] = `
 
 exports[`test Renders a disabled Button 1`] = `
 <button
-  className="button primary"
+  className="primary button"
   disabled={true}
   onClick={[Function]}
   onMouseDown={false}
@@ -56,7 +56,7 @@ exports[`test Renders a disabled Button 1`] = `
 
 exports[`test Renders a full width button 1`] = `
 <button
-  className="button primary fullWidth"
+  className="primary button fullWidth"
   disabled={false}
   onClick={[Function]}
   onMouseDown={false}
@@ -70,7 +70,7 @@ exports[`test Renders a full width button 1`] = `
 
 exports[`test Renders a full width button 2`] = `
 <button
-  className="button primary mobileFullWidth"
+  className="primary button mobileFullWidth"
   disabled={false}
   onClick={[Function]}
   onMouseDown={false}
