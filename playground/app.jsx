@@ -222,7 +222,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="primary" text="Primary Button" onClick={() => {}} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary BTN" onClick={() => {}} />
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="info" text="Info Button" onClick={() => {}} />
@@ -245,7 +245,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="primary" text="Primary Button" onClick={() => {}} disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary BTN" onClick={() => {}} disabled />
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="info" text="Info Button" onClick={() => {}} disabled />
@@ -268,7 +268,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="primary" text="Primary Button" onClick={() => {}} outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary BTN" onClick={() => {}} outline />
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="info" text="Info Button" onClick={() => {}} outline />
@@ -291,7 +291,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="primary" text="Primary Button" onClick={() => {}} outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary BTN" onClick={() => {}} outline disabled />
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="info" text="Info Button" onClick={() => {}} outline disabled />
