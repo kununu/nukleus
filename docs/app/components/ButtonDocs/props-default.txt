@@ -1,4 +1,7 @@
 defaultProps: {
-  buttonStyle: 'primary',
-  disabled: false
+  disabled: false,
+  fullWidth: false,
+  mobileFullWidth: false,
+  outline: false,
+  type: 'primary'
 }

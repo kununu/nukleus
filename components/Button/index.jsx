@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
-import classSet from 'react-classset';
+import classNames from 'classnames';
 
 import styles from './index.scss';
 
@@ -40,33 +40,25 @@ export default class Button extends Component {
     this.props.onClick();
   }
 
-  onMouseOverHandler = e => {
-    e.preventDefault();
-
+  onMouseOverHandler = () => {
     if (this.props.disabled) return;
 
     this.setState({isHovering: true});
   }
 
-  onMouseOutHandler = e => {
-    e.preventDefault();
-
+  onMouseOutHandler = () => {
     if (this.props.disabled) return;
 
     this.setState({isHovering: false});
   }
 
-  onMouseDownHandler = e => {
-    e.preventDefault();
-
+  onMouseDownHandler = () => {
     if (this.props.disabled) return;
 
     this.setState({isActive: true});
   }
 
-  onMouseUpHandler = e => {
-    e.preventDefault();
-
+  onMouseUpHandler = () => {
     if (this.props.disabled) return;
 
     this.setState({isActive: false});
@@ -108,7 +100,7 @@ export default class Button extends Component {
       style = {};
     }
 
-    const classes = classSet({
+    const classes = classNames({
       [styles[this.props.type]]: true,
       [styles.button]: true,
       [styles.fullWidth]: this.props.fullWidth,

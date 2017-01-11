@@ -1,9 +1,14 @@
 propTypes: {
-  buttonStyle: PropTypes.oneOf(
-    ['default', 'primary', 'secondary',
-    'info', 'danger', 'link']
-  ),
+  buttonStyle: PropTypes.object,
   disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  link: PropTypes.string,
+  mobileFullWidth: PropTypes.bool,
   onClick: PropTypes.func,
-  text: PropTypes.string.isRequired
+  outline: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['default',
+    'primary', 'secondary', 'info',
+    'danger', 'link', 'custom']
+  )
 }

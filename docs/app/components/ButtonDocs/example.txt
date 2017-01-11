@@ -1,1 +1,4 @@
-<Button buttonStyle="primary" text="Primary Button" />
+<Button
+  buttonStyle="primary"
+  text="Primary Button"
+  onClick={() => {}}/>
