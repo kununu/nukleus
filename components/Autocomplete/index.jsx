@@ -118,6 +118,7 @@ export default class Autocomplete extends React.Component {
     });
   }
 
+  // TODO: Move this function into utilities so other components can use it
   scrollToElement = () => {
     if (this.props.scrollTo && isMobile) {
       const box = this.node.getBoundingClientRect();
