@@ -41,7 +41,7 @@ export default class Autocomplete extends React.Component {
     noSuggestions: false,
     showError: false,
     suggestions: [],
-    value: this.props.value
+    value: ''
   };
 
   componentWillMount () {
