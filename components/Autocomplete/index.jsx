@@ -34,7 +34,7 @@ export default class Autocomplete extends React.Component {
     noSuggestionText: 'No results found',
     placeholder: '',
     query: {},
-    scrollTo: true
+    scrollTo: false
   }
 
   state = {
