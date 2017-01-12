@@ -1,0 +1,67 @@
+@import '~kununu-theme/scss/base/variables';
+
+.radioContainer {
+  display: flex;
+  lign-items: flex-start;
+}
+
+.radioButton {
+  flex: 1;
+  display: block;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+
+  input {
+    display: none;
+  }
+
+  input:checked + label {
+    &,
+    &:hover {
+      background: $green;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  label {
+    width: 100%;
+    margin: 0;
+    padding: 11px 15px;
+    cursor: pointer;
+    font-weight: normal;
+
+    &:hover {
+      background: $gray-lightest;
+    }
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: .65;
+
+      &:hover {
+        background: initial;
+      }
+    }
+  }
+
+  & + label {
+    &.disabled,
+    &[disabled] {
+      background: $green;
+    }
+  }
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+    border-left-width: 1px;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+
+
+}

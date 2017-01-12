@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import CheckboxGroup from 'components/CheckboxGroup';
+import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
@@ -208,6 +209,38 @@ const App = ({location: {pathname, query}}) => (
             <Table
               defaultRowCount={2}
               defaultTitleCount={2} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              name="test1"
+              onChange={() => {}}
+              options={{
+                opA: 'Option A',
+                opB: 'Option B',
+                opC: 'Option C'
+              }} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked={'opA'}
+              name="test2"
+              onChange={() => {}}
+              disabled
+              options={{
+                opA: 'Checked Disabled Option A',
+                opB: 'Disabled Option B',
+                opC: 'Disabled Option C'
+              }} />
           </div>
         </div>
 

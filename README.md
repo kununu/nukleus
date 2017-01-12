@@ -13,6 +13,7 @@ A collection of React user interface components.
 Components include:
 
 - CheckboxGroup
+- Choice
 - Combobox
 - DatePicker
 - InfoText

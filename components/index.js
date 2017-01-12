@@ -1,4 +1,5 @@
 export CheckboxGroup from './CheckboxGroup';
+export Choice from './Choice';
 export Combobox from './Combobox';
 export DatePicker from './DatePicker';
 export InfoText from './InfoText';
