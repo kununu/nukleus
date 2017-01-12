@@ -24,7 +24,8 @@
   "license": "ISC",
   "files": [
     "dist/",
-    "package.json"
+    "package.json",
+    "components"
   ],
   "readme": "README.md",
   "devDependencies": {
