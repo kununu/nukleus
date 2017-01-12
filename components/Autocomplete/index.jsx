@@ -38,8 +38,8 @@ export default class Autocomplete extends React.Component {
   }
 
   state = {
-    noSuggestions: false,
     showError: false,
+    showNoSuggestionsText: false,
     suggestions: [],
     value: ''
   };
@@ -49,7 +49,7 @@ export default class Autocomplete extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.checkIfNoSuggestions(nextProps);
+    this.checkIfHasSuggestions(nextProps);
     if (!this.needsUpdate(nextProps)) return;
     if (nextProps.error) this.showError();
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
@@ -57,7 +57,7 @@ export default class Autocomplete extends React.Component {
 
   onChange = (event, {newValue}) => {
     this.setState({
-      noSuggestions: false,
+      showNoSuggestionsText: false,
       value: newValue
     });
     this.hideError();
@@ -68,7 +68,7 @@ export default class Autocomplete extends React.Component {
   }
 
   onBlur = () => {
-    this.hideNoSuggestions();
+    this.hideNoSuggestionsText();
   }
 
   onSuggestionsFetchRequested = ({value}) => {
@@ -94,15 +94,15 @@ export default class Autocomplete extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.item
 
-  checkIfNoSuggestions (nextProps) {
-    const noSuggestions = !nextProps.data.items.length && this.state.value.length;
+  checkIfHasSuggestions (nextProps) {
+    const showNoSuggestionsText = !nextProps.data.items.length && this.state.value.length;
 
-    this.setState({noSuggestions});
+    this.setState({showNoSuggestionsText});
   }
 
-  hideNoSuggestions = () => {
+  hideNoSuggestionsText = () => {
     this.setState({
-      noSuggestions: false
+      showNoSuggestionsText: false
     });
   }
 
@@ -172,7 +172,7 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     const {
-      noSuggestions,
+      showNoSuggestionsText,
       showError,
       value
     } = this.state;
@@ -236,7 +236,7 @@ export default class Autocomplete extends React.Component {
             </span>
           }
 
-          {noSuggestions ?
+          {showNoSuggestionsText ?
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>
