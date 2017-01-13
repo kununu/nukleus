@@ -65,12 +65,10 @@ export default class Button extends Component {
   }
 
   render () {
-    let style;
+    const style = {};
     if (this.props.type === 'custom') {
-      style = {
-        backgroundColor: this.props.buttonStyle.backgroundColor,
-        color: this.props.buttonStyle.color
-      };
+      style.backgroundColor = this.props.buttonStyle.backgroundColor;
+      style.color = this.props.buttonStyle.color;
       if (this.props.outline) {
         style.border = `1px solid ${this.props.buttonStyle.color}`;
       }
@@ -82,8 +80,7 @@ export default class Button extends Component {
             style.border = `1px solid ${color}`;
             style.color = color;
           } else {
-            const background = darken(this.props.buttonStyle.backgroundColor, 5);
-            style.backgroundColor = background;
+            style.backgroundColor = darken(this.props.buttonStyle.backgroundColor, 5);
           }
         } else if (this.state.isHovering) {
           if (this.props.outline) {
@@ -91,13 +88,10 @@ export default class Button extends Component {
             style.border = `1px solid ${color}`;
             style.color = color;
           } else {
-            const background = lighten(this.props.buttonStyle.backgroundColor, 5);
-            style.backgroundColor = background;
+            style.backgroundColor = lighten(this.props.buttonStyle.backgroundColor, 5);
           }
         }
       }
-    } else {
-      style = {};
     }
 
     const classes = classNames({
