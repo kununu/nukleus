@@ -217,7 +217,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              name="test1"
+              name="basic"
               onChange={() => {}}
               options={{
                 opA: 'Option A',
@@ -233,13 +233,56 @@ const App = ({location: {pathname, query}}) => (
           <div className="col-md-10">
             <Choice
               checked={'opA'}
-              name="test2"
+              name="disabled"
               onChange={() => {}}
               disabled
               options={{
                 opA: 'Checked Disabled Option A',
                 opB: 'Disabled Option B',
                 opC: 'Disabled Option C'
+              }} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked={'opA'}
+              name="custom"
+              onChange={() => {}}
+              choiceStyle={{
+                checkedColor: '#2286dc',
+                hoverColor: '#778992  ',
+                uncheckedColor: '#fffaec'
+              }}
+              options={{
+                opA: 'Checked Custom Option A',
+                opB: 'Custom Option B',
+                opC: 'Custom Option C'
+              }} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked={'opA'}
+              name="custom-disabled"
+              onChange={() => {}}
+              disabled
+              choiceStyle={{
+                checkedColor: '#2286dc',
+                hoverColor: '#778992  ',
+                uncheckedColor: '#fffaec'
+              }}
+              options={{
+                opA: 'Checked Custom Disabled Option A',
+                opB: 'Custom Disabled Option B',
+                opC: 'Custom Disabled Option C'
               }} />
           </div>
         </div>

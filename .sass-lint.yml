@@ -56,7 +56,10 @@ rules:
     - max-depth: 4
   no-css-comments: 2
   no-debug: 2
-  no-duplicate-properties: 2
+  no-duplicate-properties:
+    - 2
+    - exclude:
+      - display
   no-empty-rulesets: 2
   no-ids: 2
   no-invalid-hex: 2

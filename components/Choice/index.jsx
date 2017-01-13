@@ -6,6 +6,7 @@ import styles from './index.scss';
 export default class Choice extends Component {
   static propTypes = {
     checked: PropTypes.string,
+    choiceStyle: PropTypes.object,
     disabled: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
@@ -18,16 +19,9 @@ export default class Choice extends Component {
   };
 
   state = {
-    checked: this.props.checked
+    checked: this.props.checked,
+    isHovering: (new Array(Object.keys(this.props.options).length)).fill(false)
   };
-
-
-  // add state.checked to save current checked option (it should be initialized from props.checked)
-  // add onclickhandler method to change state.checked and to call props.onclick
-  // add disabled prop
-  // TODO:
-  // add props.choiceStyle to define style, default one should be like primary kununu buttons
-
 
   onChangeHandler = e => {
     if (this.props.disabled) return;
@@ -38,7 +32,34 @@ export default class Choice extends Component {
     });
   };
 
+  onMouseOverHandler = e => {
+    if (this.props.disabled) return;
+
+    this.state.isHovering[e.target.id] = true;
+    this.setState(this.state);
+  }
+
+  onMouseOutHandler = e => {
+    if (this.props.disabled) return;
+
+    this.state.isHovering[e.target.id] = false;
+    this.setState(this.state);
+  }
+
   render () {
+    const labelsStyle = [];
+    if (this.props.choiceStyle) {
+      Object.keys(this.props.options).forEach((key, idx) => {
+        if (this.state.isHovering[idx] && !this.props.disabled) {
+          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.hoverColor};
+        } else if (this.state.checked === key) {
+          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.checkedColor};
+        } else {
+          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.uncheckedColor};
+        }
+      });
+    }
+
     return (
       <div className={styles.radioContainer}>
         {Object.keys(this.props.options).map((key, idx) =>
@@ -52,7 +73,11 @@ export default class Choice extends Component {
               onChange={this.onChangeHandler} />
             <label
               disabled={this.props.disabled}
-              htmlFor={this.props.name + key}>
+              id={idx}
+              htmlFor={this.props.name + key}
+              onMouseOver={this.props.choiceStyle && this.onMouseOverHandler}
+              onMouseOut={this.props.choiceStyle && this.onMouseOutHandler}
+              style={labelsStyle[idx]}>
               {this.props.options[key]}
             </label>
           </div>
