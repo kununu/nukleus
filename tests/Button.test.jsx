@@ -12,7 +12,7 @@ test('Renders Button with button without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders Button with anchor crashing', () => {
+test('Renders Button with anchor without crashing', () => {
   const component = renderer.create(
     <Button text="Test" link="/" />
   );
