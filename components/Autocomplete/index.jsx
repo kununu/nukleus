@@ -48,7 +48,6 @@ export default class Autocomplete extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.checkIfHasSuggestions(nextProps);
     if (!this.needsUpdate(nextProps)) return;
     if (nextProps.error) this.showError();
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
@@ -56,7 +55,7 @@ export default class Autocomplete extends React.Component {
 
   onChange = (event, {newValue}) => {
     this.setState({
-      showNoSuggestionsText: false,
+      showNoSuggestionsText: true,
       value: newValue
     });
     this.hideError();
@@ -71,10 +70,8 @@ export default class Autocomplete extends React.Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.getSuggestions(value);
-
     this.setState({
-      suggestions: this.props.data
+      suggestions: this.getSuggestions(value)
     });
   }
 
@@ -84,21 +81,33 @@ export default class Autocomplete extends React.Component {
     });
   };
 
+  onSuggestionSelected = (e, {method}) => {
+    this.setState({
+      showNoSuggestionsText: false
+    });
+
+    if (method === 'enter' && !this.props.submitOnEnter) {
+      e.preventDefault();
+    }
+  }
+
   getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
 
-    return inputValue.length ?
-      this.props.onGetSuggestions(inputValue) :
-      [];
+    if (inputValue) {
+      if (this.props.onGetSuggestions) {
+        this.props.onGetSuggestions(inputValue);
+        return this.props.data.items;
+      }
+
+      return this.props.data.items.filter(data => data.item.toLowerCase().slice(0, inputLength) === inputValue);
+    }
+
+    return [];
   }
 
   getSuggestionValue = suggestion => suggestion.item;
-
-  checkIfHasSuggestions (nextProps) {
-    const showNoSuggestionsText = !nextProps.data.items.length && this.state.value.length;
-
-    this.setState({showNoSuggestionsText});
-  }
 
   hideNoSuggestionsText = () => {
     this.setState({
@@ -140,17 +149,11 @@ export default class Autocomplete extends React.Component {
     );
   }
 
-  handleSelection = (e, {method}) => {
-    if (method === 'enter' && !this.props.submitOnEnter) {
-      e.preventDefault();
-    }
-  }
-
   updateValue (value) {
     this.setState({value});
   }
 
-  renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>({suggestion.itemInfo})</span></span>;
+  renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span></span>;
 
   render () {
     const {
@@ -168,8 +171,9 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     const {
-      showNoSuggestionsText,
       showError,
+      showNoSuggestionsText,
+      suggestions,
       value
     } = this.state;
 
@@ -184,8 +188,6 @@ export default class Autocomplete extends React.Component {
       required,
       value
     };
-
-    const suggestions = this.props.data.items.length ? this.props.data.items : [];
 
     return (
       <div
@@ -216,7 +218,7 @@ export default class Autocomplete extends React.Component {
             focusInputOnSuggestionClick={!isMobile}
             getSuggestionValue={this.getSuggestionValue}
             inputProps={inputProps}
-            onSuggestionSelected={this.handleSelection}
+            onSuggestionSelected={this.onSuggestionSelected}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             renderSuggestion={this.renderSuggestion}
@@ -231,7 +233,7 @@ export default class Autocomplete extends React.Component {
             </span>
           }
 
-          {!isFetching && showNoSuggestionsText ?
+          {!isFetching && !suggestions.length && value && showNoSuggestionsText ?
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>
