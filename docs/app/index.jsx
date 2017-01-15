@@ -4,6 +4,7 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import 'font-awesome-webpack';
 
 import App from 'components/App';
+import AutocompleteDocs from 'components/AutocompleteDocs';
 import CheckboxGroupDocs from 'components/CheckboxGroupDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
@@ -23,6 +24,7 @@ import '../../main.scss';
 const getRoutes = () => (
   <Route path="/" component={App} >
     <IndexRoute component={CheckboxGroupDocs} />
+    <Route path="/autocomplete" component={AutocompleteDocs} />
     <Route path="/checkbox-group" component={CheckboxGroupDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
