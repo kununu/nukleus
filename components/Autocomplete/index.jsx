@@ -16,7 +16,7 @@ export default class Autocomplete extends React.Component {
     label: PropTypes.string.isRequired,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
-    noSuggestionText: PropTypes.string.isRequired,
+    noSuggestionText: PropTypes.string,
     onGetSuggestions: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
@@ -24,7 +24,6 @@ export default class Autocomplete extends React.Component {
     requiredLabel: PropTypes.string,
     scrollTo: PropTypes.bool,
     submitOnEnter: PropTypes.bool,
-    suggestionsFooter: PropTypes.any,
     value: PropTypes.string
   };
 
@@ -40,7 +39,7 @@ export default class Autocomplete extends React.Component {
   state = {
     showError: false,
     showNoSuggestionsText: false,
-    suggestions: [],
+    suggestions: this.props.data.items || [],
     value: ''
   };
 
@@ -87,12 +86,13 @@ export default class Autocomplete extends React.Component {
 
   getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
+
     return inputValue.length ?
       this.props.onGetSuggestions(inputValue) :
       [];
   }
 
-  getSuggestionValue = suggestion => suggestion.item
+  getSuggestionValue = suggestion => suggestion.item;
 
   checkIfHasSuggestions (nextProps) {
     const showNoSuggestionsText = !nextProps.data.items.length && this.state.value.length;
@@ -150,18 +150,7 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
-  renderSuggestionsContainer = ({children, ...rest}) => (
-    <div {...rest}>
-      {children}
-      {this.props.suggestionsFooter && children &&
-        <div className={styles.suggestionsFooter}>
-          {this.props.suggestionsFooter}
-        </div>
-      }
-    </div>
-  );
-
-  renderSuggestion = suggestion => <span>{suggestion.item} <span className={styles.suggestionInfo}>({suggestion.itemInfo})</span></span>;
+  renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>({suggestion.itemInfo})</span></span>;
 
   render () {
     const {
@@ -175,8 +164,7 @@ export default class Autocomplete extends React.Component {
       noSuggestionText,
       placeholder,
       required,
-      requiredLabel,
-      suggestionsFooter
+      requiredLabel
     } = this.props;
 
     const {
@@ -184,8 +172,6 @@ export default class Autocomplete extends React.Component {
       showError,
       value
     } = this.state;
-
-    const suggestions = this.props.data.items.length ? this.props.data.items : [];
 
     const inputProps = {
       disabled,
@@ -198,6 +184,8 @@ export default class Autocomplete extends React.Component {
       required,
       value
     };
+
+    const suggestions = this.props.data.items.length ? this.props.data.items : [];
 
     return (
       <div
@@ -232,7 +220,6 @@ export default class Autocomplete extends React.Component {
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             renderSuggestion={this.renderSuggestion}
-            renderSuggestionsContainer={this.renderSuggestionsContainer}
             suggestions={suggestions}
             theme={styles} />
 
@@ -244,12 +231,11 @@ export default class Autocomplete extends React.Component {
             </span>
           }
 
-          {showNoSuggestionsText ?
+          {!isFetching && showNoSuggestionsText ?
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>
-                  {suggestionsFooter || noSuggestionText
-                  }
+                  {noSuggestionText}
                 </li>
               </ul>
             </div>
