@@ -22,6 +22,7 @@ export default class Autocomplete extends React.Component {
     query: PropTypes.object,
     required: PropTypes.bool,
     requiredLabel: PropTypes.string,
+    scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
     submitOnEnter: PropTypes.bool,
     value: PropTypes.string
@@ -130,12 +131,13 @@ export default class Autocomplete extends React.Component {
   // TODO: Move this function into utilities so other components can use it
   scrollToElement = () => {
     if (this.props.scrollTo && isMobile) {
+      const offset = this.props.scrollOffset || 0;
       const box = this.node.getBoundingClientRect();
       const body = document.body;
       const docElem = document.documentElement;
       const scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
       const clientTop = docElem.clientTop || body.clientTop || 0;
-      const elementPos = (box.top + scrollTop) - clientTop;
+      const elementPos = (box.top + scrollTop) - clientTop - offset;
       const scroll = Scroll.animateScroll;
 
       scroll.scrollTo(elementPos);
