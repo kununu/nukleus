@@ -5,8 +5,7 @@ import Scroll from 'react-scroll';
 import styles from './index.scss';
 
 import getElementPositionY from '../../utils/elementPosition';
-
-const isMobile = window.outerWidth < 550;
+import isMobile from '../../utils/mobileDetection';
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
