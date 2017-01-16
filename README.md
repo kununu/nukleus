@@ -12,6 +12,7 @@ A collection of React user interface components.
 
 Components include:
 
+- Autocomplete
 - Button
 - CheckboxGroup
 - Combobox

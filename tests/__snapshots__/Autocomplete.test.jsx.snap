@@ -1,0 +1,791 @@
+exports[`test Hides no suggestions on blur 1`] = `
+<Autocomplete
+  data={
+    Object {
+      "items": Array [
+        Object {
+          "item": "apple",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "alpha",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "IBM",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "US",
+        },
+      ],
+    }
+  }
+  disabled={true}
+  error={null}
+  id="autocompletes"
+  inputStyle="inline"
+  label="Autocomplete"
+  name="autocomplete"
+  noSuggestionText="No results found"
+  placeholder="Type something..."
+  query={Object {}}
+  required={true}
+  requiredLabel="Required"
+  scrollOffset={70}
+  scrollTo={true}
+  value="test">
+  <div
+    className="form-group inline">
+    <span
+      className="control-note requiredLabel">
+      Required
+    </span>
+    <label
+      className="control-label undefined"
+      htmlFor="autocompletes">
+      Autocomplete
+    </label>
+    <div
+      className="autoCompleteContainer">
+      <Autosuggest
+        alwaysRenderSuggestions={false}
+        focusFirstSuggestion={true}
+        focusInputOnSuggestionClick={true}
+        getSuggestionValue={[Function]}
+        id="1"
+        inputProps={
+          Object {
+            "disabled": true,
+            "id": "autocompletes",
+            "name": "autocomplete",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "onFocus": [Function],
+            "placeholder": "Type something...",
+            "required": true,
+            "value": "z",
+          }
+        }
+        multiSection={false}
+        onSuggestionSelected={[Function]}
+        onSuggestionsClearRequested={[Function]}
+        onSuggestionsFetchRequested={[Function]}
+        renderSuggestion={[Function]}
+        shouldRenderSuggestions={[Function]}
+        suggestions={Array []}
+        theme={undefined {}}>
+        <Autowhatever
+          focusedItemIndex={null}
+          focusedSectionIndex={null}
+          getSectionItems={[Function]}
+          id="1"
+          inputProps={
+            Object {
+              "disabled": true,
+              "id": "autocompletes",
+              "name": "autocomplete",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Type something...",
+              "required": true,
+              "value": "z",
+            }
+          }
+          itemProps={[Function]}
+          items={Array []}
+          multiSection={false}
+          renderInputComponent={[Function]}
+          renderItem={[Function]}
+          renderItemData={
+            Object {
+              "query": "z",
+            }
+          }
+          renderItemsContainer={[Function]}
+          renderSectionTitle={[Function]}
+          shouldRenderSection={[Function]}
+          theme={Object {}}>
+          <div
+            style={Object {}}>
+            <input
+              aria-activedescendant={null}
+              aria-autocomplete="list"
+              aria-expanded={false}
+              aria-haspopup={false}
+              aria-owns="react-autowhatever-1"
+              autoComplete="off"
+              disabled={true}
+              id="autocompletes"
+              name="autocomplete"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Type something..."
+              required={true}
+              role="combobox"
+              style={Object {}}
+              type="text"
+              value="z" />
+            <div
+              id="react-autowhatever-1"
+              style={Object {}} />
+          </div>
+        </Autowhatever>
+      </Autosuggest>
+    </div>
+  </div>
+</Autocomplete>
+`;
+
+exports[`test Renders Autocomplete without crashing 1`] = `
+<div
+  className="form-group inline">
+  <span
+    className="control-note requiredLabel">
+    Required
+  </span>
+  <label
+    className="control-label undefined"
+    htmlFor="autocompletes">
+    Autocomplete
+  </label>
+  <div
+    className="autoCompleteContainer">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        disabled={true}
+        id="autocompletes"
+        name="autocomplete"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type something..."
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="test" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`test Renders no suggestions container 1`] = `
+<Autocomplete
+  data={
+    Object {
+      "items": Array [
+        Object {
+          "item": "apple",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "alpha",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "IBM",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "US",
+        },
+      ],
+    }
+  }
+  disabled={true}
+  error={null}
+  id="autocompletes"
+  inputStyle="inline"
+  label="Autocomplete"
+  name="autocomplete"
+  noSuggestionText="No results found"
+  placeholder="Type something..."
+  query={Object {}}
+  required={true}
+  requiredLabel="Required"
+  scrollOffset={70}
+  scrollTo={true}
+  value="test">
+  <div
+    className="form-group inline">
+    <span
+      className="control-note requiredLabel">
+      Required
+    </span>
+    <label
+      className="control-label undefined"
+      htmlFor="autocompletes">
+      Autocomplete
+    </label>
+    <div
+      className="autoCompleteContainer">
+      <Autosuggest
+        alwaysRenderSuggestions={false}
+        focusFirstSuggestion={true}
+        focusInputOnSuggestionClick={true}
+        getSuggestionValue={[Function]}
+        id="1"
+        inputProps={
+          Object {
+            "disabled": true,
+            "id": "autocompletes",
+            "name": "autocomplete",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "onFocus": [Function],
+            "placeholder": "Type something...",
+            "required": true,
+            "value": "z",
+          }
+        }
+        multiSection={false}
+        onSuggestionSelected={[Function]}
+        onSuggestionsClearRequested={[Function]}
+        onSuggestionsFetchRequested={[Function]}
+        renderSuggestion={[Function]}
+        shouldRenderSuggestions={[Function]}
+        suggestions={Array []}
+        theme={undefined {}}>
+        <Autowhatever
+          focusedItemIndex={null}
+          focusedSectionIndex={null}
+          getSectionItems={[Function]}
+          id="1"
+          inputProps={
+            Object {
+              "disabled": true,
+              "id": "autocompletes",
+              "name": "autocomplete",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Type something...",
+              "required": true,
+              "value": "z",
+            }
+          }
+          itemProps={[Function]}
+          items={Array []}
+          multiSection={false}
+          renderInputComponent={[Function]}
+          renderItem={[Function]}
+          renderItemData={
+            Object {
+              "query": "z",
+            }
+          }
+          renderItemsContainer={[Function]}
+          renderSectionTitle={[Function]}
+          shouldRenderSection={[Function]}
+          theme={Object {}}>
+          <div
+            style={Object {}}>
+            <input
+              aria-activedescendant={null}
+              aria-autocomplete="list"
+              aria-expanded={false}
+              aria-haspopup={false}
+              aria-owns="react-autowhatever-1"
+              autoComplete="off"
+              disabled={true}
+              id="autocompletes"
+              name="autocomplete"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Type something..."
+              required={true}
+              role="combobox"
+              style={Object {}}
+              type="text"
+              value="z" />
+            <div
+              id="react-autowhatever-1"
+              style={Object {}} />
+          </div>
+        </Autowhatever>
+      </Autosuggest>
+      <div
+        className="suggestionsContainer">
+        <ul>
+          <li
+            className="suggestion">
+            No results found
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Autocomplete>
+`;
+
+exports[`test Renders suggestions container 1`] = `
+<Autocomplete
+  data={
+    Object {
+      "items": Array [
+        Object {
+          "item": "apple",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "alpha",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "IBM",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "US",
+        },
+      ],
+    }
+  }
+  disabled={true}
+  error={null}
+  id="autocompletes"
+  inputStyle="inline"
+  label="Autocomplete"
+  name="autocomplete"
+  noSuggestionText="No results found"
+  placeholder="Type something..."
+  query={Object {}}
+  required={true}
+  requiredLabel="Required"
+  scrollOffset={70}
+  scrollTo={true}
+  value="test">
+  <div
+    className="form-group inline">
+    <span
+      className="control-note requiredLabel">
+      Required
+    </span>
+    <label
+      className="control-label undefined"
+      htmlFor="autocompletes">
+      Autocomplete
+    </label>
+    <div
+      className="autoCompleteContainer">
+      <Autosuggest
+        alwaysRenderSuggestions={false}
+        focusFirstSuggestion={true}
+        focusInputOnSuggestionClick={true}
+        getSuggestionValue={[Function]}
+        id="1"
+        inputProps={
+          Object {
+            "disabled": true,
+            "id": "autocompletes",
+            "name": "autocomplete",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "onFocus": [Function],
+            "placeholder": "Type something...",
+            "required": true,
+            "value": "a",
+          }
+        }
+        multiSection={false}
+        onSuggestionSelected={[Function]}
+        onSuggestionsClearRequested={[Function]}
+        onSuggestionsFetchRequested={[Function]}
+        renderSuggestion={[Function]}
+        shouldRenderSuggestions={[Function]}
+        suggestions={
+          Array [
+            Object {
+              "item": "apple",
+              "itemInfo": "US",
+            },
+            Object {
+              "item": "alpha",
+              "itemInfo": "Vienna",
+            },
+          ]
+        }
+        theme={undefined {}}>
+        <Autowhatever
+          focusedItemIndex={0}
+          focusedSectionIndex={null}
+          getSectionItems={[Function]}
+          id="1"
+          inputProps={
+            Object {
+              "disabled": true,
+              "id": "autocompletes",
+              "name": "autocomplete",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Type something...",
+              "required": true,
+              "value": "a",
+            }
+          }
+          itemProps={[Function]}
+          items={
+            Array [
+              Object {
+                "item": "apple",
+                "itemInfo": "US",
+              },
+              Object {
+                "item": "alpha",
+                "itemInfo": "Vienna",
+              },
+            ]
+          }
+          multiSection={false}
+          renderInputComponent={[Function]}
+          renderItem={[Function]}
+          renderItemData={
+            Object {
+              "query": "a",
+            }
+          }
+          renderItemsContainer={[Function]}
+          renderSectionTitle={[Function]}
+          shouldRenderSection={[Function]}
+          theme={Object {}}>
+          <div
+            style={Object {}}>
+            <input
+              aria-activedescendant="react-autowhatever-1--item-0"
+              aria-autocomplete="list"
+              aria-expanded={true}
+              aria-haspopup={true}
+              aria-owns="react-autowhatever-1"
+              autoComplete="off"
+              disabled={true}
+              id="autocompletes"
+              name="autocomplete"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Type something..."
+              required={true}
+              role="combobox"
+              style={Object {}}
+              type="text"
+              value="a" />
+            <div
+              id="react-autowhatever-1"
+              style={Object {}}>
+              <ItemsList
+                focusedItemIndex={0}
+                getItemId={[Function]}
+                itemProps={[Function]}
+                items={
+                  Array [
+                    Object {
+                      "item": "apple",
+                      "itemInfo": "US",
+                    },
+                    Object {
+                      "item": "alpha",
+                      "itemInfo": "Vienna",
+                    },
+                  ]
+                }
+                keyPrefix="react-autowhatever-1-"
+                onFocusedItemChange={[Function]}
+                renderItem={[Function]}
+                renderItemData={
+                  Object {
+                    "query": "a",
+                  }
+                }
+                sectionIndex={null}
+                theme={[Function]}>
+                <ul
+                  role="listbox"
+                  style={Object {}}>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={0}
+                    id="react-autowhatever-1--item-0"
+                    item={
+                      Object {
+                        "item": "apple",
+                        "itemInfo": "US",
+                      }
+                    }
+                    itemIndex={0}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "a",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={0}
+                      id="react-autowhatever-1--item-0"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        apple
+                        <span
+                          className="suggestionInfo">
+                           (
+                          US
+                          )
+                        </span>
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={1}
+                    id="react-autowhatever-1--item-1"
+                    item={
+                      Object {
+                        "item": "alpha",
+                        "itemInfo": "Vienna",
+                      }
+                    }
+                    itemIndex={1}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "a",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={1}
+                      id="react-autowhatever-1--item-1"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        alpha
+                        <span
+                          className="suggestionInfo">
+                           (
+                          Vienna
+                          )
+                        </span>
+                      </span>
+                    </li>
+                  </Item>
+                </ul>
+              </ItemsList>
+            </div>
+          </div>
+        </Autowhatever>
+      </Autosuggest>
+    </div>
+  </div>
+</Autocomplete>
+`;
+
+exports[`test Updates value on selection 1`] = `
+<Autocomplete
+  data={
+    Object {
+      "items": Array [
+        Object {
+          "item": "apple",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "alpha",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "IBM",
+          "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "Vienna",
+        },
+        Object {
+          "item": "kununu",
+          "itemInfo": "US",
+        },
+      ],
+    }
+  }
+  disabled={true}
+  error={null}
+  id="autocompletes"
+  inputStyle="inline"
+  label="Autocomplete"
+  name="autocomplete"
+  noSuggestionText="No results found"
+  placeholder="Type something..."
+  query={Object {}}
+  required={true}
+  requiredLabel="Required"
+  scrollOffset={70}
+  scrollTo={true}
+  value="test">
+  <div
+    className="form-group inline">
+    <span
+      className="control-note requiredLabel">
+      Required
+    </span>
+    <label
+      className="control-label undefined"
+      htmlFor="autocompletes">
+      Autocomplete
+    </label>
+    <div
+      className="autoCompleteContainer">
+      <Autosuggest
+        alwaysRenderSuggestions={false}
+        focusFirstSuggestion={true}
+        focusInputOnSuggestionClick={true}
+        getSuggestionValue={[Function]}
+        id="1"
+        inputProps={
+          Object {
+            "disabled": true,
+            "id": "autocompletes",
+            "name": "autocomplete",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "onFocus": [Function],
+            "placeholder": "Type something...",
+            "required": true,
+            "value": "apple",
+          }
+        }
+        multiSection={false}
+        onSuggestionSelected={[Function]}
+        onSuggestionsClearRequested={[Function]}
+        onSuggestionsFetchRequested={[Function]}
+        renderSuggestion={[Function]}
+        shouldRenderSuggestions={[Function]}
+        suggestions={Array []}
+        theme={undefined {}}>
+        <Autowhatever
+          focusedItemIndex={null}
+          focusedSectionIndex={null}
+          getSectionItems={[Function]}
+          id="1"
+          inputProps={
+            Object {
+              "disabled": true,
+              "id": "autocompletes",
+              "name": "autocomplete",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Type something...",
+              "required": true,
+              "value": "apple",
+            }
+          }
+          itemProps={[Function]}
+          items={Array []}
+          multiSection={false}
+          renderInputComponent={[Function]}
+          renderItem={[Function]}
+          renderItemData={
+            Object {
+              "query": "apple",
+            }
+          }
+          renderItemsContainer={[Function]}
+          renderSectionTitle={[Function]}
+          shouldRenderSection={[Function]}
+          theme={Object {}}>
+          <div
+            style={Object {}}>
+            <input
+              aria-activedescendant={null}
+              aria-autocomplete="list"
+              aria-expanded={false}
+              aria-haspopup={false}
+              aria-owns="react-autowhatever-1"
+              autoComplete="off"
+              disabled={true}
+              id="autocompletes"
+              name="autocomplete"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Type something..."
+              required={true}
+              role="combobox"
+              style={Object {}}
+              type="text"
+              value="apple" />
+            <div
+              id="react-autowhatever-1"
+              style={Object {}} />
+          </div>
+        </Autowhatever>
+      </Autosuggest>
+    </div>
+  </div>
+</Autocomplete>
+`;

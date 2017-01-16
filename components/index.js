@@ -1,3 +1,4 @@
+export Autocomplete from './Autocomplete';
 export Button from './Button';
 export CheckboxGroup from './CheckboxGroup';
 export Combobox from './Combobox';

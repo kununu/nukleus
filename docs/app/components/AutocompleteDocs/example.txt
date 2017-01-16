@@ -1,0 +1,16 @@
+<Autocomplete
+  data={{
+    items: [
+      {item: 'apple', itemInfo: 'US'},
+      {item: 'alpha', itemInfo: 'Vienna'},
+      {item: 'IBM', itemInfo: 'US'},
+      {item: 'kununu', itemInfo: 'Vienna'},
+      {item: 'kununu', itemInfo: 'US'}
+    ]
+  }}
+  id="autocompletes"
+  label="Autocomplete"
+  name="autocomplete"
+  placeholder="Type something..."
+  scrollOffset={70}
+  scrollTo />
