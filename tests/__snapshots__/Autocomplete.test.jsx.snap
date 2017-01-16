@@ -1,0 +1,44 @@
+exports[`test Renders Autocomplete without crashing 1`] = `
+<div
+  className="form-group inline">
+  <span
+    className="control-note requiredLabel">
+    Required
+  </span>
+  <label
+    className="control-label undefined"
+    htmlFor="autocompletes">
+    Autocomplete
+  </label>
+  <div
+    className="autoCompleteContainer">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        disabled={true}
+        id="autocompletes"
+        name="autocomplete"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type something..."
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="test" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+  </div>
+</div>
+`;
