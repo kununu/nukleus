@@ -11,15 +11,37 @@ const CheckboxGroupDocs = () => (
   <DocsRoot
     title="CheckboxGroup"
     component={
-      <Choice
-        name="basic"
-        onChange={() => {}}
-        checked="opA"
-        options={{
-          opA: 'Option A',
-          opB: 'Option B',
-          opC: 'Option C'
-        }} />
+      <CheckboxGroup
+        name="checkbox-group[]"
+        heading="CheckboxGroup"
+        checkboxes={
+        [
+          {
+            id: 'option-1',
+            isChecked: true,
+            label: 'option 1',
+            value: 'option-1'
+          },
+          {
+            id: 'option-2',
+            isChecked: true,
+            label: 'option 2',
+            value: 'option-2'
+          },
+          {
+            id: 'option-3',
+            isChecked: false,
+            label: 'option 3',
+            value: 'option-2'
+          },
+          {
+            id: 'option-4',
+            isChecked: false,
+            label: 'option 4',
+            value: 'option-4'
+          }
+        ]
+        } />
     }
     example={example}
     propsDefinition={propsDefinition}
