@@ -21,6 +21,72 @@ const App = ({location: {pathname, query}}) => (
       <div className="panel-body">
 
         <div className="row">
+          <div className="col-md-8">
+            <CheckboxGroup
+              name="checkbox-group[]"
+              heading="CheckboxGroup"
+              inputStyle="buttons"
+              checkboxes={
+              [{
+                id: 'option-1',
+                isChecked: true,
+                label: 'Kantine',
+                value: 'option-1'
+              },
+              {
+                id: 'option-2',
+                isChecked: false,
+                label: 'Essenzulage',
+                value: 'option-2'
+              },
+              {
+                id: 'option-3',
+                isChecked: false,
+                label: 'Parkplatz',
+                value: 'option-2'
+              },
+              {
+                id: 'option-4',
+                isChecked: false,
+                label: 'Firmenwagen',
+                value: 'option-2'
+              },
+              {
+                id: 'option-5',
+                isChecked: false,
+                label: 'Sport-/Freizeitangebote',
+                value: 'option-2'
+              },
+              {
+                id: 'option-6',
+                isChecked: false,
+                label: 'Mitarbeiter Events',
+                value: 'option-2'
+              },
+              {
+                id: 'option-7',
+                isChecked: false,
+                label: 'Sonderkonditionen und rabatte',
+                value: 'option-2'
+              },
+              {
+                id: 'option-8',
+                isChecked: false,
+                label: 'Gutscheine',
+                value: 'option-2'
+              },
+              {
+                id: 'option-9',
+                isChecked: false,
+                label: 'Fahrtkostenzuschuss',
+                value: 'option-4'
+              }]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-2">
             <Stars
               value={3}
