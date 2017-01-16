@@ -19,8 +19,7 @@ const ChoiceDocs = () => (
           opA: 'Option A',
           opB: 'Option B',
           opC: 'Option C'
-        }}
-      />
+        }} />
     }
     example={example}
     propsDefinition={propsDefinition}
