@@ -40,7 +40,6 @@
     &.focus,
     &:active,
     &.active {
-      text-decoration: none;
       cursor: not-allowed;
       opacity: .65;
     }
@@ -170,5 +169,17 @@
   &:hover {
     text-decoration: underline;
     border-color: transparent;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      text-decoration: none;
+    }
   }
 }
