@@ -23,7 +23,7 @@ import '../../main.scss';
 
 const getRoutes = () => (
   <Route path="/" component={App} >
-    <IndexRoute component={CheckboxGroupDocs} />
+    <IndexRoute component={AutocompleteDocs} />
     <Route path="/autocomplete" component={AutocompleteDocs} />
     <Route path="/checkbox-group" component={CheckboxGroupDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
