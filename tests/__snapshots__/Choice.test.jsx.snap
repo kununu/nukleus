@@ -1,0 +1,263 @@
+exports[`test Renders Choice with radio buttons without crashing 1`] = `
+<div
+  className="radioContainer">
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopA"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opA" />
+    <label
+      disabled={false}
+      htmlFor="testopA"
+      id={0}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option A
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopB"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opB" />
+    <label
+      disabled={false}
+      htmlFor="testopB"
+      id={1}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option B
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopC"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opC" />
+    <label
+      disabled={false}
+      htmlFor="testopC"
+      id={2}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option C
+    </label>
+  </div>
+</div>
+`;
+
+exports[`test Renders a Choice with custom style without crasing 1`] = `
+<div
+  className="radioContainer">
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopA"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opA" />
+    <label
+      disabled={false}
+      htmlFor="testopA"
+      id={0}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option A
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopB"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opB" />
+    <label
+      disabled={false}
+      htmlFor="testopB"
+      id={1}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option B
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopC"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opC" />
+    <label
+      disabled={false}
+      htmlFor="testopC"
+      id={2}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option C
+    </label>
+  </div>
+</div>
+`;
+
+exports[`test Renders a Choice with default checked without crashing 1`] = `
+<div
+  className="radioContainer">
+  <div
+    className="radioButton">
+    <input
+      checked={true}
+      id="testopA"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opA" />
+    <label
+      disabled={false}
+      htmlFor="testopA"
+      id={0}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option A
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopB"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opB" />
+    <label
+      disabled={false}
+      htmlFor="testopB"
+      id={1}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option B
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopC"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opC" />
+    <label
+      disabled={false}
+      htmlFor="testopC"
+      id={2}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option C
+    </label>
+  </div>
+</div>
+`;
+
+exports[`test Renders a disabled Choice without crashing 1`] = `
+<div
+  className="radioContainer">
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopA"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opA" />
+    <label
+      disabled={true}
+      htmlFor="testopA"
+      id={0}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option A
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopB"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opB" />
+    <label
+      disabled={true}
+      htmlFor="testopB"
+      id={1}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option B
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopC"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opC" />
+    <label
+      disabled={true}
+      htmlFor="testopC"
+      id={2}
+      onMouseOut={undefined}
+      onMouseOver={undefined}
+      style={undefined}>
+      Option C
+    </label>
+  </div>
+</div>
+`;
