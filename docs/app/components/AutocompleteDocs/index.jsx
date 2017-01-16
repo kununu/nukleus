@@ -13,7 +13,6 @@ const AutocompleteDocs = () => (
     component={
       <Autocomplete
         data={{
-          isFetching: false,
           items: [
             {item: 'apple', itemInfo: 'US'},
             {item: 'alpha', itemInfo: 'Vienna'},
