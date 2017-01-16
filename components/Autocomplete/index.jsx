@@ -2,10 +2,10 @@ import React, {PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
 import Scroll from 'react-scroll';
 
-import styles from './index.scss';
+import getElementPositionY from 'utils/elementPosition';
+import isMobile from 'utils/mobileDetection';
 
-import getElementPositionY from '../../utils/elementPosition';
-import isMobile from '../../utils/mobileDetection';
+import styles from './index.scss';
 
 export default class Autocomplete extends React.Component {
   static propTypes = {

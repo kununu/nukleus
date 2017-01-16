@@ -79,12 +79,12 @@ const App = ({location: {pathname, query}}) => (
           <div className="col-md-8">
             <Autocomplete
               data={{
-                isFetching: false,
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
                   {item: 'meowing', itemInfo: 'harder'}
                 ]
               }}
+              scrollTo
               id="test"
               value="purrr"
               query={query}
