@@ -232,7 +232,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              checked={'opA'}
+              checked="opA"
               name="disabled"
               onChange={() => {}}
               disabled
@@ -249,7 +249,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              checked={'opA'}
+              checked="opA"
               name="custom"
               onChange={() => {}}
               choiceStyle={{

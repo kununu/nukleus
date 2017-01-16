@@ -14,8 +14,7 @@ export default class Choice extends Component {
   };
 
   static defaultProps = {
-    checked: '',
-    disabled: false
+    checked: ''
   };
 
   state = {
@@ -23,7 +22,7 @@ export default class Choice extends Component {
     isHovering: (new Array(Object.keys(this.props.options).length)).fill(false)
   };
 
-  onChangeHandler = e => {
+  onChange = e => {
     if (this.props.disabled) return;
 
     this.props.onChange(e);
@@ -32,14 +31,14 @@ export default class Choice extends Component {
     });
   };
 
-  onMouseOverHandler = e => {
+  onMouseOver = e => {
     if (this.props.disabled) return;
 
     this.state.isHovering[e.target.id] = true;
     this.setState(this.state);
   }
 
-  onMouseOutHandler = e => {
+  onMouseOut = e => {
     if (this.props.disabled) return;
 
     this.state.isHovering[e.target.id] = false;
@@ -48,37 +47,48 @@ export default class Choice extends Component {
 
   render () {
     const labelsStyle = [];
-    if (this.props.choiceStyle) {
-      Object.keys(this.props.options).forEach((key, idx) => {
-        if (this.state.isHovering[idx] && !this.props.disabled) {
-          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.hoverColor};
-        } else if (this.state.checked === key) {
-          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.checkedColor};
+    const {
+      choiceStyle,
+      disabled,
+      name,
+      options
+    } = this.props;
+    const {
+      checked,
+      isHovering
+    } = this.state;
+
+    if (choiceStyle) {
+      Object.keys(options).forEach((key, idx) => {
+        if (isHovering[idx] && !disabled) {
+          labelsStyle[idx] = {backgroundColor: choiceStyle.hoverColor};
+        } else if (checked === key) {
+          labelsStyle[idx] = {backgroundColor: choiceStyle.checkedColor};
         } else {
-          labelsStyle[idx] = {backgroundColor: this.props.choiceStyle.uncheckedColor};
+          labelsStyle[idx] = {backgroundColor: choiceStyle.uncheckedColor};
         }
       });
     }
 
     return (
       <div className={styles.radioContainer}>
-        {Object.keys(this.props.options).map((key, idx) =>
+        {Object.keys(options).map((key, idx) =>
           <div className={styles.radioButton} key={idx}>
             <input
               type="radio"
               value={key}
-              id={this.props.name + key}
-              name={this.props.name}
-              checked={this.state.checked === key}
-              onChange={this.onChangeHandler} />
+              id={name + key}
+              name={name}
+              checked={checked === key}
+              onChange={this.onChange} />
             <label
-              disabled={this.props.disabled}
+              disabled={disabled}
               id={idx}
-              htmlFor={this.props.name + key}
-              onMouseOver={this.props.choiceStyle && this.onMouseOverHandler}
-              onMouseOut={this.props.choiceStyle && this.onMouseOutHandler}
+              htmlFor={name + key}
+              onMouseOver={choiceStyle && this.onMouseOver}
+              onMouseOut={choiceStyle && this.onMouseOut}
               style={labelsStyle[idx]}>
-              {this.props.options[key]}
+              {options[key]}
             </label>
           </div>
         )}
