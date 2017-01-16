@@ -61,7 +61,82 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders a Choice with custom style without crasing 1`] = `
+exports[`test Renders a Choice with custom style disabled 1`] = `
+<div
+  className="radioContainer">
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopA"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opA" />
+    <label
+      disabled={true}
+      htmlFor="testopA"
+      id={0}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option A
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopB"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opB" />
+    <label
+      disabled={true}
+      htmlFor="testopB"
+      id={1}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option B
+    </label>
+  </div>
+  <div
+    className="radioButton">
+    <input
+      checked={false}
+      id="testopC"
+      name="test"
+      onChange={[Function]}
+      type="radio"
+      value="opC" />
+    <label
+      disabled={true}
+      htmlFor="testopC"
+      id={2}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fffaec",
+        }
+      }>
+      Option C
+    </label>
+  </div>
+</div>
+`;
+
+exports[`test Renders a Choice with custom style without crashing 1`] = `
 <div
   className="radioContainer">
   <div

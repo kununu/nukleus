@@ -53,7 +53,7 @@ test('Renders a Choice with default checked without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders a Choice with custom style without crasing', () => {
+test('Renders a Choice with custom style without crashing', () => {
   const component = renderer.create(
     <Choice
       name="test"
@@ -67,6 +67,28 @@ test('Renders a Choice with custom style without crasing', () => {
         hoverColor: '#778992  ',
         uncheckedColor: '#fffaec'
       }}
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with custom style disabled', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={{
+        opA: 'Option A',
+        opB: 'Option B',
+        opC: 'Option C'
+      }}
+      choiceStyle={{
+        checkedColor: '#2286dc',
+        hoverColor: '#778992  ',
+        uncheckedColor: '#fffaec'
+      }}
+      disabled
       onChange={() => {}} />
   );
 
