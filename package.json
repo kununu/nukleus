@@ -2,7 +2,8 @@
   "name": "nukleus",
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
+      "\\.(css|scss)$": "identity-obj-proxy",
+      "^utils(.*)$": "<rootDir>/utils$1"
     },
     "moduleDirectories": [
       "components",
