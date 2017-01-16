@@ -4,6 +4,8 @@ import Scroll from 'react-scroll';
 
 import styles from './index.scss';
 
+import getElementPositionY from '../../utils/elementPosition';
+
 const isMobile = window.outerWidth < 550;
 
 export default class Autocomplete extends React.Component {
@@ -128,18 +130,10 @@ export default class Autocomplete extends React.Component {
     });
   }
 
-  // TODO: Move this function into utilities so other components can use it
   scrollToElement = () => {
     if (this.props.scrollTo && isMobile) {
-      const offset = this.props.scrollOffset || 0;
-      const box = this.node.getBoundingClientRect();
-      const body = document.body;
-      const docElem = document.documentElement;
-      const scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
-      const clientTop = docElem.clientTop || body.clientTop || 0;
-      const elementPos = (box.top + scrollTop) - clientTop - offset;
+      const elementPos = getElementPositionY(this.node, this.props.scrollOffset);
       const scroll = Scroll.animateScroll;
-
       scroll.scrollTo(elementPos);
     }
   }
@@ -193,6 +187,7 @@ export default class Autocomplete extends React.Component {
 
     return (
       <div
+        ref={node => this.node = node}
         className={`form-group ${styles[this.props.inputStyle]}`}>
 
         {requiredLabel &&
@@ -208,7 +203,6 @@ export default class Autocomplete extends React.Component {
         }
 
         <label
-          ref={node => this.node = node}
           className={`control-label ${labelHidden && 'hidden'}`}
           htmlFor={id}>
           {label}
