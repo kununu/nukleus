@@ -7,6 +7,7 @@ import styles from './index.scss';
 
 const components = [
   'CheckboxGroup',
+  'Choice',
   'Combobox',
   'DatePicker',
   'InfoText',

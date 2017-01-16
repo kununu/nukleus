@@ -24,8 +24,8 @@ import '../../main.scss';
 const getRoutes = () => (
   <Route path="/" component={App} >
     <IndexRoute component={CheckboxGroupDocs} />
-    <Route path="/checkbox-group" component={ChoiceDocs} />
-    <Route path="/choice" component={CheckboxGroupDocs} />
+    <Route path="/checkbox-group" component={CheckboxGroupDocs} />
+    <Route path="/choice" component={ChoiceDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
     <Route path="/logo" component={LogoDocs} />
