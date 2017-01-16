@@ -1,40 +1,12 @@
-exports[`test Renders Button with anchor crashing 1`] = `
-<a
-  className="primary button"
-  disabled={false}
-  onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
-  style={Object {}}>
-  Test
-</a>
-`;
-
-exports[`test Renders Button with button without crashing 1`] = `
-<button
-  className="primary button"
-  disabled={false}
-  onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
-  style={Object {}}>
-  Test
-</button>
-`;
-
 exports[`test Renders Button with outline 1`] = `
 <button
-  className="primary button outline"
-  disabled={false}
+  className="button outline primary"
+  disabled={undefined}
   onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
   style={Object {}}>
   Test
 </button>
@@ -42,13 +14,13 @@ exports[`test Renders Button with outline 1`] = `
 
 exports[`test Renders a disabled Button 1`] = `
 <button
-  className="primary button"
+  className="button primary"
   disabled={true}
   onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
   style={Object {}}>
   Test
 </button>
@@ -56,13 +28,13 @@ exports[`test Renders a disabled Button 1`] = `
 
 exports[`test Renders a full width button 1`] = `
 <button
-  className="primary button fullWidth"
-  disabled={false}
+  className="button fullWidth primary"
+  disabled={undefined}
   onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
   style={Object {}}>
   Test
 </button>
@@ -70,13 +42,138 @@ exports[`test Renders a full width button 1`] = `
 
 exports[`test Renders a full width button 2`] = `
 <button
-  className="primary button mobileFullWidth"
-  disabled={false}
+  className="button mobileFullWidth primary"
+  disabled={undefined}
   onClick={[Function]}
-  onMouseDown={false}
-  onMouseOut={false}
-  onMouseOver={false}
-  onMouseUp={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}>
+  Test
+</button>
+`;
+
+exports[`test Renders anchor button without crashing 1`] = `
+<a
+  className="button primary"
+  disabled={undefined}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}>
+  Test
+</a>
+`;
+
+exports[`test Renders button with custom style 1`] = `
+<button
+  className="button custom"
+  disabled={undefined}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#cc9900",
+      "color": "#cccc00",
+    }
+  }>
+  Custom Button
+</button>
+`;
+
+exports[`test Renders button with custom style disabled 1`] = `
+<button
+  className="button custom"
+  disabled={true}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#cc9900",
+      "color": "#cccc00",
+    }
+  }>
+  Custom Button
+</button>
+`;
+
+exports[`test Renders button with custom style disabled 2`] = `
+<button
+  className="button custom"
+  disabled={true}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#cc9900",
+      "color": "#cccc00",
+    }
+  }>
+  Custom Button
+</button>
+`;
+
+exports[`test Renders button with custom style outline 1`] = `
+<button
+  className="button outline custom"
+  disabled={undefined}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "border": "1px solid #cc9900",
+      "color": "#cc9900",
+    }
+  }>
+  Custom Button
+</button>
+`;
+
+exports[`test Renders button with custom style outline and disabled 1`] = `
+<button
+  className="button outline custom"
+  disabled={true}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "border": "1px solid #cc9900",
+      "color": "#cc9900",
+    }
+  }>
+  Custom Button
+</button>
+`;
+
+exports[`test Renders button without crashing 1`] = `
+<button
+  className="button primary"
+  disabled={undefined}
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
   style={Object {}}>
   Test
 </button>

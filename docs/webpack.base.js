@@ -21,6 +21,7 @@ module.exports = {
     ],
     alias: {
       nukleus: path.resolve(__dirname, '..', 'components'),
+      utils: path.resolve(__dirname, '..', 'utils'),
       react: path.join(__dirname, 'node_modules', 'react')
     }
   },

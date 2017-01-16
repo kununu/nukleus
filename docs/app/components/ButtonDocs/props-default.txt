@@ -1,7 +1,3 @@
 defaultProps: {
-  disabled: false,
-  fullWidth: false,
-  mobileFullWidth: false,
-  outline: false,
   type: 'primary'
 }

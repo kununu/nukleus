@@ -1,4 +1,3 @@
 <Button
   buttonStyle="primary"
-  text="Primary Button"
-  onClick={() => {}}/>
+  text="Primary Button"/>

@@ -2,9 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import classNames from 'classnames';
 
-import styles from './index.scss';
+import {lighten, darken} from 'utils/colorChanger';
 
-import {lighten, darken} from '../../utils/colorChanger';
+import styles from './index.scss';
 
 export default class Button extends Component {
   static propTypes = {
@@ -20,10 +20,6 @@ export default class Button extends Component {
   };
 
   static defaultProps = {
-    disabled: false,
-    fullWidth: false,
-    mobileFullWidth: false,
-    outline: false,
     type: 'primary'
   };
 
@@ -32,7 +28,7 @@ export default class Button extends Component {
     isHovering: false
   }
 
-  onClickHandler = e => {
+  onClick = e => {
     e.preventDefault();
 
     if (this.props.disabled) return;
@@ -40,93 +36,125 @@ export default class Button extends Component {
     this.props.onClick();
   }
 
-  onMouseOverHandler = () => {
-    if (this.props.disabled) return;
+  onMouseOver = () => {
+    if (this.props.disabled || this.props.type !== 'custom') return;
 
     this.setState({isHovering: true});
   }
 
-  onMouseOutHandler = () => {
-    if (this.props.disabled) return;
+  onMouseOut = () => {
+    if (this.props.disabled || this.props.type !== 'custom') return;
 
     this.setState({isHovering: false});
   }
 
-  onMouseDownHandler = () => {
-    if (this.props.disabled) return;
+  onMouseDown = () => {
+    if (this.props.disabled || this.props.type !== 'custom') return;
 
     this.setState({isActive: true});
   }
 
-  onMouseUpHandler = () => {
-    if (this.props.disabled) return;
+  onMouseUp = () => {
+    if (this.props.disabled || this.props.type !== 'custom') return;
 
     this.setState({isActive: false});
   }
 
-  render () {
-    const style = {};
-    if (this.props.type === 'custom') {
-      style.backgroundColor = this.props.buttonStyle.backgroundColor;
-      style.color = this.props.buttonStyle.color;
-      if (this.props.outline) {
-        style.border = `1px solid ${this.props.buttonStyle.color}`;
-      }
+  getCustomStyles = () => {
+    const {
+      buttonStyle,
+      disabled,
+      outline
+    } = this.props;
 
-      if (!this.props.disabled) {
-        if (this.state.isActive) {
-          if (this.props.outline) {
-            const color = lighten(this.props.buttonStyle.color, 5);
-            style.border = `1px solid ${color}`;
-            style.color = color;
-          } else {
-            style.backgroundColor = darken(this.props.buttonStyle.backgroundColor, 5);
-          }
-        } else if (this.state.isHovering) {
-          if (this.props.outline) {
-            const color = darken(this.props.buttonStyle.color, 5);
-            style.border = `1px solid ${color}`;
-            style.color = color;
-          } else {
-            style.backgroundColor = lighten(this.props.buttonStyle.backgroundColor, 5);
-          }
-        }
+    const {
+      isActive,
+      isHovering
+    } = this.state;
+
+    const style = {};
+
+    style.backgroundColor = buttonStyle.backgroundColor;
+    style.color = buttonStyle.color;
+
+    if (outline) {
+      style.border = `1px solid ${buttonStyle.color}`;
+    }
+
+    if (disabled) {
+      return style;
+    }
+
+    if (isActive) {
+      if (outline) {
+        const color = lighten(buttonStyle.color, 5);
+        style.border = `1px solid ${color}`;
+        style.color = color;
+      } else {
+        style.backgroundColor = darken(buttonStyle.backgroundColor, 5);
+      }
+      return style;
+    }
+
+    if (isHovering) {
+      if (outline) {
+        const color = darken(buttonStyle.color, 5);
+        style.border = `1px solid ${color}`;
+        style.color = color;
+      } else {
+        style.backgroundColor = lighten(buttonStyle.backgroundColor, 5);
       }
     }
 
-    const classes = classNames({
-      [styles[this.props.type]]: true,
-      [styles.button]: true,
-      [styles.fullWidth]: this.props.fullWidth,
-      [styles.mobileFullWidth]: this.props.mobileFullWidth,
-      [styles.outline]: this.props.outline
+    return style;
+  }
 
+  render () {
+    const {
+      disabled,
+      fullWidth,
+      link,
+      mobileFullWidth,
+      outline,
+      text,
+      type
+    } = this.props;
+
+    const style = type === 'custom' ? this.getCustomStyles() : {};
+
+    const classes = classNames({
+      [styles.button]: true,
+      [styles.fullWidth]: fullWidth,
+      [styles.mobileFullWidth]: mobileFullWidth,
+      [styles.outline]: outline,
+      [styles[type]]: true
     });
 
     const props = {
       className: classes,
-      disabled: this.props.disabled,
-      onClick: this.props.onClick && this.onClickHandler,
-      onMouseDown: this.props.type === 'custom' && this.onMouseDownHandler,
-      onMouseOut: this.props.type === 'custom' && this.onMouseOutHandler,
-      onMouseOver: this.props.type === 'custom' && this.onMouseOverHandler,
-      onMouseUp: this.props.type === 'custom' && this.onMouseUpHandler,
+      disabled,
+      onClick: this.props.onClick && this.onClick,
+      onMouseDown: this.onMouseDown,
+      onMouseOut: this.onMouseOut,
+      onMouseOver: this.onMouseOver,
+      onMouseUp: this.onMouseUp,
       style
     };
 
-    if (this.props.link && !this.props.disabled) {
+    if (link && !disabled) {
       return (
         <Link
           {...props}
-          to={this.props.link}>
-          {this.props.text}
+          to={link}>
+          {text}
         </Link>
       );
     }
+
     return (
       <button
         {...props}>
-        {this.props.text}
+        {text}
       </button>
     );
   }

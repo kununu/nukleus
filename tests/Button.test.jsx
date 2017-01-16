@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Button from 'Button'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
-test('Renders Button with button without crashing', () => {
+test('Renders button without crashing', () => {
   const component = renderer.create(
     <Button text="Test" onClick={() => {}} />
   );
@@ -12,9 +12,54 @@ test('Renders Button with button without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders Button with anchor without crashing', () => {
+test('Renders anchor button without crashing', () => {
   const component = renderer.create(
     <Button text="Test" link="/" />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders button with custom style', () => {
+  const component = renderer.create(
+    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders button with custom style disabled', () => {
+  const component = renderer.create(
+    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders button with custom style disabled', () => {
+  const component = renderer.create(
+    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders button with custom style outline', () => {
+  const component = renderer.create(
+    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders button with custom style outline and disabled', () => {
+  const component = renderer.create(
+    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
   );
 
   const tree = component.toJSON();
