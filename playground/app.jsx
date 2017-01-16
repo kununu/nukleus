@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
+import Autocomplete from 'components/Autocomplete';
 import CheckboxGroup from 'components/CheckboxGroup';
 import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
@@ -14,7 +15,6 @@ import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
-
 
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
@@ -71,6 +71,30 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Stars value={2.5} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <Autocomplete
+              data={{
+                items: [
+                  {item: 'meow', itemInfo: 'hard'},
+                  {item: 'meowing', itemInfo: 'harder'}
+                ]
+              }}
+              scrollTo
+              id="test"
+              value="purrr"
+              query={query}
+              onGetSuggestions={() => {}}
+              placeholder="Type something..."
+              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              label="Autocomplete"
+              requiredLabel="Required"
+              name="autocomplete" />
           </div>
         </div>
 

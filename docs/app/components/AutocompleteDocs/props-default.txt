@@ -1,0 +1,8 @@
+static defaultProps = {
+  error: null,
+  inputStyle: 'inline',
+  noSuggestionText: 'No results found',
+  placeholder: '',
+  query: {},
+  scrollTo: false
+}
