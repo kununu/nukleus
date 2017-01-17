@@ -1,7 +1,7 @@
 // Standard styled
-<CheckboxGroup
+<MultipleChoice
   name="checkbox-group[]"
-  heading="CheckboxGroup"
+  heading="MultipleChoice"
   checkboxes={
     [
       {
@@ -20,9 +20,9 @@
   } />
 
 // Button styled
-<CheckboxGroup
+<MultipleChoice
   name="checkbox-group[]"
-  heading="CheckboxGroup"
+  heading="MultipleChoice (with buttons)"
   inputStyle="buttons"
   checkboxes={
   [{

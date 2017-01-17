@@ -1,20 +1,20 @@
 import React from 'react';
 
-import {CheckboxGroup} from 'nukleus';
+import {MultipleChoice} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
 
 import {default as example} from './example.txt';
 import {default as propsDefinition} from './props-definition.txt';
 import {default as propsDefault} from './props-default.txt';
 
-const CheckboxGroupDocs = () => (
+const MultipleChoiceDocs = () => (
   <DocsRoot
-    title="CheckboxGroup"
+    title="MultipleChoice"
     component={
       <div>
-        <CheckboxGroup
+        <MultipleChoice
           name="checkbox-group[]"
-          heading="CheckboxGroup"
+          heading="MultipleChoice"
           checkboxes={
           [
             {
@@ -46,9 +46,9 @@ const CheckboxGroupDocs = () => (
 
         <br />
 
-        <CheckboxGroup
+        <MultipleChoice
           name="checkbox-group[]"
-          heading="CheckboxGroup"
+          heading="MultipleChoice (with buttons)"
           inputStyle="buttons"
           checkboxes={
           [{
@@ -172,4 +172,4 @@ const CheckboxGroupDocs = () => (
     propsDefault={propsDefault} />
 );
 
-export default CheckboxGroupDocs;
+export default MultipleChoiceDocs;

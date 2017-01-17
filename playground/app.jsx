@@ -2,11 +2,11 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import Autocomplete from 'components/Autocomplete';
-import CheckboxGroup from 'components/CheckboxGroup';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
 import Logo from 'components/Logo';
+import MultipleChoice from 'components/MultipleChoice';
 import Notification from 'components/Notification';
 import Paginator from 'components/Paginator';
 import Table from 'components/Table';
@@ -22,9 +22,9 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <CheckboxGroup
+            <MultipleChoice
               name="checkbox-group[]"
-              heading="CheckboxGroup"
+              heading="MultipleChoice"
               inputStyle="buttons"
               checkboxes={
               [{
@@ -264,9 +264,9 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <CheckboxGroup
+            <MultipleChoice
               name="checkbox-group[]"
-              heading="CheckboxGroup"
+              heading="MultipleChoice"
               checkboxes={
               [{
                 id: 'option-1',

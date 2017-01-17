@@ -2,10 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import CheckboxGroup from 'CheckboxGroup'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const checkbox = (
-  <CheckboxGroup
+  <MultipleChoice
     name="checkbox-group[]"
     heading="Test"
     checkboxes={
@@ -21,9 +21,9 @@ const checkbox = (
 );
 
 const checkboxes = (
-  <CheckboxGroup
+  <MultipleChoice
     name="checkbox-group[]"
-    heading="CheckboxGroup"
+    heading="MultipleChoice"
     checkboxes={
     [{
       id: 'option-1',

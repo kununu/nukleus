@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-export default class CheckboxGroup extends Component {
+export default class MultipleChoice extends Component {
   static propTypes = {
     checkboxes: PropTypes.array.isRequired,
     heading: PropTypes.string,
