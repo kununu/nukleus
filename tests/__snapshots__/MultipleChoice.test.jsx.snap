@@ -1,0 +1,253 @@
+exports[`test Change status of choices change 1`] = `
+<MultipleChoice
+  choices={
+    Array [
+      Object {
+        "id": "option-1",
+        "isChecked": false,
+        "label": "option 1",
+        "value": "option-1",
+      },
+      Object {
+        "id": "option-2",
+        "isChecked": false,
+        "label": "option 2",
+        "value": "option-2",
+      },
+      Object {
+        "id": "option-3",
+        "isChecked": false,
+        "label": "option 3",
+        "value": "option-2",
+      },
+      Object {
+        "id": "option-4",
+        "isChecked": false,
+        "label": "option 4",
+        "value": "option-4",
+      },
+    ]
+  }
+  heading="MultipleChoice"
+  headingStyle="control-label"
+  inputStyle="inline"
+  name="choice[]"
+  query={Object {}}>
+  <div
+    className="inline form-group">
+    <div
+      className="control-label">
+      MultipleChoice
+    </div>
+    <div
+      className="inputContainer">
+      <div
+        className="checkbox choice">
+        <input
+          checked={true}
+          className="form-control"
+          id="choice[]option-1"
+          name="choice[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-1" />
+        <label
+          htmlFor="choice[]option-1">
+          option 1
+        </label>
+      </div>
+      <div
+        className="checkbox choice">
+        <input
+          checked={false}
+          className="form-control"
+          id="choice[]option-2"
+          name="choice[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-2" />
+        <label
+          htmlFor="choice[]option-2">
+          option 2
+        </label>
+      </div>
+      <div
+        className="checkbox choice">
+        <input
+          checked={false}
+          className="form-control"
+          id="choice[]option-3"
+          name="choice[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-2" />
+        <label
+          htmlFor="choice[]option-3">
+          option 3
+        </label>
+      </div>
+      <div
+        className="checkbox choice">
+        <input
+          checked={true}
+          className="form-control"
+          id="choice[]option-4"
+          name="choice[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="option-4" />
+        <label
+          htmlFor="choice[]option-4">
+          option 4
+        </label>
+      </div>
+    </div>
+  </div>
+</MultipleChoice>
+`;
+
+exports[`test Changes status on choice change 1`] = `
+<MultipleChoice
+  choices={
+    Array [
+      Object {
+        "id": "option-1",
+        "isChecked": false,
+        "label": "test",
+        "value": "test",
+      },
+    ]
+  }
+  heading="Test"
+  headingStyle="control-label"
+  inputStyle="inline"
+  name="choice[]"
+  query={Object {}}>
+  <div
+    className="inline form-group">
+    <div
+      className="control-label">
+      Test
+    </div>
+    <div
+      className="inputContainer">
+      <div
+        className="checkbox choice">
+        <input
+          checked={true}
+          className="form-control"
+          id="choice[]option-1"
+          name="choice[]"
+          onChange={[Function]}
+          type="checkbox"
+          value="test" />
+        <label
+          htmlFor="choice[]option-1">
+          test
+        </label>
+      </div>
+    </div>
+  </div>
+</MultipleChoice>
+`;
+
+exports[`test Renders choice without crashing 1`] = `
+<div
+  className="inline form-group">
+  <div
+    className="control-label">
+    Test
+  </div>
+  <div
+    className="inputContainer">
+    <div
+      className="checkbox choice">
+      <input
+        checked={false}
+        className="form-control"
+        id="choice[]option-1"
+        name="choice[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="test" />
+      <label
+        htmlFor="choice[]option-1">
+        test
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Renders choices without crashing 1`] = `
+<div
+  className="inline form-group">
+  <div
+    className="control-label">
+    MultipleChoice
+  </div>
+  <div
+    className="inputContainer">
+    <div
+      className="checkbox choice">
+      <input
+        checked={false}
+        className="form-control"
+        id="choice[]option-1"
+        name="choice[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-1" />
+      <label
+        htmlFor="choice[]option-1">
+        option 1
+      </label>
+    </div>
+    <div
+      className="checkbox choice">
+      <input
+        checked={false}
+        className="form-control"
+        id="choice[]option-2"
+        name="choice[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-2" />
+      <label
+        htmlFor="choice[]option-2">
+        option 2
+      </label>
+    </div>
+    <div
+      className="checkbox choice">
+      <input
+        checked={false}
+        className="form-control"
+        id="choice[]option-3"
+        name="choice[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-2" />
+      <label
+        htmlFor="choice[]option-3">
+        option 3
+      </label>
+    </div>
+    <div
+      className="checkbox choice">
+      <input
+        checked={false}
+        className="form-control"
+        id="choice[]option-4"
+        name="choice[]"
+        onChange={[Function]}
+        type="checkbox"
+        value="option-4" />
+      <label
+        htmlFor="choice[]option-4">
+        option 4
+      </label>
+    </div>
+  </div>
+</div>
+`;
