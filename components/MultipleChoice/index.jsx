@@ -7,7 +7,7 @@ export default class MultipleChoice extends Component {
     choices: PropTypes.array.isRequired,
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
-    inputStyle: PropTypes.string,
+    inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     name: PropTypes.string.isRequired,
     query: PropTypes.object
   };
