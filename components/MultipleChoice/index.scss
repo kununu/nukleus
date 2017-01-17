@@ -1,0 +1,144 @@
+@import '~kununu-theme/scss/base/variables';
+
+.choice {
+  input {
+    &[type='checkbox'] + label {
+      text-transform: none;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.inline {
+  @media (min-width: $screen-xs-min) {
+    display: flex;
+    flex-flow: row;
+    align-items: base;
+  }
+
+  > div:first-child {
+    margin-right: 10px;
+    width: 140px;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  .choice:first-child {
+    margin-top: 0;
+  }
+
+  .choice:last-child {
+    margin-bottom: 0;
+  }
+}
+
+form .inline {
+  > div:first-child {
+    color: $gray-base-60;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    min-width: 60px;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.buttons {
+  .inputContainer {
+    display: block;
+    width: auto;
+    margin-left: -6px;
+    margin-right: -6px;
+
+    @supports (display: flex) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  .choice {
+    &,
+    & + .choice {
+      margin: 0;
+    }
+
+    display: inline-block;
+    padding: 6px;
+
+    @supports (display: flex) {
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 5px;
+    }
+
+    input {
+      & + label {
+        transition: background-color .25s,
+        box-shadow .2s cubic-bezier(.215, .61, .355, 1);
+
+        @media (max-width: $screen-sm-max) {
+          font-size: $font-size-xs;
+        }
+      }
+
+      & + label:hover,
+      &:focus + label {
+        background-color: $gray-base-10;
+        box-shadow: 0 4px 4px 0 rgba($black, .2);
+      }
+
+      &:checked + label,
+      &:focus + label,
+      &:visited + label {
+        outline: 0;
+      }
+
+      &:active + label {
+        background-color: $green-dark;
+        box-shadow: 0 2px 3px 0 rgba($black, .26);
+        color: $white;
+      }
+
+      &:checked + label {
+        background-color: $green;
+        color: $white;
+        font-weight: $font-weight-light;
+
+        &,
+        &:hover {
+          background-color: $green;
+          box-shadow: 0 2px 3px 0 rgba($black, .26);
+        }
+      }
+
+      & + label,
+      &:checked label {
+        background-color: $gray-base-03;
+        border-radius: $border-radius-base;
+        box-shadow: 0 2px 5px 0 rgba($black, .26);
+        padding-left: 0;
+        padding: 6px;
+        text-align: center;
+        font-weight: $font-weight-light;
+        transition: background-color .25s;
+
+        @supports (display: flex) {
+          width: 100%;
+        }
+      }
+
+      & + label:before,
+      &:checked + label:before {
+        display: none;
+      }
+    }
+  }
+}

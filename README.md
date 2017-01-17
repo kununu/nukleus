@@ -13,11 +13,11 @@ A collection of React user interface components.
 Components include:
 
 - Autocomplete
-- CheckboxGroup
 - Combobox
 - DatePicker
 - InfoText
 - Logo
+- MultipleChoice
 - Notification
 - Paginator
 - Select

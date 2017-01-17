@@ -7,11 +7,11 @@ import styles from './index.scss';
 
 const components = [
   'Autocomplete',
-  'CheckboxGroup',
   'Combobox',
   'DatePicker',
   'InfoText',
   'Logo',
+  'MultipleChoice',
   'Notification',
   'Paginator',
   'Select',

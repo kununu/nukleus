@@ -2,13 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import CheckboxGroup from 'CheckboxGroup'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
-const checkbox = (
-  <CheckboxGroup
-    name="checkbox-group[]"
+const choice = (
+  <MultipleChoice
+    name="choice[]"
     heading="Test"
-    checkboxes={
+    choices={
     [
       {
         id: 'option-1',
@@ -20,11 +20,11 @@ const checkbox = (
   } />
 );
 
-const checkboxes = (
-  <CheckboxGroup
-    name="checkbox-group[]"
-    heading="CheckboxGroup"
-    checkboxes={
+const choices = (
+  <MultipleChoice
+    name="choice[]"
+    heading="MultipleChoice"
+    choices={
     [{
       id: 'option-1',
       isChecked: false,
@@ -51,24 +51,24 @@ const checkboxes = (
     }]} />
 );
 
-test('Renders checkbox without crashing', () => {
-  const component = renderer.create(checkbox);
+test('Renders choice without crashing', () => {
+  const component = renderer.create(choice);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Changes status on checkbox change', () => {
-  const component = mount(checkbox);
+test('Changes status on choice change', () => {
+  const component = mount(choice);
   component.find('input').simulate('change');
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Renders checkboxes without crashing', () => {
-  const component = renderer.create(checkboxes);
+test('Renders choices without crashing', () => {
+  const component = renderer.create(choices);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Change status of checkboxes change', () => {
-  const component = mount(checkboxes);
+test('Change status of choices change', () => {
+  const component = mount(choices);
   component.find({value: 'option-1'}).simulate('change');
   component.find({value: 'option-4'}).simulate('change');
   expect(toJson(component)).toMatchSnapshot();
