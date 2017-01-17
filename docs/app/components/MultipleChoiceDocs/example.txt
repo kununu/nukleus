@@ -27,42 +27,42 @@
   [{
     id: 'option-1',
     isChecked: true,
-    label: 'Option 1',
+    label: 'Elephant',
     value: 'option-1'
   },
   {
     id: 'option-2',
     isChecked: false,
-    label: 'Option 2',
+    label: 'Fox',
     value: 'option-2'
   },
   {
     id: 'option-3',
     isChecked: false,
-    label: 'Option 3',
+    label: 'Dog',
     value: 'option-3'
   },
   {
     id: 'option-4',
     isChecked: false,
-    label: 'Option 4',
+    label: 'Dasypus novemcinctus',
     value: 'option-4'
   },
   {
     id: 'option-5',
     isChecked: false,
-    label: 'Option 5',
+    label: 'Horse',
     value: 'option-5'
   },
   {
     id: 'option-6',
     isChecked: false,
-    label: 'Option 6',
+    label: 'Chimpanzee',
     value: 'option-6'
   },
   {
     id: 'option-7',
     isChecked: false,
-    label: 'Option 7',
+    label: 'Goldfish',
     value: 'option-7'
-  } ]} />
+  }]} />
