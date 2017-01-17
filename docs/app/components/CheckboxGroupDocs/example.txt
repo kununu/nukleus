@@ -15,9 +15,6 @@
         isChecked: true,
         label: 'option 2',
         value: 'option-2'
-      },
-      {
-        etc..
       }
     ]
   } />
@@ -33,14 +30,5 @@
     isChecked: true,
     label: 'flex. Arbeitszeit',
     value: 'option-1'
-  },
-  {
-    id: 'option-2',
-    isChecked: false,
-    label: 'Homeoffice',
-    value: 'option-2'
-  },
-  {
-    etc..
   }
 ]} />
