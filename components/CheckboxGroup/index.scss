@@ -62,18 +62,24 @@ form .inline {
     flex-grow: 1;
     padding: 6px;
 
-    input {
-      &[type='checkbox'] + label {
-        text-transform: uppercase;
-        transition: background-color .25s;
+    @media (max-width: $screen-sm-max) {
+      padding: 5px;
+    }
 
-        &:hover {
-          background-color: $gray-base-10;
-        }
+    input {
+      & + label {
+        transition: background-color .25s,
+        box-shadow .2s cubic-bezier(.215, .61, .355, 1);
 
         @media (max-width: $screen-sm-max) {
-          font-size: $font-size-sm;
+          font-size: $font-size-xs;
         }
+      }
+
+      & + label:hover,
+      &:focus + label {
+        background-color: $gray-base-10;
+        box-shadow: 0 4px 4px 0 rgba($black, .2);
       }
 
       &:checked + label,
@@ -87,8 +93,10 @@ form .inline {
         color: $white;
         font-weight: $font-weight-light;
 
+        &,
         &:hover {
           background-color: $green;
+          box-shadow: 0 2px 3px 0 rgba($black, .26);
         }
       }
 
@@ -101,7 +109,6 @@ form .inline {
         padding: 6px;
         width: 100%;
         text-align: center;
-        text-transform: uppercase;
         font-weight: $font-weight-light;
         transition: background-color .25s;
       }
