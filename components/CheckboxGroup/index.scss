@@ -50,6 +50,7 @@ form .inline {
 .buttons {
   .inputContainer {
     display: block;
+    width: auto;
     margin-left: -6px;
     margin-right: -6px;
 
@@ -61,7 +62,11 @@ form .inline {
   }
 
   .checkbox {
-    margin: 0;
+    &,
+    & + .checkbox {
+      margin: 0;
+    }
+
     display: inline-block;
     padding: 6px;
 
