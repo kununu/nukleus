@@ -1,3 +1,4 @@
+// Standard styled
 <CheckboxGroup
   name="checkbox-group[]"
   heading="CheckboxGroup"
@@ -16,16 +17,30 @@
         value: 'option-2'
       },
       {
-        id: 'option-3',
-        isChecked: false,
-        label: 'option 3',
-        value: 'option-2'
-      },
-      {
-        id: 'option-4',
-        isChecked: false,
-        label: 'option 4',
-        value: 'option-4'
+        etc..
       }
     ]
   } />
+
+// Button styled
+<CheckboxGroup
+  name="checkbox-group[]"
+  heading="CheckboxGroup"
+  inputStyle="buttons"
+  checkboxes={
+  [{
+    id: 'option-1',
+    isChecked: true,
+    label: 'flex. Arbeitszeit',
+    value: 'option-1'
+  },
+  {
+    id: 'option-2',
+    isChecked: false,
+    label: 'Homeoffice',
+    value: 'option-2'
+  },
+  {
+    etc..
+  }
+]} />
