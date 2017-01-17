@@ -101,6 +101,12 @@ form .inline {
         outline: 0;
       }
 
+      &:active + label {
+        background-color: $green-dark;
+        box-shadow: 0 2px 3px 0 rgba($black, .26);
+        color: $white;
+      }
+
       &:checked + label {
         background-color: $green;
         color: $white;
