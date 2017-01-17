@@ -12,7 +12,7 @@
       },
       {
         id: 'option-2',
-        isChecked: true,
+        isChecked: false,
         label: 'option 2',
         value: 'option-2'
       }
@@ -22,13 +22,47 @@
 // Button styled
 <MultipleChoice
   name="checkbox-group[]"
-  heading="MultipleChoice (with buttons)"
   inputStyle="buttons"
   checkboxes={
   [{
     id: 'option-1',
     isChecked: true,
-    label: 'flex. Arbeitszeit',
+    label: 'Option 1',
     value: 'option-1'
-  }
-]} />
+  },
+  {
+    id: 'option-2',
+    isChecked: false,
+    label: 'Option 2',
+    value: 'option-2'
+  },
+  {
+    id: 'option-3',
+    isChecked: false,
+    label: 'Option 3',
+    value: 'option-3'
+  },
+  {
+    id: 'option-4',
+    isChecked: false,
+    label: 'Option 4',
+    value: 'option-4'
+  },
+  {
+    id: 'option-5',
+    isChecked: false,
+    label: 'Option 5',
+    value: 'option-5'
+  },
+  {
+    id: 'option-6',
+    isChecked: false,
+    label: 'Option 6',
+    value: 'option-6'
+  },
+  {
+    id: 'option-7',
+    isChecked: false,
+    label: 'Option 7',
+    value: 'option-7'
+  } ]} />
