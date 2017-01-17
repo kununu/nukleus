@@ -49,18 +49,26 @@ form .inline {
 
 .buttons {
   .inputContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: block;
     margin-left: -6px;
     margin-right: -6px;
+
+    @supports (display: flex) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
   }
 
   .checkbox {
     margin: 0;
-    flex-shrink: 0;
-    flex-grow: 1;
+    display: inline-block;
     padding: 6px;
+
+    @supports (display: flex) {
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
 
     @media (max-width: $screen-sm-max) {
       padding: 5px;
@@ -107,10 +115,13 @@ form .inline {
         box-shadow: 0 2px 5px 0 rgba($black, .26);
         padding-left: 0;
         padding: 6px;
-        width: 100%;
         text-align: center;
         font-weight: $font-weight-light;
         transition: background-color .25s;
+
+        @supports (display: flex) {
+          width: 100%;
+        }
       }
 
       & + label:before,
