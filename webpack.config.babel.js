@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-require("babel-polyfill");
+import 'babel-polyfill';
 
 module.exports = {
   context: __dirname,
