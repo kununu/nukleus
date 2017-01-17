@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+import 'babel-polyfill';
 
 module.exports = {
   context: __dirname,
-  entry: './playground/index.jsx',
+  entry: ['babel-polyfill', './playground/index.jsx'],
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
