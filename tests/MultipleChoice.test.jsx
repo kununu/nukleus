@@ -6,9 +6,9 @@ import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-un
 
 const checkbox = (
   <MultipleChoice
-    name="checkbox-group[]"
+    name="choice[]"
     heading="Test"
-    checkboxes={
+    choices={
     [
       {
         id: 'option-1',
@@ -22,9 +22,9 @@ const checkbox = (
 
 const checkboxes = (
   <MultipleChoice
-    name="checkbox-group[]"
+    name="choice[]"
     heading="MultipleChoice"
-    checkboxes={
+    choices={
     [{
       id: 'option-1',
       isChecked: false,

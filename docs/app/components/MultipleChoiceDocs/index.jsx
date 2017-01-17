@@ -13,9 +13,9 @@ const MultipleChoiceDocs = () => (
     component={
       <div>
         <MultipleChoice
-          name="checkbox-group[]"
+          name="choices[]"
           heading="MultipleChoice"
-          checkboxes={
+          choices={
           [
             {
               id: 'option-a',
@@ -33,9 +33,9 @@ const MultipleChoiceDocs = () => (
         <br />
 
         <MultipleChoice
-          name="checkbox-group[]"
+          name="choices[]"
           inputStyle="buttons"
-          checkboxes={
+          choices={
           [{
             id: 'option-1',
             isChecked: true,

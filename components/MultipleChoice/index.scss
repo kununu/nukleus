@@ -1,6 +1,6 @@
 @import '~kununu-theme/scss/base/variables';
 
-.checkbox {
+.choice {
   input {
     &[type='checkbox'] + label {
       text-transform: none;
@@ -23,11 +23,11 @@
     display: inline-block;
   }
 
-  .checkbox:first-child {
+  .choice:first-child {
     margin-top: 0;
   }
 
-  .checkbox:last-child {
+  .choice:last-child {
     margin-bottom: 0;
   }
 }
@@ -61,9 +61,9 @@ form .inline {
     }
   }
 
-  .checkbox {
+  .choice {
     &,
-    & + .checkbox {
+    & + .choice {
       margin: 0;
     }
 

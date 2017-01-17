@@ -23,10 +23,10 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
-              name="checkbox-group[]"
+              name="choices[]"
               heading="MultipleChoice"
               inputStyle="buttons"
-              checkboxes={
+              choices={
               [{
                 id: 'option-1',
                 isChecked: true,
@@ -265,9 +265,9 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
-              name="checkbox-group[]"
+              name="choices[]"
               heading="MultipleChoice"
-              checkboxes={
+              choices={
               [{
                 id: 'option-1',
                 isChecked: true,

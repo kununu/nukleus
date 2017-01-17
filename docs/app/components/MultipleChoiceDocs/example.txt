@@ -1,8 +1,8 @@
 // Standard styled
 <MultipleChoice
-  name="checkbox-group[]"
+  name="choices[]"
   heading="MultipleChoice"
-  checkboxes={
+  choices={
     [
       {
         id: 'option-1',
@@ -21,9 +21,9 @@
 
 // Button styled
 <MultipleChoice
-  name="checkbox-group[]"
+  name="choices[]"
   inputStyle="buttons"
-  checkboxes={
+  choices={
   [{
     id: 'option-1',
     isChecked: true,

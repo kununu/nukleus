@@ -4,7 +4,7 @@ import styles from './index.scss';
 
 export default class MultipleChoice extends Component {
   static propTypes = {
-    checkboxes: PropTypes.array.isRequired,
+    choices: PropTypes.array.isRequired,
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
     inputStyle: PropTypes.string,
@@ -19,13 +19,13 @@ export default class MultipleChoice extends Component {
   };
 
   state = {
-    checkboxes: this.props.checkboxes || []
+    choices: this.props.choices || []
   };
 
   componentWillMount () {
     const {query, name} = this.props;
     if (!query[name]) return;
-    this.updateValue(this.getCheckboxesToUpdate(query[name]), 'checked');
+    this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
   }
 
   componentWillReceiveProps (nextProps) {
@@ -34,62 +34,62 @@ export default class MultipleChoice extends Component {
     // for instance when updates are triggered by tweaking with other components.
     if (nextProps.query === this.props.query) return;
     if (!query[name]) {
-      this.updateValue(this.state.checkboxes, 'unchecked');
+      this.updateValue(this.state.choices, 'unchecked');
     } else {
-      this.updateValue(this.getCheckboxesToUpdate(query[name]), 'checked');
+      this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
     }
   }
 
-  onChange (checkbox) {
-    this.updateValue([checkbox]);
+  onChange (choice) {
+    this.updateValue([choice]);
   }
 
-  getCheckboxesToUpdate (newCheckboxes) {
-    return this.state.checkboxes.filter(checkbox => [].concat(newCheckboxes).some(value => value === checkbox.value));
+  getChoicesToUpdate (newChoices) {
+    return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
   }
 
-  updateValue (newCheckboxes, status = 'toggle') {
+  updateValue (newChoices, status = 'toggle') {
     this.setState({
-      checkboxes: this.state.checkboxes.map(checkbox => {
-        if (newCheckboxes.some(newCheckbox => newCheckbox === checkbox)) {
+      choices: this.state.choices.map(choice => {
+        if (newChoices.some(newChoice => newChoice === choice)) {
           /* eslint-disable sorting/sort-object-props */
           const newStatus = {
             checked: true,
             unchecked: false,
-            toggle: !checkbox.isChecked
+            toggle: !choice.isChecked
           }[status];
           /* eslint-enable sorting/sort-object-props */
           return {
-            ...checkbox,
+            ...choice,
             isChecked: newStatus
           };
         }
-        return checkbox;
+        return choice;
       })
     });
   }
 
   render () {
-    const {checkboxes} = this.state;
+    const {choices} = this.state;
 
     return (
       <div className={`${styles[this.props.inputStyle]} form-group`}>
         {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
 
         <div className={styles.inputContainer}>
-          {checkboxes.map((checkbox, key) =>
-            <div className={`checkbox ${styles.checkbox}`} key={key}>
+          {choices.map((choice, key) =>
+            <div className={`checkbox ${styles.choice}`} key={key}>
               <input
                 className="form-control"
-                id={`${this.props.name}${checkbox.id}`}
+                id={`${this.props.name}${choice.id}`}
                 name={this.props.name}
-                key={checkbox.id}
-                value={checkbox.value}
+                key={choice.id}
+                value={choice.value}
                 type="checkbox"
-                checked={checkbox.isChecked}
-                onChange={() => this.onChange(checkbox)} />
+                checked={choice.isChecked}
+                onChange={() => this.onChange(choice)} />
 
-              <label htmlFor={`${this.props.name}${checkbox.id}`}>{checkbox.label}</label>
+              <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
             </div>
           )}
         </div>
