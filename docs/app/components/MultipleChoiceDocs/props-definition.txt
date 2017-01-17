@@ -1,5 +1,5 @@
 propTypes: {
-  checkboxes: PropTypes.array.isRequired,
+  choiches: PropTypes.array.isRequired,
   heading: PropTypes.string,
   headingStyle: PropTypes.string,
   inputStyle: PropTypes.string,
