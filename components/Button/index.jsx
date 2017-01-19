@@ -8,7 +8,7 @@ import styles from './index.scss';
 
 export default class Button extends Component {
   static propTypes = {
-    buttonStyle: PropTypes.object,
+    customTheme: PropTypes.object,
     disabled: PropTypes.bool,
     fullWidth: PropTypes.bool,
     link: PropTypes.string,
@@ -37,32 +37,32 @@ export default class Button extends Component {
   }
 
   onMouseOver = () => {
-    if (this.props.disabled || this.props.type !== 'custom') return;
+    if (this.hasCustomMouseEvents()) return;
 
     this.setState({isHovering: true});
   }
 
   onMouseOut = () => {
-    if (this.props.disabled || this.props.type !== 'custom') return;
+    if (this.hasCustomMouseEvents()) return;
 
     this.setState({isHovering: false});
   }
 
   onMouseDown = () => {
-    if (this.props.disabled || this.props.type !== 'custom') return;
+    if (this.hasCustomMouseEvents()) return;
 
     this.setState({isActive: true});
   }
 
   onMouseUp = () => {
-    if (this.props.disabled || this.props.type !== 'custom') return;
+    if (this.hasCustomMouseEvents()) return;
 
     this.setState({isActive: false});
   }
 
   getCustomStyles = () => {
     const {
-      buttonStyle,
+      customTheme,
       disabled,
       outline
     } = this.props;
@@ -74,11 +74,11 @@ export default class Button extends Component {
 
     const style = {};
 
-    style.backgroundColor = buttonStyle.backgroundColor;
-    style.color = buttonStyle.color;
+    style.backgroundColor = customTheme.backgroundColor;
+    style.color = customTheme.color;
 
     if (outline) {
-      style.border = `1px solid ${buttonStyle.color}`;
+      style.border = `1px solid ${customTheme.color}`;
     }
 
     if (disabled) {
@@ -87,27 +87,29 @@ export default class Button extends Component {
 
     if (isActive) {
       if (outline) {
-        const color = lighten(buttonStyle.color, 5);
+        const color = lighten(customTheme.color, 5);
         style.border = `1px solid ${color}`;
         style.color = color;
       } else {
-        style.backgroundColor = darken(buttonStyle.backgroundColor, 5);
+        style.backgroundColor = darken(customTheme.backgroundColor, 5);
       }
       return style;
     }
 
     if (isHovering) {
       if (outline) {
-        const color = darken(buttonStyle.color, 5);
+        const color = darken(customTheme.color, 5);
         style.border = `1px solid ${color}`;
         style.color = color;
       } else {
-        style.backgroundColor = lighten(buttonStyle.backgroundColor, 5);
+        style.backgroundColor = lighten(customTheme.backgroundColor, 5);
       }
     }
 
     return style;
   }
+
+  hasCustomMouseEvents = () => this.props.disabled || this.props.type !== 'custom'
 
   render () {
     const {

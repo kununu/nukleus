@@ -23,7 +23,7 @@ test('Renders anchor button without crashing', () => {
 
 test('Renders button with custom style', () => {
   const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
   );
 
   const tree = component.toJSON();
@@ -32,7 +32,7 @@ test('Renders button with custom style', () => {
 
 test('Renders button with custom style disabled', () => {
   const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
   );
 
   const tree = component.toJSON();
@@ -41,7 +41,7 @@ test('Renders button with custom style disabled', () => {
 
 test('Renders button with custom style disabled', () => {
   const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
   );
 
   const tree = component.toJSON();
@@ -50,7 +50,7 @@ test('Renders button with custom style disabled', () => {
 
 test('Renders button with custom style outline', () => {
   const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
+    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
   );
 
   const tree = component.toJSON();
@@ -59,7 +59,7 @@ test('Renders button with custom style outline', () => {
 
 test('Renders button with custom style outline and disabled', () => {
   const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
+    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
   );
 
   const tree = component.toJSON();
@@ -125,7 +125,7 @@ test('Does not fire onClick function when clicked if the button is disabled', ()
 
 test('Over state is changed when button is custom', () => {
   const component = mount(
-    <Button text="Test" type="custom" buttonStyle={{backgroundColor: '#000', color: '#fff'}} />
+    <Button text="Test" type="custom" customTheme={{backgroundColor: '#000', color: '#fff'}} />
   );
 
   expect(component.state('isHovering')).toEqual(false);
@@ -138,7 +138,7 @@ test('Over state is changed when button is custom', () => {
 
 test('Active state is changed when button is custom', () => {
   const component = mount(
-    <Button text="Test" type="custom" buttonStyle={{backgroundColor: '#000', color: '#fff'}} />
+    <Button text="Test" type="custom" customTheme={{backgroundColor: '#000', color: '#fff'}} />
   );
 
   expect(component.state('isActive')).toEqual(false);

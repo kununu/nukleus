@@ -11,7 +11,7 @@ const ButtonDocs = () => (
   <DocsRoot
     title="Button"
     component={
-      <Button buttonStyle="primary" text="Primary Button" />
+      <Button customTheme="primary" text="Primary Button" />
     }
     example={example}
     propsDefinition={propsDefinition}

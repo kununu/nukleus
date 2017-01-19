@@ -459,16 +459,16 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} buttonStyle={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
           </div>
         </div>
 
@@ -488,7 +488,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="info" text="Info Link" link="/" disabled outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Danger Link" link="/" buttonStyle={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+            <Button type="custom" text="Danger Link" link="/" customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="link" text="Link Link" link="/" />
