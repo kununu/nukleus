@@ -37,25 +37,25 @@ export default class Button extends Component {
   }
 
   onMouseOver = () => {
-    if (this.hasCustomMouseEvents()) return;
+    if (!this.hasCustomMouseEvents()) return;
 
     this.setState({isHovering: true});
   }
 
   onMouseOut = () => {
-    if (this.hasCustomMouseEvents()) return;
+    if (!this.hasCustomMouseEvents()) return;
 
     this.setState({isHovering: false});
   }
 
   onMouseDown = () => {
-    if (this.hasCustomMouseEvents()) return;
+    if (!this.hasCustomMouseEvents()) return;
 
     this.setState({isActive: true});
   }
 
   onMouseUp = () => {
-    if (this.hasCustomMouseEvents()) return;
+    if (!this.hasCustomMouseEvents()) return;
 
     this.setState({isActive: false});
   }
@@ -109,7 +109,7 @@ export default class Button extends Component {
     return style;
   }
 
-  hasCustomMouseEvents = () => this.props.disabled || this.props.type !== 'custom'
+  hasCustomMouseEvents = () => !this.props.disabled && this.props.type === 'custom'
 
   render () {
     const {
