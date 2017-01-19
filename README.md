@@ -14,11 +14,11 @@ Components include:
 
 - Autocomplete
 - Button
-- CheckboxGroup
 - Combobox
 - DatePicker
 - InfoText
 - Logo
+- MultipleChoice
 - Notification
 - Paginator
 - Select

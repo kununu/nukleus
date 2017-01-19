@@ -8,11 +8,11 @@ import styles from './index.scss';
 const components = [
   'Autocomplete',
   'Button',
-  'CheckboxGroup',
   'Combobox',
   'DatePicker',
   'InfoText',
   'Logo',
+  'MultipleChoice',
   'Notification',
   'Paginator',
   'Select',
