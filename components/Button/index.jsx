@@ -21,11 +21,6 @@ export default class Button extends Component {
     type: 'primary'
   };
 
-  state = {
-    isActive: false,
-    isHovering: false
-  }
-
   onClick = e => {
     e.preventDefault();
 
