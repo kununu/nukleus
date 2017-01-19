@@ -21,51 +21,6 @@ test('Renders anchor button without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders button with custom style', () => {
-  const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Renders button with custom style disabled', () => {
-  const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Renders button with custom style disabled', () => {
-  const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Renders button with custom style outline', () => {
-  const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Renders button with custom style outline and disabled', () => {
-  const component = renderer.create(
-    <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Renders a disabled Button', () => {
   const component = renderer.create(
     <Button text="Test" onClick={() => {}} disabled />
@@ -94,9 +49,18 @@ test('Renders a full width button', () => {
 });
 
 
-test('Renders a full width button', () => {
+test('Renders a mobile full width button', () => {
   const component = renderer.create(
     <Button text="Test" onClick={() => {}} mobileFullWidth />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a custom theme button', () => {
+  const component = renderer.create(
+    <Button text="Test" onClick={() => {}} type="custom" customTheme="customCssModuleClass" />
   );
 
   const tree = component.toJSON();
@@ -121,54 +85,4 @@ test('Does not fire onClick function when clicked if the button is disabled', ()
 
   component.find('.button').simulate('click');
   expect(spyFunc).not.toHaveBeenCalled();
-});
-
-test('Over state is changed when button is custom', () => {
-  const component = mount(
-    <Button text="Test" type="custom" customTheme={{backgroundColor: '#000', color: '#fff'}} />
-  );
-
-  expect(component.state('isHovering')).toEqual(false);
-  component.find('button').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual(true);
-  component.find('button').simulate('mouseOut');
-  expect(component.state('isHovering')).toEqual(false);
-});
-
-
-test('Active state is changed when button is custom', () => {
-  const component = mount(
-    <Button text="Test" type="custom" customTheme={{backgroundColor: '#000', color: '#fff'}} />
-  );
-
-  expect(component.state('isActive')).toEqual(false);
-  component.find('button').simulate('mouseDown');
-  expect(component.state('isActive')).toEqual(true);
-  component.find('button').simulate('mouseUp');
-  expect(component.state('isActive')).toEqual(false);
-});
-
-test('Over state does not changed when button is not custom', () => {
-  const component = mount(
-    <Button text="Test" type="primary" />
-  );
-
-  expect(component.state('isHovering')).toEqual(false);
-  component.find('button').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual(false);
-  component.find('button').simulate('mouseOut');
-  expect(component.state('isHovering')).toEqual(false);
-});
-
-
-test('Active state does not changed when button is not custom', () => {
-  const component = mount(
-    <Button text="Test" type="primary" />
-  );
-
-  expect(component.state('isActive')).toEqual(false);
-  component.find('button').simulate('mouseDown');
-  expect(component.state('isActive')).toEqual(false);
-  component.find('button').simulate('mouseUp');
-  expect(component.state('isActive')).toEqual(false);
 });

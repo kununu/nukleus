@@ -16,6 +16,8 @@ import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
 
+import styles from './app.scss';
+
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
@@ -459,16 +461,16 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} disabled />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={{backgroundColor: '#ffffff', color: '#cc9900'}} outline disabled />
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline disabled />
           </div>
         </div>
 
@@ -488,7 +490,7 @@ const App = ({location: {pathname, query}}) => (
             <Button type="info" text="Info Link" link="/" disabled outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Danger Link" link="/" customTheme={{backgroundColor: '#cc9900', color: '#cccc00'}} />
+            <Button type="custom" text="Danger Link" link="/" customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="link" text="Link Link" link="/" />

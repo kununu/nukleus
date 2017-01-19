@@ -60,7 +60,7 @@
   }
 }
 
-@mixin button-variant(
+@mixin button-default(
   $color,
   $background,
   $hover-background : lighten($background, 5%),
@@ -138,32 +138,32 @@
 
 // Apply the mixin to the buttons
 .default {
-  @include button-variant($btn-default-color, $btn-default-bg);
+  @include button-default($btn-default-color, $btn-default-bg);
   @include button-outline($btn-default-color, $btn-info-bg);
 }
 
 .primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg);
+  @include button-default($btn-primary-color, $btn-primary-bg);
   @include button-outline($btn-primary-bg, $btn-primary-color);
 }
 
 .secondary {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg);
+  @include button-default($btn-secondary-color, $btn-secondary-bg);
   @include button-outline($btn-secondary-bg, $btn-secondary-color);
 }
 
 .info {
-  @include button-variant($btn-info-color, $btn-info-bg);
+  @include button-default($btn-info-color, $btn-info-bg);
   @include button-outline($btn-info-color, $btn-info-bg);
 }
 
 .danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg);
+  @include button-default($btn-danger-color, $btn-danger-bg);
   @include button-outline($btn-danger-bg, $btn-danger-color);
 }
 
 .link {
-  @include button-variant($btn-secondary-bg, $btn-info-bg);
+  @include button-default($btn-secondary-bg, $btn-info-bg);
   @include button-outline($btn-secondary-bg, $btn-info-bg);
 
   &:hover {

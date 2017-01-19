@@ -1,5 +1,5 @@
 propTypes: {
-  customTheme: PropTypes.object,
+  customTheme: PropTypes.string,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   link: PropTypes.string,
