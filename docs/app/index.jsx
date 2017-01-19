@@ -5,12 +5,12 @@ import 'font-awesome-webpack';
 
 import App from 'components/App';
 import AutocompleteDocs from 'components/AutocompleteDocs';
-import CheckboxGroupDocs from 'components/CheckboxGroupDocs';
 import ChoiceDocs from 'components/ChoiceDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
 import InfoTextDocs from 'components/InfoTextDocs';
 import LogoDocs from 'components/LogoDocs';
+import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
 import PaginatorDocs from 'components/PaginatorDocs';
 import SelectDocs from 'components/SelectDocs';
 import StarsDocs from 'components/StarsDocs';
@@ -26,11 +26,11 @@ const getRoutes = () => (
   <Route path="/" component={App} >
     <IndexRoute component={AutocompleteDocs} />
     <Route path="/autocomplete" component={AutocompleteDocs} />
-    <Route path="/checkbox-group" component={CheckboxGroupDocs} />
     <Route path="/choice" component={ChoiceDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
     <Route path="/logo" component={LogoDocs} />
+    <Route path="/multiple-choice" component={MultipleChoiceDocs} />
     <Route path="/paginator" component={PaginatorDocs} />
     <Route path="/text-field" component={TextFieldDocs} />
     <Route path="/stars" component={StarsDocs} />
