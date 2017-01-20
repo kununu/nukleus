@@ -173,6 +173,7 @@ export default class Autocomplete extends React.Component {
     } = this.state;
 
     const inputProps = {
+      className: 'form-control',
       disabled,
       id,
       name,
