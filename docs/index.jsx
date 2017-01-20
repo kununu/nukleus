@@ -18,7 +18,7 @@ import TableDocs from 'components/TableDocs';
 import TextFieldDocs from 'components/TextFieldDocs';
 import NotificationDocs from 'components/NotificationDocs';
 
-import '../../main.scss';
+import '../main.scss';
 
 
 const getRoutes = () => (
