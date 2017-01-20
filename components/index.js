@@ -3,7 +3,6 @@ export Choice from './Choice';
 export Combobox from './Combobox';
 export DatePicker from './DatePicker';
 export InfoText from './InfoText';
-export Logo from './Logo';
 export MultipleChoice from './MultipleChoice';
 export Notification from './Notification';
 export Paginator from './Paginator';

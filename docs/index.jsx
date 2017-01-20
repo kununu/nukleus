@@ -9,7 +9,6 @@ import ChoiceDocs from 'components/ChoiceDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
 import InfoTextDocs from 'components/InfoTextDocs';
-import LogoDocs from 'components/LogoDocs';
 import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
 import PaginatorDocs from 'components/PaginatorDocs';
 import SelectDocs from 'components/SelectDocs';
@@ -19,7 +18,7 @@ import TableDocs from 'components/TableDocs';
 import TextFieldDocs from 'components/TextFieldDocs';
 import NotificationDocs from 'components/NotificationDocs';
 
-import '../../main.scss';
+import '../main.scss';
 
 
 const getRoutes = () => (
@@ -29,7 +28,6 @@ const getRoutes = () => (
     <Route path="/choice" component={ChoiceDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
-    <Route path="/logo" component={LogoDocs} />
     <Route path="/multiple-choice" component={MultipleChoiceDocs} />
     <Route path="/paginator" component={PaginatorDocs} />
     <Route path="/text-field" component={TextFieldDocs} />
