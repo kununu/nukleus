@@ -120,7 +120,7 @@ export default class Stars extends Component {
           {[...Array(totalStars + 1)].map((star, key) =>
             <div
               key={key}
-              className={Boolean(key) && styles.starsGroup}>
+              className={key ? styles.starsGroup : styles.hideStarGroup}>
 
               {selectable &&
                 <input
@@ -138,10 +138,11 @@ export default class Stars extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     xmlSpace="preserve"
+                    version="1.1"
                     viewBox="-20 -20 541.8 518.6"
                     width="100%"
                     stroke={strokeColor}
-                    preserveAspectRatio="none"
+                    preserveAspectRatio="xMidYMid meet"
                     className={`${styles.star} ${selectable && styles.ratingStar}`}
                     x="0" y="0">
                     {!selectable &&
