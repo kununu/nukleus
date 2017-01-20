@@ -1,6 +1,6 @@
 propTypes = {
   checked: PropTypes.string,
-  choiceStyle: PropTypes.object,
+  customTheme: PropTypes.object,
   disabled: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

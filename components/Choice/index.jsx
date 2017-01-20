@@ -6,21 +6,49 @@ import styles from './index.scss';
 export default class Choice extends Component {
   static propTypes = {
     checked: PropTypes.string,
-    choiceStyle: PropTypes.object,
+    customTheme: PropTypes.string,
     disabled: PropTypes.bool,
+    heading: PropTypes.string,
+    headingStyle: PropTypes.string,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
-    options: PropTypes.object.isRequired
+    options: PropTypes.array.isRequired,
+    query: PropTypes.object,
+    required: PropTypes.bool
   };
 
   static defaultProps = {
-    checked: ''
+    checked: '',
+    customTheme: '',
+    headingStyle: 'control-label',
+    query: {}
   };
 
   state = {
-    checked: this.props.checked,
-    isHovering: (new Array(Object.keys(this.props.options).length)).fill(false)
+    checked: this.props.checked
   };
+
+  componentWillMount () {
+    const {query, name} = this.props;
+    if (!query[name]) return;
+    this.setState({
+      checked: query[name]
+    });
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const {query, name} = nextProps;
+    if (nextProps.query === this.props.query && nextProps.checked === this.props.checked) return;
+    if (query[name] && query[name] !== this.props.query[name]) {
+      this.setState({
+        checked: query[name]
+      });
+    } else if (nextProps.checked !== this.props.checked) {
+      this.setState({
+        checked: nextProps.checked
+      });
+    }
+  }
 
   onChange = e => {
     if (this.props.disabled) return;
@@ -31,67 +59,43 @@ export default class Choice extends Component {
     });
   };
 
-  onMouseOver = e => {
-    if (this.props.disabled) return;
-
-    this.state.isHovering[e.target.id] = true;
-    this.setState(this.state);
-  }
-
-  onMouseOut = e => {
-    if (this.props.disabled) return;
-
-    this.state.isHovering[e.target.id] = false;
-    this.setState(this.state);
-  }
-
   render () {
-    const labelsStyle = [];
     const {
-      choiceStyle,
+      customTheme,
       disabled,
       name,
-      options
+      options,
+      required
     } = this.props;
     const {
-      checked,
-      isHovering
+      checked
     } = this.state;
 
-    if (choiceStyle) {
-      Object.keys(options).forEach((key, idx) => {
-        if (isHovering[idx] && !disabled) {
-          labelsStyle[idx] = {backgroundColor: choiceStyle.hoverColor};
-        } else if (checked === key) {
-          labelsStyle[idx] = {backgroundColor: choiceStyle.checkedColor};
-        } else {
-          labelsStyle[idx] = {backgroundColor: choiceStyle.uncheckedColor};
-        }
-      });
-    }
 
     return (
-      <div className={styles.radioContainer}>
-        {Object.keys(options).map((key, idx) =>
-          <div className={styles.radioButton} key={idx}>
-            <input
-              type="radio"
-              value={key}
-              id={name + key}
-              name={name}
-              checked={checked === key}
-              onChange={this.onChange} />
-            <label
-              disabled={disabled}
-              id={idx}
-              htmlFor={name + key}
-              onMouseOver={choiceStyle && this.onMouseOver}
-              onMouseOut={choiceStyle && this.onMouseOut}
-              style={labelsStyle[idx]}>
-              {options[key]}
-            </label>
-          </div>
-        )}
+      <div className="form-group">
+        {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
+        <div className={styles.radioContainer}>
+          {options.map((item, idx) =>
+            <div className={styles.radioButton} key={idx}>
+              <input
+                type="radio"
+                value={item.value}
+                id={`${name}${item.id}`}
+                name={name}
+                checked={checked === item.value}
+                onChange={this.onChange}
+                required={required} />
+              <label
+                disabled={disabled}
+                id={idx}
+                htmlFor={`${name}${item.id}`}
+                className={customTheme}>
+                {item.label}
+              </label>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

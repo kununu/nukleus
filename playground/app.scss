@@ -1,0 +1,17 @@
+
+input:checked + label.customThemeChoice {
+  &,
+  &:hover {
+    background: #2286dc;
+  }
+}
+
+label.customThemeChoice {
+  & {
+    background: #fffaec;
+  }
+
+  &:hover {
+    background: #778992;
+  }
+}

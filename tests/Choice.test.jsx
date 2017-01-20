@@ -3,15 +3,29 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
+const options = [
+  {
+    id: 'opA',
+    label: 'Option A',
+    value: 'opA'
+  },
+  {
+    id: 'opB',
+    label: 'Option B',
+    value: 'opB'
+  },
+  {
+    id: 'opC',
+    label: 'Option C',
+    value: 'opC'
+  }
+];
+
 test('Renders Choice with radio buttons without crashing', () => {
   const component = renderer.create(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      options={options}
       onChange={() => {}} />
   );
 
@@ -19,15 +33,23 @@ test('Renders Choice with radio buttons without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders Choice with an heading without crashing', () => {
+  const component = renderer.create(
+    <Choice
+      heading="heading"
+      name="test"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Renders a disabled Choice without crashing', () => {
   const component = renderer.create(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      options={options}
       disabled
       onChange={() => {}} />
   );
@@ -40,12 +62,8 @@ test('Renders a Choice with default checked without crashing', () => {
   const component = renderer.create(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
-      checked={'opA'}
+      options={options}
+      checked="opB"
       onChange={() => {}} />
   );
 
@@ -53,20 +71,64 @@ test('Renders a Choice with default checked without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders a Choice with custom style without crashing', () => {
+test('Renders a Choice with no default checked if it\'s not an option', () => {
   const component = renderer.create(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
-      choiceStyle={{
-        checkedColor: '#2286dc',
-        hoverColor: '#778992  ',
-        uncheckedColor: '#fffaec'
-      }}
+      options={options}
+      checked="opD"
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with checked from route', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      onChange={() => {}}
+      query={{test: 'opC'}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with no default checked from route if it is not an option', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      onChange={() => {}}
+      query={{test: 'opD'}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with no default checked from route if it is the other name', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      onChange={() => {}}
+      query={{otherTest: 'opC'}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with custom style', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      customTheme="customThemeClass"
       onChange={() => {}} />
   );
 
@@ -78,16 +140,8 @@ test('Renders a Choice with custom style disabled', () => {
   const component = renderer.create(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
-      choiceStyle={{
-        checkedColor: '#2286dc',
-        hoverColor: '#778992  ',
-        uncheckedColor: '#fffaec'
-      }}
+      options={options}
+      customTheme="customThemeClass"
       disabled
       onChange={() => {}} />
   );
@@ -100,11 +154,7 @@ test('Change checked when changed', () => {
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      options={options}
       onChange={() => {}} />
   );
 
@@ -118,11 +168,7 @@ test('Fires onChange function when changed', () => {
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      options={options}
       onChange={spyFunc} />
   );
 
@@ -135,11 +181,7 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      options={options}
       disabled
       onChange={spyFunc} />
   );
@@ -148,77 +190,60 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
   expect(spyFunc).not.toHaveBeenCalled();
 });
 
-test('Over state is changed when button is custom', () => {
+test('Change checked prop change checked state', () => {
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
-      choiceStyle={{
-        checkedColor: '#2286dc',
-        hoverColor: '#778992  ',
-        uncheckedColor: '#fffaec'
-      }}
+      checked="opA"
+      options={options}
       onChange={() => {}} />
   );
 
-  expect(component.state('isHovering')).toEqual([false, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual([true, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOut');
-  component.find('[htmlFor="testopB"]').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual([false, true, false]);
-  component.find('[htmlFor="testopB"]').simulate('mouseOut');
-  component.find('[htmlFor="testopC"]').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual([false, false, true]);
-  component.find('[htmlFor="testopC"]').simulate('mouseOut');
-  expect(component.state('isHovering')).toEqual([false, false, false]);
+  expect(component.state('checked')).toEqual('opA');
+  component.setProps({checked: 'opB'});
+  expect(component.state('checked')).toEqual('opB');
 });
 
-test('Over state does not change when button is not custom', () => {
+test('No change checked prop does not change checked state', () => {
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
+      checked="opA"
+      options={options}
       onChange={() => {}} />
   );
 
-  expect(component.state('isHovering')).toEqual([false, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual([false, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOut');
-  expect(component.state('isHovering')).toEqual([false, false, false]);
+  component.setState({checked: 'opB'});
+  component.setProps({checked: 'opA'});
+  expect(component.state('checked')).toEqual('opB');
 });
 
 
-test('Over state does not change when button is custom but is disabled', () => {
+test('Change checked query changes state', () => {
   const component = mount(
     <Choice
       name="test"
-      options={{
-        opA: 'Option A',
-        opB: 'Option B',
-        opC: 'Option C'
-      }}
-      choiceStyle={{
-        checkedColor: '#2286dc',
-        hoverColor: '#778992  ',
-        uncheckedColor: '#fffaec'
-      }}
-      disabled
+      checked="opA"
+      options={options}
       onChange={() => {}} />
   );
 
-  expect(component.state('isHovering')).toEqual([false, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOver');
-  expect(component.state('isHovering')).toEqual([false, false, false]);
-  component.find('[htmlFor="testopA"]').simulate('mouseOut');
-  expect(component.state('isHovering')).toEqual([false, false, false]);
+  expect(component.state('checked')).toEqual('opA');
+  component.setProps({query: {test: 'opB'}});
+  expect(component.state('checked')).toEqual('opB');
+});
+
+test('No change checked query does not change state', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      query={{test: 'opA'}}
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.setState({checked: 'opB'});
+  expect(component.state('checked')).toEqual('opB');
+  component.setProps({query: {test: 'opA'}});
+  expect(component.state('checked')).toEqual('opB');
 });

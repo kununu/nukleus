@@ -16,6 +16,8 @@ import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
 
+import styles from './app.scss';
+
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
@@ -368,13 +370,28 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
+              heading="Choice"
               name="basic"
               onChange={() => {}}
-              options={{
-                opA: 'Option A',
-                opB: 'Option B',
-                opC: 'Option C'
-              }} />
+              options={
+              [
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]}
+              query={query} />
           </div>
         </div>
 
@@ -383,15 +400,28 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              checked="opA"
+              checked="option-a"
               name="disabled"
               onChange={() => {}}
               disabled
-              options={{
-                opA: 'Checked Disabled Option A',
-                opB: 'Disabled Option B',
-                opC: 'Disabled Option C'
-              }} />
+              options={
+              [
+                {
+                  id: 'option-a',
+                  label: 'Checked Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 
@@ -400,19 +430,28 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              checked="opA"
+              heading="Custom Choice"
+              checked="option-a"
               name="custom"
               onChange={() => {}}
-              choiceStyle={{
-                checkedColor: '#2286dc',
-                hoverColor: '#778992  ',
-                uncheckedColor: '#fffaec'
-              }}
-              options={{
-                opA: 'Checked Custom Option A',
-                opB: 'Custom Option B',
-                opC: 'Custom Option C'
-              }} />
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 
@@ -421,20 +460,28 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              checked={'opA'}
+              checked="option-a"
               name="custom-disabled"
               onChange={() => {}}
               disabled
-              choiceStyle={{
-                checkedColor: '#2286dc',
-                hoverColor: '#778992  ',
-                uncheckedColor: '#fffaec'
-              }}
-              options={{
-                opA: 'Checked Custom Disabled Option A',
-                opB: 'Custom Disabled Option B',
-                opC: 'Custom Disabled Option C'
-              }} />
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 

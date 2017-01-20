@@ -1,338 +1,633 @@
+exports[`test Renders Choice with an heading without crashing 1`] = `
+<div
+  className="form-group">
+  <div
+    className="control-label">
+    heading
+  </div>
+  <div
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`test Renders Choice with radio buttons without crashing 1`] = `
 <div
-  className="radioContainer">
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopA"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opA" />
-    <label
-      disabled={undefined}
-      htmlFor="testopA"
-      id={0}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option A
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
+</div>
+`;
+
+exports[`test Renders a Choice with checked from route 1`] = `
+<div
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopB"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opB" />
-    <label
-      disabled={undefined}
-      htmlFor="testopB"
-      id={1}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option B
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={true}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
+</div>
+`;
+
+exports[`test Renders a Choice with custom style 1`] = `
+<div
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopC"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opC" />
-    <label
-      disabled={undefined}
-      htmlFor="testopC"
-      id={2}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option C
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className="customThemeClass"
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className="customThemeClass"
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className="customThemeClass"
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
 </div>
 `;
 
 exports[`test Renders a Choice with custom style disabled 1`] = `
 <div
-  className="radioContainer">
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopA"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opA" />
-    <label
-      disabled={true}
-      htmlFor="testopA"
-      id={0}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option A
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopB"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opB" />
-    <label
-      disabled={true}
-      htmlFor="testopB"
-      id={1}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option B
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopC"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opC" />
-    <label
-      disabled={true}
-      htmlFor="testopC"
-      id={2}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option C
-    </label>
-  </div>
-</div>
-`;
-
-exports[`test Renders a Choice with custom style without crashing 1`] = `
-<div
-  className="radioContainer">
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopA"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opA" />
-    <label
-      disabled={undefined}
-      htmlFor="testopA"
-      id={0}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option A
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopB"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opB" />
-    <label
-      disabled={undefined}
-      htmlFor="testopB"
-      id={1}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option B
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopC"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opC" />
-    <label
-      disabled={undefined}
-      htmlFor="testopC"
-      id={2}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fffaec",
-        }
-      }>
-      Option C
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className="customThemeClass"
+        disabled={true}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className="customThemeClass"
+        disabled={true}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className="customThemeClass"
+        disabled={true}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
 </div>
 `;
 
 exports[`test Renders a Choice with default checked without crashing 1`] = `
 <div
-  className="radioContainer">
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={true}
-      id="testopA"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opA" />
-    <label
-      disabled={undefined}
-      htmlFor="testopA"
-      id={0}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option A
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={true}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
+</div>
+`;
+
+exports[`test Renders a Choice with no default checked from route if it is not an option 1`] = `
+<div
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopB"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opB" />
-    <label
-      disabled={undefined}
-      htmlFor="testopB"
-      id={1}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option B
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
+</div>
+`;
+
+exports[`test Renders a Choice with no default checked from route if it is the other name 1`] = `
+<div
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopC"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opC" />
-    <label
-      disabled={undefined}
-      htmlFor="testopC"
-      id={2}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option C
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Renders a Choice with no default checked if it's not an option 1`] = `
+<div
+  className="form-group">
+  <div
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={undefined}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
 </div>
 `;
 
 exports[`test Renders a disabled Choice without crashing 1`] = `
 <div
-  className="radioContainer">
+  className="form-group">
   <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopA"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opA" />
-    <label
-      disabled={true}
-      htmlFor="testopA"
-      id={0}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option A
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopB"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opB" />
-    <label
-      disabled={true}
-      htmlFor="testopB"
-      id={1}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option B
-    </label>
-  </div>
-  <div
-    className="radioButton">
-    <input
-      checked={false}
-      id="testopC"
-      name="test"
-      onChange={[Function]}
-      type="radio"
-      value="opC" />
-    <label
-      disabled={true}
-      htmlFor="testopC"
-      id={2}
-      onMouseOut={undefined}
-      onMouseOver={undefined}
-      style={undefined}>
-      Option C
-    </label>
+    className="radioContainer">
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={true}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={true}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={undefined}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={true}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
   </div>
 </div>
 `;

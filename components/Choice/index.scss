@@ -2,20 +2,26 @@
 
 .radioContainer {
   display: table;
-  display: flex;
-  table-layout: fixed;
+  width: 100%;
+
+  @supports (display: flex) {
+    display: flex;
+  }
 }
 
 .radioButton {
-  display: table-cell;
-  display: block;
-  flex: 1;
+  @supports (display: flex) {
+    display: block;
+    flex: 1;
+  }
   text-align: center;
   border: 1px solid #ddd;
   border-left-width: 0;
 
   input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
   }
 
   input:checked + label {
@@ -23,7 +29,6 @@
     &:hover {
       background: $green;
       color: $white;
-      font-weight: bold;
     }
   }
 
@@ -34,6 +39,7 @@
     padding: 11px 15px;
     cursor: pointer;
     font-weight: normal;
+    transition: background .25s;
 
     &:hover {
       background: $gray-lightest;
