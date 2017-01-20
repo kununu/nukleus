@@ -5,7 +5,6 @@ import Autocomplete from 'components/Autocomplete';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
-import Logo from 'components/Logo';
 import MultipleChoice from 'components/MultipleChoice';
 import Notification from 'components/Notification';
 import Paginator from 'components/Paginator';
@@ -154,16 +153,6 @@ const App = ({location: {pathname, query}}) => (
               name="test"
               selectable
               colors={['red', 'green']} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-8">
-            <Logo
-              href="/playground/"
-              pendingRequests={3} />
           </div>
         </div>
 
