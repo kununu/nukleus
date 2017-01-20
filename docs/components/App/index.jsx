@@ -77,9 +77,7 @@ export default class App extends Component {
                   onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
-                <div>
-                  <Logo shade="light" />
-                </div>
+                <div><Logo /></div>
               </div>
             </div>
           </header>
