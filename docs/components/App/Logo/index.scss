@@ -12,11 +12,6 @@
   width: 128px;
   height: 60px;
 
-  &.dark {
-    background-image: url(./kununu-logo-dark-no-star.svg);
-    background-size: 126px;
-  }
-
   &:hover {
     text-decoration: none;
   }
@@ -26,11 +21,6 @@
     background-size: 45px;
     width: 38px;
     background-position: -5px 10px;
-
-    &.dark {
-      background-image: url(./kununu-k-no-star-dark.svg);
-      background-size: 45px;
-    }
 
     &::after {
       top: 5px;
@@ -48,8 +38,4 @@
   height: 11px;
   top: 17px;
   right: 5px;
-
-  &.dark {
-    background: url(./kununu-star-dark.svg) no-repeat 0;
-  }
 }

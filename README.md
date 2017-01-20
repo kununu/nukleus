@@ -13,10 +13,10 @@ A collection of React user interface components.
 Components include:
 
 - Autocomplete
+- Button
 - Combobox
 - DatePicker
 - InfoText
-- Logo
 - MultipleChoice
 - Notification
 - Paginator
@@ -37,14 +37,13 @@ You can include nukleus in two ways. Either way, you'll need a module bundler th
 You can include all compiled components and the main css (once) this way.
 
 ```javascript
-import {Logo, Select} from 'nukleus';
+import {Select} from 'nukleus';
 import 'nukleus/dist/main.css';
 ```
 
 Alternatively, you can use the source files. This has the benefit of making your final bundle smaller, but you will need to install a compatible sass version in your hosting app.
 
 ```javascript
-import Logo from 'nukleus/components/Logo/index.jsx';
 import Select from 'nukleus/components/Select/index.jsx';
 import 'nukleus/dist/main.css'
 ```

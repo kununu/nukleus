@@ -1,0 +1,15 @@
+propTypes: {
+  customTheme: PropTypes.string,
+  disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  link: PropTypes.string,
+  mobileFullWidth: PropTypes.bool,
+  onClick: PropTypes.func,
+  outline: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  type: PropTypes.oneOf([
+   'default',
+   'primary',
+   'etc..'
+  ])
+}

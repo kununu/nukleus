@@ -42,6 +42,11 @@
   }
 }
 
+.hideStarGroup {
+  display: table-cell;
+  width: 0;
+}
+
 .staticStars .starsGroup {
   padding: 0 2px;
 }
@@ -58,7 +63,9 @@
 
   &:hover {
     @media (min-width: $screen-md-min) {
-      transform: scale(1.2);
+      @supports (display: flex) {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -75,12 +82,24 @@
 
 .star {
   transform: scale(1);
+  width: 100%;
+  height: 30px;
+
+  @supports (display: flex) {
+    height: auto;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    height: 50px;
+  }
 }
 
 .hiddenInput:focus + label,
 .hiddenInput:checked + label {
   .star {
-    animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
+    @supports (display: flex) {
+      animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
+    }
 
     &:hover {
       transform: none;
