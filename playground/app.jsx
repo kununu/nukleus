@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import Autocomplete from 'components/Autocomplete';
+import Button from 'components/Button';
 import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
@@ -357,13 +358,160 @@ const App = ({location: {pathname, query}}) => (
         <br />
 
         <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} outline />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} outline disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Link" link="/" />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Link" link="/" disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Link" link="/" outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Link" link="/" disabled outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Danger Link" link="/" customTheme={styles.customThemeButton} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Link" link="/" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Full width Button" onClick={() => {}} fullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
           <div className="col-md-10">
             <Choice
               heading="Choice"
               name="basic"
               onChange={() => {}}
-              options={
-              [
+              options={[
                 {
                   id: 'option-a',
                   label: 'Option A',
@@ -393,8 +541,7 @@ const App = ({location: {pathname, query}}) => (
               name="disabled"
               onChange={() => {}}
               disabled
-              options={
-              [
+              options={[
                 {
                   id: 'option-a',
                   label: 'Checked Disabled Option A',

@@ -1,3 +1,6 @@
 defaultProps: {
-  checked: ''
+  checked: '',
+  customTheme: '',
+  headingStyle: 'control-label',
+  query: {}
 }

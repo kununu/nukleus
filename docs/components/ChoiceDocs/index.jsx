@@ -13,13 +13,24 @@ const ChoiceDocs = () => (
     component={
       <Choice
         name="basic"
-        onChange={() => {}}
-        checked="opA"
-        options={{
-          opA: 'Option A',
-          opB: 'Option B',
-          opC: 'Option C'
-        }} />
+        checked="option-a"
+        options={[
+          {
+            id: 'option-a',
+            label: 'Option A',
+            value: 'option-a'
+          },
+          {
+            id: 'option-b',
+            label: 'Option B',
+            value: 'option-b'
+          },
+          {
+            id: 'option-c',
+            label: 'Option C',
+            value: 'option-c'
+          }
+        ]} />
     }
     example={example}
     propsDefinition={propsDefinition}

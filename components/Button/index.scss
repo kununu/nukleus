@@ -1,0 +1,185 @@
+@import '~kununu-theme/scss/base/variables';
+
+// Common styles
+.button {
+  border-radius: $border-radius-sm;
+  font-weight: $font-weight-semibold;
+  box-shadow: none;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 10px 12px;
+  transition: background .15s;
+  font-size: $font-size-base;
+
+  &,
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      cursor: not-allowed;
+      opacity: .65;
+    }
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .button {
+    white-space: normal;
+
+    .mobileFullWidth {
+      width: 100%;
+    }
+  }
+}
+
+@mixin button-default(
+  $color,
+  $background,
+  $hover-background : lighten($background, 5%),
+  $active-background: darken($background, 5%)
+) {
+  color: $color;
+  background-color: $background;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $hover-background;
+  }
+
+  &:active,
+  &.active {
+    color: $color;
+    background-color: $active-background;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: $color;
+      background-color: $background;
+    }
+  }
+}
+
+@mixin button-outline(
+  $color,
+  $background,
+  $hover-color: darken($color, 5%),
+  $active-color: lighten($color, 5%)
+) {
+
+  &.outline {
+    color: $color;
+    background-color: $background;
+    border: 1px solid $color;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $hover-color;
+      border-color: $hover-color;
+    }
+
+    &:active,
+    &.active {
+      color: $active-color;
+      border-color: $active-color;
+    }
+
+    &.disabled,
+    &[disabled] {
+      &,
+      &:hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        color: $color;
+        background-color: $background;
+      }
+    }
+  }
+}
+
+// Apply the mixin to the buttons
+.default {
+  @include button-default($btn-default-color, $btn-default-bg);
+  @include button-outline($btn-default-color, $btn-info-bg);
+}
+
+.primary {
+  @include button-default($btn-primary-color, $btn-primary-bg);
+  @include button-outline($btn-primary-bg, $btn-primary-color);
+}
+
+.secondary {
+  @include button-default($btn-secondary-color, $btn-secondary-bg);
+  @include button-outline($btn-secondary-bg, $btn-secondary-color);
+}
+
+.info {
+  @include button-default($btn-info-color, $btn-info-bg);
+  @include button-outline($btn-info-color, $btn-info-bg);
+}
+
+.danger {
+  @include button-default($btn-danger-color, $btn-danger-bg);
+  @include button-outline($btn-danger-bg, $btn-danger-color);
+}
+
+.link {
+  @include button-default($btn-secondary-bg, $btn-info-bg);
+  @include button-outline($btn-secondary-bg, $btn-info-bg);
+
+  &:hover {
+    text-decoration: underline;
+    border-color: transparent;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      text-decoration: none;
+    }
+  }
+}
