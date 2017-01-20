@@ -8,7 +8,6 @@ import AutocompleteDocs from 'components/AutocompleteDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
 import InfoTextDocs from 'components/InfoTextDocs';
-import LogoDocs from 'components/LogoDocs';
 import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
 import PaginatorDocs from 'components/PaginatorDocs';
 import SelectDocs from 'components/SelectDocs';
@@ -27,7 +26,6 @@ const getRoutes = () => (
     <Route path="/autocomplete" component={AutocompleteDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
-    <Route path="/logo" component={LogoDocs} />
     <Route path="/multiple-choice" component={MultipleChoiceDocs} />
     <Route path="/paginator" component={PaginatorDocs} />
     <Route path="/text-field" component={TextFieldDocs} />

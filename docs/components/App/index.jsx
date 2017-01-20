@@ -1,8 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
-import {Logo} from 'nukleus';
-
+import Logo from './Logo';
 import styles from './index.scss';
 
 const components = [
