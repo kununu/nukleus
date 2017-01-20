@@ -1,8 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
-import {Logo} from 'nukleus';
-
+import Logo from './Logo';
 import styles from './index.scss';
 
 const components = [
@@ -11,7 +10,6 @@ const components = [
   'Combobox',
   'DatePicker',
   'InfoText',
-  'Logo',
   'MultipleChoice',
   'Notification',
   'Paginator',
@@ -79,9 +77,7 @@ export default class App extends Component {
                   onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
-                <div>
-                  <Logo shade="light" />
-                </div>
+                <div><Logo /></div>
               </div>
             </div>
           </header>
