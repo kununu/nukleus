@@ -378,6 +378,21 @@ const App = ({location: {pathname, query}}) => (
                   id: 'option-c',
                   label: 'Option C',
                   value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
                 }
               ]}
               query={query} />

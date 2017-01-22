@@ -1,9 +1,23 @@
 <Choice
+  heading="Choice"
   name="basic"
-  checked="opA"
-  options={{
-    opA: 'Option A',
-    opB: 'Option B',
-    opC: 'Option C'
-  }}
-/>
+  onChange={() => {}}
+  options={
+  [
+    {
+      id: 'option-a',
+      label: 'Option A',
+      value: 'option-a'
+    },
+    {
+      id: 'option-b',
+      label: 'Option B',
+      value: 'option-b'
+    },
+    {
+      id: 'option-c',
+      label: 'Option C',
+      value: 'option-c'
+    }
+  ]}
+  query={query} />
