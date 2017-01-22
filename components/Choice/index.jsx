@@ -67,15 +67,15 @@ export default class Choice extends Component {
       options,
       required
     } = this.props;
+
     const {
       checked
     } = this.state;
 
-
     return (
       <div className="form-group">
         {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
-        <div className={styles.radioContainer}>
+        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible} `}>
           {options.map((item, idx) =>
             <div className={styles.radioButton} key={idx}>
               <input

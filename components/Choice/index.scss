@@ -6,17 +6,17 @@
 
   @supports (display: flex) {
     display: flex;
+    flex-flow: row wrap;
   }
 }
 
 .radioButton {
+  text-align: center;
+
   @supports (display: flex) {
     display: block;
     flex: 1;
   }
-  text-align: center;
-  border: 1px solid #ddd;
-  border-left-width: 0;
 
   input {
     position: absolute;
@@ -27,7 +27,7 @@
   input:checked + label {
     &,
     &:hover {
-      background: $green;
+      background: $blue-light;
       color: $white;
     }
   }
@@ -39,7 +39,16 @@
     padding: 11px 15px;
     cursor: pointer;
     font-weight: normal;
-    transition: background .25s;
+    transition: all .25s;
+    border: 2px solid $blue-light;
+    border-left: 0;
+    color: $blue-dark;
+
+    @supports (display: flex) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &:hover {
       background: $gray-lightest;
@@ -49,6 +58,7 @@
     &[disabled] {
       cursor: not-allowed;
       opacity: .65;
+      border-color: $blue-light;
 
       &:hover {
         background: initial;
@@ -56,19 +66,49 @@
     }
   }
 
-  & + label {
-    &.disabled,
-    &[disabled] {
-      background: $green;
+  &:first-child {
+    label {
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+      border-left: 2px solid $blue-light;
     }
   }
 
-  &:first-child {
-    border-radius: 4px 0 0 4px;
-    border-left-width: 1px;
-  }
-
   &:last-child {
-    border-radius: 0 4px 4px 0;
+    label {
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+    }
+  }
+}
+
+.radioContainer.flexible {
+  @media (max-width: $screen-sm-max) {
+    border: 2px solid $blue;
+    border-radius: $border-radius-base;
+
+    .radioButton {
+      flex: 50%;
+
+      label {
+        border: 0;
+        border-radius: 0;
+      }
+
+      &:nth-child(4n+3) label,
+      &:nth-child(4n+4) label {
+        border: 2px solid $blue;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      &:nth-child(odd) label {
+        border-right: 2px solid $blue;
+      }
+
+      &:nth-last-child(2) label,
+      &:nth-last-child(1) label {
+        border-bottom: 0;
+      }
+    }
   }
 }
