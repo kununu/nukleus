@@ -1,3 +1,4 @@
+@import 'components/Button/index';
 
 input:checked + label.customThemeChoice {
   &,
@@ -7,11 +8,14 @@ input:checked + label.customThemeChoice {
 }
 
 label.customThemeChoice {
-  & {
-    background: #fffaec;
-  }
+  background: #fffaec;
 
   &:hover {
     background: #778992;
+  }
+
+  .customThemeButton {
+    @include button-default(#cc0, #c90);
+    @include button-outline(#fff, #c90);
   }
 }

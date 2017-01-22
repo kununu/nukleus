@@ -74,6 +74,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "3.3.7",
+    "classnames": "^2.2.5",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.4",
     "kununu-theme": "1.2.2",

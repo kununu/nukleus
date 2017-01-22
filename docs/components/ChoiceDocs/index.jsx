@@ -15,8 +15,8 @@ const ChoiceDocs = ({location: {query}}) => (
         heading="Choice"
         name="basic"
         onChange={() => {}}
-        options={
-        [
+        checked="option-a"
+        options={[
           {
             id: 'option-a',
             label: 'Option A',

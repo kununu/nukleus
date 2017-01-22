@@ -2,8 +2,9 @@
   heading="Choice"
   name="basic"
   onChange={() => {}}
-  options={
-  [
+  checked="option-a"
+  name="basic"
+  options={[
     {
       id: 'option-a',
       label: 'Option A',

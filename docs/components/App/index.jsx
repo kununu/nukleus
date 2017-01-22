@@ -6,6 +6,7 @@ import styles from './index.scss';
 
 const components = [
   'Autocomplete',
+  'Button',
   'Choice',
   'Combobox',
   'DatePicker',

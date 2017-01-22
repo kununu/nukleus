@@ -13,7 +13,11 @@ A collection of React user interface components.
 Components include:
 
 - Autocomplete
+<<<<<<< HEAD
 - Choice
+=======
+- Button
+>>>>>>> master
 - Combobox
 - DatePicker
 - InfoText

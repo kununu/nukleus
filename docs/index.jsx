@@ -5,6 +5,7 @@ import 'font-awesome-webpack';
 
 import App from 'components/App';
 import AutocompleteDocs from 'components/AutocompleteDocs';
+import ButtonDocs from 'components/ButtonDocs';
 import ChoiceDocs from 'components/ChoiceDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
@@ -25,6 +26,7 @@ const getRoutes = () => (
   <Route path="/" component={App} >
     <IndexRoute component={AutocompleteDocs} />
     <Route path="/autocomplete" component={AutocompleteDocs} />
+    <Route path="/button" component={ButtonDocs} />
     <Route path="/choice" component={ChoiceDocs} />
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
