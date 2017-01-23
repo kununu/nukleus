@@ -92,7 +92,7 @@ export default class App extends Component {
                       {componentList.map(({name, link}, index) =>
                         <li
                           key={name}
-                          className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
+                          className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
                           <Link
                             to={link}
                             onClick={(() => this.onClickToggleComponent(name))}
