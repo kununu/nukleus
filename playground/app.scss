@@ -1,0 +1,6 @@
+@import 'components/Button/index';
+
+.customThemeButton {
+  @include button-default(#cc0, #c90);
+  @include button-outline(#fff, #c90);
+}

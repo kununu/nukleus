@@ -1,16 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
-import {Logo} from 'nukleus';
-
+import Logo from './Logo';
 import styles from './index.scss';
 
 const components = [
   'Autocomplete',
+  'Button',
   'Combobox',
   'DatePicker',
   'InfoText',
-  'Logo',
   'MultipleChoice',
   'Notification',
   'Paginator',
@@ -78,9 +77,7 @@ export default class App extends Component {
                   onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
-                <div>
-                  <Logo shade="light" />
-                </div>
+                <div><Logo /></div>
               </div>
             </div>
           </header>
@@ -95,7 +92,7 @@ export default class App extends Component {
                       {componentList.map(({name, link}, index) =>
                         <li
                           key={name}
-                          className={this.state.components.find(comp => comp.name === name).visible && styles.activeMobile}>
+                          className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
                           <Link
                             to={link}
                             onClick={(() => this.onClickToggleComponent(name))}
