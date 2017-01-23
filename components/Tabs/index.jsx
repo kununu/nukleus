@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 import styles from './index.scss';
 
 export default function Tabs ({pages, pathname}) {
-  const activeItem = pages.find(item => item.path === pathname);
+  const activeItem = pages.filter(item => item.path === pathname)[0];
 
   return (
     <ul className={`${styles.tabs} clearfix`}>
