@@ -12,11 +12,12 @@ A collection of React user interface components.
 
 Components include:
 
-- CheckboxGroup
+- Autocomplete
+- Button
 - Combobox
 - DatePicker
 - InfoText
-- Logo
+- MultipleChoice
 - Notification
 - Paginator
 - Select
@@ -31,11 +32,20 @@ Get it from npm:
 npm i nukleus --save
 ```
 
-And include components and the main css (once) this way:
+You can include nukleus in two ways. Either way, you'll need a module bundler that supports css modules (webpack is recommended).
+
+You can include all compiled components and the main css (once) this way.
 
 ```javascript
-import {Logo, Select} from 'nukleus';
+import {Select} from 'nukleus';
 import 'nukleus/dist/main.css';
+```
+
+Alternatively, you can use the source files. This has the benefit of making your final bundle smaller, but you will need to install a compatible sass version in your hosting app.
+
+```javascript
+import Select from 'nukleus/components/Select/index.jsx';
+import 'nukleus/dist/main.css'
 ```
 
 ## Development

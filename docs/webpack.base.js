@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer'); // eslint-disable-line import/no-e
 
 module.exports = {
   context: __dirname,
-  entry: './app/index.jsx',
+  entry: './index.jsx',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js',
@@ -21,6 +21,7 @@ module.exports = {
     ],
     alias: {
       nukleus: path.resolve(__dirname, '..', 'components'),
+      utils: path.resolve(__dirname, '..', 'utils'),
       react: path.join(__dirname, 'node_modules', 'react')
     }
   },
