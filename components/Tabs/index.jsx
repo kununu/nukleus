@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-export default class Notification extends Component {
+export default class Tabs extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
     pathname: PropTypes.string.isRequired
@@ -10,7 +10,7 @@ export default class Notification extends Component {
 
   getNewProps (item) {
     const {props} = item;
-    // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname accordingly to the respective API
+    // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
     const localPathname = props.href || props.path || props.to.pathname;
     const newProps = localPathname === this.props.pathname ? {className: styles.active} : {};
     return newProps;
