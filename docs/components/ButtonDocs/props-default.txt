@@ -1,3 +1,4 @@
 defaultProps: {
+  text: '',
   type: 'primary'
 }
