@@ -1,23 +1,21 @@
 import React from 'react';
 
-import {Logo} from 'nukleus';
+import {Button} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
 
 import {default as example} from './example.txt';
 import {default as propsDefinition} from './props-definition.txt';
 import {default as propsDefault} from './props-default.txt';
 
-const LogoDocs = () => (
+const ButtonDocs = () => (
   <DocsRoot
-    title="Logo"
+    title="Button"
     component={
-      <Logo
-        href="/"
-        pendingRequests={3} />
+      <Button type="primary" text="Primary Button" />
     }
     example={example}
     propsDefinition={propsDefinition}
     propsDefault={propsDefault} />
 );
 
-export default LogoDocs;
+export default ButtonDocs;
