@@ -78,7 +78,7 @@ export default class MultipleChoice extends Component {
 
         <div className={styles.inputContainer}>
           {choices.map((choice, key) =>
-            <div className={`checkbox ${styles.choice}`} key={key}>
+            <div className={`${styles.choice}`} key={key}>
               <input
                 className="form-control"
                 id={`${this.props.name}${choice.id}`}
