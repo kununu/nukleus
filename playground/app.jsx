@@ -166,7 +166,8 @@ const App = ({location: {pathname, query}}) => (
             <Paginator
               totalPages={10}
               pathname={pathname}
-              query={query} />
+              query={query}
+              baseLink={<Link to={{pathname: '/playground', query}}>1</Link>} />
           </div>
         </div>
 
