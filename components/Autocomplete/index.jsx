@@ -11,6 +11,7 @@ import {
   controlLabel,
   controlNote,
   errorStyles,
+  formControl,
   hidden,
   formGroup,
   srOnly
@@ -182,7 +183,7 @@ export default class Autocomplete extends React.Component {
     } = this.state;
 
     const inputProps = {
-      className: 'form-control',
+      className: formControl,
       disabled,
       id,
       name,
