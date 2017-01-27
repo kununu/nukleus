@@ -3,13 +3,16 @@ import {Link} from 'react-router';
 
 import styles from './index.scss';
 
+import {clearfix} from '../index.scss';
+
+
 export default function Tabs ({pages, pathname}) {
   const activeItem = pages.filter(item => item.path === pathname)[0];
 
   return (
-    <ul className={`${styles.tabs} clearfix`}>
+    <ul className={`${styles.tabs} ${clearfix}`}>
       {pages.map((page, key) => (
-        <li key={key} className={pages.length > 1 ? '' : 'pointer-disabled'}>
+        <li key={key} className={pages.length > 1 ? '' : `${styles.pointerDisabled}`}>
           <Link
             className={activeItem === page && styles.active}
             to={{

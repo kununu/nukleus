@@ -7,6 +7,15 @@ import isMobile from 'utils/mobileDetection';
 
 import styles from './index.scss';
 
+import {
+  controlLabel,
+  controlNote,
+  errorStyles,
+  hidden,
+  formGroup,
+  srOnly
+} from '../index.scss';
+
 export default class Autocomplete extends React.Component {
   static propTypes = {
     data: PropTypes.object,
@@ -188,22 +197,22 @@ export default class Autocomplete extends React.Component {
     return (
       <div
         ref={node => this.node = node}
-        className={`form-group ${styles[this.props.inputStyle]}`}>
+        className={`${formGroup} ${styles[this.props.inputStyle]}`}>
 
         {requiredLabel &&
-          <span className={`control-note ${styles.requiredLabel}`}>
+          <span className={`${controlNote} ${styles.requiredLabel}`}>
             {requiredLabel}
           </span>
         }
 
         {labelHidden &&
-          <span className="sr-only">
+          <span className={srOnly}>
             {label}
           </span>
         }
 
         <label
-          className={`control-label ${labelHidden && 'hidden'}`}
+          className={`${controlLabel} ${labelHidden && hidden}`}
           htmlFor={id}>
           {label}
         </label>
@@ -241,7 +250,7 @@ export default class Autocomplete extends React.Component {
           }
 
           {showError &&
-            <span className={`${styles.error} label-danger`}>
+            <span className={errorStyles}>
               {error}
             </span>
           }

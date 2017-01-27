@@ -6,6 +6,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import styles from './index.scss';
 
+import {
+  errorStyles,
+  controlLabel,
+  formGroup
+} from '../index.scss';
+
 export default class DatePickerComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
@@ -85,9 +91,9 @@ export default class DatePickerComponent extends Component {
     } = this.props;
 
     return (
-      <div className={`form-group ${styles[inputStyle]} ${styles.datePickerContainer}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer}`}>
         <label
-          className="control-label"
+          className={controlLabel}
           htmlFor={id}>
 
           {title}
@@ -111,7 +117,7 @@ export default class DatePickerComponent extends Component {
         </div>
 
         {this.state.showError &&
-          <span className={`${styles.error} label-danger`}>
+          <span className={errorStyles}>
             {error}
           </span>}
       </div>
