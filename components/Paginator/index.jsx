@@ -39,13 +39,25 @@ export default class Paginator extends Component {
     return pageRange;
   }
 
+  getNewProps (queryValue) {
+    const {baseLink, pathname, query, queryKey} = this.props;
+    if (baseLink.props.to) {
+      return {
+        to: {
+          pathname,
+          query: {...query, [queryKey]: queryValue}
+        }
+      };
+    }
+    return {};
+  }
+
   render () {
     const {
       baseLink,
       totalPages,
       queryKey,
-      query,
-      pathname
+      query
     } = this.props;
     const currentPage = Number(query[queryKey]) || 1;
     const totalPagesArray = this.getPageRange(currentPage, totalPages);
@@ -56,32 +68,17 @@ export default class Paginator extends Component {
       <div className={styles.paginator}>
         <ul className="pagination" role="navigation" aria-label="Pagination">
           <li className={(totalPages === 1 || !currentPage || currentPage === 1) && 'disabled pointer-disabled'}>
-            {React.cloneElement(baseLink, {
-              to: {
-                pathname,
-                query: {...query, [queryKey]: previousPage}
-              }
-            }, '<')}
+            {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
           </li>
 
           {totalPagesArray.map(item =>
             <li key={item} className={currentPage === item ? 'active pointer-disabled' : 'inActive'}>
-              {React.cloneElement(baseLink, {
-                to: {
-                  pathname,
-                  query: {...query, [queryKey]: item}
-                }
-              }, item)}
+              {React.cloneElement(baseLink, this.getNewProps(item), item)}
             </li>
           )}
 
           <li className={currentPage === totalPages && 'disabled pointer-disabled'}>
-            {React.cloneElement(baseLink, {
-              to: {
-                pathname,
-                query: {...query, [queryKey]: nextPage}
-              }
-            }, '>')}
+            {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
           </li>
         </ul>
       </div>

@@ -167,7 +167,7 @@ const App = ({location: {pathname, query}}) => (
               totalPages={10}
               pathname={pathname}
               query={query}
-              baseLink={<Link to={{pathname: '/playground', query}}>1</Link>} />
+              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>} />
           </div>
         </div>
 
