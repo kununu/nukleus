@@ -4,20 +4,13 @@
 @import '~kununu-theme/scss/base/functions';
 @import '~kununu-theme/scss/base/mixins';
 
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/normalize';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/tables';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/pagination';
-
+@import '~kununu-theme/scss/effects/core';
+@import '~kununu-theme/scss/base/panels';
 
 // Only include the things that we absolutely require from the kununu/theme module
 // We are including the rest of Font Awesome in App.js by importing `font-awesome-webpack`
-
-@import '~kununu-theme/scss/effects/core';
-@import '~kununu-theme/scss/base/tables';
-@import '~kununu-theme/scss/base/panels';
 
 
 body {
