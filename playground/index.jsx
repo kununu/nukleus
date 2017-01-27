@@ -4,7 +4,6 @@ import {Route, Router, browserHistory} from 'react-router';
 
 import 'font-awesome-webpack';
 import 'main.scss';
-import 'layout.scss';
 
 import App from './app';
 
