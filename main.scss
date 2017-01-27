@@ -1,17 +1,8 @@
 // sass-lint:disable class-name-format
 
-@import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/functions';
-@import '~kununu-theme/scss/base/mixins';
-
-
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '~kununu-theme/scss/effects/core';
-@import '~kununu-theme/scss/base/panels';
-
 // Only include the things that we absolutely require from the kununu/theme module
 // We are including the rest of Font Awesome in App.js by importing `font-awesome-webpack`
-
+@import '~kununu-theme/scss/base/variables';
 
 body {
   -moz-osx-font-smoothing: grayscale;
@@ -23,32 +14,6 @@ html,
 body {
   height: 100%;
   font-size: 14px;
-}
-
-// TODO: Consider whether these button extensions are part of our official styles.
-// If so, consider altering the main kununu/theme project.
-.btn-default-dark,
-.btn-default-dark.active {
-  text-transform: uppercase;
-  box-shadow: none;
-  background-color: $gray-base-30;
-  border-color: $gray-base-30;
-
-  &:active {
-    box-shadow: none;
-    border-color: $gray-base-30;
-  }
-
-  &:hover {
-    background-color: $gray-base-30;
-  }
-}
-
-.btn-secondary.active {
-  box-shadow: none;
-  background-color: $btn-secondary-hover;
-  border-color: $btn-secondary-hover;
-  color: $white;
 }
 
 .react-datepicker__input-container {

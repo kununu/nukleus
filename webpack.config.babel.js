@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        exclude: /node_modules|main\.scss/,
+        exclude: /node_modules|main\.scss|layout\.scss/,
         loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
       },
       {
@@ -50,7 +50,7 @@ module.exports = {
         loader: 'style!css'
       },
       {
-        test: /main\.scss$/,
+        test: /main\.scss|layout\.scss$/,
         exclude: /node_modules/,
         loader: 'style!css!postcss!sass'
       },
