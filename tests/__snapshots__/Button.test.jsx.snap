@@ -44,13 +44,16 @@ exports[`test Renders a mobile full width button 1`] = `
 `;
 
 exports[`test Renders anchor button without crashing 1`] = `
-<a
-  className="button primary"
-  disabled={undefined}
-  onClick={[Function]}
-  style={Object {}}>
-  Test
-</a>
+<div
+  className="">
+  <a
+    className="button primary"
+    disabled={undefined}
+    href="/"
+    onClick={undefined}>
+    Button
+  </a>
+</div>
 `;
 
 exports[`test Renders button without crashing 1`] = `

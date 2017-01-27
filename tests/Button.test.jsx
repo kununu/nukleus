@@ -14,7 +14,9 @@ test('Renders button without crashing', () => {
 
 test('Renders anchor button without crashing', () => {
   const component = renderer.create(
-    <Button text="Test" link="/" />
+    <Button
+      text="Test"
+      link={<a href="/">Button</a>} />
   );
 
   const tree = component.toJSON();
