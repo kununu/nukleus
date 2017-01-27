@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Button from 'Button'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
@@ -12,11 +13,22 @@ test('Renders button without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders anchor button without crashing', () => {
+test('Renders simple anchor button without crashing', () => {
   const component = renderer.create(
     <Button
       text="Test"
       link={<a href="/">Button</a>} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders react-router anchor button without crashing', () => {
+  const component = renderer.create(
+    <Button
+      text="Test"
+      link={<Link to={{pathname: '/test'}}>Button</Link>} />
   );
 
   const tree = component.toJSON();
