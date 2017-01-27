@@ -1,7 +1,8 @@
 /* eslint-disable no-plusplus */
 
 import React, {PropTypes, Component} from 'react';
-// import {Link} from 'react-router';
+
+import params from 'utils/params';
 
 import styles from './index.scss';
 
@@ -49,7 +50,11 @@ export default class Paginator extends Component {
         }
       };
     }
-    return {};
+
+    const location = baseLink.props.href ? 'href' : 'path';
+    return {
+      [location]: `${pathname}?${params({...query, [queryKey]: queryValue})}`
+    };
   }
 
   render () {
