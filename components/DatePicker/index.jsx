@@ -93,7 +93,7 @@ export default class DatePickerComponent extends Component {
           {title}
         </label>
 
-        <div className="relative">
+        <div className={styles.innerContainer}>
           <DatePicker
             name={name}
             id={id}
