@@ -34,8 +34,8 @@ export default function Paginator ({
 
   return (
     <div className={styles.paginator}>
-      <ul className="pagination" role="navigation" aria-label="Pagination">
-        <li className={(totalPages === 1 || !currentPage || currentPage === 1) && 'disabled pointer-disabled'}>
+      <ul className={styles.paginatorList} role="navigation" aria-label="Pagination">
+        <li className={(totalPages === 1 || !currentPage || currentPage === 1) && styles.disabled}>
           <Link
             to={{
               pathname,
@@ -47,7 +47,7 @@ export default function Paginator ({
         </li>
 
         {totalPagesArray.map(item =>
-          <li key={item} className={currentPage === item ? 'active pointer-disabled' : 'inActive'}>
+          <li key={item} className={currentPage === item && `${styles.active}`}>
             <Link
               to={{
                 pathname,
@@ -59,7 +59,7 @@ export default function Paginator ({
           </li>
         )}
 
-        <li className={currentPage === totalPages && 'disabled pointer-disabled'}>
+        <li className={currentPage === totalPages && styles.disabled}>
           <Link
             to={{
               pathname,
