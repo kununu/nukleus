@@ -16,34 +16,6 @@ body {
   font-size: 14px;
 }
 
-.react-datepicker__input-container {
-  width: 100%;
-}
-
-.text-link {
-  color: $blue;
-
-  &:hover {
-    text-decoration: underline;
-    color: $blue-dark;
-  }
-}
-
-.ellipsis-loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  animation: ellipsis steps(4, end) 700ms infinite;
-  content: '\2026';
-  width: 0;
-}
-
-@keyframes ellipsis {
-  to {
-    width: 1.5em;
-  }
-}
-
 .form-control {
   box-shadow: inset 0 1px 1px rgba($black, .075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
