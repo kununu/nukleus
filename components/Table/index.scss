@@ -11,11 +11,16 @@
 .table {
   width: 100%;
   min-width: 1060px;
-  margin-bottom: 25px;
+  border: 1px solid $table-border-color;
 
   & > thead > tr > th {
     padding: 10px 20px;
     background-color: $teal;
+    border-color: $th-border-color;
+    border-bottom: 0;
+    text-transform: uppercase;
+    font-size: $font-size-xs;
+    text-align: left;
 
     span {
       color: $white;
@@ -24,13 +29,19 @@
 
   & > tbody > tr {
     min-height: 50px;
-  }
 
-  & > tbody > tr > td {
-    max-width: 250px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: $font-size-base;
+    &:nth-of-type(odd) {
+      background-color: $table-bg-accent;
+    }
+
+    > td {
+      padding: 12px 18px;
+      max-width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: $font-size-base;
+      border: 1px solid $td-border-color;
+    }
   }
 
   .emptyHeader {
