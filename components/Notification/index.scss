@@ -24,6 +24,9 @@
   p {
     color: $gray-base-30;
     margin-bottom: 6px;
+    letter-spacing: -.035em;
+    margin-top: $baseline-grid;
+    margin-bottom: $baseline-grid * 3;
   }
 }
 

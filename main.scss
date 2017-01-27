@@ -15,9 +15,7 @@
 // Only include the things that we absolutely require from the kununu/theme module
 // We are including the rest of Font Awesome in App.js by importing `font-awesome-webpack`
 
-@import '~kununu-theme/scss/effects/position';
 @import '~kununu-theme/scss/effects/core';
-@import '~kununu-theme/scss/base/type';
 @import '~kununu-theme/scss/base/tables';
 @import '~kununu-theme/scss/base/panels';
 
