@@ -1,4 +1,5 @@
 defaultProps: {
   pathname: '/',
-  query: {}
+  query: {},
+  queryKey: 'page'
 }
