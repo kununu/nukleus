@@ -1,4 +1,4 @@
   propType: {
-    pages: PropTypes.array.isRequired,
+    items: PropTypes.arrayOf(PropTypes.element).isRequired,
     pathname: PropTypes.string.isRequired
   }

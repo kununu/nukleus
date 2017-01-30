@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Autocomplete from 'components/Autocomplete';
 import Button from 'components/Button';
@@ -167,7 +167,8 @@ const App = ({location: {pathname, query}}) => (
             <Paginator
               totalPages={10}
               pathname={pathname}
-              query={query} />
+              query={query}
+              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>} />
           </div>
         </div>
 
@@ -175,10 +176,10 @@ const App = ({location: {pathname, query}}) => (
           <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
             <div className="clearfix relative">
               <Tabs
-                pages={[
-                  {path: '/playground/', query, title: 'First tab'},
-                  {path: '/playground/2', query, title: 'Second tab'},
-                  {path: '/playground/3', query, title: 'Third tab'}
+                items={[
+                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
+                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
                 ]}
                 pathname={pathname} />
             </div>
@@ -468,22 +469,39 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Link" link="/" />
+            <Button
+              type="default"
+              link={<Link to="/playground">Button Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Link" link="/" disabled />
+            <Button
+              type="primary"
+              disabled
+              link={<Link to="/playground">Primary Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Link" link="/" outline />
+            <Button
+              type="secondary"
+              link={<Link to="/playground">Secondary Link</Link>}
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Link" link="/" disabled outline />
+            <Button
+              type="info"
+              link={<Link to="/playground/huhuh">Info Link</Link>}
+              disabled
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Danger Link" link="/" customTheme={styles.customThemeButton} />
+            <Button
+              type="custom"
+              link={<Link to="/playground">Danger Link</Link>}
+              customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Link" link="/" />
+            <Button
+              type="link"
+              link={<Link to="/playground">Link Link</Link>} />
           </div>
         </div>
 

@@ -1,31 +1,55 @@
-exports[`test Renders Tabs without crashing 1`] = `
+exports[`test Renders Tabs with react-router links as items without crashing 1`] = `
 <ul
   className="tabs clearfix">
   <li
     className="">
     <a
-      className="active"
       onClick={[Function]}
       style={Object {}}>
-      First tab
+      First Tab
     </a>
   </li>
   <li
     className="">
     <a
-      className={false}
       onClick={[Function]}
       style={Object {}}>
-      Second tab
+      Second Tab
     </a>
   </li>
   <li
     className="">
     <a
-      className={false}
       onClick={[Function]}
       style={Object {}}>
-      Third tab
+      Third Tab
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`test Renders Tabs with simple links as items without crashing 1`] = `
+<ul
+  className="tabs clearfix">
+  <li
+    className="">
+    <a
+      href="/playground/">
+      First Tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      href="/playground/2">
+      Second Tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      href="/playground/3">
+      Third Tab
     </a>
   </li>
 </ul>
