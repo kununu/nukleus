@@ -1,9 +1,6 @@
 @import '~kununu-theme/scss/base/variables';
 @import '~kununu-theme/scss/base/mixins';
 
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/normalize';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
-
 @import 'components/Button/index';
 
 input:checked + label.customThemeChoice {
