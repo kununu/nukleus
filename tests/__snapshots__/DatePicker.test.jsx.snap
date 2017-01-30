@@ -1,13 +1,13 @@
 exports[`test Renders datepicker without crashing 1`] = `
 <div
-  className="form-group inline datePickerContainer">
+  className="formGroup inline datePickerContainer">
   <label
-    className="control-label"
+    className="controlLabel"
     htmlFor="date-picker">
     DatePicker
   </label>
   <div
-    className="relative">
+    className="innerContainer">
     <Datepicker
       disabled={false}
       id="date-picker"

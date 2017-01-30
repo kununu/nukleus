@@ -25,9 +25,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   placeholder="Type m"
   required={true}>
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <label
-      className="control-label"
+      className="controlLabel"
       htmlFor="city">
       Combobox
     </label>
@@ -689,9 +689,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 
 exports[`test Renders Combobox without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <label
-    className="control-label"
+    className="controlLabel"
     htmlFor="city">
     Combobox
   </label>
