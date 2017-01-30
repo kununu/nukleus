@@ -184,7 +184,10 @@
   }
 }
 
-.disabledLink a {
-  pointer-events: none;
-  cursor: default;
+.disabledLink {
+  cursor: not-allowed;
+
+  a {
+    pointer-events: none;
+  }
 }

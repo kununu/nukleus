@@ -488,7 +488,7 @@ const App = ({location: {pathname, query}}) => (
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="info"
-              link={<Link to="/playground">Info Link</Link>}
+              link={<Link to="/playground/huhuh">Info Link</Link>}
               disabled
               outline />
           </div>
