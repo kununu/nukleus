@@ -5,6 +5,10 @@
   padding-left: 0;
   border-radius: $border-radius-base;
 
+  * {
+    box-sizing: border-box;
+  }
+
   > li {
     display: inline; // Remove list-style and block-level defaults
 

@@ -13,6 +13,11 @@
   z-index: $zindex-popover;
   display: none;
 
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
   span {
     padding-right: 8px;
   }

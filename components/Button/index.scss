@@ -19,6 +19,10 @@
   transition: background .15s;
   font-size: $font-size-base;
 
+  * {
+    box-sizing: border-box;
+  }
+
   &,
   &:hover,
   &:focus,

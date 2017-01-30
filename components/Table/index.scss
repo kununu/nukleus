@@ -3,6 +3,10 @@
 .tableContainer {
   margin-bottom: 15px;
 
+  * {
+    box-sizing: border-box;
+  }
+
   @media (max-width: $screen-md-max) {
     overflow: scroll;
   }

@@ -70,6 +70,7 @@
 }
 
 .suggestion {
+  box-sizing: border-box;
   text-align: left;
   padding: 8px 15px;
 }
@@ -92,6 +93,10 @@
 .autoCompleteContainer {
   position: relative;
   width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 // Inline error definition

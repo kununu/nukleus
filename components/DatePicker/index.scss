@@ -6,6 +6,10 @@
 .datePickerContainer {
   width: 100%;
 
+  * {
+    box-sizing: border-box;
+  }
+
   input {
     @extend .form-control;
     cursor: pointer;
