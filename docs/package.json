@@ -55,7 +55,7 @@
     "kununu-theme": "1.2.1",
     "react": "15.4.1",
     "react-dom": "15.4.1",
-    "react-router": "3.0.0"
+    "react-router": "3.0.2"
   },
   "scripts": {
     "start": "cross-env UV_THREADPOOL_SIZE=100 webpack-dev-server --inline --hot --port 8080",
