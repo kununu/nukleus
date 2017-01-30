@@ -183,3 +183,11 @@
     }
   }
 }
+
+.disabledLink {
+  cursor: not-allowed;
+
+  a {
+    pointer-events: none;
+  }
+}

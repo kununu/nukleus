@@ -43,16 +43,6 @@ exports[`test Renders a mobile full width button 1`] = `
 </button>
 `;
 
-exports[`test Renders anchor button without crashing 1`] = `
-<a
-  className="button primary"
-  disabled={undefined}
-  onClick={[Function]}
-  style={Object {}}>
-  Test
-</a>
-`;
-
 exports[`test Renders button without crashing 1`] = `
 <button
   className="button primary"
@@ -60,4 +50,30 @@ exports[`test Renders button without crashing 1`] = `
   onClick={[Function]}>
   Test
 </button>
+`;
+
+exports[`test Renders react-router anchor button without crashing 1`] = `
+<div
+  className="">
+  <a
+    className="button primary"
+    disabled={undefined}
+    onClick={[Function]}
+    style={Object {}}>
+    Button
+  </a>
+</div>
+`;
+
+exports[`test Renders simple anchor button without crashing 1`] = `
+<div
+  className="">
+  <a
+    className="button primary"
+    disabled={undefined}
+    href="/"
+    onClick={undefined}>
+    Button
+  </a>
+</div>
 `;

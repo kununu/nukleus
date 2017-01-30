@@ -1,14 +1,30 @@
 import React from 'react';
+import {Link} from 'react-router';
 import renderer from 'react-test-renderer';
 import Tabs from 'Tabs'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
-test('Renders Tabs without crashing', () => {
+test('Renders Tabs with react-router links as items without crashing', () => {
   const component = renderer.create(
     <Tabs
-      pages={[
-        {path: 'test', query: 'test', title: 'First tab'},
-        {path: '/test/2', query: 'test', title: 'Second tab'},
-        {path: '/test/3', query: 'test', title: 'Third tab'}
+      items={[
+        <Link to={{pathname: '/playground/'}}>First Tab</Link>,
+        <Link to={{pathname: '/playground/2'}}>Second Tab</Link>,
+        <Link to={{pathname: '/playground/3'}}>Third Tab</Link>
+      ]}
+      pathname={'test'} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders Tabs with simple links as items without crashing', () => {
+  const component = renderer.create(
+    <Tabs
+      items={[
+        <a href="/playground/">First Tab</a>,
+        <a href="/playground/2">Second Tab</a>,
+        <a href="/playground/3">Third Tab</a>
       ]}
       pathname={'test'} />
   );

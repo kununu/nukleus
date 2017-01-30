@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Route, Router, browserHistory} from 'react-router';
+import {Route, Router, browserHistory} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 import 'font-awesome-webpack';
 import 'main.scss';
