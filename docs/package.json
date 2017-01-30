@@ -50,12 +50,14 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
+    "client-gear": "kununu/client-gear#master",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.4",
     "kununu-theme": "1.2.1",
     "react": "15.4.1",
     "react-dom": "15.4.1",
-    "react-router": "3.0.2"
+    "react-router": "3.0.2",
+    "react-state-animation": "0.1.0"
   },
   "scripts": {
     "start": "cross-env UV_THREADPOOL_SIZE=100 webpack-dev-server --inline --hot --port 8080",

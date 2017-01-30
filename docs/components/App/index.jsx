@@ -1,12 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
+import Logo from 'client-gear/components/Logo';
 
-import Logo from './Logo';
 import styles from './index.scss';
 
 const components = [
   'Autocomplete',
   'Button',
+  'Choice',
   'Combobox',
   'DatePicker',
   'InfoText',
@@ -77,7 +78,7 @@ export default class App extends Component {
                   onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
-                <div><Logo /></div>
+                <div><Logo shade="light" /></div>
               </div>
             </div>
           </header>

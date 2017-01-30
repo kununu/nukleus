@@ -33,8 +33,16 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /client-gear\/components\/Logo\/index.jsx/,
+        loader: 'babel'
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules|main\.scss/,
+        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
+      },
+      {
+        test: /client-gear\/components\/Logo\/index.scss/,
         loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
       },
       {

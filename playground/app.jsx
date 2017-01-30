@@ -3,6 +3,7 @@ import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-d
 
 import Autocomplete from 'components/Autocomplete';
 import Button from 'components/Button';
+import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
@@ -517,6 +518,139 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
             <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice"
+              name="basic"
+              onChange={() => {}}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
+                }
+              ]}
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="disabled"
+              onChange={() => {}}
+              disabled
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Custom Choice"
+              checked="option-a"
+              name="custom"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="custom-disabled"
+              onChange={() => {}}
+              disabled
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 

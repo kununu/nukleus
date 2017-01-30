@@ -1,5 +1,6 @@
 export Autocomplete from './Autocomplete';
 export Button from './Button';
+export Choice from './Choice';
 export Combobox from './Combobox';
 export DatePicker from './DatePicker';
 export InfoText from './InfoText';
