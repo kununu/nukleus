@@ -37,11 +37,18 @@ export default class Paginator extends Component {
         counter++;
       }
     }
+
     return pageRange;
   }
 
   getNewProps (queryValue) {
-    const {baseLink, pathname, query, queryKey} = this.props;
+    const {
+      baseLink,
+      pathname,
+      query,
+      queryKey
+    } = this.props;
+
     if (baseLink.props.to) {
       return {
         to: {
@@ -52,6 +59,7 @@ export default class Paginator extends Component {
     }
 
     const location = baseLink.props.href ? 'href' : 'path';
+
     return {
       [location]: `${pathname}?${params({...query, [queryKey]: queryValue})}`
     };
@@ -64,6 +72,7 @@ export default class Paginator extends Component {
       queryKey,
       query
     } = this.props;
+
     const currentPage = Number(query[queryKey]) || 1;
     const totalPagesArray = this.getPageRange(currentPage, totalPages);
     const previousPage = currentPage !== 1 ? currentPage - 1 : currentPage;
