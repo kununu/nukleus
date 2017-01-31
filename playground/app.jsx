@@ -294,6 +294,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
               title="DatePicker" />
@@ -315,6 +316,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Combobox
+              handle={<i className="fa fa-caret-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
@@ -659,6 +661,7 @@ const App = ({location: {pathname, query}}) => (
 
     <Notification
       message="Hello, I am a notification box"
+      successIcon={<i className="fa fa-check" />}
       visible />
   </div>
 );
