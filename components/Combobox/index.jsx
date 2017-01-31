@@ -9,6 +9,7 @@ import styles from './index.scss';
 import {
   controlLabel,
   errorStyles,
+  formControl,
   formGroup
 } from '../index.scss';
 
@@ -120,6 +121,7 @@ export default class ComboboxComponent extends Component {
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
             inputProps={{
+              className: formControl,
               disabled,
               id,
               name,
