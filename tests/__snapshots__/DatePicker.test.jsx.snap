@@ -9,6 +9,7 @@ exports[`test Renders datepicker without crashing 1`] = `
   <div
     className="innerContainer">
     <Datepicker
+      className="formControl"
       disabled={false}
       id="date-picker"
       isClearable={true}
