@@ -9,6 +9,7 @@ import styles from './index.scss';
 import {
   errorStyles,
   controlLabel,
+  formControl,
   formGroup
 } from '../index.scss';
 
@@ -101,6 +102,7 @@ export default class DatePickerComponent extends Component {
 
         <div className={styles.innerContainer}>
           <DatePicker
+            className={formControl}
             name={name}
             id={id}
             disabled={disabled}
