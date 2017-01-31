@@ -35,14 +35,19 @@
 }
 
 .closeButton {
-  color: $gray-base-30;
   background-color: transparent;
   border: 0;
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 10px;
   cursor: pointer;
   outline: 0;
+
+  svg {
+    fill: $gray-base-30;
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .container.error {

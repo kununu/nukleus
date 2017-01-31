@@ -17,6 +17,7 @@ export default class DatePickerComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    icon: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isClearable: PropTypes.bool,
@@ -82,6 +83,7 @@ export default class DatePickerComponent extends Component {
     const {
       title,
       name,
+      icon,
       id,
       error,
       inputStyle,
@@ -112,10 +114,11 @@ export default class DatePickerComponent extends Component {
             showYearDropdown
             required={required}
             onChange={this.onChange} />
-
-          <span className={styles.icon}>
-            <i className="fa fa-calendar" aria-hidden="true" />
-          </span>
+          {icon ?
+            <span className={styles.icon}>
+              {icon}
+            </span>
+          : ''}
         </div>
 
         {this.state.showError &&
