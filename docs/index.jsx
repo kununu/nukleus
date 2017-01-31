@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
-import 'font-awesome-webpack';
 
 import App from 'components/App';
 import AutocompleteDocs from 'components/AutocompleteDocs';
