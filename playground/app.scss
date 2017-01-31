@@ -1,3 +1,6 @@
+@import '~kununu-theme/scss/base/variables';
+@import '~kununu-theme/scss/base/mixins';
+
 @import 'components/Button/index';
 
 input:checked + label.customThemeChoice {

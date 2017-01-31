@@ -2,6 +2,12 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import {
+  formControl,
+  formGroup
+} from '../index.scss';
+
+
 export default class MultipleChoice extends Component {
   static propTypes = {
     choices: PropTypes.array.isRequired,
@@ -73,14 +79,14 @@ export default class MultipleChoice extends Component {
     const {choices} = this.state;
 
     return (
-      <div className={`${styles[this.props.inputStyle]} form-group`}>
+      <div className={`${styles[this.props.inputStyle]} ${formGroup}`}>
         {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
 
         <div className={styles.inputContainer}>
           {choices.map((choice, key) =>
-            <div className={`checkbox ${styles.choice}`} key={key}>
+            <div className={`${styles.choice}`} key={key}>
               <input
-                className="form-control"
+                className={formControl}
                 id={`${this.props.name}${choice.id}`}
                 name={this.props.name}
                 key={choice.id}

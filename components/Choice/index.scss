@@ -4,6 +4,10 @@
   display: table;
   width: 100%;
 
+  * {
+    box-sizing: border-box;
+  }
+
   @supports (display: flex) {
     display: flex;
     flex-flow: row wrap;

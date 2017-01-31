@@ -263,28 +263,28 @@ const App = ({location: {pathname, query}}) => (
               heading="MultipleChoice"
               choices={
               [{
-                id: 'option-1',
+                id: 'option-a',
                 isChecked: true,
-                label: 'option 1',
-                value: 'option-1'
+                label: 'option a',
+                value: 'option-a'
               },
               {
-                id: 'option-2',
+                id: 'option-b',
                 isChecked: false,
-                label: 'option 2',
-                value: 'option-2'
+                label: 'option b',
+                value: 'option-b'
               },
               {
-                id: 'option-3',
+                id: 'option-c',
                 isChecked: false,
-                label: 'option 3',
-                value: 'option-2'
+                label: 'option c',
+                value: 'option-c'
               },
               {
-                id: 'option-4',
+                id: 'option-d',
                 isChecked: false,
-                label: 'option 4',
-                value: 'option-4'
+                label: 'option d',
+                value: 'option-d'
               }]} />
           </div>
         </div>

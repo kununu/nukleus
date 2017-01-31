@@ -1,112 +1,29 @@
-// sass-lint:disable class-name-format
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
 @import '~kununu-theme/scss/base/variables';
 @import '~kununu-theme/scss/base/functions';
 @import '~kununu-theme/scss/base/mixins';
-
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/normalize';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/print';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/type';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/code';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/tables';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/buttons';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/component-animations';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/dropdowns';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/button-groups';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/input-groups';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/navs';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/navbar';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/pagination';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/labels';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/alerts';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/close';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/tooltip';
-
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/utilities';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
-
-// Only include the things that we absolutely require from the kununu/theme module
-// We are including the rest of Font Awesome in App.js by importing `font-awesome-webpack`
-@import '~font-awesome/scss/variables';
-@import '~font-awesome/scss/mixins';
-
-@import '~kununu-theme/scss/base/buttons';
-@import '~kununu-theme/scss/base/grid';
 @import '~kununu-theme/scss/base/core';
-@import '~kununu-theme/scss/base/lists';
-@import '~kununu-theme/scss/base/sections';
-@import '~kununu-theme/scss/base/tables';
-@import '~kununu-theme/scss/base/forms';
-@import '~kununu-theme/scss/base/panels';
-@import '~kununu-theme/scss/base/print';
-@import '~kununu-theme/scss/base/ratings';
-@import '~kununu-theme/scss/base/utilities';
-
-@import '~kununu-theme/scss/base/type';
-@import '~kununu-theme/scss/base/colors';
-
-@import '~kununu-theme/scss/effects/position';
-@import '~kununu-theme/scss/effects/sizing';
 @import '~kununu-theme/scss/effects/core';
-@import '~kununu-theme/scss/shims/shims';
+@import '~kununu-theme/scss/base/panels';
 
-html {
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/code';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/navbar';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/grid';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/utilities';
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
   font-size: 14px;
-}
-
-// TODO: Consider whether these button extensions are part of our official styles.
-// If so, consider altering the main kununu/theme project.
-.btn-default-dark,
-.btn-default-dark.active {
-  text-transform: uppercase;
-  box-shadow: none;
-  background-color: $gray-base-30;
-  border-color: $gray-base-30;
-
-  &:active {
-    box-shadow: none;
-    border-color: $gray-base-30;
-  }
-
-  &:hover {
-    background-color: $gray-base-30;
-  }
-}
-
-.btn-secondary.active {
-  box-shadow: none;
-  background-color: $btn-secondary-hover;
-  border-color: $btn-secondary-hover;
-  color: $white;
-}
-
-.react-datepicker__input-container {
-  width: 100%;
-}
-
-.text-link {
-  color: $blue;
-
-  &:hover {
-    text-decoration: underline;
-    color: $blue-dark;
-  }
-}
-
-.ellipsis-loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  animation: ellipsis steps(4, end) 700ms infinite;
-  content: '\2026';
-  width: 0;
-}
-
-@keyframes ellipsis {
-  to {
-    width: 1.5em;
-  }
 }
