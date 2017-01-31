@@ -35,7 +35,7 @@ npm i nukleus --save
 
 You can include nukleus in two ways. Either way, you'll need a module bundler that supports css modules (webpack is recommended).
 
-You can include all compiled components (once) this way.
+You can include all compiled components this way.
 
 ```javascript
 import {Select} from 'nukleus';
