@@ -38,13 +38,14 @@ You can include nukleus in two ways. Either way, you'll need a module bundler th
 You can include all compiled components this way.
 
 ```javascript
-import {Select} from 'nukleus';
+import {Select, TextField} from 'nukleus';
 ```
 
 Alternatively, you can use the source files. This has the benefit of making your final bundle smaller, but you will need to install a compatible sass version in your hosting app.
 
 ```javascript
 import Select from 'nukleus/components/Select/index.jsx';
+import TextField from 'nukleus/components/TextField/index.jsx';
 ```
 
 ## Development
