@@ -19,12 +19,7 @@ exports[`test Renders datepicker without crashing 1`] = `
       required={false}
       selected={null}
       showYearDropdown={true} />
-    <span
-      className="icon">
-      <i
-        aria-hidden="true"
-        className="fa fa-calendar" />
-    </span>
+    
   </div>
 </div>
 `;
