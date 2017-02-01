@@ -15,13 +15,13 @@ exports[`test Changes output on value change manipulation 1`] = `
   type="text"
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="text-field">
       TextField
     </label>
@@ -29,7 +29,7 @@ exports[`test Changes output on value change manipulation 1`] = `
       className="inputContainer">
       <input
         autoComplete="off"
-        className="form-control"
+        className="formControl"
         id="text-field"
         name="text-field"
         onChange={[Function]}
@@ -44,13 +44,13 @@ exports[`test Changes output on value change manipulation 1`] = `
 
 exports[`test Renders TextField with multiline without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <span
-    className="control-note requiredLabel">
+    className="controlNote requiredLabel">
     Required
   </span>
   <label
-    className="control-label undefined"
+    className="controlLabel undefined"
     htmlFor="text-field">
     TextField
   </label>
@@ -58,7 +58,7 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
     className="inputContainer">
     <textarea
       autoFocus={undefined}
-      className="form-control textarea"
+      className="formControl textarea"
       disabled={undefined}
       id="text-field"
       maxLength={undefined}
@@ -75,13 +75,13 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
 
 exports[`test Renders TextField without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <span
-    className="control-note requiredLabel">
+    className="controlNote requiredLabel">
     Required
   </span>
   <label
-    className="control-label undefined"
+    className="controlLabel undefined"
     htmlFor="text-field">
     TextField
   </label>
@@ -90,7 +90,7 @@ exports[`test Renders TextField without crashing 1`] = `
     <input
       autoComplete="off"
       autoFocus={undefined}
-      className="form-control"
+      className="formControl"
       disabled={undefined}
       id="text-field"
       maxLength={undefined}

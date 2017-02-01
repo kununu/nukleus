@@ -80,18 +80,18 @@ export default class Paginator extends Component {
 
     return (
       <div className={styles.paginator}>
-        <ul className="pagination" role="navigation" aria-label="Pagination">
-          <li className={(totalPages === 1 || !currentPage || currentPage === 1) && 'disabled pointer-disabled'}>
+        <ul className={styles.paginatorList} role="navigation" aria-label="Pagination">
+          <li className={(totalPages === 1 || !currentPage || currentPage === 1) && styles.disabled}>
             {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
           </li>
 
           {totalPagesArray.map(item =>
-            <li key={item} className={currentPage === item ? 'active pointer-disabled' : 'inActive'}>
+            <li key={item} className={currentPage === item && styles.active}>
               {React.cloneElement(baseLink, this.getNewProps(item), item)}
             </li>
           )}
 
-          <li className={currentPage === totalPages && 'disabled pointer-disabled'}>
+          <li className={currentPage === totalPages && styles.disabled}>
             {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
           </li>
         </ul>
