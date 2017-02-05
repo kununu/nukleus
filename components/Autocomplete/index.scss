@@ -1,0 +1,137 @@
+@import '~kununu-theme/scss/base/variables';
+
+.requiredLabel {
+  position: absolute;
+  bottom: 45px;
+  right: 2px;
+}
+
+.spinner {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  color: $gray-base-50;
+
+  i {
+    font-size: $font-size-lg;
+  }
+}
+
+.suggestionInfo {
+  color: $gray-base-40;
+  font-size: $font-size-sm;
+  display: inline-block;
+}
+
+.inline {
+  position: relative;
+
+  @media (min-width: $screen-xs-min) {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  label {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 140px;
+  }
+}
+
+.suggestionsContainer {
+  box-shadow: 0 2px 10px rgba($black, .2);
+  border-radius: $border-radius-base;
+  background-clip: padding-box;
+  font-size: $font-size-base;
+  width: 100%;
+  margin-top: 1px;
+  background-color: $white;
+  max-height: 300px;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  @media (max-width: $screen-xs-max) {
+    width: auto;
+    margin-left: -30px;
+    margin-right: -30px;
+    border-radius: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.suggestion {
+  box-sizing: border-box;
+  text-align: left;
+  padding: 8px 15px;
+}
+
+.suggestionFocused {
+  background: $blue;
+  color: $white;
+  cursor: pointer;
+
+  .suggestionInfo {
+    color: $white;
+  }
+}
+
+.suggestionsFooter {
+  border-top: 1px solid $gray-base-03;
+  padding: 8px 12px;
+}
+
+.autoCompleteContainer {
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+// Inline error definition
+// Consider abstracting out to another component if we start using this a lot
+.error {
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  font-weight: $font-weight-regular;
+  background-color: $brand-danger;
+  color: $white;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 45px;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($brand-danger, 10%);
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -5px;
+    right: 45%;
+    bottom: auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px;
+    border-color: transparent transparent $brand-danger;
+  }
+}

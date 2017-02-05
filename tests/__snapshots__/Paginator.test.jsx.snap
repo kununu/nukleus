@@ -1,12 +1,12 @@
-exports[`test Renders Paginator without crashing 1`] = `
+exports[`test Renders Paginator with react-router links without crashing 1`] = `
 <div
   className="paginator">
   <ul
     aria-label="Pagination"
-    className="pagination"
+    className="paginatorList"
     role="navigation">
     <li
-      className="disabled pointer-disabled">
+      className="disabled">
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -14,7 +14,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="active pointer-disabled">
+      className="active">
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -22,7 +22,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -30,7 +30,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -38,7 +38,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -46,7 +46,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -54,7 +54,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -62,7 +62,7 @@ exports[`test Renders Paginator without crashing 1`] = `
       </a>
     </li>
     <li
-      className="inActive">
+      className={false}>
       <a
         onClick={[Function]}
         style={Object {}}>
@@ -74,6 +74,80 @@ exports[`test Renders Paginator without crashing 1`] = `
       <a
         onClick={[Function]}
         style={Object {}}>
+        >
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`test Renders Paginator with react-router links without crashing 2`] = `
+<div
+  className="paginator">
+  <ul
+    aria-label="Pagination"
+    className="paginatorList"
+    role="navigation">
+    <li
+      className="disabled">
+      <a
+        href="test?test=react-router&pagination=1">
+        <
+      </a>
+    </li>
+    <li
+      className="active">
+      <a
+        href="test?test=react-router&pagination=1">
+        1
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=2">
+        2
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=3">
+        3
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=4">
+        4
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=5">
+        5
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=6">
+        6
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=7">
+        7
+      </a>
+    </li>
+    <li
+      className={false}>
+      <a
+        href="test?test=react-router&pagination=2">
         >
       </a>
     </li>

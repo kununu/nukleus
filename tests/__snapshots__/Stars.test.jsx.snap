@@ -18,7 +18,7 @@ exports[`test Fills selected stars 1`] = `
     <div
       className="starsRow">
       <div
-        className={false}>
+        className="hideStarGroup">
         <input
           checked={false}
           className="hiddenInput"
@@ -40,8 +40,9 @@ exports[`test Fills selected stars 1`] = `
           htmlFor="star1">
           <svg
             className="star ratingStar"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             stroke="currentColor"
+            version="1.1"
             viewBox="-20 -20 541.8 518.6"
             width="100%"
             x="0"
@@ -56,7 +57,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only" />
+            className="srOnly" />
         </label>
       </div>
       <div
@@ -72,8 +73,9 @@ exports[`test Fills selected stars 1`] = `
           htmlFor="star2">
           <svg
             className="star ratingStar"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             stroke="currentColor"
+            version="1.1"
             viewBox="-20 -20 541.8 518.6"
             width="100%"
             x="0"
@@ -88,7 +90,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             1
           </span>
         </label>
@@ -106,8 +108,9 @@ exports[`test Fills selected stars 1`] = `
           htmlFor="star3">
           <svg
             className="star ratingStar"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             stroke="currentColor"
+            version="1.1"
             viewBox="-20 -20 541.8 518.6"
             width="100%"
             x="0"
@@ -122,7 +125,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             2
           </span>
         </label>
@@ -140,8 +143,9 @@ exports[`test Fills selected stars 1`] = `
           htmlFor="star4">
           <svg
             className="star ratingStar"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             stroke="currentColor"
+            version="1.1"
             viewBox="-20 -20 541.8 518.6"
             width="100%"
             x="0"
@@ -156,7 +160,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             3
           </span>
         </label>
@@ -174,8 +178,9 @@ exports[`test Fills selected stars 1`] = `
           htmlFor="star5">
           <svg
             className="star ratingStar"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             stroke="currentColor"
+            version="1.1"
             viewBox="-20 -20 541.8 518.6"
             width="100%"
             x="0"
@@ -190,7 +195,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             4
           </span>
         </label>
@@ -206,15 +211,16 @@ exports[`test Renders correctly rounded star values 1`] = `
   <div
     className="starsRow">
     <div
-      className={false} />
+      className="hideStarGroup" />
     <div
       className="starsGroup">
       <label
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -246,7 +252,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -257,8 +263,9 @@ exports[`test Renders correctly rounded star values 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -290,7 +297,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -301,8 +308,9 @@ exports[`test Renders correctly rounded star values 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -334,7 +342,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -345,8 +353,9 @@ exports[`test Renders correctly rounded star values 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -378,7 +387,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -389,8 +398,9 @@ exports[`test Renders correctly rounded star values 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -422,7 +432,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -437,15 +447,16 @@ exports[`test Renders empty stars with no value 1`] = `
   <div
     className="starsRow">
     <div
-      className={false} />
+      className="hideStarGroup" />
     <div
       className="starsGroup">
       <label
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -477,7 +488,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -488,8 +499,9 @@ exports[`test Renders empty stars with no value 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -521,7 +533,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -532,8 +544,9 @@ exports[`test Renders empty stars with no value 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -565,7 +578,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -576,8 +589,9 @@ exports[`test Renders empty stars with no value 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -609,7 +623,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -620,8 +634,9 @@ exports[`test Renders empty stars with no value 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -653,7 +668,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -668,7 +683,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
   <div
     className="starsRow">
     <div
-      className={false}>
+      className="hideStarGroup">
       <input
         checked={false}
         className="hiddenInput"
@@ -692,8 +707,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         htmlFor="star1">
         <svg
           className="star ratingStar"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -708,7 +724,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -727,8 +743,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         htmlFor="star2">
         <svg
           className="star ratingStar"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -743,7 +760,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -762,8 +779,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         htmlFor="star3">
         <svg
           className="star ratingStar"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -778,7 +796,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -797,8 +815,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         htmlFor="star4">
         <svg
           className="star ratingStar"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -813,7 +832,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -832,8 +851,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         htmlFor="star5">
         <svg
           className="star ratingStar"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -848,7 +868,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -863,15 +883,16 @@ exports[`test Renders static Stars without crashing 1`] = `
   <div
     className="starsRow">
     <div
-      className={false} />
+      className="hideStarGroup" />
     <div
       className="starsGroup">
       <label
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -903,7 +924,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -914,8 +935,9 @@ exports[`test Renders static Stars without crashing 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -947,7 +969,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -958,8 +980,9 @@ exports[`test Renders static Stars without crashing 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -991,7 +1014,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -1002,8 +1025,9 @@ exports[`test Renders static Stars without crashing 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -1035,7 +1059,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -1046,8 +1070,9 @@ exports[`test Renders static Stars without crashing 1`] = `
         htmlFor={false}>
         <svg
           className="star false"
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
           stroke="currentColor"
+          version="1.1"
           viewBox="-20 -20 541.8 518.6"
           width="100%"
           x="0"
@@ -1079,7 +1104,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>

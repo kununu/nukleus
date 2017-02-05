@@ -1,0 +1,4 @@
+  propType: {
+    items: PropTypes.arrayOf(PropTypes.element).isRequired,
+    pathname: PropTypes.string.isRequired
+  }

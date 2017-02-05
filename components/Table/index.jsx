@@ -48,7 +48,7 @@ export default function Table ({
 
   return (
     <div className={`${styles.tableContainer} ${styles[tableStyle]}`}>
-      <table className={`table-striped table-bordered ${styles.table}`}>
+      <table className={styles.table}>
         <thead>
           <tr>
             {titles.map(getTitles)}

@@ -1,11 +1,13 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
-import CheckboxGroup from 'components/CheckboxGroup';
+import Autocomplete from 'components/Autocomplete';
+import Button from 'components/Button';
+import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
-import Logo from 'components/Logo';
+import MultipleChoice from 'components/MultipleChoice';
 import Notification from 'components/Notification';
 import Paginator from 'components/Paginator';
 import Table from 'components/Table';
@@ -14,11 +16,139 @@ import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
 
+import styles from './app.scss';
 
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
+
+        <div className="row">
+          <div className="col-md-8">
+            <MultipleChoice
+              name="choices[]"
+              heading="MultipleChoice"
+              inputStyle="buttons"
+              choices={
+              [{
+                id: 'option-1',
+                isChecked: true,
+                label: 'flex. Arbeitszeit',
+                value: 'option-1'
+              },
+              {
+                id: 'option-2',
+                isChecked: false,
+                label: 'Homeoffice',
+                value: 'option-2'
+              },
+              {
+                id: 'option-3',
+                isChecked: false,
+                label: 'Kantine',
+                value: 'option-2'
+              },
+              {
+                id: 'option-4',
+                isChecked: false,
+                label: 'Essenszulagen',
+                value: 'option-2'
+              },
+              {
+                id: 'option-5',
+                isChecked: false,
+                label: 'Kinderbetreuung',
+                value: 'option-2'
+              },
+              {
+                id: 'option-6',
+                isChecked: false,
+                label: 'Betr. Altersvorsorge',
+                value: 'option-2'
+              },
+              {
+                id: 'option-7',
+                isChecked: false,
+                label: 'Barrierefreiheit',
+                value: 'option-2'
+              },
+              {
+                id: 'option-8',
+                isChecked: false,
+                label: 'Gesundheitsmaßnahmen',
+                value: 'option-2'
+              },
+              {
+                id: 'option-9',
+                isChecked: false,
+                label: 'Betriebsartzt',
+                value: 'option-4'
+              },
+              {
+                id: 'option-10',
+                isChecked: false,
+                label: 'Coaching',
+                value: 'option-4'
+              },
+              {
+                id: 'option-11',
+                isChecked: false,
+                label: 'Parkplatz',
+                value: 'option-4'
+              },
+              {
+                id: 'option-12',
+                isChecked: false,
+                label: 'gute Verkehrsanbindung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-13',
+                isChecked: false,
+                label: 'Mitarbeiterrabatte',
+                value: 'option-4'
+              },
+              {
+                id: 'option-14',
+                isChecked: false,
+                label: 'Firmenwagen',
+                value: 'option-4'
+              },
+              {
+                id: 'option-15',
+                isChecked: false,
+                label: 'Mitarbeiterhandy',
+                value: 'option-4'
+              },
+              {
+                id: 'option-16',
+                isChecked: false,
+                label: 'Mitarbeiterbeteiligung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-17',
+                isChecked: false,
+                label: 'Mitarbeiterevents',
+                value: 'option-4'
+              },
+              {
+                id: 'option-18',
+                isChecked: false,
+                label: 'Internetnutzung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-19',
+                isChecked: false,
+                label: 'Hunde geduldet',
+                value: 'option-4'
+              }
+              ]} />
+          </div>
+        </div>
+
+        <br />
 
         <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-2">
@@ -34,20 +164,11 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Logo
-              href="/playground/"
-              pendingRequests={3} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-8">
             <Paginator
               totalPages={10}
               pathname={pathname}
-              query={query} />
+              query={query}
+              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>} />
           </div>
         </div>
 
@@ -55,10 +176,10 @@ const App = ({location: {pathname, query}}) => (
           <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
             <div className="clearfix relative">
               <Tabs
-                pages={[
-                  {path: '/playground/', query, title: 'First tab'},
-                  {path: '/playground/2', query, title: 'Second tab'},
-                  {path: '/playground/3', query, title: 'Third tab'}
+                items={[
+                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
+                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
                 ]}
                 pathname={pathname} />
             </div>
@@ -70,6 +191,30 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Stars value={2.5} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <Autocomplete
+              data={{
+                items: [
+                  {item: 'meow', itemInfo: 'hard'},
+                  {item: 'meowing', itemInfo: 'harder'}
+                ]
+              }}
+              scrollTo
+              id="test"
+              value="purrr"
+              query={query}
+              onGetSuggestions={() => {}}
+              placeholder="Type something..."
+              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              label="Autocomplete"
+              requiredLabel="Required"
+              name="autocomplete" />
           </div>
         </div>
 
@@ -113,33 +258,33 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <CheckboxGroup
-              name="checkbox-group[]"
-              heading="CheckboxGroup"
-              checkboxes={
+            <MultipleChoice
+              name="choices[]"
+              heading="MultipleChoice"
+              choices={
               [{
-                id: 'option-1',
+                id: 'option-a',
                 isChecked: true,
-                label: 'option 1',
-                value: 'option-1'
+                label: 'option a',
+                value: 'option-a'
               },
               {
-                id: 'option-2',
+                id: 'option-b',
                 isChecked: false,
-                label: 'option 2',
-                value: 'option-2'
+                label: 'option b',
+                value: 'option-b'
               },
               {
-                id: 'option-3',
+                id: 'option-c',
                 isChecked: false,
-                label: 'option 3',
-                value: 'option-2'
+                label: 'option c',
+                value: 'option-c'
               },
               {
-                id: 'option-4',
+                id: 'option-d',
                 isChecked: false,
-                label: 'option 4',
-                value: 'option-4'
+                label: 'option d',
+                value: 'option-d'
               }]} />
           </div>
         </div>
@@ -208,6 +353,304 @@ const App = ({location: {pathname, query}}) => (
             <Table
               defaultRowCount={2}
               defaultTitleCount={2} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} outline />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" onClick={() => {}} outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" onClick={() => {}} outline disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline disabled />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="default"
+              link={<Link to="/playground">Button Link</Link>} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="primary"
+              disabled
+              link={<Link to="/playground">Primary Link</Link>} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="secondary"
+              link={<Link to="/playground">Secondary Link</Link>}
+              outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="info"
+              link={<Link to="/playground/huhuh">Info Link</Link>}
+              disabled
+              outline />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="custom"
+              link={<Link to="/playground">Danger Link</Link>}
+              customTheme={styles.customThemeButton} />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button
+              type="link"
+              link={<Link to="/playground">Link Link</Link>} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Full width Button" onClick={() => {}} fullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-12 margin-bottom-third">
+            <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice"
+              name="basic"
+              onChange={() => {}}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
+                }
+              ]}
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="disabled"
+              onChange={() => {}}
+              disabled
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Custom Choice"
+              checked="option-a"
+              name="custom"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="custom-disabled"
+              onChange={() => {}}
+              disabled
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 

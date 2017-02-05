@@ -13,6 +13,11 @@
   z-index: $zindex-popover;
   display: none;
 
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
   span {
     padding-right: 8px;
   }
@@ -24,6 +29,8 @@
   p {
     color: $gray-base-30;
     margin-bottom: 6px;
+    letter-spacing: -.035em;
+    margin-top: $baseline-grid;
   }
 }
 

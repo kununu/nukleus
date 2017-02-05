@@ -1,0 +1,4 @@
+defaultProps: {
+  text: '',
+  type: 'primary'
+}

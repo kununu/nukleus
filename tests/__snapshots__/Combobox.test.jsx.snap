@@ -25,15 +25,15 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   placeholder="Type m"
   required={true}>
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <label
-      className="control-label"
+      className="controlLabel"
       htmlFor="city">
       Combobox
     </label>
     <div
       className="container">
-      <AutosuggestContainer
+      <Autosuggest
         alwaysRenderSuggestions={false}
         focusFirstSuggestion={false}
         focusInputOnSuggestionClick={true}
@@ -41,6 +41,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         id="1"
         inputProps={
           Object {
+            "className": "formControl",
             "disabled": undefined,
             "id": "name",
             "name": "name",
@@ -94,40 +95,28 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           ]
         }
         theme={undefined {}}>
-        <Connect(Autosuggest)
-          alwaysRenderSuggestions={false}
-          focusFirstSuggestion={false}
-          focusInputOnSuggestionClick={true}
-          getSuggestionValue={[Function]}
+        <Autowhatever
+          focusedItemIndex={null}
+          focusedSectionIndex={null}
+          getSectionItems={[Function]}
           id="1"
           inputProps={
             Object {
+              "className": "formControl",
               "disabled": undefined,
               "id": "name",
               "name": "name",
+              "onBlur": [Function],
               "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
               "placeholder": "Type m",
               "required": true,
               "value": "",
             }
           }
-          inputRef={[Function]}
-          multiSection={false}
-          onSuggestionSelected={[Function]}
-          onSuggestionsClearRequested={[Function]}
-          onSuggestionsFetchRequested={[Function]}
-          renderSuggestion={[Function]}
-          shouldRenderSuggestions={[Function]}
-          store={
-            Object {
-              "dispatch": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-              Symbol(Symbol.observable): [Function],
-            }
-          }
-          suggestions={
+          itemProps={[Function]}
+          items={
             Array [
               Object {
                 "value": "music",
@@ -164,226 +153,112 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               },
             ]
           }
+          multiSection={false}
+          renderInputComponent={[Function]}
+          renderItem={[Function]}
+          renderItemData={
+            Object {
+              "query": "",
+            }
+          }
+          renderItemsContainer={[Function]}
+          renderSectionTitle={[Function]}
+          shouldRenderSection={[Function]}
           theme={Object {}}>
-          <Autosuggest
-            alwaysRenderSuggestions={false}
-            closeSuggestions={[Function]}
-            focusFirstSuggestion={false}
-            focusInputOnSuggestionClick={true}
-            focusedSectionIndex={null}
-            focusedSuggestionIndex={null}
-            getSuggestionValue={[Function]}
-            id="1"
-            inputBlurred={[Function]}
-            inputChanged={[Function]}
-            inputFocused={[Function]}
-            inputProps={
-              Object {
-                "disabled": undefined,
-                "id": "name",
-                "name": "name",
-                "onChange": [Function],
-                "placeholder": "Type m",
-                "required": true,
-                "value": "",
-              }
-            }
-            inputRef={[Function]}
-            isCollapsed={false}
-            isFocused={true}
-            multiSection={false}
-            onSuggestionSelected={[Function]}
-            onSuggestionsClearRequested={[Function]}
-            onSuggestionsFetchRequested={[Function]}
-            renderSuggestion={[Function]}
-            resetFocusedSuggestion={[Function]}
-            revealSuggestions={[Function]}
-            shouldRenderSuggestions={[Function]}
-            store={
-              Object {
-                "dispatch": [Function],
-                "getState": [Function],
-                "replaceReducer": [Function],
-                "subscribe": [Function],
-                Symbol(Symbol.observable): [Function],
-              }
-            }
-            suggestions={
-              Array [
-                Object {
-                  "value": "music",
-                },
-                Object {
-                  "value": "maths",
-                },
-                Object {
-                  "value": "manga",
-                },
-                Object {
-                  "value": "morning",
-                },
-                Object {
-                  "value": "musical",
-                },
-                Object {
-                  "value": "mania",
-                },
-                Object {
-                  "value": "message",
-                },
-                Object {
-                  "value": "metal",
-                },
-                Object {
-                  "value": "micro",
-                },
-                Object {
-                  "value": "macro",
-                },
-                Object {
-                  "value": "microphone",
-                },
-              ]
-            }
-            theme={Object {}}
-            updateFocusedSuggestion={[Function]}
-            valueBeforeUpDown={null}>
-            <Autowhatever
-              focusedItemIndex={null}
-              focusedSectionIndex={null}
-              getSectionItems={[Function]}
-              id="1"
-              inputProps={
-                Object {
-                  "disabled": undefined,
-                  "id": "name",
-                  "name": "name",
-                  "onBlur": [Function],
-                  "onChange": [Function],
-                  "onFocus": [Function],
-                  "onKeyDown": [Function],
-                  "placeholder": "Type m",
-                  "required": true,
-                  "value": "",
+          <div
+            style={Object {}}>
+            <input
+              aria-activedescendant={null}
+              aria-autocomplete="list"
+              aria-expanded={true}
+              aria-haspopup={true}
+              aria-owns="react-autowhatever-1"
+              autoComplete="off"
+              className="formControl"
+              id="name"
+              name="name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Type m"
+              required={true}
+              role="combobox"
+              style={Object {}}
+              type="text"
+              value="" />
+            <div
+              id="react-autowhatever-1"
+              style={Object {}}>
+              <ItemsList
+                focusedItemIndex={null}
+                getItemId={[Function]}
+                itemProps={[Function]}
+                items={
+                  Array [
+                    Object {
+                      "value": "music",
+                    },
+                    Object {
+                      "value": "maths",
+                    },
+                    Object {
+                      "value": "manga",
+                    },
+                    Object {
+                      "value": "morning",
+                    },
+                    Object {
+                      "value": "musical",
+                    },
+                    Object {
+                      "value": "mania",
+                    },
+                    Object {
+                      "value": "message",
+                    },
+                    Object {
+                      "value": "metal",
+                    },
+                    Object {
+                      "value": "micro",
+                    },
+                    Object {
+                      "value": "macro",
+                    },
+                    Object {
+                      "value": "microphone",
+                    },
+                  ]
                 }
-              }
-              itemProps={[Function]}
-              items={
-                Array [
+                keyPrefix="react-autowhatever-1-"
+                onFocusedItemChange={[Function]}
+                renderItem={[Function]}
+                renderItemData={
                   Object {
-                    "value": "music",
-                  },
-                  Object {
-                    "value": "maths",
-                  },
-                  Object {
-                    "value": "manga",
-                  },
-                  Object {
-                    "value": "morning",
-                  },
-                  Object {
-                    "value": "musical",
-                  },
-                  Object {
-                    "value": "mania",
-                  },
-                  Object {
-                    "value": "message",
-                  },
-                  Object {
-                    "value": "metal",
-                  },
-                  Object {
-                    "value": "micro",
-                  },
-                  Object {
-                    "value": "macro",
-                  },
-                  Object {
-                    "value": "microphone",
-                  },
-                ]
-              }
-              multiSection={false}
-              renderInputComponent={[Function]}
-              renderItem={[Function]}
-              renderItemData={
-                Object {
-                  "query": "",
+                    "query": "",
+                  }
                 }
-              }
-              renderItemsContainer={[Function]}
-              renderSectionTitle={[Function]}
-              shouldRenderSection={[Function]}
-              theme={Object {}}>
-              <div
-                style={Object {}}>
-                <input
-                  aria-activedescendant={null}
-                  aria-autocomplete="list"
-                  aria-expanded={true}
-                  aria-haspopup={true}
-                  aria-owns="react-autowhatever-1"
-                  autoComplete="off"
-                  id="name"
-                  name="name"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Type m"
-                  required={true}
-                  role="combobox"
-                  style={Object {}}
-                  type="text"
-                  value="" />
-                <div
-                  id="react-autowhatever-1"
+                sectionIndex={null}
+                theme={[Function]}>
+                <ul
+                  role="listbox"
                   style={Object {}}>
-                  <ItemsList
-                    focusedItemIndex={null}
-                    getItemId={[Function]}
-                    itemProps={[Function]}
-                    items={
-                      Array [
-                        Object {
-                          "value": "music",
-                        },
-                        Object {
-                          "value": "maths",
-                        },
-                        Object {
-                          "value": "manga",
-                        },
-                        Object {
-                          "value": "morning",
-                        },
-                        Object {
-                          "value": "musical",
-                        },
-                        Object {
-                          "value": "mania",
-                        },
-                        Object {
-                          "value": "message",
-                        },
-                        Object {
-                          "value": "metal",
-                        },
-                        Object {
-                          "value": "micro",
-                        },
-                        Object {
-                          "value": "macro",
-                        },
-                        Object {
-                          "value": "microphone",
-                        },
-                      ]
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={0}
+                    id="react-autowhatever-1--item-0"
+                    item={
+                      Object {
+                        "value": "music",
+                      }
                     }
-                    keyPrefix="react-autowhatever-1-"
-                    onFocusedItemChange={[Function]}
+                    itemIndex={0}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
                     renderItem={[Function]}
                     renderItemData={
                       Object {
@@ -391,447 +266,419 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    theme={[Function]}>
-                    <ul
-                      role="listbox"
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={0}
+                      id="react-autowhatever-1--item-0"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
                       style={Object {}}>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={0}
-                        id="react-autowhatever-1--item-0"
-                        item={
-                          Object {
-                            "value": "music",
-                          }
-                        }
-                        itemIndex={0}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={0}
-                          id="react-autowhatever-1--item-0"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            music
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={1}
-                        id="react-autowhatever-1--item-1"
-                        item={
-                          Object {
-                            "value": "maths",
-                          }
-                        }
-                        itemIndex={1}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={1}
-                          id="react-autowhatever-1--item-1"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            maths
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={2}
-                        id="react-autowhatever-1--item-2"
-                        item={
-                          Object {
-                            "value": "manga",
-                          }
-                        }
-                        itemIndex={2}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={2}
-                          id="react-autowhatever-1--item-2"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            manga
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={3}
-                        id="react-autowhatever-1--item-3"
-                        item={
-                          Object {
-                            "value": "morning",
-                          }
-                        }
-                        itemIndex={3}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={3}
-                          id="react-autowhatever-1--item-3"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            morning
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={4}
-                        id="react-autowhatever-1--item-4"
-                        item={
-                          Object {
-                            "value": "musical",
-                          }
-                        }
-                        itemIndex={4}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={4}
-                          id="react-autowhatever-1--item-4"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            musical
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={5}
-                        id="react-autowhatever-1--item-5"
-                        item={
-                          Object {
-                            "value": "mania",
-                          }
-                        }
-                        itemIndex={5}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={5}
-                          id="react-autowhatever-1--item-5"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            mania
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={6}
-                        id="react-autowhatever-1--item-6"
-                        item={
-                          Object {
-                            "value": "message",
-                          }
-                        }
-                        itemIndex={6}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={6}
-                          id="react-autowhatever-1--item-6"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            message
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={7}
-                        id="react-autowhatever-1--item-7"
-                        item={
-                          Object {
-                            "value": "metal",
-                          }
-                        }
-                        itemIndex={7}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={7}
-                          id="react-autowhatever-1--item-7"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            metal
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={8}
-                        id="react-autowhatever-1--item-8"
-                        item={
-                          Object {
-                            "value": "micro",
-                          }
-                        }
-                        itemIndex={8}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={8}
-                          id="react-autowhatever-1--item-8"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            micro
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={9}
-                        id="react-autowhatever-1--item-9"
-                        item={
-                          Object {
-                            "value": "macro",
-                          }
-                        }
-                        itemIndex={9}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={9}
-                          id="react-autowhatever-1--item-9"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            macro
-                          </span>
-                        </li>
-                      </Item>
-                      <Item
-                        data-section-index={null}
-                        data-suggestion-index={10}
-                        id="react-autowhatever-1--item-10"
-                        item={
-                          Object {
-                            "value": "microphone",
-                          }
-                        }
-                        itemIndex={10}
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onTouchStart={[Function]}
-                        renderItem={[Function]}
-                        renderItemData={
-                          Object {
-                            "query": "",
-                          }
-                        }
-                        sectionIndex={null}
-                        style={Object {}}>
-                        <li
-                          data-section-index={null}
-                          data-suggestion-index={10}
-                          id="react-autowhatever-1--item-10"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onTouchStart={[Function]}
-                          role="option"
-                          style={Object {}}>
-                          <span>
-                            microphone
-                          </span>
-                        </li>
-                      </Item>
-                    </ul>
-                  </ItemsList>
-                </div>
-              </div>
-            </Autowhatever>
-          </Autosuggest>
-        </Connect(Autosuggest)>
-      </AutosuggestContainer>
+                      <span>
+                        music
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={1}
+                    id="react-autowhatever-1--item-1"
+                    item={
+                      Object {
+                        "value": "maths",
+                      }
+                    }
+                    itemIndex={1}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={1}
+                      id="react-autowhatever-1--item-1"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        maths
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={2}
+                    id="react-autowhatever-1--item-2"
+                    item={
+                      Object {
+                        "value": "manga",
+                      }
+                    }
+                    itemIndex={2}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={2}
+                      id="react-autowhatever-1--item-2"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        manga
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={3}
+                    id="react-autowhatever-1--item-3"
+                    item={
+                      Object {
+                        "value": "morning",
+                      }
+                    }
+                    itemIndex={3}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={3}
+                      id="react-autowhatever-1--item-3"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        morning
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={4}
+                    id="react-autowhatever-1--item-4"
+                    item={
+                      Object {
+                        "value": "musical",
+                      }
+                    }
+                    itemIndex={4}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={4}
+                      id="react-autowhatever-1--item-4"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        musical
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={5}
+                    id="react-autowhatever-1--item-5"
+                    item={
+                      Object {
+                        "value": "mania",
+                      }
+                    }
+                    itemIndex={5}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={5}
+                      id="react-autowhatever-1--item-5"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        mania
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={6}
+                    id="react-autowhatever-1--item-6"
+                    item={
+                      Object {
+                        "value": "message",
+                      }
+                    }
+                    itemIndex={6}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={6}
+                      id="react-autowhatever-1--item-6"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        message
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={7}
+                    id="react-autowhatever-1--item-7"
+                    item={
+                      Object {
+                        "value": "metal",
+                      }
+                    }
+                    itemIndex={7}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={7}
+                      id="react-autowhatever-1--item-7"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        metal
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={8}
+                    id="react-autowhatever-1--item-8"
+                    item={
+                      Object {
+                        "value": "micro",
+                      }
+                    }
+                    itemIndex={8}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={8}
+                      id="react-autowhatever-1--item-8"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        micro
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={9}
+                    id="react-autowhatever-1--item-9"
+                    item={
+                      Object {
+                        "value": "macro",
+                      }
+                    }
+                    itemIndex={9}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={9}
+                      id="react-autowhatever-1--item-9"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        macro
+                      </span>
+                    </li>
+                  </Item>
+                  <Item
+                    data-section-index={null}
+                    data-suggestion-index={10}
+                    id="react-autowhatever-1--item-10"
+                    item={
+                      Object {
+                        "value": "microphone",
+                      }
+                    }
+                    itemIndex={10}
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchStart={[Function]}
+                    renderItem={[Function]}
+                    renderItemData={
+                      Object {
+                        "query": "",
+                      }
+                    }
+                    sectionIndex={null}
+                    style={Object {}}>
+                    <li
+                      data-section-index={null}
+                      data-suggestion-index={10}
+                      id="react-autowhatever-1--item-10"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchStart={[Function]}
+                      role="option"
+                      style={Object {}}>
+                      <span>
+                        microphone
+                      </span>
+                    </li>
+                  </Item>
+                </ul>
+              </ItemsList>
+            </div>
+          </div>
+        </Autowhatever>
+      </Autosuggest>
       <span
         className="handle">
         <i
@@ -845,9 +692,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 
 exports[`test Renders Combobox without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <label
-    className="control-label"
+    className="controlLabel"
     htmlFor="city">
     Combobox
   </label>
@@ -862,6 +709,7 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
+        className="formControl"
         disabled={undefined}
         id="name"
         name="name"

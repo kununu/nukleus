@@ -22,6 +22,7 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'no-param-reassign': ['error', {'props': false }],
     'no-prototype-builtins': 'off', // We don't yet create objects that don't extend from Object.prototype
+    'no-return-assign': 'off', // We need this when using refs, this was removed from create-react-apps linting here: https://github.com/facebookincubator/create-react-app/issues/528
     'object-curly-spacing': 'off', // Disabled in favour of babel/object-curly-spacing in order to avoid false positives with es6
     'quotes': ['error', 'single', {avoidEscape: true}],
     'space-before-function-paren': ['error', 'always'],

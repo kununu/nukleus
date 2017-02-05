@@ -1,0 +1,12 @@
+static propTypes = {
+  checked: PropTypes.string,
+  customTheme: PropTypes.string,
+  disabled: PropTypes.bool,
+  heading: PropTypes.string,
+  headingStyle: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  options: PropTypes.array.isRequired,
+  query: PropTypes.object,
+  required: PropTypes.bool
+};
