@@ -49,7 +49,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
-    "client-gear": "kununu/client-gear#master",
+    "kununu-logo": "1.0.0",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.4",
     "kununu-theme": "1.2.1",

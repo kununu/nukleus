@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
-import Logo from 'client-gear/components/Logo';
+import Logo from 'kununu-logo';
 
 import styles from './index.scss';
 
