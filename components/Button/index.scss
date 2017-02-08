@@ -4,6 +4,8 @@
 .button {
   border-radius: $border-radius-sm;
   font-weight: $font-weight-semibold;
+  font-family: inherit;
+  line-height: inherit;
   box-shadow: none;
   text-transform: uppercase;
   display: inline-block;
@@ -16,6 +18,10 @@
   padding: 10px 12px;
   transition: background .15s;
   font-size: $font-size-base;
+
+  * {
+    box-sizing: border-box;
+  }
 
   &,
   &:hover,
@@ -181,5 +187,13 @@
     &.active {
       text-decoration: none;
     }
+  }
+}
+
+.disabledLink {
+  cursor: not-allowed;
+
+  a {
+    pointer-events: none;
   }
 }

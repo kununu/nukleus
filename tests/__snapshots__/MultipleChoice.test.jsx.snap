@@ -34,7 +34,7 @@ exports[`test Change status of choices change 1`] = `
   name="choice[]"
   query={Object {}}>
   <div
-    className="inline form-group">
+    className="inline formGroup">
     <div
       className="control-label">
       MultipleChoice
@@ -42,10 +42,10 @@ exports[`test Change status of choices change 1`] = `
     <div
       className="inputContainer">
       <div
-        className="checkbox choice">
+        className="choice">
         <input
           checked={true}
-          className="form-control"
+          className="formControl"
           id="choice[]option-1"
           name="choice[]"
           onChange={[Function]}
@@ -57,10 +57,10 @@ exports[`test Change status of choices change 1`] = `
         </label>
       </div>
       <div
-        className="checkbox choice">
+        className="choice">
         <input
           checked={false}
-          className="form-control"
+          className="formControl"
           id="choice[]option-2"
           name="choice[]"
           onChange={[Function]}
@@ -72,10 +72,10 @@ exports[`test Change status of choices change 1`] = `
         </label>
       </div>
       <div
-        className="checkbox choice">
+        className="choice">
         <input
           checked={false}
-          className="form-control"
+          className="formControl"
           id="choice[]option-3"
           name="choice[]"
           onChange={[Function]}
@@ -87,10 +87,10 @@ exports[`test Change status of choices change 1`] = `
         </label>
       </div>
       <div
-        className="checkbox choice">
+        className="choice">
         <input
           checked={true}
-          className="form-control"
+          className="formControl"
           id="choice[]option-4"
           name="choice[]"
           onChange={[Function]}
@@ -124,7 +124,7 @@ exports[`test Changes status on choice change 1`] = `
   name="choice[]"
   query={Object {}}>
   <div
-    className="inline form-group">
+    className="inline formGroup">
     <div
       className="control-label">
       Test
@@ -132,10 +132,10 @@ exports[`test Changes status on choice change 1`] = `
     <div
       className="inputContainer">
       <div
-        className="checkbox choice">
+        className="choice">
         <input
           checked={true}
-          className="form-control"
+          className="formControl"
           id="choice[]option-1"
           name="choice[]"
           onChange={[Function]}
@@ -153,7 +153,7 @@ exports[`test Changes status on choice change 1`] = `
 
 exports[`test Renders choice without crashing 1`] = `
 <div
-  className="inline form-group">
+  className="inline formGroup">
   <div
     className="control-label">
     Test
@@ -161,10 +161,10 @@ exports[`test Renders choice without crashing 1`] = `
   <div
     className="inputContainer">
     <div
-      className="checkbox choice">
+      className="choice">
       <input
         checked={false}
-        className="form-control"
+        className="formControl"
         id="choice[]option-1"
         name="choice[]"
         onChange={[Function]}
@@ -181,7 +181,7 @@ exports[`test Renders choice without crashing 1`] = `
 
 exports[`test Renders choices without crashing 1`] = `
 <div
-  className="inline form-group">
+  className="inline formGroup">
   <div
     className="control-label">
     MultipleChoice
@@ -189,10 +189,10 @@ exports[`test Renders choices without crashing 1`] = `
   <div
     className="inputContainer">
     <div
-      className="checkbox choice">
+      className="choice">
       <input
         checked={false}
-        className="form-control"
+        className="formControl"
         id="choice[]option-1"
         name="choice[]"
         onChange={[Function]}
@@ -204,10 +204,10 @@ exports[`test Renders choices without crashing 1`] = `
       </label>
     </div>
     <div
-      className="checkbox choice">
+      className="choice">
       <input
         checked={false}
-        className="form-control"
+        className="formControl"
         id="choice[]option-2"
         name="choice[]"
         onChange={[Function]}
@@ -219,10 +219,10 @@ exports[`test Renders choices without crashing 1`] = `
       </label>
     </div>
     <div
-      className="checkbox choice">
+      className="choice">
       <input
         checked={false}
-        className="form-control"
+        className="formControl"
         id="choice[]option-3"
         name="choice[]"
         onChange={[Function]}
@@ -234,10 +234,10 @@ exports[`test Renders choices without crashing 1`] = `
       </label>
     </div>
     <div
-      className="checkbox choice">
+      className="choice">
       <input
         checked={false}
-        className="form-control"
+        className="formControl"
         id="choice[]option-4"
         name="choice[]"
         onChange={[Function]}

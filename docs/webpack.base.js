@@ -33,8 +33,16 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /kununu-logo\/index.jsx$/,
+        loader: 'babel'
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules|main\.scss/,
+        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
+      },
+      {
+        test: /kununu-logo\/index.scss/,
         loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
       },
       {

@@ -1,31 +1,34 @@
-import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-export default function Tabs ({pages, pathname}) {
-  const activeItem = pages.filter(item => item.path === pathname)[0];
+import {clearfix} from '../index.scss';
 
-  return (
-    <ul className={`${styles.tabs} clearfix`}>
-      {pages.map((page, key) => (
-        <li key={key} className={pages.length > 1 ? '' : 'pointer-disabled'}>
-          <Link
-            className={activeItem === page && styles.active}
-            to={{
-              pathname: page.path,
-              query: page.query
-            }}>
 
-            {page.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+export default class Tabs extends Component {
+  static propTypes = {
+    items: PropTypes.arrayOf(PropTypes.element).isRequired,
+    pathname: PropTypes.string.isRequired
+  };
+
+  getNewProps (item) {
+    const {props} = item;
+    // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
+    const localPathname = props.href || props.path || props.to.pathname;
+    const newProps = localPathname === this.props.pathname ? {className: styles.active} : {};
+    return newProps;
+  }
+
+  render () {
+    const {items} = this.props;
+    return (
+      <ul className={`${styles.tabs} ${clearfix}`}>
+        {items.map((item, key) => (
+          <li key={key} className={items.length > 1 ? '' : styles.pointerDisabled}>
+            {React.cloneElement(item, this.getNewProps(item))}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 }
-
-Tabs.propTypes = {
-  pages: PropTypes.array.isRequired,
-  pathname: PropTypes.string.isRequired
-};

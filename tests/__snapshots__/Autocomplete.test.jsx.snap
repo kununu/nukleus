@@ -41,13 +41,13 @@ exports[`test Hides no suggestions on blur 1`] = `
   scrollTo={true}
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -61,6 +61,7 @@ exports[`test Hides no suggestions on blur 1`] = `
         id="1"
         inputProps={
           Object {
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -87,6 +88,7 @@ exports[`test Hides no suggestions on blur 1`] = `
           id="1"
           inputProps={
             Object {
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -122,6 +124,7 @@ exports[`test Hides no suggestions on blur 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              className="formControl"
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -148,13 +151,13 @@ exports[`test Hides no suggestions on blur 1`] = `
 
 exports[`test Renders Autocomplete without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <span
-    className="control-note requiredLabel">
+    className="controlNote requiredLabel">
     Required
   </span>
   <label
-    className="control-label undefined"
+    className="controlLabel undefined"
     htmlFor="autocompletes">
     Autocomplete
   </label>
@@ -169,6 +172,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
+        className="formControl"
         disabled={true}
         id="autocompletes"
         name="autocomplete"
@@ -234,13 +238,13 @@ exports[`test Renders no suggestions container 1`] = `
   scrollTo={true}
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -254,6 +258,7 @@ exports[`test Renders no suggestions container 1`] = `
         id="1"
         inputProps={
           Object {
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -280,6 +285,7 @@ exports[`test Renders no suggestions container 1`] = `
           id="1"
           inputProps={
             Object {
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -315,6 +321,7 @@ exports[`test Renders no suggestions container 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              className="formControl"
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -391,13 +398,13 @@ exports[`test Renders suggestions container 1`] = `
   scrollTo={true}
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -411,6 +418,7 @@ exports[`test Renders suggestions container 1`] = `
         id="1"
         inputProps={
           Object {
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -448,6 +456,7 @@ exports[`test Renders suggestions container 1`] = `
           id="1"
           inputProps={
             Object {
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -494,6 +503,7 @@ exports[`test Renders suggestions container 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              className="formControl"
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -685,13 +695,13 @@ exports[`test Updates value on selection 1`] = `
   scrollTo={true}
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -705,6 +715,7 @@ exports[`test Updates value on selection 1`] = `
         id="1"
         inputProps={
           Object {
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -731,6 +742,7 @@ exports[`test Updates value on selection 1`] = `
           id="1"
           inputProps={
             Object {
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -766,6 +778,7 @@ exports[`test Updates value on selection 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              className="formControl"
               disabled={true}
               id="autocompletes"
               name="autocomplete"

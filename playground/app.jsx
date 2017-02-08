@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Autocomplete from 'components/Autocomplete';
 import Button from 'components/Button';
+import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
 import InfoText from 'components/InfoText';
@@ -166,7 +167,8 @@ const App = ({location: {pathname, query}}) => (
             <Paginator
               totalPages={10}
               pathname={pathname}
-              query={query} />
+              query={query}
+              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>} />
           </div>
         </div>
 
@@ -174,10 +176,10 @@ const App = ({location: {pathname, query}}) => (
           <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
             <div className="clearfix relative">
               <Tabs
-                pages={[
-                  {path: '/playground/', query, title: 'First tab'},
-                  {path: '/playground/2', query, title: 'Second tab'},
-                  {path: '/playground/3', query, title: 'Third tab'}
+                items={[
+                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
+                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
                 ]}
                 pathname={pathname} />
             </div>
@@ -261,28 +263,28 @@ const App = ({location: {pathname, query}}) => (
               heading="MultipleChoice"
               choices={
               [{
-                id: 'option-1',
+                id: 'option-a',
                 isChecked: true,
-                label: 'option 1',
-                value: 'option-1'
+                label: 'option a',
+                value: 'option-a'
               },
               {
-                id: 'option-2',
+                id: 'option-b',
                 isChecked: false,
-                label: 'option 2',
-                value: 'option-2'
+                label: 'option b',
+                value: 'option-b'
               },
               {
-                id: 'option-3',
+                id: 'option-c',
                 isChecked: false,
-                label: 'option 3',
-                value: 'option-2'
+                label: 'option c',
+                value: 'option-c'
               },
               {
-                id: 'option-4',
+                id: 'option-d',
                 isChecked: false,
-                label: 'option 4',
-                value: 'option-4'
+                label: 'option d',
+                value: 'option-d'
               }]} />
           </div>
         </div>
@@ -467,22 +469,39 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Link" link="/" />
+            <Button
+              type="default"
+              link={<Link to="/playground">Button Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Link" link="/" disabled />
+            <Button
+              type="primary"
+              disabled
+              link={<Link to="/playground">Primary Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Link" link="/" outline />
+            <Button
+              type="secondary"
+              link={<Link to="/playground">Secondary Link</Link>}
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Link" link="/" disabled outline />
+            <Button
+              type="info"
+              link={<Link to="/playground/huhuh">Info Link</Link>}
+              disabled
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Danger Link" link="/" customTheme={styles.customThemeButton} />
+            <Button
+              type="custom"
+              link={<Link to="/playground">Danger Link</Link>}
+              customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Link" link="/" />
+            <Button
+              type="link"
+              link={<Link to="/playground">Link Link</Link>} />
           </div>
         </div>
 
@@ -499,6 +518,139 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
             <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice"
+              name="basic"
+              onChange={() => {}}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
+                }
+              ]}
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="disabled"
+              onChange={() => {}}
+              disabled
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Custom Choice"
+              checked="option-a"
+              name="custom"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="custom-disabled"
+              onChange={() => {}}
+              disabled
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Disabled Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
           </div>
         </div>
 
