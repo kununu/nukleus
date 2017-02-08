@@ -35,6 +35,7 @@ export default class Stars extends Component {
 
   static defaultProps = {
     colors: ['currentColor'],
+    name: '',
     selectable: false,
     strokeColor: 'currentColor',
     totalStars: 5,
@@ -121,7 +122,7 @@ export default class Stars extends Component {
         <div className={styles.starsRow}>
           {[...Array(totalStars + 1)].map((star, key) =>
             <div
-              key={key}
+              key={key} // eslint-disable-line react/no-array-index-key
               className={key ? styles.starsGroup : styles.hideStarGroup}>
 
               {selectable &&

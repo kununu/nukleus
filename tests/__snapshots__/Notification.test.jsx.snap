@@ -3,6 +3,7 @@ exports[`test Closes when the close button is clicked 1`] = `
   closeMethod="onClick"
   duration={5000}
   message="Test"
+  type="SUCCESS"
   visible={true}>
   <div
     className="
@@ -29,6 +30,7 @@ exports[`test Does not close on click when the close method is timeout 1`] = `
   closeMethod="onTimeout"
   duration={8000}
   message="Test"
+  type="SUCCESS"
   visible={true}>
   <div
     className="
