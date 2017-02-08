@@ -2,7 +2,7 @@ exports[`test Renders Table without crashing 1`] = `
 <div
   className="tableContainer full-panel">
   <table
-    className="table-striped table-bordered table">
+    className="table">
     <thead>
       <tr>
         <th>
@@ -148,7 +148,7 @@ exports[`test Renders empty Table without crashing 1`] = `
 <div
   className="tableContainer full-panel">
   <table
-    className="table-striped table-bordered table">
+    className="table">
     <thead>
       <tr>
         <th

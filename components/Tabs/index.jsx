@@ -2,6 +2,9 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import {clearfix} from '../index.scss';
+
+
 export default class Tabs extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
@@ -19,9 +22,9 @@ export default class Tabs extends Component {
   render () {
     const {items} = this.props;
     return (
-      <ul className={`${styles.tabs} clearfix`}>
+      <ul className={`${styles.tabs} ${clearfix}`}>
         {items.map((item, key) => (
-          <li key={key} className={items.length > 1 ? '' : 'pointer-disabled'}>
+          <li key={key} className={items.length > 1 ? '' : styles.pointerDisabled}>
             {React.cloneElement(item, this.getNewProps(item))}
           </li>
         ))}

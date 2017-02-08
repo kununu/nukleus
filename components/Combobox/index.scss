@@ -1,10 +1,6 @@
 @import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/functions';
-@import '~kununu-theme/scss/base/mixins';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
 
 .input {
-  @extend .form-control;
   cursor: pointer;
 }
 
@@ -33,6 +29,10 @@
   position: relative;
   width: 100%;
   line-height: 1.65;
+
+  * {
+    box-sizing: border-box;
+  }
 
   // Inline error definition
   // Consider abstracting out to another component if we start using this a lot
@@ -65,7 +65,7 @@
 }
 
 .itemsContainer {
-  @include box-shadow(0 5px 10px rgba($black, .2));
+  box-shadow: 0 5px 10px rgba($black, .2);
   border-radius: $border-radius-base;
   background-clip: padding-box;
   font-size: $font-size-base;

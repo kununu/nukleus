@@ -57,7 +57,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only" />
+            className="srOnly" />
         </label>
       </div>
       <div
@@ -90,7 +90,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             1
           </span>
         </label>
@@ -125,7 +125,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             2
           </span>
         </label>
@@ -160,7 +160,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             3
           </span>
         </label>
@@ -195,7 +195,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             4
           </span>
         </label>
@@ -252,7 +252,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -297,7 +297,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -342,7 +342,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -387,7 +387,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -432,7 +432,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -488,7 +488,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -533,7 +533,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -578,7 +578,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -623,7 +623,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -668,7 +668,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -724,7 +724,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -760,7 +760,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -796,7 +796,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -832,7 +832,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -868,7 +868,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -924,7 +924,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -969,7 +969,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -1014,7 +1014,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -1059,7 +1059,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -1104,7 +1104,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>

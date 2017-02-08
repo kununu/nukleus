@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
-import Logo from 'client-gear/components/Logo';
+import Logo from 'kununu-logo';
 
 import styles from './index.scss';
 
@@ -78,7 +78,16 @@ export default class App extends Component {
                   onClick={this.onClickToggleMenu}>
                   <i className="fa fa-bars" aria-hidden="true" />
                 </button>
-                <div><Logo shade="light" /></div>
+                <div>
+                  <Logo
+                    shade="light"
+                    link={
+                      <Link
+                        to={{pathname: '/'}}>
+                        nukleus docs
+                      </Link>
+                    } />
+                </div>
               </div>
             </div>
           </header>

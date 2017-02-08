@@ -16,16 +16,16 @@ exports[`test Changes status on value change 1`] = `
   title="Select"
   value="option">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <label
-      className="control-label undefined"
+      className="controlLabel undefined"
       htmlFor="select">
       Select
     </label>
     <div
       className="inputContainer">
       <select
-        className="form-control select"
+        className="formControl select"
         id="select"
         name="select"
         onChange={[Function]}
@@ -51,9 +51,9 @@ exports[`test Changes status on value change 1`] = `
 
 exports[`test Renders Select without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <label
-    className="control-label undefined"
+    className="controlLabel undefined"
     htmlFor="select">
     Select
   </label>
@@ -61,7 +61,7 @@ exports[`test Renders Select without crashing 1`] = `
     className="inputContainer">
     <select
       autoFocus={undefined}
-      className="form-control select"
+      className="formControl select"
       disabled={undefined}
       id="select"
       name="select"
