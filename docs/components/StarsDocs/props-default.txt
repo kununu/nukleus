@@ -1,5 +1,6 @@
-defaultProps: {
+static defaultProps = {
   colors: ['currentColor'],
+  name: '',
   selectable: false,
   strokeColor: 'currentColor',
   totalStars: 5,

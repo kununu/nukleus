@@ -35,7 +35,7 @@ const DocsRoot = ({title, component, example, propsDefinition, propsDefault}) =>
 
 DocsRoot.propTypes = {
   component: PropTypes.element.isRequired,
-  example: PropTypes.string,
+  example: PropTypes.string.isRequired,
   propsDefault: PropTypes.string.isRequired,
   propsDefinition: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired

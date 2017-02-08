@@ -15,6 +15,7 @@ export default class Notification extends Component {
     closeMethod: 'onClick',
     duration: 5000,
     message: '',
+    type: 'SUCCESS',
     visible: false
   }
 

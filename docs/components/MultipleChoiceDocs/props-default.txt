@@ -1,5 +1,6 @@
-defaultProps: {
+static defaultProps = {
+  heading: '',
   headingStyle: 'control-label',
   inputStyle: 'inline',
   query: {}
-}
+};
