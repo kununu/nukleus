@@ -1,8 +1,10 @@
-propTypes: {
+static propTypes = {
   autoFocus: PropTypes.bool,
   defaultItem: PropTypes.string,
+  defaultRequired: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   items: PropTypes.object,
   labelHidden: PropTypes.bool,
@@ -12,4 +14,4 @@ propTypes: {
   required: PropTypes.bool,
   title: PropTypes.string.isRequired,
   value: PropTypes.any
-}
+};

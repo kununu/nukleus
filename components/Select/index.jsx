@@ -34,9 +34,18 @@ export default class Select extends Component {
   };
 
   static defaultProps = {
+    autoFocus: false,
+    defaultItem: '',
+    defaultRequired: '',
+    disabled: false,
     error: null,
     inputStyle: 'inline',
-    query: {}
+    items: {},
+    labelHidden: false,
+    onChange: null,
+    query: {},
+    required: false,
+    value: ''
   };
 
   state = {

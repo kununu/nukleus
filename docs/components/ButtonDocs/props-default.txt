@@ -1,4 +1,11 @@
-defaultProps: {
+static defaultProps = {
+  customTheme: '',
+  disabled: false,
+  fullWidth: false,
+  link: null,
+  mobileFullWidth: false,
+  onClick: null,
+  outline: false,
   text: '',
   type: 'primary'
-}
+};
