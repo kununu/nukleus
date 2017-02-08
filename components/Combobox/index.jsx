@@ -25,20 +25,23 @@ export default class ComboboxComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
-    id: PropTypes.string,
+    id: PropTypes.string.isRequired,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     items: PropTypes.array,
     label: PropTypes.string,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     required: PropTypes.bool
   };
 
   static defaultProps = {
+    disabled: false,
     error: null,
     inputStyles: 'inline',
     inputValue: '',
+    items: [],
+    label: '',
     placeholder: '',
     required: false
   };

@@ -1,10 +1,20 @@
-defaultProps: {
+static defaultProps = {
   autoComplete: 'off',
+  autoFocus: false,
+  disable: false,
   error: null,
   inputStyle: 'inline',
-  multiLine: false
+  labelHidden: false,
+  maxLength: 500,
+  multiLine: false,
+  onChange: null,
+  pattern: '',
   placeholder: '',
-  rows: 5,
   query: {},
-  type: 'text'
-}
+  required: false,
+  requiredLabel: false,
+  rows: 5,
+  title: '',
+  type: 'text',
+  value: ''
+};

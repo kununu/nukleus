@@ -1,4 +1,4 @@
-  propType: {
-    items: PropTypes.arrayOf(PropTypes.element).isRequired,
-    pathname: PropTypes.string.isRequired
-  }
+static propTypes = {
+  items: PropTypes.arrayOf(PropTypes.element).isRequired,
+  pathname: PropTypes.string.isRequired
+};

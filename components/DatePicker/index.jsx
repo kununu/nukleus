@@ -35,7 +35,8 @@ export default class DatePickerComponent extends Component {
     isClearable: true,
     placeholder: '',
     query: {},
-    required: false
+    required: false,
+    value: ''
   };
 
   state = {

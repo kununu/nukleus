@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
-import Logo from 'client-gear/components/Logo';
+import Logo from 'kununu-logo';
 
 import styles from './index.scss';
 
@@ -127,5 +127,5 @@ export default class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element.isRequired,
-  location: PropTypes.object
+  location: PropTypes.object.isRequired
 };

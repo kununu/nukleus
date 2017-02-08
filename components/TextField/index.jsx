@@ -46,13 +46,23 @@ export default class TextField extends Component {
 
   static defaultProps = {
     autoComplete: 'off',
+    autoFocus: false,
+    disable: false,
     error: null,
     inputStyle: 'inline',
+    labelHidden: false,
+    maxLength: 500,
     multiLine: false,
+    onChange: null,
+    pattern: '',
     placeholder: '',
     query: {},
+    required: false,
+    requiredLabel: false,
     rows: 5,
-    type: 'text'
+    title: '',
+    type: 'text',
+    value: ''
   };
 
   state = {

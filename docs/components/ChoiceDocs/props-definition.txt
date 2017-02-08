@@ -10,3 +10,4 @@ static propTypes = {
   query: PropTypes.object,
   required: PropTypes.bool
 };
+

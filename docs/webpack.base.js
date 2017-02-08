@@ -33,7 +33,7 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /client-gear\/components\/Logo\/index.jsx/,
+        test: /kununu-logo\/index.jsx$/,
         loader: 'babel'
       },
       {
@@ -42,7 +42,7 @@ module.exports = {
         loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
       },
       {
-        test: /client-gear\/components\/Logo\/index.scss/,
+        test: /kununu-logo\/index.scss/,
         loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
       },
       {
