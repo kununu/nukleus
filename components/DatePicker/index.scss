@@ -1,11 +1,13 @@
 @import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/functions';
-@import '~kununu-theme/scss/base/mixins';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';
 
 .datePickerContainer {
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
   input {
-    @extend .form-control;
     cursor: pointer;
 
     + a {
@@ -22,6 +24,14 @@
         right: 10px;
       }
     }
+  }
+}
+
+.innerContainer {
+  position: relative;
+
+  > div {
+    width: 100%;
   }
 }
 

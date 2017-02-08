@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
 import classNames from 'classnames';
 
 import styles from './index.scss';
@@ -9,15 +8,16 @@ export default class Button extends Component {
     customTheme: PropTypes.string,
     disabled: PropTypes.bool,
     fullWidth: PropTypes.bool,
-    link: PropTypes.string,
+    link: PropTypes.element,
     mobileFullWidth: PropTypes.bool,
     onClick: PropTypes.func,
     outline: PropTypes.bool,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom'])
   };
 
   static defaultProps = {
+    text: '',
     type: 'primary'
   };
 
@@ -55,13 +55,11 @@ export default class Button extends Component {
       onClick: this.props.onClick && this.onClick
     };
 
-    if (link && !disabled) {
+    if (link) {
       return (
-        <Link
-          {...props}
-          to={link}>
-          {text}
-        </Link>
+        <div className={disabled ? styles.disabledLink : ''}>
+          {React.cloneElement(link, props)}
+        </div>
       );
     }
 

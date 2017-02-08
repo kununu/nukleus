@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import {srOnly} from '../index.scss';
+
 function roundToHalves (number) {
   return Math.round(number * 2) / 2;
 }
@@ -164,7 +166,7 @@ export default class Stars extends Component {
                     c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22
                     l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z" />
                   </svg>
-                  <span className="sr-only">
+                  <span className={srOnly}>
                     {key - 1}
                   </span>
                 </label> }
