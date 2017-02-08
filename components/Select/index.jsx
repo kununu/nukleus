@@ -4,6 +4,16 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import {
+  controlLabel,
+  errorStyles,
+  hidden,
+  formControl,
+  formGroup,
+  srOnly
+} from '../index.scss';
+
+
 export default class Select extends Component {
   static propTypes = {
     autoFocus: PropTypes.bool,
@@ -24,9 +34,18 @@ export default class Select extends Component {
   };
 
   static defaultProps = {
+    autoFocus: false,
+    defaultItem: '',
+    defaultRequired: '',
+    disabled: false,
     error: null,
     inputStyle: 'inline',
-    query: {}
+    items: {},
+    labelHidden: false,
+    onChange: null,
+    query: {},
+    required: false,
+    value: ''
   };
 
   state = {
@@ -87,11 +106,11 @@ export default class Select extends Component {
     } = this.props;
 
     return (
-      <div className={`form-group ${styles[inputStyle]}`}>
-        {labelHidden && <span className="sr-only">{title}</span>}
+      <div className={`${formGroup} ${styles[inputStyle]}`}>
+        {labelHidden && <span className={srOnly}>{title}</span>}
 
         <label
-          className={`control-label ${labelHidden && 'hidden'}`}
+          className={`${controlLabel} ${labelHidden && hidden}`}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>
@@ -103,7 +122,7 @@ export default class Select extends Component {
             required={required}
             autoFocus={autoFocus}
             onChange={this.onChange}
-            className={`form-control ${styles.select}`}
+            className={`${formControl} ${styles.select}`}
             disabled={disabled}>
 
             {defaultRequired &&
@@ -120,7 +139,7 @@ export default class Select extends Component {
           </select>
 
           {this.state.showError && error &&
-            <span className={`${styles.error} label-danger`}>error</span>}
+            <span className={errorStyles}>error</span>}
         </div>
       </div>
     );

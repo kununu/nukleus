@@ -1,5 +1,6 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  disabled={false}
   error={null}
   id="name"
   inputStyles="inline"
@@ -25,9 +26,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   placeholder="Type m"
   required={true}>
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <label
-      className="control-label"
+      className="controlLabel"
       htmlFor="city">
       Combobox
     </label>
@@ -41,7 +42,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         id="1"
         inputProps={
           Object {
-            "disabled": undefined,
+            "className": "formControl",
+            "disabled": false,
             "id": "name",
             "name": "name",
             "onChange": [Function],
@@ -101,7 +103,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           id="1"
           inputProps={
             Object {
-              "disabled": undefined,
+              "className": "formControl",
+              "disabled": false,
               "id": "name",
               "name": "name",
               "onBlur": [Function],
@@ -172,6 +175,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              className="formControl"
+              disabled={false}
               id="name"
               name="name"
               onBlur={[Function]}
@@ -689,9 +694,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 
 exports[`test Renders Combobox without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <label
-    className="control-label"
+    className="controlLabel"
     htmlFor="city">
     Combobox
   </label>
@@ -706,7 +711,8 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
-        disabled={undefined}
+        className="formControl"
+        disabled={false}
         id="name"
         name="name"
         onBlur={[Function]}

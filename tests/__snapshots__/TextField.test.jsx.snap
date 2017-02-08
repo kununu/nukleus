@@ -1,27 +1,34 @@
 exports[`test Changes output on value change manipulation 1`] = `
 <TextField
   autoComplete="off"
+  autoFocus={false}
+  disable={false}
   error={null}
   id="text-field"
   inputStyle="inline"
   label="TextField"
+  labelHidden={false}
+  maxLength={500}
   multiLine={false}
   name="text-field"
+  onChange={null}
+  pattern=""
   placeholder=""
   query={Object {}}
   required={true}
   requiredLabel={true}
   rows={5}
+  title=""
   type="text"
   value="test">
   <div
-    className="form-group inline">
+    className="formGroup inline">
     <span
-      className="control-note requiredLabel">
+      className="controlNote requiredLabel">
       Required
     </span>
     <label
-      className="control-label undefined"
+      className="controlLabel false"
       htmlFor="text-field">
       TextField
     </label>
@@ -29,12 +36,17 @@ exports[`test Changes output on value change manipulation 1`] = `
       className="inputContainer">
       <input
         autoComplete="off"
-        className="form-control"
+        autoFocus={false}
+        className="formControl"
+        disabled={false}
         id="text-field"
+        maxLength={500}
         name="text-field"
         onChange={[Function]}
+        pattern=""
         placeholder=""
         required={true}
+        title=""
         type="text"
         value="UGH" />
     </div>
@@ -44,27 +56,27 @@ exports[`test Changes output on value change manipulation 1`] = `
 
 exports[`test Renders TextField with multiline without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <span
-    className="control-note requiredLabel">
+    className="controlNote requiredLabel">
     Required
   </span>
   <label
-    className="control-label undefined"
+    className="controlLabel false"
     htmlFor="text-field">
     TextField
   </label>
   <div
     className="inputContainer">
     <textarea
-      autoFocus={undefined}
-      className="form-control textarea"
-      disabled={undefined}
+      autoFocus={false}
+      className="formControl textarea"
+      disabled={false}
       id="text-field"
-      maxLength={undefined}
+      maxLength={500}
       name="text-field"
       onChange={[Function]}
-      pattern={undefined}
+      pattern=""
       placeholder=""
       required={true}
       rows={5}
@@ -75,13 +87,13 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
 
 exports[`test Renders TextField without crashing 1`] = `
 <div
-  className="form-group inline">
+  className="formGroup inline">
   <span
-    className="control-note requiredLabel">
+    className="controlNote requiredLabel">
     Required
   </span>
   <label
-    className="control-label undefined"
+    className="controlLabel false"
     htmlFor="text-field">
     TextField
   </label>
@@ -89,17 +101,17 @@ exports[`test Renders TextField without crashing 1`] = `
     className="inputContainer">
     <input
       autoComplete="off"
-      autoFocus={undefined}
-      className="form-control"
-      disabled={undefined}
+      autoFocus={false}
+      className="formControl"
+      disabled={false}
       id="text-field"
-      maxLength={undefined}
+      maxLength={500}
       name="text-field"
       onChange={[Function]}
-      pattern={undefined}
+      pattern=""
       placeholder=""
       required={true}
-      title={undefined}
+      title=""
       type="text"
       value="test" />
   </div>

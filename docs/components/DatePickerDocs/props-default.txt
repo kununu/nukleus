@@ -1,9 +1,10 @@
-defaultProps: {
+static defaultProps = {
   disabled: false,
   error: null,
   inputStyle: 'inline',
   isClearable: true,
   placeholder: '',
   query: {},
-  required: false
-}
+  required: false,
+  value: ''
+};

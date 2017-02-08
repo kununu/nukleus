@@ -4,6 +4,16 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import {
+  controlLabel,
+  controlNote,
+  errorStyles,
+  hidden,
+  formControl,
+  formGroup,
+  srOnly
+} from '../index.scss';
+
 export default class TextField extends Component {
   static propTypes = {
     autoComplete: PropTypes.string,
@@ -36,13 +46,23 @@ export default class TextField extends Component {
 
   static defaultProps = {
     autoComplete: 'off',
+    autoFocus: false,
+    disable: false,
     error: null,
     inputStyle: 'inline',
+    labelHidden: false,
+    maxLength: 500,
     multiLine: false,
+    onChange: null,
+    pattern: '',
     placeholder: '',
     query: {},
+    required: false,
+    requiredLabel: false,
     rows: 5,
-    type: 'text'
+    title: '',
+    type: 'text',
+    value: ''
   };
 
   state = {
@@ -116,12 +136,12 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={`form-group ${styles[inputStyle]}`}>
-        {requiredLabel && <span className={`control-note ${styles.requiredLabel}`}>Required</span>}
-        {labelHidden && <span className="sr-only">{label}</span>}
+      <div className={`${formGroup} ${styles[inputStyle]}`}>
+        {requiredLabel && <span className={`${controlNote} ${styles.requiredLabel}`}>Required</span>}
+        {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label
-          className={`control-label ${labelHidden && 'hidden'}`}
+          className={`${controlLabel} ${labelHidden && hidden}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
@@ -129,7 +149,7 @@ export default class TextField extends Component {
             multiLine ?
               <textarea
                 autoFocus={autoFocus}
-                className={`form-control ${styles.textarea}`}
+                className={`${formControl} ${styles.textarea}`}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -143,7 +163,7 @@ export default class TextField extends Component {
               <input
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
-                className="form-control"
+                className={formControl}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -158,7 +178,7 @@ export default class TextField extends Component {
           }
 
           {this.state.showError && error &&
-            <span className={`${styles.error} label-danger`}>{error}</span>
+            <span className={errorStyles}>{error}</span>
           }
         </div>
       </div>

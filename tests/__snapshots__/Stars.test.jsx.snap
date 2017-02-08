@@ -9,6 +9,7 @@ exports[`test Fills selected stars 1`] = `
       "black",
     ]
   }
+  name=""
   selectable={true}
   strokeColor="currentColor"
   totalStars={5}
@@ -23,6 +24,7 @@ exports[`test Fills selected stars 1`] = `
           checked={false}
           className="hiddenInput"
           id="star0"
+          name=""
           onChange={[Function]}
           type="radio"
           value={0} />
@@ -33,6 +35,7 @@ exports[`test Fills selected stars 1`] = `
           checked={false}
           className="hiddenInput"
           id="star1"
+          name=""
           onChange={[Function]}
           type="radio"
           value={1} />
@@ -57,7 +60,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only" />
+            className="srOnly" />
         </label>
       </div>
       <div
@@ -66,6 +69,7 @@ exports[`test Fills selected stars 1`] = `
           checked={false}
           className="hiddenInput"
           id="star2"
+          name=""
           onChange={[Function]}
           type="radio"
           value={2} />
@@ -90,7 +94,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             1
           </span>
         </label>
@@ -101,6 +105,7 @@ exports[`test Fills selected stars 1`] = `
           checked={true}
           className="hiddenInput"
           id="star3"
+          name=""
           onChange={[Function]}
           type="radio"
           value={3} />
@@ -125,7 +130,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="green" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             2
           </span>
         </label>
@@ -136,6 +141,7 @@ exports[`test Fills selected stars 1`] = `
           checked={false}
           className="hiddenInput"
           id="star4"
+          name=""
           onChange={[Function]}
           type="radio"
           value={4} />
@@ -160,7 +166,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             3
           </span>
         </label>
@@ -171,6 +177,7 @@ exports[`test Fills selected stars 1`] = `
           checked={false}
           className="hiddenInput"
           id="star5"
+          name=""
           onChange={[Function]}
           type="radio"
           value={5} />
@@ -195,7 +202,7 @@ exports[`test Fills selected stars 1`] = `
               stroke="currentColor" />
           </svg>
           <span
-            className="sr-only">
+            className="srOnly">
             4
           </span>
         </label>
@@ -252,7 +259,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -297,7 +304,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -342,7 +349,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -387,7 +394,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -432,7 +439,7 @@ exports[`test Renders correctly rounded star values 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -488,7 +495,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -533,7 +540,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -578,7 +585,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -623,7 +630,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -668,7 +675,7 @@ exports[`test Renders empty stars with no value 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -688,7 +695,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={false}
         className="hiddenInput"
         id="star0"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={0} />
@@ -699,7 +706,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={false}
         className="hiddenInput"
         id="star1"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={1} />
@@ -724,7 +731,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -735,7 +742,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={false}
         className="hiddenInput"
         id="star2"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={2} />
@@ -760,7 +767,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -771,7 +778,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={true}
         className="hiddenInput"
         id="star3"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={3} />
@@ -796,7 +803,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -807,7 +814,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={false}
         className="hiddenInput"
         id="star4"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={4} />
@@ -832,7 +839,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -843,7 +850,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         checked={false}
         className="hiddenInput"
         id="star5"
-        name={undefined}
+        name=""
         onChange={[Function]}
         type="radio"
         value={5} />
@@ -868,7 +875,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>
@@ -924,7 +931,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           0
         </span>
       </label>
@@ -969,7 +976,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           1
         </span>
       </label>
@@ -1014,7 +1021,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           2
         </span>
       </label>
@@ -1059,7 +1066,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           3
         </span>
       </label>
@@ -1104,7 +1111,7 @@ exports[`test Renders static Stars without crashing 1`] = `
             stroke="currentColor" />
         </svg>
         <span
-          className="sr-only">
+          className="srOnly">
           4
         </span>
       </label>

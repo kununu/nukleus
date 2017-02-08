@@ -17,6 +17,13 @@ export default class Button extends Component {
   };
 
   static defaultProps = {
+    customTheme: '',
+    disabled: false,
+    fullWidth: false,
+    link: null,
+    mobileFullWidth: false,
+    onClick: null,
+    outline: false,
     text: '',
     type: 'primary'
   };

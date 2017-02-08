@@ -1,20 +1,21 @@
-  static propTypes = {
-    data: PropTypes.object,
-    disabled: PropTypes.bool,
-    error: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    inputStyle: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    labelHidden: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    noSuggestionText: PropTypes.string,
-    onGetSuggestions: PropTypes.func,
-    placeholder: PropTypes.string,
-    query: PropTypes.object,
-    required: PropTypes.bool,
-    requiredLabel: PropTypes.string,
-    scrollOffset: PropTypes.num,
-    scrollTo: PropTypes.bool,
-    submitOnEnter: PropTypes.bool,
-    value: PropTypes.string
-  };
+static propTypes = {
+  data: PropTypes.object,
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  inputStyle: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  labelHidden: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  noSuggestionText: PropTypes.string,
+  onGetSuggestions: PropTypes.func,
+  placeholder: PropTypes.string,
+  query: PropTypes.object,
+  required: PropTypes.bool,
+  requiredLabel: PropTypes.string,
+  scrollOffset: PropTypes.number,
+  scrollTo: PropTypes.bool,
+  submitOnEnter: PropTypes.bool,
+  value: PropTypes.string
+};
+

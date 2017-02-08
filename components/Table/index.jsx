@@ -24,8 +24,8 @@ function getRow (value, index) {
 
 function getTitles (value, index) {
   return !value ?
-    <th key={index} className={styles.emptyHeader} /> :
-    <th key={index}><span>{value}</span></th>;
+    <th key={index} className={styles.emptyHeader} /> : // eslint-disable-line react/no-array-index-key
+    <th key={index}><span>{value}</span></th>; // eslint-disable-line react/no-array-index-key
 }
 
 export default function Table ({
@@ -48,7 +48,7 @@ export default function Table ({
 
   return (
     <div className={`${styles.tableContainer} ${styles[tableStyle]}`}>
-      <table className={`table-striped table-bordered ${styles.table}`}>
+      <table className={styles.table}>
         <thead>
           <tr>
             {titles.map(getTitles)}
@@ -58,7 +58,7 @@ export default function Table ({
         <tbody>
           {[...Array(rowCount)].map((row, rowIndex) =>
             <tr
-              key={rowIndex}
+              key={rowIndex} // eslint-disable-line react/no-array-index-key
               className={(hasItems ? '' : styles.emptyTd)}>
 
               {

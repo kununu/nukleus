@@ -1,4 +1,4 @@
-propTypes: {
+static propTypes = {
   customTheme: PropTypes.string,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -8,12 +8,13 @@ propTypes: {
   outline: PropTypes.bool,
   text: PropTypes.string,
   type: PropTypes.oneOf([
-   'default',
-   'primary',
-   'secondary',
-   'info',
-   'danger',
-   'link',
-   'custom'
+    'default',
+    'primary',
+    'secondary',
+    'info',
+    'danger',
+    'link',
+    'custom'
   ])
-}
+};
+

@@ -1,6 +1,7 @@
-defaultProps: {
+static defaultProps = {
   closeMethod: 'onClick',
   duration: 5000,
   message: '',
+  type: 'SUCCESS',
   visible: false
 }

@@ -6,6 +6,13 @@ import Autosuggest from 'react-autosuggest';
 
 import styles from './index.scss';
 
+import {
+  controlLabel,
+  errorStyles,
+  formControl,
+  formGroup
+} from '../index.scss';
+
 function getSuggestions (value, items = []) {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -18,20 +25,23 @@ export default class ComboboxComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
-    id: PropTypes.string,
+    id: PropTypes.string.isRequired,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     items: PropTypes.array,
     label: PropTypes.string,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     required: PropTypes.bool
   };
 
   static defaultProps = {
+    disabled: false,
     error: null,
     inputStyles: 'inline',
     inputValue: '',
+    items: [],
+    label: '',
     placeholder: '',
     required: false
   };
@@ -95,9 +105,9 @@ export default class ComboboxComponent extends Component {
     } = this.props;
 
     return (
-      <div className={`form-group ${styles[inputStyles]}`}>
+      <div className={`${formGroup} ${styles[inputStyles]}`}>
         <label
-          className="control-label"
+          className={controlLabel}
           htmlFor="city">
 
           {label}
@@ -114,6 +124,7 @@ export default class ComboboxComponent extends Component {
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
             inputProps={{
+              className: formControl,
               disabled,
               id,
               name,
@@ -128,7 +139,7 @@ export default class ComboboxComponent extends Component {
           </span>
 
           {this.state.showError &&
-            <span className={`${styles.error} label-danger`}>{error}</span>}
+            <span className={errorStyles}>{error}</span>}
         </div>
       </div>
     );

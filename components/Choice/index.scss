@@ -4,6 +4,10 @@
   display: table;
   width: 100%;
 
+  * {
+    box-sizing: border-box;
+  }
+
   @supports (display: flex) {
     display: flex;
     flex-flow: row wrap;
@@ -12,6 +16,7 @@
 
 .radioButton {
   text-align: center;
+  display: table-cell;
 
   @supports (display: flex) {
     display: block;
@@ -86,28 +91,39 @@
     border-radius: $border-radius-base;
 
     .radioButton {
-      flex: 50%;
+      display: block;
+
+      @supports (display: flex) {
+        flex: 50%;
+      }
 
       label {
         border: 0;
+        border-bottom: 2px solid $blue;
         border-radius: 0;
+
+        @supports (display: flex) {
+          border: 0;
+        }
       }
 
-      &:nth-child(4n+3) label,
-      &:nth-child(4n+4) label {
-        border: 2px solid $blue;
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-      }
+      @supports (display: flex) {
+        &:nth-child(4n+3) label,
+        &:nth-child(4n+4) label {
+          border: 2px solid $blue;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0;
+        }
 
-      &:nth-child(odd) label {
-        border-right: 2px solid $blue;
-      }
+        &:nth-child(odd) label {
+          border-right: 2px solid $blue;
+        }
 
-      &:nth-last-child(2) label,
-      &:nth-last-child(1) label {
-        border-bottom: 0;
+        &:nth-last-child(2) label,
+        &:nth-last-child(1) label {
+          border-bottom: 0;
+        }
       }
     }
   }
