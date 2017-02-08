@@ -1,10 +1,11 @@
-static propTypes = {
-  choices: PropTypes.array.isRequired,
+propTypes: {
+  choiches: PropTypes.array.isRequired,
   heading: PropTypes.string,
   headingStyle: PropTypes.string,
-  inputStyle: PropTypes.oneOf(['inline', 'buttons']),
+  inputStyle: PropTypes.oneOf([
+    'inline',
+    'buttons'
+  ]),
   name: PropTypes.string.isRequired,
   query: PropTypes.object
-};
-
-
+}
