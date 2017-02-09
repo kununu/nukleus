@@ -6,8 +6,11 @@ export default class Notification extends Component {
   static propTypes = {
     closeMethod: PropTypes.oneOf(['onClick', 'onTimeout']),
     duration: PropTypes.number,
+    icons: React.PropTypes.shape({
+      error: React.PropTypes.element,
+      success: React.PropTypes.element
+    }),
     message: PropTypes.string.isRequired,
-    successIcon: PropTypes.element,
     type: PropTypes.oneOf(['ERROR', 'SUCCESS']),
     visible: PropTypes.bool
   };
@@ -15,7 +18,9 @@ export default class Notification extends Component {
   static defaultProps = {
     closeMethod: 'onClick',
     duration: 5000,
+    icons: {},
     message: '',
+    type: 'SUCCESS',
     visible: false
   }
 
@@ -61,8 +66,8 @@ export default class Notification extends Component {
   render () {
     const {
       duration,
+      icons,
       message,
-      successIcon,
       visible
     } = this.props;
 
@@ -99,9 +104,15 @@ export default class Notification extends Component {
               </svg>
             </button>}
 
-          {!this.isError() && successIcon &&
+          {!this.isError() && icons.success &&
             <span className={styles.success}>
-              {successIcon}
+              {icons.success}
+            </span>
+          }
+
+          {this.isError() && icons.error &&
+            <span className={styles.error}>
+              {icons.error}
             </span>
           }
 

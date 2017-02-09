@@ -32,11 +32,13 @@ export default class DatePickerComponent extends Component {
   static defaultProps = {
     disabled: false,
     error: null,
+    icon: null,
     inputStyle: 'inline',
     isClearable: true,
     placeholder: '',
     query: {},
-    required: false
+    required: false,
+    value: ''
   };
 
   state = {

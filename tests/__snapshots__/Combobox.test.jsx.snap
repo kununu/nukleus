@@ -1,5 +1,6 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  disabled={false}
   error={null}
   id="name"
   inputStyles="inline"
@@ -42,7 +43,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         inputProps={
           Object {
             "className": "formControl",
-            "disabled": undefined,
+            "disabled": false,
             "id": "name",
             "name": "name",
             "onChange": [Function],
@@ -103,7 +104,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           inputProps={
             Object {
               "className": "formControl",
-              "disabled": undefined,
+              "disabled": false,
               "id": "name",
               "name": "name",
               "onBlur": [Function],
@@ -175,6 +176,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               className="formControl"
+              disabled={false}
               id="name"
               name="name"
               onBlur={[Function]}
@@ -704,7 +706,7 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-owns="react-autowhatever-1"
         autoComplete="off"
         className="formControl"
-        disabled={undefined}
+        disabled={false}
         id="name"
         name="name"
         onBlur={[Function]}

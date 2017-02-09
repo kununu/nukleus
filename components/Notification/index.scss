@@ -68,6 +68,10 @@
   color: $green;
 }
 
+.error {
+  color: $black;
+}
+
 .container.visible {
   animation-name: slideUp;
   animation-duration: 1s;
@@ -112,3 +116,8 @@
   }
 }
 
+.successIcon {
+  &:before {
+    content: '\2714';
+  }
+}

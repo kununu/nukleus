@@ -31,7 +31,7 @@ export default class NotificationDocs extends Component {
   }
 
   render () {
-    const example = `<Notification${'\n  '}message="Hi, I am a notification box"${'\n  '}visible={${this.state.notificationVisible}} />`;
+    const example = `<Notification${'\n  '}message="Hi, I am a notification box"${'\n  '}icons=${'{{\n    '}error: <i className="fa fa-times" />,${'\n    '}success: <i className="fa fa-check" />${'\n  }}\n  '}visible={${this.state.notificationVisible}} />`;
 
     return (
       <DocsRoot
@@ -46,6 +46,10 @@ export default class NotificationDocs extends Component {
               </a>
             <Notification
               message="Hi, I am a notification box"
+              icons={{
+                error: <i className="fa fa-times" />,
+                success: <i className="fa fa-check" />
+              }}
               visible={this.state.notificationVisible} />
           </div>
         }

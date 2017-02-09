@@ -18,6 +18,8 @@ import TableDocs from 'components/TableDocs';
 import TextFieldDocs from 'components/TextFieldDocs';
 import NotificationDocs from 'components/NotificationDocs';
 
+import 'font-awesome-webpack';
+
 import '../main.scss';
 
 

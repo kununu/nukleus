@@ -14,12 +14,12 @@ exports[`test Renders Choice with an heading without crashing 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -32,12 +32,12 @@ exports[`test Renders Choice with an heading without crashing 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -50,12 +50,12 @@ exports[`test Renders Choice with an heading without crashing 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -68,6 +68,7 @@ exports[`test Renders Choice with an heading without crashing 1`] = `
 exports[`test Renders Choice with radio buttons without crashing 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -77,12 +78,12 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -95,12 +96,12 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -113,12 +114,12 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -131,6 +132,7 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
 exports[`test Renders a Choice with checked from route 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -140,12 +142,12 @@ exports[`test Renders a Choice with checked from route 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -158,12 +160,12 @@ exports[`test Renders a Choice with checked from route 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -176,12 +178,12 @@ exports[`test Renders a Choice with checked from route 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -194,6 +196,7 @@ exports[`test Renders a Choice with checked from route 1`] = `
 exports[`test Renders a Choice with custom style 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -203,12 +206,12 @@ exports[`test Renders a Choice with custom style 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className="customThemeClass"
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -221,12 +224,12 @@ exports[`test Renders a Choice with custom style 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className="customThemeClass"
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -239,12 +242,12 @@ exports[`test Renders a Choice with custom style 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className="customThemeClass"
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -257,6 +260,7 @@ exports[`test Renders a Choice with custom style 1`] = `
 exports[`test Renders a Choice with custom style disabled 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -266,7 +270,7 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
@@ -284,7 +288,7 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
@@ -302,7 +306,7 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
@@ -320,6 +324,7 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
 exports[`test Renders a Choice with default checked without crashing 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -329,12 +334,12 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -347,12 +352,12 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -365,12 +370,12 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -383,6 +388,7 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
 exports[`test Renders a Choice with no default checked from route if it is not an option 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -392,12 +398,12 @@ exports[`test Renders a Choice with no default checked from route if it is not a
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -410,12 +416,12 @@ exports[`test Renders a Choice with no default checked from route if it is not a
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -428,12 +434,12 @@ exports[`test Renders a Choice with no default checked from route if it is not a
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -446,6 +452,7 @@ exports[`test Renders a Choice with no default checked from route if it is not a
 exports[`test Renders a Choice with no default checked from route if it is the other name 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -455,12 +462,12 @@ exports[`test Renders a Choice with no default checked from route if it is the o
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -473,12 +480,12 @@ exports[`test Renders a Choice with no default checked from route if it is the o
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -491,12 +498,12 @@ exports[`test Renders a Choice with no default checked from route if it is the o
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -509,6 +516,7 @@ exports[`test Renders a Choice with no default checked from route if it is the o
 exports[`test Renders a Choice with no default checked if it's not an option 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -518,12 +526,12 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopA"
         id={0}>
         Option A
@@ -536,12 +544,12 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopB"
         id={1}>
         Option B
@@ -554,12 +562,12 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label
         className=""
-        disabled={undefined}
+        disabled={false}
         htmlFor="testopC"
         id={2}>
         Option C
@@ -572,6 +580,7 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
 exports[`test Renders a disabled Choice without crashing 1`] = `
 <div
   className="formGroup">
+  
   <div
     className="radioContainer false ">
     <div
@@ -581,7 +590,7 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
         id="testopA"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opA" />
       <label
@@ -599,7 +608,7 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
         id="testopB"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opB" />
       <label
@@ -617,7 +626,7 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
         id="testopC"
         name="test"
         onChange={[Function]}
-        required={undefined}
+        required={false}
         type="radio"
         value="opC" />
       <label

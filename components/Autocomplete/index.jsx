@@ -40,12 +40,21 @@ export default class Autocomplete extends React.Component {
   };
 
   static defaultProps = {
+    data: {},
+    disabled: false,
     error: null,
     inputStyle: 'inline',
+    labelHidden: false,
     noSuggestionText: 'No results found',
+    onGetSuggestions: null,
     placeholder: '',
     query: {},
-    scrollTo: false
+    required: false,
+    requiredLabel: '',
+    scrollOffset: 0,
+    scrollTo: false,
+    submitOnEnter: false,
+    value: ''
   }
 
   state = {
