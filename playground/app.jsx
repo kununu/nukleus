@@ -6,6 +6,7 @@ import Button from 'components/Button';
 import Choice from 'components/Choice';
 import Combobox from 'components/Combobox';
 import DatePicker from 'components/DatePicker';
+import DropDown from 'components/DropDown';
 import InfoText from 'components/InfoText';
 import MultipleChoice from 'components/MultipleChoice';
 import Notification from 'components/Notification';
@@ -22,6 +23,19 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
+        <div className="row">
+          <DropDown
+            items={
+            [{
+              active: false,
+              value: 'hi'
+            },
+            {
+              active: false,
+              value: 'meow'
+            }]
+            } />
+        </div>
 
         <div className="row">
           <div className="col-md-8">
