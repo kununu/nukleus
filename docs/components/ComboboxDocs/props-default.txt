@@ -1,6 +1,7 @@
 static defaultProps = {
   disabled: false,
   error: null,
+  handle: null,
   inputStyles: 'inline',
   inputValue: '',
   items: [],

@@ -2,6 +2,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
   disabled={false}
   error={null}
+  handle={null}
   id="name"
   inputStyles="inline"
   inputValue=""
