@@ -1,16 +1,22 @@
 import React, {Component, PropTypes} from 'react';
-// import ReactDOM from 'react-dom';
 
 import styles from './index.scss';
 
-export default class Dropdown extends Component {
+import {
+  clearfix
+} from '../index.scss';
 
+export default class Dropdown extends Component {
   static propTypes = {
-    items: PropTypes.array
+    items: PropTypes.array,
+    position: PropTypes.oneOf(['top', 'bottom']),
+    shade: PropTypes.oneOf(['light', 'dark'])
   };
 
   static defaultProps = {
-    items: []
+    items: [],
+    position: 'top',
+    shade: 'light'
   }
 
   state = {
@@ -18,7 +24,6 @@ export default class Dropdown extends Component {
     isOpen: false,
     selected: this.getSelection()
   }
-
 
   componentWillMount () {
     document.addEventListener('click', this.handleDocumentClick, false);
@@ -61,23 +66,39 @@ export default class Dropdown extends Component {
 
   render () {
     const {
-      items
+      items,
+      position,
+      shade
     } = this.props;
 
     return (
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles[position]}`}>
         <button
           ref={node => this.node = node}
-          id="cheese"
-          className={styles.selection}
+          className={`${styles.selection} ${clearfix} ${styles[shade]}`}
           onClick={this.onButtonClick}>
           {this.state.selected.value}
+          {this.state.selected.icon ?
+            <span className={styles.pullRight}>
+              {this.state.selected.icon}
+            </span>
+          : ''}
         </button>
         <ul className={`${styles.menu} ${this.state.isOpen ? styles.open : ''}`}>
           {items.map((item, index) =>
             <li // eslint-disable-line
               key={index}
-              onClick={() => this.onItemClick(item)}>{item.value}</li>
+              className={`${styles.item} ${clearfix}`}
+              onClick={() => this.onItemClick(item)}>
+              <span className={styles.pullLeft}>
+                {item.value}
+              </span>
+              {item.icon ?
+                <span className={styles.pullRight}>
+                  {item.icon}
+                </span>
+              : ''}
+            </li>
           )}
         </ul>
       </div>

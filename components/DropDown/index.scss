@@ -1,20 +1,55 @@
 @import '~kununu-theme/scss/base/variables';
 
-.container.open {
+.container {
   position: relative;
+  display: inline-block;
+}
+
+.container.top {
+  .menu {
+    top: auto;
+    bottom: 100%;
+    border-radius: 4px 4px 0 0;
+  }
 }
 
 .selection {
   border: 0;
   background-color: transparent;
+  padding: 12px 0 12px 12px;
+  line-height: 20px;
+  min-width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  span {
+    padding-left: 10px;
+  }
+
+  &.light {
+    color: $white;
+  }
+
+  &.dark {
+    color: $text-color;
+  }
+
+  &,
+  &:focus {
+    outline: none;
+  }
 }
 
 .menu {
   background-color: $white;
   display: none;
+  min-width: 160px;
+  margin: 0;
+  padding: 0;
   position: absolute;
+  right: 0;
   z-index: $zindex-popover;
-  padding: 10px;
 
   li {
     list-style-type: none;
@@ -23,4 +58,28 @@
   &.open {
     display: block;
   }
+}
+
+.item {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: $font-size-small;
+  color: $gray-dark;
+
+  &:first-child {
+    padding-top: 20px;
+  }
+
+  &:hover {
+    background-color: $gray-base-03;
+  }
+}
+
+.pullLeft {
+  float: left;
+}
+
+.pullRight {
+  float: right;
+  text-align: right;
 }
