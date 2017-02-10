@@ -661,11 +661,7 @@ const App = ({location: {pathname, query}}) => (
 
     <Notification
       message="Hello, I am a notification box"
-      icons={{
-        error: <i className="fa fa-times" />,
-        success: <i className="fa fa-check" />
-      }}
-      type="ERROR"
+      icon={<i className="fa fa-check" />}
       visible />
   </div>
 );

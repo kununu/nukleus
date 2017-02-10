@@ -1,7 +1,7 @@
 static defaultProps = {
   closeMethod: 'onClick',
   duration: 5000,
-  icons: {},
+  icon: null,
   message: '',
   type: 'SUCCESS',
   visible: false

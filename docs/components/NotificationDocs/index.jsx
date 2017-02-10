@@ -46,10 +46,7 @@ export default class NotificationDocs extends Component {
               </a>
             <Notification
               message="Hi, I am a notification box"
-              icons={{
-                error: <i className="fa fa-times" />,
-                success: <i className="fa fa-check" />
-              }}
+              icon={<i className="fa fa-check" />}
               visible={this.state.notificationVisible} />
           </div>
         }

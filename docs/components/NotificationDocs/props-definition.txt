@@ -4,14 +4,11 @@ static propTypes = {
     'onTimeout'
   ]),
   duration: PropTypes.number,
-  icons: React.PropTypes.shape({
-    error: React.PropTypes.element,
-    success: React.PropTypes.element
-  }),
+  icon: PropTypes.element,
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
-    'ERROR',
-    'SUCCESS'
+    'error',
+    'success'
   ]),
   visible: PropTypes.bool
 };
