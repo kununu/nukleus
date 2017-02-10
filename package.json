@@ -92,6 +92,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
+    "docker-start": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 3000 ./playground",
     "babel": "babel ./components --out-dir ./dist",
     "sass": "node-sass ./components --output ./dist --importer node_modules/node-sass-module-importer",
     "dist": "npm run build && npm run sass",
