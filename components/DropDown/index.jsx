@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 
 import styles from './index.scss';
 
@@ -91,7 +91,10 @@ export default class Dropdown extends Component {
               className={`${styles.item} ${clearfix}`}
               onClick={() => this.onItemClick(item)}>
               <span className={styles.pullLeft}>
-                {item.value}
+                {item.link ?
+                  React.cloneElement(item.link, [], item.value)
+                  : item.value
+                }
               </span>
               {item.icon ?
                 <span className={styles.pullRight}>
