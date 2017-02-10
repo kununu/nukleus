@@ -24,7 +24,9 @@ export default class Tabs extends Component {
     return (
       <ul className={`${styles.tabs} ${clearfix}`}>
         {items.map((item, key) => (
-          <li key={key} className={items.length > 1 ? '' : styles.pointerDisabled}>
+          <li
+            key={key} // eslint-disable-line react/no-array-index-key
+            className={items.length > 1 ? '' : styles.pointerDisabled}>
             {React.cloneElement(item, this.getNewProps(item))}
           </li>
         ))}

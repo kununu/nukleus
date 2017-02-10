@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
-import 'font-awesome-webpack';
 
 import App from 'components/App';
 import AutocompleteDocs from 'components/AutocompleteDocs';
@@ -18,6 +17,8 @@ import TabsDocs from 'components/TabsDocs';
 import TableDocs from 'components/TableDocs';
 import TextFieldDocs from 'components/TextFieldDocs';
 import NotificationDocs from 'components/NotificationDocs';
+
+import 'font-awesome-webpack';
 
 import '../main.scss';
 

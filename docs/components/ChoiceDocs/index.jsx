@@ -41,7 +41,7 @@ const ChoiceDocs = ({location: {query}}) => (
 );
 
 ChoiceDocs.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object.isRequired
 };
 
 

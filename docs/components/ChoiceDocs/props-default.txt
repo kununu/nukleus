@@ -1,6 +1,10 @@
-defaultProps: {
+static defaultProps = {
   checked: '',
   customTheme: '',
+  disabled: false,
+  heading: '',
   headingStyle: 'control-label',
-  query: {}
-}
+  onChange: null,
+  query: {},
+  required: false
+};

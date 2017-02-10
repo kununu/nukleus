@@ -1,6 +1,8 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  disabled={false}
   error={null}
+  handle={null}
   id="name"
   inputStyles="inline"
   inputValue=""
@@ -42,7 +44,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         inputProps={
           Object {
             "className": "formControl",
-            "disabled": undefined,
+            "disabled": false,
             "id": "name",
             "name": "name",
             "onChange": [Function],
@@ -103,7 +105,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           inputProps={
             Object {
               "className": "formControl",
-              "disabled": undefined,
+              "disabled": false,
               "id": "name",
               "name": "name",
               "onBlur": [Function],
@@ -175,6 +177,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               className="formControl"
+              disabled={false}
               id="name"
               name="name"
               onBlur={[Function]}
@@ -679,12 +682,6 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           </div>
         </Autowhatever>
       </Autosuggest>
-      <span
-        className="handle">
-        <i
-          aria-hidden="true"
-          className="fa fa-caret-down" />
-      </span>
     </div>
   </div>
 </ComboboxComponent>
@@ -710,7 +707,7 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-owns="react-autowhatever-1"
         autoComplete="off"
         className="formControl"
-        disabled={undefined}
+        disabled={false}
         id="name"
         name="name"
         onBlur={[Function]}
@@ -727,12 +724,7 @@ exports[`test Renders Combobox without crashing 1`] = `
         id="react-autowhatever-1"
         style={Object {}} />
     </div>
-    <span
-      className="handle">
-      <i
-        aria-hidden="true"
-        className="fa fa-caret-down" />
-    </span>
+    
   </div>
 </div>
 `;

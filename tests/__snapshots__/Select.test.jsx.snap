@@ -1,5 +1,9 @@
 exports[`test Changes status on value change 1`] = `
 <Select
+  autoFocus={false}
+  defaultItem=""
+  defaultRequired=""
+  disabled={false}
   error={null}
   id="select"
   inputStyle="inline"
@@ -10,7 +14,9 @@ exports[`test Changes status on value change 1`] = `
       "option-3": "Option 3",
     }
   }
+  labelHidden={false}
   name="select"
+  onChange={null}
   query={Object {}}
   required={true}
   title="Select"
@@ -18,14 +24,16 @@ exports[`test Changes status on value change 1`] = `
   <div
     className="formGroup inline">
     <label
-      className="controlLabel undefined"
+      className="controlLabel false"
       htmlFor="select">
       Select
     </label>
     <div
       className="inputContainer">
       <select
+        autoFocus={false}
         className="formControl select"
+        disabled={false}
         id="select"
         name="select"
         onChange={[Function]}
@@ -53,21 +61,23 @@ exports[`test Renders Select without crashing 1`] = `
 <div
   className="formGroup inline">
   <label
-    className="controlLabel undefined"
+    className="controlLabel false"
     htmlFor="select">
     Select
   </label>
   <div
     className="inputContainer">
     <select
-      autoFocus={undefined}
+      autoFocus={false}
       className="formControl select"
-      disabled={undefined}
+      disabled={false}
       id="select"
       name="select"
       onChange={[Function]}
       required={true}
       value="option">
+      
+      
       <option
         value="option">
         Option

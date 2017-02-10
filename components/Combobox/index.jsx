@@ -25,20 +25,25 @@ export default class ComboboxComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
-    id: PropTypes.string,
+    handle: PropTypes.element,
+    id: PropTypes.string.isRequired,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     items: PropTypes.array,
     label: PropTypes.string,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     required: PropTypes.bool
   };
 
   static defaultProps = {
+    disabled: false,
     error: null,
+    handle: null,
     inputStyles: 'inline',
     inputValue: '',
+    items: [],
+    label: '',
     placeholder: '',
     required: false
   };
@@ -95,6 +100,7 @@ export default class ComboboxComponent extends Component {
       id,
       label,
       error,
+      handle,
       required,
       inputStyles,
       placeholder,
@@ -131,9 +137,11 @@ export default class ComboboxComponent extends Component {
               value: this.state.value
             }} />
 
-          <span className={styles.handle}>
-            <i className="fa fa-caret-down" aria-hidden="true" />
-          </span>
+          {handle ?
+            <span className={styles.handle}>
+              {handle}
+            </span>
+          : ''}
 
           {this.state.showError &&
             <span className={errorStyles}>{error}</span>}

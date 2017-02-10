@@ -1,8 +1,9 @@
-propTypes: {
+static propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
   id: PropTypes.string.isRequired,
-  inputStyles: PropTypes.string,
+  icon: PropTypes.element,
+  inputStyle: PropTypes.string,
   isClearable: PropTypes.bool,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -10,4 +11,4 @@ propTypes: {
   required: PropTypes.bool,
   title: PropTypes.string.isRequired,
   value: PropTypes.string
-}
+};

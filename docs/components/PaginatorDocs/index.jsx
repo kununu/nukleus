@@ -30,7 +30,7 @@ const PaginatorDocs = ({location: {pathname, query}}) => {
 };
 
 PaginatorDocs.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object.isRequired
 };
 
 export default PaginatorDocs;

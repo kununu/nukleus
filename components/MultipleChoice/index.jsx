@@ -19,6 +19,7 @@ export default class MultipleChoice extends Component {
   };
 
   static defaultProps = {
+    heading: '',
     headingStyle: 'control-label',
     inputStyle: 'inline',
     query: {}
@@ -83,8 +84,8 @@ export default class MultipleChoice extends Component {
         {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
 
         <div className={styles.inputContainer}>
-          {choices.map((choice, key) =>
-            <div className={`${styles.choice}`} key={key}>
+          {choices.map(choice =>
+            <div className={`${styles.choice}`} key={choice.id}>
               <input
                 className={formControl}
                 id={`${this.props.name}${choice.id}`}
