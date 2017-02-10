@@ -48,7 +48,7 @@ export default class Dropdown extends Component {
 
   getSelection () {
     const selected = this.props.items.filter(item => item.active);
-    return selected[0].value ? selected[0] : this.props.items[0];
+    return selected[0] ? selected[0] : this.props.items[0];
   }
 
   getItem = item => (
