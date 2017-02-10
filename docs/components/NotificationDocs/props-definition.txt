@@ -1,4 +1,5 @@
 static propTypes = {
+  closerIcon: PropTypes.element,
   closeMethod: PropTypes.oneOf([
     'onClick',
     'onTimeout'
