@@ -1,5 +1,18 @@
 exports[`test Closes when the close button is clicked 1`] = `
 <Notification
+  closeIcon={
+    <svg
+      version="1.1"
+      viewBox="0 0 68.3 61.2"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px">
+      <path
+        d="M55,43.3c0,0.9-0.3,1.7-1,2.4l-4.8,4.8c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1L34.1,40.2L23.8,50.5 c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1l-4.8-4.8c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l10.3-10.3L14.2,20.3 c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l4.8-4.8c0.7-0.7,1.5-1,2.4-1c0.9,0,1.7,0.3,2.4,1L34.1,21l10.3-10.3c0.7-0.7,1.5-1,2.4-1 c0.9,0,1.7,0.3,2.4,1l4.8,4.8c0.7,0.7,1,1.5,1,2.4s-0.3,1.7-1,2.4L43.7,30.6L54,40.9C54.7,41.6,55,42.4,55,43.3z" />
+    </svg>
+  }
   closeMethod="onClick"
   duration={5000}
   icon={null}
@@ -36,6 +49,19 @@ exports[`test Closes when the close button is clicked 1`] = `
 
 exports[`test Does not close on click when the close method is timeout 1`] = `
 <Notification
+  closeIcon={
+    <svg
+      version="1.1"
+      viewBox="0 0 68.3 61.2"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px">
+      <path
+        d="M55,43.3c0,0.9-0.3,1.7-1,2.4l-4.8,4.8c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1L34.1,40.2L23.8,50.5 c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1l-4.8-4.8c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l10.3-10.3L14.2,20.3 c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l4.8-4.8c0.7-0.7,1.5-1,2.4-1c0.9,0,1.7,0.3,2.4,1L34.1,21l10.3-10.3c0.7-0.7,1.5-1,2.4-1 c0.9,0,1.7,0.3,2.4,1l4.8,4.8c0.7,0.7,1,1.5,1,2.4s-0.3,1.7-1,2.4L43.7,30.6L54,40.9C54.7,41.6,55,42.4,55,43.3z" />
+    </svg>
+  }
   closeMethod="onTimeout"
   duration={8000}
   icon={null}
