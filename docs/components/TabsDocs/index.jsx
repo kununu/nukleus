@@ -32,7 +32,7 @@ const TabsDocs = ({location: {pathname}}) => {
 };
 
 TabsDocs.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object.isRequired
 };
 
 export default TabsDocs;

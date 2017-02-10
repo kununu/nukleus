@@ -1,4 +1,4 @@
-propTypes: {
+static propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
   disable: PropTypes.bool,
@@ -25,4 +25,6 @@ propTypes: {
     'url'
   ]),
   value: PropTypes.string
-}
+};
+
+

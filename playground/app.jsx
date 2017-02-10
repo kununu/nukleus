@@ -329,6 +329,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
               title="DatePicker" />
@@ -350,6 +351,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Combobox
+              handle={<i className="fa fa-caret-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
@@ -395,45 +397,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" onClick={() => {}} />
+            <Button type="default" text="Default Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" onClick={() => {}} />
+            <Button type="primary" text="Primary Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" onClick={() => {}} />
+            <Button type="secondary" text="Secondary Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" onClick={() => {}} />
+            <Button type="info" text="Info Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" onClick={() => {}} />
+            <Button type="danger" text="Danger Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" onClick={() => {}} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" onClick={() => {}} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" onClick={() => {}} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" onClick={() => {}} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" onClick={() => {}} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" onClick={() => {}} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" onClick={() => {}} disabled />
+            <Button type="link" text="Link Button" />
           </div>
         </div>
 
@@ -441,22 +420,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" onClick={() => {}} outline />
+            <Button type="default" text="Default Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" onClick={() => {}} outline />
+            <Button type="primary" text="Primary Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline />
+            <Button type="secondary" text="Secondary Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" onClick={() => {}} outline />
+            <Button type="info" text="Info Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" onClick={() => {}} outline />
+            <Button type="danger" text="Danger Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" onClick={() => {}} outline />
+            <Button type="link" text="Link Button" disabled />
           </div>
         </div>
 
@@ -464,22 +443,45 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" onClick={() => {}} outline disabled />
+            <Button type="default" text="Default Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" onClick={() => {}} outline disabled />
+            <Button type="primary" text="Primary Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" onClick={() => {}} outline disabled />
+            <Button type="secondary" text="Secondary Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" onClick={() => {}} outline disabled />
+            <Button type="info" text="Info Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" onClick={() => {}} outline disabled />
+            <Button type="danger" text="Danger Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" onClick={() => {}} outline disabled />
+            <Button type="link" text="Link Button" outline />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="default" text="Default Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="primary" text="Primary Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="secondary" text="Secondary Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="info" text="Info Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="danger" text="Danger Button" outline disabled />
+          </div>
+          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+            <Button type="link" text="Link Button" outline disabled />
           </div>
         </div>
 
@@ -544,7 +546,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
-            <Button type="primary" text="Full width Button" onClick={() => {}} fullWidth />
+            <Button type="primary" text="Full width Button" fullWidth />
           </div>
         </div>
 
@@ -552,7 +554,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
-            <Button type="primary" text="Mobile Full width Button" onClick={() => {}} mobileFullWidth />
+            <Button type="primary" text="Mobile Full width Button" mobileFullWidth />
           </div>
         </div>
 
@@ -694,6 +696,7 @@ const App = ({location: {pathname, query}}) => (
 
     <Notification
       message="Hello, I am a notification box"
+      icon={<i className="fa fa-check" />}
       visible />
   </div>
 );

@@ -14,7 +14,8 @@ const DatePickerDocs = () => (
       <DatePicker
         id="date-picker"
         name="date-picker"
-        title="DatePicker" />
+        title="DatePicker"
+        icon={<i className="fa fa-calendar" aria-hidden="true" />} />
     }
     example={example}
     propsDefinition={propsDefinition}
