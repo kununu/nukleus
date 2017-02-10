@@ -63,6 +63,19 @@ export default class Dropdown extends Component {
     }
   }
 
+  getItem = item => (
+    <span>
+      <span className={styles.pullLeft}>
+        {item.value}
+      </span>
+      {item.icon ?
+        <span className={styles.pullRight}>
+          {item.icon}
+        </span>
+        : ''}
+    </span>
+    )
+
   render () {
     const {
       items,
@@ -89,17 +102,10 @@ export default class Dropdown extends Component {
               key={index}
               className={`${styles.item} ${clearfix}`}
               onClick={() => this.onItemClick(item)}>
-              <span className={styles.pullLeft}>
-                {item.link ?
-                  React.cloneElement(item.link, [], item.value)
-                  : item.value
+              {item.link ?
+                  React.cloneElement(item.link, [], this.getItem(item))
+                  : this.getItem(item)
                 }
-              </span>
-              {item.icon ?
-                <span className={styles.pullRight}>
-                  {item.icon}
-                </span>
-              : ''}
             </li>
           )}
         </ul>
