@@ -97,9 +97,9 @@ export default class Dropdown extends Component {
           : ''}
         </button>
         <ul className={`${styles.menu} ${this.state.isOpen ? styles.open : ''}`}>
-          {items.map((item, index) =>
+          {items.map(item =>
             <li // eslint-disable-line
-              key={index}
+              key={item.value}
               className={`${styles.item} ${clearfix}`}
               onClick={() => this.onItemClick(item)}>
               {item.link ?
