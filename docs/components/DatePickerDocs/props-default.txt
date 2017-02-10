@@ -1,6 +1,7 @@
 static defaultProps = {
   disabled: false,
   error: null,
+  icon: null,
   inputStyle: 'inline',
   isClearable: true,
   placeholder: '',

@@ -10,4 +10,5 @@
     'orange',
     'yellow',
     'green',
-    'blue']} />
+    'blue'
+  ]} />

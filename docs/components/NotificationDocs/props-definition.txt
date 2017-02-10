@@ -1,13 +1,15 @@
 static propTypes = {
+  closerIcon: PropTypes.element,
   closeMethod: PropTypes.oneOf([
     'onClick',
     'onTimeout'
   ]),
   duration: PropTypes.number,
+  icon: PropTypes.element,
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
-    'ERROR',
-    'SUCCESS'
+    'error',
+    'success'
   ]),
   visible: PropTypes.bool
 };
