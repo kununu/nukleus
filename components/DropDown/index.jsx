@@ -8,13 +8,12 @@ import {
 
 export default class Dropdown extends Component {
   static propTypes = {
-    items: PropTypes.array,
+    items: PropTypes.array.isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
 
   static defaultProps = {
-    items: [],
     position: 'top',
     shade: 'light'
   }
@@ -49,7 +48,7 @@ export default class Dropdown extends Component {
 
   getSelection () {
     const selected = this.props.items.filter(item => item.active);
-    return selected.length ? selected : this.props.items[0];
+    return selected[0].value ? selected[0] : this.props.items[0];
   }
 
   isButtonElement (e) {
