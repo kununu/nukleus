@@ -213,7 +213,7 @@ exports[`test Renders correctly when no icon is provided 1`] = `
     className="selection clearfix light"
     onClick={[Function]}>
     Austria
-
+    
   </button>
   <ul
     className="menu ">
@@ -225,7 +225,7 @@ exports[`test Renders correctly when no icon is provided 1`] = `
           className="pullLeft">
           Austria
         </span>
-
+        
       </span>
     </li>
     <li
@@ -236,7 +236,7 @@ exports[`test Renders correctly when no icon is provided 1`] = `
           className="pullLeft">
           German
         </span>
-
+        
       </span>
     </li>
   </ul>
@@ -385,7 +385,7 @@ exports[`test Renders menu when button is clicked 1`] = `
 </Dropdown>
 `;
 
-exports[`test Updatess selection on item click 1`] = `
+exports[`test Updates selection on item click 1`] = `
 <Dropdown
   items={
     Array [
