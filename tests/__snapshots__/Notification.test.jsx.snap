@@ -2,9 +2,9 @@ exports[`test Closes when the close button is clicked 1`] = `
 <Notification
   closeMethod="onClick"
   duration={5000}
-  icons={Object {}}
+  icon={null}
   message="Test"
-  type="SUCCESS"
+  type="success"
   visible={true}>
   <div
     className="
@@ -38,9 +38,9 @@ exports[`test Does not close on click when the close method is timeout 1`] = `
 <Notification
   closeMethod="onTimeout"
   duration={8000}
-  icons={Object {}}
+  icon={null}
   message="Test"
-  type="SUCCESS"
+  type="success"
   visible={true}>
   <div
     className="
