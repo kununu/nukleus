@@ -21,7 +21,7 @@ const successNotification = (
     icon={<i className="fa fa-check" />}
     message="Test"
     visible />
-)
+);
 
 test('Renders Notification without crashing', () => {
   const component = renderer.create(notification);
@@ -50,4 +50,4 @@ test('It closes on timeout when the close method is timeout', () => {
 test('It shows content icon when defined in props', () => {
   const component = renderer.create(successNotification);
   expect(component.toJSON()).toMatchSnapshot();
-})
+});
