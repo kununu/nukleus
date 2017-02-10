@@ -51,18 +51,6 @@ export default class Dropdown extends Component {
     return selected[0].value ? selected[0] : this.props.items[0];
   }
 
-  isButtonElement (e) {
-    return this.node.contains(e.target);
-  }
-
-  handleDocumentClick = e => {
-    if (this.state.isMounted && !this.isButtonElement(e)) {
-      this.setState({
-        isOpen: false
-      });
-    }
-  }
-
   getItem = item => (
     <span>
       <span className={styles.pullLeft}>
@@ -75,6 +63,18 @@ export default class Dropdown extends Component {
         : ''}
     </span>
     )
+
+  isButtonElement (e) {
+    return this.node.contains(e.target);
+  }
+
+  handleDocumentClick = e => {
+    if (this.state.isMounted && !this.isButtonElement(e)) {
+      this.setState({
+        isOpen: false
+      });
+    }
+  }
 
   render () {
     const {
