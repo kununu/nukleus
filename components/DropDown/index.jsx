@@ -51,6 +51,14 @@ export default class Dropdown extends Component {
     });
   }
 
+  onClickDocument = e => {
+    if (this.state.isMounted && !this.isButtonElement(e)) {
+      this.setState({
+        isOpen: false
+      });
+    }
+  }
+
   getSelection () {
     const selected = this.props.items.filter(item => item.active);
     return selected[0] ? selected[0] : this.props.items[0];
@@ -71,14 +79,6 @@ export default class Dropdown extends Component {
 
   isButtonElement (e) {
     return this.node.contains(e.target);
-  }
-
-  onClickDocument = e => {
-    if (this.state.isMounted && !this.isButtonElement(e)) {
-      this.setState({
-        isOpen: false
-      });
-    }
   }
 
   render () {
