@@ -8,7 +8,12 @@ import {
 
 export default class Dropdown extends Component {
   static propTypes = {
-    items: PropTypes.array.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      active: PropTypes.Bool,
+      icon: PropTypes.element,
+      link: PropTypes.element,
+      value: PropTypes.string.isRequired
+    })),
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
@@ -25,13 +30,13 @@ export default class Dropdown extends Component {
   }
 
   componentWillMount () {
-    document.addEventListener('click', this.handleDocumentClick, false);
-    document.addEventListener('touchend', this.handleDocumentClick, false);
+    document.addEventListener('click', this.onClickDocument, false);
+    document.addEventListener('touchend', this.onClickDocument, false);
   }
 
   componentWillUnmount () {
-    document.removeEventListener('click', this.handleDocumentClick, false);
-    document.removeEventListener('touchend', this.handleDocumentClick, false);
+    document.removeEventListener('click', this.onClickDocument, false);
+    document.removeEventListener('touchend', this.onClickDocument, false);
   }
 
   onButtonClick = () => {
@@ -68,7 +73,7 @@ export default class Dropdown extends Component {
     return this.node.contains(e.target);
   }
 
-  handleDocumentClick = e => {
+  onClickDocument = e => {
     if (this.state.isMounted && !this.isButtonElement(e)) {
       this.setState({
         isOpen: false
