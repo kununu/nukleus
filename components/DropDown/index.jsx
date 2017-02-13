@@ -13,7 +13,7 @@ export default class Dropdown extends Component {
       icon: PropTypes.element,
       link: PropTypes.element,
       value: PropTypes.string.isRequired
-    })),
+    })).isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
