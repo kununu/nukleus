@@ -4,7 +4,10 @@
     "dist": {
       "plugins": [
         ["transform-rename-import", { original: './index.scss', replacement: './index.css' }],
-        ["transform-rename-import", { original: '../index.scss', replacement: '../index.css' }]
+        ["transform-rename-import", { original: '../index.scss', replacement: '../index.css' }],
+        ["transform-rename-import", { original: 'utils/elementPosition', replacement: './utils/elementPosition' }],
+        ["transform-rename-import", { original: 'utils/params', replacement: './utils/params' }],
+        ["transform-rename-import", { original: 'utils/mobileDetection', replacement: './utils/mobileDetection' }]
       ]
     }
   }
