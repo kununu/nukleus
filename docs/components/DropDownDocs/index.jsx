@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 import {DropDown} from 'nukleus';
@@ -13,24 +13,23 @@ const ch = require('./img/ch.gif');
 const de = require('./img/de.gif');
 const us = require('./img/us.gif');
 
-const DropDownDocs = () => (
+const DropDownDocs = ({location: {pathname}}) => (
   <DocsRoot
     title="DropDown"
     component={
       <div style={{backgroundColor: '#121b21'}}>
         <DropDown
+          pathname={pathname}
           position="bottom"
           items={[
             {
-              active: false,
               icon: <img
                 alt="Austrian flag"
                 src={at} />,
-              link: <Link to={{pathname: '/drop-down/at'}}>Austria</Link>,
+              link: <Link to={{pathname: '/drop-down'}}>Austria</Link>,
               value: 'Austria'
             },
             {
-              active: false,
               icon: <img
                 alt="German flag"
                 src={de} />,
@@ -38,7 +37,6 @@ const DropDownDocs = () => (
               value: 'German'
             },
             {
-              active: false,
               icon: <img
                 alt="Swiss flag"
                 src={ch} />,
@@ -46,7 +44,6 @@ const DropDownDocs = () => (
               value: 'Switzerland'
             },
             {
-              active: true,
               icon: <img
                 alt="American flag"
                 src={us} />,
@@ -60,5 +57,9 @@ const DropDownDocs = () => (
     propsDefinition={propsDefinition}
     propsDefault={propsDefault} />
 );
+
+DropDownDocs.propTypes = {
+  location: PropTypes.object.isRequired
+};
 
 export default DropDownDocs;
