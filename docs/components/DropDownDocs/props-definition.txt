@@ -1,0 +1,5 @@
+static propTypes = {
+  items: PropTypes.array.isRequired,
+  position: PropTypes.oneOf(['top', 'bottom']),
+  shade: PropTypes.oneOf(['light', 'dark'])
+};

@@ -10,6 +10,7 @@ const components = [
   'Choice',
   'Combobox',
   'DatePicker',
+  'DropDown',
   'InfoText',
   'MultipleChoice',
   'Notification',
