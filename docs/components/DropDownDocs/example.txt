@@ -1,28 +1,72 @@
 <DropDown
   position="bottom"
-  items={
-    [{
+  items={[
+    {
       active: false,
-      icon: <img title="Austrian Flag" alt="Austrian Flag" src="austrian_flag.jpg" />,
-      link: <a href="/at" alt="Switch to austrian">Austria</a>,
+      icon: (
+        <img
+          title="Austrian Flag"
+          alt="Austrian Flag"
+          src="austrian_flag.jpg" />
+      ),
+      link: (
+        <a
+          href="/drop-down/at"
+          alt="Switch to austrian">
+          Austria
+        </a>
+      ),
       value: 'Austria'
     },
     {
       active: false,
-      icon: <img title="German Flag" alt="German Flag" src="german_flag.jpg" />,
-      link: <a href="/de" alt="Switch to german">German</a>,
+      icon: (
+        <img
+          title="German Flag"
+          alt="German Flag"
+          src="german_flag.jpg" />
+      ),
+      link: (
+        <a
+          href="/drop-down/de"
+          alt="Switch to german">
+          German
+        </a>
+      ),
       value: 'German'
     },
     {
       active: false,
-      icon: <img title="Swiss Flag" alt="Swiss Flag" src="swiss_flag.jpg" />,
-      link: <a href="/ch" alt="Switch to swiss german">Switzerland</a>,
+      icon: (
+        <img
+          title="Swiss Flag"
+          alt="Swiss Flag"
+          src="swiss_flag.jpg" />
+      ),
+      link: (
+        <a
+          href="/drop-down/ch"
+          alt="Switch to swiss german">
+          Switzerland
+        </a>
+      ),
       value: 'Switzerland'
     },
     {
       active: true,
-      icon: <img title="American Flag" alt="American Flag" src="american_flag.jpg" />,
-      link: <a href="/us" alt="Switch to english">English</a>,
+      icon: (
+        <img
+          title="American Flag"
+          alt="American Flag"
+          src="american_flag.jpg" />
+      ),
+      link: (
+        <a
+          href="/drop-down/us"
+          alt="Switch to english">
+          English
+        </a>
+      ),
       value: 'United States'
-    }]
-  }
+    }
+  ]} />
