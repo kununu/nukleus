@@ -2,10 +2,9 @@
 
 import React, {PropTypes, Component} from 'react';
 
-import params from 'utils/params';
-
 import styles from './index.scss';
 
+import params from '../../utils/params';
 
 export default class Paginator extends Component {
   static propTypes = {
