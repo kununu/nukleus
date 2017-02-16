@@ -57,7 +57,7 @@ export default class Dropdown extends Component {
   }
 
   getItem = item => (
-    <span>
+    <span className={clearfix}>
       <span className={styles.pullLeft}>
         {item.value}
       </span>
