@@ -48,7 +48,8 @@ exports[`test Closes menu when document is clicked 1`] = `
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -66,7 +67,8 @@ exports[`test Closes menu when document is clicked 1`] = `
         className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German
@@ -106,7 +108,8 @@ exports[`test Renders DropDown without crashing 1`] = `
       <a
         alt="hi"
         href="/at">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             Austria
@@ -124,7 +127,8 @@ exports[`test Renders DropDown without crashing 1`] = `
       className="item clearfix">
       <a
         href="/de">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             German
@@ -163,7 +167,8 @@ exports[`test Renders correct default selection 1`] = `
       <a
         alt="hi"
         href="/at">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             Austria
@@ -181,7 +186,8 @@ exports[`test Renders correct default selection 1`] = `
       className="item clearfix">
       <a
         href="/de">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             German
@@ -215,7 +221,8 @@ exports[`test Renders correctly when no icon is provided 1`] = `
       <a
         alt="hi"
         href="/at">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             Austria
@@ -228,7 +235,8 @@ exports[`test Renders correctly when no icon is provided 1`] = `
       className="item clearfix">
       <a
         href="/de">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             German
@@ -291,7 +299,8 @@ exports[`test Renders menu when button is clicked 1`] = `
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -309,7 +318,8 @@ exports[`test Renders menu when button is clicked 1`] = `
         className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German
@@ -378,7 +388,8 @@ exports[`test Updates selection on item click 1`] = `
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -396,7 +407,8 @@ exports[`test Updates selection on item click 1`] = `
         className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German
