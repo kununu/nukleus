@@ -3,7 +3,6 @@ exports[`test Closes menu when document is clicked 1`] = `
   items={
     Array [
       Object {
-        "active": false,
         "icon": <img
           alt="Austrian flag"
           src="austrianflag.jpg" />,
@@ -15,7 +14,6 @@ exports[`test Closes menu when document is clicked 1`] = `
         "value": "Austria",
       },
       Object {
-        "active": true,
         "icon": <img
           alt="German flag"
           src="germanflag.jpg" />,
@@ -27,6 +25,7 @@ exports[`test Closes menu when document is clicked 1`] = `
       },
     ]
   }
+  pathname="/at"
   position="top"
   shade="light">
   <div
@@ -34,23 +33,23 @@ exports[`test Closes menu when document is clicked 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}>
-      German
+      Austria
       <span
         className="pullRight">
         <img
-          alt="German flag"
-          src="germanflag.jpg" />
+          alt="Austrian flag"
+          src="austrianflag.jpg" />
       </span>
     </button>
     <ul
       className="menu ">
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -65,11 +64,11 @@ exports[`test Closes menu when document is clicked 1`] = `
         </a>
       </li>
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German
@@ -94,23 +93,23 @@ exports[`test Renders DropDown without crashing 1`] = `
   <button
     className="selection clearfix light"
     onClick={[Function]}>
-    German
+    Austria
     <span
       className="pullRight">
       <img
-        alt="German flag"
-        src="germanflag.jpg" />
+        alt="Austrian flag"
+        src="austrianflag.jpg" />
     </span>
   </button>
   <ul
     className="menu ">
     <li
-      className="item clearfix"
-      onClick={[Function]}>
+      className="item clearfix">
       <a
         alt="hi"
         href="/at">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             Austria
@@ -125,11 +124,11 @@ exports[`test Renders DropDown without crashing 1`] = `
       </a>
     </li>
     <li
-      className="item clearfix"
-      onClick={[Function]}>
+      className="item clearfix">
       <a
         href="/de">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             German
@@ -164,12 +163,12 @@ exports[`test Renders correct default selection 1`] = `
   <ul
     className="menu ">
     <li
-      className="item clearfix"
-      onClick={[Function]}>
+      className="item clearfix">
       <a
         alt="hi"
         href="/at">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             Austria
@@ -184,11 +183,11 @@ exports[`test Renders correct default selection 1`] = `
       </a>
     </li>
     <li
-      className="item clearfix"
-      onClick={[Function]}>
+      className="item clearfix">
       <a
         href="/de">
-        <span>
+        <span
+          className="clearfix">
           <span
             className="pullLeft">
             German
@@ -218,78 +217,33 @@ exports[`test Renders correctly when no icon is provided 1`] = `
   <ul
     className="menu ">
     <li
-      className="item clearfix"
-      onClick={[Function]}>
-      <span>
+      className="item clearfix">
+      <a
+        alt="hi"
+        href="/at">
         <span
-          className="pullLeft">
-          Austria
+          className="clearfix">
+          <span
+            className="pullLeft">
+            Austria
+          </span>
+          
         </span>
-        
-      </span>
+      </a>
     </li>
     <li
-      className="item clearfix"
-      onClick={[Function]}>
-      <span>
+      className="item clearfix">
+      <a
+        href="/de">
         <span
-          className="pullLeft">
-          German
+          className="clearfix">
+          <span
+            className="pullLeft">
+            German
+          </span>
+          
         </span>
-        
-      </span>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`test Renders correctly when no link is provided 1`] = `
-<div
-  className="container top">
-  <button
-    className="selection clearfix light"
-    onClick={[Function]}>
-    Austria
-    <span
-      className="pullRight">
-      <img
-        alt="Austrian flag"
-        src="austrianflag.jpg" />
-    </span>
-  </button>
-  <ul
-    className="menu ">
-    <li
-      className="item clearfix"
-      onClick={[Function]}>
-      <span>
-        <span
-          className="pullLeft">
-          Austria
-        </span>
-        <span
-          className="pullRight">
-          <img
-            alt="Austrian flag"
-            src="austrianflag.jpg" />
-        </span>
-      </span>
-    </li>
-    <li
-      className="item clearfix"
-      onClick={[Function]}>
-      <span>
-        <span
-          className="pullLeft">
-          German
-        </span>
-        <span
-          className="pullRight">
-          <img
-            alt="German flag"
-            src="germanflag.jpg" />
-        </span>
-      </span>
+      </a>
     </li>
   </ul>
 </div>
@@ -300,7 +254,6 @@ exports[`test Renders menu when button is clicked 1`] = `
   items={
     Array [
       Object {
-        "active": false,
         "icon": <img
           alt="Austrian flag"
           src="austrianflag.jpg" />,
@@ -312,7 +265,6 @@ exports[`test Renders menu when button is clicked 1`] = `
         "value": "Austria",
       },
       Object {
-        "active": true,
         "icon": <img
           alt="German flag"
           src="germanflag.jpg" />,
@@ -324,6 +276,7 @@ exports[`test Renders menu when button is clicked 1`] = `
       },
     ]
   }
+  pathname="/at"
   position="top"
   shade="light">
   <div
@@ -331,23 +284,23 @@ exports[`test Renders menu when button is clicked 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}>
-      German
+      Austria
       <span
         className="pullRight">
         <img
-          alt="German flag"
-          src="germanflag.jpg" />
+          alt="Austrian flag"
+          src="austrianflag.jpg" />
       </span>
     </button>
     <ul
       className="menu open">
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -362,11 +315,11 @@ exports[`test Renders menu when button is clicked 1`] = `
         </a>
       </li>
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German
@@ -390,7 +343,6 @@ exports[`test Updates selection on item click 1`] = `
   items={
     Array [
       Object {
-        "active": false,
         "icon": <img
           alt="Austrian flag"
           src="austrianflag.jpg" />,
@@ -402,7 +354,6 @@ exports[`test Updates selection on item click 1`] = `
         "value": "Austria",
       },
       Object {
-        "active": true,
         "icon": <img
           alt="German flag"
           src="germanflag.jpg" />,
@@ -414,6 +365,7 @@ exports[`test Updates selection on item click 1`] = `
       },
     ]
   }
+  pathname="/at"
   position="top"
   shade="light">
   <div
@@ -421,23 +373,23 @@ exports[`test Updates selection on item click 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}>
-      German
+      Austria
       <span
         className="pullRight">
         <img
-          alt="German flag"
-          src="germanflag.jpg" />
+          alt="Austrian flag"
+          src="austrianflag.jpg" />
       </span>
     </button>
     <ul
       className="menu ">
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           alt="hi"
           href="/at">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               Austria
@@ -452,11 +404,11 @@ exports[`test Updates selection on item click 1`] = `
         </a>
       </li>
       <li
-        className="item clearfix"
-        onClick={[Function]}>
+        className="item clearfix">
         <a
           href="/de">
-          <span>
+          <span
+            className="clearfix">
             <span
               className="pullLeft">
               German

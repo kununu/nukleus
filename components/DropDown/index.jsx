@@ -9,11 +9,11 @@ import {
 export default class Dropdown extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-      active: PropTypes.Bool,
       icon: PropTypes.element,
-      link: PropTypes.element,
+      link: PropTypes.element.isRequired,
       value: PropTypes.string.isRequired
     })).isRequired,
+    pathname: PropTypes.string.isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
@@ -24,9 +24,7 @@ export default class Dropdown extends Component {
   }
 
   state = {
-    isMounted: true,
-    isOpen: false,
-    selected: this.getSelection()
+    isOpen: false
   }
 
   componentWillMount () {
@@ -40,32 +38,26 @@ export default class Dropdown extends Component {
   }
 
   onButtonClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  onItemClick = item => {
-    this.setState({
-      selected: item
-    });
+    this.setState({isOpen: !this.state.isOpen});
   }
 
   onClickDocument = e => {
-    if (this.state.isMounted && !this.isButtonElement(e)) {
-      this.setState({
-        isOpen: false
-      });
-    }
+    if (this.isButtonElement(e)) return;
+    this.setState({isOpen: false});
   }
 
-  getSelection () {
-    const selected = this.props.items.filter(item => item.active);
-    return selected[0] ? selected[0] : this.props.items[0];
+  getActiveItem () {
+    const {pathname, items} = this.props;
+    return items.filter(item => {
+      const {props} = item.link;
+      // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
+      const localPathname = props.href || props.path || props.to.pathname;
+      return (pathname === localPathname);
+    })[0];
   }
 
   getItem = item => (
-    <span>
+    <span className={clearfix}>
       <span className={styles.pullLeft}>
         {item.value}
       </span>
@@ -87,6 +79,7 @@ export default class Dropdown extends Component {
       position,
       shade
     } = this.props;
+    const activeItem = this.getActiveItem();
 
     return (
       <div className={`${styles.container} ${styles[position]}`}>
@@ -94,10 +87,10 @@ export default class Dropdown extends Component {
           ref={node => this.node = node}
           className={`${styles.selection} ${clearfix} ${styles[shade]}`}
           onClick={this.onButtonClick}>
-          {this.state.selected.value}
-          {this.state.selected.icon ?
+          {activeItem.value}
+          {activeItem.icon ?
             <span className={styles.pullRight}>
-              {this.state.selected.icon}
+              {activeItem.icon}
             </span>
           : ''}
         </button>
@@ -105,12 +98,8 @@ export default class Dropdown extends Component {
           {items.map(item =>
             <li // eslint-disable-line
               key={item.value}
-              className={`${styles.item} ${clearfix}`}
-              onClick={() => this.onItemClick(item)}>
-              {item.link ?
-                  React.cloneElement(item.link, [], this.getItem(item))
-                  : this.getItem(item)
-                }
+              className={`${styles.item} ${clearfix}`}>
+              {React.cloneElement(item.link, [], this.getItem(item))}
             </li>
           )}
         </ul>

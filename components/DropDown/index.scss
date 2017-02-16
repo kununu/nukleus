@@ -69,22 +69,25 @@
 
 .item {
   cursor: pointer;
-  padding: 10px 20px;
   font-size: $font-size-small;
   color: $gray-dark;
 
-  a,
-  a:hover {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &:first-child {
-    padding-top: 20px;
-  }
-
   &:hover {
     background-color: $gray-base-03;
+  }
+
+  a {
+    display: block;
+    padding: 10px 20px;
+
+    &:first-child {
+      padding-top: 20px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
 
