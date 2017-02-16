@@ -23,6 +23,10 @@ export default class Dropdown extends Component {
     shade: 'light'
   }
 
+  state = {
+    isOpen: false
+  }
+
   componentWillMount () {
     document.addEventListener('click', this.onClickDocument, false);
     document.addEventListener('touchend', this.onClickDocument, false);

@@ -69,18 +69,21 @@
 
 .item {
   cursor: pointer;
-  padding: 10px 20px;
+  // padding: 10px 20px;
   font-size: $font-size-small;
   color: $gray-dark;
 
   a,
   a:hover {
+    display: block;
     text-decoration: none;
     color: inherit;
+    height: 40px;
+    padding: 10px 20px;
   }
 
   &:first-child {
-    padding-top: 20px;
+    // padding-top: 20px;
   }
 
   &:hover {
