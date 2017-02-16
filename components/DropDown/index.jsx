@@ -23,11 +23,6 @@ export default class Dropdown extends Component {
     shade: 'light'
   }
 
-  state = {
-    active: null,
-    isMounted: true
-  }
-
   componentWillMount () {
     document.addEventListener('click', this.onClickDocument, false);
     document.addEventListener('touchend', this.onClickDocument, false);
@@ -39,17 +34,12 @@ export default class Dropdown extends Component {
   }
 
   onButtonClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+    this.setState({isOpen: !this.state.isOpen});
   }
 
   onClickDocument = e => {
-    if (this.state.isMounted && !this.isButtonElement(e)) {
-      this.setState({
-        isOpen: false
-      });
-    }
+    if (this.isButtonElement(e)) return;
+    this.setState({isOpen: false});
   }
 
   getActiveItem () {
@@ -86,7 +76,7 @@ export default class Dropdown extends Component {
       shade
     } = this.props;
     const activeItem = this.getActiveItem();
-    console.log(activeItem);
+
     return (
       <div className={`${styles.container} ${styles[position]}`}>
         <button
