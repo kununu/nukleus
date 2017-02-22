@@ -76,14 +76,15 @@
     background-color: $gray-base-03;
   }
 
+  &:first-child a {
+    padding-top: 20px;
+  }
+
   a {
     display: block;
     padding: 10px 20px;
 
-    &:first-child {
-      padding-top: 20px;
-    }
-
+    &,
     &:hover {
       text-decoration: none;
       color: inherit;
