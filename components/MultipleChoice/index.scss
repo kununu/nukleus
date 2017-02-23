@@ -135,8 +135,9 @@ form .inline {
 
     input {
       & + label {
-        transition: background-color .25s,
-        box-shadow .2s cubic-bezier(.215, .61, .355, 1);
+        color: $blue;
+        border: 1px solid $blue;
+        transition: background-color .25s;
 
         @media (max-width: $screen-sm-max) {
           font-size: $font-size-xs;
@@ -145,8 +146,8 @@ form .inline {
 
       & + label:hover,
       &:focus + label {
-        background-color: $gray-base-10;
-        box-shadow: 0 4px 4px 0 rgba($black, .2);
+        background-color: $blue;
+        color: $white;
       }
 
       &:checked + label,
@@ -156,28 +157,26 @@ form .inline {
       }
 
       &:active + label {
-        background-color: $green-dark;
-        box-shadow: 0 2px 3px 0 rgba($black, .26);
+        background-color: $blue;
         color: $white;
       }
 
       &:checked + label {
-        background-color: $green;
-        color: $white;
+        background-color: transparent;
+        color: $blue;
         font-weight: $font-weight-light;
 
         &,
         &:hover {
-          background-color: $green;
-          box-shadow: 0 2px 3px 0 rgba($black, .26);
+          background-color: $blue;
+          color: $white;
         }
       }
 
       & + label,
       &:checked label {
-        background-color: $gray-base-03;
+        background-color: transparent;
         border-radius: $border-radius-base;
-        box-shadow: 0 2px 5px 0 rgba($black, .26);
         padding-left: 0;
         padding: 6px;
         text-align: center;
