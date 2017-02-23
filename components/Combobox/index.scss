@@ -111,9 +111,10 @@
 
 .handle {
   position: absolute;
+  right: 15px;
+  font-size: 11px;
+  color: $black;
+  top: ($input-height-base / 3);
+  z-index: 3;
   pointer-events: none;
-  right: 10px;
-  top: 10px;
-  color: $gray;
-  font-size: $font-size-base;
 }

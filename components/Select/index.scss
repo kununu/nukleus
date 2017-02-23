@@ -1,5 +1,45 @@
 @import '~kununu-theme/scss/base/variables';
 
+select {
+  appearance: none;
+
+  // Hide the arrow in IE10 and up
+  &::-ms-expand {
+    display: none;
+  }
+
+  // Disable the Firefox inner focus ring
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $black;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &:after {
+    content: url('data:image/svg+xml; utf8, %3Csvg%20version%3D%221.1%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2013.4%209.1%22%20style%3D%22enable-background%3Anew%200%200%2013.4%209.1%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cpath%20d%3D%22M13%2C2.8L7.1%2C8.6C7%2C8.7%2C6.9%2C8.8%2C6.8%2C8.8c-0.1%2C0-0.3-0.1-0.4-0.2L0.5%2C2.8C0.4%2C2.6%2C0.4%2C2.5%2C0.4%2C2.4c0-0.1%2C0-0.3%2C0.2-0.4%0A%09%09l1.3-1.3c0.1-0.1%2C0.2-0.2%2C0.4-0.2s0.3%2C0.1%2C0.4%2C0.2l4.2%2C4.2L11%2C0.7c0.1-0.1%2C0.2-0.2%2C0.4-0.2c0.1%2C0%2C0.3%2C0.1%2C0.4%2C0.2L13%2C2%0A%09%09c0.1%2C0.1%2C0.2%2C0.2%2C0.2%2C0.4C13.2%2C2.5%2C13.1%2C2.6%2C13%2C2.8z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+    width: 9.5px;
+    height: 9.5px;
+    position: absolute;
+    right: 15px;
+    top: ($input-height-base / 3);
+    font-size: 10px;
+    z-index: 3;
+    pointer-events: none;
+
+    html.ie10 & {
+      z-index: 0;
+    }
+  }
+}
+
 .inline {
   @media (min-width: $screen-xs-min) {
     display: flex;
@@ -11,14 +51,5 @@
     margin-right: 10px;
     margin-bottom: 0;
     width: 140px;
-  }
-}
-
-.inputContainer {
-  position: relative;
-  width: 100%;
-
-  * {
-    box-sizing: border-box;
   }
 }
