@@ -116,21 +116,17 @@ form .inline {
   }
 
   .choice {
+    display: inline-block;
+    padding: 5px;
+
     &,
     & + .choice {
       margin: 0;
     }
 
-    display: inline-block;
-    padding: 6px;
-
     @supports (display: flex) {
       flex-shrink: 0;
       flex-grow: 1;
-    }
-
-    @media (max-width: $screen-sm-max) {
-      padding: 5px;
     }
 
     input {
@@ -146,9 +142,18 @@ form .inline {
 
       & + label:hover,
       &:focus + label {
-        background-color: $blue;
-        color: $white;
+        background-color: transparent;
+        color: $blue;
       }
+
+      // & + label:hover {
+
+      // }
+
+      // &:focus + label {
+      //   background-color: $blue;
+      //   color: $white;
+      // }
 
       &:checked + label,
       &:focus + label,
@@ -162,8 +167,8 @@ form .inline {
       }
 
       &:checked + label {
-        background-color: transparent;
-        color: $blue;
+        background-color: $blue;
+        color: $white;
         font-weight: $font-weight-light;
 
         &,
