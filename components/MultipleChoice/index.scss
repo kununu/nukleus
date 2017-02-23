@@ -134,6 +134,7 @@ form .inline {
         color: $blue;
         border: 1px solid $blue;
         transition: background-color .25s;
+        font-weight: $font-weight-regular;
 
         @media (max-width: $screen-sm-max) {
           font-size: $font-size-xs;
@@ -145,15 +146,6 @@ form .inline {
         background-color: transparent;
         color: $blue;
       }
-
-      // & + label:hover {
-
-      // }
-
-      // &:focus + label {
-      //   background-color: $blue;
-      //   color: $white;
-      // }
 
       &:checked + label,
       &:focus + label,
@@ -169,7 +161,6 @@ form .inline {
       &:checked + label {
         background-color: $blue;
         color: $white;
-        font-weight: $font-weight-light;
 
         &,
         &:hover {
@@ -185,7 +176,6 @@ form .inline {
         padding-left: 0;
         padding: 6px;
         text-align: center;
-        font-weight: $font-weight-light;
         transition: background-color .25s;
 
         @supports (display: flex) {
