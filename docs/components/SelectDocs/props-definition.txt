@@ -12,6 +12,7 @@ static propTypes = {
   onChange: PropTypes.func,
   query: PropTypes.object,
   required: PropTypes.bool,
+  requiredLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.any
 };

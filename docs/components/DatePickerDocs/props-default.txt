@@ -7,5 +7,6 @@ static defaultProps = {
   placeholder: '',
   query: {},
   required: false,
+  requiredLabel: '',
   value: ''
 };

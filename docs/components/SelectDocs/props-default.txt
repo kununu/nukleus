@@ -10,5 +10,6 @@ static defaultProps = {
   onChange: null,
   query: {},
   required: false,
+  requiredLabel: '',
   value: ''
 };

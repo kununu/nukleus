@@ -12,7 +12,7 @@ static defaultProps = {
   placeholder: '',
   query: {},
   required: false,
-  requiredLabel: false,
+  requiredLabel: 'Required',
   rows: 5,
   title: '',
   type: 'text',

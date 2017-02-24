@@ -9,7 +9,6 @@ static propTypes = {
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  requiredLabel: PropTypes.string
 };
-
-

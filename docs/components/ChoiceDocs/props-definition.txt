@@ -8,6 +8,6 @@ static propTypes = {
   onChange: PropTypes.func,
   options: PropTypes.array.isRequired,
   query: PropTypes.object,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  requiredLabel: PropTypes.string
 };
-

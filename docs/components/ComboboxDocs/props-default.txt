@@ -7,5 +7,6 @@ static defaultProps = {
   items: [],
   label: '',
   placeholder: '',
-  required: false
+  required: false,
+  requiredLabel: ''
 };

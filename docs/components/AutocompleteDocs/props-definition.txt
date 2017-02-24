@@ -18,4 +18,3 @@ static propTypes = {
   submitOnEnter: PropTypes.bool,
   value: PropTypes.string
 };
-
