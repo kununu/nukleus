@@ -8,9 +8,11 @@ import styles from './index.scss';
 
 import {
   controlLabel,
+  controlNote,
   errorStyles,
   formControl,
-  formGroup
+  formGroup,
+  controlLabelRequired
 } from '../index.scss';
 
 function getSuggestions (value, items = []) {
@@ -33,7 +35,8 @@ export default class ComboboxComponent extends Component {
     label: PropTypes.string,
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
-    required: PropTypes.bool
+    required: PropTypes.bool,
+    requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
@@ -45,7 +48,8 @@ export default class ComboboxComponent extends Component {
     items: [],
     label: '',
     placeholder: '',
-    required: false
+    required: false,
+    requiredLabel: ''
   };
 
   state = {
@@ -102,6 +106,7 @@ export default class ComboboxComponent extends Component {
       error,
       handle,
       required,
+      requiredLabel,
       inputStyles,
       placeholder,
       disabled
@@ -109,6 +114,12 @@ export default class ComboboxComponent extends Component {
 
     return (
       <div className={`${formGroup} ${styles[inputStyles]}`}>
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
+
         <label
           className={controlLabel}
           htmlFor="city">

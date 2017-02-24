@@ -11,7 +11,8 @@ import {
   hidden,
   formControl,
   formGroup,
-  srOnly
+  srOnly,
+  controlLabelRequired
 } from '../index.scss';
 
 export default class TextField extends Component {
@@ -32,7 +33,7 @@ export default class TextField extends Component {
     placeholder: PropTypes.string,
     query: PropTypes.object,
     required: PropTypes.bool,
-    requiredLabel: PropTypes.bool,
+    requiredLabel: PropTypes.string,
     rows: PropTypes.number,
     title: PropTypes.string,
     type: PropTypes.oneOf([
@@ -58,7 +59,7 @@ export default class TextField extends Component {
     placeholder: '',
     query: {},
     required: false,
-    requiredLabel: false,
+    requiredLabel: 'Required',
     rows: 5,
     title: '',
     type: 'text',
@@ -137,7 +138,7 @@ export default class TextField extends Component {
 
     return (
       <div className={`${formGroup} ${styles[inputStyle]}`}>
-        {requiredLabel && <span className={`${controlNote} ${styles.requiredLabel}`}>Required</span>}
+        {requiredLabel && <span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>}
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label

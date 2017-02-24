@@ -45,7 +45,7 @@
     cursor: pointer;
     font-weight: normal;
     transition: all .25s;
-    border: 2px solid $blue-light;
+    border: 1px solid $blue-light;
     border-left: 0;
     color: $blue-dark;
 
@@ -87,7 +87,7 @@
 
 .radioContainer.flexible {
   @media (max-width: $screen-sm-max) {
-    border: 2px solid $blue;
+    border: 1px solid $blue;
     border-radius: $border-radius-base;
 
     .radioButton {
@@ -99,7 +99,7 @@
 
       label {
         border: 0;
-        border-bottom: 2px solid $blue;
+        border-bottom: 1px solid $blue;
         border-radius: 0;
 
         @supports (display: flex) {
@@ -110,14 +110,14 @@
       @supports (display: flex) {
         &:nth-child(4n+3) label,
         &:nth-child(4n+4) label {
-          border: 2px solid $blue;
+          border: 1px solid $blue;
           border-radius: 0;
           border-left: 0;
           border-right: 0;
         }
 
         &:nth-child(odd) label {
-          border-right: 2px solid $blue;
+          border-right: 1px solid $blue;
         }
 
         &:nth-last-child(2) label,

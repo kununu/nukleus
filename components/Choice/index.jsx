@@ -16,7 +16,8 @@ export default class Choice extends Component {
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
     query: PropTypes.object,
-    required: PropTypes.bool
+    required: PropTypes.bool,
+    requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
@@ -27,7 +28,8 @@ export default class Choice extends Component {
     headingStyle: 'control-label',
     onChange: null,
     query: {},
-    required: false
+    required: false,
+    requiredLabel: ''
   };
 
   state = {

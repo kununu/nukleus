@@ -110,6 +110,7 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   letter-spacing: -.01em;
+  margin-bottom: 6px;
 
   .faInfoCircle {
     margin-left: $baseline-grid;
@@ -119,6 +120,8 @@
 }
 
 .formGroup {
+  position: relative;
+
   &:before,
   &:after {
     content: ' '; // 1
@@ -150,4 +153,14 @@
   + .controlNote {
     line-height: 26px;
   }
+}
+
+.controlLabelRequired {
+  text-transform: uppercase;
+  font-size: $font-size-xxs;
+  color: $gray-base-60;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  right: 2px;
 }

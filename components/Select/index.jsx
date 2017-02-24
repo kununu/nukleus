@@ -6,6 +6,8 @@ import styles from './index.scss';
 
 import {
   controlLabel,
+  controlLabelRequired,
+  controlNote,
   errorStyles,
   hidden,
   formControl,
@@ -29,6 +31,7 @@ export default class Select extends Component {
     onChange: PropTypes.func,
     query: PropTypes.object,
     required: PropTypes.bool,
+    requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.any
   };
@@ -45,6 +48,7 @@ export default class Select extends Component {
     onChange: null,
     query: {},
     required: false,
+    requiredLabel: '',
     value: ''
   };
 
@@ -102,12 +106,19 @@ export default class Select extends Component {
       labelHidden,
       name,
       required,
+      requiredLabel,
       title
     } = this.props;
 
     return (
       <div className={`${formGroup} ${styles[inputStyle]}`}>
         {labelHidden && <span className={srOnly}>{title}</span>}
+
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
 
         <label
           className={`${controlLabel} ${labelHidden && hidden}`}

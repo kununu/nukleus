@@ -8,6 +8,7 @@ import getElementPositionY from '../../utils/elementPosition';
 import isMobile from '../../utils/mobileDetection';
 import {
   controlLabel,
+  controlLabelRequired,
   controlNote,
   errorStyles,
   formControl,
@@ -209,7 +210,7 @@ export default class Autocomplete extends React.Component {
         className={`${formGroup} ${styles[this.props.inputStyle]}`}>
 
         {requiredLabel &&
-          <span className={`${controlNote} ${styles.requiredLabel}`}>
+          <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}
           </span>
         }

@@ -227,7 +227,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               required
-              requiredLabel />
+              requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
           </div>
@@ -317,6 +317,8 @@ const App = ({location: {pathname, query}}) => (
               icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
+              required
+              requiredLabel="Required"
               title="DatePicker" />
           </div>
         </div>
@@ -328,6 +330,7 @@ const App = ({location: {pathname, query}}) => (
               name="select"
               id="select"
               required
+              requiredLabel="Required"
               value="option"
               items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
           </div>
@@ -341,6 +344,7 @@ const App = ({location: {pathname, query}}) => (
               label="Combobox"
               id="name"
               required
+              requiredLabel="Required"
               placeholder="Type m"
               keyName="name"
               items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />

@@ -9,6 +9,8 @@ import styles from './index.scss';
 import {
   errorStyles,
   controlLabel,
+  controlLabelRequired,
+  controlNote,
   formControl,
   formGroup
 } from '../index.scss';
@@ -25,6 +27,7 @@ export default class DatePickerComponent extends Component {
     placeholder: PropTypes.string,
     query: PropTypes.object,
     required: PropTypes.bool,
+    requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.string
   };
@@ -38,6 +41,7 @@ export default class DatePickerComponent extends Component {
     placeholder: '',
     query: {},
     required: false,
+    requiredLabel: '',
     value: ''
   };
 
@@ -92,11 +96,18 @@ export default class DatePickerComponent extends Component {
       disabled,
       isClearable,
       placeholder,
-      required
+      required,
+      requiredLabel
     } = this.props;
 
     return (
       <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer}`}>
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
+
         <label
           className={controlLabel}
           htmlFor={id}>

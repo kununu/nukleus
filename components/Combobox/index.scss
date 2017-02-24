@@ -10,6 +10,10 @@
   align-items: center;
   width: 100%;
 
+  @media (min-width: $screen-sm-min) {
+    padding-top: 25px;
+  }
+
   label {
     margin-right: 10px;
     margin-bottom: 0;
