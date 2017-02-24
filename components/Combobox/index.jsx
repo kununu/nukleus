@@ -123,7 +123,6 @@ export default class ComboboxComponent extends Component {
         <label
           className={controlLabel}
           htmlFor="city">
-
           {label}
         </label>
 

@@ -29,6 +29,8 @@ const App = ({location: {pathname, query}}) => (
               name="choices[]"
               heading="MultipleChoice"
               inputStyle="buttons"
+              required
+              requiredLabel="Required"
               choices={
               [{
                 id: 'option-1',
@@ -554,6 +556,7 @@ const App = ({location: {pathname, query}}) => (
             <Choice
               heading="Choice"
               name="basic"
+              requiredLabel="Required"
               onChange={() => {}}
               options={[
                 {

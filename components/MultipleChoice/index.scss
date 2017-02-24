@@ -64,10 +64,16 @@
 }
 
 .inline {
+  position: relative;
+
   @media (min-width: $screen-xs-min) {
     display: flex;
     flex-flow: row;
     align-items: base;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 25px;
   }
 
   > div:first-child {

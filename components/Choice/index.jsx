@@ -2,7 +2,12 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {formGroup} from '../index.scss';
+import {
+  controlLabel,
+  controlLabelRequired,
+  controlNote,
+  formGroup
+} from '../index.scss';
 
 
 export default class Choice extends Component {
@@ -71,9 +76,11 @@ export default class Choice extends Component {
     const {
       customTheme,
       disabled,
+      heading,
       name,
       options,
-      required
+      required,
+      requiredLabel
     } = this.props;
 
     const {
@@ -82,8 +89,16 @@ export default class Choice extends Component {
 
     return (
       <div className={formGroup}>
-        {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
-        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible} `}>
+
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
+
+        {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
+
+        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`}>
           {options.map((item, idx) =>
             <div className={styles.radioButton} key={item.id}>
               <input
