@@ -55,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.9.0",
     "eslint-plugin-sorting": "0.3.0",
-    "file-loader": "0.10.0",
+    "file-loader": "0.10.1",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.4",
     "identity-obj-proxy": "3.0.0",
