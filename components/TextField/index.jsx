@@ -23,6 +23,7 @@ export default class TextField extends Component {
     error: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     label: PropTypes.string.isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
@@ -32,7 +33,6 @@ export default class TextField extends Component {
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
     title: PropTypes.string,
@@ -51,6 +51,7 @@ export default class TextField extends Component {
     disable: false,
     error: null,
     inputStyle: 'inline',
+    isRequired: false,
     labelHidden: false,
     maxLength: 500,
     multiLine: false,
@@ -58,8 +59,7 @@ export default class TextField extends Component {
     pattern: '',
     placeholder: '',
     query: {},
-    required: false,
-    requiredLabel: 'Required',
+    requiredLabel: '',
     rows: 5,
     title: '',
     type: 'text',
@@ -129,7 +129,7 @@ export default class TextField extends Component {
       multiLine,
       pattern,
       placeholder,
-      required,
+      isRequired,
       rows,
       requiredLabel,
       title,
@@ -158,7 +158,7 @@ export default class TextField extends Component {
                 onChange={this.onChange}
                 pattern={pattern}
                 placeholder={placeholder}
-                required={required}
+                required={isRequired}
                 rows={rows}
                 value={this.state.value} /> :
               <input
@@ -172,7 +172,7 @@ export default class TextField extends Component {
                 onChange={this.onChange}
                 pattern={pattern}
                 placeholder={placeholder}
-                required={required}
+                required={isRequired}
                 title={title}
                 type={type}
                 value={this.state.value} />

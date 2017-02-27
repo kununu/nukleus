@@ -31,11 +31,11 @@ export default class ComboboxComponent extends Component {
     id: PropTypes.string.isRequired,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
+    isRequired: PropTypes.bool,
     items: PropTypes.array,
     label: PropTypes.string,
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string
   };
 
@@ -45,10 +45,10 @@ export default class ComboboxComponent extends Component {
     handle: null,
     inputStyles: 'inline',
     inputValue: '',
+    isRequired: false,
     items: [],
     label: '',
     placeholder: '',
-    required: false,
     requiredLabel: ''
   };
 
@@ -105,7 +105,7 @@ export default class ComboboxComponent extends Component {
       label,
       error,
       handle,
-      required,
+      isRequired,
       requiredLabel,
       inputStyles,
       placeholder,
@@ -143,7 +143,7 @@ export default class ComboboxComponent extends Component {
               name,
               onChange: this.onChange,
               placeholder,
-              required,
+              required: isRequired,
               value: this.state.value
             }} />
 

@@ -16,9 +16,9 @@ export default class MultipleChoice extends Component {
     choices: PropTypes.array.isRequired,
     heading: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
+    isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string
   };
 
@@ -26,8 +26,8 @@ export default class MultipleChoice extends Component {
     heading: '',
     headingStyle: 'control-label',
     inputStyle: 'inline',
+    isRequired: false,
     query: {},
-    required: false,
     requiredLabel: ''
   };
 
@@ -106,7 +106,7 @@ export default class MultipleChoice extends Component {
                 value={choice.value}
                 type="checkbox"
                 checked={choice.isChecked}
-                required={this.props.required}
+                required={this.props.isRequired}
                 onChange={() => this.onChange(choice)} />
 
               <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>

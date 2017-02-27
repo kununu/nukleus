@@ -24,6 +24,7 @@ export default class Autocomplete extends React.Component {
     error: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     label: PropTypes.string.isRequired,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
@@ -31,7 +32,6 @@ export default class Autocomplete extends React.Component {
     onGetSuggestions: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
     scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
@@ -44,12 +44,12 @@ export default class Autocomplete extends React.Component {
     disabled: false,
     error: null,
     inputStyle: 'inline',
+    isRequired: false,
     labelHidden: false,
     noSuggestionText: 'No results found',
     onGetSuggestions: null,
     placeholder: '',
     query: {},
-    required: false,
     requiredLabel: '',
     scrollOffset: 0,
     scrollTo: false,
@@ -177,10 +177,10 @@ export default class Autocomplete extends React.Component {
       label,
       labelHidden,
       id,
+      isRequired,
       name,
       noSuggestionText,
       placeholder,
-      required,
       requiredLabel
     } = this.props;
 
@@ -200,7 +200,7 @@ export default class Autocomplete extends React.Component {
       onChange: this.onChange,
       onFocus: this.onFocus,
       placeholder,
-      required,
+      required: isRequired,
       value
     };
 

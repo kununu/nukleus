@@ -17,11 +17,11 @@ export default class Choice extends Component {
     disabled: PropTypes.bool,
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string
   };
 
@@ -31,9 +31,9 @@ export default class Choice extends Component {
     disabled: false,
     heading: '',
     headingStyle: 'control-label',
+    isRequired: false,
     onChange: null,
     query: {},
-    required: false,
     requiredLabel: ''
   };
 
@@ -77,9 +77,9 @@ export default class Choice extends Component {
       customTheme,
       disabled,
       heading,
+      isRequired,
       name,
       options,
-      required,
       requiredLabel
     } = this.props;
 
@@ -108,7 +108,7 @@ export default class Choice extends Component {
                 name={name}
                 checked={checked === item.value}
                 onChange={this.onChange}
-                required={required} />
+                required={isRequired} />
               <label
                 disabled={disabled}
                 id={idx}

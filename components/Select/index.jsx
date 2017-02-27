@@ -25,12 +25,12 @@ export default class Select extends Component {
     error: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     items: PropTypes.object,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.any
@@ -43,11 +43,11 @@ export default class Select extends Component {
     disabled: false,
     error: null,
     inputStyle: 'inline',
+    isRequired: false,
     items: {},
     labelHidden: false,
     onChange: null,
     query: {},
-    required: false,
     requiredLabel: '',
     value: ''
   };
@@ -105,7 +105,7 @@ export default class Select extends Component {
       items,
       labelHidden,
       name,
-      required,
+      isRequired,
       requiredLabel,
       title
     } = this.props;
@@ -130,7 +130,7 @@ export default class Select extends Component {
             name={name}
             value={this.state.value}
             id={id}
-            required={required}
+            required={isRequired}
             autoFocus={autoFocus}
             onChange={this.onChange}
             className={`${formControl} ${styles.select}`}

@@ -23,10 +23,10 @@ export default class DatePickerComponent extends Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isClearable: PropTypes.bool,
+    isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.string
@@ -38,9 +38,9 @@ export default class DatePickerComponent extends Component {
     icon: null,
     inputStyle: 'inline',
     isClearable: true,
+    isRequired: false,
     placeholder: '',
     query: {},
-    required: false,
     requiredLabel: '',
     value: ''
   };
@@ -96,7 +96,7 @@ export default class DatePickerComponent extends Component {
       disabled,
       isClearable,
       placeholder,
-      required,
+      isRequired,
       requiredLabel
     } = this.props;
 
@@ -125,7 +125,7 @@ export default class DatePickerComponent extends Component {
             selected={this.state.value ? moment(this.state.value) : null}
             isClearable={isClearable}
             showYearDropdown
-            required={required}
+            required={isRequired}
             onChange={this.onChange} />
           {icon ?
             <span className={styles.icon}>
