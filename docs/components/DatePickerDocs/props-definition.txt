@@ -8,7 +8,7 @@ static propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  required: PropTypes.bool,
+  isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.string

@@ -11,7 +11,7 @@ static defaultProps = {
   pattern: '',
   placeholder: '',
   query: {},
-  required: false,
+  isRequired: false,
   requiredLabel: 'Required',
   rows: 5,
   title: '',

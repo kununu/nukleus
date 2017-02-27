@@ -29,7 +29,7 @@ const App = ({location: {pathname, query}}) => (
               name="choices[]"
               heading="MultipleChoice"
               inputStyle="buttons"
-              required
+              isRequired
               requiredLabel="Required"
               choices={
               [{
@@ -215,6 +215,7 @@ const App = ({location: {pathname, query}}) => (
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete"
+              isRequired
               requiredLabel="Required"
               name="autocomplete" />
           </div>
@@ -228,7 +229,7 @@ const App = ({location: {pathname, query}}) => (
               id="text-field"
               label="TextField"
               name="text-field"
-              required
+              isRequired
               requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
@@ -319,7 +320,7 @@ const App = ({location: {pathname, query}}) => (
               icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
-              required
+              isRequired
               requiredLabel="Required"
               title="DatePicker" />
           </div>
@@ -331,7 +332,7 @@ const App = ({location: {pathname, query}}) => (
               title="Select"
               name="select"
               id="select"
-              required
+              isRequired
               requiredLabel="Required"
               value="option"
               items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
@@ -345,7 +346,7 @@ const App = ({location: {pathname, query}}) => (
               name="name"
               label="Combobox"
               id="name"
-              required
+              isRequired
               requiredLabel="Required"
               placeholder="Type m"
               keyName="name"
