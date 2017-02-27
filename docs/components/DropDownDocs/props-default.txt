@@ -1,0 +1,4 @@
+static defaultProps = {
+  position: 'top',
+  shade: 'light'
+}

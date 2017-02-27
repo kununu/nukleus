@@ -16,6 +16,12 @@ const timeoutNotification = (
     duration={8000}
     visible />
 );
+const successNotification = (
+  <Notification
+    icon={<i className="fa fa-check" />}
+    message="Test"
+    visible />
+);
 
 test('Renders Notification without crashing', () => {
   const component = renderer.create(notification);
@@ -39,4 +45,9 @@ test('It closes on timeout when the close method is timeout', () => {
   expect(component.state('visible')).toEqual(true);
   component.instance().onTimeout();
   expect(component.state('visible')).toEqual(false);
+});
+
+test('It shows content icon when defined in props', () => {
+  const component = renderer.create(successNotification);
+  expect(component.toJSON()).toMatchSnapshot();
 });
