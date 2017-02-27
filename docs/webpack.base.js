@@ -21,7 +21,6 @@ module.exports = {
     ],
     alias: {
       nukleus: path.resolve(__dirname, '..', 'components'),
-      utils: path.resolve(__dirname, '..', 'utils'),
       react: path.join(__dirname, 'node_modules', 'react')
     }
   },
@@ -60,7 +59,7 @@ module.exports = {
         loader: 'url?limit=10000&mimetype=application/font-woff'
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file'
       },
       {
