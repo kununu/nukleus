@@ -60,7 +60,7 @@
   },
   "scripts": {
     "start": "cross-env UV_THREADPOOL_SIZE=100 webpack-dev-server --inline --hot --port 8080",
-    "build": "cross-env UV_THREADPOOL_SIZE=100 NODE_ENV=production webpack -p --config webpack.production.config.babel.js",
+    "build": "npm run clean && cross-env UV_THREADPOOL_SIZE=100 NODE_ENV=production webpack -p --config webpack.production.config.babel.js",
     "clean": "rimraf ./build",
     "eslint": "eslint . --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint . --max-warnings 0 --ext jsx --ext js --fix",

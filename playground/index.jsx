@@ -8,7 +8,7 @@ import 'main.scss';
 import App from './app';
 
 const getRoutes = () => (
-  <Route path="/playground/" component={App} >
+  <Route path="/playground" component={App} >
     <Route path="2" component={App} />
     <Route path="3" component={App} />
   </Route>

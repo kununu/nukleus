@@ -17,6 +17,7 @@ Components include:
 - Button
 - Combobox
 - DatePicker
+- DropDown
 - InfoText
 - MultipleChoice
 - Notification
