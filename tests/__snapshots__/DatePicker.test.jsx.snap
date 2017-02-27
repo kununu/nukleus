@@ -1,6 +1,7 @@
 exports[`test Renders datepicker without crashing 1`] = `
 <div
   className="formGroup inline datePickerContainer">
+  
   <label
     className="controlLabel"
     htmlFor="date-picker">

@@ -46,7 +46,7 @@ exports[`test Hides no suggestions on blur 1`] = `
   <div
     className="formGroup inline">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -156,7 +156,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
 <div
   className="formGroup inline">
   <span
-    className="controlNote requiredLabel">
+    className="controlNote controlLabelRequired">
     Required
   </span>
   <label
@@ -246,7 +246,7 @@ exports[`test Renders no suggestions container 1`] = `
   <div
     className="formGroup inline">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -409,7 +409,7 @@ exports[`test Renders suggestions container 1`] = `
   <div
     className="formGroup inline">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -709,7 +709,7 @@ exports[`test Updates value on selection 1`] = `
   <div
     className="formGroup inline">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
