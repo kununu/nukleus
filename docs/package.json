@@ -53,14 +53,14 @@
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.4",
     "kununu-logo": "1.0.0",
-    "kununu-theme": "1.2.1",
+    "kununu-theme": "3.0.0",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-router": "3.0.2"
   },
   "scripts": {
     "start": "cross-env UV_THREADPOOL_SIZE=100 webpack-dev-server --inline --hot --port 8080",
-    "build": "cross-env UV_THREADPOOL_SIZE=100 NODE_ENV=production webpack -p --config webpack.production.config.babel.js",
+    "build": "npm run clean && cross-env UV_THREADPOOL_SIZE=100 NODE_ENV=production webpack -p --config webpack.production.config.babel.js",
     "clean": "rimraf ./build",
     "eslint": "eslint . --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint . --max-warnings 0 --ext jsx --ext js --fix",

@@ -2,6 +2,7 @@ static propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
   id: PropTypes.string.isRequired,
+  icon: PropTypes.element,
   inputStyle: PropTypes.string,
   isClearable: PropTypes.bool,
   name: PropTypes.string.isRequired,

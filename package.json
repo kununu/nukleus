@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/index.js",
   "repository": {
@@ -26,7 +26,8 @@
   "files": [
     "dist/",
     "package.json",
-    "components"
+    "components",
+    "utils"
   ],
   "readme": "README.md",
   "devDependencies": {
@@ -55,6 +56,8 @@
     "eslint-plugin-react": "6.9.0",
     "eslint-plugin-sorting": "0.3.0",
     "file-loader": "0.10.0",
+    "font-awesome": "4.7.0",
+    "font-awesome-webpack": "0.0.4",
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "18.0.0",
@@ -78,8 +81,6 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "font-awesome": "4.7.0",
-    "font-awesome-webpack": "0.0.4",
     "kununu-theme": "3.0.0",
     "moment": "2.17.1",
     "react-autosuggest": "8.0.0",
@@ -92,9 +93,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
-    "babel": "babel ./components --out-dir ./dist",
+    "babel": "babel ./components --out-dir ./dist && babel ./utils --out-dir ./dist/utils",
     "sass": "node-sass ./components --output ./dist --importer node_modules/node-sass-module-importer",
-    "dist": "npm run build && npm run sass",
+    "dist": "npm run clean && npm run build && npm run sass",
     "build": "cross-env NODE_ENV=dist npm run babel",
     "eslint": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js --fix",
