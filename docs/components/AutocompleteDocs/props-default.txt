@@ -8,7 +8,7 @@ static defaultProps = {
   onGetSuggestions: null,
   placeholder: '',
   query: {},
-  required: false,
+  isRequired: false,
   requiredLabel: '',
   scrollOffset: 0,
   scrollTo: false,

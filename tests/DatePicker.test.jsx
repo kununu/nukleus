@@ -9,6 +9,7 @@ test('Renders datepicker without crashing', () => {
   const component = renderer.create(
     <DatePicker
       id="date-picker"
+      isRequired
       name="date-picker"
       title="DatePicker" />
   );

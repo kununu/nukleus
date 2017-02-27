@@ -6,5 +6,5 @@ static defaultProps = {
   headingStyle: 'control-label',
   onChange: null,
   query: {},
-  required: false
+  isRequired: false
 };

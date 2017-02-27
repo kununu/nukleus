@@ -6,6 +6,7 @@ static defaultProps = {
   isClearable: true,
   placeholder: '',
   query: {},
-  required: false,
+  isRequired: false,
+  requiredLabel: '',
   value: ''
 };

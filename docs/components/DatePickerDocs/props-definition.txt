@@ -1,14 +1,15 @@
 static propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
-  id: PropTypes.string.isRequired,
   icon: PropTypes.element,
+  id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   isClearable: PropTypes.bool,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  required: PropTypes.bool,
+  isRequired: PropTypes.bool,
+  requiredLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.string
 };

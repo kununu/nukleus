@@ -1,11 +1,5 @@
 @import '~kununu-theme/scss/base/variables';
 
-.requiredLabel {
-  position: absolute;
-  bottom: 45px;
-  right: 2px;
-}
-
 .spinner {
   position: absolute;
   right: 13px;
@@ -25,6 +19,10 @@
 
 .inline {
   position: relative;
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 25px;
+  }
 
   @media (min-width: $screen-xs-min) {
     display: flex;

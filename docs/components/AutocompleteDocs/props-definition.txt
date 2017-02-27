@@ -11,11 +11,10 @@ static propTypes = {
   onGetSuggestions: PropTypes.func,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  required: PropTypes.bool,
+  isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string,
   scrollOffset: PropTypes.number,
   scrollTo: PropTypes.bool,
   submitOnEnter: PropTypes.bool,
   value: PropTypes.string
 };
-

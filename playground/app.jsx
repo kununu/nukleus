@@ -29,6 +29,8 @@ const App = ({location: {pathname, query}}) => (
               name="choices[]"
               heading="MultipleChoice"
               inputStyle="buttons"
+              isRequired
+              requiredLabel="Required"
               choices={
               [{
                 id: 'option-1',
@@ -213,6 +215,7 @@ const App = ({location: {pathname, query}}) => (
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete"
+              isRequired
               requiredLabel="Required"
               name="autocomplete" />
           </div>
@@ -226,8 +229,8 @@ const App = ({location: {pathname, query}}) => (
               id="text-field"
               label="TextField"
               name="text-field"
-              required
-              requiredLabel />
+              isRequired
+              requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
           </div>
@@ -317,6 +320,8 @@ const App = ({location: {pathname, query}}) => (
               icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
+              isRequired
+              requiredLabel="Required"
               title="DatePicker" />
           </div>
         </div>
@@ -327,7 +332,8 @@ const App = ({location: {pathname, query}}) => (
               title="Select"
               name="select"
               id="select"
-              required
+              isRequired
+              requiredLabel="Required"
               value="option"
               items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
           </div>
@@ -336,11 +342,12 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Combobox
-              handle={<i className="fa fa-caret-down" aria-hidden="true" />}
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
-              required
+              isRequired
+              requiredLabel="Required"
               placeholder="Type m"
               keyName="name"
               items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
@@ -550,6 +557,7 @@ const App = ({location: {pathname, query}}) => (
             <Choice
               heading="Choice"
               name="basic"
+              requiredLabel="Required"
               onChange={() => {}}
               options={[
                 {

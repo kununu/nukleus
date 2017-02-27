@@ -2,7 +2,12 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {formGroup} from '../index.scss';
+import {
+  controlLabel,
+  controlLabelRequired,
+  controlNote,
+  formGroup
+} from '../index.scss';
 
 
 export default class Choice extends Component {
@@ -12,11 +17,12 @@ export default class Choice extends Component {
     disabled: PropTypes.bool,
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
     query: PropTypes.object,
-    required: PropTypes.bool
+    requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
@@ -25,9 +31,10 @@ export default class Choice extends Component {
     disabled: false,
     heading: '',
     headingStyle: 'control-label',
+    isRequired: false,
     onChange: null,
     query: {},
-    required: false
+    requiredLabel: ''
   };
 
   state = {
@@ -69,9 +76,11 @@ export default class Choice extends Component {
     const {
       customTheme,
       disabled,
+      heading,
+      isRequired,
       name,
       options,
-      required
+      requiredLabel
     } = this.props;
 
     const {
@@ -80,8 +89,16 @@ export default class Choice extends Component {
 
     return (
       <div className={formGroup}>
-        {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
-        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible} `}>
+
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
+
+        {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
+
+        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`}>
           {options.map((item, idx) =>
             <div className={styles.radioButton} key={item.id}>
               <input
@@ -91,7 +108,7 @@ export default class Choice extends Component {
                 name={name}
                 checked={checked === item.value}
                 onChange={this.onChange}
-                required={required} />
+                required={isRequired} />
               <label
                 disabled={disabled}
                 id={idx}

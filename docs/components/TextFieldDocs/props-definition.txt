@@ -14,8 +14,8 @@ static propTypes = {
   pattern: PropTypes.string,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  required: PropTypes.bool,
-  requiredLabel: PropTypes.bool,
+  isRequired: PropTypes.bool,
+  requiredLabel: PropTypes.string,
   rows: PropTypes.number,
   title: PropTypes.string,
   type: PropTypes.oneOf([
@@ -26,5 +26,3 @@ static propTypes = {
   ]),
   value: PropTypes.string
 };
-
-

@@ -3,6 +3,9 @@ import React, {Component, PropTypes} from 'react';
 import styles from './index.scss';
 
 import {
+  controlLabel,
+  controlLabelRequired,
+  controlNote,
   formControl,
   formGroup
 } from '../index.scss';
@@ -12,17 +15,20 @@ export default class MultipleChoice extends Component {
   static propTypes = {
     choices: PropTypes.array.isRequired,
     heading: PropTypes.string,
-    headingStyle: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
+    isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
-    query: PropTypes.object
+    query: PropTypes.object,
+    requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
     heading: '',
     headingStyle: 'control-label',
     inputStyle: 'inline',
-    query: {}
+    isRequired: false,
+    query: {},
+    requiredLabel: ''
   };
 
   state = {
@@ -81,7 +87,13 @@ export default class MultipleChoice extends Component {
 
     return (
       <div className={`${styles[this.props.inputStyle]} ${formGroup}`}>
-        {this.props.heading && <div className={this.props.headingStyle}>{this.props.heading}</div>}
+        {this.props.requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {this.props.requiredLabel}
+          </span>
+        }
+
+        {this.props.heading && <div className={controlLabel}>{this.props.heading}</div>}
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
@@ -94,6 +106,7 @@ export default class MultipleChoice extends Component {
                 value={choice.value}
                 type="checkbox"
                 checked={choice.isChecked}
+                required={this.props.isRequired}
                 onChange={() => this.onChange(choice)} />
 
               <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>

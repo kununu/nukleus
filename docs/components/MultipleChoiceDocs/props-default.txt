@@ -2,5 +2,7 @@ static defaultProps = {
   heading: '',
   headingStyle: 'control-label',
   inputStyle: 'inline',
-  query: {}
+  isRequired: false,
+  query: {},
+  requiredLabel: ''
 };
