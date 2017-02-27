@@ -17,7 +17,7 @@ exports[`test Renders datepicker without crashing 1`] = `
       name="date-picker"
       onChange={[Function]}
       placeholderText=""
-      required={false}
+      required={true}
       selected={null}
       showYearDropdown={true} />
     

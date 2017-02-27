@@ -6,6 +6,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   id="name"
   inputStyles="inline"
   inputValue=""
+  isRequired={true}
   items={
     Array [
       "music",
@@ -25,7 +26,6 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   label="Combobox"
   name="name"
   placeholder="Type m"
-  required={true}
   requiredLabel="">
   <div
     className="formGroup inline">

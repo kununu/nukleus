@@ -36,7 +36,7 @@ test('Renders TextField with multiline without crashing', () => {
       name="text-field"
       value="test2"
       multiLine
-      required
+      isRequired
       requiredLabel />
   );
 
