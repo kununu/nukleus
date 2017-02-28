@@ -59,6 +59,7 @@
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "18.0.0",
+    "kununu-theme": "3.0.0",
     "less": "2.7.1",
     "node-sass": "4.5.0",
     "node-sass-module-importer": "0.1.0",
@@ -79,7 +80,6 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "kununu-theme": "3.0.0",
     "moment": "2.17.1",
     "react-autosuggest": "8.0.0",
     "react-datepicker": "0.40.0",
