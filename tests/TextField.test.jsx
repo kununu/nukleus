@@ -10,8 +10,8 @@ const textField = (
     label="TextField"
     name="text-field"
     value="test"
-    required
-    requiredLabel />
+    isRequired
+    requiredLabel="required" />
 );
 
 // input
@@ -37,7 +37,7 @@ test('Renders TextField with multiline without crashing', () => {
       value="test2"
       multiLine
       isRequired
-      requiredLabel />
+      requiredLabel="required" />
   );
 
   const tree = component.toJSON();
