@@ -1,3 +1,3 @@
-const isMobile = window ? window.outerWidth < 550 : false;
+const isMobile = typeof window === 'undefined' ? false : window.outerWidth < 550;
 
 export default isMobile;
