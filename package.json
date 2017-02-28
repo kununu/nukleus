@@ -10,9 +10,9 @@
       "node_modules"
     ]
   },
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Shared components repo for kununu projects",
-  "main": "dist/index.js",
+  "main": "dist/components/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kununu/nukleus.git"
@@ -25,9 +25,7 @@
   "license": "ISC",
   "files": [
     "dist/",
-    "package.json",
-    "components",
-    "utils"
+    "package.json"
   ],
   "readme": "README.md",
   "devDependencies": {
@@ -93,7 +91,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
-    "babel": "babel ./components --out-dir ./dist && babel ./utils --out-dir ./dist/utils",
+    "babel": "babel ./components --out-dir ./dist/components && babel ./utils --out-dir ./dist/utils",
     "sass": "node-sass ./components --output ./dist --importer node_modules/node-sass-module-importer",
     "dist": "npm run clean && npm run build && npm run sass",
     "build": "cross-env NODE_ENV=dist npm run babel",

@@ -42,11 +42,11 @@ You can include compiled components this way.
 import {Select, TextField} from 'nukleus';
 ```
 
-Alternatively, you can use the source files. This has the benefit of making your final bundle smaller, but you will need to install a compatible sass version in your hosting app.
+Alternatively, you can use each component singularly: this way you are going to import just the components you need. This has the benefit of making your final bundle smaller.
 
 ```javascript
-import Select from 'nukleus/components/Select/index.jsx';
-import TextField from 'nukleus/components/TextField/index.jsx';
+import Select from 'nukleus/dist/components/Select';
+import TextField from 'nukleus/dist/components/TextField';
 ```
 
 ## Development
