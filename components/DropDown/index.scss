@@ -57,6 +57,7 @@
   position: absolute;
   right: 0;
   z-index: $zindex-popover;
+  overflow: hidden;
 
   li {
     list-style-type: none;
