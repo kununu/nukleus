@@ -7,11 +7,11 @@ import DocsRoot from 'components/DocsRoot';
 import {default as example} from './example.txt';
 import {default as propsDefinition} from './props-definition.txt';
 import {default as propsDefault} from './props-default.txt';
+import {default as at} from './img/at.gif';
+import {default as ch} from './img/ch.gif';
+import {default as de} from './img/de.gif';
+import {default as us} from './img/us.gif';
 
-const at = require('./img/at.gif');
-const ch = require('./img/ch.gif');
-const de = require('./img/de.gif');
-const us = require('./img/us.gif');
 
 const DropDownDocs = ({location: {pathname}}) => (
   <DocsRoot
