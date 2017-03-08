@@ -6,7 +6,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   error={null}
   id="text-field"
   inputStyle="inline"
-  isRequired={false}
+  isRequired={true}
   label="TextField"
   labelHidden={false}
   maxLength={500}
@@ -16,8 +16,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   pattern=""
   placeholder=""
   query={Object {}}
-  required={true}
-  requiredLabel={true}
+  requiredLabel="required"
   rows={5}
   title=""
   type="text"
@@ -25,7 +24,9 @@ exports[`test Changes output on value change manipulation 1`] = `
   <div
     className="formGroup inline">
     <span
-      className="controlNote controlLabelRequired" />
+      className="controlNote controlLabelRequired">
+      required
+    </span>
     <label
       className="controlLabel false"
       htmlFor="text-field">
@@ -44,7 +45,7 @@ exports[`test Changes output on value change manipulation 1`] = `
         onChange={[Function]}
         pattern=""
         placeholder=""
-        required={false}
+        required={true}
         title=""
         type="text"
         value="UGH" />
@@ -57,7 +58,9 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
 <div
   className="formGroup inline">
   <span
-    className="controlNote controlLabelRequired" />
+    className="controlNote controlLabelRequired">
+    required
+  </span>
   <label
     className="controlLabel false"
     htmlFor="text-field">
@@ -86,7 +89,9 @@ exports[`test Renders TextField without crashing 1`] = `
 <div
   className="formGroup inline">
   <span
-    className="controlNote controlLabelRequired" />
+    className="controlNote controlLabelRequired">
+    required
+  </span>
   <label
     className="controlLabel false"
     htmlFor="text-field">
@@ -105,7 +110,7 @@ exports[`test Renders TextField without crashing 1`] = `
       onChange={[Function]}
       pattern=""
       placeholder=""
-      required={false}
+      required={true}
       title=""
       type="text"
       value="test" />
