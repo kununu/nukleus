@@ -8,7 +8,7 @@
 
 ## [Documentation](https://kununu.github.io/nukleus)
 
-A collection of React user interface components.
+A collection of universal React UI components.
 
 Components include:
 
@@ -48,6 +48,10 @@ Alternatively, you can use each component singularly: this way you are going to 
 import Select from 'nukleus/dist/components/Select';
 import TextField from 'nukleus/dist/components/TextField';
 ```
+
+## Universal applications compatibility
+
+Nukleus components are built for both client and server rendering, making them suitable for universal applications.
 
 ## Development
 
