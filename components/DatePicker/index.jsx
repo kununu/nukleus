@@ -101,7 +101,7 @@ export default class DatePickerComponent extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}>
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}

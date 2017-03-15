@@ -22,7 +22,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   type="text"
   value="test">
   <div
-    className="formGroup inline">
+    className="formGroup inline paddingTop">
     <span
       className="controlNote controlLabelRequired">
       required
@@ -56,7 +56,7 @@ exports[`test Changes output on value change manipulation 1`] = `
 
 exports[`test Renders TextField with multiline without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline paddingTop">
   <span
     className="controlNote controlLabelRequired">
     required
@@ -87,7 +87,7 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
 
 exports[`test Renders TextField without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline paddingTop">
   <span
     className="controlNote controlLabelRequired">
     required
