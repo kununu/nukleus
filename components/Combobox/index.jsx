@@ -113,7 +113,7 @@ export default class ComboboxComponent extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyles]}`}>
+      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}>
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}

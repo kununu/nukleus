@@ -111,7 +111,7 @@ export default class Select extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
         {labelHidden && <span className={srOnly}>{title}</span>}
 
         {requiredLabel &&

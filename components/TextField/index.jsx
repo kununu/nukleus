@@ -137,7 +137,7 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
         {requiredLabel && <span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>}
         {labelHidden && <span className={srOnly}>{label}</span>}
 

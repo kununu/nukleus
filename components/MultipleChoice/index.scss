@@ -73,7 +73,7 @@
   }
 
   @media (min-width: $screen-sm-min) {
-    padding-top: 25px;
+    padding-top: 6px;
   }
 
   > div:first-child {
@@ -89,6 +89,12 @@
 
   .choice:last-child {
     margin-bottom: 0;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
   }
 }
 
