@@ -15,7 +15,7 @@ export default class Tabs extends Component {
     const {props} = item;
 
     // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
-    const hash = props.to.hash || '';
+    const hash = props.to ? props.to.hash : '';
     const localPathname = props.href || props.path || props.to.pathname;
 
     const newProps = `${localPathname}${hash}` === `${this.props.pathname}${hash}` ? {className: styles.active} : {};
