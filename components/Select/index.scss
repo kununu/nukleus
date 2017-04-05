@@ -44,7 +44,7 @@ select {
   position: relative;
 
   @media (min-width: $screen-sm-min) {
-    padding-top: 25px;
+    padding-top: 6px;
   }
 
   @media (min-width: $screen-xs-min) {
@@ -57,5 +57,11 @@ select {
     margin-right: 10px;
     margin-bottom: 0;
     width: 140px;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
   }
 }

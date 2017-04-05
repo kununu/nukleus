@@ -23,7 +23,7 @@ exports[`test Changes status on value change 1`] = `
   title="Select"
   value="option">
   <div
-    className="formGroup inline">
+    className="formGroup inline ">
     <label
       className="controlLabel false"
       htmlFor="select">
@@ -60,7 +60,7 @@ exports[`test Changes status on value change 1`] = `
 
 exports[`test Renders Select without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline ">
   
   <label
     className="controlLabel false"

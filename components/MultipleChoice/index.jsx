@@ -86,7 +86,7 @@ export default class MultipleChoice extends Component {
     const {choices} = this.state;
 
     return (
-      <div className={`${styles[this.props.inputStyle]} ${formGroup}`}>
+      <div className={`${styles[this.props.inputStyle]} ${formGroup} ${this.props.requiredLabel ? styles.paddingTop : ''}`}>
         {this.props.requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {this.props.requiredLabel}

@@ -207,7 +207,7 @@ export default class Autocomplete extends React.Component {
     return (
       <div
         ref={node => this.node = node}
-        className={`${formGroup} ${styles[this.props.inputStyle]}`}>
+        className={`${formGroup} ${styles[this.props.inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>

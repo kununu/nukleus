@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react';
 
 import styles from './index.scss';
 
+import {isBrowser} from '../../utils/executionEnvironment';
 import {
   clearfix
 } from '../index.scss';
@@ -28,11 +29,13 @@ export default class Dropdown extends Component {
   }
 
   componentWillMount () {
+    if (!isBrowser) return;
     document.addEventListener('click', this.onClickDocument, false);
     document.addEventListener('touchend', this.onClickDocument, false);
   }
 
   componentWillUnmount () {
+    if (!isBrowser) return;
     document.removeEventListener('click', this.onClickDocument, false);
     document.removeEventListener('touchend', this.onClickDocument, false);
   }
