@@ -8,17 +8,17 @@ import {clearfix} from '../index.scss';
 export default class Tabs extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
-    pathname: PropTypes.string.isRequired,
-    hash: PropTypes.string
+    pathname: PropTypes.string.isRequired
   };
 
   getNewProps (item) {
     const {props} = item;
-    // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
-    const localPathname = props.href || props.path || props.to.pathname;
-    const localHash = typeof props.to.hash !== 'undefined' ? props.to.hash : '';
 
-    const newProps = localPathname === this.props.pathname ? (localHash !== '' ? (localHash === this.props.hash ? {className: styles.active}: {}) : {className: styles.active}) : {};
+    // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
+    const hash = props.to.hash || '';
+    const localPathname = props.href || props.path || props.to.pathname;
+
+    const newProps = `${localPathname}${hash}` === `${this.props.pathname}${hash}` ? {className: styles.active} : {};
 
     return newProps;
   }
