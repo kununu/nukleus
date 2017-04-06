@@ -9,7 +9,7 @@ const combobox = (
     name="name"
     label="Combobox"
     id="name"
-    required
+    isRequired
     placeholder="Type m"
     keyName="name"
     items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />

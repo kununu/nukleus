@@ -30,6 +30,7 @@ exports[`test Hides no suggestions on blur 1`] = `
   error={null}
   id="autocompletes"
   inputStyle="inline"
+  isRequired={true}
   label="Autocomplete"
   labelHidden={false}
   name="autocomplete"
@@ -37,16 +38,15 @@ exports[`test Hides no suggestions on blur 1`] = `
   onGetSuggestions={null}
   placeholder="Type something..."
   query={Object {}}
-  required={true}
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
   submitOnEnter={false}
   value="test">
   <div
-    className="formGroup inline">
+    className="formGroup inline paddingTop">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -154,9 +154,9 @@ exports[`test Hides no suggestions on blur 1`] = `
 
 exports[`test Renders Autocomplete without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline paddingTop">
   <span
-    className="controlNote requiredLabel">
+    className="controlNote controlLabelRequired">
     Required
   </span>
   <label
@@ -230,6 +230,7 @@ exports[`test Renders no suggestions container 1`] = `
   error={null}
   id="autocompletes"
   inputStyle="inline"
+  isRequired={true}
   label="Autocomplete"
   labelHidden={false}
   name="autocomplete"
@@ -237,16 +238,15 @@ exports[`test Renders no suggestions container 1`] = `
   onGetSuggestions={null}
   placeholder="Type something..."
   query={Object {}}
-  required={true}
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
   submitOnEnter={false}
   value="test">
   <div
-    className="formGroup inline">
+    className="formGroup inline paddingTop">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -393,6 +393,7 @@ exports[`test Renders suggestions container 1`] = `
   error={null}
   id="autocompletes"
   inputStyle="inline"
+  isRequired={true}
   label="Autocomplete"
   labelHidden={false}
   name="autocomplete"
@@ -400,16 +401,15 @@ exports[`test Renders suggestions container 1`] = `
   onGetSuggestions={null}
   placeholder="Type something..."
   query={Object {}}
-  required={true}
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
   submitOnEnter={false}
   value="test">
   <div
-    className="formGroup inline">
+    className="formGroup inline paddingTop">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label
@@ -693,6 +693,7 @@ exports[`test Updates value on selection 1`] = `
   error={null}
   id="autocompletes"
   inputStyle="inline"
+  isRequired={true}
   label="Autocomplete"
   labelHidden={false}
   name="autocomplete"
@@ -700,16 +701,15 @@ exports[`test Updates value on selection 1`] = `
   onGetSuggestions={null}
   placeholder="Type something..."
   query={Object {}}
-  required={true}
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
   submitOnEnter={false}
   value="test">
   <div
-    className="formGroup inline">
+    className="formGroup inline paddingTop">
     <span
-      className="controlNote requiredLabel">
+      className="controlNote controlLabelRequired">
       Required
     </span>
     <label

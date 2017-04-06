@@ -10,6 +10,10 @@
   align-items: center;
   width: 100%;
 
+  @media (min-width: $screen-sm-min) {
+    padding-top: 6px;
+  }
+
   label {
     margin-right: 10px;
     margin-bottom: 0;
@@ -22,6 +26,12 @@
 
   @media (max-width: $screen-xs-min) {
     display: block;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
   }
 }
 
@@ -111,9 +121,10 @@
 
 .handle {
   position: absolute;
+  right: 15px;
+  font-size: 11px;
+  color: $black;
+  top: ($input-height-base / 3);
+  z-index: 3;
   pointer-events: none;
-  right: 10px;
-  top: 10px;
-  color: $gray;
-  font-size: $font-size-base;
 }

@@ -8,6 +8,7 @@ const choice = (
   <MultipleChoice
     name="choice[]"
     heading="Test"
+    isRequired
     choices={
     [
       {

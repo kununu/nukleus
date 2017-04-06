@@ -55,6 +55,10 @@
   flex-flow: row;
   align-items: center;
 
+  @media (min-width: $screen-sm-min) {
+    padding-top: 6px;
+  }
+
   label {
     margin-right: 10px;
     width: 140px;
@@ -68,5 +72,11 @@
 
   @media (max-width: $screen-xs-min) {
     display: block;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
   }
 }

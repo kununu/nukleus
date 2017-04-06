@@ -17,7 +17,7 @@ const staticAutocomplete = (
     }}
     value="test"
     disabled
-    required
+    isRequired
     requiredLabel="Required"
     id="autocompletes"
     label="Autocomplete"

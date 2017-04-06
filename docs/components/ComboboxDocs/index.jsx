@@ -12,7 +12,7 @@ const ComboboxDocs = () => (
     title="Combobox"
     component={
       <Combobox
-        handle={<i className="fa fa-caret-down" aria-hidden="true" />}
+        handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
         name="name"
         label="Combobox"
         id="name"
