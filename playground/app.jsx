@@ -211,7 +211,7 @@ const App = ({location: {pathname, query}}) => (
               id="test"
               value="purrr"
               query={query}
-              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }}
+              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete"
