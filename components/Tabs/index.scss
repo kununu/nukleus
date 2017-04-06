@@ -1,39 +1,60 @@
 @import '~kununu-theme/scss/base/variables';
 
 .tabs {
+  border-bottom: 1px solid $gray-base-10;
   width: 100%;
-  padding: 0 0 1px;
-  border-bottom: 1px solid $pagination-border;
-  position: relative;
-  display: inline;
-  float: left;
-
-  @media (max-width: $screen-xs-min) {
-    border-bottom: 0;
-    float: none;
-  }
+  padding: 0;
+  margin: 0;
+  list-style: none;
 
   li {
-    list-style: none;
     position: relative;
-    margin-right: 20px;
-    display: inline-block;
+    display: block;
+    float: left;
+
+    @media (min-width: $screen-sm-min) {
+      &:not(:first-child) {
+        padding-left: 20px;
+      }
+    }
 
     a {
       padding: 10px 0;
       color: $gray-base-70;
+      position: relative;
       display: block;
       text-decoration: none;
-      margin-bottom: -2px;
 
-      @media (max-width: $screen-md-min) {
-        padding: 8px 10px;
+      &.active {
+        border-bottom: 2px solid $blue;
+        color: $gray-base-90;
       }
     }
+  }
 
-    a.active {
-      cursor: default;
-      border-bottom: 2px solid $blue;
+  @media (max-width: $screen-sm-min) {
+    display: table;
+
+    li {
+      padding: 0 5px;
+      display: table-cell;
+      text-align: center;
+      float: none;
+
+      a {
+        padding: 10px 0;
+        font-size: $font-size-small;
+      }
+
+      &.active {
+        border-bottom: 3px solid $blue;
+
+        a {
+          font-weight: $font-weight-semibold;
+          color: $text-color;
+          border-bottom: 0;
+        }
+      }
     }
   }
 }
