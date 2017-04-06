@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
   context: __dirname,
@@ -11,18 +10,20 @@ module.exports = {
     publicPath: '/build/'
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx'],
-    root: [
+    extensions: ['.js', '.json', '.jsx'],
+    modules: [
       __dirname,
-      path.resolve(__dirname)
+      path.resolve(__dirname),
+      path.resolve(__dirname, 'node_modules')
     ]
   },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
+        enforce: 'pre',
         query: {
           fix: true
         }
@@ -30,42 +31,71 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: 'sasslint'
-      }
-    ],
-    loaders: [
+        loader: 'sasslint-loader',
+        enforce: 'pre',
+        options: {
+          configFile: '.sass-lint.yml'
+        }
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
         exclude: /node_modules|main\.scss/,
-        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
+        use: [
+          'style-loader',
+          'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.css$/,
         include: /node_modules/,
-        loader: 'style!css'
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /main\.scss$/,
         exclude: /node_modules/,
-        loader: 'style!css!postcss!sass'
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.(ttf|eot|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file'
+        loader: 'file-loader'
       }
     ]
-  },
-  postcss: [autoprefixer],
-  sasslint: {
-    configFile: '.sass-lint.yml'
   }
 };

@@ -55,7 +55,7 @@
     "eslint-plugin-sorting": "0.3.0",
     "file-loader": "0.10.0",
     "font-awesome": "4.7.0",
-    "font-awesome-webpack": "0.0.4",
+    "font-awesome-webpack": "^0.0.5-beta.2",
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "18.0.0",
@@ -75,8 +75,8 @@
     "sasslint-loader": "0.0.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack": "2.3.0",
+    "webpack-dev-server": "2.3.0"
   },
   "dependencies": {
     "classnames": "2.2.5",
