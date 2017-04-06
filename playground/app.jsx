@@ -178,10 +178,11 @@ const App = ({location: {pathname, query}}) => (
           <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
             <div className="clearfix relative">
               <Tabs
+                hash="#hi"
                 items={[
-                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
-                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
-                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
+                  <Link to={{hash: '#hi', pathname: '/playground/', query}}>First Tab</Link>,
+                  <Link to={{hash: '#hi2', pathname: '/playground/', query}}>Second Tab</Link>,
+                  <Link to={{pathname: '/playground/', query}}>Third Tab</Link>
                 ]}
                 pathname={pathname} />
             </div>
