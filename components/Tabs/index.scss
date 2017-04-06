@@ -1,50 +1,30 @@
 @import '~kununu-theme/scss/base/variables';
 
 .tabs {
-  margin: 30px 0 -1px;
-  padding: 0;
+  width: 100%;
+  padding: 0 0 1px;
+  border-bottom: 1px solid $pagination-border;
   position: relative;
-  left: -21px;
+  display: inline;
   float: left;
 
-  @media (max-width: $screen-md-min) {
-    left: 0;
-  }
-
   @media (max-width: $screen-xs-min) {
-    margin-bottom: 9px;
+    border-bottom: 0;
+    float: none;
   }
 
   li {
-    float: left;
     list-style: none;
     position: relative;
-    margin-bottom: -30px;
-    min-width: 80px;
-    text-align: center;
-
-    @media (max-width: $screen-md-min) {
-      margin-bottom: -20px;
-    }
-
+    margin-right: 20px;
+    display: inline-block;
 
     a {
-      color: $gray;
-      padding: 10px 20px;
+      padding: 10px 0;
+      color: $gray-base-70;
       display: block;
-      background-color: $gray-base-03;
-      border: 1px solid $blue-light-sat;
-      border-radius: 8px 8px 0 0;
-      border-bottom: 0;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 12px;
       text-decoration: none;
-
-      &:hover {
-        text-decoration: none;
-        background-color: $white;
-      }
+      margin-bottom: -2px;
 
       @media (max-width: $screen-md-min) {
         padding: 8px 10px;
@@ -52,41 +32,8 @@
     }
 
     a.active {
-      background-color: $white;
-      border-bottom: 1px solid $white;
-      color: $teal;
-
-      &:after {
-        position: absolute;
-        border: 1px solid $blue-light-sat;
-        bottom: 0;
-        width: 7px;
-        height: 6px;
-        content: ' ';
-        border-bottom-left-radius: 6px;
-        border-width: 0 0 1px 1px;
-        right: -6px;
-        box-shadow: -2px 2px 0 $white;
-        z-index: 2;
-      }
-    }
-
-
-    &:not(:first-child) {
-      a.active {
-        &:before {
-          position: absolute;
-          border: 1px solid $blue-light-sat;
-          bottom: 0;
-          width: 6px;
-          height: 6px;
-          content: ' ';
-          border-bottom-right-radius: 6px;
-          border-width: 0 1px 1px 0;
-          left: -5px;
-          box-shadow: 2px 2px 0 $white;
-        }
-      }
+      cursor: default;
+      border-bottom: 2px solid $blue;
     }
   }
 }

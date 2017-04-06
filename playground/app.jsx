@@ -174,17 +174,15 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
-        <div className="clearfix">
-          <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
-            <div className="clearfix relative">
-              <Tabs
-                items={[
-                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
-                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
-                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
-                ]}
-                pathname={pathname} />
-            </div>
+        <div className="row">
+          <div className="col-md-8">
+            <Tabs
+              items={[
+                <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
+                <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
+              ]}
+              pathname={pathname} />
           </div>
         </div>
 
