@@ -7,8 +7,12 @@ import {clearfix} from '../index.scss';
 
 export default class Tabs extends Component {
   static propTypes = {
+    hash: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
     pathname: PropTypes.string.isRequired
+  };
+  static defaultProps = {
+    hash: ''
   };
 
   getNewProps (item) {
