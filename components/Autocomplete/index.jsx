@@ -30,6 +30,7 @@ export default class Autocomplete extends React.Component {
     name: PropTypes.string.isRequired,
     noSuggestionText: PropTypes.string,
     onGetSuggestions: PropTypes.func,
+    onSelectSuggestion: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
@@ -48,6 +49,7 @@ export default class Autocomplete extends React.Component {
     labelHidden: false,
     noSuggestionText: 'No results found',
     onGetSuggestions: null,
+    onSelectSuggestion: null,
     placeholder: '',
     query: {},
     requiredLabel: '',
@@ -69,6 +71,9 @@ export default class Autocomplete extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
+    if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
+      this.setState({suggestions: nextProps.data.items});
+    }
     if (!this.needsUpdate(nextProps)) return;
     if (nextProps.error) this.showError();
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
@@ -102,13 +107,17 @@ export default class Autocomplete extends React.Component {
     });
   };
 
-  onSuggestionSelected = (e, {method}) => {
+  onSuggestionSelected = (e, {method, suggestion}) => {
     this.setState({
       showNoSuggestionsText: false
     });
 
     if (method === 'enter' && !this.props.submitOnEnter) {
       e.preventDefault();
+    }
+
+    if (this.props.onSelectSuggestion) {
+      this.props.onSelectSuggestion(suggestion);
     }
   }
 
