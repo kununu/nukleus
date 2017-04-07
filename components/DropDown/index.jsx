@@ -10,11 +10,11 @@ import {
 export default class Dropdown extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
+      active: PropTypes.boolean,
       icon: PropTypes.element,
       link: PropTypes.element.isRequired,
       value: PropTypes.string.isRequired
     })).isRequired,
-    pathname: PropTypes.string.isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
@@ -50,13 +50,7 @@ export default class Dropdown extends Component {
   }
 
   getActiveItem () {
-    const {pathname, items} = this.props;
-    return items.filter(item => {
-      const {props} = item.link;
-      // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
-      const localPathname = props.href || props.path || props.to.pathname;
-      return (pathname === localPathname);
-    })[0];
+    return this.props.items.filter(item => item.active)[0];
   }
 
   getItem = item => (

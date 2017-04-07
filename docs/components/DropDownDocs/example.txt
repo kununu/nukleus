@@ -1,8 +1,8 @@
 <DropDown
-  pathname={pathname}
   position="bottom"
   items={[
     {
+      active: true,
       icon: <img alt="Austrian flag" src={at} />,
       link: (
         <Link
@@ -13,6 +13,7 @@
       value: 'Austria'
     },
     {
+      active: false,
       icon: <img alt="German flag" src={de} />,
       link: (
         <Link
@@ -23,6 +24,7 @@
       value: 'German'
     },
     {
+      active: false,
       icon: <img alt="Swiss flag" src={ch} />,
       link: (
         <Link
@@ -33,6 +35,7 @@
       value: 'Switzerland'
     },
     {
+      active: false,
       icon: <img alt="American flag" src={us} />,
       link: (
         <Link

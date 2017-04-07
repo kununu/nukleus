@@ -7,6 +7,7 @@ import DropDown from 'DropDown'; // eslint-disable-line import/no-unresolved, im
 
 const items = [
   {
+    active: false,
     icon: <img
       alt="Austrian flag"
       src="austrianflag.jpg" />,
@@ -14,6 +15,7 @@ const items = [
     value: 'Austria'
   },
   {
+    active: true,
     icon: <img alt="German flag" src="germanflag.jpg" />,
     link: <a href="/de">German</a>,
     value: 'German'
@@ -23,7 +25,6 @@ const items = [
 test('Renders DropDown without crashing', () => {
   const component = renderer.create(
     <DropDown
-      pathname="/at"
       items={items} />
   );
 
@@ -34,14 +35,15 @@ test('Renders DropDown without crashing', () => {
 test('Renders correct default selection', () => {
   const component = renderer.create(
     <DropDown
-      pathname="/at"
       items={[
         {
+          active: true,
           icon: <img alt="Austrian flag" src="austrianflag.jpg" />,
           link: <a href="/at" alt="hi">Austria</a>,
           value: 'Austria'
         },
         {
+          active: false,
           icon: <img alt="German flag" src="germanflag.jpg" />,
           link: <a href="/de">German</a>,
           value: 'German'
@@ -56,7 +58,6 @@ test('Renders correct default selection', () => {
 test('Renders menu when button is clicked', () => {
   const component = mount(
     <DropDown
-      pathname="/at"
       items={items} />
   );
   component.find('button').simulate('click');
@@ -67,7 +68,6 @@ test('Renders menu when button is clicked', () => {
 test('Closes menu when document is clicked', () => {
   const component = mount(
     <DropDown
-      pathname="/at"
       items={items} />
   );
   component.find('button').simulate('click');
@@ -79,10 +79,9 @@ test('Closes menu when document is clicked', () => {
 test('Renders correctly when no icon is provided', () => {
   const component = renderer.create(
     <DropDown
-      pathname="/at"
       items={[
         {
-          active: false,
+          active: true,
           link: <a href="/at" alt="hi">Austria</a>,
           value: 'Austria'
         },
@@ -101,7 +100,6 @@ test('Renders correctly when no icon is provided', () => {
 test('Updates selection on item click', () => {
   const component = mount(
     <DropDown
-      pathname="/at"
       items={items} />
   );
   component.last('li').simulate('click');
