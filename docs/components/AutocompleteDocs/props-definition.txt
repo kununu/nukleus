@@ -9,6 +9,7 @@ static propTypes = {
   name: PropTypes.string.isRequired,
   noSuggestionText: PropTypes.string,
   onGetSuggestions: PropTypes.func,
+  onSelectSuggestion: PropTypes.func,
   placeholder: PropTypes.string,
   query: PropTypes.object,
   isRequired: PropTypes.bool,
