@@ -1,10 +1,10 @@
 static propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
+    active: PropTypes.boolean,
     icon: PropTypes.element,
     link: PropTypes.element.isRequired,
     value: PropTypes.string.isRequired
   })).isRequired,
-  pathname: PropTypes.string.isRequired,
   position: PropTypes.oneOf(['top', 'bottom']),
   shade: PropTypes.oneOf(['light', 'dark'])
 };
