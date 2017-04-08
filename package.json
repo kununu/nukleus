@@ -86,7 +86,7 @@
     "react-scroll": "1.4.4"
   },
   "peerDependencies": {
-    "react": ">=15.0.0",
+    "react": ">=15.5.0",
     "react-dom": ">=15.0.0"
   },
   "scripts": {
