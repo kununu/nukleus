@@ -7,6 +7,7 @@ static propTypes = {
   duration: PropTypes.number,
   icon: PropTypes.element,
   message: PropTypes.string.isRequired,
+  onCloseClick: PropTypes.func,
   type: PropTypes.oneOf([
     'error',
     'success'

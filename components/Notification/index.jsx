@@ -9,6 +9,7 @@ export default class Notification extends Component {
     duration: PropTypes.number,
     icon: PropTypes.element,
     message: PropTypes.string.isRequired,
+    onCloseClick: PropTypes.func,
     type: PropTypes.oneOf([
       'error',
       'success'
@@ -35,6 +36,7 @@ export default class Notification extends Component {
     duration: 5000,
     icon: null,
     message: '',
+    onCloseClick: null,
     type: 'success',
     visible: false
   }
@@ -57,6 +59,9 @@ export default class Notification extends Component {
 
   onClickClose = () => {
     this.hideNotification();
+    if (this.props.onCloseClick) {
+      this.props.onCloseClick();
+    }
   };
 
   onTimeout () {
