@@ -1,5 +1,6 @@
 exports[`test Hides no suggestions on blur 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -65,6 +66,7 @@ exports[`test Hides no suggestions on blur 1`] = `
         id="1"
         inputProps={
           Object {
+            "autoFocus": false,
             "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
@@ -92,6 +94,7 @@ exports[`test Hides no suggestions on blur 1`] = `
           id="1"
           inputProps={
             Object {
+              "autoFocus": false,
               "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
@@ -128,6 +131,7 @@ exports[`test Hides no suggestions on blur 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              autoFocus={false}
               className="formControl"
               disabled={true}
               id="autocompletes"
@@ -176,6 +180,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
+        autoFocus={false}
         className="formControl"
         disabled={true}
         id="autocompletes"
@@ -201,6 +206,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
 
 exports[`test Renders no suggestions container 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -266,6 +272,7 @@ exports[`test Renders no suggestions container 1`] = `
         id="1"
         inputProps={
           Object {
+            "autoFocus": false,
             "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
@@ -293,6 +300,7 @@ exports[`test Renders no suggestions container 1`] = `
           id="1"
           inputProps={
             Object {
+              "autoFocus": false,
               "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
@@ -329,6 +337,7 @@ exports[`test Renders no suggestions container 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              autoFocus={false}
               className="formControl"
               disabled={true}
               id="autocompletes"
@@ -365,6 +374,7 @@ exports[`test Renders no suggestions container 1`] = `
 
 exports[`test Renders suggestions container 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -430,6 +440,7 @@ exports[`test Renders suggestions container 1`] = `
         id="1"
         inputProps={
           Object {
+            "autoFocus": false,
             "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
@@ -468,6 +479,7 @@ exports[`test Renders suggestions container 1`] = `
           id="1"
           inputProps={
             Object {
+              "autoFocus": false,
               "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
@@ -515,6 +527,7 @@ exports[`test Renders suggestions container 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              autoFocus={false}
               className="formControl"
               disabled={true}
               id="autocompletes"
@@ -666,6 +679,7 @@ exports[`test Renders suggestions container 1`] = `
 
 exports[`test Updates value on selection 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -731,6 +745,7 @@ exports[`test Updates value on selection 1`] = `
         id="1"
         inputProps={
           Object {
+            "autoFocus": false,
             "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
@@ -758,6 +773,7 @@ exports[`test Updates value on selection 1`] = `
           id="1"
           inputProps={
             Object {
+              "autoFocus": false,
               "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
@@ -794,6 +810,7 @@ exports[`test Updates value on selection 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
+              autoFocus={false}
               className="formControl"
               disabled={true}
               id="autocompletes"

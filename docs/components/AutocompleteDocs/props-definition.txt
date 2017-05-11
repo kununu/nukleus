@@ -1,4 +1,5 @@
 static propTypes = {
+  autoFocus: PropTypes.bool,
   data: PropTypes.object,
   disabled: PropTypes.bool,
   error: PropTypes.string,

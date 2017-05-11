@@ -19,6 +19,7 @@ import {
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
+    autoFocus: PropTypes.bool,
     data: PropTypes.object,
     disabled: PropTypes.bool,
     error: PropTypes.string,
@@ -41,6 +42,7 @@ export default class Autocomplete extends React.Component {
   };
 
   static defaultProps = {
+    autoFocus: false,
     data: {},
     disabled: false,
     error: null,
@@ -180,6 +182,7 @@ export default class Autocomplete extends React.Component {
 
   render () {
     const {
+      autoFocus,
       data: {isFetching},
       disabled,
       error,
@@ -201,6 +204,7 @@ export default class Autocomplete extends React.Component {
     } = this.state;
 
     const inputProps = {
+      autoFocus,
       className: formControl,
       disabled,
       id,

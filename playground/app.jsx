@@ -199,6 +199,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
+              autoFocus
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},

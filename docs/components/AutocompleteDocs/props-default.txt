@@ -1,4 +1,5 @@
 static defaultProps = {
+  autoFocus: false,
   data: {},
   disabled: false,
   error: null,
