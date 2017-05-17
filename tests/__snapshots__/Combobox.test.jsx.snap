@@ -4,6 +4,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   error={null}
   handle={null}
   id="name"
+  inputProps={Object {}}
   inputStyles="inline"
   inputValue=""
   isRequired={true}
@@ -25,6 +26,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   }
   keyName="name"
   label="Combobox"
+  labelHidden={false}
   name="name"
   onSelect={null}
   placeholder="Type m"
@@ -32,8 +34,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   <div
     className="formGroup inline ">
     <label
-      className="controlLabel"
-      htmlFor="city">
+      className="controlLabel false"
+      htmlFor="name">
       Combobox
     </label>
     <div
@@ -695,8 +697,8 @@ exports[`test Renders Combobox without crashing 1`] = `
   className="formGroup inline ">
   
   <label
-    className="controlLabel"
-    htmlFor="city">
+    className="controlLabel false"
+    htmlFor="name">
     Combobox
   </label>
   <div
@@ -738,8 +740,8 @@ exports[`test Renders notSearchableCombobox without crashing 1`] = `
   className="formGroup inline ">
   
   <label
-    className="controlLabel"
-    htmlFor="city">
+    className="controlLabel false"
+    htmlFor="name">
     Combobox
   </label>
   <div

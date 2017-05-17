@@ -13,7 +13,8 @@ import {
   formControl,
   formGroup,
   controlLabelRequired,
-  isNotSearchable
+  isNotSearchable,
+  hidden
 } from '../index.scss';
 
 
@@ -23,12 +24,14 @@ export default class ComboboxComponent extends Component {
     error: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
+    inputProps: PropTypes.object,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     isRequired: PropTypes.bool,
     isSearchable: PropTypes.bool,
     items: PropTypes.array,
     label: PropTypes.string,
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onSelect: PropTypes.func,
     placeholder: PropTypes.string,
@@ -39,12 +42,14 @@ export default class ComboboxComponent extends Component {
     disabled: false,
     error: null,
     handle: null,
+    inputProps: {},
     inputStyles: 'inline',
     inputValue: '',
     isRequired: false,
     isSearchable: true,
     items: [],
     label: '',
+    labelHidden: false,
     onSelect: null,
     placeholder: '',
     requiredLabel: ''
@@ -117,6 +122,7 @@ export default class ComboboxComponent extends Component {
       name,
       id,
       label,
+      labelHidden,
       error,
       handle,
       isRequired,
@@ -135,10 +141,8 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={controlLabel}
-          htmlFor="city">
-          {label}
-        </label>
+          className={`${controlLabel} ${labelHidden && hidden}`}
+          htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
           <Autosuggest
@@ -152,6 +156,7 @@ export default class ComboboxComponent extends Component {
             renderSuggestion={this.renderSuggestion}
             focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
+              ...this.props.inputProps,
               className: `${formControl} ${!this.props.isSearchable && isNotSearchable}`,
               disabled,
               id,

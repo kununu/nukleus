@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .inline {
   display: flex;
   flex-flow: row;
