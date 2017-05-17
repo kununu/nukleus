@@ -5,10 +5,12 @@ static propTypes = {
   id: PropTypes.string.isRequired,
   inputStyles: PropTypes.string,
   inputValue: PropTypes.string,
+  isRequired: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   items: PropTypes.array,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onSelect: PropTypes.func,
   placeholder: PropTypes.string,
-  isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string
 };

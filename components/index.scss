@@ -70,7 +70,7 @@
 
   &:focus {
     border: 1px solid $blue;
-    outline: 0;
+    outline: none;
   }
 
   // Unstyle the caret on `<select>`s in IE10+.
@@ -163,4 +163,14 @@
   position: absolute;
   top: 0;
   right: 2px;
+}
+
+.isNotSearchable {
+  cursor: default;
+  color : transparent;
+  text-shadow : 0 0 0 $gray;
+
+  &:focus {
+    outline : none;
+  }
 }

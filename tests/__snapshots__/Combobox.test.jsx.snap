@@ -7,6 +7,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   inputStyles="inline"
   inputValue=""
   isRequired={true}
+  isSearchable={true}
   items={
     Array [
       "music",
@@ -25,6 +26,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   keyName="name"
   label="Combobox"
   name="name"
+  onSelect={null}
   placeholder="Type m"
   requiredLabel="">
   <div
@@ -44,7 +46,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "className": "formControl false",
             "disabled": false,
             "id": "name",
             "name": "name",
@@ -105,7 +107,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "className": "formControl false",
               "disabled": false,
               "id": "name",
               "name": "name",
@@ -177,7 +179,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              className="formControl false"
               disabled={false}
               id="name"
               name="name"
@@ -708,7 +710,50 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
-        className="formControl"
+        className="formControl false"
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`test Renders notSearchableCombobox without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel"
+    htmlFor="city">
+    Combobox
+  </label>
+  <div
+    className="container">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl isNotSearchable"
         disabled={false}
         id="name"
         name="name"

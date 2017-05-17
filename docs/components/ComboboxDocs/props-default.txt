@@ -4,9 +4,11 @@ static defaultProps = {
   handle: null,
   inputStyles: 'inline',
   inputValue: '',
+  isRequired: false,
+  isSearchable: true,
   items: [],
   label: '',
+  onSelect: null,
   placeholder: '',
-  isRequired: false,
   requiredLabel: ''
 };
