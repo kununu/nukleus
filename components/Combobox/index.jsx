@@ -13,7 +13,6 @@ import {
   formControl,
   formGroup,
   controlLabelRequired,
-  isNotSearchable,
   hidden
 } from '../index.scss';
 
@@ -157,7 +156,7 @@ export default class ComboboxComponent extends Component {
             focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
               ...this.props.inputProps,
-              className: `${formControl} ${!this.props.isSearchable && isNotSearchable}`,
+              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable}`,
               disabled,
               id,
               name,
