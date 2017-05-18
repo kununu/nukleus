@@ -95,6 +95,10 @@
     right: 0;
     width: 100%;
   }
+
+  span {
+    user-select: none;
+  }
 }
 
 .suggestionsList {
@@ -127,4 +131,16 @@
   top: ($input-height-base / 3);
   z-index: 3;
   pointer-events: none;
+}
+
+.isNotSearchable {
+  cursor: default;
+  color : transparent;
+  text-shadow : 0 0 0 $gray;
+  user-select: none;
+  &::selection { background: transparent; }
+
+  &:focus {
+    outline : none;
+  }
 }

@@ -70,7 +70,7 @@
 
   &:focus {
     border: 1px solid $blue;
-    outline: 0;
+    outline: none;
   }
 
   // Unstyle the caret on `<select>`s in IE10+.
@@ -164,3 +164,4 @@
   top: 0;
   right: 2px;
 }
+

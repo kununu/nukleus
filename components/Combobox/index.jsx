@@ -12,16 +12,10 @@ import {
   errorStyles,
   formControl,
   formGroup,
-  controlLabelRequired
+  controlLabelRequired,
+  hidden
 } from '../index.scss';
 
-function getSuggestions (value, items = []) {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-  return items
-    .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
-    .map(item => ({value: item}));
-}
 
 export default class ComboboxComponent extends Component {
   static propTypes = {
@@ -29,12 +23,16 @@ export default class ComboboxComponent extends Component {
     error: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
+    inputProps: PropTypes.object,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     isRequired: PropTypes.bool,
+    isSearchable: PropTypes.bool,
     items: PropTypes.array,
     label: PropTypes.string,
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onSelect: PropTypes.func,
     placeholder: PropTypes.string,
     requiredLabel: PropTypes.string
   };
@@ -43,18 +41,22 @@ export default class ComboboxComponent extends Component {
     disabled: false,
     error: null,
     handle: null,
+    inputProps: {},
     inputStyles: 'inline',
     inputValue: '',
     isRequired: false,
+    isSearchable: true,
     items: [],
     label: '',
+    labelHidden: false,
+    onSelect: null,
     placeholder: '',
     requiredLabel: ''
   };
 
   state = {
     showError: false,
-    suggestions: getSuggestions('', this.props.items),
+    suggestions: this.getSuggestions('', this.props.items),
     value: this.props.inputValue
   };
 
@@ -69,20 +71,36 @@ export default class ComboboxComponent extends Component {
 
   onSuggestionsFetchRequested = ({value}) => {
     this.setState({
-      suggestions: getSuggestions(value, this.props.items)
+      suggestions: this.getSuggestions(value, this.props.items)
     });
   };
 
   onChange = (event, {newValue}) => {
+    if (!this.props.isSearchable && this.props.items.indexOf(newValue) === -1) {
+      event.preventDefault();
+      return;
+    }
     this.hideError();
     this.setState({
       value: newValue
     });
   };
 
+  getSuggestions (value, items = []) {
+    if (this.props.isSearchable) {
+      const inputValue = value.trim().toLowerCase();
+      const inputLength = inputValue.length;
+      return items
+        .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
+        .map(item => ({value: item}));
+    }
+    return items.map(item => ({value: item}));
+  }
+
   getSuggestionValue = suggestion => suggestion.value;
 
-  handleSelection = (e, {method}) => {
+  handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
+    if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
     if (method === 'enter') {
       e.preventDefault();
     }
@@ -103,6 +121,7 @@ export default class ComboboxComponent extends Component {
       name,
       id,
       label,
+      labelHidden,
       error,
       handle,
       isRequired,
@@ -121,10 +140,8 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={controlLabel}
-          htmlFor="city">
-          {label}
-        </label>
+          className={`${controlLabel} ${labelHidden && hidden}`}
+          htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
           <Autosuggest
@@ -136,8 +153,10 @@ export default class ComboboxComponent extends Component {
             onSuggestionsClearRequested={() => true}
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
+            focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
-              className: formControl,
+              ...this.props.inputProps,
+              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable}`,
               disabled,
               id,
               name,
