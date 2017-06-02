@@ -9,6 +9,22 @@ import {
   formGroup
 } from '../index.scss';
 
+function isFirstRow (optionsPerRow, idx) {
+  return idx <= optionsPerRow - 1;
+}
+
+function getFirstColClassName (optionsPerRow, idx) {
+  return (idx + 1) % optionsPerRow === 1 ? 'firstCol' : '';
+}
+
+function getLastColClassName (optionsPerRow, idx) {
+  return (idx + 1) % optionsPerRow === 0 ? 'lastCol' : '';
+}
+
+function getPositionClass (optionsPerRow, count, idx) {
+  if (!optionsPerRow) return '';
+  return [getFirstColClassName(optionsPerRow, idx), getLastColClassName(optionsPerRow, idx)].join(' ');
+}
 
 export default class Choice extends Component {
   static propTypes = {
@@ -21,6 +37,7 @@ export default class Choice extends Component {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
+    optionsPerRow: PropTypes.string,
     query: PropTypes.object,
     requiredLabel: PropTypes.string
   };
@@ -33,6 +50,7 @@ export default class Choice extends Component {
     headingStyle: 'control-label',
     isRequired: false,
     onChange: null,
+    optionsPerRow: null,
     query: {},
     requiredLabel: ''
   };
@@ -83,6 +101,8 @@ export default class Choice extends Component {
       requiredLabel
     } = this.props;
 
+    const optionsPerRow = this.props.optionsPerRow && parseInt(this.props.optionsPerRow, 10);
+
     const {
       checked
     } = this.state;
@@ -98,9 +118,9 @@ export default class Choice extends Component {
 
         {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
 
-        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`}>
+        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            <div className={styles.radioButton} key={item.id}>
+            <div className={`${styles.radioButton} ${!isFirstRow(optionsPerRow, idx) ? styles.notFirstRow : ''} ${getPositionClass(optionsPerRow, options.length, idx)}`} key={item.id}>
               <input
                 type="radio"
                 value={item.value}

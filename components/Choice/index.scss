@@ -128,3 +128,20 @@
     }
   }
 }
+
+[data-options-per-row='3'] {
+
+  .radioButton {
+    flex: 1 0 33%;
+  }
+}
+
+[data-options-per-row] {
+  flex-wrap: wrap;
+
+  .notFirstRow {
+    label {
+      border-top: 0;
+    }
+  }
+}

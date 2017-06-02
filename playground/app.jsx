@@ -24,6 +24,82 @@ const App = ({location: {pathname, query}}) => (
     <div className="panel">
       <div className="panel-body">
         <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice"
+              name="basic"
+              requiredLabel="Required"
+              onChange={() => {}}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
+                }
+              ]}
+              optionsPerRow="3"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Custom Choice"
+              checked="option-a"
+              name="custom"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Checked Custom Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B',
+                  value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
           <div className="col-md-8">
             <MultipleChoice
               name="choices[]"
@@ -555,80 +631,6 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              heading="Choice"
-              name="basic"
-              requiredLabel="Required"
-              onChange={() => {}}
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                },
-                {
-                  id: 'option-d',
-                  label: 'Option D',
-                  value: 'option-d'
-                },
-                {
-                  id: 'option-e',
-                  label: 'Option E',
-                  value: 'option-e'
-                },
-                {
-                  id: 'option-f',
-                  label: 'Option F',
-                  value: 'option-f'
-                }
-              ]}
-              query={query} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
-              checked="option-a"
-              name="disabled"
-              onChange={() => {}}
-              disabled
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Checked Disabled Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                }
-              ]} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
               heading="Custom Choice"
               checked="option-a"
               name="custom"
@@ -649,6 +651,21 @@ const App = ({location: {pathname, query}}) => (
                   id: 'option-c',
                   label: 'Option C',
                   value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Checked Custom Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
                 }
               ]} />
           </div>
