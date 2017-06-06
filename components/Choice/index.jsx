@@ -10,6 +10,13 @@ import {
 } from '../index.scss';
 
 export default class Choice extends Component {
+  static optionsPerRowPropType = (props, propName, componentName) => {
+    if (!/^[3-7]{1}$/.test(props[propName]) && props[propName] !== null) {
+      return new Error(`Invalid prop "${propName}" supplied to "${componentName}". Value should be between 3 and 7 or null. Validation failed`);
+    }
+
+    return null;
+  };
 
   static propTypes = {
     checked: PropTypes.string,
@@ -21,7 +28,7 @@ export default class Choice extends Component {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
-    optionsPerRow: PropTypes.string,
+    optionsPerRow: Choice.optionsPerRowPropType,
     query: PropTypes.object,
     requiredLabel: PropTypes.string
   };
