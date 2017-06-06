@@ -150,6 +150,19 @@ test('Renders a Choice with custom style disabled', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders a Choice with optionsPerRow set without crashing', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      optionsPerRow="3"
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Change checked when changed', () => {
   const component = mount(
     <Choice
