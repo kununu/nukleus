@@ -9,24 +9,8 @@ import {
   formGroup
 } from '../index.scss';
 
-function isFirstRow (optionsPerRow, idx) {
-  return idx <= optionsPerRow - 1;
-}
-
-function getFirstColClassName (optionsPerRow, idx) {
-  return (idx + 1) % optionsPerRow === 1 ? 'firstCol' : '';
-}
-
-function getLastColClassName (optionsPerRow, idx) {
-  return (idx + 1) % optionsPerRow === 0 ? 'lastCol' : '';
-}
-
-function getPositionClass (optionsPerRow, count, idx) {
-  if (!optionsPerRow) return '';
-  return [getFirstColClassName(optionsPerRow, idx), getLastColClassName(optionsPerRow, idx)].join(' ');
-}
-
 export default class Choice extends Component {
+
   static propTypes = {
     checked: PropTypes.string,
     customTheme: PropTypes.string,
@@ -90,6 +74,20 @@ export default class Choice extends Component {
     });
   };
 
+  // Unfortunately there is no css selector to check if an element would be the
+  // last one of the right side, if it isn't the last child
+  isLastRightCol (idx) {
+    const {options, optionsPerRow} = this.props;
+
+    // First check if optionsPerRow is set and count of options is no multiple of optionsPerRow
+    if (!optionsPerRow) return false;
+
+    // Check if index is the last right col
+    if ((idx + 1) % optionsPerRow === 0 && (idx + 1 + optionsPerRow) > options.length) return true;
+
+    return false;
+  }
+
   render () {
     const {
       customTheme,
@@ -120,7 +118,7 @@ export default class Choice extends Component {
 
         <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            <div className={`${styles.radioButton} ${!isFirstRow(optionsPerRow, idx) ? styles.notFirstRow : ''} ${getPositionClass(optionsPerRow, options.length, idx)}`} key={item.id}>
+            <div className={`${styles.radioButton} ${this.isLastRightCol(idx) ? styles.lastRightCol : ''}`} key={item.id}>
               <input
                 type="radio"
                 value={item.value}
