@@ -207,7 +207,7 @@
 
 @mixin options-per-row($count) {
   [data-options-per-row='#{$count}'] {
-    @media (min-width: $screen-sm-max) {
+    @media (min-width: $screen-md-min) {
       .radioButton {
         flex: 0 0 100% / $count;
 
