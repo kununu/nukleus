@@ -74,20 +74,6 @@ export default class Choice extends Component {
     });
   };
 
-  // Unfortunately there is no css selector to check if an element would be the
-  // last one of the right side, if it isn't the last child
-  isLastRightCol (idx) {
-    const {options, optionsPerRow} = this.props;
-
-    // First check if optionsPerRow is set and count of options is no multiple of optionsPerRow
-    if (!optionsPerRow) return false;
-
-    // Check if index is the last right col
-    if ((idx + 1) % optionsPerRow === 0 && (idx + 1 + optionsPerRow) > options.length) return true;
-
-    return false;
-  }
-
   render () {
     const {
       customTheme,
@@ -116,9 +102,9 @@ export default class Choice extends Component {
 
         {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
 
-        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`} data-options-per-row={optionsPerRow}>
+        <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            <div className={`${styles.radioButton} ${this.isLastRightCol(idx) ? styles.lastRightCol : ''}`} key={item.id}>
+            <div className={`${styles.radioButton}`} key={item.id}>
               <input
                 type="radio"
                 value={item.value}

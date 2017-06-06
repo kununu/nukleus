@@ -152,63 +152,118 @@
       }
     }
   }
-}
 
-[data-options-per-row='3'] {
+  // Mobile Styling
+  @media (max-width: $screen-sm-max) {
+    .radioButton {
+      flex: 0 0 50%;
 
-  .radioButton {
-    flex: 0 0 33.333333%;
+      // First Row
+      &:nth-child(-n+2) {
+        label {
+          border-top: 1px solid $blue;
+        }
+      }
 
-    label {
-      border-top: 0;
-    }
-  }
+      // All Left Radio Buttons
+      &:nth-child(2n + 1) {
+        label {
+          border-left: 1px solid $blue;
+        }
+      }
 
-  // Target last row
-  .radioButton:nth-child(3n+1):nth-last-child(-n+3),
-  .radioButton:nth-child(3n+1):nth-last-child(-n+3) ~ .radioButton {
-    label {
-      background: rgba(green, .3);
-    }
-  }
+      // Style for border corners
+      // Top Left Corner
+      &:first-child {
+        label {
+          border-top-left-radius: $border-radius-base;
+        }
+      }
 
-  // Target first radioButton of last row
-  .radioButton:nth-child(3n+1):nth-last-child(-n+3) {
-    label {
-      border-bottom-left-radius: $border-radius-base;
-    }
-  }
+      // Top Right Corner
+      &:nth-child(2) {
+        label {
+          border-top-right-radius: $border-radius-base;
+        }
+      }
 
-  // Target all left radioButtons
-  .radioButton:nth-child(3n + 1) {
-    label {
-      border-left: 1px solid $blue;
-    }
-  }
+      // Bottom Left Corner
+      &:nth-child(2n + 1):nth-last-child(-n + 2) {
+        label {
+          border-bottom-left-radius: $border-radius-base;
+        }
+      }
 
-  // Target first row
-  .radioButton:nth-child(-n + 3) {
-    label {
-      border-top: 1px solid $blue;
-    }
-
-    &:nth-child(3n) {
-      label {
-        border-top-right-radius: $border-radius-base;
+      // Bottom Right Corner
+      &:last-child,
+      &:nth-child(2n):nth-last-child(-n + 2) {
+        label {
+          border-bottom-right-radius: $border-radius-base;
+        }
       }
     }
   }
+}
 
-  .radioButton:first-child {
-    label {
-      border-top-left-radius: $border-radius-base;
-    }
-  }
+@mixin options-per-row($count) {
+  [data-options-per-row='#{$count}'] {
+    @media (min-width: $screen-sm-max) {
+      .radioButton {
+        flex: 0 0 100% / $count;
 
-  .lastRightCol,
-  .radioButton:last-child {
-    label {
-      border-bottom-right-radius: $border-radius-base;
+        label {
+          border-top: 0;
+        }
+      }
+
+      // Target first row
+      .radioButton:nth-child(-n + #{$count}) {
+        label {
+          border-top: 1px solid $blue;
+        }
+      }
+
+      // All left radioButtons
+      .radioButton:nth-child(#{$count}n + 1) {
+        label {
+          border-left: 1px solid $blue;
+        }
+      }
+
+      // Top Left Corner
+      .radioButton:first-child {
+        label {
+          border-top-left-radius: $border-radius-base;
+        }
+      }
+
+      // Top Right Corner
+      .radioButton:nth-child(#{$count}) {
+        label {
+          border-top-right-radius: $border-radius-base;
+        }
+      }
+
+      // Bottom Left Corner
+      .radioButton:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) {
+        label {
+          border-bottom-left-radius: $border-radius-base;
+        }
+      }
+
+      // Bottom Right Corner
+      .radioButton:nth-child(#{$count}n):nth-last-child(-n + #{$count}),
+      .radioButton:last-child {
+        label {
+          border-bottom-right-radius: $border-radius-base;
+        }
+      }
     }
   }
 }
+
+@include options-per-row(3);
+@include options-per-row(4);
+@include options-per-row(5);
+@include options-per-row(6);
+@include options-per-row(7);
