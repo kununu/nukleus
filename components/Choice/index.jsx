@@ -103,7 +103,7 @@ export default class Choice extends Component {
 
         <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            <div className={`${styles.radioButton}`} key={item.id}>
+            <div className={styles.radioButton} key={item.id}>
               <input
                 type="radio"
                 value={item.value}

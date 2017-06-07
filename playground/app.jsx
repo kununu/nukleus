@@ -634,6 +634,7 @@ const App = ({location: {pathname, query}}) => (
               heading="Choice with multiple rows"
               name="option-3-6"
               onChange={() => {}}
+              customTheme={styles.customThemeChoice}
               options={[
                 {
                   id: 'option-a-3-6',
@@ -678,6 +679,7 @@ const App = ({location: {pathname, query}}) => (
             <Choice
               name="option-3-5"
               onChange={() => {}}
+              customTheme={styles.customThemeChoice}
               options={[
                 {
                   id: 'option-a-3-5',
@@ -717,6 +719,7 @@ const App = ({location: {pathname, query}}) => (
             <Choice
               name="option-5-8"
               onChange={() => {}}
+              customTheme={styles.customThemeChoice}
               options={[
                 {
                   id: 'option-a-5-8',
