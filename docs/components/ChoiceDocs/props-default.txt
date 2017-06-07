@@ -5,6 +5,7 @@ static defaultProps = {
   heading: '',
   headingStyle: 'control-label',
   onChange: null,
+  optionsPerRow: false,
   query: {},
   isRequired: false
 };
