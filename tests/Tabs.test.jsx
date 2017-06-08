@@ -63,6 +63,6 @@ test('Throws error when not supported theme given', () => {
       pathname={'test'}
       theme="NOT_EXISTENT_THEME" />
   );
-
+  // eslint-disable-line no-console
   expect(console.error).toHaveBeenCalled();
 });
