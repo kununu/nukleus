@@ -9,11 +9,13 @@ export default class Tabs extends Component {
   static propTypes = {
     hash: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
+    theme: PropTypes.oneOf(['default', 'kununuNav'])
   };
 
   static defaultProps = {
-    hash: ''
+    hash: '',
+    theme: 'default'
   };
 
   getNewProps (item) {
@@ -30,9 +32,10 @@ export default class Tabs extends Component {
   }
 
   render () {
-    const {items} = this.props;
+    const {items, theme} = this.props;
+    const styleName = `${theme}Tabs`;
     return (
-      <ul className={`${styles.tabs} ${clearfix}`}>
+      <ul className={`${styles[styleName]} ${clearfix}`}>
         {items.map((item, key) => (
           <li
             key={key} // eslint-disable-line react/no-array-index-key
