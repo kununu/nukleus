@@ -41,7 +41,7 @@ const getRoutes = () => (
     <Route path="/notification" component={NotificationDocs} />
     <Route path="/select" component={SelectDocs} />
     <Route path="/table" component={TableDocs} />
-    <Route path="/tabs(/:page)" component={TabsDocs} />
+    <Route path="/tabs(/:page)" component={TabsDocs} theme="default" />
   </Route>
 );
 
