@@ -192,7 +192,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Tabs
-              theme="kununuNav"
+              theme="large"
               items={[
                 <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
                 <Link to={{pathname: '/playground/2', query}}><span className={styles.itemNumber}>10</span> Second Tab</Link>,

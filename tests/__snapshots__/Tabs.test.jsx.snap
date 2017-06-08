@@ -1,6 +1,6 @@
-exports[`test Renders Tabs using kununuNav theme without crashing 1`] = `
+exports[`test Renders Tabs using the large theme without crashing 1`] = `
 <ul
-  className="kununuNavTabs clearfix">
+  className="largeTabs clearfix">
   <li
     className="">
     <a
