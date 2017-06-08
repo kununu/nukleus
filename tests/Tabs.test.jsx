@@ -33,7 +33,7 @@ test('Renders Tabs with simple links as items without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders Tabs using the large theme without crashing', () => {
+test('Renders Tabs using the block theme without crashing', () => {
   const component = renderer.create(
     <Tabs
       items={[
@@ -42,7 +42,7 @@ test('Renders Tabs using the large theme without crashing', () => {
         <a href="/playground/3">Third Tab</a>
       ]}
       pathname={'test'}
-      theme="large" />
+      theme="block" />
   );
 
   const tree = component.toJSON();

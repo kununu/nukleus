@@ -10,7 +10,7 @@ export default class Tabs extends Component {
     hash: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.element).isRequired,
     pathname: PropTypes.string.isRequired,
-    theme: PropTypes.oneOf(['default', 'large'])
+    theme: PropTypes.oneOf(['default', 'block'])
   };
 
   static defaultProps = {

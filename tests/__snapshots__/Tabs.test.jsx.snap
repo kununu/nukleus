@@ -1,6 +1,6 @@
-exports[`test Renders Tabs using the large theme without crashing 1`] = `
+exports[`test Renders Tabs using the block theme without crashing 1`] = `
 <ul
-  className="largeTabs clearfix">
+  className="blockTabs clearfix">
   <li
     className="">
     <a
