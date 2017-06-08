@@ -34,6 +34,7 @@ export default class Tabs extends Component {
   render () {
     const {items, theme} = this.props;
     const styleName = `${theme}Tabs`;
+    
     return (
       <ul className={`${styles[styleName]} ${clearfix}`}>
         {items.map((item, key) => (
