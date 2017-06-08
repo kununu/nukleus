@@ -23,6 +23,7 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
+
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
@@ -555,80 +556,6 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              heading="Choice"
-              name="basic"
-              requiredLabel="Required"
-              onChange={() => {}}
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                },
-                {
-                  id: 'option-d',
-                  label: 'Option D',
-                  value: 'option-d'
-                },
-                {
-                  id: 'option-e',
-                  label: 'Option E',
-                  value: 'option-e'
-                },
-                {
-                  id: 'option-f',
-                  label: 'Option F',
-                  value: 'option-f'
-                }
-              ]}
-              query={query} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
-              checked="option-a"
-              name="disabled"
-              onChange={() => {}}
-              disabled
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Checked Disabled Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                }
-              ]} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
               heading="Custom Choice"
               checked="option-a"
               name="custom"
@@ -649,6 +576,21 @@ const App = ({location: {pathname, query}}) => (
                   id: 'option-c',
                   label: 'Option C',
                   value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Checked Custom Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
                 }
               ]} />
           </div>
@@ -683,6 +625,149 @@ const App = ({location: {pathname, query}}) => (
               ]} />
           </div>
         </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice with multiple rows"
+              name="option-3-6"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-3-6',
+                  label: 'Option A',
+                  value: 'option-a-3-6'
+                },
+                {
+                  id: 'option-b-3-6',
+                  label: 'Option B',
+                  value: 'option-b-3-6'
+                },
+                {
+                  id: 'option-c-3-6',
+                  label: 'Option C',
+                  value: 'option-c-3-6'
+                },
+                {
+                  id: 'option-d-3-6',
+                  label: 'Option D',
+                  value: 'option-d-3-6'
+                },
+                {
+                  id: 'option-e-3-6',
+                  label: 'Option E',
+                  value: 'option-e-3-6'
+                },
+                {
+                  id: 'option-f-3-6',
+                  label: 'Option F',
+                  value: 'option-f-3-6'
+                }
+              ]}
+              optionsPerRow="3"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              name="option-3-5"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-3-5',
+                  label: 'Option A',
+                  value: 'option-a-3-5'
+                },
+                {
+                  id: 'option-b-3-5',
+                  label: 'Option B',
+                  value: 'option-b-3-5'
+                },
+                {
+                  id: 'option-c-3-5',
+                  label: 'Option C',
+                  value: 'option-c-3-5'
+                },
+                {
+                  id: 'option-d-3-5',
+                  label: 'Option D',
+                  value: 'option-d-3-5'
+                },
+                {
+                  id: 'option-e-3-5',
+                  label: 'Option E',
+                  value: 'option-e-3-5'
+                }
+              ]}
+              optionsPerRow="3"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              name="option-5-8"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-5-8',
+                  label: 'Option A',
+                  value: 'option-a-5-8'
+                },
+                {
+                  id: 'option-b-5-8',
+                  label: 'Option B',
+                  value: 'option-b-5-8'
+                },
+                {
+                  id: 'option-c-5-8',
+                  label: 'Option C',
+                  value: 'option-c-5-8'
+                },
+                {
+                  id: 'option-d-5-8',
+                  label: 'Option D',
+                  value: 'option-d-5-8'
+                },
+                {
+                  id: 'option-e-5-8',
+                  label: 'Option E',
+                  value: 'option-e-5-8'
+                },
+                {
+                  id: 'option-f-5-8',
+                  label: 'Option F',
+                  value: 'option-f-5-8'
+                },
+                {
+                  id: 'option-g-5-8',
+                  label: 'Option G',
+                  value: 'option-g-5-8'
+                },
+                {
+                  id: 'option-h-5-8',
+                  label: 'Option H',
+                  value: 'option-h-5-8'
+                }
+              ]}
+              optionsPerRow="5"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
 
       </div>
     </div>
