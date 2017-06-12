@@ -13,6 +13,7 @@ import {
   controlLabelRequired,
   controlNote,
   formControl,
+  formControlError,
   formGroup
 } from '../index.scss';
 
@@ -91,6 +92,10 @@ export default class DatePickerComponent extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {
       title,
@@ -116,7 +121,7 @@ export default class DatePickerComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${this.state.showError && error ? controlLabelError : ''}`}
+          className={`${controlLabel} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>
 
           {title}
@@ -124,7 +129,7 @@ export default class DatePickerComponent extends Component {
 
         <div className={styles.innerContainer}>
           <DatePicker
-            className={formControl}
+            className={`${formControl} ${this.hasError() ? formControlError : ''}`}
             name={name}
             id={id}
             disabled={disabled}
@@ -140,7 +145,7 @@ export default class DatePickerComponent extends Component {
             </span>
           : ''}
 
-          {this.state.showError && error &&
+          {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />
