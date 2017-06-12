@@ -4,10 +4,10 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
   controlNote,
-  errorStyles,
   hidden,
   formControl,
   formGroup,
@@ -21,6 +21,7 @@ export default class TextField extends Component {
     autoFocus: PropTypes.bool,
     disable: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -50,6 +51,7 @@ export default class TextField extends Component {
     autoFocus: false,
     disable: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
@@ -123,6 +125,7 @@ export default class TextField extends Component {
       autoFocus,
       disable,
       error,
+      errorSubInfo,
       id,
       inputStyle,
       label,
@@ -145,7 +148,7 @@ export default class TextField extends Component {
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? styles.labelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
@@ -182,8 +185,10 @@ export default class TextField extends Component {
           }
 
           {this.state.showError && error &&
-            <span className={errorStyles}>{error}</span>
-          }
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );
