@@ -251,6 +251,21 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field-error"
+              label="TextField with error"
+              name="text-field-error"
+              error="This is an error message"
+              errorSubInfo="Some useful hints"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-md-8">
             <TextField
