@@ -225,6 +225,8 @@ const App = ({location: {pathname, query}}) => (
               scrollTo
               id="test"
               value="purrr"
+              error="An Error"
+              errorSubInfo="with useful hints"
               query={query}
               onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
               placeholder="Type something..."

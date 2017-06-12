@@ -4,14 +4,16 @@ import Scroll from 'react-scroll';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import getElementPositionY from '../../utils/elementPosition';
 import isMobile from '../../utils/mobileDetection';
 import {
   controlLabel,
+  controlLabelError,
   controlLabelRequired,
   controlNote,
-  errorStyles,
   formControl,
+  formControlError,
   hidden,
   formGroup,
   srOnly
@@ -23,6 +25,7 @@ export default class Autocomplete extends React.Component {
     data: PropTypes.object,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -46,6 +49,7 @@ export default class Autocomplete extends React.Component {
     data: {},
     disabled: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
@@ -70,6 +74,9 @@ export default class Autocomplete extends React.Component {
 
   componentWillMount () {
     this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -159,6 +166,10 @@ export default class Autocomplete extends React.Component {
     });
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   scrollToElement = () => {
     if (this.props.scrollTo && isMobile) {
       const elementPos = getElementPositionY(this.node, this.props.scrollOffset);
@@ -186,6 +197,7 @@ export default class Autocomplete extends React.Component {
       data: {isFetching},
       disabled,
       error,
+      errorSubInfo,
       label,
       labelHidden,
       id,
@@ -197,7 +209,6 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     const {
-      showError,
       showNoSuggestionsText,
       suggestions,
       value
@@ -205,7 +216,7 @@ export default class Autocomplete extends React.Component {
 
     const inputProps = {
       autoFocus,
-      className: formControl,
+      className: `${formControl} ${this.hasError() ? formControlError : ''}`,
       disabled,
       id,
       name,
@@ -235,7 +246,7 @@ export default class Autocomplete extends React.Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>
           {label}
         </label>
@@ -272,11 +283,11 @@ export default class Autocomplete extends React.Component {
             : ''
           }
 
-          {showError &&
-            <span className={errorStyles}>
-              {error}
-            </span>
-          }
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );
