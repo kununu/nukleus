@@ -122,6 +122,10 @@ export default class ComboboxComponent extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   renderSuggestion = suggestion => <span>{suggestion.value}</span>;
 
   render () {
@@ -149,7 +153,7 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
@@ -181,7 +185,7 @@ export default class ComboboxComponent extends Component {
             </span>
           : ''}
 
-          {this.state.showError && error &&
+          {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />
