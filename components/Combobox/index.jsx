@@ -6,10 +6,11 @@ import Autosuggest from 'react-autosuggest';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
+  controlLabelError,
   controlNote,
-  errorStyles,
   formControl,
   formGroup,
   controlLabelRequired,
@@ -21,6 +22,7 @@ export default class ComboboxComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputProps: PropTypes.object,
@@ -40,6 +42,7 @@ export default class ComboboxComponent extends Component {
   static defaultProps = {
     disabled: false,
     error: null,
+    errorSubInfo: null,
     handle: null,
     inputProps: {},
     inputStyles: 'inline',
@@ -59,6 +62,11 @@ export default class ComboboxComponent extends Component {
     suggestions: this.getSuggestions('', this.props.items),
     value: this.props.inputValue
   };
+
+  componentWillMount () {
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
+  }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
@@ -123,6 +131,7 @@ export default class ComboboxComponent extends Component {
       label,
       labelHidden,
       error,
+      errorSubInfo,
       handle,
       isRequired,
       requiredLabel,
@@ -140,7 +149,7 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
@@ -172,8 +181,11 @@ export default class ComboboxComponent extends Component {
             </span>
           : ''}
 
-          {this.state.showError &&
-            <span className={errorStyles}>{error}</span>}
+          {this.state.showError && error &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );
