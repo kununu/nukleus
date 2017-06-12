@@ -12,6 +12,7 @@ import {
   controlNote,
   hidden,
   formControl,
+  formControlError,
   formGroup,
   srOnly
 } from '../index.scss';
@@ -99,6 +100,10 @@ export default class Select extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {
       autoFocus,
@@ -128,7 +133,7 @@ export default class Select extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>
@@ -140,7 +145,7 @@ export default class Select extends Component {
             required={isRequired}
             autoFocus={autoFocus}
             onChange={this.onChange}
-            className={`${formControl} ${styles.select}`}
+            className={`${formControl} ${styles.select} ${this.hasError() ? formControlError : ''}`}
             disabled={disabled}>
 
             {defaultRequired &&
@@ -156,7 +161,7 @@ export default class Select extends Component {
             )}
           </select>
 
-          {this.state.showError && error &&
+          {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />
