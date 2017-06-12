@@ -11,6 +11,7 @@ import {
   controlNote,
   hidden,
   formControl,
+  formControlError,
   formGroup,
   srOnly,
   controlLabelRequired
@@ -120,6 +121,10 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {
       autoComplete,
@@ -149,7 +154,7 @@ export default class TextField extends Component {
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
@@ -157,7 +162,7 @@ export default class TextField extends Component {
             multiLine ?
               <textarea
                 autoFocus={autoFocus}
-                className={`${formControl} ${styles.textarea}`}
+                className={`${formControl} ${styles.textarea} ${this.hasError() ? formControlError : ''}`}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -171,7 +176,7 @@ export default class TextField extends Component {
               <input
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
-                className={formControl}
+                className={`${formControl} ${this.hasError() ? formControlError : ''}`}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -185,7 +190,7 @@ export default class TextField extends Component {
                 value={this.state.value} />
           }
 
-          {this.state.showError && error &&
+          {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />

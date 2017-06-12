@@ -80,6 +80,10 @@
   }
 }
 
+.formControlError {
+  border: 2px solid $red;
+}
+
 .controlNote {
   color: $gray-base-30;
   float: right;
