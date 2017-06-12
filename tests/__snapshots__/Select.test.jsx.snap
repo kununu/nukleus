@@ -5,6 +5,7 @@ exports[`test Changes status on value change 1`] = `
   defaultRequired=""
   disabled={false}
   error={null}
+  errorSubInfo={null}
   id="select"
   inputStyle="inline"
   isRequired={true}
@@ -25,7 +26,7 @@ exports[`test Changes status on value change 1`] = `
   <div
     className="formGroup inline ">
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="select">
       Select
     </label>
@@ -58,12 +59,59 @@ exports[`test Changes status on value change 1`] = `
 </Select>
 `;
 
+exports[`test Renders Select with an error message without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel false controlLabelError"
+    htmlFor="select">
+    Select
+  </label>
+  <div
+    className="inputContainer">
+    <select
+      autoFocus={false}
+      className="formControl select"
+      disabled={false}
+      id="select"
+      name="select"
+      onChange={[Function]}
+      required={true}
+      value="option">
+      
+      
+      <option
+        value="option">
+        Option
+      </option>
+      <option
+        value="option-2">
+        Option 2
+      </option>
+      <option
+        value="option-3">
+        Option 3
+      </option>
+    </select>
+    <span
+      className="error inline">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
 exports[`test Renders Select without crashing 1`] = `
 <div
   className="formGroup inline ">
   
   <label
-    className="controlLabel false"
+    className="controlLabel false "
     htmlFor="select">
     Select
   </label>
