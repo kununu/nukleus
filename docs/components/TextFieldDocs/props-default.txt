@@ -3,6 +3,7 @@ static defaultProps = {
   autoFocus: false,
   disable: false,
   error: null,
+  errorSubInfo: null,
   inputStyle: 'inline',
   labelHidden: false,
   maxLength: 500,
