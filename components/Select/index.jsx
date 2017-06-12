@@ -4,11 +4,12 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
+  controlLabelError,
   controlLabelRequired,
   controlNote,
-  errorStyles,
   hidden,
   formControl,
   formGroup,
@@ -23,6 +24,7 @@ export default class Select extends Component {
     defaultRequired: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -42,6 +44,7 @@ export default class Select extends Component {
     defaultRequired: '',
     disabled: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
     items: {},
@@ -59,6 +62,9 @@ export default class Select extends Component {
 
   componentWillMount () {
     this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -100,6 +106,7 @@ export default class Select extends Component {
       defaultRequired,
       disabled,
       error,
+      errorSubInfo,
       id,
       inputStyle,
       items,
@@ -121,7 +128,7 @@ export default class Select extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>
@@ -150,7 +157,10 @@ export default class Select extends Component {
           </select>
 
           {this.state.showError && error &&
-            <span className={errorStyles}>error</span>}
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );

@@ -7,6 +7,7 @@ import styles from './index.scss';
 import Error from '../Error';
 import {
   controlLabel,
+  controlLabelError,
   controlNote,
   hidden,
   formControl,
@@ -148,7 +149,7 @@ export default class TextField extends Component {
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? styles.labelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.state.showError && error ? controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
