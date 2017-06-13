@@ -3,6 +3,7 @@ static defaultProps = {
   data: {},
   disabled: false,
   error: null,
+  errorSubInfo: null,
   inputStyle: 'inline',
   labelHidden: false,
   noSuggestionText: 'No results found',

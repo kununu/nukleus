@@ -3,6 +3,7 @@ static propTypes = {
   data: PropTypes.object,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   label: PropTypes.string.isRequired,
