@@ -3,6 +3,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   autoComplete="off"
   autoFocus={false}
   disable={false}
+  displayMaxLength={false}
   error={null}
   id="text-field"
   inputStyle="inline"
@@ -52,6 +53,43 @@ exports[`test Changes output on value change manipulation 1`] = `
     </div>
   </div>
 </TextField>
+`;
+
+exports[`test Renders A TextField with visible character counter without crashing 1`] = `
+<div
+  className="formGroup inline paddingTop">
+  <span
+    className="controlNote controlLabelRequired">
+    <strong>
+      5
+    </strong>
+    /
+    500
+  </span>
+  <label
+    className="controlLabel false"
+    htmlFor="text-field">
+    TextField
+  </label>
+  <div
+    className="inputContainer">
+    <input
+      autoComplete="off"
+      autoFocus={false}
+      className="formControl"
+      disabled={false}
+      id="text-field"
+      maxLength={500}
+      name="text-field"
+      onChange={[Function]}
+      pattern=""
+      placeholder=""
+      required={true}
+      title=""
+      type="text"
+      value="test2" />
+  </div>
+</div>
 `;
 
 exports[`test Renders TextField with multiline without crashing 1`] = `
