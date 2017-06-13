@@ -20,6 +20,7 @@ export default class TextField extends Component {
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,
     disable: PropTypes.bool,
+    displayLength: PropTypes.bool,
     error: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
@@ -49,6 +50,7 @@ export default class TextField extends Component {
     autoComplete: 'off',
     autoFocus: false,
     disable: false,
+    displayLength: false,
     error: null,
     inputStyle: 'inline',
     isRequired: false,
@@ -114,11 +116,31 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
+  renderInputLabel () {
+    const {
+      requiredLabel,
+      maxLength,
+      displayLength
+    } = this.props;
+    const {value} = this.state;
+
+    // Show requiredLabel if available and user hasn't typed any values
+    if (requiredLabel && (!displayLength || value.trim() === '')) {
+      return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
+    }
+    return displayLength ? (
+      <span className={`${controlNote} ${controlLabelRequired}`}>
+        <strong>{value.trim().length}</strong>/{maxLength}
+      </span>
+    ) : null;
+  }
+
   render () {
     const {
       autoComplete,
       autoFocus,
       disable,
+      displayLength,
       error,
       id,
       inputStyle,
@@ -137,8 +159,8 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
-        {requiredLabel && <span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>}
+      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel || displayLength ? styles.paddingTop : ''}`}>
+        {this.renderInputLabel()}
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label

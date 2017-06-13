@@ -43,3 +43,18 @@ test('Renders TextField with multiline without crashing', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+// textarea
+test('Renders A TextField with visible character counter without crashing', () => {
+  const component = renderer.create(
+    <TextField
+      id="text-field"
+      label="TextField"
+      name="text-field"
+      value="test2"
+      displayLength
+      isRequired
+      requiredLabel="required" />
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});

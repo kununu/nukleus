@@ -2,6 +2,7 @@ static propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
   disable: PropTypes.bool,
+  displayLength: PropTypes.bool,
   error: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
