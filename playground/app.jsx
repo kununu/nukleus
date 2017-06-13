@@ -225,13 +225,37 @@ const App = ({location: {pathname, query}}) => (
               scrollTo
               id="test"
               value="purrr"
+              query={query}
+              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
+              placeholder="Type something..."
+              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              label="Autocomplete"
+              isRequired
+              requiredLabel="Required"
+              name="autocomplete" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Autocomplete
+              autoFocus
+              data={{
+                items: [
+                  {item: 'meow', itemInfo: 'hard'},
+                  {item: 'meowing', itemInfo: 'harder'}
+                ]
+              }}
+              scrollTo
+              id="test-error"
+              value="purrr"
               error="An Error"
               errorSubInfo="with useful hints"
               query={query}
               onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
-              label="Autocomplete"
+              label="Autocomplete with Error"
               isRequired
               requiredLabel="Required"
               name="autocomplete" />
@@ -253,8 +277,6 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
-        <br />
-
         <div className="row">
           <div className="col-md-8">
             <TextField
@@ -267,6 +289,8 @@ const App = ({location: {pathname, query}}) => (
               requiredLabel="Required" />
           </div>
         </div>
+
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -361,6 +385,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-with-error"
+              name="date-picker-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Select
               title="Select"
               name="select"
@@ -374,11 +414,45 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <Select
+              title="Select with Error"
+              name="select-error"
+              id="select-error"
+              error="Please select something"
+              errorSubInfo="Anything"
+              isRequired
+              requiredLabel="Required"
+              value="option"
+              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Combobox
               handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
+              isRequired
+              requiredLabel="Required"
+              placeholder="Type m"
+              keyName="name"
+              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Combobox
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
+              name="name-error"
+              label="Combobox with Error"
+              id="name-error"
+              error="Error in a Comboxbox"
+              errorSubInfo="What can you do?"
               isRequired
               requiredLabel="Required"
               placeholder="Type m"
