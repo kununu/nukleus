@@ -12,6 +12,7 @@ import {
   controlLabelError,
   controlNote,
   formControl,
+  formControlError,
   formGroup,
   controlLabelRequired,
   hidden
@@ -160,6 +161,8 @@ export default class ComboboxComponent extends Component {
           <Autosuggest
             suggestions={this.state.suggestions}
             theme={styles}
+            error={error}
+            errorSubInfo={errorSubInfo}
             onSuggestionSelected={this.handleSelection}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             shouldRenderSuggestions={() => true}
@@ -169,7 +172,7 @@ export default class ComboboxComponent extends Component {
             focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
               ...this.props.inputProps,
-              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable}`,
+              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
               disabled,
               id,
               name,
