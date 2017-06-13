@@ -95,7 +95,7 @@ exports[`test Renders Select with an error message without crashing 1`] = `
       </option>
     </select>
     <span
-      className="error inline">
+      className="error">
       <strong
         className="info">
         An Error

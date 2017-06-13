@@ -123,7 +123,7 @@ exports[`test Renders TextField with an error message without crashing 1`] = `
       type="text"
       value="test" />
     <span
-      className="error inline">
+      className="error">
       <strong
         className="info">
         An Error

@@ -22,7 +22,7 @@ exports[`test Renders datepicker with an error message without crashing 1`] = `
       showYearDropdown={true} />
     
     <span
-      className="error inline">
+      className="error">
       <strong
         className="info">
         An Error

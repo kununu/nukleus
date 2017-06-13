@@ -202,7 +202,7 @@ exports[`test Renders Autocomplete with Error without crashing 1`] = `
     </div>
     
     <span
-      className="error inline">
+      className="error">
       <strong
         className="info">
         An Error
