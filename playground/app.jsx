@@ -257,7 +257,7 @@ const App = ({location: {pathname, query}}) => (
               id="text-field-limited"
               label="TextField with Character Count"
               name="text-field-limited"
-              displayMaxLength
+              displayLength
               maxLength={120}
               isRequired
               requiredLabel="Required" />

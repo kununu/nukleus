@@ -20,7 +20,7 @@ export default class TextField extends Component {
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,
     disable: PropTypes.bool,
-    displayMaxLength: PropTypes.bool,
+    displayLength: PropTypes.bool,
     error: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
@@ -50,7 +50,7 @@ export default class TextField extends Component {
     autoComplete: 'off',
     autoFocus: false,
     disable: false,
-    displayMaxLength: false,
+    displayLength: false,
     error: null,
     inputStyle: 'inline',
     isRequired: false,
@@ -120,15 +120,15 @@ export default class TextField extends Component {
     const {
       requiredLabel,
       maxLength,
-      displayMaxLength
+      displayLength
     } = this.props;
     const {value} = this.state;
 
     // Show requiredLabel if available and user hasn't typed any values
-    if (requiredLabel && (!displayMaxLength || value.trim() === '')) {
-      return requiredLabel ? (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>) : null;
+    if (requiredLabel && (!displayLength || value.trim() === '')) {
+      return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
     }
-    return displayMaxLength ? (
+    return displayLength ? (
       <span className={`${controlNote} ${controlLabelRequired}`}>
         <strong>{value.trim().length}</strong>/{maxLength}
       </span>
@@ -140,7 +140,7 @@ export default class TextField extends Component {
       autoComplete,
       autoFocus,
       disable,
-      displayMaxLength,
+      displayLength,
       error,
       id,
       inputStyle,
@@ -159,7 +159,7 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel || displayMaxLength ? styles.paddingTop : ''}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel || displayLength ? styles.paddingTop : ''}`}>
         {this.renderInputLabel()}
         {labelHidden && <span className={srOnly}>{label}</span>}
 
