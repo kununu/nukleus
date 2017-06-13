@@ -158,6 +158,61 @@ exports[`test Hides no suggestions on blur 1`] = `
 </Autocomplete>
 `;
 
+exports[`test Renders Autocomplete with Error without crashing 1`] = `
+<div
+  className="formGroup inline paddingTop">
+  <span
+    className="controlNote controlLabelRequired">
+    Required
+  </span>
+  <label
+    className="controlLabel false controlLabelError"
+    htmlFor="autocompletes">
+    Autocomplete
+  </label>
+  <div
+    className="autoCompleteContainer">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        autoFocus={false}
+        className="formControl formControlError"
+        disabled={true}
+        id="autocompletes"
+        name="autocomplete"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type something..."
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="test" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+    <span
+      className="error inline">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
 exports[`test Renders Autocomplete without crashing 1`] = `
 <div
   className="formGroup inline paddingTop">
