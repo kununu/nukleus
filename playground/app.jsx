@@ -280,6 +280,19 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <TextField
+              id="text-field-limited"
+              label="TextField with Char Limit"
+              name="text-field-limited"
+              displayLength
+              maxLength={120}
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
               id="text-field-error"
               label="TextField with error"
               name="text-field-error"
