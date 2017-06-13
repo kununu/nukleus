@@ -15,10 +15,27 @@ const combobox = (
     items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
 );
 
+const comboboxWithError = (
+  <Combobox
+    name="name"
+    label="Combobox"
+    error="An Error"
+    errorSubInfo="with useful hints"
+    id="name"
+    isRequired
+    placeholder="Type m"
+    keyName="name"
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
+);
+
 test('Renders Combobox without crashing', () => {
   const component = renderer.create(combobox);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Renders Combobox with an error message without crashing', () => {
+  const component = renderer.create(comboboxWithError);
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Causes dropdown to show when input is focused', () => {
@@ -43,8 +60,7 @@ const notSearchableCombobox = (
 
 test('Renders notSearchableCombobox without crashing', () => {
   const component = renderer.create(notSearchableCombobox);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Causes dropdown to show when input is focused', () => {

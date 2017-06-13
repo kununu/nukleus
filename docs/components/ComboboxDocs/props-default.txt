@@ -1,6 +1,7 @@
 static defaultProps = {
   disabled: false,
   error: null,
+  errorSubInfo: null,
   handle: null,
   inputProps: {},
   inputStyles: 'inline',

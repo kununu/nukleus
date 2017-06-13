@@ -4,12 +4,14 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
+  controlLabelError,
   controlNote,
-  errorStyles,
   hidden,
   formControl,
+  formControlError,
   formGroup,
   srOnly,
   controlLabelRequired
@@ -22,6 +24,7 @@ export default class TextField extends Component {
     disable: PropTypes.bool,
     displayLength: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -52,6 +55,7 @@ export default class TextField extends Component {
     disable: false,
     displayLength: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
@@ -75,6 +79,9 @@ export default class TextField extends Component {
 
   componentWillMount () {
     this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -116,6 +123,10 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   renderInputLabel () {
     const {
       requiredLabel,
@@ -142,6 +153,7 @@ export default class TextField extends Component {
       disable,
       displayLength,
       error,
+      errorSubInfo,
       id,
       inputStyle,
       label,
@@ -164,7 +176,7 @@ export default class TextField extends Component {
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
@@ -172,7 +184,7 @@ export default class TextField extends Component {
             multiLine ?
               <textarea
                 autoFocus={autoFocus}
-                className={`${formControl} ${styles.textarea}`}
+                className={`${formControl} ${styles.textarea} ${this.hasError() ? formControlError : ''}`}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -186,7 +198,7 @@ export default class TextField extends Component {
               <input
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
-                className={formControl}
+                className={`${formControl} ${this.hasError() ? formControlError : ''}`}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -200,9 +212,11 @@ export default class TextField extends Component {
                 value={this.state.value} />
           }
 
-          {this.state.showError && error &&
-            <span className={errorStyles}>{error}</span>
-          }
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );

@@ -29,6 +29,7 @@ exports[`test Hides no suggestions on blur 1`] = `
   }
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -52,7 +53,7 @@ exports[`test Hides no suggestions on blur 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -67,7 +68,7 @@ exports[`test Hides no suggestions on blur 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl",
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -95,7 +96,7 @@ exports[`test Hides no suggestions on blur 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl",
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -132,7 +133,7 @@ exports[`test Hides no suggestions on blur 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               autoFocus={false}
-              className="formControl"
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -157,7 +158,7 @@ exports[`test Hides no suggestions on blur 1`] = `
 </Autocomplete>
 `;
 
-exports[`test Renders Autocomplete without crashing 1`] = `
+exports[`test Renders Autocomplete with Error without crashing 1`] = `
 <div
   className="formGroup inline paddingTop">
   <span
@@ -165,7 +166,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
     Required
   </span>
   <label
-    className="controlLabel false"
+    className="controlLabel false controlLabelError"
     htmlFor="autocompletes">
     Autocomplete
   </label>
@@ -181,7 +182,62 @@ exports[`test Renders Autocomplete without crashing 1`] = `
         aria-owns="react-autowhatever-1"
         autoComplete="off"
         autoFocus={false}
-        className="formControl"
+        className="formControl formControlError"
+        disabled={true}
+        id="autocompletes"
+        name="autocomplete"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type something..."
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="test" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders Autocomplete without crashing 1`] = `
+<div
+  className="formGroup inline paddingTop">
+  <span
+    className="controlNote controlLabelRequired">
+    Required
+  </span>
+  <label
+    className="controlLabel false "
+    htmlFor="autocompletes">
+    Autocomplete
+  </label>
+  <div
+    className="autoCompleteContainer">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        autoFocus={false}
+        className="formControl "
         disabled={true}
         id="autocompletes"
         name="autocomplete"
@@ -235,6 +291,7 @@ exports[`test Renders no suggestions container 1`] = `
   }
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -258,7 +315,7 @@ exports[`test Renders no suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -273,7 +330,7 @@ exports[`test Renders no suggestions container 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl",
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -301,7 +358,7 @@ exports[`test Renders no suggestions container 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl",
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -338,7 +395,7 @@ exports[`test Renders no suggestions container 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               autoFocus={false}
-              className="formControl"
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -403,6 +460,7 @@ exports[`test Renders suggestions container 1`] = `
   }
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -426,7 +484,7 @@ exports[`test Renders suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -441,7 +499,7 @@ exports[`test Renders suggestions container 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl",
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -480,7 +538,7 @@ exports[`test Renders suggestions container 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl",
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -528,7 +586,7 @@ exports[`test Renders suggestions container 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               autoFocus={false}
-              className="formControl"
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -708,6 +766,7 @@ exports[`test Updates value on selection 1`] = `
   }
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -731,7 +790,7 @@ exports[`test Updates value on selection 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -746,7 +805,7 @@ exports[`test Updates value on selection 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl",
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -774,7 +833,7 @@ exports[`test Updates value on selection 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl",
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -811,7 +870,7 @@ exports[`test Updates value on selection 1`] = `
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               autoFocus={false}
-              className="formControl"
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"

@@ -4,6 +4,7 @@ static defaultProps = {
   defaultRequired: '',
   disabled: false,
   error: null,
+  errorSubInfo: null,
   inputStyle: 'inline',
   items: {},
   labelHidden: false,

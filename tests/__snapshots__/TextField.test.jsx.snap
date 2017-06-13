@@ -5,6 +5,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   disable={false}
   displayLength={false}
   error={null}
+  errorSubInfo={null}
   id="text-field"
   inputStyle="inline"
   isRequired={true}
@@ -29,7 +30,7 @@ exports[`test Changes output on value change manipulation 1`] = `
       required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel false "
       htmlFor="text-field">
       TextField
     </label>
@@ -38,7 +39,7 @@ exports[`test Changes output on value change manipulation 1`] = `
       <input
         autoComplete="off"
         autoFocus={false}
-        className="formControl"
+        className="formControl "
         disabled={false}
         id="text-field"
         maxLength={500}
@@ -67,7 +68,7 @@ exports[`test Renders A TextField with visible character counter without crashin
     500
   </span>
   <label
-    className="controlLabel false"
+    className="controlLabel false "
     htmlFor="text-field">
     TextField
   </label>
@@ -76,7 +77,7 @@ exports[`test Renders A TextField with visible character counter without crashin
     <input
       autoComplete="off"
       autoFocus={false}
-      className="formControl"
+      className="formControl "
       disabled={false}
       id="text-field"
       maxLength={500}
@@ -92,6 +93,47 @@ exports[`test Renders A TextField with visible character counter without crashin
 </div>
 `;
 
+exports[`test Renders TextField with an error message without crashing 1`] = `
+<div
+  className="formGroup inline paddingTop">
+  <span
+    className="controlNote controlLabelRequired">
+    required
+  </span>
+  <label
+    className="controlLabel false controlLabelError"
+    htmlFor="text-field">
+    TextField
+  </label>
+  <div
+    className="inputContainer">
+    <input
+      autoComplete="off"
+      autoFocus={false}
+      className="formControl formControlError"
+      disabled={false}
+      id="text-field"
+      maxLength={500}
+      name="text-field"
+      onChange={[Function]}
+      pattern=""
+      placeholder=""
+      required={true}
+      title=""
+      type="text"
+      value="test" />
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
 exports[`test Renders TextField with multiline without crashing 1`] = `
 <div
   className="formGroup inline paddingTop">
@@ -100,7 +142,7 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
     required
   </span>
   <label
-    className="controlLabel false"
+    className="controlLabel false "
     htmlFor="text-field">
     TextField
   </label>
@@ -108,7 +150,7 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
     className="inputContainer">
     <textarea
       autoFocus={false}
-      className="formControl textarea"
+      className="formControl textarea "
       disabled={false}
       id="text-field"
       maxLength={500}
@@ -131,7 +173,7 @@ exports[`test Renders TextField without crashing 1`] = `
     required
   </span>
   <label
-    className="controlLabel false"
+    className="controlLabel false "
     htmlFor="text-field">
     TextField
   </label>
@@ -140,7 +182,7 @@ exports[`test Renders TextField without crashing 1`] = `
     <input
       autoComplete="off"
       autoFocus={false}
-      className="formControl"
+      className="formControl "
       disabled={false}
       id="text-field"
       maxLength={500}

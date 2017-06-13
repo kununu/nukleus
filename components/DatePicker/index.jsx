@@ -6,12 +6,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
-  errorStyles,
   controlLabel,
+  controlLabelError,
   controlLabelRequired,
   controlNote,
   formControl,
+  formControlError,
   formGroup
 } from '../index.scss';
 
@@ -19,6 +21,7 @@ export default class DatePickerComponent extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     icon: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
@@ -35,6 +38,7 @@ export default class DatePickerComponent extends Component {
   static defaultProps = {
     disabled: false,
     error: null,
+    errorSubInfo: null,
     icon: null,
     inputStyle: 'inline',
     isClearable: true,
@@ -56,6 +60,9 @@ export default class DatePickerComponent extends Component {
       this.props.value ||
       ''
     );
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -85,6 +92,10 @@ export default class DatePickerComponent extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {
       title,
@@ -92,6 +103,7 @@ export default class DatePickerComponent extends Component {
       icon,
       id,
       error,
+      errorSubInfo,
       inputStyle,
       disabled,
       isClearable,
@@ -109,7 +121,7 @@ export default class DatePickerComponent extends Component {
         }
 
         <label
-          className={controlLabel}
+          className={`${controlLabel} ${this.hasError() ? controlLabelError : ''}`}
           htmlFor={id}>
 
           {title}
@@ -117,7 +129,7 @@ export default class DatePickerComponent extends Component {
 
         <div className={styles.innerContainer}>
           <DatePicker
-            className={formControl}
+            className={`${formControl} ${this.hasError() ? formControlError : ''}`}
             name={name}
             id={id}
             disabled={disabled}
@@ -132,12 +144,14 @@ export default class DatePickerComponent extends Component {
               {icon}
             </span>
           : ''}
+
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
 
-        {this.state.showError &&
-          <span className={errorStyles}>
-            {error}
-          </span>}
       </div>
     );
   }

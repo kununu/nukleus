@@ -4,6 +4,7 @@ static defaultProps = {
   disable: false,
   displayLength: false,
   error: null,
+  errorSubInfo: null,
   inputStyle: 'inline',
   labelHidden: false,
   maxLength: 500,

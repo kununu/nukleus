@@ -80,6 +80,10 @@
   }
 }
 
+.formControlError {
+  border: 2px solid $red;
+}
+
 .controlNote {
   color: $gray-base-30;
   float: right;
@@ -165,3 +169,9 @@
   right: 2px;
 }
 
+.controlLabelError {
+  align-self: flex-start; // otherwise would be centered between Input Field and error
+  display: flex;
+  align-items: center;
+  min-height: 46px; // height of input
+}

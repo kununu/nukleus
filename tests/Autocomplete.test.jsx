@@ -27,8 +27,38 @@ const staticAutocomplete = (
     scrollTo />
 );
 
+const staticAutocompleteWithError = (
+  <Autocomplete
+    data={{
+      items: [
+        {item: 'apple', itemInfo: 'US'},
+        {item: 'alpha', itemInfo: 'Vienna'},
+        {item: 'IBM', itemInfo: 'US'},
+        {item: 'kununu', itemInfo: 'Vienna'},
+        {item: 'kununu', itemInfo: 'US'}
+      ]
+    }}
+    value="test"
+    disabled
+    error="An Error"
+    errorSubInfo="with useful hints"
+    isRequired
+    requiredLabel="Required"
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete"
+    placeholder="Type something..."
+    scrollOffset={70}
+    scrollTo />
+);
+
 test('Renders Autocomplete without crashing', () => {
   const component = renderer.create(staticAutocomplete);
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Renders Autocomplete with Error without crashing', () => {
+  const component = renderer.create(staticAutocompleteWithError);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
