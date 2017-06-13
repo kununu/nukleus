@@ -52,7 +52,7 @@ test('Renders A TextField with visible character counter without crashing', () =
       label="TextField"
       name="text-field"
       value="test2"
-      displayMaxLength
+      displayLength
       isRequired
       requiredLabel="required" />
   );

@@ -2,7 +2,7 @@ static defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
   disable: false,
-  displayMaxLength: false,
+  displayLength: false,
   error: null,
   inputStyle: 'inline',
   labelHidden: false,
