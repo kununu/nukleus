@@ -34,7 +34,7 @@ exports[`test Changes status on value change 1`] = `
       className="inputContainer">
       <select
         autoFocus={false}
-        className="formControl select"
+        className="formControl select "
         disabled={false}
         id="select"
         name="select"
@@ -72,7 +72,7 @@ exports[`test Renders Select with an error message without crashing 1`] = `
     className="inputContainer">
     <select
       autoFocus={false}
-      className="formControl select"
+      className="formControl select formControlError"
       disabled={false}
       id="select"
       name="select"
@@ -119,7 +119,7 @@ exports[`test Renders Select without crashing 1`] = `
     className="inputContainer">
     <select
       autoFocus={false}
-      className="formControl select"
+      className="formControl select "
       disabled={false}
       id="select"
       name="select"
