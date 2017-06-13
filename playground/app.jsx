@@ -801,6 +801,38 @@ const App = ({location: {pathname, query}}) => (
 
         <br />
 
+        <div className="row">
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid"
+              error="has an error"
+              errorSubInfo="Please do something about this"
+              label="TextField"
+              isRequired
+              requiredLabel="Required"
+              name="text-field-grid" />
+          </div>
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid-password"
+              label="TextField (password)"
+              name="text-field-grid-password"
+              isRequired
+              requiredLabel="Required"
+              type="password" />
+          </div>
+          <div className="col-md-4">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-grid-with-error"
+              name="date-picker-grid-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
       </div>
     </div>
 
