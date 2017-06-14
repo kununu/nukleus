@@ -5,17 +5,16 @@ import React, {Component, PropTypes} from 'react';
 import styles from './index.scss';
 
 import Error from '../Error';
+import InfoLabel from '../InfoLabel';
 import {
   controlLabel,
   controlLabelError,
   controlLabelMediumSize,
-  controlNote,
   hidden,
   formControl,
   formControlError,
   formGroup,
-  srOnly,
-  controlLabelRequired
+  srOnly
 } from '../index.scss';
 
 export default class TextField extends Component {
@@ -184,33 +183,16 @@ export default class TextField extends Component {
     return this.state.showError && this.props.error;
   }
 
-  renderInputLabel () {
-    const {
-      requiredLabel,
-      maxLength,
-      displayLength
-    } = this.props;
-    const {value} = this.state;
-
-    // Show requiredLabel if available and user hasn't typed any values
-    if (requiredLabel && (!displayLength || value.trim() === '')) {
-      return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
-    }
-    return displayLength ? (
-      <span className={`${controlNote} ${controlLabelRequired}`}>
-        <strong>{value.trim().length}</strong>/{maxLength}
-      </span>
-    ) : null;
-  }
-
   render () {
     const {
       autoComplete,
       autoFocus,
       disable,
+      displayLength,
       error,
       errorSubInfo,
       id,
+      isRequired,
       label,
       labelHidden,
       maxLength,
@@ -218,7 +200,7 @@ export default class TextField extends Component {
       multiLine,
       pattern,
       placeholder,
-      isRequired,
+      requiredLabel,
       rows,
       title,
       type
@@ -226,7 +208,11 @@ export default class TextField extends Component {
 
     return (
       <div className={this.inputStyleClassNames}>
-        {this.renderInputLabel()}
+        <InfoLabel
+          requiredLabel={requiredLabel}
+          inputValue={this.state.value}
+          displayLength={displayLength}
+          maxLength={maxLength} />
         {labelHidden && <span className={srOnly}>{label}</span>}
 
         <label className={this.labelClassNames} htmlFor={id}>{label}</label>
