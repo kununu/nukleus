@@ -26,10 +26,16 @@ exports[`test Changes output on value change manipulation 1`] = `
   value="test">
   <div
     className="formGroup inline paddingTop">
-    <span
-      className="controlNote controlLabelRequired">
-      required
-    </span>
+    <InfoLabel
+      displayLength={false}
+      inputValue="UGH"
+      maxLength={500}
+      requiredLabel="required">
+      <span
+        className="controlNote controlLabelRequired">
+        required
+      </span>
+    </InfoLabel>
     <label
       className="controlLabel"
       htmlFor="text-field">
