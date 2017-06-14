@@ -7,7 +7,6 @@ import styles from './index.scss';
 import Error from '../Error';
 import {
   controlLabel,
-  controlLabelError,
   controlLabelRequired,
   controlNote,
   hidden,
@@ -133,7 +132,7 @@ export default class Select extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>

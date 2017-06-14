@@ -9,7 +9,6 @@ import getElementPositionY from '../../utils/elementPosition';
 import isMobile from '../../utils/mobileDetection';
 import {
   controlLabel,
-  controlLabelError,
   controlLabelRequired,
   controlNote,
   formControl,
@@ -246,7 +245,7 @@ export default class Autocomplete extends React.Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
           htmlFor={id}>
           {label}
         </label>

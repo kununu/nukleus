@@ -9,7 +9,6 @@ import styles from './index.scss';
 import Error from '../Error';
 import {
   controlLabel,
-  controlLabelError,
   controlNote,
   formControl,
   formControlError,
@@ -154,7 +153,7 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.container}>

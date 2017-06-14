@@ -9,7 +9,6 @@ import styles from './index.scss';
 import Error from '../Error';
 import {
   controlLabel,
-  controlLabelError,
   controlLabelRequired,
   controlNote,
   formControl,
@@ -121,7 +120,7 @@ export default class DatePickerComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${this.hasError() ? controlLabelError : ''}`}
+          className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`}
           htmlFor={id}>
 
           {title}
