@@ -41,6 +41,13 @@
       padding-top: 25px;
     }
   }
+
+  .controlLabelError {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
+  }
 }
 
 .suggestionsContainer {

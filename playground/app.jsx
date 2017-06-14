@@ -334,7 +334,7 @@ const App = ({location: {pathname, query}}) => (
               id="text-area-large"
               label="TextArea Large"
               name="text-area-large"
-              inputStyle="inline mediumSize"
+              inputStyle="mediumSize"
               multiLine
               query={query} />
           </div>
