@@ -8,8 +8,6 @@ import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import {
   controlLabel,
-  controlLabelError,
-  controlLabelMediumSize,
   hidden,
   formControl,
   formControlError,
@@ -155,9 +153,9 @@ export default class TextField extends Component {
     if (labelHidden) classNames.push(hidden);
 
     // Check if TextField contains an error
-    if (this.hasError()) classNames.push(controlLabelError);
+    if (this.hasError()) classNames.push(styles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(controlLabelMediumSize);
+    if (inputStyles.includes('mediumSize')) classNames.push(styles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }
