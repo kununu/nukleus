@@ -33,6 +33,7 @@ export default class TextField extends Component {
     maxLength: PropTypes.number,
     multiLine: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onBlur: PropTypes.func,
     onChange: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
@@ -61,6 +62,7 @@ export default class TextField extends Component {
     labelHidden: false,
     maxLength: 500,
     multiLine: false,
+    onBlur: null,
     onChange: null,
     pattern: '',
     placeholder: '',
@@ -104,6 +106,9 @@ export default class TextField extends Component {
     this.hideError();
   };
 
+  onBlur = (...args) => {
+    if (this.props.onBlur) this.props.onBlur(...args);
+  }
   needsUpdate ({value, query}) {
     return (
       value !== this.props.value ||
@@ -190,6 +195,7 @@ export default class TextField extends Component {
                 name={name}
                 maxLength={maxLength}
                 onChange={this.onChange}
+                onBlur={this.onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
@@ -204,6 +210,7 @@ export default class TextField extends Component {
                 name={name}
                 maxLength={maxLength}
                 onChange={this.onChange}
+                onBlur={this.onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
