@@ -106,10 +106,6 @@ export default class TextField extends Component {
     this.hideError();
   };
 
-  onBlur = (...args) => {
-    if (this.props.onBlur) this.props.onBlur(...args);
-  }
-
   needsUpdate ({value, query}) {
     return (
       value !== this.props.value ||
@@ -198,6 +194,7 @@ export default class TextField extends Component {
       maxLength,
       name,
       multiLine,
+      onBlur,
       pattern,
       placeholder,
       requiredLabel,
@@ -228,7 +225,7 @@ export default class TextField extends Component {
                 name={name}
                 maxLength={maxLength}
                 onChange={this.onChange}
-                onBlur={this.onBlur}
+                onBlur={onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
@@ -243,7 +240,7 @@ export default class TextField extends Component {
                 name={name}
                 maxLength={maxLength}
                 onChange={this.onChange}
-                onBlur={this.onBlur}
+                onBlur={onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
