@@ -9,7 +9,6 @@ import styles from './index.scss';
 import Error from '../Error';
 import {
   controlLabel,
-  controlLabelError,
   controlNote,
   formControl,
   formControlError,
