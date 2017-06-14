@@ -8,6 +8,7 @@ import Error from '../Error';
 import {
   controlLabel,
   controlLabelError,
+  controlLabelMediumSize,
   controlNote,
   hidden,
   formControl,
@@ -109,6 +110,7 @@ export default class TextField extends Component {
   onBlur = (...args) => {
     if (this.props.onBlur) this.props.onBlur(...args);
   }
+
   needsUpdate ({value, query}) {
     return (
       value !== this.props.value ||
@@ -126,6 +128,56 @@ export default class TextField extends Component {
 
   hideError () {
     this.setState({showError: false});
+  }
+
+  get inputStyleClassNames () {
+    const {
+      inputStyle,
+      requiredLabel,
+      displayLength
+    } = this.props;
+    const classNames = [formGroup];
+
+    // Add all styles that are added via inputStyles
+    const inputStyles = inputStyle.split(' ');
+    inputStyles.map(style => classNames.push(styles[style]));
+
+    if (requiredLabel || displayLength) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  get labelClassNames () {
+    const {
+      inputStyle,
+      labelHidden
+    } = this.props;
+    const classNames = [controlLabel];
+
+    const inputStyles = inputStyle.split(' ');
+
+    // Check if label should be hidden
+    if (labelHidden) classNames.push(hidden);
+
+    // Check if TextField contains an error
+    if (this.hasError()) classNames.push(controlLabelError);
+
+    if (inputStyles.includes('mediumStyle')) classNames.push(controlLabelMediumSize);
+
+    return classNames.join(' ');
+  }
+
+  get textFieldClassNames () {
+    const {multiLine} = this.props;
+    const classNames = [formControl];
+
+    // Check if textarea styles need to be added
+    if (multiLine) classNames.push(styles.textarea);
+
+    // Check if error styles need to be added
+    if (this.hasError()) classNames.push(formControlError);
+
+    return classNames.join(' ');
   }
 
   hasError () {
@@ -156,11 +208,9 @@ export default class TextField extends Component {
       autoComplete,
       autoFocus,
       disable,
-      displayLength,
       error,
       errorSubInfo,
       id,
-      inputStyle,
       label,
       labelHidden,
       maxLength,
@@ -170,26 +220,23 @@ export default class TextField extends Component {
       placeholder,
       isRequired,
       rows,
-      requiredLabel,
       title,
       type
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel || displayLength ? styles.paddingTop : ''}`}>
+      <div className={this.inputStyleClassNames}>
         {this.renderInputLabel()}
         {labelHidden && <span className={srOnly}>{label}</span>}
 
-        <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? controlLabelError : ''}`}
-          htmlFor={id}>{label}</label>
+        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
 
         <div className={styles.inputContainer}>
           {
             multiLine ?
               <textarea
                 autoFocus={autoFocus}
-                className={`${formControl} ${styles.textarea} ${this.hasError() ? formControlError : ''}`}
+                className={this.textFieldClassNames}
                 disabled={disable}
                 id={id}
                 name={name}
@@ -204,7 +251,7 @@ export default class TextField extends Component {
               <input
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
-                className={`${formControl} ${this.hasError() ? formControlError : ''}`}
+                className={this.textFieldClassNames}
                 disabled={disable}
                 id={id}
                 name={name}
