@@ -209,3 +209,33 @@ exports[`test Renders TextField without crashing 1`] = `
   </div>
 </div>
 `;
+
+exports[`test Renders a medium size Textfield with multiline without crashing 1`] = `
+<div
+  className="formGroup mediumSize">
+  <label
+    className="controlLabel controlLabelMediumSize"
+    htmlFor="text-field">
+    TextField
+  </label>
+  <div
+    className="inputContainer">
+    <input
+      autoComplete="off"
+      autoFocus={false}
+      className="formControl"
+      disabled={false}
+      id="text-field"
+      maxLength={500}
+      name="text-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern=""
+      placeholder=""
+      required={false}
+      title=""
+      type="text"
+      value="" />
+  </div>
+</div>
+`;

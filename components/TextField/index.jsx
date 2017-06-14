@@ -161,7 +161,7 @@ export default class TextField extends Component {
     // Check if TextField contains an error
     if (this.hasError()) classNames.push(controlLabelError);
 
-    if (inputStyles.includes('mediumStyle')) classNames.push(controlLabelMediumSize);
+    if (inputStyles.includes('mediumSize')) classNames.push(controlLabelMediumSize);
 
     return classNames.join(' ');
   }
