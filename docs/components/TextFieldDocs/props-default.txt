@@ -9,6 +9,7 @@ static defaultProps = {
   labelHidden: false,
   maxLength: 500,
   multiLine: false,
+  onBlur: null,
   onChange: null,
   pattern: '',
   placeholder: '',

@@ -169,7 +169,8 @@
   right: 2px;
 }
 
-.controlLabelError {
+.controlLabelError,
+.controlLabelMediumSize {
   align-self: flex-start; // otherwise would be centered between Input Field and error
   display: flex;
   align-items: center;

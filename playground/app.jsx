@@ -328,6 +328,18 @@ const App = ({location: {pathname, query}}) => (
 
         <br />
 
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-area-large"
+              label="TextArea Large"
+              name="text-area-large"
+              inputStyle="inline mediumSize"
+              multiLine
+              query={query} />
+          </div>
+        </div>
+
         <div className="row" style={{backgroundColor: '#0c0c23', textAlign: 'right'}}>
           <DropDown
             position="bottom"

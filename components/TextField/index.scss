@@ -26,6 +26,13 @@
   }
 }
 
+.mediumSize {
+  input,
+  textarea {
+    height: 80px;
+  }
+}
+
 .inputContainer {
   position: relative;
   width: 100%;

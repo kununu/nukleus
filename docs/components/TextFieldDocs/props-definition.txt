@@ -12,6 +12,7 @@ static propTypes = {
   maxLength: PropTypes.number,
   multiLine: PropTypes.bool,
   name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
   pattern: PropTypes.string,
   placeholder: PropTypes.string,
