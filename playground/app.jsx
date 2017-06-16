@@ -280,6 +280,19 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <TextField
+              id="text-field"
+              label="TextField"
+              toolTip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+              toolTipLabel="TextField Info"
+              name="text-field"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
               id="text-field-limited"
               label="TextField with Char Limit"
               name="text-field-limited"

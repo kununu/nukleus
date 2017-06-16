@@ -2,20 +2,13 @@ import React, {PropTypes, Component} from 'react';
 
 import styles from './index.scss';
 
+import InfoBox from '../InfoBox';
+import {unstyledButton} from '../index.scss';
+
 export default class ToolTip extends Component {
   static propTypes = {
     content: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    position: PropTypes.oneOf([
-      'topLeft',
-      'topMiddle',
-      'topRight',
-      'leftMiddle',
-      'rightMiddle',
-      'bottomLeft',
-      'bottomCenter',
-      'bottomRight'
-    ])
+    label: PropTypes.string.isRequired
   };
 
   static defaultProps = {
@@ -24,44 +17,86 @@ export default class ToolTip extends Component {
   }
 
   state = {
-    active: false
+    active: true,
+    clickActivated: false
   }
 
-  onMouseOver = () => {
+  componentDidMount () {
+    document.addEventListener('click', this.detectClickInside);
+  }
+
+  componentWillUnmount () {
+    document.removeEventListener('click', this.detectClickInside);
+  }
+
+  onMouseEnter = () => {
+    this.showInfoBox();
+  }
+
+  onMouseLeave = () => {
+    // Hide Info Box if it wasn't activated via click or touch
+    if (!this.state.clickActivated) {
+      this.hideInfoBox();
+    }
+  }
+
+  onClick = ev => {
+    ev.target.blur();
+    // Hide Info Box if it was activated via click
+    if (this.state.active && this.state.clickActivated) {
+      this.hideInfoBox();
+      return;
+    }
+    this.showInfoBox(true);
+  }
+
+  detectClickInside = ev => {
+    if (!this.state.active) return;
+
+    let node = ev.target;
+    let clickInside = node === this.container;
+
+    while (!clickInside && node.parentNode) {
+      node = node.parentNode;
+      clickInside = node === this.container;
+    }
+
+    if (!clickInside) {
+      this.hideInfoBox();
+    }
+  }
+
+  hideInfoBox () {
     this.setState({
-      active: true
+      active: false,
+      clickActivated: false
     });
   }
 
-  onMouseOut = () => {
+  showInfoBox (clickActivated = this.state.clickActivated) {
     this.setState({
-      active: false
+      active: true,
+      clickActivated
     });
-  }
-
-  get infoBoxClassNames () {
-    return [styles.infoBox, styles[this.props.position]].join(' ');
-  }
-
-  get infoBox () {
-    if (!this.state.active) return null;
-
-    return (
-      <p className={this.infoBoxClassNames}>{this.props.content}</p>
-    );
   }
 
   render () {
-    const {label} = this.props;
+    const {
+      content,
+      label
+    } = this.props;
+
     return (
-      <div className={styles.toolTip}>
+      <div ref={container => { this.container = container; }} className={styles.toolTip}>
         <button
+          className={unstyledButton}
           title={label}
-          onMouseOver={this.onMouseOver}
-          onMouseOut={this.onMouseOut}>
-          <i className="fa fa-info" aria-hidden="true" />
+          onClick={this.onClick}
+          onMouseEnter={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}>
+          <i className="fa fa-info-circle" aria-hidden="true" />
         </button>
-        {this.infoBox()}
+        { this.state.active && <InfoBox content={content} /> }
       </div>
     );
   }

@@ -1,3 +1,5 @@
+@import '~kununu-theme/scss/base/variables';
+
 .toolTip {
   position: relative;
 }
@@ -7,40 +9,4 @@
   background: transparent;
   border: 0;
   appearance: none;
-}
-
-.infoBox {
-  position: absolute;
-}
-
-.infoBoxTopLeft {
-
-}
-
-.infoBoxTopCenter {
-
-}
-
-.infoBoxTopRight {
-
-}
-
-.infoBoxLeftCenter {
-
-}
-
-.infoBoxRightCenter {
-
-}
-
-.infoBoxBottomLeft {
-
-}
-
-.infoBoxBottomCenter {
-
-}
-
-.infoBoxBottomRight {
-
 }
