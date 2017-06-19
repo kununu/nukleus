@@ -8,7 +8,7 @@ import ToolTip from '../components/ToolTip';
 // requestAnimationFrame isn't supported by node
 if (!window.requestAnimationFrame) {
   const targetTime = 0;
-  window.requestAnimationFrame = function (callbackFun) {
+  window.requestAnimationFrame = function requestAnimationFrame (callbackFun) {
     const currentTime = +new Date();
     function timeoutCb () { callbackFun(+new Date()); }
     return window.setTimeout(timeoutCb, Math.max(targetTime + 16, currentTime) - currentTime);
