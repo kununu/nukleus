@@ -106,6 +106,7 @@
   @media (min-width: $screen-sm-min) {
     li {
       a {
+        border-top: 0;
         background: $gray-base-10;
         font-size: $font-size-base;
         padding: 17px 25px;
