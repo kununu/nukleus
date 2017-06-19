@@ -18,6 +18,8 @@ static defaultProps = {
   requiredLabel: 'Required',
   rows: 5,
   title: '',
+  toolTip: '',
+  toolTipLabel: '',
   type: 'text',
   value: ''
 };
