@@ -2,8 +2,6 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {getPositionRight, getPositionLeft} from '../utils';
-
 export default class InfoBox extends Component {
   static propTypes = {
     content: PropTypes.string.isRequired,
@@ -19,25 +17,51 @@ export default class InfoBox extends Component {
     position: 'topLeft'
   };
 
+  componentWillMount () {
+    window.addEventListener('resize', this.windowResize);
+  }
+
   componentDidMount () {
     this.needsLayoutUpdate = true;
     this.update();
   }
 
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.windowResize);
+  }
+
   needsLayoutUpdate = false;
+  currentTranslateX = 0;
 
   get translatedXByScreenEdge () {
     // Check if rect is outside right window border
-    if (getPositionRight(this.container) > window.innerWidth) return (getPositionRight(this.container) - window.innerWidth) * -1;
+    if (this.positionRight > window.innerWidth) return (this.positionRight - window.innerWidth) * -1;
 
     // Check if rect is outside left window border
-    if (getPositionLeft(this.container) < 0) return getPositionLeft(this.container) * -1;
+    if (this.positionLeft < 0) return this.positionLeft * -1;
 
     return 0;
   }
 
-  set transform (value) {
-    this.container.style.transform = value;
+  get positionRight () {
+    return this.container.getBoundingClientRect().right - this.translateX;
+  }
+
+  get positionLeft () {
+    return this.container.getBoundingClientRect().left - this.translateX;
+  }
+
+  set translateX (x) {
+    this.currentTranslateX = x;
+    if (x === 0) {
+      this.container.style.transform = '';
+    } else {
+      this.container.style.transform = `translateX(${this.currentTranslateX}px)`;
+    }
+  }
+
+  get translateX () {
+    return this.currentTranslateX;
   }
 
   updateLayout = () => {
@@ -46,11 +70,7 @@ export default class InfoBox extends Component {
     * there might be a case (especially on mobile devices), where
     * the box is outside the right or left edge of the window.
     */
-    if (this.translatedXByScreenEdge !== 0) {
-      this.transform = `translate(${this.translatedXByScreenEdge}px, 0)`;
-    } else {
-      this.transform = '';
-    }
+    this.translateX = this.translatedXByScreenEdge;
   }
 
   windowResize = () => {
