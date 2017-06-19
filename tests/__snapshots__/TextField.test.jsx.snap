@@ -21,6 +21,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   query={Object {}}
   requiredLabel="required"
   rows={5}
+  sanitizeValue={[Function]}
   title=""
   toolTip=""
   toolTipLabel=""
@@ -222,10 +223,9 @@ exports[`test Renders a medium size Textfield with multiline without crashing 1`
   </label>
   <div
     className="inputContainer">
-    <input
-      autoComplete="off"
+    <textarea
       autoFocus={false}
-      className="formControl"
+      className="formControl textarea"
       disabled={false}
       id="text-field"
       maxLength={500}
@@ -235,8 +235,7 @@ exports[`test Renders a medium size Textfield with multiline without crashing 1`
       pattern=""
       placeholder=""
       required={false}
-      title=""
-      type="text"
+      rows={5}
       value="" />
   </div>
 </div>
