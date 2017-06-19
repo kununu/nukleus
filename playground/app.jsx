@@ -21,7 +21,7 @@ import {sanitizeWhitespace} from 'components/utils';
 import styles from './app.scss';
 
 const App = ({location: {pathname, query}}) => (
-  <div className={`app-container container ${styles.appContainer}`}>
+  <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
 
