@@ -22,6 +22,8 @@ exports[`test Changes output on value change manipulation 1`] = `
   requiredLabel="required"
   rows={5}
   title=""
+  toolTip=""
+  toolTipLabel=""
   type="text"
   value="test">
   <div
