@@ -17,7 +17,7 @@ export default class ToolTip extends Component {
   }
 
   state = {
-    active: true,
+    active: false,
     clickActivated: false
   }
 
