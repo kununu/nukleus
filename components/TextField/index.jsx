@@ -39,6 +39,7 @@ export default class TextField extends Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
+    sanitizeValue: PropTypes.func,
     title: PropTypes.string,
     toolTip: PropTypes.string,
     toolTipLabel: PropTypes.string,
@@ -70,6 +71,7 @@ export default class TextField extends Component {
     query: {},
     requiredLabel: '',
     rows: 5,
+    sanitizeValue: value => value,
     title: '',
     toolTip: '',
     toolTipLabel: '',
@@ -104,7 +106,7 @@ export default class TextField extends Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    this.updateValue(args[0].target.value);
+    this.updateValue(this.props.sanitizeValue(args[0].target.value));
     if (this.props.onChange) this.props.onChange(...args);
     this.hideError();
   };

@@ -37,3 +37,10 @@ export function getPositionRight (elem) {
 export function getPositionLeft (elem) {
   return elem.getBoundingClientRect().left - getTranslateXPx(elem);
 }
+
+/**
+ * Replaces New Lines and multiple spaces and returns the new value
+ */
+export function sanitizeWhitespace (value) {
+  return value.replace(/\r\n|\r|\n| +/g, ' ');
+}

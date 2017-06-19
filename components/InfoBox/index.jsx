@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {getPositionRight, getPositionLeft} from '../helpers';
+import {getPositionRight, getPositionLeft} from '../utils';
 
 export default class InfoBox extends Component {
   static propTypes = {
