@@ -84,6 +84,7 @@
     }
 
     a {
+      border-top: 4px solid $panel-bg;
       border-bottom: 1px solid $gray-base-20;
       background: $panel-bg;
       color: $text-color;
