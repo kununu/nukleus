@@ -2,7 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import TextField from 'TextField'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+
+import TextField from '../components/TextField'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import {sanitizeWhitespace} from '../components/utils';
 
 const textField = (
   <TextField
@@ -64,7 +66,7 @@ test('Renders a medium size Textfield with multiline without crashing', () => {
       id="text-field"
       label="TextField"
       name="text-field"
-      multiline
+      multiLine
       inputStyle="mediumSize" />
   );
   expect(component.toJSON()).toMatchSnapshot();
@@ -83,4 +85,26 @@ test('Renders A TextField with visible character counter without crashing', () =
       requiredLabel="required" />
   );
   expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Renders a TextArea where whitespace can be normalized', () => {
+  const component = mount(
+    <TextField
+      id="text-field"
+      label="TextField"
+      name="text-field"
+      multiLine
+      displayLength
+      sanitizeValue={sanitizeWhitespace}
+      isRequired
+      requiredLabel="required" />
+  );
+  component.find('textarea').simulate('change', {target: {value: 'ab  cd'}});
+  expect(component.state().value).toEqual('ab cd');
+  component.find('textarea').simulate('change', {target: {value: 'ab\ncd'}});
+  expect(component.state().value).toEqual('ab cd');
+  component.find('textarea').simulate('change', {target: {value: 'ab\r\ncd'}});
+  expect(component.state().value).toEqual('ab cd');
+  component.find('textarea').simulate('change', {target: {value: 'ab\rcd'}});
+  expect(component.state().value).toEqual('ab cd');
 });

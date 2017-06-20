@@ -1,0 +1,115 @@
+exports[`test Clicking on the ToolTip Button shows an InfoBox 1`] = `
+<ToolTip
+  content="More Test Info"
+  label="Test"
+  position="bottomLeft">
+  <div
+    className="toolTip">
+    <button
+      className="unstyledButton"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      title="Test">
+      <i
+        aria-hidden="true"
+        className="fa fa-info-circle" />
+    </button>
+    <InfoBox
+      content="More Test Info"
+      position="topLeft">
+      <p
+        className="infoBox topLeft">
+        More Test Info
+      </p>
+    </InfoBox>
+  </div>
+</ToolTip>
+`;
+
+exports[`test Clicking twice on a ToolTip Button hides the InfoBox 1`] = `
+<ToolTip
+  content="More Test Info"
+  label="Test"
+  position="bottomLeft">
+  <div
+    className="toolTip">
+    <button
+      className="unstyledButton"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      title="Test">
+      <i
+        aria-hidden="true"
+        className="fa fa-info-circle" />
+    </button>
+  </div>
+</ToolTip>
+`;
+
+exports[`test Hovering and then leaving the ToolTip Button shows an InfoBox 1`] = `
+<ToolTip
+  content="More Test Info"
+  label="Test"
+  position="bottomLeft">
+  <div
+    className="toolTip">
+    <button
+      className="unstyledButton"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      title="Test">
+      <i
+        aria-hidden="true"
+        className="fa fa-info-circle" />
+    </button>
+  </div>
+</ToolTip>
+`;
+
+exports[`test Hovering on the ToolTip Button shows an InfoBox 1`] = `
+<ToolTip
+  content="More Test Info"
+  label="Test"
+  position="bottomLeft">
+  <div
+    className="toolTip">
+    <button
+      className="unstyledButton"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      title="Test">
+      <i
+        aria-hidden="true"
+        className="fa fa-info-circle" />
+    </button>
+    <InfoBox
+      content="More Test Info"
+      position="topLeft">
+      <p
+        className="infoBox topLeft">
+        More Test Info
+      </p>
+    </InfoBox>
+  </div>
+</ToolTip>
+`;
+
+exports[`test Renders ToolTip component without crashing 1`] = `
+<div
+  className="toolTip">
+  <button
+    className="unstyledButton"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    title="Test">
+    <i
+      aria-hidden="true"
+      className="fa fa-info-circle" />
+  </button>
+</div>
+`;

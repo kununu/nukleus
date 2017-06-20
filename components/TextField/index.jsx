@@ -4,6 +4,7 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
+import ToolTip from '../ToolTip';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import {
@@ -38,7 +39,10 @@ export default class TextField extends Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
+    sanitizeValue: PropTypes.func,
     title: PropTypes.string,
+    toolTip: PropTypes.string,
+    toolTipLabel: PropTypes.string,
     type: PropTypes.oneOf([
       'email',
       'password',
@@ -67,7 +71,10 @@ export default class TextField extends Component {
     query: {},
     requiredLabel: '',
     rows: 5,
+    sanitizeValue: value => value,
     title: '',
+    toolTip: '',
+    toolTipLabel: '',
     type: 'text',
     value: ''
   };
@@ -99,7 +106,7 @@ export default class TextField extends Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    this.updateValue(args[0].target.value);
+    this.updateValue(this.props.sanitizeValue(args[0].target.value));
     if (this.props.onChange) this.props.onChange(...args);
     this.hideError();
   };
@@ -177,6 +184,28 @@ export default class TextField extends Component {
     return this.state.showError && this.props.error;
   }
 
+  get label () {
+    const {
+      id,
+      label,
+      toolTip,
+      toolTipLabel
+    } = this.props;
+
+    if (!toolTip || !toolTipLabel) {
+      return (
+        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
+      );
+    }
+
+    return (
+      <span className={styles.labelWithToolTip}>
+        <label className={`${controlLabel}`} htmlFor={id}>{label}</label>
+        <ToolTip label={toolTipLabel} content={toolTip} />
+      </span>
+    );
+  }
+
   render () {
     const {
       autoComplete,
@@ -210,7 +239,7 @@ export default class TextField extends Component {
           maxLength={maxLength} />
         {labelHidden && <span className={srOnly}>{label}</span>}
 
-        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
+        {this.label}
 
         <div className={styles.inputContainer}>
           {

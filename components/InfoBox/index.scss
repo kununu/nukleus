@@ -1,0 +1,36 @@
+@import '~kununu-theme/scss/base/variables';
+
+.infoBox {
+  position: absolute;
+  display: block;
+  z-index: 100;
+  width: 100vw;
+  max-width: 400px;
+  margin: 0;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  color: $white;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  background: $gray-base-90;
+  border-radius: $border-radius-small;
+}
+
+.bottomLeft {
+  top: 100%;
+  left: 0%;
+}
+
+.bottomRight {
+  top: 100%;
+  right: 0%;
+}
+
+.topLeft {
+  bottom: 100%;
+  left: 0%;
+}
+
+.topRight {
+  bottom: 100%;
+  right: 0%;
+}
