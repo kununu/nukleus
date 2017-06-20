@@ -5,6 +5,7 @@
  *
  * @return {string} [updated value]
  */
+const sanitizeWhitespaceRegex = /\r\n|\r|\n| +/g;
 export function sanitizeWhitespace (value) {
-  return value.replace(/\r\n|\r|\n| +/g, ' ');
+  return value.replace(sanitizeWhitespaceRegex, ' ');
 }
