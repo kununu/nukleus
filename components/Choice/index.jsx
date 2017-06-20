@@ -116,7 +116,7 @@ export default class Choice extends Component {
                 disabled={disabled}
                 id={idx}
                 htmlFor={`${name}${item.id}`}
-                className={customTheme}>
+                className={`${customTheme} ${(typeof item.labelClass !== 'undefined' ? item.labelClass : '')}`}>
                 {item.label}
               </label>
             </div>
