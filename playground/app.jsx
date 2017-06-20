@@ -16,6 +16,7 @@ import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import {sanitizeWhitespace} from 'components/utils';
 
 import styles from './app.scss';
 
@@ -280,6 +281,19 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <TextField
+              id="text-field"
+              label="TextField"
+              toolTip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+              toolTipLabel="TextField Info"
+              name="text-field"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
               id="text-field-limited"
               label="TextField with Char Limit"
               name="text-field-limited"
@@ -334,6 +348,9 @@ const App = ({location: {pathname, query}}) => (
               id="text-area-large"
               label="TextArea Large"
               name="text-area-large"
+              maxLength={120}
+              displayLength
+              sanitizeValue={sanitizeWhitespace}
               inputStyle="inline mediumSize"
               multiLine
               query={query} />

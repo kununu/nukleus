@@ -20,7 +20,10 @@ static propTypes = {
   isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string,
   rows: PropTypes.number,
+  sanitizeValue: PropTypes.func,
   title: PropTypes.string,
+  toolTip: PropTypes.string,
+  toolTipLabel: PropTypes.string,
   type: PropTypes.oneOf([
     'email',
     'password',

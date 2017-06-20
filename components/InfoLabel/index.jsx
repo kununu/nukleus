@@ -13,7 +13,7 @@ const InfoLabel = ({requiredLabel, maxLength, displayLength, inputValue}) => {
   // Show requiredLabel if available and user hasn't typed any inputValues
   return displayLength ? (
     <span className={`${controlNote} ${controlLabelRequired}`}>
-      <strong>{inputValue.trim().length}</strong>/{maxLength}
+      <strong>{inputValue.length}</strong>/{maxLength}
     </span>
   ) : null;
 };

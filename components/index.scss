@@ -168,3 +168,11 @@
   top: 0;
   right: 2px;
 }
+
+.unstyledButton {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  appearance: none;
+}
