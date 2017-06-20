@@ -10,9 +10,9 @@ const options = [
     value: 'opA'
   },
   {
-    labelClass: 'customMargin',
     id: 'opB',
     label: 'Option B',
+    labelClass: 'customMargin',
     value: 'opB'
   },
   {
