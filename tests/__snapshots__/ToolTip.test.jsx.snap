@@ -10,7 +10,8 @@ exports[`test Clicking on the ToolTip Button shows an InfoBox 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      title="Test">
+      title="Test"
+      type="button">
       <i
         aria-hidden="true"
         className="fa fa-info-circle" />
@@ -39,7 +40,8 @@ exports[`test Clicking twice on a ToolTip Button hides the InfoBox 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      title="Test">
+      title="Test"
+      type="button">
       <i
         aria-hidden="true"
         className="fa fa-info-circle" />
@@ -60,7 +62,8 @@ exports[`test Hovering and then leaving the ToolTip Button shows an InfoBox 1`] 
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      title="Test">
+      title="Test"
+      type="button">
       <i
         aria-hidden="true"
         className="fa fa-info-circle" />
@@ -81,7 +84,8 @@ exports[`test Hovering on the ToolTip Button shows an InfoBox 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      title="Test">
+      title="Test"
+      type="button">
       <i
         aria-hidden="true"
         className="fa fa-info-circle" />
@@ -106,7 +110,8 @@ exports[`test Renders ToolTip component without crashing 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    title="Test">
+    title="Test"
+    type="button">
     <i
       aria-hidden="true"
       className="fa fa-info-circle" />

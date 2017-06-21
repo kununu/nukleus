@@ -91,6 +91,7 @@ export default class ToolTip extends Component {
         <button
           className={unstyledButton}
           title={label}
+          type="button"
           onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}>
