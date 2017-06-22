@@ -149,7 +149,6 @@ export default class Autocomplete extends React.Component {
   getSuggestionValue = suggestion => suggestion.item;
 
   loadSuggestions (value) {
-    console.log('Loading for the first time');
     this.setState({
       suggestions: this.getSuggestions(value)
     });
