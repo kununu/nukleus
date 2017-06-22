@@ -1,5 +1,6 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  debounceRate={500}
   disabled={false}
   error={null}
   errorSubInfo={null}

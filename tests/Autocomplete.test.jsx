@@ -62,17 +62,26 @@ test('Renders Autocomplete with Error without crashing', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Renders no suggestions container', () => {
+test('Renders no suggestions container', done => {
   const component = mount(staticAutocomplete);
   component.find('input').simulate('change', {target: {value: 'z'}});
-  expect(toJson(component)).toMatchSnapshot();
+
+  // waiting for debounce
+  setTimeout(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  }, 550);
 });
 
-test('Renders suggestions container', () => {
+test('Renders suggestions container', done => {
   const component = mount(staticAutocomplete);
   component.find('input').simulate('change', {target: {value: 'a'}});
   component.find('input').simulate('focus');
-  expect(toJson(component)).toMatchSnapshot();
+
+  setTimeout(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  }, 550);
 });
 
 test('Hides no suggestions on blur', () => {
@@ -91,7 +100,7 @@ test('Updates value on selection', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Fetches suggestions on change', () => {
+test('Fetches suggestions on change', done => {
   const spyFunc = jest.fn();
   const component = mount(
     <Autocomplete
@@ -103,5 +112,22 @@ test('Fetches suggestions on change', () => {
   );
 
   component.find('input').simulate('change', {target: {value: 'a'}});
-  expect(spyFunc).toHaveBeenCalled();
+
+  // Waiting for debounce
+  setTimeout(() => {
+    expect(spyFunc).toHaveBeenCalled();
+    done();
+  }, 550);
+});
+
+test('Fetches Value only when debounce is over', done => {
+  const component = mount(staticAutocomplete);
+  component.find('input').simulate('change', {target: {value: 'kunu'}});
+  expect(component.state().suggestions.length).toEqual(5);
+
+  // waiting for debounce
+  setTimeout(() => {
+    expect(component.state().suggestions.length).toEqual(2);
+    done();
+  }, 550);
 });

@@ -27,6 +27,7 @@ exports[`test Hides no suggestions on blur 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
   errorSubInfo={null}
@@ -289,6 +290,7 @@ exports[`test Renders no suggestions container 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
   errorSubInfo={null}
@@ -458,6 +460,7 @@ exports[`test Renders suggestions container 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
   errorSubInfo={null}
@@ -764,6 +767,7 @@ exports[`test Updates value on selection 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
   errorSubInfo={null}

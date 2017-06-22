@@ -105,6 +105,7 @@
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",
     "test": "jest",
+    "test:watch": "jest --watch",
     "coverage": "jest --coverage"
   }
 }

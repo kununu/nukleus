@@ -38,10 +38,27 @@ test('Renders Combobox with an error message without crashing', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Causes dropdown to show when input is focused', () => {
+test('Causes dropdown to show when input is focused', done => {
   const component = mount(combobox);
   component.find('input#name').simulate('focus');
-  expect(toJson(component)).toMatchSnapshot();
+
+  // Waiting for debounce
+  setTimeout(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  }, 550);
+});
+
+test('Fetches Value only when debounce is over', done => {
+  const component = mount(combobox);
+  component.find('input').simulate('change', {target: {value: 'music'}});
+  expect(component.state().suggestions.length).toEqual(11);
+
+  // Waiting for debounce
+  setTimeout(() => {
+    expect(component.state().suggestions.length).toEqual(2);
+    done();
+  }, 550);
 });
 
 const spyFunc = jest.fn();
