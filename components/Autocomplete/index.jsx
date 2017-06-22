@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
 import Scroll from 'react-scroll';
+import debounce from 'debounce';
 
 import styles from './index.scss';
 
@@ -22,6 +23,7 @@ export default class Autocomplete extends React.Component {
   static propTypes = {
     autoFocus: PropTypes.bool,
     data: PropTypes.object,
+    debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
@@ -46,6 +48,7 @@ export default class Autocomplete extends React.Component {
   static defaultProps = {
     autoFocus: false,
     data: {},
+    debounceRate: 500,
     disabled: false,
     error: null,
     errorSubInfo: null,
@@ -104,9 +107,7 @@ export default class Autocomplete extends React.Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
+    this.debouncedLoadSuggestions(value);
   }
 
   onSuggestionsClearRequested = () => {
@@ -146,6 +147,15 @@ export default class Autocomplete extends React.Component {
   }
 
   getSuggestionValue = suggestion => suggestion.item;
+
+  loadSuggestions (value) {
+    console.log('Loading for the first time');
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  }
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
   hideNoSuggestionsText = () => {
     this.setState({
