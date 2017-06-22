@@ -5,6 +5,7 @@ import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import
 
 const options = [
   {
+    icon: <i className="fa fa-thumbs-up" aria-hidden="true" />,
     id: 'opA',
     label: 'Option A',
     value: 'opA'
