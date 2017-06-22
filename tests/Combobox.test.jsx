@@ -15,6 +15,10 @@ const combobox = (
     items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
 );
 
+function waitingForDebounce (cb) {
+  setTimeout(cb, 550);
+}
+
 const comboboxWithError = (
   <Combobox
     name="name"
@@ -43,22 +47,22 @@ test('Causes dropdown to show when input is focused', done => {
   component.find('input#name').simulate('focus');
 
   // Waiting for debounce
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(toJson(component)).toMatchSnapshot();
     done();
-  }, 550);
+  });
 });
 
 test('Fetches Value only when debounce is over', done => {
   const component = mount(combobox);
-  component.find('input').simulate('change', {target: {value: 'music'}});
+  component.find('input#name').simulate('change', {target: {value: 'music'}});
   expect(component.state().suggestions.length).toEqual(11);
 
   // Waiting for debounce
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(component.state().suggestions.length).toEqual(2);
     done();
-  }, 550);
+  });
 });
 
 const spyFunc = jest.fn();
