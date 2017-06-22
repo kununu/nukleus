@@ -210,8 +210,12 @@
 
     @supports(display: grid) {
       display: grid;
-      grid-template-columns: repeat($count, 1fr);
+      grid-template-columns: 1fr 1fr;
       grid-auto-rows: 1fr;
+
+      @media (min-width: $screen-md-min) {
+        grid-template-columns: repeat($count, 1fr);
+      }
     }
 
     @media (min-width: $screen-md-min) {
