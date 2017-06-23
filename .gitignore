@@ -39,3 +39,6 @@ jspm_packages
 # Build dirs
 dist
 .DS_Store
+
+# IDEs
+.idea
