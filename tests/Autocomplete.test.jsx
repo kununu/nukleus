@@ -4,6 +4,10 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Autocomplete from 'Autocomplete'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
+function waitingForDebounce (cb) {
+  setTimeout(cb, 550);
+}
+
 const staticAutocomplete = (
   <Autocomplete
     data={{
@@ -67,10 +71,10 @@ test('Renders no suggestions container', done => {
   component.find('input').simulate('change', {target: {value: 'z'}});
 
   // waiting for debounce
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(toJson(component)).toMatchSnapshot();
     done();
-  }, 550);
+  });
 });
 
 test('Renders suggestions container', done => {
@@ -78,10 +82,10 @@ test('Renders suggestions container', done => {
   component.find('input').simulate('change', {target: {value: 'a'}});
   component.find('input').simulate('focus');
 
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(toJson(component)).toMatchSnapshot();
     done();
-  }, 550);
+  });
 });
 
 test('Hides no suggestions on blur', () => {
@@ -114,10 +118,10 @@ test('Fetches suggestions on change', done => {
   component.find('input').simulate('change', {target: {value: 'a'}});
 
   // Waiting for debounce
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(spyFunc).toHaveBeenCalled();
     done();
-  }, 550);
+  });
 });
 
 test('Fetches Value only when debounce is over', done => {
@@ -126,8 +130,8 @@ test('Fetches Value only when debounce is over', done => {
   expect(component.state().suggestions.length).toEqual(5);
 
   // waiting for debounce
-  setTimeout(() => {
+  waitingForDebounce(() => {
     expect(component.state().suggestions.length).toEqual(2);
     done();
-  }, 550);
+  });
 });
