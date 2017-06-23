@@ -791,7 +791,7 @@ const App = ({location: {pathname, query}}) => (
                 },
                 {
                   id: 'option-b-3-6',
-                  label: 'Option B',
+                  label: 'Option B is longer to show, that all items have the same height in modern browsers',
                   value: 'option-b-3-6'
                 },
                 {

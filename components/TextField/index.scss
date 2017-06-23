@@ -39,6 +39,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 6px;
+  line-height: $line-height-base;
 
   label {
     margin: 0 10px 0 0;

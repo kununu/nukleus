@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "7.7.4",
+  "version": "7.8.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -81,6 +81,7 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
+    "debounce": "^1.0.2",
     "moment": "2.17.1",
     "react-autosuggest": "8.0.0",
     "react-datepicker": "0.40.0",
@@ -104,6 +105,7 @@
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",
     "test": "jest",
+    "test:watch": "jest --watch",
     "coverage": "jest --coverage"
   }
 }
