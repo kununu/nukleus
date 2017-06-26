@@ -133,10 +133,10 @@ export default class Stars extends Component {
                   value={key}
                   checked={key === value}
                   onChange={this.onClick}
-                  id={`star${key}`} /> }
+                  id={`${name}-${key}`} /> }
 
               {Boolean(key) &&
-                <label htmlFor={selectable && `star${key}`}>
+                <label htmlFor={selectable && `${name}-${key}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"

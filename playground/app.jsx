@@ -161,6 +161,12 @@ const App = ({location: {pathname, query}}) => (
               name="test"
               selectable
               colors={['red', 'green']} />
+
+            <Stars
+              value={3}
+              name="test2"
+              selectable
+              colors={['red', 'green']} />
           </div>
         </div>
 
