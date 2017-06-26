@@ -7,12 +7,12 @@ import styles from './index.scss';
 import ToolTip from '../ToolTip';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
-import {
+import sharedStyles, {
   controlLabel,
-  hidden,
   formControl,
   formControlError,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -140,9 +140,9 @@ export default class TextField extends Component {
 
     // Add all styles that are added via inputStyles
     const inputStyles = inputStyle.split(' ');
-    inputStyles.map(style => classNames.push(styles[style]));
+    inputStyles.map(style => classNames.push(sharedStyles[style]));
 
-    if (requiredLabel || displayLength) classNames.push(styles.paddingTop);
+    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
 
     return classNames.join(' ');
   }
@@ -160,9 +160,9 @@ export default class TextField extends Component {
     if (labelHidden) classNames.push(hidden);
 
     // Check if TextField contains an error
-    if (this.hasError()) classNames.push(styles.controlLabelError);
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(styles.controlLabelMediumSize);
+    if (inputStyles.includes('mediumSize')) classNames.push(sharedStyles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }
@@ -199,7 +199,7 @@ export default class TextField extends Component {
     }
 
     return (
-      <span className={styles.labelWithToolTip}>
+      <span className={sharedStyles.labelWithToolTip}>
         <label className={`${controlLabel}`} htmlFor={id}>{label}</label>
         <ToolTip label={toolTipLabel} content={toolTip} />
       </span>
