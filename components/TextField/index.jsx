@@ -130,7 +130,13 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
-  get inputStyleClassNames () {
+  /**
+   * determines which classNames should be added to the container of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
     const {
       inputStyle,
       requiredLabel,
@@ -147,6 +153,12 @@ export default class TextField extends Component {
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get labelClassNames () {
     const {
       inputStyle,
@@ -167,6 +179,12 @@ export default class TextField extends Component {
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the input of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get textFieldClassNames () {
     const {multiLine} = this.props;
     const classNames = [formControl];
@@ -184,6 +202,12 @@ export default class TextField extends Component {
     return this.state.showError && this.props.error;
   }
 
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {ReactElement} [list of classNames split by space]
+   */
   get label () {
     const {
       id,
@@ -231,7 +255,7 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={this.inputStyleClassNames}>
+      <div className={this.containerClassNames}>
         <InfoLabel
           requiredLabel={requiredLabel}
           inputValue={this.state.value}
