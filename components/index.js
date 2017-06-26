@@ -13,4 +13,3 @@ export Tabs from './Tabs';
 export TextField from './TextField';
 export Select from './Select';
 export Stars from './Stars';
-export utils from './utils';

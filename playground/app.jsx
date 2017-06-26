@@ -16,7 +16,6 @@ import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
-import {sanitizeWhitespace} from 'components/utils';
 
 import styles from './app.scss';
 
@@ -350,7 +349,6 @@ const App = ({location: {pathname, query}}) => (
               name="text-area-large"
               maxLength={120}
               displayLength
-              sanitizeValue={sanitizeWhitespace}
               inputStyle="inline mediumSize"
               multiLine
               query={query} />
