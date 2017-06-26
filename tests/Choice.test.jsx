@@ -12,7 +12,6 @@ const options = [
   {
     id: 'opB',
     label: 'Option B',
-    labelClass: 'customMargin',
     value: 'opB'
   },
   {

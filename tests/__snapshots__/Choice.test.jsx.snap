@@ -38,7 +38,7 @@ exports[`test Renders Choice with an heading without crashing 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -104,7 +104,7 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -170,7 +170,7 @@ exports[`test Renders a Choice with checked from route 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -236,7 +236,7 @@ exports[`test Renders a Choice with custom style 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customThemeClass customMargin"
+        className="customThemeClass"
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -302,7 +302,7 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customThemeClass customMargin"
+        className="customThemeClass"
         disabled={true}
         htmlFor="testopB"
         id={1}>
@@ -368,7 +368,7 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -434,7 +434,7 @@ exports[`test Renders a Choice with no default checked from route if it is not a
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -500,7 +500,7 @@ exports[`test Renders a Choice with no default checked from route if it is the o
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -566,7 +566,7 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -632,7 +632,7 @@ exports[`test Renders a Choice with optionsPerRow set without crashing 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={false}
         htmlFor="testopB"
         id={1}>
@@ -698,7 +698,7 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
         type="radio"
         value="opB" />
       <label
-        className="customMargin"
+        className=""
         disabled={true}
         htmlFor="testopB"
         id={1}>
