@@ -168,7 +168,7 @@ export default class Stars extends Component {
                     l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z" />
                   </svg>
                   <span className={srOnly}>
-                    {key - 1}
+                    {key}
                   </span>
                 </label> }
             </div>
