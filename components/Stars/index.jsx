@@ -35,7 +35,6 @@ export default class Stars extends Component {
 
   static defaultProps = {
     colors: ['currentColor'],
-    name: '',
     selectable: false,
     strokeColor: 'currentColor',
     totalStars: 5,
