@@ -14,7 +14,7 @@ const StarsDocs = () => (
       component={
         <div>
           <div className="inline-block">
-            <Stars value={2.5} />
+            <Stars name="stars" value={2.5} />
           </div>&nbsp;
           <br /><br />
           <div className="row">

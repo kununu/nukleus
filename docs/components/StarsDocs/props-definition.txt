@@ -1,6 +1,6 @@
 static propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   selectable: PropTypes.bool,
   strokeColor: PropTypes.string,
   totalStars: (props, propName) => {

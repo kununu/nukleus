@@ -117,7 +117,6 @@ export default class Choice extends Component {
                 id={idx}
                 htmlFor={`${name}${item.id}`}
                 className={customTheme}>
-                {item.icon || null}
                 {item.label}
               </label>
             </div>
