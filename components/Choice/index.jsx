@@ -69,7 +69,7 @@ export default class Choice extends Component {
 
     this.props.onChange(e);
     this.setState({
-      checked: e.target.value
+      checked: e.target.value !== this.state.checked ? e.target.value : null
     });
   };
 
