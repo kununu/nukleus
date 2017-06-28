@@ -147,6 +147,12 @@
   color: $gray-light;
 }
 
+.formGroupMultipleChoice {
+  &.inline {
+    align-items: flex-start;
+  }
+}
+
 .formControlLg .formControlIcon {
   top: 20px;
 }
@@ -213,6 +219,14 @@
     display: flex;
     align-items: center;
     min-height: 46px; // height of input
+  }
+
+  .choice:first-child {
+    margin-top: 0;
+  }
+
+  .choice:last-child {
+    margin-bottom: 0;
   }
 }
 
