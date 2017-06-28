@@ -201,7 +201,7 @@
   }
 
   label,
-  .labelWithToolTip {
+  .labelContainer {
     margin-right: 10px;
     margin-bottom: 0;
     width: 140px;
@@ -237,7 +237,7 @@
   }
 }
 
-.labelWithToolTip {
+.labelContainer {
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -4,7 +4,6 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import ToolTip from '../ToolTip';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles, {
@@ -27,7 +26,10 @@ export default class TextField extends Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
     multiLine: PropTypes.bool,
@@ -41,8 +43,6 @@ export default class TextField extends Component {
     rows: PropTypes.number,
     sanitizeValue: PropTypes.func,
     title: PropTypes.string,
-    toolTip: PropTypes.string,
-    toolTipLabel: PropTypes.string,
     type: PropTypes.oneOf([
       'email',
       'password',
@@ -73,8 +73,6 @@ export default class TextField extends Component {
     rows: 5,
     sanitizeValue: value => value,
     title: '',
-    toolTip: '',
-    toolTipLabel: '',
     type: 'text',
     value: ''
   };
@@ -211,22 +209,19 @@ export default class TextField extends Component {
   get label () {
     const {
       id,
-      label,
-      toolTip,
-      toolTipLabel
+      label
     } = this.props;
 
-    if (!toolTip || !toolTipLabel) {
-      return (
-        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
-      );
+    if (typeof label === 'string') {
+      return <label className={this.labelClassNames} htmlFor={id}>{label}</label>;
     }
 
-    return (
-      <span className={sharedStyles.labelWithToolTip}>
-        <label className={`${controlLabel}`} htmlFor={id}>{label}</label>
-        <ToolTip label={toolTipLabel} content={toolTip} />
-      </span>
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: `${label.props.className} ${sharedStyles.labelContainer}`
+      }
     );
   }
 
