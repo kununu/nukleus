@@ -216,6 +216,10 @@ export default class TextField extends Component {
       return <label className={this.labelClassNames} htmlFor={id}>{label}</label>;
     }
 
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
     return React.cloneElement(
       label,
       {
