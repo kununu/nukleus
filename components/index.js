@@ -11,6 +11,6 @@ export Paginator from './Paginator';
 export Table from './Table';
 export Tabs from './Tabs';
 export TextField from './TextField';
+export ToolTip from './ToolTip';
 export Select from './Select';
 export Stars from './Stars';
-export utils from './utils';
