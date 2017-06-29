@@ -220,7 +220,9 @@ export default class TextField extends Component {
     // However to also add the labelContainer class, we need to return a cloned
     // element and not just the label - element itself
     const classNames = [sharedStyles.labelContainer];
+
     if (label.props.className) classNames.push(label.props.className);
+
     return React.cloneElement(
       label,
       {
