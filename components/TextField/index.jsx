@@ -201,10 +201,9 @@ export default class TextField extends Component {
   }
 
   /**
-   * determines which classNames should be added to the label of
-   * the component
+   * generates the TextField label based on the Textfield label prop
    *
-   * @return {ReactElement} [list of classNames split by space]
+   * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
    */
   get label () {
     const {
@@ -220,11 +219,13 @@ export default class TextField extends Component {
     // clickable element like a link or button inside a label
     // However to also add the labelContainer class, we need to return a cloned
     // element and not just the label - element itself
+    const classNames = [sharedStyles.labelContainer];
+    if (label.props.className) classNames.push(label.props.className);
     return React.cloneElement(
       label,
       {
         ...label.props,
-        className: `${label.props.className} ${sharedStyles.labelContainer}`
+        className: classNames.join(' ')
       }
     );
   }

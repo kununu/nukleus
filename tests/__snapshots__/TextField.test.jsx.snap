@@ -215,7 +215,7 @@ exports[`test Renders a TextField with a ToolTip without crashing 1`] = `
 <div
   className="formGroup inline">
   <span
-    className="undefined labelContainer">
+    className="labelContainer">
     <label
       htmlFor="text-field">
       TextField
