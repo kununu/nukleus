@@ -216,7 +216,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Stars value={2.5} />
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
