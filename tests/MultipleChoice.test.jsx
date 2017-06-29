@@ -89,7 +89,7 @@ test('Renders choices without crashing', () => {
 test('Renders choices with inputStyle buttons withouth crashing', () => {
   const component = renderer.create(choiceWithButton);
   expect(component.toJSON()).toMatchSnapshot();
-})
+});
 
 test('Change status of choices change', () => {
   const component = mount(choices);
