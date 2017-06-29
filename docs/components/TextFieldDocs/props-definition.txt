@@ -7,7 +7,10 @@ static propTypes = {
   errorSubInfo: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]).isRequired,
   labelHidden: PropTypes.bool,
   maxLength: PropTypes.number,
   multiLine: PropTypes.bool,
@@ -22,8 +25,6 @@ static propTypes = {
   rows: PropTypes.number,
   sanitizeValue: PropTypes.func,
   title: PropTypes.string,
-  toolTip: PropTypes.string,
-  toolTipLabel: PropTypes.string,
   type: PropTypes.oneOf([
     'email',
     'password',

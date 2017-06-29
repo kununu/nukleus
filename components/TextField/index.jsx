@@ -4,15 +4,14 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import ToolTip from '../ToolTip';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
-import {
+import sharedStyles, {
   controlLabel,
-  hidden,
   formControl,
   formControlError,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -27,7 +26,10 @@ export default class TextField extends Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
     multiLine: PropTypes.bool,
@@ -41,8 +43,6 @@ export default class TextField extends Component {
     rows: PropTypes.number,
     sanitizeValue: PropTypes.func,
     title: PropTypes.string,
-    toolTip: PropTypes.string,
-    toolTipLabel: PropTypes.string,
     type: PropTypes.oneOf([
       'email',
       'password',
@@ -73,8 +73,6 @@ export default class TextField extends Component {
     rows: 5,
     sanitizeValue: value => value,
     title: '',
-    toolTip: '',
-    toolTipLabel: '',
     type: 'text',
     value: ''
   };
@@ -130,7 +128,13 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
-  get inputStyleClassNames () {
+  /**
+   * determines which classNames should be added to the container of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
     const {
       inputStyle,
       requiredLabel,
@@ -140,13 +144,19 @@ export default class TextField extends Component {
 
     // Add all styles that are added via inputStyles
     const inputStyles = inputStyle.split(' ');
-    inputStyles.map(style => classNames.push(styles[style]));
+    inputStyles.map(style => classNames.push(sharedStyles[style]));
 
-    if (requiredLabel || displayLength) classNames.push(styles.paddingTop);
+    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
 
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get labelClassNames () {
     const {
       inputStyle,
@@ -160,13 +170,19 @@ export default class TextField extends Component {
     if (labelHidden) classNames.push(hidden);
 
     // Check if TextField contains an error
-    if (this.hasError()) classNames.push(styles.controlLabelError);
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(styles.controlLabelMediumSize);
+    if (inputStyles.includes('mediumSize')) classNames.push(sharedStyles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the input of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get textFieldClassNames () {
     const {multiLine} = this.props;
     const classNames = [formControl];
@@ -184,25 +200,32 @@ export default class TextField extends Component {
     return this.state.showError && this.props.error;
   }
 
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {ReactElement} [list of classNames split by space]
+   */
   get label () {
     const {
       id,
-      label,
-      toolTip,
-      toolTipLabel
+      label
     } = this.props;
 
-    if (!toolTip || !toolTipLabel) {
-      return (
-        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
-      );
+    if (typeof label === 'string') {
+      return <label className={this.labelClassNames} htmlFor={id}>{label}</label>;
     }
 
-    return (
-      <span className={styles.labelWithToolTip}>
-        <label className={`${controlLabel}`} htmlFor={id}>{label}</label>
-        <ToolTip label={toolTipLabel} content={toolTip} />
-      </span>
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: `${label.props.className} ${sharedStyles.labelContainer}`
+      }
     );
   }
 
@@ -231,7 +254,7 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={this.inputStyleClassNames}>
+      <div className={this.containerClassNames}>
         <InfoLabel
           requiredLabel={requiredLabel}
           inputValue={this.state.value}

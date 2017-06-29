@@ -19,8 +19,6 @@ static defaultProps = {
   rows: 5,
   sanitizeValue: value => value,
   title: '',
-  toolTip: '',
-  toolTipLabel: '',
   type: 'text',
   value: ''
 };

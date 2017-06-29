@@ -2,12 +2,13 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {
+import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
   formControl,
-  formGroup
+  formGroup,
+  formGroupMultipleChoice
 } from '../index.scss';
 
 
@@ -82,18 +83,27 @@ export default class MultipleChoice extends Component {
     });
   }
 
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, formGroupMultipleChoice, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
   render () {
     const {choices} = this.state;
 
     return (
-      <div className={`${styles[this.props.inputStyle]} ${formGroup} ${this.props.requiredLabel ? styles.paddingTop : ''}`}>
+      <div className={this.containerClassNames}>
         {this.props.requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {this.props.requiredLabel}
           </span>
         }
 
-        {this.props.heading && <div className={controlLabel}>{this.props.heading}</div>}
+        {this.props.heading && <label htmlFor={this.props.name} className={controlLabel}>{this.props.heading}</label>}
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>

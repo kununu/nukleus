@@ -5,7 +5,7 @@ import React, {Component, PropTypes} from 'react';
 import styles from './index.scss';
 
 import Error from '../Error';
-import {
+import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
@@ -103,6 +103,38 @@ export default class Select extends Component {
     return this.state.showError && this.props.error;
   }
 
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
+  }
+
   render () {
     const {
       autoFocus,
@@ -112,7 +144,6 @@ export default class Select extends Component {
       error,
       errorSubInfo,
       id,
-      inputStyle,
       items,
       labelHidden,
       name,
@@ -122,7 +153,7 @@ export default class Select extends Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
+      <div className={this.containerClassNames}>
         {labelHidden && <span className={srOnly}>{title}</span>}
 
         {requiredLabel &&
@@ -132,7 +163,7 @@ export default class Select extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
+          className={this.labelClassNames}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>
