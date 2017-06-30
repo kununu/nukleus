@@ -21,6 +21,24 @@ const choice = (
   } />
 );
 
+const choiceWithButton = (
+  <MultipleChoice
+    name="choice[]"
+    heading="Button Choice"
+    inputStyle="buttons"
+    isRequired
+    choices={
+    [
+      {
+        id: 'option-1',
+        isChecked: false,
+        label: 'test',
+        value: 'test'
+      }
+    ]
+  } />
+);
+
 const choices = (
   <MultipleChoice
     name="choice[]"
@@ -65,6 +83,11 @@ test('Changes status on choice change', () => {
 
 test('Renders choices without crashing', () => {
   const component = renderer.create(choices);
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Renders choices with inputStyle buttons withouth crashing', () => {
+  const component = renderer.create(choiceWithButton);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
