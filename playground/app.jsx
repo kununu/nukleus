@@ -216,7 +216,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Stars value={2.5} />
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
@@ -292,7 +292,7 @@ const App = ({location: {pathname, query}}) => (
             <TextField
               id="text-field"
               label={
-                (<span className="myAwesomeClassName">
+                (<span>
                   <label className={controlLabel} htmlFor="text-field">TextField</label>
                   <ToolTip label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
                 </span>

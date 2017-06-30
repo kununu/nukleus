@@ -193,6 +193,37 @@ exports[`test Renders choice without crashing 1`] = `
 </div>
 `;
 
+exports[`test Renders choices with inputStyle buttons withouth crashing 1`] = `
+<div
+  className="formGroup formGroupMultipleChoice buttons">
+  
+  <label
+    className="controlLabel"
+    htmlFor="choice[]">
+    Button Choice
+  </label>
+  <div
+    className="inputContainer">
+    <div
+      className="choice">
+      <input
+        checked={false}
+        className="formControl"
+        id="choice[]option-1"
+        name="choice[]"
+        onChange={[Function]}
+        required={true}
+        type="checkbox"
+        value="test" />
+      <label
+        htmlFor="choice[]option-1">
+        test
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`test Renders choices without crashing 1`] = `
 <div
   className="formGroup formGroupMultipleChoice inline">

@@ -85,7 +85,14 @@ export default class MultipleChoice extends Component {
 
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
-    const classNames = [formGroup, formGroupMultipleChoice, sharedStyles[inputStyle]];
+
+    const inputStyles = inputStyle.split(' ');
+
+    const classNames = [formGroup, formGroupMultipleChoice];
+
+    // Inline Styles is shared in global index.scss, buttons is a local style
+    if (inputStyles.includes('buttons')) classNames.push(styles.buttons);
+    if (inputStyles.includes('inline')) classNames.push(sharedStyles.inline);
 
     if (requiredLabel) classNames.push(styles.paddingTop);
 
