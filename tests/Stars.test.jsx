@@ -56,7 +56,7 @@ test('Renders correctly rounded star values', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Test2', () => {
+test('Fires click function on input click', () => {
   const spyFunc = jest.fn();
   const stars = (
     <Stars
