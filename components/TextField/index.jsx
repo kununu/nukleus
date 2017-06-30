@@ -39,6 +39,7 @@ export default class TextField extends Component {
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
     sanitizeValue: PropTypes.func,
@@ -69,6 +70,7 @@ export default class TextField extends Component {
     pattern: '',
     placeholder: '',
     query: {},
+    reference: () => {},
     requiredLabel: '',
     rows: 5,
     sanitizeValue: value => value,
@@ -250,6 +252,7 @@ export default class TextField extends Component {
       onBlur,
       pattern,
       placeholder,
+      reference,
       requiredLabel,
       rows,
       title,
@@ -282,6 +285,7 @@ export default class TextField extends Component {
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
+                ref={reference}
                 rows={rows}
                 value={this.state.value} /> :
               <input
@@ -296,6 +300,7 @@ export default class TextField extends Component {
                 onBlur={onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
+                ref={reference}
                 required={isRequired}
                 title={title}
                 type={type}
