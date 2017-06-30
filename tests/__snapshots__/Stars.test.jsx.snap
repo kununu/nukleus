@@ -11,6 +11,7 @@ exports[`test Deselects stars 1`] = `
       ]
     }
     name="stars"
+    onClick={null}
     selectable={true}
     strokeColor="currentColor"
     totalStars={5}
@@ -27,6 +28,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-0"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={0} />
         </div>
@@ -38,6 +40,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-1"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={1} />
           <label
@@ -74,6 +77,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-2"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={2} />
           <label
@@ -110,6 +114,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-3"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={3} />
           <label
@@ -146,6 +151,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-4"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={4} />
           <label
@@ -182,6 +188,7 @@ exports[`test Deselects stars 1`] = `
             id="stars-5"
             name="stars"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={5} />
           <label
@@ -224,6 +231,7 @@ exports[`test Deselects stars 1`] = `
       ]
     }
     name="stars2"
+    onClick={null}
     selectable={true}
     strokeColor="currentColor"
     totalStars={5}
@@ -240,6 +248,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-0"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={0} />
         </div>
@@ -251,6 +260,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-1"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={1} />
           <label
@@ -287,6 +297,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-2"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={2} />
           <label
@@ -323,6 +334,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-3"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={3} />
           <label
@@ -359,6 +371,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-4"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={4} />
           <label
@@ -395,6 +408,7 @@ exports[`test Deselects stars 1`] = `
             id="stars2-5"
             name="stars2"
             onChange={[Function]}
+            onClick={null}
             type="radio"
             value={5} />
           <label
@@ -914,6 +928,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-0"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={0} />
     </div>
@@ -925,6 +940,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-1"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={1} />
       <label
@@ -961,6 +977,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-2"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={2} />
       <label
@@ -997,6 +1014,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-3"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={3} />
       <label
@@ -1033,6 +1051,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-4"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={4} />
       <label
@@ -1069,6 +1088,7 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         id="stars-5"
         name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={5} />
       <label
