@@ -17,6 +17,7 @@ export default class Stars extends Component {
     colors: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string.isRequired,
     onClick: PropTypes.func,
+    onChange: PropTypes.func,
     selectable: PropTypes.bool,
     strokeColor: PropTypes.string,
     totalStars: (props, propName) => {
@@ -37,6 +38,7 @@ export default class Stars extends Component {
   static defaultProps = {
     colors: ['currentColor'],
     onClick: null,
+    onChange: null,
     selectable: false,
     strokeColor: 'currentColor',
     totalStars: 5,
@@ -49,6 +51,10 @@ export default class Stars extends Component {
   }
 
   onClick = e => {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
+
     const newVal = Number(e.target.value);
 
     if (newVal === this.state.value) {
