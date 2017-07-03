@@ -22,6 +22,7 @@ export default class Choice extends Component {
     options: PropTypes.array.isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
@@ -35,6 +36,7 @@ export default class Choice extends Component {
     onChange: null,
     optionsPerRow: null,
     query: {},
+    reference: () => {},
     requiredLabel: ''
   };
 
@@ -81,6 +83,7 @@ export default class Choice extends Component {
       isRequired,
       name,
       options,
+      reference,
       requiredLabel
     } = this.props;
 
@@ -111,6 +114,7 @@ export default class Choice extends Component {
                 name={name}
                 checked={checked === item.value}
                 onChange={this.onChange}
+                ref={reference}
                 required={isRequired} />
               <label
                 disabled={disabled}

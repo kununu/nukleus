@@ -19,7 +19,9 @@ export default class MultipleChoice extends Component {
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
@@ -28,7 +30,9 @@ export default class MultipleChoice extends Component {
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
+    onChange: null,
     query: {},
+    reference: () => {},
     requiredLabel: ''
   };
 
@@ -56,6 +60,10 @@ export default class MultipleChoice extends Component {
 
   onChange (choice) {
     this.updateValue([choice]);
+
+    if (this.props.onChange) {
+      this.props.onChange(choice);
+    }
   }
 
   getChoicesToUpdate (newChoices) {
@@ -123,6 +131,7 @@ export default class MultipleChoice extends Component {
                 value={choice.value}
                 type="checkbox"
                 checked={choice.isChecked}
+                ref={this.props.reference}
                 required={this.props.isRequired}
                 onChange={() => this.onChange(choice)} />
 
