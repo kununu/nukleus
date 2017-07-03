@@ -30,7 +30,7 @@ export default class MultipleChoice extends Component {
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
-    onChange: () => {},
+    onChange: null,
     query: {},
     reference: () => {},
     requiredLabel: ''
