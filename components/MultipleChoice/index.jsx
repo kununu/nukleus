@@ -62,7 +62,7 @@ export default class MultipleChoice extends Component {
     this.updateValue([choice]);
 
     if (this.props.onChange) {
-      this.props.onChange();
+      this.props.onChange(choice);
     }
   }
 
