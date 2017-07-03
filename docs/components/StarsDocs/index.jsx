@@ -21,6 +21,7 @@ const StarsDocs = () => (
             <div className="col-sm-4 col-md-3">
               <Stars
                 value={2}
+                name="stars"
                 selectable
                 colors={[
                   '#ff464e',
