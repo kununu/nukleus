@@ -33,6 +33,7 @@ export default class Select extends Component {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.any
@@ -51,6 +52,7 @@ export default class Select extends Component {
     labelHidden: false,
     onChange: null,
     query: {},
+    reference: () => {},
     requiredLabel: '',
     value: ''
   };
@@ -148,6 +150,7 @@ export default class Select extends Component {
       labelHidden,
       name,
       isRequired,
+      reference,
       requiredLabel,
       title
     } = this.props;
@@ -172,6 +175,7 @@ export default class Select extends Component {
             name={name}
             value={this.state.value}
             id={id}
+            ref={reference}
             required={isRequired}
             autoFocus={autoFocus}
             onChange={this.onChange}
