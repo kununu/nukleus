@@ -3,12 +3,14 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+const spyFunc = jest.fn();
 
 const choice = (
   <MultipleChoice
     name="choice[]"
     heading="Test"
     isRequired
+    onChange={spyFunc}
     choices={
     [
       {
@@ -96,4 +98,10 @@ test('Change status of choices change', () => {
   component.find({value: 'option-1'}).simulate('change');
   component.find({value: 'option-4'}).simulate('change');
   expect(toJson(component)).toMatchSnapshot();
+});
+
+test('Fires on change function', () => {
+  const component = mount(choice);
+  component.find('input').simulate('click');
+  expect(spyFunc).toHaveBeenCalled();
 });

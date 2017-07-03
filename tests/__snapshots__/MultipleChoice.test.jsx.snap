@@ -33,7 +33,9 @@ exports[`test Change status of choices change 1`] = `
   inputStyle="inline"
   isRequired={false}
   name="choice[]"
+  onChange={[Function]}
   query={Object {}}
+  reference={[Function]}
   requiredLabel="">
   <div
     className="formGroup formGroupMultipleChoice inline">
@@ -130,7 +132,9 @@ exports[`test Changes status on choice change 1`] = `
   inputStyle="inline"
   isRequired={true}
   name="choice[]"
+  onChange={[Function]}
   query={Object {}}
+  reference={[Function]}
   requiredLabel="">
   <div
     className="formGroup formGroupMultipleChoice inline">
