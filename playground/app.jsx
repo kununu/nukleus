@@ -294,7 +294,7 @@ const App = ({location: {pathname, query}}) => (
               label={
                 (<span>
                   <label className={controlLabel} htmlFor="text-field">TextField</label>
-                  <ToolTip label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
+                  <ToolTip position="bottomLeft" label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
                 </span>
                 )
               }
