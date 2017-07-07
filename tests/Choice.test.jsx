@@ -5,7 +5,6 @@ import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import
 
 const options = [
   {
-    icon: <i className="fa fa-thumbs-up" aria-hidden="true" />,
     id: 'opA',
     label: 'Option A',
     value: 'opA'
@@ -13,7 +12,6 @@ const options = [
   {
     id: 'opB',
     label: 'Option B',
-    labelClass: 'customMargin',
     value: 'opB'
   },
   {
@@ -261,4 +259,30 @@ test('No change checked query does not change state', () => {
   expect(component.state('checked')).toEqual('opB');
   component.setProps({query: {test: 'opA'}});
   expect(component.state('checked')).toEqual('opB');
+});
+
+test('Uncheck predefined option', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      checked="opA"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('change');
+  expect(component.state('checked')).toEqual(null);
+});
+
+test('Uncheck previously checked option', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('change');
+  component.find('#testopA').simulate('change');
+  expect(component.state('checked')).toEqual(null);
 });

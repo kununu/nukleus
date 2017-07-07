@@ -8,7 +8,7 @@ import styles from './index.scss';
 import Error from '../Error';
 import getElementPositionY from '../../utils/elementPosition';
 import isMobile from '../../utils/mobileDetection';
-import {
+import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
@@ -197,6 +197,38 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
+  }
+
   renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span></span>;
 
   render () {
@@ -239,7 +271,7 @@ export default class Autocomplete extends React.Component {
     return (
       <div
         ref={node => this.node = node}
-        className={`${formGroup} ${styles[this.props.inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
+        className={this.containerClassNames}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
@@ -254,7 +286,7 @@ export default class Autocomplete extends React.Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
+          className={this.labelClassNames}
           htmlFor={id}>
           {label}
         </label>
