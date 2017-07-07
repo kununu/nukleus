@@ -6,12 +6,12 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
-import {
+import sharedStyles, {
   controlLabel,
-  hidden,
   formControl,
   formControlError,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -26,7 +26,10 @@ export default class TextField extends Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
     multiLine: PropTypes.bool,
@@ -36,8 +39,10 @@ export default class TextField extends Component {
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
+    sanitizeValue: PropTypes.func,
     title: PropTypes.string,
     type: PropTypes.oneOf([
       'email',
@@ -65,8 +70,10 @@ export default class TextField extends Component {
     pattern: '',
     placeholder: '',
     query: {},
+    reference: () => {},
     requiredLabel: '',
     rows: 5,
+    sanitizeValue: value => value,
     title: '',
     type: 'text',
     value: ''
@@ -99,7 +106,7 @@ export default class TextField extends Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    this.updateValue(args[0].target.value);
+    this.updateValue(this.props.sanitizeValue(args[0].target.value));
     if (this.props.onChange) this.props.onChange(...args);
     this.hideError();
   };
@@ -123,7 +130,13 @@ export default class TextField extends Component {
     this.setState({showError: false});
   }
 
-  get inputStyleClassNames () {
+  /**
+   * determines which classNames should be added to the container of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
     const {
       inputStyle,
       requiredLabel,
@@ -133,13 +146,19 @@ export default class TextField extends Component {
 
     // Add all styles that are added via inputStyles
     const inputStyles = inputStyle.split(' ');
-    inputStyles.map(style => classNames.push(styles[style]));
+    inputStyles.map(style => classNames.push(sharedStyles[style]));
 
-    if (requiredLabel || displayLength) classNames.push(styles.paddingTop);
+    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
 
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get labelClassNames () {
     const {
       inputStyle,
@@ -153,13 +172,19 @@ export default class TextField extends Component {
     if (labelHidden) classNames.push(hidden);
 
     // Check if TextField contains an error
-    if (this.hasError()) classNames.push(styles.controlLabelError);
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(styles.controlLabelMediumSize);
+    if (inputStyles.includes('mediumSize')) classNames.push(sharedStyles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }
 
+  /**
+   * determines which classNames should be added to the input of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
   get textFieldClassNames () {
     const {multiLine} = this.props;
     const classNames = [formControl];
@@ -175,6 +200,38 @@ export default class TextField extends Component {
 
   hasError () {
     return this.state.showError && this.props.error;
+  }
+
+  /**
+   * generates the TextField label based on the Textfield label prop
+   *
+   * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
+   */
+  get label () {
+    const {
+      id,
+      label
+    } = this.props;
+
+    if (typeof label === 'string') {
+      return <label className={this.labelClassNames} htmlFor={id}>{label}</label>;
+    }
+
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    const classNames = [sharedStyles.labelContainer];
+
+    if (label.props.className) classNames.push(label.props.className);
+
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: classNames.join(' ')
+      }
+    );
   }
 
   render () {
@@ -195,6 +252,7 @@ export default class TextField extends Component {
       onBlur,
       pattern,
       placeholder,
+      reference,
       requiredLabel,
       rows,
       title,
@@ -202,7 +260,7 @@ export default class TextField extends Component {
     } = this.props;
 
     return (
-      <div className={this.inputStyleClassNames}>
+      <div className={this.containerClassNames}>
         <InfoLabel
           requiredLabel={requiredLabel}
           inputValue={this.state.value}
@@ -210,7 +268,7 @@ export default class TextField extends Component {
           maxLength={maxLength} />
         {labelHidden && <span className={srOnly}>{label}</span>}
 
-        <label className={this.labelClassNames} htmlFor={id}>{label}</label>
+        {this.label}
 
         <div className={styles.inputContainer}>
           {
@@ -227,6 +285,7 @@ export default class TextField extends Component {
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
+                ref={reference}
                 rows={rows}
                 value={this.state.value} /> :
               <input
@@ -241,6 +300,7 @@ export default class TextField extends Component {
                 onBlur={onBlur}
                 pattern={pattern}
                 placeholder={placeholder}
+                ref={reference}
                 required={isRequired}
                 title={title}
                 type={type}

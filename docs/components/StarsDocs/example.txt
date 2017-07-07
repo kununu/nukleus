@@ -4,6 +4,7 @@
 // selectable stars
 <Stars
   value={2}
+  name="stars"
   selectable
   colors={[
     'red',
