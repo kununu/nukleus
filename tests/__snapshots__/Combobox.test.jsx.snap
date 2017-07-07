@@ -1,12 +1,16 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  debounceRate={500}
   disabled={false}
   error={null}
+  errorSubInfo={null}
   handle={null}
   id="name"
+  inputProps={Object {}}
   inputStyles="inline"
   inputValue=""
   isRequired={true}
+  isSearchable={true}
   items={
     Array [
       "music",
@@ -24,27 +28,31 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   }
   keyName="name"
   label="Combobox"
+  labelHidden={false}
   name="name"
+  onSelect={null}
   placeholder="Type m"
   requiredLabel="">
   <div
     className="formGroup inline ">
     <label
-      className="controlLabel"
-      htmlFor="city">
+      className="controlLabel false "
+      htmlFor="name">
       Combobox
     </label>
     <div
       className="container">
       <Autosuggest
         alwaysRenderSuggestions={false}
+        error={null}
+        errorSubInfo={null}
         focusFirstSuggestion={false}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "className": "formControl false ",
             "disabled": false,
             "id": "name",
             "name": "name",
@@ -105,7 +113,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "className": "formControl false ",
               "disabled": false,
               "id": "name",
               "name": "name",
@@ -177,7 +185,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              className="formControl false "
               disabled={false}
               id="name"
               name="name"
@@ -688,13 +696,13 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 </ComboboxComponent>
 `;
 
-exports[`test Renders Combobox without crashing 1`] = `
+exports[`test Renders Combobox with an error message without crashing 1`] = `
 <div
   className="formGroup inline ">
   
   <label
-    className="controlLabel"
-    htmlFor="city">
+    className="controlLabel false controlLabelError"
+    htmlFor="name">
     Combobox
   </label>
   <div
@@ -708,7 +716,101 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
-        className="formControl"
+        className="formControl false formControlError"
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders Combobox without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel false "
+    htmlFor="name">
+    Combobox
+  </label>
+  <div
+    className="container">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl false "
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`test Renders notSearchableCombobox without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel false "
+    htmlFor="name">
+    Combobox
+  </label>
+  <div
+    className="container">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl isNotSearchable "
         disabled={false}
         id="name"
         name="name"
