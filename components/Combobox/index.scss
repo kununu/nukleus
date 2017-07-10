@@ -33,6 +33,13 @@
       padding-top: 25px;
     }
   }
+
+  .controlLabelError {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
+  }
 }
 
 .container {
@@ -95,6 +102,10 @@
     right: 0;
     width: 100%;
   }
+
+  span {
+    user-select: none;
+  }
 }
 
 .suggestionsList {
@@ -127,4 +138,16 @@
   top: ($input-height-base / 3);
   z-index: 3;
   pointer-events: none;
+}
+
+.isNotSearchable {
+  cursor: default;
+  color : transparent;
+  text-shadow : 0 0 0 $gray;
+  user-select: none;
+  &::selection { background: transparent; }
+
+  &:focus {
+    outline : none;
+  }
 }

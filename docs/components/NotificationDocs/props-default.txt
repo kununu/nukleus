@@ -17,6 +17,7 @@ static defaultProps = {
   duration: 5000,
   icon: null,
   message: '',
+  onCloseClick: null,
   type: 'SUCCESS',
   visible: false
 }
