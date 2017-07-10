@@ -55,3 +55,35 @@ test('Renders correctly rounded star values', () => {
   const tree = renderer.create(<Stars name="stars" value={2.75} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Fires click function on input click', () => {
+  const spyFunc = jest.fn();
+  const stars = (
+    <Stars
+      value={1}
+      name="stars"
+      onClick={spyFunc}
+      colors={['red', 'purple', 'green', 'orange', 'black']}
+      selectable />
+  );
+
+  const component = mount(stars);
+  component.find('input[type="radio"]').at(2).simulate('click');
+  expect(spyFunc).toHaveBeenCalled();
+});
+
+test('Fires onChange function on input change', () => {
+  const spyFunc = jest.fn();
+  const stars = (
+    <Stars
+      value={1}
+      name="stars"
+      onChange={spyFunc}
+      colors={['red', 'purple', 'green', 'orange', 'black']}
+      selectable />
+  );
+
+  const component = mount(stars);
+  component.find('input[type="radio"]').at(2).simulate('change');
+  expect(spyFunc).toHaveBeenCalled();
+});

@@ -2,11 +2,12 @@
 
 .toolTip {
   position: relative;
-}
+  width: 16px;
+  height: 16px;
 
-.toolTipButton {
-  color: $blue;
-  background: transparent;
-  border: 0;
-  appearance: none;
+  svg {
+    fill: $gray-base-90;
+    width: 16px;
+    height: 16px;
+  }
 }
