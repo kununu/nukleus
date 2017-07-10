@@ -45,3 +45,9 @@ test('Clicking twice on a ToolTip Button hides the InfoBox', () => {
   component.find('button').simulate('click');
   expect(toJson(component)).toMatchSnapshot();
 });
+
+test('Renders correct position bottomRight', () => {
+  const component = mount(<ToolTip label="Test" position="bottomRight" content="More Test Info" />);
+  component.find('button').simulate('click');
+  expect(toJson(component)).toMatchSnapshot();
+});
