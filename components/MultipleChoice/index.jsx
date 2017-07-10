@@ -2,12 +2,13 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {
+import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
   formControl,
-  formGroup
+  formGroup,
+  formGroupMultipleChoice
 } from '../index.scss';
 
 
@@ -18,7 +19,9 @@ export default class MultipleChoice extends Component {
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
@@ -27,7 +30,9 @@ export default class MultipleChoice extends Component {
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
+    onChange: null,
     query: {},
+    reference: () => {},
     requiredLabel: ''
   };
 
@@ -55,6 +60,10 @@ export default class MultipleChoice extends Component {
 
   onChange (choice) {
     this.updateValue([choice]);
+
+    if (this.props.onChange) {
+      this.props.onChange(choice);
+    }
   }
 
   getChoicesToUpdate (newChoices) {
@@ -82,18 +91,34 @@ export default class MultipleChoice extends Component {
     });
   }
 
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+
+    const inputStyles = inputStyle.split(' ');
+
+    const classNames = [formGroup, formGroupMultipleChoice];
+
+    // Inline Styles is shared in global index.scss, buttons is a local style
+    if (inputStyles.includes('buttons')) classNames.push(styles.buttons);
+    if (inputStyles.includes('inline')) classNames.push(sharedStyles.inline);
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
   render () {
     const {choices} = this.state;
 
     return (
-      <div className={`${styles[this.props.inputStyle]} ${formGroup} ${this.props.requiredLabel ? styles.paddingTop : ''}`}>
+      <div className={this.containerClassNames}>
         {this.props.requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {this.props.requiredLabel}
           </span>
         }
 
-        {this.props.heading && <div className={controlLabel}>{this.props.heading}</div>}
+        {this.props.heading && <label htmlFor={this.props.name} className={controlLabel}>{this.props.heading}</label>}
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
@@ -106,6 +131,7 @@ export default class MultipleChoice extends Component {
                 value={choice.value}
                 type="checkbox"
                 checked={choice.isChecked}
+                ref={this.props.reference}
                 required={this.props.isRequired}
                 onChange={() => this.onChange(choice)} />
 

@@ -1,6 +1,6 @@
 @import '~kununu-theme/scss/base/variables';
 
-select {
+.select {
   appearance: none;
 
   // Hide the arrow in IE10 and up
@@ -63,5 +63,12 @@ select {
     @media (min-width: $screen-sm-min) {
       padding-top: 25px;
     }
+  }
+
+  .controlLabelError {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
   }
 }

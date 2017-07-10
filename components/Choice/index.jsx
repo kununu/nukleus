@@ -9,7 +9,6 @@ import {
   formGroup
 } from '../index.scss';
 
-
 export default class Choice extends Component {
   static propTypes = {
     checked: PropTypes.string,
@@ -21,7 +20,9 @@ export default class Choice extends Component {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.array.isRequired,
+    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
@@ -33,7 +34,9 @@ export default class Choice extends Component {
     headingStyle: 'control-label',
     isRequired: false,
     onChange: null,
+    optionsPerRow: null,
     query: {},
+    reference: () => {},
     requiredLabel: ''
   };
 
@@ -68,7 +71,7 @@ export default class Choice extends Component {
 
     this.props.onChange(e);
     this.setState({
-      checked: e.target.value
+      checked: e.target.value !== this.state.checked ? e.target.value : null
     });
   };
 
@@ -80,8 +83,11 @@ export default class Choice extends Component {
       isRequired,
       name,
       options,
+      reference,
       requiredLabel
     } = this.props;
+
+    const optionsPerRow = this.props.optionsPerRow && parseInt(this.props.optionsPerRow, 10);
 
     const {
       checked
@@ -98,7 +104,7 @@ export default class Choice extends Component {
 
         {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
 
-        <div className={`${styles.radioContainer} ${options.length > 3 && styles.flexible}`}>
+        <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
             <div className={styles.radioButton} key={item.id}>
               <input
@@ -108,6 +114,7 @@ export default class Choice extends Component {
                 name={name}
                 checked={checked === item.value}
                 onChange={this.onChange}
+                ref={reference}
                 required={isRequired} />
               <label
                 disabled={disabled}
