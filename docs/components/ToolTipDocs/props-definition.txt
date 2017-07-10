@@ -1,0 +1,11 @@
+static propTypes = {
+  content: PropTypes.string,
+  icon: PropTypes.element,
+  label: PropTypes.string.isRequired,
+  position: PropTypes.oneOf([
+    'topLeft',
+    'topRight',
+    'bottomLeft',
+    'bottomRight'
+  ])
+};

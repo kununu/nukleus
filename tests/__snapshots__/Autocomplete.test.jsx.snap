@@ -54,7 +54,7 @@ exports[`test Hides no suggestions on blur 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false "
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -168,7 +168,7 @@ exports[`test Renders Autocomplete with Error without crashing 1`] = `
     Required
   </span>
   <label
-    className="controlLabel false controlLabelError"
+    className="controlLabel controlLabelError"
     htmlFor="autocompletes">
     Autocomplete
   </label>
@@ -223,7 +223,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
     Required
   </span>
   <label
-    className="controlLabel false "
+    className="controlLabel"
     htmlFor="autocompletes">
     Autocomplete
   </label>
@@ -318,7 +318,7 @@ exports[`test Renders no suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false "
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -489,7 +489,7 @@ exports[`test Renders suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false "
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -799,7 +799,7 @@ exports[`test Updates value on selection 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false "
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
