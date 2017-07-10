@@ -65,6 +65,7 @@ exports[`test Hides no suggestions on blur 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
@@ -86,13 +87,14 @@ exports[`test Hides no suggestions on blur 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
@@ -122,7 +124,6 @@ exports[`test Hides no suggestions on blur 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -328,6 +329,7 @@ exports[`test Renders no suggestions container 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
@@ -349,13 +351,14 @@ exports[`test Renders no suggestions container 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
@@ -385,7 +388,6 @@ exports[`test Renders no suggestions container 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -498,6 +500,7 @@ exports[`test Renders suggestions container 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
@@ -519,6 +522,7 @@ exports[`test Renders suggestions container 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={
           Array [
@@ -534,9 +538,9 @@ exports[`test Renders suggestions container 1`] = `
         }
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={0}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
@@ -577,12 +581,11 @@ exports[`test Renders suggestions container 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
             <input
-              aria-activedescendant="react-autowhatever-1--item-0"
+              aria-activedescendant={null}
               aria-autocomplete="list"
               aria-expanded={true}
               aria-haspopup={true}
@@ -607,8 +610,8 @@ exports[`test Renders suggestions container 1`] = `
               id="react-autowhatever-1"
               style={Object {}}>
               <ItemsList
-                focusedItemIndex={0}
                 getItemId={[Function]}
+                highlightedItemIndex={null}
                 itemProps={[Function]}
                 items={
                   Array [
@@ -623,7 +626,7 @@ exports[`test Renders suggestions container 1`] = `
                   ]
                 }
                 keyPrefix="react-autowhatever-1-"
-                onFocusedItemChange={[Function]}
+                onHighlightedItemChange={[Function]}
                 renderItem={[Function]}
                 renderItemData={
                   Object {
@@ -639,6 +642,7 @@ exports[`test Renders suggestions container 1`] = `
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-1--item-0"
+                    isHighlighted={false}
                     item={
                       Object {
                         "item": "apple",
@@ -685,6 +689,7 @@ exports[`test Renders suggestions container 1`] = `
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-1--item-1"
+                    isHighlighted={false}
                     item={
                       Object {
                         "item": "alpha",
@@ -805,6 +810,7 @@ exports[`test Updates value on selection 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
@@ -826,13 +832,14 @@ exports[`test Updates value on selection 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
@@ -862,7 +869,6 @@ exports[`test Updates value on selection 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
