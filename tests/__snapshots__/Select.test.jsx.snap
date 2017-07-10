@@ -20,6 +20,7 @@ exports[`test Changes status on value change 1`] = `
   name="select"
   onChange={null}
   query={Object {}}
+  reference={[Function]}
   requiredLabel=""
   title="Select"
   value="option">
