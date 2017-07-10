@@ -150,6 +150,19 @@ test('Renders a Choice with custom style disabled', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders a Choice with optionsPerRow set without crashing', () => {
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={options}
+      optionsPerRow="3"
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Change checked when changed', () => {
   const component = mount(
     <Choice
@@ -246,4 +259,30 @@ test('No change checked query does not change state', () => {
   expect(component.state('checked')).toEqual('opB');
   component.setProps({query: {test: 'opA'}});
   expect(component.state('checked')).toEqual('opB');
+});
+
+test('Uncheck predefined option', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      checked="opA"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('change');
+  expect(component.state('checked')).toEqual(null);
+});
+
+test('Uncheck previously checked option', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('change');
+  component.find('#testopA').simulate('change');
+  expect(component.state('checked')).toEqual(null);
 });

@@ -17,6 +17,7 @@ import StarsDocs from 'components/StarsDocs';
 import TabsDocs from 'components/TabsDocs';
 import TableDocs from 'components/TableDocs';
 import TextFieldDocs from 'components/TextFieldDocs';
+import ToolTipDocs from 'components/ToolTipDocs';
 import NotificationDocs from 'components/NotificationDocs';
 
 import 'font-awesome-webpack';
@@ -42,6 +43,7 @@ const getRoutes = () => (
     <Route path="/select" component={SelectDocs} />
     <Route path="/table" component={TableDocs} />
     <Route path="/tabs(/:page)" component={TabsDocs} />
+    <Route path="/tool-tip" component={ToolTipDocs} />
   </Route>
 );
 
