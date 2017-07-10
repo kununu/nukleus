@@ -3,14 +3,16 @@
 
 import React, {Component, PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
+import debounce from 'debounce';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
   controlNote,
-  errorStyles,
   formControl,
+  formControlError,
   formGroup,
   controlLabelRequired,
   hidden
@@ -19,8 +21,10 @@ import {
 
 export default class ComboboxComponent extends Component {
   static propTypes = {
+    debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputProps: PropTypes.object,
@@ -38,8 +42,10 @@ export default class ComboboxComponent extends Component {
   };
 
   static defaultProps = {
+    debounceRate: 500,
     disabled: false,
     error: null,
+    errorSubInfo: null,
     handle: null,
     inputProps: {},
     inputStyles: 'inline',
@@ -60,6 +66,11 @@ export default class ComboboxComponent extends Component {
     value: this.props.inputValue
   };
 
+  componentWillMount () {
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
+  }
+
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
     if (nextProps.inputValue !== this.props.inputValue) {
@@ -70,9 +81,7 @@ export default class ComboboxComponent extends Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.setState({
-      suggestions: this.getSuggestions(value, this.props.items)
-    });
+    this.debouncedLoadSuggestions(value);
   };
 
   onChange = (event, {newValue}) => {
@@ -99,6 +108,14 @@ export default class ComboboxComponent extends Component {
 
   getSuggestionValue = suggestion => suggestion.value;
 
+  loadSuggestions (value) {
+    this.setState({
+      suggestions: this.getSuggestions(value, this.props.items)
+    });
+  }
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
+
   handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
     if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
     if (method === 'enter') {
@@ -114,6 +131,10 @@ export default class ComboboxComponent extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   renderSuggestion = suggestion => <span>{suggestion.value}</span>;
 
   render () {
@@ -123,6 +144,7 @@ export default class ComboboxComponent extends Component {
       label,
       labelHidden,
       error,
+      errorSubInfo,
       handle,
       isRequired,
       requiredLabel,
@@ -140,13 +162,15 @@ export default class ComboboxComponent extends Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
           htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
           <Autosuggest
             suggestions={this.state.suggestions}
             theme={styles}
+            error={error}
+            errorSubInfo={errorSubInfo}
             onSuggestionSelected={this.handleSelection}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             shouldRenderSuggestions={() => true}
@@ -156,7 +180,7 @@ export default class ComboboxComponent extends Component {
             focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
               ...this.props.inputProps,
-              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable}`,
+              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
               disabled,
               id,
               name,
@@ -172,8 +196,11 @@ export default class ComboboxComponent extends Component {
             </span>
           : ''}
 
-          {this.state.showError &&
-            <span className={errorStyles}>{error}</span>}
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+            }
         </div>
       </div>
     );

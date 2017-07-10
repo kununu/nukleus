@@ -1,6 +1,8 @@
 static defaultProps = {
+  debounceRate: 500,
   disabled: false,
   error: null,
+  errorSubInfo: null,
   handle: null,
   inputProps: {},
   inputStyles: 'inline',
