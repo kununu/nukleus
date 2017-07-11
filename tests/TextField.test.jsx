@@ -2,7 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import TextField from 'TextField'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+
+import TextField from '../components/TextField';
+import ToolTip from '../components/ToolTip';
 
 const textField = (
   <TextField
@@ -64,7 +66,7 @@ test('Renders a medium size Textfield with multiline without crashing', () => {
       id="text-field"
       label="TextField"
       name="text-field"
-      multiline
+      multiLine
       inputStyle="mediumSize" />
   );
   expect(component.toJSON()).toMatchSnapshot();
@@ -81,6 +83,21 @@ test('Renders A TextField with visible character counter without crashing', () =
       displayLength
       isRequired
       requiredLabel="required" />
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Renders a TextField with a ToolTip without crashing', () => {
+  const component = renderer.create(
+    <TextField
+      id="text-field"
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
   );
   expect(component.toJSON()).toMatchSnapshot();
 });

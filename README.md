@@ -27,6 +27,7 @@ Components include:
 - Table
 - Tabs
 - TextField
+- ToolTip
 
 Get it from npm:
 
