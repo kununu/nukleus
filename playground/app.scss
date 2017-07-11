@@ -22,3 +22,7 @@ label.customThemeChoice {
     @include button-outline(#fff, #c90);
   }
 }
+
+.itemNumber {
+  font-weight: $font-weight-regular;
+}
