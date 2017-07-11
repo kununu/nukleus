@@ -85,9 +85,9 @@ export default class Paginator extends Component {
           </li>
 
           {totalPagesArray.map(item =>
-            <li key={item} className={currentPage === item && styles.active}>
+            (<li key={item} className={currentPage === item && styles.active}>
               {React.cloneElement(baseLink, this.getNewProps(item), item)}
-            </li>
+            </li>)
           )}
 
           <li className={currentPage === totalPages && styles.disabled}>

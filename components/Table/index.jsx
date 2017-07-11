@@ -57,7 +57,7 @@ export default function Table ({
 
         <tbody>
           {[...Array(rowCount)].map((row, rowIndex) =>
-            <tr
+            (<tr
               key={rowIndex} // eslint-disable-line react/no-array-index-key
               className={(hasItems ? '' : styles.emptyTd)}>
 
@@ -66,7 +66,7 @@ export default function Table ({
                   rows[rowIndex].map(getRow) :
                   rows.map(getRow)
               }
-            </tr>
+            </tr>)
           )}
         </tbody>
       </table>

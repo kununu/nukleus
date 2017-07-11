@@ -16,6 +16,8 @@ export default class Stars extends Component {
   static propTypes = {
     colors: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
     selectable: PropTypes.bool,
     strokeColor: PropTypes.string,
     totalStars: (props, propName) => {
@@ -35,6 +37,8 @@ export default class Stars extends Component {
 
   static defaultProps = {
     colors: ['currentColor'],
+    onChange: null,
+    onClick: null,
     selectable: false,
     strokeColor: 'currentColor',
     totalStars: 5,
@@ -47,6 +51,10 @@ export default class Stars extends Component {
   }
 
   onClick = e => {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
+
     const newVal = Number(e.target.value);
 
     if (newVal === this.state.value) {
@@ -111,6 +119,7 @@ export default class Stars extends Component {
     const {
       selectable,
       name,
+      onClick,
       totalStars,
       strokeColor
     } = this.props;
@@ -120,7 +129,7 @@ export default class Stars extends Component {
       <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
         <div className={styles.starsRow}>
           {[...Array(totalStars + 1)].map((star, key) =>
-            <div
+            (<div
               key={key} // eslint-disable-line react/no-array-index-key
               className={key ? styles.starsGroup : styles.hideStarGroup}>
 
@@ -132,6 +141,7 @@ export default class Stars extends Component {
                   value={key}
                   checked={key === value}
                   onChange={this.onClick}
+                  onClick={onClick}
                   id={`${name}-${key}`} /> }
 
               {Boolean(key) &&
@@ -170,7 +180,7 @@ export default class Stars extends Component {
                     {key}
                   </span>
                 </label> }
-            </div>
+            </div>)
           )}
         </div>
       </div>
