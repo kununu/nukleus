@@ -327,7 +327,7 @@ export default class Autocomplete extends React.Component {
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
       </div>
     );

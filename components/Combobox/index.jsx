@@ -194,13 +194,13 @@ export default class ComboboxComponent extends Component {
             <span className={styles.handle}>
               {handle}
             </span>
-          : ''}
+            : ''}
 
           {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
       </div>
     );

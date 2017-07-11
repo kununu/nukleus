@@ -156,7 +156,8 @@ export default class Stars extends Component {
                     stroke={strokeColor}
                     preserveAspectRatio="xMidYMid meet"
                     className={`${styles.star} ${selectable && styles.ratingStar}`}
-                    x="0" y="0">
+                    x="0"
+                    y="0">
                     {!selectable &&
                       <defs>
                         <linearGradient id="half">

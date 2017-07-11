@@ -199,7 +199,7 @@ export default class Select extends Component {
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
       </div>
     );
