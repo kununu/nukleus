@@ -1,5 +1,6 @@
 exports[`test Hides no suggestions on blur 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -26,8 +27,10 @@ exports[`test Hides no suggestions on blur 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -36,6 +39,7 @@ exports[`test Hides no suggestions on blur 1`] = `
   name="autocomplete"
   noSuggestionText="No results found"
   onGetSuggestions={null}
+  onSelectSuggestion={null}
   placeholder="Type something..."
   query={Object {}}
   requiredLabel="Required"
@@ -50,7 +54,7 @@ exports[`test Hides no suggestions on blur 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -61,10 +65,12 @@ exports[`test Hides no suggestions on blur 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "autoFocus": false,
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -81,17 +87,19 @@ exports[`test Hides no suggestions on blur 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "autoFocus": false,
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -116,7 +124,6 @@ exports[`test Hides no suggestions on blur 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -127,7 +134,8 @@ exports[`test Hides no suggestions on blur 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              autoFocus={false}
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -152,7 +160,7 @@ exports[`test Hides no suggestions on blur 1`] = `
 </Autocomplete>
 `;
 
-exports[`test Renders Autocomplete without crashing 1`] = `
+exports[`test Renders Autocomplete with Error without crashing 1`] = `
 <div
   className="formGroup inline paddingTop">
   <span
@@ -160,7 +168,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
     Required
   </span>
   <label
-    className="controlLabel false"
+    className="controlLabel controlLabelError"
     htmlFor="autocompletes">
     Autocomplete
   </label>
@@ -175,7 +183,63 @@ exports[`test Renders Autocomplete without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
-        className="formControl"
+        autoFocus={false}
+        className="formControl formControlError"
+        disabled={true}
+        id="autocompletes"
+        name="autocomplete"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type something..."
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="test" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders Autocomplete without crashing 1`] = `
+<div
+  className="formGroup inline paddingTop">
+  <span
+    className="controlNote controlLabelRequired">
+    Required
+  </span>
+  <label
+    className="controlLabel"
+    htmlFor="autocompletes">
+    Autocomplete
+  </label>
+  <div
+    className="autoCompleteContainer">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        autoFocus={false}
+        className="formControl "
         disabled={true}
         id="autocompletes"
         name="autocomplete"
@@ -200,6 +264,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
 
 exports[`test Renders no suggestions container 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -226,8 +291,10 @@ exports[`test Renders no suggestions container 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -236,6 +303,7 @@ exports[`test Renders no suggestions container 1`] = `
   name="autocomplete"
   noSuggestionText="No results found"
   onGetSuggestions={null}
+  onSelectSuggestion={null}
   placeholder="Type something..."
   query={Object {}}
   requiredLabel="Required"
@@ -250,7 +318,7 @@ exports[`test Renders no suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -261,10 +329,12 @@ exports[`test Renders no suggestions container 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "autoFocus": false,
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -281,17 +351,19 @@ exports[`test Renders no suggestions container 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "autoFocus": false,
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -316,7 +388,6 @@ exports[`test Renders no suggestions container 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -327,7 +398,8 @@ exports[`test Renders no suggestions container 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              autoFocus={false}
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -363,6 +435,7 @@ exports[`test Renders no suggestions container 1`] = `
 
 exports[`test Renders suggestions container 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -389,8 +462,10 @@ exports[`test Renders suggestions container 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -399,6 +474,7 @@ exports[`test Renders suggestions container 1`] = `
   name="autocomplete"
   noSuggestionText="No results found"
   onGetSuggestions={null}
+  onSelectSuggestion={null}
   placeholder="Type something..."
   query={Object {}}
   requiredLabel="Required"
@@ -413,7 +489,7 @@ exports[`test Renders suggestions container 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -424,10 +500,12 @@ exports[`test Renders suggestions container 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "autoFocus": false,
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -444,6 +522,7 @@ exports[`test Renders suggestions container 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={
           Array [
@@ -459,13 +538,14 @@ exports[`test Renders suggestions container 1`] = `
         }
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={0}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "autoFocus": false,
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -501,18 +581,18 @@ exports[`test Renders suggestions container 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
             <input
-              aria-activedescendant="react-autowhatever-1--item-0"
+              aria-activedescendant={null}
               aria-autocomplete="list"
               aria-expanded={true}
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              autoFocus={false}
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"
@@ -530,8 +610,8 @@ exports[`test Renders suggestions container 1`] = `
               id="react-autowhatever-1"
               style={Object {}}>
               <ItemsList
-                focusedItemIndex={0}
                 getItemId={[Function]}
+                highlightedItemIndex={null}
                 itemProps={[Function]}
                 items={
                   Array [
@@ -546,7 +626,7 @@ exports[`test Renders suggestions container 1`] = `
                   ]
                 }
                 keyPrefix="react-autowhatever-1-"
-                onFocusedItemChange={[Function]}
+                onHighlightedItemChange={[Function]}
                 renderItem={[Function]}
                 renderItemData={
                   Object {
@@ -562,6 +642,7 @@ exports[`test Renders suggestions container 1`] = `
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-1--item-0"
+                    isHighlighted={false}
                     item={
                       Object {
                         "item": "apple",
@@ -608,6 +689,7 @@ exports[`test Renders suggestions container 1`] = `
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-1--item-1"
+                    isHighlighted={false}
                     item={
                       Object {
                         "item": "alpha",
@@ -663,6 +745,7 @@ exports[`test Renders suggestions container 1`] = `
 
 exports[`test Updates value on selection 1`] = `
 <Autocomplete
+  autoFocus={false}
   data={
     Object {
       "items": Array [
@@ -689,8 +772,10 @@ exports[`test Updates value on selection 1`] = `
       ],
     }
   }
+  debounceRate={500}
   disabled={true}
   error={null}
+  errorSubInfo={null}
   id="autocompletes"
   inputStyle="inline"
   isRequired={true}
@@ -699,6 +784,7 @@ exports[`test Updates value on selection 1`] = `
   name="autocomplete"
   noSuggestionText="No results found"
   onGetSuggestions={null}
+  onSelectSuggestion={null}
   placeholder="Type something..."
   query={Object {}}
   requiredLabel="Required"
@@ -713,7 +799,7 @@ exports[`test Updates value on selection 1`] = `
       Required
     </span>
     <label
-      className="controlLabel false"
+      className="controlLabel"
       htmlFor="autocompletes">
       Autocomplete
     </label>
@@ -724,10 +810,12 @@ exports[`test Updates value on selection 1`] = `
         focusFirstSuggestion={true}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "autoFocus": false,
+            "className": "formControl ",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -744,17 +832,19 @@ exports[`test Updates value on selection 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "autoFocus": false,
+              "className": "formControl ",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -779,7 +869,6 @@ exports[`test Updates value on selection 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -790,7 +879,8 @@ exports[`test Updates value on selection 1`] = `
               aria-haspopup={false}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              autoFocus={false}
+              className="formControl "
               disabled={true}
               id="autocompletes"
               name="autocomplete"

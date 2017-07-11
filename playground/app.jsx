@@ -14,8 +14,12 @@ import Paginator from 'components/Paginator';
 import Table from 'components/Table';
 import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
+import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import {
+  controlLabel
+} from 'components/index.scss';
 
 import styles from './app.scss';
 
@@ -23,6 +27,7 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
+
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
@@ -159,6 +164,12 @@ const App = ({location: {pathname, query}}) => (
               name="test"
               selectable
               colors={['red', 'green']} />
+
+            <Stars
+              value={3}
+              name="test2"
+              selectable
+              colors={['red', 'green']} />
           </div>
         </div>
 
@@ -174,17 +185,30 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
-        <div className="clearfix">
-          <div className="panel-heading col-md-8" style={{padding: '30px 20px'}}>
-            <div className="clearfix relative">
-              <Tabs
-                items={[
-                  <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
-                  <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
-                  <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
-                ]}
-                pathname={pathname} />
-            </div>
+        <div className="row">
+          <div className="col-md-8">
+            <Tabs
+              items={[
+                <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
+                <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
+              ]}
+              pathname={pathname} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <Tabs
+              theme="block"
+              items={[
+                <Link to={{pathname: '/playground/', query}}>First Tab</Link>,
+                <Link to={{pathname: '/playground/2', query}}><span className={styles.itemNumber}>10</span> Second Tab</Link>,
+                <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
+              ]}
+              pathname={pathname} />
           </div>
         </div>
 
@@ -192,7 +216,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Stars value={2.5} />
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
@@ -201,6 +225,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
+              autoFocus
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
@@ -211,10 +236,36 @@ const App = ({location: {pathname, query}}) => (
               id="test"
               value="purrr"
               query={query}
-              onGetSuggestions={() => {}}
+              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete"
+              isRequired
+              requiredLabel="Required"
+              name="autocomplete" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Autocomplete
+              autoFocus
+              data={{
+                items: [
+                  {item: 'meow', itemInfo: 'hard'},
+                  {item: 'meowing', itemInfo: 'harder'}
+                ]
+              }}
+              scrollTo
+              id="test-error"
+              value="purrr"
+              error="An Error"
+              errorSubInfo="with useful hints"
+              query={query}
+              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
+              placeholder="Type something..."
+              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              label="Autocomplete with Error"
               isRequired
               requiredLabel="Required"
               name="autocomplete" />
@@ -239,6 +290,51 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <TextField
+              id="text-field"
+              label={
+                (<span>
+                  <label className={controlLabel} htmlFor="text-field">TextField</label>
+                  <ToolTip position="bottomLeft" label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
+                </span>
+                )
+              }
+              name="text-field"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field-limited"
+              label="TextField with Char Limit"
+              name="text-field-limited"
+              displayLength
+              maxLength={120}
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field-error"
+              label="TextField with error"
+              name="text-field-error"
+              error="This is an error message"
+              errorSubInfo="Some useful hints"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
               id="text-field-password"
               label="TextField (password)"
               name="text-field-password"
@@ -259,17 +355,32 @@ const App = ({location: {pathname, query}}) => (
 
         <br />
 
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-area-large"
+              label="TextArea Large"
+              name="text-area-large"
+              maxLength={120}
+              displayLength
+              inputStyle="inline mediumSize"
+              multiLine
+              query={query} />
+          </div>
+        </div>
+
         <div className="row" style={{backgroundColor: '#0c0c23', textAlign: 'right'}}>
           <DropDown
-            pathname={pathname}
             position="bottom"
             items={[
               {
+                active: true,
                 icon: <img alt="test" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNEY5MkZFRTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNEY5MkZERTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABZcAAAZWAAAG5AAAB3j/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xACnAAEBAQAAAAAAAAAAAAAAAAAJBggBAQEAAwAAAAAAAAAAAAAAAAgHBAYJEAACAgMBAQAAAAAAAAAAAAADBQAEAQIGBwgRAAEDAgQHAQAAAAAAAAAAAAMBAgQSBSIyFAYAEBExQYETFRIAAQEHBQEAAAAAAAAAAAAAAQIAEBEhMUEDUWHxEgQyEwEBAAEEAgMBAAAAAAAAAAABESEAEDFBUWFxgaGx/9oADAMBAAIRAxEAAAHLhd7vIbQSAY00b9Zla+htBIBjTRv/AP/aAAgBAQABBQJGjadI06D57uV+UiN405tp0H0JcscpP//aAAgBAgABBQIANibWEGcCgD7D2sP85FP/2gAIAQMAAQUCaNAUgKPXh7340VgugUeQj0vz/9oACAECAgY/AuqasCn6vR3ZNWAT9Xo7/9oACAEDAgY/AjmzGCBxZsifQUp84j1IComctbbBxw5hFB5s2RXoCVecx6gFUROWlty7/9oACAEBAQY/AotlssXW3ObXpo1Yx1fMbiuxFc1uVq+eLJL27Glz93H037trLKgoANUZzjUKqDyk6ImNffflFvVllaK5wq9NJoGSn6DcJ2ErXNyuXxxZIm3ZMuBu4Gm/duhYsFQGpjOaahFUmYnRUwJ67cv/2gAIAQEDAT8h+vsAAlRWf1rqfALZgYxY3Y+/sAAlUWf1rqfALZgKxYzY/9oACAECAwE/IQ4VaGFcYsGM+O/ewdINLCmNSHGfPfrb/9oACAEDAwE/IcYn1iyoMBeU611FA7CX7Wvd442xifSpYgyh5DvXcUDsLfpY93nnb//aAAwDAQACEQMRAAAQwGA//9oACAEBAwE/EP58B/wDGshUD8xnekR/uGSMNf34D/gGNLSAT4jO9Ij/AHDBGWv/2gAIAQIDAT8QyAFChYK5UOB70pr5GQTHpAZY887ZACjBlEcInC9aE18jAIj2hMMeONv/2gAIAQMDAT8Q+ytW2B02FLWAplj9VjDFl6oAPPr6K1bYHHYFkaKOGP1WcMGzqoh8ev/Z" />,
                 link: <a href="/playground/">test</a>,
                 value: 'Schweiz'
               },
               {
+                active: false,
                 icon: <img alt="test" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNTA3Qjg1RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNTA3Qjg0RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABbUAAAaaAAAHLAAAB8H/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xADHAAADAQAAAAAAAAAAAAAAAAACBwgFAQEBAQAAAAAAAAAAAAAAAAAHCAYQAAAGAQMFAAAAAAAAAAAAAAACAwQFBgEjJQcTFBUmFxEAAAUCAwUJAQAAAAAAAAAAAQIDEwQREgAxBUEiFAYHIVFxMnLTNUamlxIAAQEEBQYPAAAAAAAAAAAAAQIAETED8EFREgQhYdFCkjOBkbEiMnKi0uITI5NElKQTAQABAwQCAwEBAAAAAAAAAAERITFBABDwUWFxkbHB0eH/2gAMAwEAAhEDEQAAAZRtPOMoMoSoYzt5IqhqeZ2eieK3/9oACAEBAAEFAoU+zVxu5WtPipgEaU1MJNaWjn08f//aAAgBAgABBQJxjUvxc5j+kcZ5CkRLWpy+T0h//9oACAEDAAEFAsDjZUhH/ftx8nYiDpBY1XcR/9oACAECAgY/AjSkbK63+oOuKr1SqR433lQPthunL2fDnLXJykEPfAi2wZy2p22//9oACAEDAgY/AmVeIHMMZqpVadZPJobeS/uzdDbnE7UjvN5mHRiUqIdHDnJwk2N8n8rf/9oACAEBAQY/AtJUcyjIC7flYkA1ud2cPm4FG/MRqsCNGixJElROBNEYkbQ4munKBZERCoxJgolIAWWXtFEtG92nDx/gtW/muhe5hNuTy4m1Y1SZ1FC1tq2lFNnDp09Be4MEEp+WDNhakU63UBQChYml2AoYQDdRIXwKAbMfU/3WP//aAAgBAQMBPyHm3wnF7tWkTIM0H4LzGgaK2Kv+WyxYxVqGLFA+f5jZB4AbP//aAAgBAgMBPyGk+X79f0w04mF6zl59zMrzo+H/ALpV+V4O3vQg/wDJspB/ot9r/9oACAEDAwE/IbOc58KB9wn1Cr6w3wN9ARvPZbwjEGuPNNj/AP/aAAwDAQACEQMRAAAQpQN//9oACAEBAwE/EIqZjTo31lH1MjWNbeAGCG1H/wDFBLe+MsVrD68ZGpVCSQqkNb//2gAIAQIDAT8QsDFEdqkXzhKxb6oDOVq2zSHIPM7EKTlTMy6zXOU1O690mwYQbEAl16FSWEp2n//aAAgBAwMBPxB0+ufXeMRq+TkKLYITDDBC0SaLnFuYPjTj41HRwBKZAsDCjqf/2Q==" />,
                 link: <a href="/playground/">test</a>,
                 value: 'United States'
@@ -328,6 +439,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-with-error"
+              name="date-picker-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Select
               title="Select"
               name="select"
@@ -341,11 +468,45 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <Select
+              title="Select with Error"
+              name="select-error"
+              id="select-error"
+              error="Please select something"
+              errorSubInfo="Anything"
+              isRequired
+              requiredLabel="Required"
+              value="option"
+              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Combobox
               handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
+              isRequired
+              requiredLabel="Required"
+              placeholder="Type m"
+              keyName="name"
+              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Combobox
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
+              name="name-error"
+              label="Combobox with Error"
+              id="name-error"
+              error="Error in a Comboxbox"
+              errorSubInfo="What can you do?"
               isRequired
               requiredLabel="Required"
               placeholder="Type m"
@@ -555,80 +716,6 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
-              heading="Choice"
-              name="basic"
-              requiredLabel="Required"
-              onChange={() => {}}
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                },
-                {
-                  id: 'option-d',
-                  label: 'Option D',
-                  value: 'option-d'
-                },
-                {
-                  id: 'option-e',
-                  label: 'Option E',
-                  value: 'option-e'
-                },
-                {
-                  id: 'option-f',
-                  label: 'Option F',
-                  value: 'option-f'
-                }
-              ]}
-              query={query} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
-              checked="option-a"
-              name="disabled"
-              onChange={() => {}}
-              disabled
-              options={[
-                {
-                  id: 'option-a',
-                  label: 'Checked Disabled Option A',
-                  value: 'option-a'
-                },
-                {
-                  id: 'option-b',
-                  label: 'Option B',
-                  value: 'option-b'
-                },
-                {
-                  id: 'option-c',
-                  label: 'Option C',
-                  value: 'option-c'
-                }
-              ]} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-10">
-            <Choice
               heading="Custom Choice"
               checked="option-a"
               name="custom"
@@ -649,6 +736,21 @@ const App = ({location: {pathname, query}}) => (
                   id: 'option-c',
                   label: 'Option C',
                   value: 'option-c'
+                },
+                {
+                  id: 'option-d',
+                  label: 'Checked Custom Option D',
+                  value: 'option-d'
+                },
+                {
+                  id: 'option-e',
+                  label: 'Option E',
+                  value: 'option-e'
+                },
+                {
+                  id: 'option-f',
+                  label: 'Option F',
+                  value: 'option-f'
                 }
               ]} />
           </div>
@@ -684,6 +786,181 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              heading="Choice with multiple rows"
+              name="option-3-6"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-3-6',
+                  label: 'Option A',
+                  value: 'option-a-3-6'
+                },
+                {
+                  id: 'option-b-3-6',
+                  label: 'Option B is longer to show, that all items have the same height in modern browsers',
+                  value: 'option-b-3-6'
+                },
+                {
+                  id: 'option-c-3-6',
+                  label: 'Option C',
+                  value: 'option-c-3-6'
+                },
+                {
+                  id: 'option-d-3-6',
+                  label: 'Option D',
+                  value: 'option-d-3-6'
+                },
+                {
+                  id: 'option-e-3-6',
+                  label: 'Option E',
+                  value: 'option-e-3-6'
+                },
+                {
+                  id: 'option-f-3-6',
+                  label: 'Option F',
+                  value: 'option-f-3-6'
+                }
+              ]}
+              optionsPerRow="3"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              name="option-3-5"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-3-5',
+                  label: 'Option A',
+                  value: 'option-a-3-5'
+                },
+                {
+                  id: 'option-b-3-5',
+                  label: 'Option B',
+                  value: 'option-b-3-5'
+                },
+                {
+                  id: 'option-c-3-5',
+                  label: 'Option C',
+                  value: 'option-c-3-5'
+                },
+                {
+                  id: 'option-d-3-5',
+                  label: 'Option D',
+                  value: 'option-d-3-5'
+                },
+                {
+                  id: 'option-e-3-5',
+                  label: 'Option E',
+                  value: 'option-e-3-5'
+                }
+              ]}
+              optionsPerRow="3"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              name="option-5-8"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a-5-8',
+                  label: 'Option A',
+                  value: 'option-a-5-8'
+                },
+                {
+                  id: 'option-b-5-8',
+                  label: 'Option B',
+                  value: 'option-b-5-8'
+                },
+                {
+                  id: 'option-c-5-8',
+                  label: 'Option C',
+                  value: 'option-c-5-8'
+                },
+                {
+                  id: 'option-d-5-8',
+                  label: 'Option D',
+                  value: 'option-d-5-8'
+                },
+                {
+                  id: 'option-e-5-8',
+                  label: 'Option E',
+                  value: 'option-e-5-8'
+                },
+                {
+                  id: 'option-f-5-8',
+                  label: 'Option F',
+                  value: 'option-f-5-8'
+                },
+                {
+                  id: 'option-g-5-8',
+                  label: 'Option G',
+                  value: 'option-g-5-8'
+                },
+                {
+                  id: 'option-h-5-8',
+                  label: 'Option H',
+                  value: 'option-h-5-8'
+                }
+              ]}
+              optionsPerRow="5"
+              query={query} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid"
+              error="has an error"
+              errorSubInfo="Please do something about this"
+              label="TextField"
+              isRequired
+              requiredLabel="Required"
+              name="text-field-grid" />
+          </div>
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid-password"
+              label="TextField (password)"
+              name="text-field-grid-password"
+              isRequired
+              requiredLabel="Required"
+              type="password" />
+          </div>
+          <div className="col-md-4">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-grid-with-error"
+              name="date-picker-grid-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
       </div>
     </div>
 
