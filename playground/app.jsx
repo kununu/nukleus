@@ -14,9 +14,12 @@ import Paginator from 'components/Paginator';
 import Table from 'components/Table';
 import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
+import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
-import {sanitizeWhitespace} from 'components/utils';
+import {
+  controlLabel
+} from 'components/index.scss';
 
 import styles from './app.scss';
 
@@ -161,6 +164,12 @@ const App = ({location: {pathname, query}}) => (
               name="test"
               selectable
               colors={['red', 'green']} />
+
+            <Stars
+              value={3}
+              name="test2"
+              selectable
+              colors={['red', 'green']} />
           </div>
         </div>
 
@@ -207,7 +216,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Stars value={2.5} />
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
@@ -282,9 +291,13 @@ const App = ({location: {pathname, query}}) => (
           <div className="col-md-8">
             <TextField
               id="text-field"
-              label="TextField"
-              toolTip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-              toolTipLabel="TextField Info"
+              label={
+                (<span>
+                  <label className={controlLabel} htmlFor="text-field">TextField</label>
+                  <ToolTip position="bottomLeft" label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
+                </span>
+                )
+              }
               name="text-field"
               isRequired
               requiredLabel="Required" />
@@ -350,7 +363,6 @@ const App = ({location: {pathname, query}}) => (
               name="text-area-large"
               maxLength={120}
               displayLength
-              sanitizeValue={sanitizeWhitespace}
               inputStyle="inline mediumSize"
               multiLine
               query={query} />
@@ -791,7 +803,7 @@ const App = ({location: {pathname, query}}) => (
                 },
                 {
                   id: 'option-b-3-6',
-                  label: 'Option B',
+                  label: 'Option B is longer to show, that all items have the same height in modern browsers',
                   value: 'option-b-3-6'
                 },
                 {

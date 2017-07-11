@@ -3,6 +3,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
+import debounce from 'debounce';
 
 import styles from './index.scss';
 
@@ -20,6 +21,7 @@ import {
 
 export default class ComboboxComponent extends Component {
   static propTypes = {
+    debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
@@ -40,6 +42,7 @@ export default class ComboboxComponent extends Component {
   };
 
   static defaultProps = {
+    debounceRate: 500,
     disabled: false,
     error: null,
     errorSubInfo: null,
@@ -78,9 +81,7 @@ export default class ComboboxComponent extends Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.setState({
-      suggestions: this.getSuggestions(value, this.props.items)
-    });
+    this.debouncedLoadSuggestions(value);
   };
 
   onChange = (event, {newValue}) => {
@@ -106,6 +107,14 @@ export default class ComboboxComponent extends Component {
   }
 
   getSuggestionValue = suggestion => suggestion.value;
+
+  loadSuggestions (value) {
+    this.setState({
+      suggestions: this.getSuggestions(value, this.props.items)
+    });
+  }
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
   handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
     if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
