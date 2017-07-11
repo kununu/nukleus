@@ -81,7 +81,7 @@
   }
 }
 
-.itemsContainer {
+.suggestionsContainer {
   box-shadow: 0 5px 10px rgba($black, .2);
   border-radius: $border-radius-base;
   background-clip: padding-box;
@@ -95,7 +95,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 
   @media (max-width: $screen-xs-min) {
     left: 0;
@@ -119,7 +119,7 @@
   padding: 10px 20px;
 }
 
-.suggestionFocused {
+.suggestionHighlighted {
   background: $blue;
   color: $white;
   cursor: pointer;
@@ -136,7 +136,7 @@
   font-size: 11px;
   color: $black;
   top: ($input-height-base / 3);
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
 }
 
