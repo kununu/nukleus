@@ -33,6 +33,13 @@
       padding-top: 25px;
     }
   }
+
+  .controlLabelError {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
+  }
 }
 
 .container {
@@ -74,7 +81,7 @@
   }
 }
 
-.itemsContainer {
+.suggestionsContainer {
   box-shadow: 0 5px 10px rgba($black, .2);
   border-radius: $border-radius-base;
   background-clip: padding-box;
@@ -88,12 +95,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 
   @media (max-width: $screen-xs-min) {
     left: 0;
     right: 0;
     width: 100%;
+  }
+
+  span {
+    user-select: none;
   }
 }
 
@@ -108,7 +119,7 @@
   padding: 10px 20px;
 }
 
-.suggestionFocused {
+.suggestionHighlighted {
   background: $blue;
   color: $white;
   cursor: pointer;
@@ -125,6 +136,18 @@
   font-size: 11px;
   color: $black;
   top: ($input-height-base / 3);
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
+}
+
+.isNotSearchable {
+  cursor: default;
+  color : transparent;
+  text-shadow : 0 0 0 $gray;
+  user-select: none;
+  &::selection { background: transparent; }
+
+  &:focus {
+    outline : none;
+  }
 }
