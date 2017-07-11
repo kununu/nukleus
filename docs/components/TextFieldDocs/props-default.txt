@@ -15,8 +15,10 @@ static defaultProps = {
   placeholder: '',
   query: {},
   isRequired: false,
+  reference: () => {},
   requiredLabel: 'Required',
   rows: 5,
+  sanitizeValue: value => value,
   title: '',
   type: 'text',
   value: ''
