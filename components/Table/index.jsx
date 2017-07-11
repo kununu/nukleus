@@ -37,14 +37,14 @@ export default function Table ({
   const keys = Object.keys(items);
   const hasItems = keys.length !== 0;
   const titles = hasItems ?
-                    keys :
-                    [...Array(defaultTitleCount)];
+    keys :
+    [...Array(defaultTitleCount)];
   const rowCount = hasItems ?
-                    items[keys[0]].length :
-                    defaultRowCount;
+    items[keys[0]].length :
+    defaultRowCount;
   const rows = hasItems ?
-                getRows(keys.map(item => items[item])) :
-                [...Array(defaultTitleCount)];
+    getRows(keys.map(item => items[item])) :
+    [...Array(defaultTitleCount)];
 
   return (
     <div className={`${styles.tableContainer} ${styles[tableStyle]}`}>

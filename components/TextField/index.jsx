@@ -311,7 +311,7 @@ export default class TextField extends Component {
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
       </div>
     );
