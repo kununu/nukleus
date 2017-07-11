@@ -61,7 +61,7 @@
     "jest": "18.0.0",
     "kununu-theme": "3.0.0",
     "less": "2.7.1",
-    "node-sass": "4.5.0",
+    "node-sass": "4.5.3",
     "node-sass-module-importer": "0.1.0",
     "postcss-cli": "4.1.0",
     "postcss-loader": "2.0.6",
