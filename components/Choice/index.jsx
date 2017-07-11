@@ -22,6 +22,7 @@ export default class Choice extends Component {
     options: PropTypes.array.isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
     query: PropTypes.object,
+    reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
@@ -35,6 +36,7 @@ export default class Choice extends Component {
     onChange: null,
     optionsPerRow: null,
     query: {},
+    reference: () => {},
     requiredLabel: ''
   };
 
@@ -69,7 +71,7 @@ export default class Choice extends Component {
 
     this.props.onChange(e);
     this.setState({
-      checked: e.target.value
+      checked: e.target.value !== this.state.checked ? e.target.value : null
     });
   };
 
@@ -81,6 +83,7 @@ export default class Choice extends Component {
       isRequired,
       name,
       options,
+      reference,
       requiredLabel
     } = this.props;
 
@@ -103,7 +106,7 @@ export default class Choice extends Component {
 
         <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            <div className={styles.radioButton} key={item.id}>
+            (<div className={styles.radioButton} key={item.id}>
               <input
                 type="radio"
                 value={item.value}
@@ -111,6 +114,7 @@ export default class Choice extends Component {
                 name={name}
                 checked={checked === item.value}
                 onChange={this.onChange}
+                ref={reference}
                 required={isRequired} />
               <label
                 disabled={disabled}
@@ -119,7 +123,7 @@ export default class Choice extends Component {
                 className={customTheme}>
                 {item.label}
               </label>
-            </div>
+            </div>)
           )}
         </div>
       </div>

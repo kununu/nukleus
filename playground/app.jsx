@@ -14,8 +14,12 @@ import Paginator from 'components/Paginator';
 import Table from 'components/Table';
 import Tabs from 'components/Tabs';
 import TextField from 'components/TextField';
+import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import {
+  controlLabel
+} from 'components/index.scss';
 
 import styles from './app.scss';
 
@@ -160,6 +164,12 @@ const App = ({location: {pathname, query}}) => (
               name="test"
               selectable
               colors={['red', 'green']} />
+
+            <Stars
+              value={3}
+              name="test2"
+              selectable
+              colors={['red', 'green']} />
           </div>
         </div>
 
@@ -206,7 +216,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Stars value={2.5} />
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
@@ -236,6 +246,32 @@ const App = ({location: {pathname, query}}) => (
           </div>
         </div>
 
+        <div className="row">
+          <div className="col-md-8">
+            <Autocomplete
+              autoFocus
+              data={{
+                items: [
+                  {item: 'meow', itemInfo: 'hard'},
+                  {item: 'meowing', itemInfo: 'harder'}
+                ]
+              }}
+              scrollTo
+              id="test-error"
+              value="purrr"
+              error="An Error"
+              errorSubInfo="with useful hints"
+              query={query}
+              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
+              placeholder="Type something..."
+              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              label="Autocomplete with Error"
+              isRequired
+              requiredLabel="Required"
+              name="autocomplete" />
+          </div>
+        </div>
+
         <br />
 
         <div className="row">
@@ -250,6 +286,51 @@ const App = ({location: {pathname, query}}) => (
               text="I am the info text for the TextField component." />
           </div>
         </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field"
+              label={
+                (<span>
+                  <label className={controlLabel} htmlFor="text-field">TextField</label>
+                  <ToolTip position="bottomLeft" label="TextField Info" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
+                </span>
+                )
+              }
+              name="text-field"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field-limited"
+              label="TextField with Char Limit"
+              name="text-field-limited"
+              displayLength
+              maxLength={120}
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-field-error"
+              label="TextField with error"
+              name="text-field-error"
+              error="This is an error message"
+              errorSubInfo="Some useful hints"
+              isRequired
+              requiredLabel="Required" />
+          </div>
+        </div>
+
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -273,6 +354,20 @@ const App = ({location: {pathname, query}}) => (
         </div>
 
         <br />
+
+        <div className="row">
+          <div className="col-md-8">
+            <TextField
+              id="text-area-large"
+              label="TextArea Large"
+              name="text-area-large"
+              maxLength={120}
+              displayLength
+              inputStyle="inline mediumSize"
+              multiLine
+              query={query} />
+          </div>
+        </div>
 
         <div className="row" style={{backgroundColor: '#0c0c23', textAlign: 'right'}}>
           <DropDown
@@ -344,6 +439,22 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-with-error"
+              name="date-picker-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Select
               title="Select"
               name="select"
@@ -357,11 +468,45 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
+            <Select
+              title="Select with Error"
+              name="select-error"
+              id="select-error"
+              error="Please select something"
+              errorSubInfo="Anything"
+              isRequired
+              requiredLabel="Required"
+              value="option"
+              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-8">
             <Combobox
               handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
+              isRequired
+              requiredLabel="Required"
+              placeholder="Type m"
+              keyName="name"
+              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Combobox
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
+              name="name-error"
+              label="Combobox with Error"
+              id="name-error"
+              error="Error in a Comboxbox"
+              errorSubInfo="What can you do?"
               isRequired
               requiredLabel="Required"
               placeholder="Type m"
@@ -658,7 +803,7 @@ const App = ({location: {pathname, query}}) => (
                 },
                 {
                   id: 'option-b-3-6',
-                  label: 'Option B',
+                  label: 'Option B is longer to show, that all items have the same height in modern browsers',
                   value: 'option-b-3-6'
                 },
                 {
@@ -784,6 +929,38 @@ const App = ({location: {pathname, query}}) => (
 
         <br />
 
+        <div className="row">
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid"
+              error="has an error"
+              errorSubInfo="Please do something about this"
+              label="TextField"
+              isRequired
+              requiredLabel="Required"
+              name="text-field-grid" />
+          </div>
+          <div className="col-md-4">
+            <TextField
+              id="text-field-grid-password"
+              label="TextField (password)"
+              name="text-field-grid-password"
+              isRequired
+              requiredLabel="Required"
+              type="password" />
+          </div>
+          <div className="col-md-4">
+            <DatePicker
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
+              id="date-picker-grid-with-error"
+              name="date-picker-grid-with-error"
+              error="Wrong Date"
+              errorSubInfo="Maybe provide hints about Date Formats"
+              isRequired
+              requiredLabel="Required"
+              title="DatePicker with Error" />
+          </div>
+        </div>
       </div>
     </div>
 
