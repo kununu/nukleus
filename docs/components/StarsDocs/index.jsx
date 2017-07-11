@@ -14,20 +14,23 @@ const StarsDocs = () => (
       component={
         <div>
           <div className="inline-block">
-            <Stars value={2.5} />
+            <Stars
+              name="stars"
+              value={2.5} />
           </div>&nbsp;
           <br /><br />
           <div className="row">
             <div className="col-sm-4 col-md-3">
               <Stars
-                value={2}
-                selectable
                 colors={[
                   '#ff464e',
                   '#fe8e17',
                   '#fec327',
                   '#7cb532',
-                  '#96d04a']} />
+                  '#96d04a']}
+                name="stars"
+                selectable
+                value={2} />
             </div>
           </div>
         </div>
