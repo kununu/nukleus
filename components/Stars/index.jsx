@@ -121,7 +121,7 @@ export default class Stars extends Component {
       <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
         <div className={styles.starsRow}>
           {[...Array(totalStars + 1)].map((star, key) =>
-            <div
+            (<div
               key={key} // eslint-disable-line react/no-array-index-key
               className={key ? styles.starsGroup : styles.hideStarGroup}>
 
@@ -171,7 +171,7 @@ export default class Stars extends Component {
                     {key - 1}
                   </span>
                 </label> }
-            </div>
+            </div>)
           )}
         </div>
       </div>

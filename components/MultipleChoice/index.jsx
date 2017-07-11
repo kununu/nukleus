@@ -97,7 +97,7 @@ export default class MultipleChoice extends Component {
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
-            <div className={`${styles.choice}`} key={choice.id}>
+            (<div className={`${styles.choice}`} key={choice.id}>
               <input
                 className={formControl}
                 id={`${this.props.name}${choice.id}`}
@@ -110,7 +110,7 @@ export default class MultipleChoice extends Component {
                 onChange={() => this.onChange(choice)} />
 
               <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
-            </div>
+            </div>)
           )}
         </div>
       </div>
