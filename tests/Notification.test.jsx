@@ -51,3 +51,16 @@ test('It shows content icon when defined in props', () => {
   const component = renderer.create(successNotification);
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Calls onCloseClick when the close button is clicked', () => {
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Notification
+      message="Test"
+      visible
+      onCloseClick={spyFunc} />
+  );
+
+  component.find('.closeButton').simulate('click');
+  expect(spyFunc).toHaveBeenCalled();
+});
