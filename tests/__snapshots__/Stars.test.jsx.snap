@@ -1,215 +1,448 @@
-exports[`test Fills selected stars 1`] = `
-<Stars
-  colors={
-    Array [
-      "red",
-      "purple",
-      "green",
-      "orange",
-      "black",
-    ]
-  }
-  name=""
-  selectable={true}
-  strokeColor="currentColor"
-  totalStars={5}
-  value={3}>
-  <div
-    className="starsContainer false">
+exports[`test Deselects stars 1`] = `
+<div>
+  <Stars
+    colors={
+      Array [
+        "red",
+        "purple",
+        "green",
+        "orange",
+        "black",
+      ]
+    }
+    name="stars"
+    onChange={null}
+    onClick={null}
+    selectable={true}
+    strokeColor="currentColor"
+    totalStars={5}
+    value={1}>
     <div
-      className="starsRow">
+      className="starsContainer false">
       <div
-        className="hideStarGroup">
-        <input
-          checked={false}
-          className="hiddenInput"
-          id="star0"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={0} />
-      </div>
-      <div
-        className="starsGroup">
-        <input
-          checked={false}
-          className="hiddenInput"
-          id="star1"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={1} />
-        <label
-          htmlFor="star1">
-          <svg
-            className="star ratingStar"
-            preserveAspectRatio="xMidYMid meet"
-            stroke="currentColor"
-            version="1.1"
-            viewBox="-20 -20 541.8 518.6"
-            width="100%"
-            x="0"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0">
-            <path
-              className="path fill"
-              d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-              fill="green"
-              stroke="green" />
-          </svg>
-          <span
-            className="srOnly" />
-        </label>
-      </div>
-      <div
-        className="starsGroup">
-        <input
-          checked={false}
-          className="hiddenInput"
-          id="star2"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={2} />
-        <label
-          htmlFor="star2">
-          <svg
-            className="star ratingStar"
-            preserveAspectRatio="xMidYMid meet"
-            stroke="currentColor"
-            version="1.1"
-            viewBox="-20 -20 541.8 518.6"
-            width="100%"
-            x="0"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0">
-            <path
-              className="path fill"
-              d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-              fill="green"
-              stroke="green" />
-          </svg>
-          <span
-            className="srOnly">
-            1
-          </span>
-        </label>
-      </div>
-      <div
-        className="starsGroup">
-        <input
-          checked={true}
-          className="hiddenInput"
-          id="star3"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={3} />
-        <label
-          htmlFor="star3">
-          <svg
-            className="star ratingStar"
-            preserveAspectRatio="xMidYMid meet"
-            stroke="currentColor"
-            version="1.1"
-            viewBox="-20 -20 541.8 518.6"
-            width="100%"
-            x="0"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0">
-            <path
-              className="path fill"
-              d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-              fill="green"
-              stroke="green" />
-          </svg>
-          <span
-            className="srOnly">
-            2
-          </span>
-        </label>
-      </div>
-      <div
-        className="starsGroup">
-        <input
-          checked={false}
-          className="hiddenInput"
-          id="star4"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={4} />
-        <label
-          htmlFor="star4">
-          <svg
-            className="star ratingStar"
-            preserveAspectRatio="xMidYMid meet"
-            stroke="currentColor"
-            version="1.1"
-            viewBox="-20 -20 541.8 518.6"
-            width="100%"
-            x="0"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0">
-            <path
-              className="path false"
-              d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-              fill="transparent"
-              stroke="currentColor" />
-          </svg>
-          <span
-            className="srOnly">
-            3
-          </span>
-        </label>
-      </div>
-      <div
-        className="starsGroup">
-        <input
-          checked={false}
-          className="hiddenInput"
-          id="star5"
-          name=""
-          onChange={[Function]}
-          type="radio"
-          value={5} />
-        <label
-          htmlFor="star5">
-          <svg
-            className="star ratingStar"
-            preserveAspectRatio="xMidYMid meet"
-            stroke="currentColor"
-            version="1.1"
-            viewBox="-20 -20 541.8 518.6"
-            width="100%"
-            x="0"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0">
-            <path
-              className="path false"
-              d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-              fill="transparent"
-              stroke="currentColor" />
-          </svg>
-          <span
-            className="srOnly">
-            4
-          </span>
-        </label>
+        className="starsRow">
+        <div
+          className="hideStarGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-0"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={0} />
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-1"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={1} />
+          <label
+            htmlFor="stars-1">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              1
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-2"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={2} />
+          <label
+            htmlFor="stars-2">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              2
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-3"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={3} />
+          <label
+            htmlFor="stars-3">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              3
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-4"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={4} />
+          <label
+            htmlFor="stars-4">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              4
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars-5"
+            name="stars"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={5} />
+          <label
+            htmlFor="stars-5">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              5
+            </span>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-</Stars>
+  </Stars>
+  <Stars
+    colors={
+      Array [
+        "red",
+        "purple",
+        "green",
+        "orange",
+        "black",
+      ]
+    }
+    name="stars2"
+    onChange={null}
+    onClick={null}
+    selectable={true}
+    strokeColor="currentColor"
+    totalStars={5}
+    value={2}>
+    <div
+      className="starsContainer false">
+      <div
+        className="starsRow">
+        <div
+          className="hideStarGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars2-0"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={0} />
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars2-1"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={1} />
+          <label
+            htmlFor="stars2-1">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path fill"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="purple"
+                stroke="purple" />
+            </svg>
+            <span
+              className="srOnly">
+              1
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={true}
+            className="hiddenInput"
+            id="stars2-2"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={2} />
+          <label
+            htmlFor="stars2-2">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path fill"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="purple"
+                stroke="purple" />
+            </svg>
+            <span
+              className="srOnly">
+              2
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars2-3"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={3} />
+          <label
+            htmlFor="stars2-3">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              3
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars2-4"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={4} />
+          <label
+            htmlFor="stars2-4">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              4
+            </span>
+          </label>
+        </div>
+        <div
+          className="starsGroup">
+          <input
+            checked={false}
+            className="hiddenInput"
+            id="stars2-5"
+            name="stars2"
+            onChange={[Function]}
+            onClick={null}
+            type="radio"
+            value={5} />
+          <label
+            htmlFor="stars2-5">
+            <svg
+              className="star ratingStar"
+              preserveAspectRatio="xMidYMid meet"
+              stroke="currentColor"
+              version="1.1"
+              viewBox="-20 -20 541.8 518.6"
+              width="100%"
+              x="0"
+              xmlSpace="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              y="0">
+              <path
+                className="path false"
+                d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+                fill="transparent"
+                stroke="currentColor" />
+            </svg>
+            <span
+              className="srOnly">
+              5
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </Stars>
+</div>
 `;
 
 exports[`test Renders correctly rounded star values 1`] = `
@@ -219,51 +452,6 @@ exports[`test Renders correctly rounded star values 1`] = `
     className="starsRow">
     <div
       className="hideStarGroup" />
-    <div
-      className="starsGroup">
-      <label
-        htmlFor={false}>
-        <svg
-          className="star false"
-          preserveAspectRatio="xMidYMid meet"
-          stroke="currentColor"
-          version="1.1"
-          viewBox="-20 -20 541.8 518.6"
-          width="100%"
-          x="0"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          y="0">
-          <defs>
-            <linearGradient
-              id="half">
-              <stop
-                offset="0%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="white" />
-              <stop
-                offset="100%"
-                stopColor="white" />
-            </linearGradient>
-          </defs>
-          <path
-            className="path fill"
-            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="currentColor"
-            stroke="currentColor" />
-        </svg>
-        <span
-          className="srOnly">
-          0
-        </span>
-      </label>
-    </div>
     <div
       className="starsGroup">
       <label
@@ -388,9 +576,9 @@ exports[`test Renders correctly rounded star values 1`] = `
             </linearGradient>
           </defs>
           <path
-            className="path false"
+            className="path fill"
             d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="transparent"
+            fill="currentColor"
             stroke="currentColor" />
         </svg>
         <span
@@ -441,6 +629,51 @@ exports[`test Renders correctly rounded star values 1`] = `
         <span
           className="srOnly">
           4
+        </span>
+      </label>
+    </div>
+    <div
+      className="starsGroup">
+      <label
+        htmlFor={false}>
+        <svg
+          className="star false"
+          preserveAspectRatio="xMidYMid meet"
+          stroke="currentColor"
+          version="1.1"
+          viewBox="-20 -20 541.8 518.6"
+          width="100%"
+          x="0"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          y="0">
+          <defs>
+            <linearGradient
+              id="half">
+              <stop
+                offset="0%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="white" />
+              <stop
+                offset="100%"
+                stopColor="white" />
+            </linearGradient>
+          </defs>
+          <path
+            className="path false"
+            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+            fill="transparent"
+            stroke="currentColor" />
+        </svg>
+        <span
+          className="srOnly">
+          5
         </span>
       </label>
     </div>
@@ -496,51 +729,6 @@ exports[`test Renders empty stars with no value 1`] = `
         </svg>
         <span
           className="srOnly">
-          0
-        </span>
-      </label>
-    </div>
-    <div
-      className="starsGroup">
-      <label
-        htmlFor={false}>
-        <svg
-          className="star false"
-          preserveAspectRatio="xMidYMid meet"
-          stroke="currentColor"
-          version="1.1"
-          viewBox="-20 -20 541.8 518.6"
-          width="100%"
-          x="0"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          y="0">
-          <defs>
-            <linearGradient
-              id="half">
-              <stop
-                offset="0%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="white" />
-              <stop
-                offset="100%"
-                stopColor="white" />
-            </linearGradient>
-          </defs>
-          <path
-            className="path false"
-            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="transparent"
-            stroke="currentColor" />
-        </svg>
-        <span
-          className="srOnly">
           1
         </span>
       </label>
@@ -677,6 +865,51 @@ exports[`test Renders empty stars with no value 1`] = `
         <span
           className="srOnly">
           4
+        </span>
+      </label>
+    </div>
+    <div
+      className="starsGroup">
+      <label
+        htmlFor={false}>
+        <svg
+          className="star false"
+          preserveAspectRatio="xMidYMid meet"
+          stroke="currentColor"
+          version="1.1"
+          viewBox="-20 -20 541.8 518.6"
+          width="100%"
+          x="0"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          y="0">
+          <defs>
+            <linearGradient
+              id="half">
+              <stop
+                offset="0%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="white" />
+              <stop
+                offset="100%"
+                stopColor="white" />
+            </linearGradient>
+          </defs>
+          <path
+            className="path false"
+            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+            fill="transparent"
+            stroke="currentColor" />
+        </svg>
+        <span
+          className="srOnly">
+          5
         </span>
       </label>
     </div>
@@ -694,9 +927,10 @@ exports[`test Renders selectable Stars without crashing 1`] = `
       <input
         checked={false}
         className="hiddenInput"
-        id="star0"
-        name=""
+        id="stars-0"
+        name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={0} />
     </div>
@@ -705,49 +939,14 @@ exports[`test Renders selectable Stars without crashing 1`] = `
       <input
         checked={false}
         className="hiddenInput"
-        id="star1"
-        name=""
+        id="stars-1"
+        name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
         value={1} />
       <label
-        htmlFor="star1">
-        <svg
-          className="star ratingStar"
-          preserveAspectRatio="xMidYMid meet"
-          stroke="currentColor"
-          version="1.1"
-          viewBox="-20 -20 541.8 518.6"
-          width="100%"
-          x="0"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          y="0">
-          <path
-            className="path fill"
-            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="currentColor"
-            stroke="currentColor" />
-        </svg>
-        <span
-          className="srOnly">
-          0
-        </span>
-      </label>
-    </div>
-    <div
-      className="starsGroup">
-      <input
-        checked={false}
-        className="hiddenInput"
-        id="star2"
-        name=""
-        onChange={[Function]}
-        type="radio"
-        value={2} />
-      <label
-        htmlFor="star2">
+        htmlFor="stars-1">
         <svg
           className="star ratingStar"
           preserveAspectRatio="xMidYMid meet"
@@ -775,15 +974,16 @@ exports[`test Renders selectable Stars without crashing 1`] = `
     <div
       className="starsGroup">
       <input
-        checked={true}
+        checked={false}
         className="hiddenInput"
-        id="star3"
-        name=""
+        id="stars-2"
+        name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
-        value={3} />
+        value={2} />
       <label
-        htmlFor="star3">
+        htmlFor="stars-2">
         <svg
           className="star ratingStar"
           preserveAspectRatio="xMidYMid meet"
@@ -811,15 +1011,16 @@ exports[`test Renders selectable Stars without crashing 1`] = `
     <div
       className="starsGroup">
       <input
-        checked={false}
+        checked={true}
         className="hiddenInput"
-        id="star4"
-        name=""
+        id="stars-3"
+        name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
-        value={4} />
+        value={3} />
       <label
-        htmlFor="star4">
+        htmlFor="stars-3">
         <svg
           className="star ratingStar"
           preserveAspectRatio="xMidYMid meet"
@@ -833,9 +1034,9 @@ exports[`test Renders selectable Stars without crashing 1`] = `
           xmlnsXlink="http://www.w3.org/1999/xlink"
           y="0">
           <path
-            className="path false"
+            className="path fill"
             d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="transparent"
+            fill="currentColor"
             stroke="currentColor" />
         </svg>
         <span
@@ -849,13 +1050,14 @@ exports[`test Renders selectable Stars without crashing 1`] = `
       <input
         checked={false}
         className="hiddenInput"
-        id="star5"
-        name=""
+        id="stars-4"
+        name="stars"
         onChange={[Function]}
+        onClick={null}
         type="radio"
-        value={5} />
+        value={4} />
       <label
-        htmlFor="star5">
+        htmlFor="stars-4">
         <svg
           className="star ratingStar"
           preserveAspectRatio="xMidYMid meet"
@@ -877,6 +1079,43 @@ exports[`test Renders selectable Stars without crashing 1`] = `
         <span
           className="srOnly">
           4
+        </span>
+      </label>
+    </div>
+    <div
+      className="starsGroup">
+      <input
+        checked={false}
+        className="hiddenInput"
+        id="stars-5"
+        name="stars"
+        onChange={[Function]}
+        onClick={null}
+        type="radio"
+        value={5} />
+      <label
+        htmlFor="stars-5">
+        <svg
+          className="star ratingStar"
+          preserveAspectRatio="xMidYMid meet"
+          stroke="currentColor"
+          version="1.1"
+          viewBox="-20 -20 541.8 518.6"
+          width="100%"
+          x="0"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          y="0">
+          <path
+            className="path false"
+            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+            fill="transparent"
+            stroke="currentColor" />
+        </svg>
+        <span
+          className="srOnly">
+          5
         </span>
       </label>
     </div>
@@ -932,7 +1171,7 @@ exports[`test Renders static Stars without crashing 1`] = `
         </svg>
         <span
           className="srOnly">
-          0
+          1
         </span>
       </label>
     </div>
@@ -977,51 +1216,6 @@ exports[`test Renders static Stars without crashing 1`] = `
         </svg>
         <span
           className="srOnly">
-          1
-        </span>
-      </label>
-    </div>
-    <div
-      className="starsGroup">
-      <label
-        htmlFor={false}>
-        <svg
-          className="star false"
-          preserveAspectRatio="xMidYMid meet"
-          stroke="currentColor"
-          version="1.1"
-          viewBox="-20 -20 541.8 518.6"
-          width="100%"
-          x="0"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          y="0">
-          <defs>
-            <linearGradient
-              id="half">
-              <stop
-                offset="0%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="currentColor" />
-              <stop
-                offset="50%"
-                stopColor="white" />
-              <stop
-                offset="100%"
-                stopColor="white" />
-            </linearGradient>
-          </defs>
-          <path
-            className="path false"
-            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="url(#half)"
-            stroke="currentColor" />
-        </svg>
-        <span
-          className="srOnly">
           2
         </span>
       </label>
@@ -1062,7 +1256,7 @@ exports[`test Renders static Stars without crashing 1`] = `
           <path
             className="path false"
             d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
-            fill="transparent"
+            fill="url(#half)"
             stroke="currentColor" />
         </svg>
         <span
@@ -1113,6 +1307,51 @@ exports[`test Renders static Stars without crashing 1`] = `
         <span
           className="srOnly">
           4
+        </span>
+      </label>
+    </div>
+    <div
+      className="starsGroup">
+      <label
+        htmlFor={false}>
+        <svg
+          className="star false"
+          preserveAspectRatio="xMidYMid meet"
+          stroke="currentColor"
+          version="1.1"
+          viewBox="-20 -20 541.8 518.6"
+          width="100%"
+          x="0"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          y="0">
+          <defs>
+            <linearGradient
+              id="half">
+              <stop
+                offset="0%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="currentColor" />
+              <stop
+                offset="50%"
+                stopColor="white" />
+              <stop
+                offset="100%"
+                stopColor="white" />
+            </linearGradient>
+          </defs>
+          <path
+            className="path false"
+            d="M501.8,185.5c0,4.4-2.6,9.3-7.8,14.5L384.5,306.7l25.9,150.8c0.2,1.4,0.3,3.4,0.3,6c0,4.2-1.1,7.8-3.2,10.7 c-2.1,2.9-5.2,4.4-9.2,4.4c-3.8,0-7.8-1.2-12.1-3.6l-135.4-71.2L115.5,475c-4.4,2.4-8.4,3.6-12.1,3.6c-4.2,0-7.4-1.5-9.5-4.4 c-2.1-2.9-3.2-6.5-3.2-10.7c0-1.2,0.2-3.2,0.6-6l25.9-150.8L7.5,200c-5-5.4-7.5-10.3-7.5-14.5c0-7.4,5.6-12.1,16.9-13.9l151.4-22 l67.9-137.2C240,4.1,244.9,0,250.9,0c6,0,11,4.1,14.8,12.4l67.9,137.2l151.4,22C496.2,173.4,501.8,178,501.8,185.5z"
+            fill="transparent"
+            stroke="currentColor" />
+        </svg>
+        <span
+          className="srOnly">
+          5
         </span>
       </label>
     </div>

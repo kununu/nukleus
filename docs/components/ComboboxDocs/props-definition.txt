@@ -1,14 +1,20 @@
 static propTypes = {
+  debounceRate: PropTypes.number,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   handle: PropTypes.element,
   id: PropTypes.string.isRequired,
+  inputProps: PropTypes.object,
   inputStyles: PropTypes.string,
   inputValue: PropTypes.string,
+  isRequired: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   items: PropTypes.array,
   label: PropTypes.string,
+  labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
+  onSelect: PropTypes.func,
   placeholder: PropTypes.string,
-  isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string
 };

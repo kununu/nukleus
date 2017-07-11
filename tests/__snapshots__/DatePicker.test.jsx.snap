@@ -1,16 +1,51 @@
-exports[`test Renders datepicker without crashing 1`] = `
+exports[`test Renders datepicker with an error message without crashing 1`] = `
 <div
   className="formGroup inline datePickerContainer ">
   
   <label
-    className="controlLabel"
+    className="controlLabel controlLabelError"
     htmlFor="date-picker">
     DatePicker
   </label>
   <div
     className="innerContainer">
     <Datepicker
-      className="formControl"
+      className="formControl formControlError"
+      disabled={false}
+      id="date-picker"
+      isClearable={true}
+      name="date-picker"
+      onChange={[Function]}
+      placeholderText=""
+      required={true}
+      selected={null}
+      showYearDropdown={true} />
+    
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders datepicker without crashing 1`] = `
+<div
+  className="formGroup inline datePickerContainer ">
+  
+  <label
+    className="controlLabel "
+    htmlFor="date-picker">
+    DatePicker
+  </label>
+  <div
+    className="innerContainer">
+    <Datepicker
+      className="formControl "
       disabled={false}
       id="date-picker"
       isClearable={true}

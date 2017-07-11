@@ -1,0 +1,15 @@
+@import '~kununu-theme/scss/base/variables';
+
+.error {
+  display: block;
+  width: 100%;
+  margin-top: $baseline-grid;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  color: $white;
+  background-color: $red;
+  border-radius: $input-border-radius;
+}
+
+.info {
+  display: block;
+}

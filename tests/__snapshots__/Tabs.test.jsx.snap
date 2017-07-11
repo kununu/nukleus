@@ -1,6 +1,33 @@
+exports[`test Renders Tabs using the block theme without crashing 1`] = `
+<ul
+  className="blockTabs clearfix">
+  <li
+    className="">
+    <a
+      href="/playground/">
+      First Tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      href="/playground/2">
+      Second Tab
+    </a>
+  </li>
+  <li
+    className="">
+    <a
+      href="/playground/3">
+      Third Tab
+    </a>
+  </li>
+</ul>
+`;
+
 exports[`test Renders Tabs with react-router links as items without crashing 1`] = `
 <ul
-  className="tabs clearfix">
+  className="defaultTabs clearfix">
   <li
     className="">
     <a
@@ -30,7 +57,7 @@ exports[`test Renders Tabs with react-router links as items without crashing 1`]
 
 exports[`test Renders Tabs with simple links as items without crashing 1`] = `
 <ul
-  className="tabs clearfix">
+  className="defaultTabs clearfix">
   <li
     className="">
     <a
