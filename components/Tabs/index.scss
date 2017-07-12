@@ -84,6 +84,7 @@
     }
 
     a {
+      border-top: 4px solid $panel-bg;
       border-bottom: 1px solid $gray-base-20;
       background: $panel-bg;
       color: $text-color;
@@ -105,6 +106,7 @@
   @media (min-width: $screen-sm-min) {
     li {
       a {
+        border-top: 0;
         background: $gray-base-10;
         font-size: $font-size-base;
         padding: 17px 25px;

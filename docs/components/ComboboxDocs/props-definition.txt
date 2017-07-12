@@ -1,4 +1,5 @@
 static propTypes = {
+  debounceRate: PropTypes.number,
   disabled: PropTypes.bool,
   error: PropTypes.string,
   errorSubInfo: PropTypes.string,
