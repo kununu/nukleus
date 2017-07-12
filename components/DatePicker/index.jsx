@@ -142,13 +142,13 @@ export default class DatePickerComponent extends Component {
             <span className={styles.icon}>
               {icon}
             </span>
-          : ''}
+            : ''}
 
           {this.hasError() &&
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
 
       </div>
