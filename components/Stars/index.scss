@@ -87,6 +87,7 @@
 
   @supports (display: flex) {
     height: auto;
+    max-height: 100%;
   }
 
   @media (max-width: $screen-xs-max) {

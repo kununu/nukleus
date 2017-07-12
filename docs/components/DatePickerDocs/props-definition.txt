@@ -1,6 +1,7 @@
 static propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   icon: PropTypes.element,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
