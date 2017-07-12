@@ -129,7 +129,7 @@ export default class Stars extends Component {
       <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
         <div className={styles.starsRow}>
           {[...Array(totalStars + 1)].map((star, key) =>
-            <div
+            (<div
               key={key} // eslint-disable-line react/no-array-index-key
               className={key ? styles.starsGroup : styles.hideStarGroup}>
 
@@ -156,7 +156,8 @@ export default class Stars extends Component {
                     stroke={strokeColor}
                     preserveAspectRatio="xMidYMid meet"
                     className={`${styles.star} ${selectable && styles.ratingStar}`}
-                    x="0" y="0">
+                    x="0"
+                    y="0">
                     {!selectable &&
                       <defs>
                         <linearGradient id="half">
@@ -180,7 +181,7 @@ export default class Stars extends Component {
                     {key}
                   </span>
                 </label> }
-            </div>
+            </div>)
           )}
         </div>
       </div>

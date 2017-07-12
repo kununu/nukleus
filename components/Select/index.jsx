@@ -189,9 +189,9 @@ export default class Select extends Component {
               <option value="">{defaultItem}</option>}
 
             {Object.keys(items).map(value =>
-              <option
+              (<option
                 key={value}
-                value={value}>{items[value]}</option>
+                value={value}>{items[value]}</option>)
             )}
           </select>
 
@@ -199,7 +199,7 @@ export default class Select extends Component {
             <Error
               info={error}
               subInfo={errorSubInfo} />
-            }
+          }
         </div>
       </div>
     );

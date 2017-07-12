@@ -30,7 +30,7 @@ export default class MultipleChoice extends Component {
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
-    onChange: null,
+    onChange: () => {},
     query: {},
     reference: () => {},
     requiredLabel: ''
@@ -59,18 +59,17 @@ export default class MultipleChoice extends Component {
   }
 
   onChange (choice) {
-    this.updateValue([choice]);
-
-    if (this.props.onChange) {
-      this.props.onChange(choice);
-    }
+    this.updateValue([choice], 'toggle', () => {
+      this.props.onChange(choice, this.state.choices);
+    });
   }
 
   getChoicesToUpdate (newChoices) {
     return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
   }
 
-  updateValue (newChoices, status = 'toggle') {
+  updateValue (newChoices, status, cb = () => {}) {
+    // cb get's fired when setState is finished
     this.setState({
       choices: this.state.choices.map(choice => {
         if (newChoices.some(newChoice => newChoice === choice)) {
@@ -88,7 +87,7 @@ export default class MultipleChoice extends Component {
         }
         return choice;
       })
-    });
+    }, cb);
   }
 
   get containerClassNames () {
@@ -122,7 +121,7 @@ export default class MultipleChoice extends Component {
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
-            <div className={`${styles.choice}`} key={choice.id}>
+            (<div className={`${styles.choice}`} key={choice.id}>
               <input
                 className={formControl}
                 id={`${this.props.name}${choice.id}`}
@@ -136,7 +135,7 @@ export default class MultipleChoice extends Component {
                 onChange={() => this.onChange(choice)} />
 
               <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
-            </div>
+            </div>)
           )}
         </div>
       </div>
