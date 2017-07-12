@@ -1,17 +1,19 @@
 import React, {PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
 import Scroll from 'react-scroll';
+import debounce from 'debounce';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import getElementPositionY from '../../utils/elementPosition';
 import isMobile from '../../utils/mobileDetection';
-import {
+import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
-  errorStyles,
   formControl,
+  formControlError,
   hidden,
   formGroup,
   srOnly
@@ -19,9 +21,12 @@ import {
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
+    autoFocus: PropTypes.bool,
     data: PropTypes.object,
+    debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -41,9 +46,12 @@ export default class Autocomplete extends React.Component {
   };
 
   static defaultProps = {
+    autoFocus: false,
     data: {},
+    debounceRate: 500,
     disabled: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
@@ -68,6 +76,9 @@ export default class Autocomplete extends React.Component {
 
   componentWillMount () {
     this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -96,9 +107,7 @@ export default class Autocomplete extends React.Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
+    this.debouncedLoadSuggestions(value);
   }
 
   onSuggestionsClearRequested = () => {
@@ -139,6 +148,14 @@ export default class Autocomplete extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.item;
 
+  loadSuggestions (value) {
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  }
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
+
   hideNoSuggestionsText = () => {
     this.setState({
       showNoSuggestionsText: false
@@ -155,6 +172,10 @@ export default class Autocomplete extends React.Component {
     this.setState({
       showError: false
     });
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
   }
 
   scrollToElement = () => {
@@ -176,13 +197,47 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
+  }
+
   renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span></span>;
 
   render () {
     const {
+      autoFocus,
       data: {isFetching},
       disabled,
       error,
+      errorSubInfo,
       label,
       labelHidden,
       id,
@@ -194,14 +249,14 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     const {
-      showError,
       showNoSuggestionsText,
       suggestions,
       value
     } = this.state;
 
     const inputProps = {
-      className: formControl,
+      autoFocus,
+      className: `${formControl} ${this.hasError() ? formControlError : ''}`,
       disabled,
       id,
       name,
@@ -216,7 +271,7 @@ export default class Autocomplete extends React.Component {
     return (
       <div
         ref={node => this.node = node}
-        className={`${formGroup} ${styles[this.props.inputStyle]} ${requiredLabel ? styles.paddingTop : ''}`}>
+        className={this.containerClassNames}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
@@ -231,7 +286,7 @@ export default class Autocomplete extends React.Component {
         }
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={this.labelClassNames}
           htmlFor={id}>
           {label}
         </label>
@@ -268,10 +323,10 @@ export default class Autocomplete extends React.Component {
             : ''
           }
 
-          {showError &&
-            <span className={errorStyles}>
-              {error}
-            </span>
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
           }
         </div>
       </div>

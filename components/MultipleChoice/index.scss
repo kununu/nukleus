@@ -63,41 +63,6 @@
   }
 }
 
-.inline {
-  position: relative;
-
-  @media (min-width: $screen-xs-min) {
-    display: flex;
-    flex-flow: row;
-    align-items: base;
-  }
-
-  @media (min-width: $screen-sm-min) {
-    padding-top: 6px;
-  }
-
-  > div:first-child {
-    margin-right: 10px;
-    width: 140px;
-    max-width: 100%;
-    display: inline-block;
-  }
-
-  .choice:first-child {
-    margin-top: 0;
-  }
-
-  .choice:last-child {
-    margin-bottom: 0;
-  }
-
-  &.paddingTop {
-    @media (min-width: $screen-sm-min) {
-      padding-top: 25px;
-    }
-  }
-}
-
 form .inline {
   > div:first-child {
     color: $gray-base-60;
