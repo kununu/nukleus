@@ -19,7 +19,8 @@ const components = [
   'Stars',
   'Table',
   'Tabs',
-  'TextField'
+  'TextField',
+  'ToolTip'
 ];
 
 export default class App extends Component {
