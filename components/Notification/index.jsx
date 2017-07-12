@@ -9,6 +9,7 @@ export default class Notification extends Component {
     duration: PropTypes.number,
     icon: PropTypes.element,
     message: PropTypes.string.isRequired,
+    onCloseClick: PropTypes.func,
     type: PropTypes.oneOf([
       'error',
       'success'
@@ -21,7 +22,9 @@ export default class Notification extends Component {
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
         viewBox="0 0 68.3 61.2"
         xmlSpace="preserve">
         <path
@@ -35,6 +38,7 @@ export default class Notification extends Component {
     duration: 5000,
     icon: null,
     message: '',
+    onCloseClick: null,
     type: 'success',
     visible: false
   }
@@ -57,6 +61,9 @@ export default class Notification extends Component {
 
   onClickClose = () => {
     this.hideNotification();
+    if (this.props.onCloseClick) {
+      this.props.onCloseClick();
+    }
   };
 
   onTimeout () {
