@@ -8,8 +8,10 @@ import {default as propsDefinition} from './props-definition.txt';
 import {default as propsDefault} from './props-default.txt';
 import styles from './index.scss';
 
+const theme = 'default';
+
 const TabsDocs = ({location: {pathname}}) => {
-  const example = `${'<'}Tabs${'\n  '}items={[${'\n    <'}Link to={{pathname: '/tabs'}}>First Tab</Link>,${'\n    <'}Link to={{pathname: '/tabs/2'}}>Second Tab</Link>,${'\n    <'}Link to={{pathname: '/tabs/3'}}>Third Tab</Link>${'\n  '}]}${'\n  '}pathname="${pathname}" ${'/>'}`;
+  const example = `${'<'}Tabs${'\n  '}items={[${'\n    <'}Link to={{pathname: '/tabs'}}>First Tab</Link>,${'\n    <'}Link to={{pathname: '/tabs/2'}}>Second Tab</Link>,${'\n    <'}Link to={{pathname: '/tabs/3'}}>Third Tab</Link>${'\n  '}]}${'\n  '}pathname="${pathname}"${'\n  '}theme="${theme}" ${'/>'}`;
 
   return (
     <DocsRoot
@@ -22,7 +24,8 @@ const TabsDocs = ({location: {pathname}}) => {
               <Link to={{pathname: '/tabs/2'}}>Second Tab</Link>,
               <Link to={{pathname: '/tabs/3'}}>Third Tab</Link>
             ]}
-            pathname={pathname} />
+            pathname={pathname}
+            theme={theme} />
         </div>
       }
       example={example}
@@ -33,6 +36,10 @@ const TabsDocs = ({location: {pathname}}) => {
 
 TabsDocs.propTypes = {
   location: PropTypes.object.isRequired
+};
+
+TabsDocs.defaultProps = {
+  theme: 'default'
 };
 
 export default TabsDocs;

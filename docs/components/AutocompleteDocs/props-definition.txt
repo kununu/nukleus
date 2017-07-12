@@ -1,8 +1,10 @@
 static propTypes = {
   autoFocus: PropTypes.bool,
   data: PropTypes.object,
+  debounceRate: PropTypes.number,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   label: PropTypes.string.isRequired,

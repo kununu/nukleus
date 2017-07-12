@@ -80,6 +80,10 @@
   }
 }
 
+.formControlError {
+  border: 2px solid $red;
+}
+
 .controlNote {
   color: $gray-base-30;
   float: right;
@@ -143,6 +147,12 @@
   color: $gray-light;
 }
 
+.formGroupMultipleChoice {
+  &.inline {
+    align-items: flex-start;
+  }
+}
+
 .formControlLg .formControlIcon {
   top: 20px;
 }
@@ -165,3 +175,77 @@
   right: 2px;
 }
 
+.unstyledButton {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.inline {
+  position: relative;
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 6px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  label,
+  .labelContainer {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 140px;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
+  }
+
+  .controlLabelError,
+  .controlLabelMediumSize {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
+  }
+
+  .choice:first-child {
+    margin-top: 0;
+  }
+
+  .choice:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.mediumSize {
+  input,
+  textarea {
+    height: 80px;
+  }
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6px;
+  line-height: $line-height-base;
+
+  label {
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+}
