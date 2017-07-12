@@ -3,7 +3,7 @@ static defaultProps = {
   headingStyle: 'control-label',
   inputStyle: 'inline',
   isRequired: false,
-  onChange: null,
+  onChange: () => {},
   query: {},
   reference: () => {},
   requiredLabel: ''
