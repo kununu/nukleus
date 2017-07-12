@@ -106,3 +106,49 @@ test('Fires on change function', () => {
   component.find('input').simulate('click');
   expect(spyFunc).toHaveBeenCalled();
 });
+
+test('Changing a choice returns correct values in onChange Event', done => {
+  const initialChoices = [
+    {
+      id: 'option-1',
+      isChecked: false,
+      label: 'test',
+      value: 'option-1'
+    },
+    {
+      id: 'option-2',
+      isChecked: false,
+      label: 'test',
+      value: 'option-2'
+    },
+    {
+      id: 'option-3',
+      isChecked: false,
+      label: 'test',
+      value: 'option-3'
+    }
+  ];
+
+  const updatedChoices = initialChoices.map(ch => {
+    if (ch.id === 'option-2') {
+      return {
+        ...ch,
+        isChecked: true
+      };
+    }
+    return ch;
+  });
+
+  const component = mount(<MultipleChoice
+    name="choice[]"
+    heading="Button Choice"
+    inputStyle="buttons"
+    isRequired
+    onChange={(ch, allChoices) => {
+      expect(allChoices).toEqual(updatedChoices);
+      done();
+    }}
+    choices={initialChoices} />
+  );
+  component.find({value: 'option-2'}).simulate('change');
+});
