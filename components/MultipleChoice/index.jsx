@@ -69,6 +69,7 @@ export default class MultipleChoice extends Component {
   }
 
   updateValue (newChoices, status, cb = () => {}) {
+    // cb get's fired when setState is finished
     this.setState({
       choices: this.state.choices.map(choice => {
         if (newChoices.some(newChoice => newChoice === choice)) {
