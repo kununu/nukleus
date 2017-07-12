@@ -64,7 +64,7 @@ export default class Dropdown extends Component {
         </span>
         : ''}
     </span>
-    )
+  )
 
   isButtonElement (e) {
     return this.node.contains(e.target);
@@ -89,7 +89,7 @@ export default class Dropdown extends Component {
             <span className={styles.pullRight}>
               {activeItem.icon}
             </span>
-          : ''}
+            : ''}
         </button>
         <ul className={`${styles.menu} ${this.state.isOpen ? styles.open : ''}`}>
           {items.map(item =>
