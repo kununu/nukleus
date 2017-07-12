@@ -26,6 +26,7 @@ module.exports = {
     'object-curly-spacing': 'off', // Disabled in favour of babel/object-curly-spacing in order to avoid false positives with es6
     'quotes': ['error', 'single', {avoidEscape: true}],
     'space-before-function-paren': ['error', 'always'],
+    'jsx-a11y/no-autofocus': 'off',
 
     // React rules
     'react/jsx-closing-bracket-location': ['error', 'after-props'],
