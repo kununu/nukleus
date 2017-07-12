@@ -17,32 +17,6 @@
   display: inline-block;
 }
 
-.inline {
-  position: relative;
-
-  @media (min-width: $screen-sm-min) {
-    padding-top: 6px;
-  }
-
-  @media (min-width: $screen-xs-min) {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-
-  label {
-    margin-right: 10px;
-    margin-bottom: 0;
-    width: 140px;
-  }
-
-  &.paddingTop {
-    @media (min-width: $screen-sm-min) {
-      padding-top: 25px;
-    }
-  }
-}
-
 .suggestionsContainer {
   box-shadow: 0 2px 10px rgba($black, .2);
   border-radius: $border-radius-base;
@@ -79,7 +53,7 @@
   padding: 8px 15px;
 }
 
-.suggestionFocused {
+.suggestionHighlighted {
   background: $blue;
   color: $white;
   cursor: pointer;
