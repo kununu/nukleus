@@ -4,6 +4,10 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Autocomplete from 'Autocomplete'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
+function waitingForDebounce (cb) {
+  setTimeout(cb, 550);
+}
+
 const staticAutocomplete = (
   <Autocomplete
     data={{
@@ -62,17 +66,26 @@ test('Renders Autocomplete with Error without crashing', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Renders no suggestions container', () => {
+test('Renders no suggestions container', done => {
   const component = mount(staticAutocomplete);
   component.find('input').simulate('change', {target: {value: 'z'}});
-  expect(toJson(component)).toMatchSnapshot();
+
+  // waiting for debounce
+  waitingForDebounce(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  });
 });
 
-test('Renders suggestions container', () => {
+test('Renders suggestions container', done => {
   const component = mount(staticAutocomplete);
   component.find('input').simulate('change', {target: {value: 'a'}});
   component.find('input').simulate('focus');
-  expect(toJson(component)).toMatchSnapshot();
+
+  waitingForDebounce(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  });
 });
 
 test('Hides no suggestions on blur', () => {
@@ -91,7 +104,7 @@ test('Updates value on selection', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Fetches suggestions on change', () => {
+test('Fetches suggestions on change', done => {
   const spyFunc = jest.fn();
   const component = mount(
     <Autocomplete
@@ -103,5 +116,22 @@ test('Fetches suggestions on change', () => {
   );
 
   component.find('input').simulate('change', {target: {value: 'a'}});
-  expect(spyFunc).toHaveBeenCalled();
+
+  // Waiting for debounce
+  waitingForDebounce(() => {
+    expect(spyFunc).toHaveBeenCalled();
+    done();
+  });
+});
+
+test('Fetches Value only when debounce is over', done => {
+  const component = mount(staticAutocomplete);
+  component.find('input').simulate('change', {target: {value: 'kunu'}});
+  expect(component.state().suggestions.length).toEqual(5);
+
+  // waiting for debounce
+  waitingForDebounce(() => {
+    expect(component.state().suggestions.length).toEqual(2);
+    done();
+  });
 });
