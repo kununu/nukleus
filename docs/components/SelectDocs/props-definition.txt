@@ -4,6 +4,7 @@ static propTypes = {
   defaultRequired: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   items: PropTypes.object,
@@ -11,7 +12,9 @@ static propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   query: PropTypes.object,
-  required: PropTypes.bool,
+  isRequired: PropTypes.bool,
+  reference: PropTypes.func,
+  requiredLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.any
 };

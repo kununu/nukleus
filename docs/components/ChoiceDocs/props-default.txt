@@ -4,7 +4,10 @@ static defaultProps = {
   disabled: false,
   heading: '',
   headingStyle: 'control-label',
+  isRequired: false,
   onChange: null,
+  optionsPerRow: null,
   query: {},
-  required: false
+  reference: () => {},
+  requiredLabel: '',
 };

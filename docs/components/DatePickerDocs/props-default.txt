@@ -1,11 +1,13 @@
 static defaultProps = {
   disabled: false,
   error: null,
+  errorSubInfo: null,
   icon: null,
   inputStyle: 'inline',
   isClearable: true,
   placeholder: '',
   query: {},
-  required: false,
+  isRequired: false,
+  requiredLabel: '',
   value: ''
 };

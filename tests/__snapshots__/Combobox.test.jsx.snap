@@ -1,11 +1,16 @@
 exports[`test Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
+  debounceRate={500}
   disabled={false}
   error={null}
+  errorSubInfo={null}
   handle={null}
   id="name"
+  inputProps={Object {}}
   inputStyles="inline"
   inputValue=""
+  isRequired={true}
+  isSearchable={true}
   items={
     Array [
       "music",
@@ -23,27 +28,31 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   }
   keyName="name"
   label="Combobox"
+  labelHidden={false}
   name="name"
+  onSelect={null}
   placeholder="Type m"
-  required={true}>
+  requiredLabel="">
   <div
-    className="formGroup inline">
+    className="formGroup inline ">
     <label
-      className="controlLabel"
-      htmlFor="city">
+      className="controlLabel false "
+      htmlFor="name">
       Combobox
     </label>
     <div
       className="container">
       <Autosuggest
         alwaysRenderSuggestions={false}
-        focusFirstSuggestion={false}
+        error={null}
+        errorSubInfo={null}
         focusInputOnSuggestionClick={true}
         getSuggestionValue={[Function]}
+        highlightFirstSuggestion={false}
         id="1"
         inputProps={
           Object {
-            "className": "formControl",
+            "className": "formControl false ",
             "disabled": false,
             "id": "name",
             "name": "name",
@@ -58,6 +67,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         onSuggestionsClearRequested={[Function]}
         onSuggestionsFetchRequested={[Function]}
         renderSuggestion={[Function]}
+        renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={
           Array [
@@ -98,13 +108,13 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
         }
         theme={undefined {}}>
         <Autowhatever
-          focusedItemIndex={null}
-          focusedSectionIndex={null}
           getSectionItems={[Function]}
+          highlightedItemIndex={null}
+          highlightedSectionIndex={null}
           id="1"
           inputProps={
             Object {
-              "className": "formControl",
+              "className": "formControl false ",
               "disabled": false,
               "id": "name",
               "name": "name",
@@ -165,7 +175,6 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          shouldRenderSection={[Function]}
           theme={Object {}}>
           <div
             style={Object {}}>
@@ -176,7 +185,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
-              className="formControl"
+              className="formControl false "
               disabled={false}
               id="name"
               name="name"
@@ -194,8 +203,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               id="react-autowhatever-1"
               style={Object {}}>
               <ItemsList
-                focusedItemIndex={null}
                 getItemId={[Function]}
+                highlightedItemIndex={null}
                 itemProps={[Function]}
                 items={
                   Array [
@@ -235,7 +244,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                   ]
                 }
                 keyPrefix="react-autowhatever-1-"
-                onFocusedItemChange={[Function]}
+                onHighlightedItemChange={[Function]}
                 renderItem={[Function]}
                 renderItemData={
                   Object {
@@ -251,6 +260,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-1--item-0"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "music",
@@ -290,6 +300,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-1--item-1"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "maths",
@@ -329,6 +340,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={2}
                     id="react-autowhatever-1--item-2"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "manga",
@@ -368,6 +380,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={3}
                     id="react-autowhatever-1--item-3"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "morning",
@@ -407,6 +420,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={4}
                     id="react-autowhatever-1--item-4"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "musical",
@@ -446,6 +460,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={5}
                     id="react-autowhatever-1--item-5"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "mania",
@@ -485,6 +500,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={6}
                     id="react-autowhatever-1--item-6"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "message",
@@ -524,6 +540,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={7}
                     id="react-autowhatever-1--item-7"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "metal",
@@ -563,6 +580,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={8}
                     id="react-autowhatever-1--item-8"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "micro",
@@ -602,6 +620,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={9}
                     id="react-autowhatever-1--item-9"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "macro",
@@ -641,6 +660,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                     data-section-index={null}
                     data-suggestion-index={10}
                     id="react-autowhatever-1--item-10"
+                    isHighlighted={false}
                     item={
                       Object {
                         "value": "microphone",
@@ -687,12 +707,13 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 </ComboboxComponent>
 `;
 
-exports[`test Renders Combobox without crashing 1`] = `
+exports[`test Renders Combobox with an error message without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline ">
+  
   <label
-    className="controlLabel"
-    htmlFor="city">
+    className="controlLabel false controlLabelError"
+    htmlFor="name">
     Combobox
   </label>
   <div
@@ -706,7 +727,101 @@ exports[`test Renders Combobox without crashing 1`] = `
         aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
-        className="formControl"
+        className="formControl false formControlError"
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders Combobox without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel false "
+    htmlFor="name">
+    Combobox
+  </label>
+  <div
+    className="container">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl false "
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value="" />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}} />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`test Renders notSearchableCombobox without crashing 1`] = `
+<div
+  className="formGroup inline ">
+  
+  <label
+    className="controlLabel false "
+    htmlFor="name">
+    Combobox
+  </label>
+  <div
+    className="container">
+    <div
+      style={Object {}}>
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-haspopup={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl isNotSearchable "
         disabled={false}
         id="name"
         name="name"

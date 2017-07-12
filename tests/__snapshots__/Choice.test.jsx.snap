@@ -1,12 +1,14 @@
 exports[`test Renders Choice with an heading without crashing 1`] = `
 <div
   className="formGroup">
+  
   <div
-    className="control-label">
+    className="control-label controlLabel">
     heading
   </div>
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -69,8 +71,10 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -133,8 +137,10 @@ exports[`test Renders a Choice with checked from route 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -197,8 +203,10 @@ exports[`test Renders a Choice with custom style 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -261,8 +269,10 @@ exports[`test Renders a Choice with custom style disabled 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -325,8 +335,10 @@ exports[`test Renders a Choice with default checked without crashing 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -389,8 +401,10 @@ exports[`test Renders a Choice with no default checked from route if it is not a
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -453,8 +467,10 @@ exports[`test Renders a Choice with no default checked from route if it is the o
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input
@@ -517,8 +533,76 @@ exports[`test Renders a Choice with no default checked if it's not an option 1`]
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onChange={[Function]}
+        required={false}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onChange={[Function]}
+        required={false}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onChange={[Function]}
+        required={false}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Renders a Choice with optionsPerRow set without crashing 1`] = `
+<div
+  className="formGroup">
+  
+  
+  <div
+    className="radioContainer false"
+    data-options-per-row={3}>
     <div
       className="radioButton">
       <input
@@ -581,8 +665,10 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
 <div
   className="formGroup">
   
+  
   <div
-    className="radioContainer false ">
+    className="radioContainer false"
+    data-options-per-row={null}>
     <div
       className="radioButton">
       <input

@@ -5,8 +5,10 @@ exports[`test Changes status on value change 1`] = `
   defaultRequired=""
   disabled={false}
   error={null}
+  errorSubInfo={null}
   id="select"
   inputStyle="inline"
+  isRequired={true}
   items={
     Object {
       "option": "Option",
@@ -18,13 +20,14 @@ exports[`test Changes status on value change 1`] = `
   name="select"
   onChange={null}
   query={Object {}}
-  required={true}
+  reference={[Function]}
+  requiredLabel=""
   title="Select"
   value="option">
   <div
     className="formGroup inline">
     <label
-      className="controlLabel false"
+      className="controlLabel"
       htmlFor="select">
       Select
     </label>
@@ -32,7 +35,7 @@ exports[`test Changes status on value change 1`] = `
       className="inputContainer">
       <select
         autoFocus={false}
-        className="formControl select"
+        className="formControl select "
         disabled={false}
         id="select"
         name="select"
@@ -57,11 +60,12 @@ exports[`test Changes status on value change 1`] = `
 </Select>
 `;
 
-exports[`test Renders Select without crashing 1`] = `
+exports[`test Renders Select with an error message without crashing 1`] = `
 <div
   className="formGroup inline">
+  
   <label
-    className="controlLabel false"
+    className="controlLabel controlLabelError"
     htmlFor="select">
     Select
   </label>
@@ -69,7 +73,54 @@ exports[`test Renders Select without crashing 1`] = `
     className="inputContainer">
     <select
       autoFocus={false}
-      className="formControl select"
+      className="formControl select formControlError"
+      disabled={false}
+      id="select"
+      name="select"
+      onChange={[Function]}
+      required={true}
+      value="option">
+      
+      
+      <option
+        value="option">
+        Option
+      </option>
+      <option
+        value="option-2">
+        Option 2
+      </option>
+      <option
+        value="option-3">
+        Option 3
+      </option>
+    </select>
+    <span
+      className="error">
+      <strong
+        className="info">
+        An Error
+      </strong>
+      with useful hints
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Renders Select without crashing 1`] = `
+<div
+  className="formGroup inline">
+  
+  <label
+    className="controlLabel"
+    htmlFor="select">
+    Select
+  </label>
+  <div
+    className="inputContainer">
+    <select
+      autoFocus={false}
+      className="formControl select "
       disabled={false}
       id="select"
       name="select"

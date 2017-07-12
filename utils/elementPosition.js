@@ -1,4 +1,7 @@
+import {isBrowser} from './executionEnvironment';
+
 export default function getElementPositionY (element, offset = 0) {
+  if (!isBrowser) return 0;
   const box = element.getBoundingClientRect();
   const body = document.body;
   const docElem = document.documentElement;

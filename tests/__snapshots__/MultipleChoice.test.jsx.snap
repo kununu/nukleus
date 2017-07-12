@@ -31,14 +31,19 @@ exports[`test Change status of choices change 1`] = `
   heading="MultipleChoice"
   headingStyle="control-label"
   inputStyle="inline"
+  isRequired={false}
   name="choice[]"
-  query={Object {}}>
+  onChange={[Function]}
+  query={Object {}}
+  reference={[Function]}
+  requiredLabel="">
   <div
-    className="inline formGroup">
-    <div
-      className="control-label">
+    className="formGroup formGroupMultipleChoice inline">
+    <label
+      className="controlLabel"
+      htmlFor="choice[]">
       MultipleChoice
-    </div>
+    </label>
     <div
       className="inputContainer">
       <div
@@ -49,6 +54,7 @@ exports[`test Change status of choices change 1`] = `
           id="choice[]option-1"
           name="choice[]"
           onChange={[Function]}
+          required={false}
           type="checkbox"
           value="option-1" />
         <label
@@ -64,6 +70,7 @@ exports[`test Change status of choices change 1`] = `
           id="choice[]option-2"
           name="choice[]"
           onChange={[Function]}
+          required={false}
           type="checkbox"
           value="option-2" />
         <label
@@ -79,6 +86,7 @@ exports[`test Change status of choices change 1`] = `
           id="choice[]option-3"
           name="choice[]"
           onChange={[Function]}
+          required={false}
           type="checkbox"
           value="option-2" />
         <label
@@ -94,6 +102,7 @@ exports[`test Change status of choices change 1`] = `
           id="choice[]option-4"
           name="choice[]"
           onChange={[Function]}
+          required={false}
           type="checkbox"
           value="option-4" />
         <label
@@ -121,14 +130,19 @@ exports[`test Changes status on choice change 1`] = `
   heading="Test"
   headingStyle="control-label"
   inputStyle="inline"
+  isRequired={true}
   name="choice[]"
-  query={Object {}}>
+  onChange={[Function]}
+  query={Object {}}
+  reference={[Function]}
+  requiredLabel="">
   <div
-    className="inline formGroup">
-    <div
-      className="control-label">
+    className="formGroup formGroupMultipleChoice inline">
+    <label
+      className="controlLabel"
+      htmlFor="choice[]">
       Test
-    </div>
+    </label>
     <div
       className="inputContainer">
       <div
@@ -139,6 +153,7 @@ exports[`test Changes status on choice change 1`] = `
           id="choice[]option-1"
           name="choice[]"
           onChange={[Function]}
+          required={true}
           type="checkbox"
           value="test" />
         <label
@@ -153,11 +168,13 @@ exports[`test Changes status on choice change 1`] = `
 
 exports[`test Renders choice without crashing 1`] = `
 <div
-  className="inline formGroup">
-  <div
-    className="control-label">
+  className="formGroup formGroupMultipleChoice inline">
+  
+  <label
+    className="controlLabel"
+    htmlFor="choice[]">
     Test
-  </div>
+  </label>
   <div
     className="inputContainer">
     <div
@@ -168,6 +185,38 @@ exports[`test Renders choice without crashing 1`] = `
         id="choice[]option-1"
         name="choice[]"
         onChange={[Function]}
+        required={true}
+        type="checkbox"
+        value="test" />
+      <label
+        htmlFor="choice[]option-1">
+        test
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Renders choices with inputStyle buttons withouth crashing 1`] = `
+<div
+  className="formGroup formGroupMultipleChoice buttons">
+  
+  <label
+    className="controlLabel"
+    htmlFor="choice[]">
+    Button Choice
+  </label>
+  <div
+    className="inputContainer">
+    <div
+      className="choice">
+      <input
+        checked={false}
+        className="formControl"
+        id="choice[]option-1"
+        name="choice[]"
+        onChange={[Function]}
+        required={true}
         type="checkbox"
         value="test" />
       <label
@@ -181,11 +230,13 @@ exports[`test Renders choice without crashing 1`] = `
 
 exports[`test Renders choices without crashing 1`] = `
 <div
-  className="inline formGroup">
-  <div
-    className="control-label">
+  className="formGroup formGroupMultipleChoice inline">
+  
+  <label
+    className="controlLabel"
+    htmlFor="choice[]">
     MultipleChoice
-  </div>
+  </label>
   <div
     className="inputContainer">
     <div
@@ -196,6 +247,7 @@ exports[`test Renders choices without crashing 1`] = `
         id="choice[]option-1"
         name="choice[]"
         onChange={[Function]}
+        required={false}
         type="checkbox"
         value="option-1" />
       <label
@@ -211,6 +263,7 @@ exports[`test Renders choices without crashing 1`] = `
         id="choice[]option-2"
         name="choice[]"
         onChange={[Function]}
+        required={false}
         type="checkbox"
         value="option-2" />
       <label
@@ -226,6 +279,7 @@ exports[`test Renders choices without crashing 1`] = `
         id="choice[]option-3"
         name="choice[]"
         onChange={[Function]}
+        required={false}
         type="checkbox"
         value="option-2" />
       <label
@@ -241,6 +295,7 @@ exports[`test Renders choices without crashing 1`] = `
         id="choice[]option-4"
         name="choice[]"
         onChange={[Function]}
+        required={false}
         type="checkbox"
         value="option-4" />
       <label

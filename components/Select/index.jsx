@@ -4,11 +4,14 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './index.scss';
 
-import {
+import Error from '../Error';
+import sharedStyles, {
   controlLabel,
-  errorStyles,
+  controlLabelRequired,
+  controlNote,
   hidden,
   formControl,
+  formControlError,
   formGroup,
   srOnly
 } from '../index.scss';
@@ -21,14 +24,17 @@ export default class Select extends Component {
     defaultRequired: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     items: PropTypes.object,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     query: PropTypes.object,
-    required: PropTypes.bool,
+    reference: PropTypes.func,
+    requiredLabel: PropTypes.string,
     title: PropTypes.string.isRequired,
     value: PropTypes.any
   };
@@ -39,12 +45,15 @@ export default class Select extends Component {
     defaultRequired: '',
     disabled: false,
     error: null,
+    errorSubInfo: null,
     inputStyle: 'inline',
+    isRequired: false,
     items: {},
     labelHidden: false,
     onChange: null,
     query: {},
-    required: false,
+    reference: () => {},
+    requiredLabel: '',
     value: ''
   };
 
@@ -55,6 +64,9 @@ export default class Select extends Component {
 
   componentWillMount () {
     this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -89,6 +101,42 @@ export default class Select extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
+  }
+
   render () {
     const {
       autoFocus,
@@ -96,21 +144,29 @@ export default class Select extends Component {
       defaultRequired,
       disabled,
       error,
+      errorSubInfo,
       id,
-      inputStyle,
       items,
       labelHidden,
       name,
-      required,
+      isRequired,
+      reference,
+      requiredLabel,
       title
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]}`}>
+      <div className={this.containerClassNames}>
         {labelHidden && <span className={srOnly}>{title}</span>}
 
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
+
         <label
-          className={`${controlLabel} ${labelHidden && hidden}`}
+          className={this.labelClassNames}
           htmlFor={id}>{title}</label>
 
         <div className={styles.inputContainer}>
@@ -119,10 +175,11 @@ export default class Select extends Component {
             name={name}
             value={this.state.value}
             id={id}
-            required={required}
+            ref={reference}
+            required={isRequired}
             autoFocus={autoFocus}
             onChange={this.onChange}
-            className={`${formControl} ${styles.select}`}
+            className={`${formControl} ${styles.select} ${this.hasError() ? formControlError : ''}`}
             disabled={disabled}>
 
             {defaultRequired &&
@@ -132,14 +189,17 @@ export default class Select extends Component {
               <option value="">{defaultItem}</option>}
 
             {Object.keys(items).map(value =>
-              <option
+              (<option
                 key={value}
-                value={value}>{items[value]}</option>
+                value={value}>{items[value]}</option>)
             )}
           </select>
 
-          {this.state.showError && error &&
-            <span className={errorStyles}>error</span>}
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+          }
         </div>
       </div>
     );

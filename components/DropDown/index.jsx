@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react';
 
 import styles from './index.scss';
 
+import {isBrowser} from '../../utils/executionEnvironment';
 import {
   clearfix
 } from '../index.scss';
@@ -9,11 +10,11 @@ import {
 export default class Dropdown extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
+      active: PropTypes.boolean,
       icon: PropTypes.element,
       link: PropTypes.element.isRequired,
       value: PropTypes.string.isRequired
     })).isRequired,
-    pathname: PropTypes.string.isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
     shade: PropTypes.oneOf(['light', 'dark'])
   };
@@ -28,11 +29,13 @@ export default class Dropdown extends Component {
   }
 
   componentWillMount () {
+    if (!isBrowser) return;
     document.addEventListener('click', this.onClickDocument, false);
     document.addEventListener('touchend', this.onClickDocument, false);
   }
 
   componentWillUnmount () {
+    if (!isBrowser) return;
     document.removeEventListener('click', this.onClickDocument, false);
     document.removeEventListener('touchend', this.onClickDocument, false);
   }
@@ -47,13 +50,7 @@ export default class Dropdown extends Component {
   }
 
   getActiveItem () {
-    const {pathname, items} = this.props;
-    return items.filter(item => {
-      const {props} = item.link;
-      // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
-      const localPathname = props.href || props.path || props.to.pathname;
-      return (pathname === localPathname);
-    })[0];
+    return this.props.items.filter(item => item.active)[0];
   }
 
   getItem = item => (
@@ -67,7 +64,7 @@ export default class Dropdown extends Component {
         </span>
         : ''}
     </span>
-    )
+  )
 
   isButtonElement (e) {
     return this.node.contains(e.target);
@@ -92,7 +89,7 @@ export default class Dropdown extends Component {
             <span className={styles.pullRight}>
               {activeItem.icon}
             </span>
-          : ''}
+            : ''}
         </button>
         <ul className={`${styles.menu} ${this.state.isOpen ? styles.open : ''}`}>
           {items.map(item =>

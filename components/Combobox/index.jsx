@@ -3,56 +3,73 @@
 
 import React, {Component, PropTypes} from 'react';
 import Autosuggest from 'react-autosuggest';
+import debounce from 'debounce';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import {
   controlLabel,
-  errorStyles,
+  controlNote,
   formControl,
-  formGroup
+  formControlError,
+  formGroup,
+  controlLabelRequired,
+  hidden
 } from '../index.scss';
 
-function getSuggestions (value, items = []) {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-  return items
-    .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
-    .map(item => ({value: item}));
-}
 
 export default class ComboboxComponent extends Component {
   static propTypes = {
+    debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
+    inputProps: PropTypes.object,
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
+    isRequired: PropTypes.bool,
+    isSearchable: PropTypes.bool,
     items: PropTypes.array,
     label: PropTypes.string,
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onSelect: PropTypes.func,
     placeholder: PropTypes.string,
-    required: PropTypes.bool
+    requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
+    debounceRate: 500,
     disabled: false,
     error: null,
+    errorSubInfo: null,
     handle: null,
+    inputProps: {},
     inputStyles: 'inline',
     inputValue: '',
+    isRequired: false,
+    isSearchable: true,
     items: [],
     label: '',
+    labelHidden: false,
+    onSelect: null,
     placeholder: '',
-    required: false
+    requiredLabel: ''
   };
 
   state = {
     showError: false,
-    suggestions: getSuggestions('', this.props.items),
+    suggestions: this.getSuggestions('', this.props.items),
     value: this.props.inputValue
   };
+
+  componentWillMount () {
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
+  }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
@@ -64,21 +81,43 @@ export default class ComboboxComponent extends Component {
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    this.setState({
-      suggestions: getSuggestions(value, this.props.items)
-    });
+    this.debouncedLoadSuggestions(value);
   };
 
   onChange = (event, {newValue}) => {
+    if (!this.props.isSearchable && this.props.items.indexOf(newValue) === -1) {
+      event.preventDefault();
+      return;
+    }
     this.hideError();
     this.setState({
       value: newValue
     });
   };
 
+  getSuggestions (value, items = []) {
+    if (this.props.isSearchable) {
+      const inputValue = value.trim().toLowerCase();
+      const inputLength = inputValue.length;
+      return items
+        .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
+        .map(item => ({value: item}));
+    }
+    return items.map(item => ({value: item}));
+  }
+
   getSuggestionValue = suggestion => suggestion.value;
 
-  handleSelection = (e, {method}) => {
+  loadSuggestions (value) {
+    this.setState({
+      suggestions: this.getSuggestions(value, this.props.items)
+    });
+  }
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
+
+  handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
+    if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
     if (method === 'enter') {
       e.preventDefault();
     }
@@ -92,6 +131,10 @@ export default class ComboboxComponent extends Component {
     this.setState({showError: false});
   }
 
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   renderSuggestion = suggestion => <span>{suggestion.value}</span>;
 
   render () {
@@ -99,41 +142,51 @@ export default class ComboboxComponent extends Component {
       name,
       id,
       label,
+      labelHidden,
       error,
+      errorSubInfo,
       handle,
-      required,
+      isRequired,
+      requiredLabel,
       inputStyles,
       placeholder,
       disabled
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyles]}`}>
-        <label
-          className={controlLabel}
-          htmlFor="city">
+      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}>
+        {requiredLabel &&
+          <span className={`${controlNote} ${controlLabelRequired}`}>
+            {requiredLabel}
+          </span>
+        }
 
-          {label}
-        </label>
+        <label
+          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
+          htmlFor={id}>{label}</label>
 
         <div className={styles.container}>
           <Autosuggest
             suggestions={this.state.suggestions}
             theme={styles}
+            error={error}
+            errorSubInfo={errorSubInfo}
             onSuggestionSelected={this.handleSelection}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             shouldRenderSuggestions={() => true}
             onSuggestionsClearRequested={() => true}
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
+            focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
-              className: formControl,
+              ...this.props.inputProps,
+              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
               disabled,
               id,
               name,
               onChange: this.onChange,
               placeholder,
-              required,
+              required: isRequired,
               value: this.state.value
             }} />
 
@@ -141,10 +194,13 @@ export default class ComboboxComponent extends Component {
             <span className={styles.handle}>
               {handle}
             </span>
-          : ''}
+            : ''}
 
-          {this.state.showError &&
-            <span className={errorStyles}>{error}</span>}
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+          }
         </div>
       </div>
     );

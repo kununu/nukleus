@@ -1,11 +1,5 @@
 @import '~kununu-theme/scss/base/variables';
 
-.requiredLabel {
-  position: absolute;
-  bottom: 45px;
-  right: 2px;
-}
-
 .spinner {
   position: absolute;
   right: 13px;
@@ -21,22 +15,6 @@
   color: $gray-base-40;
   font-size: $font-size-sm;
   display: inline-block;
-}
-
-.inline {
-  position: relative;
-
-  @media (min-width: $screen-xs-min) {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-
-  label {
-    margin-right: 10px;
-    margin-bottom: 0;
-    width: 140px;
-  }
 }
 
 .suggestionsContainer {
@@ -75,7 +53,7 @@
   padding: 8px 15px;
 }
 
-.suggestionFocused {
+.suggestionHighlighted {
   background: $blue;
   color: $white;
   cursor: pointer;

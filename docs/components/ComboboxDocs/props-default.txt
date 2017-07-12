@@ -1,11 +1,18 @@
 static defaultProps = {
+  debounceRate: 500,
   disabled: false,
   error: null,
+  errorSubInfo: null,
   handle: null,
+  inputProps: {},
   inputStyles: 'inline',
   inputValue: '',
+  isRequired: false,
+  isSearchable: true,
   items: [],
   label: '',
+  labelHidden: false,
+  onSelect: null,
   placeholder: '',
-  required: false
+  requiredLabel: ''
 };

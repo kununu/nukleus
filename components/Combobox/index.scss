@@ -10,6 +10,10 @@
   align-items: center;
   width: 100%;
 
+  @media (min-width: $screen-sm-min) {
+    padding-top: 6px;
+  }
+
   label {
     margin-right: 10px;
     margin-bottom: 0;
@@ -22,6 +26,19 @@
 
   @media (max-width: $screen-xs-min) {
     display: block;
+  }
+
+  &.paddingTop {
+    @media (min-width: $screen-sm-min) {
+      padding-top: 25px;
+    }
+  }
+
+  .controlLabelError {
+    align-self: flex-start; // otherwise would be centered between Input Field and error
+    display: flex;
+    align-items: center;
+    min-height: 46px; // height of input
   }
 }
 
@@ -64,7 +81,7 @@
   }
 }
 
-.itemsContainer {
+.suggestionsContainer {
   box-shadow: 0 5px 10px rgba($black, .2);
   border-radius: $border-radius-base;
   background-clip: padding-box;
@@ -78,12 +95,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 
   @media (max-width: $screen-xs-min) {
     left: 0;
     right: 0;
     width: 100%;
+  }
+
+  span {
+    user-select: none;
   }
 }
 
@@ -98,7 +119,7 @@
   padding: 10px 20px;
 }
 
-.suggestionFocused {
+.suggestionHighlighted {
   background: $blue;
   color: $white;
   cursor: pointer;
@@ -111,9 +132,22 @@
 
 .handle {
   position: absolute;
+  right: 15px;
+  font-size: 11px;
+  color: $black;
+  top: ($input-height-base / 3);
+  z-index: 2;
   pointer-events: none;
-  right: 10px;
-  top: 10px;
-  color: $gray;
-  font-size: $font-size-base;
+}
+
+.isNotSearchable {
+  cursor: default;
+  color : transparent;
+  text-shadow : 0 0 0 $gray;
+  user-select: none;
+  &::selection { background: transparent; }
+
+  &:focus {
+    outline : none;
+  }
 }

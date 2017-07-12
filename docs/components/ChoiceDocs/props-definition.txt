@@ -4,10 +4,12 @@ static propTypes = {
   disabled: PropTypes.bool,
   heading: PropTypes.string,
   headingStyle: PropTypes.string,
+  isRequired: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   options: PropTypes.array.isRequired,
+  optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
   query: PropTypes.object,
-  required: PropTypes.bool
+  reference: PropTypes.func,
+  requiredLabel: PropTypes.string
 };
-
