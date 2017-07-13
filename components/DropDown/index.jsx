@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -7,7 +8,7 @@ import {
   clearfix
 } from '../index.scss';
 
-export default class Dropdown extends Component {
+export default class Dropdown extends React.Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       active: PropTypes.boolean,
