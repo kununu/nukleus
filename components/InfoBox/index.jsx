@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-export default class InfoBox extends Component {
+export default class InfoBox extends React.Component {
   static propTypes = {
     content: PropTypes.string.isRequired,
     position: PropTypes.oneOf([

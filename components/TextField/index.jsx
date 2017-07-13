@@ -1,6 +1,7 @@
 // Read more about controlled components
 // https://facebook.github.io/react/docs/forms.html#controlled-components
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -15,7 +16,7 @@ import sharedStyles, {
   srOnly
 } from '../index.scss';
 
-export default class TextField extends Component {
+export default class TextField extends React.Component {
   static propTypes = {
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,

@@ -1,9 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './index.scss';
 
-export default class Button extends Component {
+export default class Button extends React.Component {
   static propTypes = {
     customTheme: PropTypes.string,
     disabled: PropTypes.bool,

@@ -1,12 +1,13 @@
 /* eslint-disable no-plusplus */
 
-import React, {PropTypes, Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
 import params from '../../utils/params';
 
-export default class Paginator extends Component {
+export default class Paginator extends React.Component {
   static propTypes = {
     baseLink: PropTypes.element.isRequired,
     pathname: PropTypes.string.isRequired,

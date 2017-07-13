@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -12,7 +13,7 @@ import sharedStyles, {
 } from '../index.scss';
 
 
-export default class MultipleChoice extends Component {
+export default class MultipleChoice extends React.Component {
   static propTypes = {
     choices: PropTypes.array.isRequired,
     heading: PropTypes.string,

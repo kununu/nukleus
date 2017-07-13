@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-export default class Notification extends Component {
+export default class Notification extends React.Component {
   static propTypes = {
     closeIcon: PropTypes.element,
     closeMethod: PropTypes.oneOf(['onClick', 'onTimeout']),
