@@ -6,11 +6,13 @@ module.exports = {
   ...base,
   module: {
     ...base.module,
-    preLoaders: [
+    rules: [
+      ...base.module.rules,
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
+        enforce: 'pre',
         query: {
           fix: true
         }
@@ -18,11 +20,12 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: 'sasslint'
-      }
+        loader: 'sasslint-loader',
+        enforce: 'pre',
+        options: {
+          configFile: '.sass-lint.yml'
+        }
+      },
     ]
-  },
-  sasslint: {
-    configFile: '../.sass-lint.yml'
   }
 };

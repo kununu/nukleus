@@ -102,7 +102,7 @@ export default class App extends Component {
                   <navigation>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
-                        <li
+                        (<li
                           key={name}
                           className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
                           <Link
@@ -110,7 +110,7 @@ export default class App extends Component {
                             onClick={(() => this.onClickToggleComponent(name))}
                             className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
                           </Link>
-                        </li>
+                        </li>)
                       )}
                     </ul>
                   </navigation>

@@ -3,7 +3,7 @@
 
 const path = require('path');
 const webpack = require('webpack'); // eslint-disable-line no-unused-vars, import/no-extraneous-dependencies
-const autoprefixer = require('autoprefixer'); // eslint-disable-line import/no-extraneous-dependencies
+
 
 module.exports = {
   context: __dirname,
@@ -14,10 +14,14 @@ module.exports = {
     publicPath: '/build/'
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx'],
-    root: [
+    extensions: ['.js', '.json', '.jsx'],
+    modules: [
       __dirname,
-      path.resolve(__dirname, 'app')
+      path.resolve(__dirname),
+      path.resolve(__dirname, 'app'),
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, '..', 'node_modules')
+
     ],
     alias: {
       nukleus: path.resolve(__dirname, '..', 'components'),
@@ -25,48 +29,92 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /kununu-logo\/index.jsx$/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
         exclude: /node_modules|main\.scss/,
-        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
+        use: [
+          'style-loader',
+          'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /kununu-logo\/index.scss/,
-        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!sass'
+        use: [
+          'style-loader',
+          'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.css$/,
         include: /node_modules/,
-        loader: 'style!css'
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /main\.scss$/,
         exclude: /node_modules/,
-        loader: 'style!css!postcss!sass'
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.(ttf|eot|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file'
+        loader: 'file-loader'
       },
       {
         test: /\.txt/,
-        loader: 'raw'
+        loader: 'raw-loader'
       }
     ]
-  },
-  postcss: [autoprefixer]
+  }
 };
