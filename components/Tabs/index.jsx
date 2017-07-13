@@ -1,11 +1,12 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
 import {clearfix} from '../index.scss';
 
 
-export default class Tabs extends Component {
+export default class Tabs extends React.Component {
   static propTypes = {
     hash: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.element).isRequired,

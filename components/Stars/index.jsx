@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -12,7 +13,7 @@ function formatValue (number) {
   return roundToHalves(Math.round(number * 100) / 100);
 }
 
-export default class Stars extends Component {
+export default class Stars extends React.Component {
   static propTypes = {
     colors: PropTypes.arrayOf(PropTypes.string),
     name: PropTypes.string.isRequired,

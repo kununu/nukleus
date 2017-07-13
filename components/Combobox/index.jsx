@@ -1,7 +1,8 @@
 // NOTE: we make extensive use of property initialiser for binding methods to the class instance:
 // onChange, getSuggestionValue etc.
 
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import debounce from 'debounce';
 
@@ -19,7 +20,7 @@ import {
 } from '../index.scss';
 
 
-export default class ComboboxComponent extends Component {
+export default class ComboboxComponent extends React.Component {
   static propTypes = {
     debounceRate: PropTypes.number,
     disabled: PropTypes.bool,

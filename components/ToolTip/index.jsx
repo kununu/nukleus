@@ -1,11 +1,12 @@
-import React, {PropTypes, Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
 import InfoBox from '../InfoBox';
 import {unstyledButton} from '../index.scss';
 
-export default class ToolTip extends Component {
+export default class ToolTip extends React.Component {
   static propTypes = {
     content: PropTypes.string,
     icon: PropTypes.element,

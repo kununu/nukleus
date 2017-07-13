@@ -1,6 +1,7 @@
 // Read more about controlled components
 // https://facebook.github.io/react/docs/forms.html#controlled-components
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -17,7 +18,7 @@ import sharedStyles, {
 } from '../index.scss';
 
 
-export default class Select extends Component {
+export default class Select extends React.Component {
   static propTypes = {
     autoFocus: PropTypes.bool,
     defaultItem: PropTypes.string,

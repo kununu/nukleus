@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
@@ -16,7 +17,7 @@ import {
   formGroup
 } from '../index.scss';
 
-export default class DatePickerComponent extends Component {
+export default class DatePickerComponent extends React.Component {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,

@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
@@ -9,7 +10,7 @@ import {
   formGroup
 } from '../index.scss';
 
-export default class Choice extends Component {
+export default class Choice extends React.Component {
   static propTypes = {
     checked: PropTypes.string,
     customTheme: PropTypes.string,
