@@ -84,7 +84,7 @@ test('Renders notSearchableCombobox without crashing', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Causes dropdown to show when input is focused', () => {
+test('Calls onSelect function when option is clicked ', () => {
   const component = mount(notSearchableCombobox);
   component.find('input#name').simulate('focus');
   component.find('#react-autowhatever-1--item-0').simulate('click');

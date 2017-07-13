@@ -1,6 +1,9 @@
-exports[`test Renders InfoText without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders InfoText without crashing 1`] = `
 <div
-  className="infoText inline">
+  className="infoText inline"
+>
   test
 </div>
 `;

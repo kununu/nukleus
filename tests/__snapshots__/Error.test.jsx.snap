@@ -1,19 +1,25 @@
-exports[`test Renders an Error component without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders an Error component without crashing 1`] = `
 <span
-  className="error">
+  className="error"
+>
   <strong
-    className="info">
+    className="info"
+  >
     Error
   </strong>
   
 </span>
 `;
 
-exports[`test Renders an Error with a subInfo Text component without crashing 1`] = `
+exports[`Renders an Error with a subInfo Text component without crashing 1`] = `
 <span
-  className="error">
+  className="error"
+>
   <strong
-    className="info">
+    className="info"
+  >
     Error
   </strong>
   Helpful hint

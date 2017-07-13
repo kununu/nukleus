@@ -1,81 +1,104 @@
-exports[`test Renders Tabs using the block theme without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Tabs using the block theme without crashing 1`] = `
 <ul
-  className="blockTabs clearfix">
+  className="blockTabs clearfix"
+>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/">
+      href="/playground/"
+    >
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/2">
+      href="/playground/2"
+    >
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/3">
+      href="/playground/3"
+    >
       Third Tab
     </a>
   </li>
 </ul>
 `;
 
-exports[`test Renders Tabs with react-router links as items without crashing 1`] = `
+exports[`Renders Tabs with react-router links as items without crashing 1`] = `
 <ul
-  className="defaultTabs clearfix">
+  className="defaultTabs clearfix"
+>
   <li
-    className="">
+    className=""
+  >
     <a
       onClick={[Function]}
-      style={Object {}}>
+      style={Object {}}
+    >
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
       onClick={[Function]}
-      style={Object {}}>
+      style={Object {}}
+    >
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
       onClick={[Function]}
-      style={Object {}}>
+      style={Object {}}
+    >
       Third Tab
     </a>
   </li>
 </ul>
 `;
 
-exports[`test Renders Tabs with simple links as items without crashing 1`] = `
+exports[`Renders Tabs with simple links as items without crashing 1`] = `
 <ul
-  className="defaultTabs clearfix">
+  className="defaultTabs clearfix"
+>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/">
+      href="/playground/"
+    >
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/2">
+      href="/playground/2"
+    >
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className=""
+  >
     <a
-      href="/playground/3">
+      href="/playground/3"
+    >
       Third Tab
     </a>
   </li>

@@ -1,4 +1,6 @@
-exports[`test Closes menu when document is clicked 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Closes menu when document is clicked 1`] = `
 <Dropdown
   items={
     Array [
@@ -6,10 +8,12 @@ exports[`test Closes menu when document is clicked 1`] = `
         "active": false,
         "icon": <img
           alt="Austrian flag"
-          src="austrianflag.jpg" />,
+          src="austrianflag.jpg"
+    />,
         "link": <a
           alt="hi"
-          href="/at">
+          href="/at"
+    >
           Austria
     </a>,
         "value": "Austria",
@@ -18,9 +22,11 @@ exports[`test Closes menu when document is clicked 1`] = `
         "active": true,
         "icon": <img
           alt="German flag"
-          src="germanflag.jpg" />,
+          src="germanflag.jpg"
+    />,
         "link": <a
-          href="/de">
+          href="/de"
+    >
           German
     </a>,
         "value": "German",
@@ -28,57 +34,75 @@ exports[`test Closes menu when document is clicked 1`] = `
     ]
   }
   position="top"
-  shade="light">
+  shade="light"
+>
   <div
-    className="container top">
+    className="container top"
+  >
     <button
       className="selection clearfix light"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       German
       <span
-        className="pullRight">
+        className="pullRight"
+      >
         <img
           alt="German flag"
-          src="germanflag.jpg" />
+          src="germanflag.jpg"
+        />
       </span>
     </button>
     <ul
-      className="menu ">
+      className="menu "
+    >
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
           alt="hi"
-          href="/at">
+          href="/at"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               Austria
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="Austrian flag"
-                src="austrianflag.jpg" />
+                src="austrianflag.jpg"
+              />
             </span>
           </span>
         </a>
       </li>
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
-          href="/de">
+          href="/de"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               German
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="German flag"
-                src="germanflag.jpg" />
+                src="germanflag.jpg"
+              />
             </span>
           </span>
         </a>
@@ -88,57 +112,74 @@ exports[`test Closes menu when document is clicked 1`] = `
 </Dropdown>
 `;
 
-exports[`test Renders DropDown without crashing 1`] = `
+exports[`Renders DropDown without crashing 1`] = `
 <div
-  className="container top">
+  className="container top"
+>
   <button
     className="selection clearfix light"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     German
     <span
-      className="pullRight">
+      className="pullRight"
+    >
       <img
         alt="German flag"
-        src="germanflag.jpg" />
+        src="germanflag.jpg"
+      />
     </span>
   </button>
   <ul
-    className="menu ">
+    className="menu "
+  >
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
         alt="hi"
-        href="/at">
+        href="/at"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             Austria
           </span>
           <span
-            className="pullRight">
+            className="pullRight"
+          >
             <img
               alt="Austrian flag"
-              src="austrianflag.jpg" />
+              src="austrianflag.jpg"
+            />
           </span>
         </span>
       </a>
     </li>
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
-        href="/de">
+        href="/de"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             German
           </span>
           <span
-            className="pullRight">
+            className="pullRight"
+          >
             <img
               alt="German flag"
-              src="germanflag.jpg" />
+              src="germanflag.jpg"
+            />
           </span>
         </span>
       </a>
@@ -147,57 +188,74 @@ exports[`test Renders DropDown without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders correct default selection 1`] = `
+exports[`Renders correct default selection 1`] = `
 <div
-  className="container top">
+  className="container top"
+>
   <button
     className="selection clearfix light"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Austria
     <span
-      className="pullRight">
+      className="pullRight"
+    >
       <img
         alt="Austrian flag"
-        src="austrianflag.jpg" />
+        src="austrianflag.jpg"
+      />
     </span>
   </button>
   <ul
-    className="menu ">
+    className="menu "
+  >
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
         alt="hi"
-        href="/at">
+        href="/at"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             Austria
           </span>
           <span
-            className="pullRight">
+            className="pullRight"
+          >
             <img
               alt="Austrian flag"
-              src="austrianflag.jpg" />
+              src="austrianflag.jpg"
+            />
           </span>
         </span>
       </a>
     </li>
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
-        href="/de">
+        href="/de"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             German
           </span>
           <span
-            className="pullRight">
+            className="pullRight"
+          >
             <img
               alt="German flag"
-              src="germanflag.jpg" />
+              src="germanflag.jpg"
+            />
           </span>
         </span>
       </a>
@@ -206,26 +264,33 @@ exports[`test Renders correct default selection 1`] = `
 </div>
 `;
 
-exports[`test Renders correctly when no icon is provided 1`] = `
+exports[`Renders correctly when no icon is provided 1`] = `
 <div
-  className="container top">
+  className="container top"
+>
   <button
     className="selection clearfix light"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Austria
     
   </button>
   <ul
-    className="menu ">
+    className="menu "
+  >
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
         alt="hi"
-        href="/at">
+        href="/at"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             Austria
           </span>
           
@@ -233,13 +298,17 @@ exports[`test Renders correctly when no icon is provided 1`] = `
       </a>
     </li>
     <li
-      className="item clearfix">
+      className="item clearfix"
+    >
       <a
-        href="/de">
+        href="/de"
+      >
         <span
-          className="clearfix">
+          className="clearfix"
+        >
           <span
-            className="pullLeft">
+            className="pullLeft"
+          >
             German
           </span>
           
@@ -250,7 +319,7 @@ exports[`test Renders correctly when no icon is provided 1`] = `
 </div>
 `;
 
-exports[`test Renders menu when button is clicked 1`] = `
+exports[`Renders menu when button is clicked 1`] = `
 <Dropdown
   items={
     Array [
@@ -258,10 +327,12 @@ exports[`test Renders menu when button is clicked 1`] = `
         "active": false,
         "icon": <img
           alt="Austrian flag"
-          src="austrianflag.jpg" />,
+          src="austrianflag.jpg"
+    />,
         "link": <a
           alt="hi"
-          href="/at">
+          href="/at"
+    >
           Austria
     </a>,
         "value": "Austria",
@@ -270,9 +341,11 @@ exports[`test Renders menu when button is clicked 1`] = `
         "active": true,
         "icon": <img
           alt="German flag"
-          src="germanflag.jpg" />,
+          src="germanflag.jpg"
+    />,
         "link": <a
-          href="/de">
+          href="/de"
+    >
           German
     </a>,
         "value": "German",
@@ -280,57 +353,75 @@ exports[`test Renders menu when button is clicked 1`] = `
     ]
   }
   position="top"
-  shade="light">
+  shade="light"
+>
   <div
-    className="container top">
+    className="container top"
+  >
     <button
       className="selection clearfix light"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       German
       <span
-        className="pullRight">
+        className="pullRight"
+      >
         <img
           alt="German flag"
-          src="germanflag.jpg" />
+          src="germanflag.jpg"
+        />
       </span>
     </button>
     <ul
-      className="menu open">
+      className="menu open"
+    >
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
           alt="hi"
-          href="/at">
+          href="/at"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               Austria
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="Austrian flag"
-                src="austrianflag.jpg" />
+                src="austrianflag.jpg"
+              />
             </span>
           </span>
         </a>
       </li>
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
-          href="/de">
+          href="/de"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               German
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="German flag"
-                src="germanflag.jpg" />
+                src="germanflag.jpg"
+              />
             </span>
           </span>
         </a>
@@ -340,7 +431,7 @@ exports[`test Renders menu when button is clicked 1`] = `
 </Dropdown>
 `;
 
-exports[`test Updates selection on item click 1`] = `
+exports[`Updates selection on item click 1`] = `
 <Dropdown
   items={
     Array [
@@ -348,10 +439,12 @@ exports[`test Updates selection on item click 1`] = `
         "active": false,
         "icon": <img
           alt="Austrian flag"
-          src="austrianflag.jpg" />,
+          src="austrianflag.jpg"
+    />,
         "link": <a
           alt="hi"
-          href="/at">
+          href="/at"
+    >
           Austria
     </a>,
         "value": "Austria",
@@ -360,9 +453,11 @@ exports[`test Updates selection on item click 1`] = `
         "active": true,
         "icon": <img
           alt="German flag"
-          src="germanflag.jpg" />,
+          src="germanflag.jpg"
+    />,
         "link": <a
-          href="/de">
+          href="/de"
+    >
           German
     </a>,
         "value": "German",
@@ -370,57 +465,75 @@ exports[`test Updates selection on item click 1`] = `
     ]
   }
   position="top"
-  shade="light">
+  shade="light"
+>
   <div
-    className="container top">
+    className="container top"
+  >
     <button
       className="selection clearfix light"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       German
       <span
-        className="pullRight">
+        className="pullRight"
+      >
         <img
           alt="German flag"
-          src="germanflag.jpg" />
+          src="germanflag.jpg"
+        />
       </span>
     </button>
     <ul
-      className="menu ">
+      className="menu "
+    >
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
           alt="hi"
-          href="/at">
+          href="/at"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               Austria
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="Austrian flag"
-                src="austrianflag.jpg" />
+                src="austrianflag.jpg"
+              />
             </span>
           </span>
         </a>
       </li>
       <li
-        className="item clearfix">
+        className="item clearfix"
+      >
         <a
-          href="/de">
+          href="/de"
+        >
           <span
-            className="clearfix">
+            className="clearfix"
+          >
             <span
-              className="pullLeft">
+              className="pullLeft"
+            >
               German
             </span>
             <span
-              className="pullRight">
+              className="pullRight"
+            >
               <img
                 alt="German flag"
-                src="germanflag.jpg" />
+                src="germanflag.jpg"
+              />
             </span>
           </span>
         </a>
