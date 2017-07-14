@@ -1,14 +1,13 @@
 <Table
   items={{
-    'id': [1, 2, 3, 4, 5],
+    id: [1, 2, 3, 4, 5],
     'in hiragana': ['いち', 'に', 'さん', 'よん', 'ご'],
     'in kanji': ['一', '二', '三', '四', '五'],
-    'link': [
-      <Link to='/'>One</Link>,
-      <Link to='/'>Two</Link>,
-      <Link to='/'>Three</Link>,
+    link: [
+      <Link to="/table">One</Link>,
+      <Link to="/table">Two</Link>,
+      <Link to="/table">Three</Link>,
       'Four',
-      <Link to='/'>Five</Link>
+      <Link to="/table">Five</Link>
     ]
-  }}
-/>
+  }} />

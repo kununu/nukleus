@@ -66,7 +66,7 @@ export default class Autocomplete extends React.Component {
     scrollTo: false,
     submitOnEnter: false,
     value: ''
-  }
+  };
 
   state = {
     showError: false,

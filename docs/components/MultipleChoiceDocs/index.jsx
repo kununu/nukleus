@@ -20,14 +20,14 @@ const MultipleChoiceDocs = () => (
             {
               id: 'option-a',
               isChecked: true,
-              label: 'option 1',
-              value: 'option-1'
+              label: 'option a',
+              value: 'option-a'
             },
             {
               id: 'option-b',
               isChecked: false,
-              label: 'option 2',
-              value: 'option-2'
+              label: 'option b',
+              value: 'option-b'
             }]} />
 
         <br />

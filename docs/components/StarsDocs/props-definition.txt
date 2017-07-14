@@ -1,8 +1,8 @@
 static propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
   onChange: PropTypes.func,
+  onClick: PropTypes.func,
   selectable: PropTypes.bool,
   strokeColor: PropTypes.string,
   totalStars: (props, propName) => {
@@ -18,6 +18,6 @@ static propTypes = {
     }
     return null;
   }
-}
+};
 
 

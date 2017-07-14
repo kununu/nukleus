@@ -2,7 +2,7 @@
   title="Select"
   name="select"
   id="select"
-  required
+  isRequired
   value="option"
   items={{
     'option': 'Option',
