@@ -9,5 +9,5 @@ static defaultProps = {
   optionsPerRow: null,
   query: {},
   reference: () => {},
-  requiredLabel: '',
+  requiredLabel: ''
 };

@@ -6,16 +6,16 @@ static defaultProps = {
   error: null,
   errorSubInfo: null,
   inputStyle: 'inline',
+  isRequired: false,
   labelHidden: false,
   noSuggestionText: 'No results found',
   onGetSuggestions: null,
   onSelectSuggestion: null,
   placeholder: '',
   query: {},
-  isRequired: false,
   requiredLabel: '',
   scrollOffset: 0,
   scrollTo: false,
   submitOnEnter: false,
   value: ''
-}
+};

@@ -23,11 +23,11 @@ export default class Dropdown extends React.Component {
   static defaultProps = {
     position: 'top',
     shade: 'light'
-  }
+  };
 
   state = {
     isOpen: false
-  }
+  };
 
   componentWillMount () {
     if (!isBrowser) return;

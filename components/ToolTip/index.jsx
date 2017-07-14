@@ -35,12 +35,12 @@ export default class ToolTip extends React.Component {
       </svg>
     ),
     position: 'topLeft'
-  }
+  };
 
   state = {
     active: false,
     clickActivated: false
-  }
+  };
 
   componentDidMount () {
     document.addEventListener('click', this.detectClickInside);
