@@ -18,16 +18,16 @@ const MultipleChoiceDocs = () => (
           choices={
           [
             {
-              id: 'option-a',
+              id: 'option-1',
               isChecked: true,
-              label: 'option a',
-              value: 'option-a'
+              label: 'option 1',
+              value: 'option-1'
             },
             {
-              id: 'option-b',
+              id: 'option-2',
               isChecked: false,
-              label: 'option b',
-              value: 'option-b'
+              label: 'option 2',
+              value: 'option-2'
             }]} />
 
         <br />

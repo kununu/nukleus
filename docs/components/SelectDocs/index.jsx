@@ -18,7 +18,7 @@ const SelectDocs = () => (
         isRequired
         value="option"
         items={{
-          'option': 'Option',
+          'option-1': 'Option 1',
           'option-2': 'Option 2',
           'option-3': 'Option 3'
         }} />
