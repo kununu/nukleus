@@ -6,10 +6,10 @@ static propTypes = {
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   isClearable: PropTypes.bool,
+  isRequired: PropTypes.bool,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  isRequired: PropTypes.bool,
   requiredLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.string

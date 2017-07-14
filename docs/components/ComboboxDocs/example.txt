@@ -1,11 +1,10 @@
 <Combobox
-  handle={<i className="fa fa-caret-down" aria-hidden="true" />}
+  handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
   name="name"
   label="Combobox"
   id="name"
-  required
+  isRequired
   placeholder="Type m"
-  keyName="name"
   items={[
     'music',
     'maths',
