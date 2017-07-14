@@ -14,7 +14,6 @@
   "homepage": "https://github.com/kununu/nukleus/docs#readme",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "7.1.2",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
@@ -51,6 +50,7 @@
     "webpack-dev-server": "2.5.1"
   },
   "dependencies": {
+    "autoprefixer": "7.1.2",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.5-beta.2",
     "kununu-logo": "1.0.0",

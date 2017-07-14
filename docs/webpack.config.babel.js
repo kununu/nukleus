@@ -25,7 +25,7 @@ module.exports = {
         options: {
           configFile: '.sass-lint.yml'
         }
-      },
+      }
     ]
   }
 };

@@ -3,7 +3,7 @@
 
 const path = require('path');
 const webpack = require('webpack'); // eslint-disable-line no-unused-vars, import/no-extraneous-dependencies
-
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   context: __dirname,
@@ -48,9 +48,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins () {
                 return [
-                  require('autoprefixer')
+                  autoprefixer
                 ];
               }
             }
@@ -66,9 +66,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins () {
                 return [
-                  require('autoprefixer')
+                  autoprefixer
                 ];
               }
             }
@@ -93,9 +93,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins () {
                 return [
-                  require('autoprefixer')
+                  autoprefixer
                 ];
               }
             }
