@@ -26,6 +26,7 @@ export default class InfoTextDocs extends Component {
         component={
           <div>
             <a
+              role="button"
               tabIndex={0}
               className={styles.toggleLink}
               onClick={this.onClickToggleLink}>
