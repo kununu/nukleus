@@ -42,7 +42,7 @@ export default class Notification extends React.Component {
     onCloseClick: null,
     type: 'success',
     visible: false
-  }
+  };
 
   state = {
     visible: this.props.visible

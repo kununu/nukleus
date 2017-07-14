@@ -34,7 +34,7 @@ export default class Stars extends React.Component {
       }
       return null;
     }
-  }
+  };
 
   static defaultProps = {
     colors: ['currentColor'],
@@ -44,12 +44,12 @@ export default class Stars extends React.Component {
     strokeColor: 'currentColor',
     totalStars: 5,
     value: 0
-  }
+  };
 
   state = {
     color: this.props.colors[this.props.value - 1] || this.props.strokeColor,
     value: formatValue(this.props.value)
-  }
+  };
 
   onClick = e => {
     if (this.props.onChange) {

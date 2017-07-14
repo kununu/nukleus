@@ -7,6 +7,7 @@ static propTypes = {
   errorSubInfo: PropTypes.string,
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
+  isRequired: PropTypes.bool,
   label: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
@@ -20,7 +21,6 @@ static propTypes = {
   pattern: PropTypes.string,
   placeholder: PropTypes.string,
   query: PropTypes.object,
-  isRequired: PropTypes.bool,
   reference: PropTypes.func,
   requiredLabel: PropTypes.string,
   rows: PropTypes.number,

@@ -1,15 +1,16 @@
 // static stars
-<Stars value={2.5} />
+<Stars
+  name="stars"
+  value={2.5} />
 
 // selectable stars
 <Stars
-  value={2}
+  colors={[
+    '#ff464e',
+    '#fe8e17',
+    '#fec327',
+    '#7cb532',
+    '#96d04a']}
   name="stars"
   selectable
-  colors={[
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue'
-  ]} />
+  value={2} />

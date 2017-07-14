@@ -6,11 +6,11 @@ static defaultProps = {
   error: null,
   errorSubInfo: null,
   inputStyle: 'inline',
+  isRequired: false,
   items: {},
   labelHidden: false,
   onChange: null,
   query: {},
-  isRequired: false,
   reference: () => {},
   requiredLabel: '',
   value: ''

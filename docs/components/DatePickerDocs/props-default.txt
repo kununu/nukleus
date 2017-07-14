@@ -5,9 +5,9 @@ static defaultProps = {
   icon: null,
   inputStyle: 'inline',
   isClearable: true,
+  isRequired: false,
   placeholder: '',
   query: {},
-  isRequired: false,
   requiredLabel: '',
   value: ''
 };
