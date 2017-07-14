@@ -82,13 +82,7 @@ export default class App extends Component {
                 </button>
                 <div>
                   <Logo
-                    shade="light"
-                    link={
-                      <Link
-                        to={{pathname: '/'}}>
-                        nukleus docs
-                      </Link>
-                    } />
+                    shade="light" />
                 </div>
               </div>
             </div>
