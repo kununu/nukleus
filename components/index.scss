@@ -170,9 +170,14 @@
   font-size: $font-size-xxs;
   color: $gray-base-60;
   font-style: normal;
-  position: absolute;
-  top: 0;
-  right: 2px;
+  @media(max-width: ($screen-xs -1)) {
+    float: right;
+  }
+  @media(min-width: $screen-xs) {
+    position: absolute;
+    top: 0;
+    right: 2px;
+  }
 }
 
 .unstyledButton {
