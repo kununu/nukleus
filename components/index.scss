@@ -78,6 +78,11 @@
     border: 0;
     background-color: transparent;
   }
+
+  &[disabled] {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
 }
 
 .formControlError {
