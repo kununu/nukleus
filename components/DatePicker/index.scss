@@ -1,7 +1,12 @@
 @import '~kununu-theme/scss/base/variables';
 
 .datePickerContainer {
-  width: 100%;
+  div {
+    &[class='react-datepicker-wrapper'],
+    &[class='react-datepicker__input-container'] {
+      width: 100%;
+    }
+  }
 
   * {
     box-sizing: border-box;
