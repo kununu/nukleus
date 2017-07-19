@@ -1,4 +1,6 @@
-exports[`test Changes status on value change 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Changes status on value change 1`] = `
 <Select
   autoFocus={false}
   defaultItem=""
@@ -23,16 +25,20 @@ exports[`test Changes status on value change 1`] = `
   reference={[Function]}
   requiredLabel=""
   title="Select"
-  value="option">
+  value="option"
+>
   <div
-    className="formGroup inline">
+    className="formGroup inline"
+  >
     <label
       className="controlLabel"
-      htmlFor="select">
+      htmlFor="select"
+    >
       Select
     </label>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
       <select
         autoFocus={false}
         className="formControl select "
@@ -41,17 +47,21 @@ exports[`test Changes status on value change 1`] = `
         name="select"
         onChange={[Function]}
         required={true}
-        value="option-2">
+        value="option-2"
+      >
         <option
-          value="option">
+          value="option"
+        >
           Option
         </option>
         <option
-          value="option-2">
+          value="option-2"
+        >
           Option 2
         </option>
         <option
-          value="option-3">
+          value="option-3"
+        >
           Option 3
         </option>
       </select>
@@ -60,17 +70,20 @@ exports[`test Changes status on value change 1`] = `
 </Select>
 `;
 
-exports[`test Renders Select with an error message without crashing 1`] = `
+exports[`Renders Select with an error message without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline"
+>
   
   <label
     className="controlLabel controlLabelError"
-    htmlFor="select">
+    htmlFor="select"
+  >
     Select
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <select
       autoFocus={false}
       className="formControl select formControlError"
@@ -79,26 +92,32 @@ exports[`test Renders Select with an error message without crashing 1`] = `
       name="select"
       onChange={[Function]}
       required={true}
-      value="option">
+      value="option"
+    >
       
       
       <option
-        value="option">
+        value="option"
+      >
         Option
       </option>
       <option
-        value="option-2">
+        value="option-2"
+      >
         Option 2
       </option>
       <option
-        value="option-3">
+        value="option-3"
+      >
         Option 3
       </option>
     </select>
     <span
-      className="error">
+      className="error"
+    >
       <strong
-        className="info">
+        className="info"
+      >
         An Error
       </strong>
       with useful hints
@@ -107,17 +126,20 @@ exports[`test Renders Select with an error message without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders Select without crashing 1`] = `
+exports[`Renders Select without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline"
+>
   
   <label
     className="controlLabel"
-    htmlFor="select">
+    htmlFor="select"
+  >
     Select
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <select
       autoFocus={false}
       className="formControl select "
@@ -126,19 +148,23 @@ exports[`test Renders Select without crashing 1`] = `
       name="select"
       onChange={[Function]}
       required={true}
-      value="option">
+      value="option"
+    >
       
       
       <option
-        value="option">
+        value="option"
+      >
         Option
       </option>
       <option
-        value="option-2">
+        value="option-2"
+      >
         Option 2
       </option>
       <option
-        value="option-3">
+        value="option-3"
+      >
         Option 3
       </option>
     </select>

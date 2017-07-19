@@ -58,7 +58,7 @@
     "font-awesome-webpack": "^0.0.5-beta.2",
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
-    "jest": "18.0.0",
+    "jest": "20.0.4",
     "kununu-theme": "3.1.0",
     "less": "2.7.1",
     "node-sass": "4.5.3",

@@ -1,14 +1,19 @@
-exports[`test Renders datepicker with an error message without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders datepicker with an error message without crashing 1`] = `
 <div
-  className="formGroup inline datePickerContainer ">
+  className="formGroup inline datePickerContainer "
+>
   
   <label
     className="controlLabel controlLabelError"
-    htmlFor="date-picker">
+    htmlFor="date-picker"
+  >
     DatePicker
   </label>
   <div
-    className="innerContainer">
+    className="innerContainer"
+  >
     <Datepicker
       className="formControl formControlError"
       disabled={false}
@@ -19,12 +24,15 @@ exports[`test Renders datepicker with an error message without crashing 1`] = `
       placeholderText=""
       required={true}
       selected={null}
-      showYearDropdown={true} />
+      showYearDropdown={true}
+    />
     
     <span
-      className="error">
+      className="error"
+    >
       <strong
-        className="info">
+        className="info"
+      >
         An Error
       </strong>
       with useful hints
@@ -33,17 +41,20 @@ exports[`test Renders datepicker with an error message without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders datepicker without crashing 1`] = `
+exports[`Renders datepicker without crashing 1`] = `
 <div
-  className="formGroup inline datePickerContainer ">
+  className="formGroup inline datePickerContainer "
+>
   
   <label
     className="controlLabel "
-    htmlFor="date-picker">
+    htmlFor="date-picker"
+  >
     DatePicker
   </label>
   <div
-    className="innerContainer">
+    className="innerContainer"
+  >
     <Datepicker
       className="formControl "
       disabled={false}
@@ -54,7 +65,8 @@ exports[`test Renders datepicker without crashing 1`] = `
       placeholderText=""
       required={true}
       selected={null}
-      showYearDropdown={true} />
+      showYearDropdown={true}
+    />
     
   </div>
 </div>
