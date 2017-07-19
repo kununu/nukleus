@@ -9,6 +9,11 @@ export default class Button extends React.Component {
     customTheme: PropTypes.string,
     disabled: PropTypes.bool,
     fullWidth: PropTypes.bool,
+    htmlType: PropTypes.oneOf([
+      'button',
+      'submit',
+      'reset'
+    ]),
     link: PropTypes.element,
     mobileFullWidth: PropTypes.bool,
     onClick: PropTypes.func,
@@ -21,6 +26,7 @@ export default class Button extends React.Component {
     customTheme: '',
     disabled: false,
     fullWidth: false,
+    htmlType: 'button',
     link: null,
     mobileFullWidth: false,
     onClick: null,
@@ -46,6 +52,7 @@ export default class Button extends React.Component {
       mobileFullWidth,
       outline,
       text,
+      htmlType,
       type
     } = this.props;
 
@@ -73,7 +80,8 @@ export default class Button extends React.Component {
 
     return (
       <button
-        {...props}>
+        {...props}
+        type={htmlType}>
         {text}
       </button>
     );
