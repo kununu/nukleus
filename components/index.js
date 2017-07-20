@@ -4,6 +4,7 @@ export Choice from './Choice';
 export Combobox from './Combobox';
 export DatePicker from './DatePicker';
 export DropDown from './DropDown';
+export Error from './Error';
 export InfoText from './InfoText';
 export MultipleChoice from './MultipleChoice';
 export Notification from './Notification';
