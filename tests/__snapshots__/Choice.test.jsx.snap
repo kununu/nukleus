@@ -792,3 +792,122 @@ exports[`test Renders a disabled Choice without crashing 1`] = `
   </div>
 </div>
 `;
+
+exports[`test Renders an error if errors prop is set 1`] = `
+<Choice
+  checked="opB"
+  customTheme=""
+  disabled={false}
+  error="Test"
+  errorSubInfo="SubInfo"
+  heading=""
+  headingStyle="control-label"
+  isRequired={false}
+  name="test"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  options={
+    Array [
+      Object {
+        "id": "opA",
+        "label": "Option A",
+        "value": "opA",
+      },
+      Object {
+        "id": "opB",
+        "label": "Option B",
+        "value": "opB",
+      },
+      Object {
+        "id": "opC",
+        "label": "Option C",
+        "value": "opC",
+      },
+    ]
+  }
+  optionsPerRow={null}
+  query={Object {}}
+  reference={[Function]}
+  requiredLabel="">
+  <div
+    className="formGroup">
+    <div
+      className="radioContainer false"
+      data-options-per-row={null}>
+      <div
+        className="radioButton">
+        <input
+          checked={false}
+          id="testopA"
+          name="test"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          type="radio"
+          value="opA" />
+        <label
+          className=""
+          disabled={false}
+          htmlFor="testopA"
+          id={0}>
+          Option A
+        </label>
+      </div>
+      <div
+        className="radioButton">
+        <input
+          checked={true}
+          id="testopB"
+          name="test"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          type="radio"
+          value="opB" />
+        <label
+          className=""
+          disabled={false}
+          htmlFor="testopB"
+          id={1}>
+          Option B
+        </label>
+      </div>
+      <div
+        className="radioButton">
+        <input
+          checked={false}
+          id="testopC"
+          name="test"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          type="radio"
+          value="opC" />
+        <label
+          className=""
+          disabled={false}
+          htmlFor="testopC"
+          id={2}>
+          Option C
+        </label>
+      </div>
+    </div>
+    <Error
+      info="Test"
+      subInfo="SubInfo">
+      <span
+        className="error">
+        <strong
+          className="info">
+          Test
+        </strong>
+        SubInfo
+      </span>
+    </Error>
+  </div>
+</Choice>
+`;

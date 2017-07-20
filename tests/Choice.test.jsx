@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const options = [
@@ -69,6 +70,19 @@ test('Renders a Choice with default checked without crashing', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Renders an error if errors prop is set', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      options={options}
+      error="Test"
+      errorSubInfo="SubInfo"
+      checked="opB"
+      onChange={() => {}} />
+  );
+  expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Renders a Choice with no default checked if it\'s not an option', () => {
