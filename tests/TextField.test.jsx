@@ -101,3 +101,124 @@ test('Renders a TextField with a ToolTip without crashing', () => {
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Focusing a TextField calls the onFocus Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      id="text-field"
+      onFocus={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('focus');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Bluring a TextField calls the onBlur Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      id="text-field"
+      onBlur={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('focus');
+  component.find('#text-field').simulate('blur');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Changing a TextField calls the onChange Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      id="text-field"
+      onChange={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('change', {target: {value: 'change'}});
+  component.find('#text-field').simulate('change', {target: {value: 'change again'}});
+  expect(mocked.mock.calls.length).toBe(2);
+});
+
+test('Focusing a TextField Textarea calls the onFocus Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      multiLine
+      id="text-field"
+      onFocus={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('focus');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Bluring a TextField Textarea calls the onBlur Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      multiLine
+      id="text-field"
+      onBlur={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('focus');
+  component.find('#text-field').simulate('blur');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Changing a TextField Textarea calls the onChange Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <TextField
+      multiLine
+      id="text-field"
+      onChange={mocked}
+      label={(
+        <span>
+          <label htmlFor="text-field">TextField</label>
+          <ToolTip content="content" label="Test" />
+        </span>
+      )}
+      name="text-field" />
+  );
+
+  component.find('#text-field').simulate('change', {target: {value: 'change'}});
+  component.find('#text-field').simulate('change', {target: {value: 'change again'}});
+  expect(mocked.mock.calls.length).toBe(2);
+});
