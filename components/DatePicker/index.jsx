@@ -28,6 +28,9 @@ export default class DatePickerComponent extends React.Component {
     isClearable: PropTypes.bool,
     isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     placeholder: PropTypes.string,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
@@ -43,6 +46,9 @@ export default class DatePickerComponent extends React.Component {
     inputStyle: 'inline',
     isClearable: true,
     isRequired: false,
+    onBlur: () => {},
+    onChange: () => {},
+    onFocus: () => {},
     placeholder: '',
     query: {},
     requiredLabel: '',
@@ -77,6 +83,7 @@ export default class DatePickerComponent extends React.Component {
   // Property initializer binds method to class instance
   onChange = date => {
     this.updateValue(date);
+    this.props.onChange(date);
     this.hideError();
   };
 
@@ -138,7 +145,9 @@ export default class DatePickerComponent extends React.Component {
             isClearable={isClearable}
             showYearDropdown
             required={isRequired}
-            onChange={this.onChange} />
+            onBlur={this.props.onBlur}
+            onChange={this.onChange}
+            onFocus={this.props.onFocus} />
           {icon ?
             <span className={styles.icon}>
               {icon}
