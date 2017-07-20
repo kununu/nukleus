@@ -18,6 +18,7 @@ static propTypes = {
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onFocus: PropTypes.func,
   pattern: PropTypes.string,
   placeholder: PropTypes.string,
   query: PropTypes.object,

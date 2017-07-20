@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
+import Error from '../Error';
 import sharedStyles, {
   controlLabel,
   controlLabelRequired,
@@ -16,38 +17,50 @@ import sharedStyles, {
 export default class MultipleChoice extends React.Component {
   static propTypes = {
     choices: PropTypes.array.isRequired,
+    error: PropTypes.string,
+    errorSubInfo: PropTypes.string,
     heading: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onBlur: PropTypes.func,
     onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
+    error: null,
+    errorSubInfo: null,
     heading: '',
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
+    onBlur: () => {},
     onChange: () => {},
+    onFocus: () => {},
     query: {},
     reference: () => {},
     requiredLabel: ''
   };
 
   state = {
-    choices: this.props.choices || []
+    choices: this.props.choices || [],
+    showError: false
   };
 
   componentWillMount () {
+    // Show error, if already set
+    if (this.props.error !== null) this.showError();
     const {query, name} = this.props;
     if (!query[name]) return;
     this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
   }
 
   componentWillReceiveProps (nextProps) {
+    if (nextProps.error) this.showError();
     const {query, name} = nextProps;
     // We do not yet control the state when the query does not change,
     // for instance when updates are triggered by tweaking with other components.
@@ -67,6 +80,18 @@ export default class MultipleChoice extends React.Component {
 
   getChoicesToUpdate (newChoices) {
     return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
   }
 
   updateValue (newChoices, status, cb = () => {}) {
@@ -133,12 +158,19 @@ export default class MultipleChoice extends React.Component {
                 checked={choice.isChecked}
                 ref={this.props.reference}
                 required={this.props.isRequired}
-                onChange={() => this.onChange(choice)} />
+                onBlur={this.props.onBlur}
+                onChange={() => this.onChange(choice)}
+                onFocus={this.props.onFocus} />
 
               <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
             </div>)
           )}
         </div>
+        {this.hasError() &&
+          <Error
+            info={this.props.error}
+            subInfo={this.props.errorSubInfo} />
+        }
       </div>
     );
   }

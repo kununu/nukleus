@@ -35,6 +35,9 @@ export default class Autocomplete extends React.Component {
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     noSuggestionText: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     onGetSuggestions: PropTypes.func,
     onSelectSuggestion: PropTypes.func,
     placeholder: PropTypes.string,
@@ -57,6 +60,9 @@ export default class Autocomplete extends React.Component {
     isRequired: false,
     labelHidden: false,
     noSuggestionText: 'No results found',
+    onBlur: () => {},
+    onChange: () => {},
+    onFocus: () => {},
     onGetSuggestions: null,
     onSelectSuggestion: null,
     placeholder: '',
@@ -96,15 +102,18 @@ export default class Autocomplete extends React.Component {
       showNoSuggestionsText: true,
       value: newValue
     });
+    this.props.onChange(event);
     this.hideError();
   }
 
-  onFocus = () => {
+  onFocus = ev => {
     this.scrollToElement();
+    this.props.onFocus(ev);
   }
 
-  onBlur = () => {
+  onBlur = ev => {
     this.hideNoSuggestionsText();
+    this.props.onBlur(ev);
   }
 
   onSuggestionsFetchRequested = ({value}) => {

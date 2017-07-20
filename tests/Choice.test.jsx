@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 const options = [
@@ -69,6 +70,19 @@ test('Renders a Choice with default checked without crashing', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Renders an error if errors prop is set', () => {
+  const component = mount(
+    <Choice
+      name="test"
+      options={options}
+      error="Test"
+      errorSubInfo="SubInfo"
+      checked="opB"
+      onChange={() => {}} />
+  );
+  expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Renders a Choice with no default checked if it\'s not an option', () => {
@@ -285,4 +299,47 @@ test('Uncheck previously checked option', () => {
   component.find('#testopA').simulate('change');
   component.find('#testopA').simulate('change');
   expect(component.state('checked')).toEqual(null);
+});
+
+test('Focusing a Choice calls the onFocus Event', () => {
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onFocus={spyFunc}
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('focus');
+  expect(spyFunc.mock.calls.length).toBe(1);
+});
+
+test('Bluring a Choice calls the onBlur Event', () => {
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onBlur={spyFunc}
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('focus');
+  component.find('#testopA').simulate('blur');
+  expect(spyFunc.mock.calls.length).toBe(1);
+});
+
+test('Changing a Choice calls the onChange Event', () => {
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onChange={spyFunc}
+      options={options} />
+  );
+
+  component.find('#testopA').simulate('change', {target: {value: true}});
+  component.find('#testopA').simulate('change', {target: {value: false}});
+  expect(spyFunc.mock.calls.length).toBe(2);
 });

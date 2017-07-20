@@ -37,6 +37,7 @@ export default class TextField extends React.Component {
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
@@ -66,8 +67,9 @@ export default class TextField extends React.Component {
     labelHidden: false,
     maxLength: 500,
     multiLine: false,
-    onBlur: null,
+    onBlur: () => {},
     onChange: null,
+    onFocus: () => {},
     pattern: '',
     placeholder: '',
     query: {},
@@ -251,6 +253,7 @@ export default class TextField extends React.Component {
       name,
       multiLine,
       onBlur,
+      onFocus,
       pattern,
       placeholder,
       reference,
@@ -283,6 +286,7 @@ export default class TextField extends React.Component {
                 maxLength={maxLength}
                 onChange={this.onChange}
                 onBlur={onBlur}
+                onFocus={onFocus}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={isRequired}
@@ -299,6 +303,7 @@ export default class TextField extends React.Component {
                 maxLength={maxLength}
                 onChange={this.onChange}
                 onBlur={onBlur}
+                onFocus={onFocus}
                 pattern={pattern}
                 placeholder={placeholder}
                 ref={reference}
