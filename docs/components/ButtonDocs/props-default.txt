@@ -2,6 +2,7 @@ static defaultProps = {
   customTheme: '',
   disabled: false,
   fullWidth: false,
+  htmlType: 'button',
   link: null,
   mobileFullWidth: false,
   onClick: null,
