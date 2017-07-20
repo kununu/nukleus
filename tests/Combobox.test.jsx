@@ -65,30 +65,32 @@ test('Fetches Value only when debounce is over', done => {
   });
 });
 
-const spyFunc = jest.fn();
-const notSearchableCombobox = (
-  <Combobox
-    name="name"
-    label="Combobox"
-    id="name"
-    isRequired
-    placeholder="Type m"
-    keyName="name"
-    isSearchable={false}
-    onSelect={spyFunc}
-    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-);
+describe('Searchable Combobox', () => {
+  const spyFunc = jest.fn();
+  const notSearchableCombobox = (
+    <Combobox
+      name="name"
+      label="Combobox"
+      id="name"
+      isRequired
+      placeholder="Type m"
+      keyName="name"
+      isSearchable={false}
+      onSelect={spyFunc}
+      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
+    );
 
-test('Renders notSearchableCombobox without crashing', () => {
-  const component = renderer.create(notSearchableCombobox);
-  expect(component.toJSON()).toMatchSnapshot();
-});
+  it('Renders notSearchableCombobox without crashing', () => {
+    const component = renderer.create(notSearchableCombobox);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 
-test('Causes dropdown to show when input is focused', () => {
-  const component = mount(notSearchableCombobox);
-  component.find('input#name').simulate('focus');
-  component.find('#react-autowhatever-1--item-0').simulate('click');
-  expect(spyFunc).toHaveBeenCalled();
+  it('Causes dropdown to show when input is focused', () => {
+    const component = mount(notSearchableCombobox);
+    component.find('input#name').simulate('focus');
+    component.find('#react-autowhatever-1--item-0').simulate('click');
+    expect(spyFunc).toHaveBeenCalled();
+  });
 });
 
 test('Focusing a ComboBox calls the onFocus Event', () => {
