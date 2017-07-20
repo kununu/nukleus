@@ -175,3 +175,59 @@ test('Changing a choice returns correct values in onChange Event', done => {
   );
   component.find({value: 'option-2'}).simulate('change');
 });
+
+describe('Multiple Choice Events', () => {
+  const initialChoices = [
+    {
+      id: 'option-1',
+      isChecked: false,
+      label: 'test',
+      value: 'option-1'
+    },
+    {
+      id: 'option-2',
+      isChecked: false,
+      label: 'test',
+      value: 'option-2'
+    },
+    {
+      id: 'option-3',
+      isChecked: false,
+      label: 'test',
+      value: 'option-3'
+    }
+  ];
+
+  it('Focusing a MultipleChoice calls the onFocus Event', () => {
+    const mocked = jest.fn();
+    const component = mount(
+      <MultipleChoice
+        name="test[]"
+        heading="Button Choice"
+        inputStyle="buttons"
+        isRequired
+        onFocus={mocked}
+        choices={initialChoices} />
+      );
+
+      component.find('[type="checkbox"]').first().simulate('focus');
+      expect(mocked.mock.calls.length).toBe(1);
+    });
+
+    it('Bluring a MultipleChoice calls the onBlur Event', () => {
+      const mocked = jest.fn();
+      const component = mount(
+        <MultipleChoice
+          name="test[]"
+          heading="Button Choice"
+          inputStyle="buttons"
+          isRequired
+          onBlur={mocked}
+          choices={initialChoices} />
+        );
+
+        component.find('[type="checkbox"]').first().simulate('focus');
+        component.find('[type="checkbox"]').first().simulate('blur');
+        expect(mocked.mock.calls.length).toBe(1);
+      });
+})

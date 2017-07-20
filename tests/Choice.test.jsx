@@ -300,3 +300,46 @@ test('Uncheck previously checked option', () => {
   component.find('#testopA').simulate('change');
   expect(component.state('checked')).toEqual(null);
 });
+
+test('Focusing a Choice calls the onFocus Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onFocus={mocked}
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('focus');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Bluring a Choice calls the onBlur Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onBlur={mocked}
+      options={options}
+      onChange={() => {}} />
+  );
+
+  component.find('#testopA').simulate('focus');
+  component.find('#testopA').simulate('blur');
+  expect(mocked.mock.calls.length).toBe(1);
+});
+
+test('Changing a Choice calls the onChange Event', () => {
+  const mocked = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      onChange={mocked}
+      options={options} />
+  );
+
+  component.find('#testopA').simulate('change', {target: {value: true}});
+  component.find('#testopA').simulate('change', {target: {value: false}});
+  expect(mocked.mock.calls.length).toBe(2);
+});
