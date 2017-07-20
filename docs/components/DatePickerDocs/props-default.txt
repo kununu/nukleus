@@ -4,12 +4,10 @@ static defaultProps = {
   errorSubInfo: null,
   icon: null,
   inputStyle: 'inline',
-  isClearable: true,
   isRequired: false,
   onBlur: () => {},
   onChange: () => {},
   onFocus: () => {},
-  placeholder: '',
   query: {},
   requiredLabel: '',
   value: ''
