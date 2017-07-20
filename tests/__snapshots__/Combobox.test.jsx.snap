@@ -30,6 +30,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   label="Combobox"
   labelHidden={false}
   name="name"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
   onSelect={null}
   placeholder="Type m"
   requiredLabel="">
@@ -56,7 +59,9 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
             "disabled": false,
             "id": "name",
             "name": "name",
+            "onBlur": [Function],
             "onChange": [Function],
+            "onFocus": [Function],
             "placeholder": "Type m",
             "required": true,
             "value": "",

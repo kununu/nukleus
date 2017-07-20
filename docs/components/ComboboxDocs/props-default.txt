@@ -12,6 +12,9 @@ static defaultProps = {
   items: [],
   label: '',
   labelHidden: false,
+  onBlur: () => {},
+  onChange: () => {},
+  onFocus: () => {},
   onSelect: null,
   placeholder: '',
   requiredLabel: ''
