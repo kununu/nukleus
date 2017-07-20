@@ -36,32 +36,32 @@ test('Renders datepicker with an error message without crashing', () => {
 });
 
 test('Focusing a datepicker calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <DatePicker
       id="date-picker"
       isRequired
-      onFocus={mocked}
+      onFocus={spyFunc}
       name="date-picker"
       title="DatePicker" />
   );
 
   component.find('#date-picker').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a datepicker calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <DatePicker
       id="date-picker"
       isRequired
-      onBlur={mocked}
+      onBlur={spyFunc}
       name="date-picker"
       title="DatePicker" />
   );
 
   component.find('#date-picker').simulate('focus');
   component.find('#date-picker').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });

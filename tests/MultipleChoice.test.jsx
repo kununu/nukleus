@@ -199,35 +199,35 @@ describe('Multiple Choice Events', () => {
   ];
 
   it('Focusing a MultipleChoice calls the onFocus Event', () => {
-    const mocked = jest.fn();
+    const spyFunc = jest.fn();
     const component = mount(
       <MultipleChoice
         name="test[]"
         heading="Button Choice"
         inputStyle="buttons"
         isRequired
-        onFocus={mocked}
+        onFocus={spyFunc}
         choices={initialChoices} />
       );
 
       component.find('[type="checkbox"]').first().simulate('focus');
-      expect(mocked.mock.calls.length).toBe(1);
+      expect(spyFunc.mock.calls.length).toBe(1);
     });
 
     it('Bluring a MultipleChoice calls the onBlur Event', () => {
-      const mocked = jest.fn();
+      const spyFunc = jest.fn();
       const component = mount(
         <MultipleChoice
           name="test[]"
           heading="Button Choice"
           inputStyle="buttons"
           isRequired
-          onBlur={mocked}
+          onBlur={spyFunc}
           choices={initialChoices} />
         );
 
         component.find('[type="checkbox"]').first().simulate('focus');
         component.find('[type="checkbox"]').first().simulate('blur');
-        expect(mocked.mock.calls.length).toBe(1);
+        expect(spyFunc.mock.calls.length).toBe(1);
       });
 })

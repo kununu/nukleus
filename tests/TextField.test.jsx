@@ -103,11 +103,11 @@ test('Renders a TextField with a ToolTip without crashing', () => {
 });
 
 test('Focusing a TextField calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       id="text-field"
-      onFocus={mocked}
+      onFocus={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -118,15 +118,15 @@ test('Focusing a TextField calls the onFocus Event', () => {
   );
 
   component.find('#text-field').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a TextField calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       id="text-field"
-      onBlur={mocked}
+      onBlur={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -138,15 +138,15 @@ test('Bluring a TextField calls the onBlur Event', () => {
 
   component.find('#text-field').simulate('focus');
   component.find('#text-field').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing a TextField calls the onChange Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       id="text-field"
-      onChange={mocked}
+      onChange={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -158,16 +158,16 @@ test('Changing a TextField calls the onChange Event', () => {
 
   component.find('#text-field').simulate('change', {target: {value: 'change'}});
   component.find('#text-field').simulate('change', {target: {value: 'change again'}});
-  expect(mocked.mock.calls.length).toBe(2);
+  expect(spyFunc.mock.calls.length).toBe(2);
 });
 
 test('Focusing a TextField Textarea calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       multiLine
       id="text-field"
-      onFocus={mocked}
+      onFocus={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -178,16 +178,16 @@ test('Focusing a TextField Textarea calls the onFocus Event', () => {
   );
 
   component.find('#text-field').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a TextField Textarea calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       multiLine
       id="text-field"
-      onBlur={mocked}
+      onBlur={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -199,16 +199,16 @@ test('Bluring a TextField Textarea calls the onBlur Event', () => {
 
   component.find('#text-field').simulate('focus');
   component.find('#text-field').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing a TextField Textarea calls the onChange Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <TextField
       multiLine
       id="text-field"
-      onChange={mocked}
+      onChange={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
@@ -220,5 +220,5 @@ test('Changing a TextField Textarea calls the onChange Event', () => {
 
   component.find('#text-field').simulate('change', {target: {value: 'change'}});
   component.find('#text-field').simulate('change', {target: {value: 'change again'}});
-  expect(mocked.mock.calls.length).toBe(2);
+  expect(spyFunc.mock.calls.length).toBe(2);
 });

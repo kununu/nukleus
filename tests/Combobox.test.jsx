@@ -92,14 +92,14 @@ test('Causes dropdown to show when input is focused', () => {
 });
 
 test('Focusing a ComboBox calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Combobox
       name="name"
       label="Combobox"
       id="name"
       isRequired
-      onFocus={mocked}
+      onFocus={spyFunc}
       placeholder="Type m"
       keyName="name"
       isSearchable={false}
@@ -108,18 +108,18 @@ test('Focusing a ComboBox calls the onFocus Event', () => {
   );
 
   component.find('#name').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a ComboBox calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Combobox
       name="name"
       label="Combobox"
       id="name"
       isRequired
-      onBlur={mocked}
+      onBlur={spyFunc}
       placeholder="Type m"
       keyName="name"
       isSearchable={false}
@@ -129,16 +129,16 @@ test('Bluring a ComboBox calls the onBlur Event', () => {
 
   component.find('#name').simulate('focus');
   component.find('#name').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing a ComboBox calls the onChange Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Combobox
       name="name"
       label="Combobox"
-      onChange={mocked}
+      onChange={spyFunc}
       id="name"
       isRequired
       placeholder="Type m"
@@ -150,5 +150,5 @@ test('Changing a ComboBox calls the onChange Event', () => {
 
   component.find('#name').simulate('change', {target: {value: 'change'}});
   component.find('#name').simulate('change', {target: {value: 'change again'}});
-  expect(mocked.mock.calls.length).toBe(2);
+  expect(spyFunc.mock.calls.length).toBe(2);
 });

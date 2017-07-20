@@ -302,44 +302,44 @@ test('Uncheck previously checked option', () => {
 });
 
 test('Focusing a Choice calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Choice
       name="test"
-      onFocus={mocked}
+      onFocus={spyFunc}
       options={options}
       onChange={() => {}} />
   );
 
   component.find('#testopA').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a Choice calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Choice
       name="test"
-      onBlur={mocked}
+      onBlur={spyFunc}
       options={options}
       onChange={() => {}} />
   );
 
   component.find('#testopA').simulate('focus');
   component.find('#testopA').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing a Choice calls the onChange Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Choice
       name="test"
-      onChange={mocked}
+      onChange={spyFunc}
       options={options} />
   );
 
   component.find('#testopA').simulate('change', {target: {value: true}});
   component.find('#testopA').simulate('change', {target: {value: false}});
-  expect(mocked.mock.calls.length).toBe(2);
+  expect(spyFunc.mock.calls.length).toBe(2);
 });

@@ -137,26 +137,26 @@ test('Fetches Value only when debounce is over', done => {
 });
 
 test('Focusing an Autocomplete calls the onFocus Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Autocomplete
       data={{items: []}}
-      onFocus={mocked}
+      onFocus={spyFunc}
       id="autocompletes"
       label="Autocomplete"
       name="autocomplete" />
   );
 
   component.find('input').simulate('focus');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring an Autocomplete calls the onBlur Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Autocomplete
       data={{items: []}}
-      onBlur={mocked}
+      onBlur={spyFunc}
       id="autocompletes"
       label="Autocomplete"
       name="autocomplete" />
@@ -164,15 +164,15 @@ test('Bluring an Autocomplete calls the onBlur Event', () => {
 
   component.find('input').simulate('focus');
   component.find('input').simulate('blur');
-  expect(mocked.mock.calls.length).toBe(1);
+  expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing an Autocomplete calls the onChange Event', () => {
-  const mocked = jest.fn();
+  const spyFunc = jest.fn();
   const component = mount(
     <Autocomplete
       data={{items: []}}
-      onChange={mocked}
+      onChange={spyFunc}
       id="autocompletes"
       label="Autocomplete"
       name="autocomplete" />
@@ -180,5 +180,5 @@ test('Changing an Autocomplete calls the onChange Event', () => {
 
   component.find('input').simulate('change', {target: {value: 'test'}});
   component.find('input').simulate('change', {target: {value: 'test2'}});
-  expect(mocked.mock.calls.length).toBe(2);
+  expect(spyFunc.mock.calls.length).toBe(2);
 });
