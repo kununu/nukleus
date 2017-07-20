@@ -92,8 +92,8 @@ export default class Autocomplete extends React.Component {
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
     }
-    if (!this.needsUpdate(nextProps)) return;
     if (nextProps.error) this.showError();
+    if (!this.needsUpdate(nextProps)) return;
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
   }
 
