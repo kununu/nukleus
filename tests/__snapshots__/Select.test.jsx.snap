@@ -18,7 +18,9 @@ exports[`test Changes status on value change 1`] = `
   }
   labelHidden={false}
   name="select"
+  onBlur={[Function]}
   onChange={null}
+  onFocus={[Function]}
   query={Object {}}
   reference={[Function]}
   requiredLabel=""
@@ -39,7 +41,9 @@ exports[`test Changes status on value change 1`] = `
         disabled={false}
         id="select"
         name="select"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={true}
         value="option-2">
         <option
@@ -77,7 +81,9 @@ exports[`test Renders Select with an error message without crashing 1`] = `
       disabled={false}
       id="select"
       name="select"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       required={true}
       value="option">
       
@@ -124,7 +130,9 @@ exports[`test Renders Select without crashing 1`] = `
       disabled={false}
       id="select"
       name="select"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       required={true}
       value="option">
       

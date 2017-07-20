@@ -13,13 +13,12 @@ exports[`test Renders datepicker with an error message without crashing 1`] = `
       className="formControl formControlError"
       disabled={false}
       id="date-picker"
-      isClearable={true}
       name="date-picker"
+      onBlur={[Function]}
       onChange={[Function]}
-      placeholderText=""
+      onFocus={[Function]}
       required={true}
-      selected={null}
-      showYearDropdown={true} />
+      selected={null} />
     
     <span
       className="error">
@@ -48,13 +47,12 @@ exports[`test Renders datepicker without crashing 1`] = `
       className="formControl "
       disabled={false}
       id="date-picker"
-      isClearable={true}
       name="date-picker"
+      onBlur={[Function]}
       onChange={[Function]}
-      placeholderText=""
+      onFocus={[Function]}
       required={true}
-      selected={null}
-      showYearDropdown={true} />
+      selected={null} />
     
   </div>
 </div>

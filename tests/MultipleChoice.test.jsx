@@ -101,6 +101,29 @@ test('Change status of choices change', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
+test('Renders an error if errors prop is set', () => {
+  const component = mount(
+    <MultipleChoice
+      name="choice[]"
+      heading="Button Choice"
+      inputStyle="buttons"
+      error="error"
+      errorSubInfo="Subinfo"
+      isRequired
+      choices={
+      [
+        {
+          id: 'option-1',
+          isChecked: false,
+          label: 'test',
+          value: 'test'
+        }
+      ]
+    } />
+  );
+  expect(toJson(component)).toMatchSnapshot();
+});
+
 test('Fires on change function', () => {
   const component = mount(choice);
   component.find('input').simulate('click');
@@ -151,4 +174,60 @@ test('Changing a choice returns correct values in onChange Event', done => {
     choices={initialChoices} />
   );
   component.find({value: 'option-2'}).simulate('change');
+});
+
+describe('Multiple Choice Events', () => {
+  const initialChoices = [
+    {
+      id: 'option-1',
+      isChecked: false,
+      label: 'test',
+      value: 'option-1'
+    },
+    {
+      id: 'option-2',
+      isChecked: false,
+      label: 'test',
+      value: 'option-2'
+    },
+    {
+      id: 'option-3',
+      isChecked: false,
+      label: 'test',
+      value: 'option-3'
+    }
+  ];
+
+  it('Focusing a MultipleChoice calls the onFocus Event', () => {
+    spyFunc.mockClear();
+    const component = mount(
+      <MultipleChoice
+        name="test[]"
+        heading="Button Choice"
+        inputStyle="buttons"
+        isRequired
+        onFocus={spyFunc}
+        choices={initialChoices} />
+      );
+
+    component.find('[type="checkbox"]').first().simulate('focus');
+    expect(spyFunc.mock.calls.length).toBe(1);
+  });
+
+  it('Bluring a MultipleChoice calls the onBlur Event', () => {
+    spyFunc.mockClear();
+    const component = mount(
+      <MultipleChoice
+        name="test[]"
+        heading="Button Choice"
+        inputStyle="buttons"
+        isRequired
+        onBlur={spyFunc}
+        choices={initialChoices} />
+      );
+
+    component.find('[type="checkbox"]').first().simulate('focus');
+    component.find('[type="checkbox"]').first().simulate('blur');
+    expect(spyFunc.mock.calls.length).toBe(1);
+  });
 });

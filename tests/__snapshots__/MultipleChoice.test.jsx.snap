@@ -28,12 +28,16 @@ exports[`test Change status of choices change 1`] = `
       },
     ]
   }
+  error={null}
+  errorSubInfo={null}
   heading="MultipleChoice"
   headingStyle="control-label"
   inputStyle="inline"
   isRequired={false}
   name="choice[]"
+  onBlur={[Function]}
   onChange={[Function]}
+  onFocus={[Function]}
   query={Object {}}
   reference={[Function]}
   requiredLabel="">
@@ -53,7 +57,9 @@ exports[`test Change status of choices change 1`] = `
           className="formControl"
           id="choice[]option-1"
           name="choice[]"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           required={false}
           type="checkbox"
           value="option-1" />
@@ -69,7 +75,9 @@ exports[`test Change status of choices change 1`] = `
           className="formControl"
           id="choice[]option-2"
           name="choice[]"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           required={false}
           type="checkbox"
           value="option-2" />
@@ -85,7 +93,9 @@ exports[`test Change status of choices change 1`] = `
           className="formControl"
           id="choice[]option-3"
           name="choice[]"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           required={false}
           type="checkbox"
           value="option-2" />
@@ -101,7 +111,9 @@ exports[`test Change status of choices change 1`] = `
           className="formControl"
           id="choice[]option-4"
           name="choice[]"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           required={false}
           type="checkbox"
           value="option-4" />
@@ -127,12 +139,16 @@ exports[`test Changes status on choice change 1`] = `
       },
     ]
   }
+  error={null}
+  errorSubInfo={null}
   heading="Test"
   headingStyle="control-label"
   inputStyle="inline"
   isRequired={true}
   name="choice[]"
+  onBlur={[Function]}
   onChange={[Function]}
+  onFocus={[Function]}
   query={Object {}}
   reference={[Function]}
   requiredLabel="">
@@ -152,7 +168,9 @@ exports[`test Changes status on choice change 1`] = `
           className="formControl"
           id="choice[]option-1"
           name="choice[]"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           required={true}
           type="checkbox"
           value="test" />
@@ -162,6 +180,75 @@ exports[`test Changes status on choice change 1`] = `
         </label>
       </div>
     </div>
+  </div>
+</MultipleChoice>
+`;
+
+exports[`test Renders an error if errors prop is set 1`] = `
+<MultipleChoice
+  choices={
+    Array [
+      Object {
+        "id": "option-1",
+        "isChecked": false,
+        "label": "test",
+        "value": "test",
+      },
+    ]
+  }
+  error="error"
+  errorSubInfo="Subinfo"
+  heading="Button Choice"
+  headingStyle="control-label"
+  inputStyle="buttons"
+  isRequired={true}
+  name="choice[]"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  query={Object {}}
+  reference={[Function]}
+  requiredLabel="">
+  <div
+    className="formGroup formGroupMultipleChoice buttons">
+    <label
+      className="controlLabel"
+      htmlFor="choice[]">
+      Button Choice
+    </label>
+    <div
+      className="inputContainer">
+      <div
+        className="choice">
+        <input
+          checked={false}
+          className="formControl"
+          id="choice[]option-1"
+          name="choice[]"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={true}
+          type="checkbox"
+          value="test" />
+        <label
+          htmlFor="choice[]option-1">
+          test
+        </label>
+      </div>
+    </div>
+    <Error
+      info="error"
+      subInfo="Subinfo">
+      <span
+        className="error">
+        <strong
+          className="info">
+          error
+        </strong>
+        Subinfo
+      </span>
+    </Error>
   </div>
 </MultipleChoice>
 `;
@@ -184,7 +271,9 @@ exports[`test Renders choice without crashing 1`] = `
         className="formControl"
         id="choice[]option-1"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={true}
         type="checkbox"
         value="test" />
@@ -215,7 +304,9 @@ exports[`test Renders choices with inputStyle buttons withouth crashing 1`] = `
         className="formControl"
         id="choice[]option-1"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={true}
         type="checkbox"
         value="test" />
@@ -246,7 +337,9 @@ exports[`test Renders choices without crashing 1`] = `
         className="formControl"
         id="choice[]option-1"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={false}
         type="checkbox"
         value="option-1" />
@@ -262,7 +355,9 @@ exports[`test Renders choices without crashing 1`] = `
         className="formControl"
         id="choice[]option-2"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={false}
         type="checkbox"
         value="option-2" />
@@ -278,7 +373,9 @@ exports[`test Renders choices without crashing 1`] = `
         className="formControl"
         id="choice[]option-3"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={false}
         type="checkbox"
         value="option-2" />
@@ -294,7 +391,9 @@ exports[`test Renders choices without crashing 1`] = `
         className="formControl"
         id="choice[]option-4"
         name="choice[]"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         required={false}
         type="checkbox"
         value="option-4" />

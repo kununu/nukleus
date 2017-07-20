@@ -37,6 +37,9 @@ export default class ComboboxComponent extends React.Component {
     label: PropTypes.string,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     onSelect: PropTypes.func,
     placeholder: PropTypes.string,
     requiredLabel: PropTypes.string
@@ -56,6 +59,9 @@ export default class ComboboxComponent extends React.Component {
     items: [],
     label: '',
     labelHidden: false,
+    onBlur: () => {},
+    onChange: () => {},
+    onFocus: () => {},
     onSelect: null,
     placeholder: '',
     requiredLabel: ''
@@ -86,6 +92,7 @@ export default class ComboboxComponent extends React.Component {
   };
 
   onChange = (event, {newValue}) => {
+    this.props.onChange(event);
     if (!this.props.isSearchable && this.props.items.indexOf(newValue) === -1) {
       event.preventDefault();
       return;
@@ -185,7 +192,9 @@ export default class ComboboxComponent extends React.Component {
               disabled,
               id,
               name,
+              onBlur: this.props.onBlur,
               onChange: this.onChange,
+              onFocus: this.props.onFocus,
               placeholder,
               required: isRequired,
               value: this.state.value
