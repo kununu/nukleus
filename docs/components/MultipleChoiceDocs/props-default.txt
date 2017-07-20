@@ -1,9 +1,13 @@
 static defaultProps = {
+  error: null,
+  errorSubInfo: null,
   heading: '',
   headingStyle: 'control-label',
   inputStyle: 'inline',
   isRequired: false,
+  onBlur: () => {},
   onChange: () => {},
+  onFocus: () => {},
   query: {},
   reference: () => {},
   requiredLabel: ''

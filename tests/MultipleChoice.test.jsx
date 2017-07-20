@@ -101,6 +101,29 @@ test('Change status of choices change', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
+test('Renders an error if errors prop is set', () => {
+  const component = mount(
+    <MultipleChoice
+      name="choice[]"
+      heading="Button Choice"
+      inputStyle="buttons"
+      error="error"
+      errorSubInfo="Subinfo"
+      isRequired
+      choices={
+      [
+        {
+          id: 'option-1',
+          isChecked: false,
+          label: 'test',
+          value: 'test'
+        }
+      ]
+    } />
+  );
+  expect(toJson(component)).toMatchSnapshot();
+});
+
 test('Fires on change function', () => {
   const component = mount(choice);
   component.find('input').simulate('click');
