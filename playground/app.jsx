@@ -460,10 +460,9 @@ const App = ({location: {pathname, query}}) => (
               name="select"
               id="select"
               isRequired
-              disabled
               requiredLabel="Required"
               value="option"
-              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+              items={[{key: 'test', value: 'test'}]} />
           </div>
         </div>
 
