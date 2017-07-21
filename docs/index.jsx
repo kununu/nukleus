@@ -9,6 +9,7 @@ import ChoiceDocs from 'components/ChoiceDocs';
 import ComboboxDocs from 'components/ComboboxDocs';
 import DatePickerDocs from 'components/DatePickerDocs';
 import DropDownDocs from 'components/DropDownDocs';
+import ErrorDocs from 'components/ErrorDocs';
 import InfoTextDocs from 'components/InfoTextDocs';
 import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
 import PaginatorDocs from 'components/PaginatorDocs';
@@ -34,6 +35,7 @@ const getRoutes = () => (
     <Route path="/combobox" component={ComboboxDocs} />
     <Route path="/date-picker" component={DatePickerDocs} />
     <Route path="/drop-down(/:country)" component={DropDownDocs} />
+    <Route path="/error" component={ErrorDocs} />
     <Route path="/multiple-choice" component={MultipleChoiceDocs} />
     <Route path="/paginator" component={PaginatorDocs} />
     <Route path="/text-field" component={TextFieldDocs} />
