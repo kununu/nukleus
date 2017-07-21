@@ -8,7 +8,19 @@ static propTypes = {
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   isRequired: PropTypes.bool,
-  items: PropTypes.object,
+  items: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.shape({
+      key: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ])
+    }))
+  ]),
   labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
