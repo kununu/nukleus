@@ -1,5 +1,7 @@
 static propTypes = {
   choices: PropTypes.array.isRequired,
+  error: PropTypes.string,
+  errorSubInfo: PropTypes.string,
   heading: PropTypes.string,
   inputStyle: PropTypes.oneOf([
     'inline',
@@ -7,7 +9,9 @@ static propTypes = {
   ]),
   isRequired: PropTypes.bool,
   name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onFocus: PropTypes.func,
   query: PropTypes.object,
   reference: PropTypes.func,
   requiredLabel: PropTypes.string
