@@ -17,6 +17,9 @@
 .radioButton {
   text-align: center;
   display: table-cell;
+  min-height: 50px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: -.02em;
 
   @supports (display: flex) {
     display: flex;
@@ -32,7 +35,7 @@
   input:checked + label {
     &,
     &:hover {
-      background: $blue-light;
+      background: $blue-new;
       color: $white;
     }
   }
@@ -44,9 +47,9 @@
     cursor: pointer;
     font-weight: normal;
     transition: all .25s;
-    border: 1px solid $blue-light;
+    border: 1px solid $blue-new;
     border-left: 0;
-    color: $blue-dark;
+    color: $blue-new;
 
     @supports (display: flex) {
       display: flex;
@@ -62,7 +65,7 @@
     &[disabled] {
       cursor: not-allowed;
       opacity: .65;
-      border-color: $blue-light;
+      border-color: $blue-light-new;
 
       &:hover {
         background: initial;
@@ -73,7 +76,7 @@
   &:first-child {
     label {
       border-radius: $border-radius-base 0 0 $border-radius-base;
-      border-left: 1px solid $blue-light;
+      border-left: 1px solid $blue-new;
     }
   }
 
@@ -86,7 +89,7 @@
 
 .radioContainer.flexible {
   @media (max-width: $screen-sm-max) {
-    border: 1px solid $blue;
+    border: 1px solid $blue-new;
     border-radius: $border-radius-base;
 
     .radioButton {
@@ -99,7 +102,7 @@
 
       label {
         border: 0;
-        border-bottom: 1px solid $blue;
+        border-bottom: 1px solid $blue-new;
         border-radius: 0;
 
         @supports (display: flex) {
@@ -110,14 +113,14 @@
       @supports (display: flex) {
         &:nth-child(4n+3) label,
         &:nth-child(4n+4) label {
-          border: 1px solid $blue;
+          border: 1px solid $blue-new;
           border-radius: 0;
           border-left: 0;
           border-right: 0;
         }
 
         &:nth-child(odd) label {
-          border-right: 1px solid $blue;
+          border-right: 1px solid $blue-new;
         }
 
         &:nth-last-child(2) label,
@@ -161,14 +164,14 @@
       // First Row
       &:nth-child(-n+2) {
         label {
-          border-top: 1px solid $blue;
+          border-top: 1px solid $blue-new;
         }
       }
 
       // All Left Radio Buttons
       &:nth-child(2n + 1) {
         label {
-          border-left: 1px solid $blue;
+          border-left: 1px solid $blue-new;
         }
       }
 
@@ -230,14 +233,14 @@
       // Target first row
       .radioButton:nth-child(-n + #{$count}) {
         label {
-          border-top: 1px solid $blue;
+          border-top: 1px solid $blue-new;
         }
       }
 
       // All left radioButtons
       .radioButton:nth-child(#{$count}n + 1) {
         label {
-          border-left: 1px solid $blue;
+          border-left: 1px solid $blue-new;
         }
       }
 
