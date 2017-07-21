@@ -32,8 +32,8 @@ export default class Select extends React.Component {
     items: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.string,
-        value: PropTypes.string
+        key: PropTypes.any,
+        value: PropTypes.any
       }))
     ]),
     labelHidden: PropTypes.bool,
