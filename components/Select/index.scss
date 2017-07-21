@@ -2,6 +2,8 @@
 
 .select {
   appearance: none;
+  color: $blue-new;
+  border-colo: $blue-new;
 
   // Hide the arrow in IE10 and up
   &::-ms-expand {
