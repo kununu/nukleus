@@ -29,7 +29,13 @@ export default class Select extends React.Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
-    items: PropTypes.object,
+    items: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.string,
+        value: PropTypes.string
+      }))
+    ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
@@ -197,10 +203,12 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {Object.keys(items).map(value =>
+            {Object.keys(items).map(keyValue =>
               (<option
-                key={value}
-                value={value}>{items[value]}</option>)
+                key={items[keyValue].key || keyValue}
+                value={items[keyValue].key || keyValue}>
+                {items[keyValue].value || items[keyValue]}
+              </option>)
             )}
           </select>
 
