@@ -64,6 +64,47 @@ exports[`test Changes status on value change 1`] = `
 </Select>
 `;
 
+exports[`test Renders Select with an array of items 1`] = `
+<div
+  className="formGroup inline">
+  
+  <label
+    className="controlLabel"
+    htmlFor="select">
+    Select
+  </label>
+  <div
+    className="inputContainer">
+    <select
+      autoFocus={false}
+      className="formControl select "
+      disabled={false}
+      id="select"
+      name="select"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={true}
+      value="option">
+      
+      
+      <option
+        value="test-key">
+        test
+      </option>
+      <option
+        value="test2-key">
+        test2
+      </option>
+      <option
+        value="test3-key">
+        test3
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
 exports[`test Renders Select with an error message without crashing 1`] = `
 <div
   className="formGroup inline">
