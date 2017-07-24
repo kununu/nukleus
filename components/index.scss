@@ -49,11 +49,12 @@
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   display: block;
   width: 100%;
-  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: $padding-base-vertical $padding-base-horizontal;
-  font-size: $font-size-base;
+  min-height: 50px;
+  padding: $padding-base-vertical + 1 $padding-base-horizontal;
+  font-size: $font-size-md;
+  letter-spacing: -.02em;
   line-height: $line-height-base;
-  color: $input-color;
+  color: $gray-base-70;
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid $input-border;
@@ -71,6 +72,7 @@
   &:focus {
     border: 1px solid $blue;
     outline: none;
+    color: $gray-base-90;
   }
 
   // Unstyle the caret on `<select>`s in IE10+.
