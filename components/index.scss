@@ -49,8 +49,8 @@
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   display: block;
   width: 100%;
-  height: 50px;
-  padding: $padding-base-vertical $padding-base-horizontal;
+  min-height: 50px;
+  padding: $padding-base-vertical + 1 $padding-base-horizontal;
   font-size: $font-size-md;
   letter-spacing: -.02em;
   line-height: $line-height-base;
