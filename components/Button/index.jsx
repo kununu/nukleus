@@ -26,7 +26,7 @@ export default class Button extends React.Component {
     customTheme: '',
     disabled: false,
     fullWidth: false,
-    htmlType: 'button',
+    htmlType: 'submit',
     link: null,
     mobileFullWidth: false,
     onClick: null,
