@@ -18,7 +18,10 @@ export default class Button extends React.Component {
     mobileFullWidth: PropTypes.bool,
     onClick: PropTypes.func,
     outline: PropTypes.bool,
-    text: PropTypes.string,
+    text: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string
+    ]),
     type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom'])
   };
 
