@@ -550,7 +550,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" />
+            <Button type="default" text={<i className="fa fa-calendar" />} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button type="primary" text="Primary Button" />
