@@ -56,6 +56,10 @@ export default class Stars extends React.Component {
       this.props.onChange(e);
     }
 
+    if (this.props.onClick) {
+      this.props.onClick(e);
+    }
+
     const newVal = Number(e.target.value);
 
     if (newVal === this.state.value) {
@@ -120,7 +124,6 @@ export default class Stars extends React.Component {
     const {
       selectable,
       name,
-      onClick,
       totalStars,
       strokeColor
     } = this.props;
@@ -142,7 +145,7 @@ export default class Stars extends React.Component {
                   value={key}
                   checked={key === value}
                   onChange={this.onClick}
-                  onClick={onClick}
+                  onClick={this.onClick}
                   id={`${name}-${key}`} /> }
 
               {Boolean(key) &&

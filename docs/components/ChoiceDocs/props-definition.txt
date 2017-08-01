@@ -10,6 +10,7 @@ static propTypes = {
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onClick: PropTypes.func,
   onFocus: PropTypes.func,
   options: PropTypes.array.isRequired,
   optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
