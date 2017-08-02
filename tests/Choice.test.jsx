@@ -284,7 +284,7 @@ test('Uncheck predefined option', () => {
       onChange={() => {}} />
   );
 
-  component.find('#testopA').simulate('change');
+  component.find('#testopA').simulate('click');
   expect(component.state('checked')).toEqual(null);
 });
 
@@ -297,7 +297,7 @@ test('Uncheck previously checked option', () => {
   );
 
   component.find('#testopA').simulate('change');
-  component.find('#testopA').simulate('change');
+  component.find('#testopA').simulate('click');
   expect(component.state('checked')).toEqual(null);
 });
 

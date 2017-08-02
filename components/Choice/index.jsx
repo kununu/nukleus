@@ -24,6 +24,7 @@ export default class Choice extends React.Component {
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
+    onClick: PropTypes.func,
     onFocus: PropTypes.func,
     options: PropTypes.array.isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
@@ -42,7 +43,8 @@ export default class Choice extends React.Component {
     headingStyle: 'control-label',
     isRequired: false,
     onBlur: () => {},
-    onChange: null,
+    onChange: () => {},
+    onClick: () => {},
     onFocus: () => {},
     optionsPerRow: null,
     query: {},
@@ -82,13 +84,27 @@ export default class Choice extends React.Component {
   }
 
   onChange = e => {
-    if (this.props.disabled) return;
+    const value = e.target.value;
+    if (this.props.disabled || value === this.state.checked) return;
 
     this.props.onChange(e);
     this.setState({
-      checked: e.target.value !== this.state.checked ? e.target.value : null
+      checked: value
     });
   };
+
+  onClick = e => {
+    const value = e.target.value;
+    if (this.props.disabled) return;
+
+    this.props.onClick(e);
+    // As long as the component is not required and the component is deselected set to null.
+    if (!this.props.isRequired && value === this.state.checked) {
+      this.setState({
+        checked: null
+      });
+    }
+  }
 
   showError () {
     this.setState({showError: true});
@@ -147,6 +163,7 @@ export default class Choice extends React.Component {
                 onBlur={onBlur}
                 onChange={this.onChange}
                 onFocus={onFocus}
+                onClick={this.onClick}
                 ref={reference}
                 required={isRequired} />
               <label

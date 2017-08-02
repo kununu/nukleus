@@ -38,8 +38,8 @@ export default class Stars extends React.Component {
 
   static defaultProps = {
     colors: ['currentColor'],
-    onChange: null,
-    onClick: null,
+    onChange: () => {},
+    onClick: () => {},
     selectable: false,
     strokeColor: 'currentColor',
     totalStars: 5,
@@ -52,9 +52,8 @@ export default class Stars extends React.Component {
   };
 
   onClick = e => {
-    if (this.props.onChange) {
-      this.props.onChange(e);
-    }
+    this.props.onChange(e);
+    this.props.onClick(e);
 
     const newVal = Number(e.target.value);
 
@@ -120,7 +119,6 @@ export default class Stars extends React.Component {
     const {
       selectable,
       name,
-      onClick,
       totalStars,
       strokeColor
     } = this.props;
@@ -142,7 +140,7 @@ export default class Stars extends React.Component {
                   value={key}
                   checked={key === value}
                   onChange={this.onClick}
-                  onClick={onClick}
+                  onClick={this.onClick}
                   id={`${name}-${key}`} /> }
 
               {Boolean(key) &&
