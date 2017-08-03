@@ -3985,9 +3985,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kununu-theme@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/kununu-theme/-/kununu-theme-3.1.0.tgz#34255afa18c3251ec6896f66f5948454d76bfeef"
+kununu-theme@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/kununu-theme/-/kununu-theme-3.1.1.tgz#ef54f03d336357d913bb47d5bf57f70063c4f223"
 
 lazy-cache@^0.2.3:
   version "0.2.7"
