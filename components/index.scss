@@ -70,7 +70,10 @@
   &::-webkit-input-placeholder  { color: $input-color-placeholder; } // Safari and Chrome
 
   &:focus {
-    border: 1px solid $blue;
+    border: 1px solid $blue-new;
+    // We don't increase the border-width here, to prevent jumping of textfields. 
+    // Also the gray box-shadow is insetted 1px more, to account for the blue box-shadow
+    box-shadow: inset 0 0 0 1px $blue-new, inset 0 2px 1px rgba($black, .075);
     outline: none;
     color: $gray-base-90;
   }
