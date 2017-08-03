@@ -40,10 +40,10 @@ exports[`test Clicking on the ToolTip Button shows an InfoBox 1`] = `
     <InfoBox
       content="More Test Info"
       position="topLeft">
-      <p
+      <div
         className="infoBox topLeft">
         More Test Info
-      </p>
+      </div>
     </InfoBox>
   </div>
 </ToolTip>
@@ -177,10 +177,10 @@ exports[`test Hovering on the ToolTip Button shows an InfoBox 1`] = `
     <InfoBox
       content="More Test Info"
       position="topLeft">
-      <p
+      <div
         className="infoBox topLeft">
         More Test Info
-      </p>
+      </div>
     </InfoBox>
   </div>
 </ToolTip>
@@ -253,10 +253,10 @@ exports[`test Renders correct position bottomRight 1`] = `
     <InfoBox
       content="More Test Info"
       position="bottomRight">
-      <p
+      <div
         className="infoBox bottomRight">
         More Test Info
-      </p>
+      </div>
     </InfoBox>
   </div>
 </ToolTip>
