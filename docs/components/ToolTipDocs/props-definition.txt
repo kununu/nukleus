@@ -1,5 +1,8 @@
 static propTypes = {
-  content: PropTypes.string,
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   icon: PropTypes.element,
   label: PropTypes.string.isRequired,
   position: PropTypes.oneOf([
