@@ -103,7 +103,8 @@
     }
 
     &:hover {
-      transform: none;
+      transition: transform .2s;
+      transform: scale(1.2);
     }
   }
 }
