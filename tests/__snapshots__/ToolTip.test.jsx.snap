@@ -186,6 +186,101 @@ exports[`test Hovering on the ToolTip Button shows an InfoBox 1`] = `
 </ToolTip>
 `;
 
+exports[`test Hovering on the ToolTip Button shows an InfoBox with Content as Object 1`] = `
+<ToolTip
+  content={
+    <span>
+      More Test 
+      <span>
+        Info
+      </span>
+    </span>
+  }
+  icon={
+    <svg
+      version="1.1"
+      viewBox="0 0 75 75"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px">
+      <path
+        d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+    </svg>
+  }
+  label="Test"
+  position="topLeft">
+  <div
+    className="toolTip">
+    <button
+      className="unstyledButton"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      title="Test"
+      type="button">
+      <svg
+        version="1.1"
+        viewBox="0 0 75 75"
+        x="0px"
+        xmlSpace="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        y="0px">
+        <path
+          d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+      </svg>
+    </button>
+    <InfoBox
+      content={
+        <span>
+          More Test 
+          <span>
+            Info
+          </span>
+        </span>
+      }
+      position="topLeft">
+      <div
+        className="infoBox topLeft">
+        <span>
+          More Test 
+          <span>
+            Info
+          </span>
+        </span>
+      </div>
+    </InfoBox>
+  </div>
+</ToolTip>
+`;
+
+exports[`test Renders ToolTip component with content as Object 1`] = `
+<div
+  className="toolTip">
+  <button
+    className="unstyledButton"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    title="Test"
+    type="button">
+    <svg
+      version="1.1"
+      viewBox="0 0 75 75"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px">
+      <path
+        d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+    </svg>
+  </button>
+</div>
+`;
+
 exports[`test Renders ToolTip component without crashing 1`] = `
 <div
   className="toolTip">
