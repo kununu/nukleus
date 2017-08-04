@@ -8,7 +8,10 @@ import {unstyledButton} from '../index.scss';
 
 export default class ToolTip extends React.Component {
   static propTypes = {
-    content: PropTypes.string,
+    content: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     icon: PropTypes.element,
     label: PropTypes.string.isRequired,
     position: PropTypes.oneOf([

@@ -5,7 +5,10 @@ import styles from './index.scss';
 
 export default class InfoBox extends React.Component {
   static propTypes = {
-    content: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]).isRequired,
     position: PropTypes.oneOf([
       'topLeft',
       'topRight',
@@ -91,12 +94,13 @@ export default class InfoBox extends React.Component {
   }
 
   render () {
+    const CustomTag = typeof (this.props.content) === 'object' ? 'div' : 'p';
     return (
-      <p
+      <CustomTag
         ref={container => { this.container = container; }}
         className={`${styles.infoBox} ${styles[this.props.position]}`}>
         {this.props.content}
-      </p>
+      </CustomTag>
     );
   }
 }
