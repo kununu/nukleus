@@ -94,12 +94,22 @@ export default class InfoBox extends React.Component {
   }
 
   render () {
+    if (typeof (this.props.content) === 'object') {
+      return (
+        <div
+          ref={container => { this.container = container; }}
+          className={`${styles.infoBox} ${styles[this.props.position]}`}>
+          {this.props.content}
+        </div>
+      );
+    }
+
     return (
-      <div
+      <p
         ref={container => { this.container = container; }}
         className={`${styles.infoBox} ${styles[this.props.position]}`}>
         {this.props.content}
-      </div>
+      </p>
     );
   }
 }
