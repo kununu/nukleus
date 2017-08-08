@@ -11,10 +11,6 @@
   display: table;
   table-layout: fixed;
 
-  @supports (display: flex) {
-    display: flex;
-  }
-
   label {
     margin: 0;
     line-height: 0;
@@ -27,19 +23,11 @@
 
 .starsRow {
   display: table-row;
-
-  @supports (display: flex) {
-    display: flex;
-  }
 }
 
 .starsGroup {
   display: table-cell;
   padding: 0 10px;
-
-  @supports (display: flex) {
-    display: flex;
-  }
 }
 
 .hideStarGroup {
