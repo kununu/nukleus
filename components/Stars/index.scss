@@ -101,11 +101,6 @@
     @supports (display: flex) {
       animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
     }
-
-    &:hover {
-      transition: transform .2s;
-      transform: scale(1.2);
-    }
   }
 }
 
