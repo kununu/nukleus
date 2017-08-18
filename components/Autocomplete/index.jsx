@@ -107,6 +107,9 @@ export default class Autocomplete extends React.Component {
   }
 
   onFocus = ev => {
+    this.setState({
+      showNoSuggestionsText: true
+    });
     this.scrollToElement();
     this.props.onFocus(ev);
   }
