@@ -68,6 +68,7 @@ test('Renders Autocomplete with Error without crashing', () => {
 
 test('Renders no suggestions container', done => {
   const component = mount(staticAutocomplete);
+  component.find('input').simulate('focus');
   component.find('input').simulate('change', {target: {value: 'z'}});
 
   // waiting for debounce

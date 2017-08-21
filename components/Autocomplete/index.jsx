@@ -75,6 +75,7 @@ export default class Autocomplete extends React.Component {
   };
 
   state = {
+    hasInitialized: false,
     showError: false,
     showNoSuggestionsText: false,
     suggestions: this.props.data.items || [],
@@ -92,6 +93,7 @@ export default class Autocomplete extends React.Component {
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
     }
+
     if (nextProps.error) this.showError();
     if (!this.needsUpdate(nextProps)) return;
     this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
@@ -99,7 +101,6 @@ export default class Autocomplete extends React.Component {
 
   onChange = (event, {newValue}) => {
     this.setState({
-      showNoSuggestionsText: true,
       value: newValue
     });
     this.props.onChange(event);
@@ -107,12 +108,16 @@ export default class Autocomplete extends React.Component {
   }
 
   onFocus = ev => {
+    this.setState({
+      showNoSuggestionsText: true
+    });
     this.scrollToElement();
     this.props.onFocus(ev);
   }
 
   onBlur = ev => {
     this.hideNoSuggestionsText();
+    this.setState({hasInitialized: false});
     this.props.onBlur(ev);
   }
 
@@ -127,9 +132,7 @@ export default class Autocomplete extends React.Component {
   };
 
   onSuggestionSelected = (e, {method, suggestion}) => {
-    this.setState({
-      showNoSuggestionsText: false
-    });
+    this.hideNoSuggestionsText();
 
     if (method === 'enter' && !this.props.submitOnEnter) {
       e.preventDefault();
@@ -145,6 +148,8 @@ export default class Autocomplete extends React.Component {
     const inputLength = inputValue.length;
 
     if (inputValue) {
+      this.setState({hasInitialized: true});
+
       if (this.props.onGetSuggestions) {
         this.props.onGetSuggestions(inputValue);
         return this.props.data.items;
@@ -259,6 +264,7 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     const {
+      hasInitialized,
       showNoSuggestionsText,
       suggestions,
       value
@@ -322,7 +328,7 @@ export default class Autocomplete extends React.Component {
             </span>
           }
 
-          {!isFetching && !suggestions.length && value && showNoSuggestionsText ?
+          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>

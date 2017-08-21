@@ -158,7 +158,7 @@ const App = ({location: {pathname, query}}) => (
         <br />
 
         <div className="row">
-          <div className="col-xs-12 col-sm-5 col-md-2">
+          <div className="col-xs-12 col-sm-5 col-md-4">
             <Stars
               value={3}
               name="test"
@@ -249,7 +249,6 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
-              autoFocus
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
