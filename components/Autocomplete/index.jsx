@@ -15,8 +15,8 @@ import sharedStyles, {
   controlNote,
   formControl,
   formControlError,
-  hidden,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -89,6 +89,10 @@ export default class Autocomplete extends React.Component {
     if (this.props.error !== null) this.showError();
   }
 
+  componentDidMount () {
+    if (this.scrollRequestedOnStartUp) this.scrollToElement();
+  }
+
   componentWillReceiveProps (nextProps) {
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
@@ -111,7 +115,11 @@ export default class Autocomplete extends React.Component {
     this.setState({
       showNoSuggestionsText: true
     });
-    this.scrollToElement();
+    if (this.node) {
+      this.scrollToElement();
+    } else {
+      this.scrollRequestedOnStartUp = true;
+    }
     this.props.onFocus(ev);
   }
 
@@ -168,6 +176,8 @@ export default class Autocomplete extends React.Component {
       suggestions: this.getSuggestions(value)
     });
   }
+
+  scrollRequestedOnStartUp = false;
 
   debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
