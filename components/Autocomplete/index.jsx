@@ -112,6 +112,8 @@ export default class Autocomplete extends React.Component {
       showNoSuggestionsText: true
     });
 
+    // Prevents autoscroll if element is not
+    // in the DOM
     if (this.node) {
       this.scrollToElement();
     }
@@ -172,8 +174,6 @@ export default class Autocomplete extends React.Component {
       suggestions: this.getSuggestions(value)
     });
   }
-
-  scrollRequestedOnStartUp = false;
 
   debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
