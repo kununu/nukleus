@@ -89,10 +89,6 @@ export default class Autocomplete extends React.Component {
     if (this.props.error !== null) this.showError();
   }
 
-  componentDidMount () {
-    if (this.scrollRequestedOnStartUp) this.scrollToElement();
-  }
-
   componentWillReceiveProps (nextProps) {
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
@@ -115,11 +111,11 @@ export default class Autocomplete extends React.Component {
     this.setState({
       showNoSuggestionsText: true
     });
+
     if (this.node) {
       this.scrollToElement();
-    } else {
-      this.scrollRequestedOnStartUp = true;
     }
+
     this.props.onFocus(ev);
   }
 
