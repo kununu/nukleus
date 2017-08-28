@@ -34,7 +34,10 @@ export default class Autocomplete extends React.Component {
     label: PropTypes.string.isRequired,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
-    noSuggestionText: PropTypes.string,
+    noSuggestionText: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]),
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
