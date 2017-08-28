@@ -15,8 +15,8 @@ import sharedStyles, {
   controlNote,
   formControl,
   formControlError,
-  hidden,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -111,7 +111,13 @@ export default class Autocomplete extends React.Component {
     this.setState({
       showNoSuggestionsText: true
     });
-    this.scrollToElement();
+
+    // Prevents autoscroll if element is not
+    // in the DOM
+    if (this.node) {
+      this.scrollToElement();
+    }
+
     this.props.onFocus(ev);
   }
 
