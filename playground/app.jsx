@@ -23,6 +23,16 @@ import {
 
 import styles from './app.scss';
 
+const sortFunction = (textA, textB) => {
+  if (textA.value < textB.value) {
+    return -1;
+  }
+  if (textA.value > textB.value) {
+    return 1;
+  }
+  return 0;
+};
+
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
@@ -461,7 +471,11 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               value="option"
-              items={[{key: 'test', value: 'test'}]} />
+              items={[
+                {key: 'option1', value: 'Option 1'},
+                {key: 'option2', value: 'Option 2'},
+                {key: 'option3', value: 'Option 3'}
+              ]} />
           </div>
         </div>
 
@@ -477,6 +491,20 @@ const App = ({location: {pathname, query}}) => (
               requiredLabel="Required"
               value="option"
               items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Select
+              title="Select Sorted"
+              name="select-error"
+              id="select-error"
+              sort={sortFunction}
+              isRequired
+              requiredLabel="Required"
+              value={13}
+              items={{10: 'New York', 13: 'Texas', 14: 'Arizona'}} />
           </div>
         </div>
 

@@ -10,10 +10,10 @@ import sharedStyles, {
   controlLabel,
   controlLabelRequired,
   controlNote,
-  hidden,
   formControl,
   formControlError,
   formGroup,
+  hidden,
   srOnly
 } from '../index.scss';
 
@@ -50,6 +50,7 @@ export default class Select extends React.Component {
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
+    sort: PropTypes.func,
     title: PropTypes.string.isRequired,
     value: PropTypes.any
   };
@@ -71,6 +72,7 @@ export default class Select extends React.Component {
     query: {},
     reference: () => {},
     requiredLabel: '',
+    sort: () => 0,
     value: ''
   };
 
@@ -209,13 +211,20 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {Object.keys(items).map(keyValue =>
-              (<option
-                key={items[keyValue].key || keyValue}
-                value={items[keyValue].key || keyValue}>
-                {items[keyValue].value || items[keyValue]}
-              </option>)
-            )}
+            {Object.keys(items)
+              .map(key => ({
+                key: items[key].key || key,
+                value: items[key].value || items[key]
+              }))
+              .sort(this.props.sort)
+              .map(item =>
+                (<option
+                  key={item.key}
+                  value={item.value}>
+                  {item.value}
+                </option>),
+              )
+            }
           </select>
 
           {this.hasError() &&
