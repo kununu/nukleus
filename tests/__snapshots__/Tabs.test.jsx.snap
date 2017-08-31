@@ -2,22 +2,25 @@ exports[`test Renders Tabs using the block theme without crashing 1`] = `
 <ul
   className="blockTabs clearfix">
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/">
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/2">
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/3">
       Third Tab
     </a>
@@ -29,24 +32,27 @@ exports[`test Renders Tabs with react-router links as items without crashing 1`]
 <ul
   className="defaultTabs clearfix">
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       onClick={[Function]}
       style={Object {}}>
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       onClick={[Function]}
       style={Object {}}>
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       onClick={[Function]}
       style={Object {}}>
       Third Tab
@@ -59,22 +65,25 @@ exports[`test Renders Tabs with simple links as items without crashing 1`] = `
 <ul
   className="defaultTabs clearfix">
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/">
       First Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/2">
       Second Tab
     </a>
   </li>
   <li
-    className="">
+    className="tabItem">
     <a
+      className="tabLink"
       href="/playground/3">
       Third Tab
     </a>

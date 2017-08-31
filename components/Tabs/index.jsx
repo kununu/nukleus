@@ -56,7 +56,6 @@ export default class Tabs extends React.Component {
     const {props} = item;
     const itemHash = props.to && props.to.hash ? props.to.hash : '';
     const rootHash = this.props.hash;
-    console.log(props);
 
     // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
     const localPathname = props.href || props.path || (props.to && props.to.pathname);
