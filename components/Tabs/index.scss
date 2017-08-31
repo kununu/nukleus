@@ -5,121 +5,110 @@
   padding: 0;
   margin: 0;
   list-style: none;
-
-  li {
-    position: relative;
-    display: block;
-    float: left;
-  }
+  border-bottom: 1px solid $gray-base-10;
 
   @media (max-width: $screen-sm-min) {
     display: table;
-
-    li {
-      display: table-cell;
-      text-align: center;
-      float: none;
-    }
   }
 }
 
-.defaultTabs {
-  @extend .tabs;
-  border-bottom: 1px solid $gray-base-10;
-  letter-spacing: -.02em;
-
-  li {
-    @media (min-width: $screen-sm-min) {
-      &:not(:first-child) {
-        padding-left: 20px;
-      }
-    }
-
-    a {
-      padding: 10px 0;
-      color: $gray-base-70;
-      position: relative;
-      display: block;
-      text-decoration: none;
-
-      &.active {
-        border-bottom: 2px solid $blue;
-        color: $gray-base-90;
-      }
-    }
-  }
-
-  @media (max-width: $screen-sm-min) {
-    li {
-      padding: 0 5px;
-
-      a {
-        padding: 10px 0;
-        font-size: $font-size-small;
-      }
-
-      &.active {
-        border-bottom: 3px solid $blue;
-
-        a {
-          font-weight: $font-weight-semibold;
-          color: $text-color;
-          border-bottom: 0;
-        }
-      }
-    }
-  }
-}
-
-.blockTabs {
-  @extend .tabs;
-  letter-spacing: -.02em;
-
-  li {
-    border: 1px solid $gray-base-20;
-    border-bottom: 0;
-
-    &:not(:first-child) {
-      border-left: 0;
-    }
-
-    a {
-      border-top: 4px solid $panel-bg;
-      border-bottom: 1px solid $gray-base-20;
-      background: $panel-bg;
-      color: $text-color;
-      font-size: $font-size-small;
-      font-weight: $font-weight-semibold;
-      letter-spacing: -.01em;
-      padding: 10px 0 12px;
-      position: relative;
-      display: block;
-      text-decoration: none;
-
-      &.active {
-        border-top: 4px solid $blue;
-        border-bottom: 0;
-      }
-    }
-  }
+.tabItem {
+  position: relative;
+  display: table-cell;
+  float: left;
+  padding: 0 5px;
+  text-align: center;
+  box-sizing: border-box;
 
   @media (min-width: $screen-sm-min) {
-    li {
-      a {
-        border-top: 0;
-        background: $gray-base-10;
-        font-size: $font-size-base;
-        padding: 17px 25px;
+    text-align: left;
+    display: block;
+    float: left;
 
-        &.active {
-          border: 0;
-          background: $panel-bg;
-        }
-      }
+    &:not(:first-child) {
+      padding-left: 20px;
     }
   }
 }
 
 .pointerDisabled {
   pointer-events: none;
+}
+
+.defaultTabs {
+  @extend .tabs;
+  border-bottom: 1px solid $gray-base-10;
+}
+
+.tabLink {
+  padding: 10px 0;
+  color: $gray-base-70;
+  position: relative;
+  display: block;
+  text-decoration: none;
+
+  &.active {
+    border-bottom: 2px solid $blue;
+    color: $gray-base-90;
+  }
+
+  @media (max-width: $screen-sm-min) {
+    font-size: $font-size-small;
+  }
+}
+
+.active {
+  .tabLink {
+    font-weight: $font-weight-semibold;
+    color: $text-color;
+    border-bottom: 0;
+  }
+}
+
+.blockTabs {
+  @extend .tabs;
+  border-bottom: 0;
+  letter-spacing: -.01em;
+
+  .tabItem {
+    padding: 0;
+    border: 0;
+    border-right: 1px solid $gray-base-20;
+
+    &:first-child {
+      border-left: 1px solid $gray-base-20;
+    }
+  }
+
+  .tabLink {
+    box-sizing: border-box;
+    border-top: 1px solid $gray-base-20;
+    border-bottom: 1px solid $gray-base-20;
+    background: $panel-bg;
+    color: $text-color;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    padding: 13px 10px 12px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+
+    &.active {
+      border-top: 4px solid $blue;
+      padding-top: 10px;
+      border-bottom: 0;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      background: $gray-base-10;
+      font-size: $font-size-base;
+      padding: 17px 25px;
+
+      &.active {
+        padding-top: 14px;
+        border-bottom: 1px solid $white;
+        background: $panel-bg;
+      }
+    }
+  }
 }
