@@ -15,5 +15,6 @@ static defaultProps = {
   query: {},
   reference: () => {},
   requiredLabel: '',
+  sort: () => 0,
   value: ''
 };

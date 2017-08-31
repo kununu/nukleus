@@ -29,6 +29,7 @@ static propTypes = {
   query: PropTypes.object,
   reference: PropTypes.func,
   requiredLabel: PropTypes.string,
+  sort: PropTypes.func,
   title: PropTypes.string.isRequired,
   value: PropTypes.any
 };
