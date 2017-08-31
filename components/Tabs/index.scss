@@ -105,7 +105,8 @@
       padding: 17px 25px;
 
       &.active {
-        padding-top: 14px;
+        padding-top: 17px;
+        border-top: 1px solid $gray-base-20;
         border-bottom: 1px solid $white;
         background: $panel-bg;
       }
