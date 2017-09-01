@@ -176,6 +176,15 @@ export default class Select extends React.Component {
       title
     } = this.props;
 
+    let options = Object.keys(items)
+      .map(key => ({
+        key: items[key].key || key,
+        value: items[key].value || items[key]
+      }));
+    if (this.props.sort) {
+      options = options.sort(this.props.sort);
+    }
+
     return (
       <div className={this.containerClassNames}>
         {labelHidden && <span className={srOnly}>{title}</span>}
@@ -211,20 +220,13 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {Object.keys(items)
-              .map(key => ({
-                key: items[key].key || key,
-                value: items[key].value || items[key]
-              }))
-              .sort(this.props.sort)
-              .map(item =>
-                (<option
-                  key={item.key}
-                  value={item.key}>
-                  {item.value}
-                </option>),
-              )
-            }
+            {options.map(item =>
+              (<option
+                key={item.key}
+                value={item.key}>
+                {item.value}
+              </option>),
+            )}
           </select>
 
           {this.hasError() &&

@@ -23,16 +23,6 @@ import {
 
 import styles from './app.scss';
 
-const sortFunction = (textA, textB) => {
-  if (textA.value < textB.value) {
-    return -1;
-  }
-  if (textA.value > textB.value) {
-    return 1;
-  }
-  return 0;
-};
-
 const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
@@ -500,7 +490,7 @@ const App = ({location: {pathname, query}}) => (
               title="Select Sorted"
               name="select-error"
               id="select-error"
-              sort={sortFunction}
+              sort={(current, next) => current.value.localeCompare(next.value)}
               isRequired
               requiredLabel="Required"
               value={13}
