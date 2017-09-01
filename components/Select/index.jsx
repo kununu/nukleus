@@ -173,6 +173,7 @@ export default class Select extends React.Component {
       onFocus,
       reference,
       requiredLabel,
+      sort,
       title
     } = this.props;
 
@@ -182,8 +183,8 @@ export default class Select extends React.Component {
         value: items[key].value || items[key]
       }));
     
-    if (this.props.sort) {
-      options = options.sort(this.props.sort);
+    if (sort) {
+      options = options.sort(sort);
     }
 
     return (
