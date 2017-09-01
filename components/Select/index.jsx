@@ -72,7 +72,7 @@ export default class Select extends React.Component {
     query: {},
     reference: () => {},
     requiredLabel: '',
-    sort: () => 0,
+    sort: null,
     value: ''
   };
 
@@ -173,8 +173,19 @@ export default class Select extends React.Component {
       onFocus,
       reference,
       requiredLabel,
+      sort,
       title
     } = this.props;
+
+    let options = Object.keys(items)
+      .map(key => ({
+        key: items[key].key || key,
+        value: items[key].value || items[key]
+      }));
+
+    if (sort) {
+      options = options.sort(sort);
+    }
 
     return (
       <div className={this.containerClassNames}>
@@ -211,20 +222,13 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {Object.keys(items)
-              .map(key => ({
-                key: items[key].key || key,
-                value: items[key].value || items[key]
-              }))
-              .sort(this.props.sort)
-              .map(item =>
-                (<option
-                  key={item.key}
-                  value={item.key}>
-                  {item.value}
-                </option>),
-              )
-            }
+            {options.map(item =>
+              (<option
+                key={item.key}
+                value={item.key}>
+                {item.value}
+              </option>),
+            )}
           </select>
 
           {this.hasError() &&
