@@ -182,7 +182,7 @@ export default class Select extends React.Component {
         key: items[key].key || key,
         value: items[key].value || items[key]
       }));
-    
+
     if (sort) {
       options = options.sort(sort);
     }
