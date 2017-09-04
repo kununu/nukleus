@@ -130,6 +130,14 @@ export default class Autocomplete extends React.Component {
     this.props.onBlur(ev);
   }
 
+  onKeyDown = event => {
+    const enterKey = event.keyCode === 13;
+
+    if (enterKey && !this.props.submitOnEnter) {
+      event.preventDefault();
+    }
+  }
+
   onSuggestionsFetchRequested = ({value}) => {
     this.debouncedLoadSuggestions(value);
   }
@@ -288,6 +296,7 @@ export default class Autocomplete extends React.Component {
       onBlur: this.onBlur,
       onChange: this.onChange,
       onFocus: this.onFocus,
+      onKeyDown: this.onKeyDown,
       placeholder,
       required: isRequired,
       value
