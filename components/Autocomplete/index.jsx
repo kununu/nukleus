@@ -134,6 +134,7 @@ export default class Autocomplete extends React.Component {
     const enterKey = event.keyCode === 13;
 
     if (enterKey && !this.props.submitOnEnter) {
+      this.hideNoSuggestionsText();
       event.preventDefault();
     }
   }
