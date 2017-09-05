@@ -41,6 +41,7 @@ export default class Autocomplete extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    onKeyDown: PropTypes.func,
     onGetSuggestions: PropTypes.func,
     onSelectSuggestion: PropTypes.func,
     placeholder: PropTypes.string,
@@ -66,6 +67,7 @@ export default class Autocomplete extends React.Component {
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
+    onKeyDown: () => {},
     onGetSuggestions: null,
     onSelectSuggestion: null,
     placeholder: '',
@@ -132,6 +134,7 @@ export default class Autocomplete extends React.Component {
 
   onKeyDown = event => {
     const enterKey = event.keyCode === 13;
+    this.props.onKeyDown();
 
     if (enterKey && !this.props.submitOnEnter) {
       this.hideNoSuggestionsText();
