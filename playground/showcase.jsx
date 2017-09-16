@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 // import Autocomplete from 'components/Autocomplete/index';
 // import Button from 'components/Button/index';
@@ -9,7 +10,7 @@ import React from 'react';
 // import InfoText from 'components/InfoText/index';
 import MultipleChoice from 'components/MultipleChoice/index';
 // import Notification from 'components/Notification/index';
-// import Paginator from 'components/Paginator/index';
+import Paginator from 'components/Paginator/index';
 // import Table from 'components/Table/index';
 // import Tabs from 'components/Tabs/index';
 // import TextField from 'components/TextField/index';
@@ -18,10 +19,7 @@ import MultipleChoice from 'components/MultipleChoice/index';
 import Stars from 'components/Stars/index';
 
 import Logo from './Logo';
-import {
-  multipleChoiceManyItems,
-  multipleChoiceTwoItems
-} from './data/MultipleChoice';
+import {multipleChoiceManyItems, multipleChoiceTwoItems} from './data/MultipleChoice';
 // import {
 //   controlLabel
 // } from 'components/index.scss';
@@ -43,6 +41,7 @@ export default ({
       center: true,
       component: (
         <MultipleChoice
+          choices={[]}
           name="choices[]"
           isRequired
           requiredLabel="Required" />
@@ -100,10 +99,9 @@ export default ({
       }
     },
     {
-      // prototype
       center: true,
       component: (
-        <Stars />
+        <Stars name="star-name" />
       ),
       hide: false,
       props: [
@@ -161,6 +159,57 @@ export default ({
         }
       ],
       slug: 'stars',
+      title: 'Rating starts',
+      wrapperStyle: {
+        maxWidth: '50%'
+      }
+    },
+    {
+      // prototype
+      center: true,
+      component: (
+        <Paginator
+          baseLink={<Link />}
+          totalPages={10} />
+      ),
+      props: [
+        {
+          forceProps: true,
+          props: {
+            baseLink: <Link to={{pathname: '/playground/', query: 'query!'}}>1</Link>,
+            query: {},
+            totalPages: 10
+          },
+          slug: 'paginator-1',
+          title: 'Value 0'
+        }
+      ],
+      slug: 'paginator',
+      title: 'Paginator',
+      wrapperStyle: {
+        maxWidth: '80%'
+      }
+    },
+    {
+      // prototype
+      center: true,
+      component: (
+        <div />
+      ),
+      hide: true,
+      props: [
+        {
+          forceProps: true,
+          props: {
+            name: 'test-0',
+            selectable: true,
+            value: 0
+          },
+          slug: 'simple-star-0',
+          title: 'Value 0'
+        }
+      ],
+      slug: 'prototype!!!',
       title: 'Rating starts',
       wrapperStyle: {
         maxWidth: '50%'
