@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 // import Autocomplete from 'components/Autocomplete/index';
 // import Button from 'components/Button/index';
@@ -10,7 +9,7 @@ import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-d
 // import InfoText from 'components/InfoText/index';
 import MultipleChoice from 'components/MultipleChoice/index';
 // import Notification from 'components/Notification/index';
-import Paginator from 'components/Paginator/index';
+// import Paginator from 'components/Paginator/index';
 // import Table from 'components/Table/index';
 // import Tabs from 'components/Tabs/index';
 // import TextField from 'components/TextField/index';
@@ -162,32 +161,6 @@ export default ({
       title: 'Rating starts',
       wrapperStyle: {
         maxWidth: '50%'
-      }
-    },
-    {
-      // prototype
-      center: true,
-      component: (
-        <Paginator
-          baseLink={<Link />}
-          totalPages={10} />
-      ),
-      props: [
-        {
-          forceProps: true,
-          props: {
-            baseLink: <Link to={{pathname: '/playground/', query: 'query!'}}>1</Link>,
-            query: {},
-            totalPages: 10
-          },
-          slug: 'paginator-1',
-          title: 'Value 0'
-        }
-      ],
-      slug: 'paginator',
-      title: 'Paginator',
-      wrapperStyle: {
-        maxWidth: '80%'
       }
     },
     {
