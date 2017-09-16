@@ -17,6 +17,7 @@ import MultipleChoice from 'components/MultipleChoice/index';
 // import Select from 'components/Select/index';
 import Stars from 'components/Stars/index';
 
+import Logo from './Logo';
 import {
   multipleChoiceManyItems,
   multipleChoiceTwoItems
@@ -26,9 +27,7 @@ import {
 // } from 'components/index.scss';
 
 export default ({
-  logo: (
-    <div>nukleus</div>
-  ),
+  logo: Logo(),
   views: [
     {
       center: true,
