@@ -3,11 +3,21 @@ const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: './playground/index.jsx',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    './playground/index.jsx'
+  ],
+  devServer: {
+    historyApiFallback: {
+      index: '/playground/'
+    },
+    hot: true,
+    port: 3000,
+    publicPath: '/static'
+  },
   output: {
-    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    path: path.join(__dirname, 'build/static')
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
@@ -51,7 +61,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins () {
                 return [
                   require('autoprefixer')
                 ];
@@ -78,7 +88,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins () {
                 return [
                   require('autoprefixer')
                 ];

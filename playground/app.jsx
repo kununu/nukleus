@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {DynaReactComponentShowcase} from 'dyna-react-component-showcase'; // eslint-disable-line import/no-extraneous-dependencies
 
 import './app.scss';
@@ -7,7 +7,8 @@ const logo = (
   <div>Nukleus logo</div>
 );
 
-const showcase = (pathname, query) => ({
+const showcase = ({
+  baseUrl: 'playground',
   logo,
   views: [
     {
@@ -23,15 +24,11 @@ const showcase = (pathname, query) => ({
   ]
 });
 
-const App = ({location: {pathname, query}}) => (
+const App = () => (
   <div className="app-container container">
     <DynaReactComponentShowcase
-      showcase={showcase(pathname, query)} />
+      showcase={showcase} />
   </div>
 );
-
-App.propTypes = {
-  location: PropTypes.object.isRequired
-};
 
 export default App;
