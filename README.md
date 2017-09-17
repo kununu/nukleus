@@ -63,7 +63,7 @@ Nukleus components are built for both client and server rendering, making them s
 npm install --ignore-scripts
 npm start
 ```
-Open [http://localhost:3000/playground](http://localhost:3000/playground).
+Open [http://localhost:3000](http://localhost:3000).
 
 The `--ignore-scripts` argument is given since we are running a `prepublish` script we just wish to run before publishing and not after installing. You can read more here https://github.com/npm/npm/issues/3059
 
