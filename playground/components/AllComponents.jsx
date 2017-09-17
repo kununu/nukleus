@@ -21,7 +21,7 @@ import {
   controlLabel
 } from 'components/index.scss';
 
-import styles from './allcomponents.scss';
+import styles from './AllComponents.scss';
 
 const sortFunction = (textA, textB) => {
   if (textA.value < textB.value) {

@@ -1,8 +1,7 @@
 import React from 'react';
 import {browserHistory, Route, Router} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
-import AllComponents from './components/allcomponents';
-// import Autocomplete from 'components/Autocomplete/index';
+import Autocomplete from 'components/Autocomplete/index';
 // import Button from 'components/Button/index';
 // import Choice from 'components/Choice/index';
 // import Combobox from 'components/Combobox/index';
@@ -19,8 +18,8 @@ import Tabs from 'components/Tabs/index';
 // import Select from 'components/Select/index';
 import Stars from 'components/Stars/index';
 
-import styles from './components/allcomponents.scss';
-
+import AllComponents from './components/AllComponents';
+import styles from './components/AllComponents.scss';
 import Logo from './Logo';
 import {multipleChoiceManyItems, multipleChoiceTwoItems} from './data/MultipleChoice';
 // import {
@@ -238,26 +237,75 @@ export default ({
     {
       center: true,
       component: (
-        <div />
+        <Autocomplete
+          data={{
+            items: []
+          }}
+          id="test-autocomplete"
+          value="purrr"
+          onSelectSuggestion={suggestion => {
+            console.log('Autocomplete:You have chosen ', suggestion); // eslint-disable-line no-console
+          }}
+          name="test-autocomplete" />
       ),
-      hide: true,
       props: [
         {
+          description: (
+            <div>
+              <div>Is not required</div>
+              <div>With placeholder</div>
+              <div>Items starts with meow</div>
+            </div>
+          ),
           forceProps: true,
           props: {
-            name: 'test-0',
-            selectable: true,
-            value: 0
+            data: {
+              items: [
+                {item: 'meow', itemInfo: 'hard'},
+                {item: 'meowing', itemInfo: 'harder'}
+              ]
+            },
+            label: 'Please, react',
+            placeholder: 'Type something...',
+            value: ''
           },
-          slug: 'simple-star-0',
-          title: 'Value 0'
+          slug: 'autocomplete-simple',
+          title: 'Autocomplete with items only'
+        },
+        {
+          description: (
+            <div>
+              <div>Is required</div>
+              <div>With placeholder</div>
+              <div>With required label</div>
+              <div>Scrolls to</div>
+              <div>Suggestion footer with link (if no suggestions)</div>
+              <div>Items starts with meow</div>
+            </div>
+          ),
+          forceProps: true,
+          props: {
+            autoFocus: true,
+            data: {
+              items: [
+                {item: 'meow', itemInfo: 'hard'},
+                {item: 'meowing', itemInfo: 'harder'}
+              ]
+            },
+            isRequired: true,
+            label: 'Please, react',
+            placeholder: 'Type something...',
+            requiredLabel: 'Required',
+            scrollTo: true,
+            suggestionsFooter: <a>No suggestions found?</a>,
+            value: 'purrr'
+          },
+          slug: 'autocomplete-full',
+          title: 'Autocomplete with all features (see props)'
         }
       ],
-      slug: 'prototype!!!',
-      title: 'Rating starts',
-      wrapperStyle: {
-        maxWidth: '50%'
-      }
+      slug: 'autocomplete',
+      title: 'Auto complete'
     },
     {
       // prototype
