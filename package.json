@@ -1,5 +1,8 @@
 {
   "name": "nukleus",
+  "engines": {
+    "npm": ">=5.0.0"
+  },
   "jest": {
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy",
@@ -57,6 +60,7 @@
     "file-loader": "0.11.2",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "^0.0.5-beta.2",
+    "history": "3.3.0",
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "18.0.0",
@@ -101,7 +105,7 @@
     "build": "cross-env NODE_ENV=dist npm run babel",
     "eslint": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js --fix",
-    "prepublish": "in-publish && npm run dist",
+    "prepublishOnly": "npm run dist",
     "clean": "rimraf ./dist",
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",
