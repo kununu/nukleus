@@ -97,7 +97,7 @@
     "react-dom": ">=15.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot --open",
     "babel": "babel ./components --out-dir ./dist/components && babel ./utils --out-dir ./dist/utils",
     "presass": "node-sass ./components --output ./dist/components --importer node_modules/node-sass-module-importer",
     "sass": "postcss dist/components/**/*.css --replace --use autoprefixer --no-map",
