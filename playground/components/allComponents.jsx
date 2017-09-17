@@ -47,125 +47,125 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               choices={
-                [{
-                  id: 'option-1',
-                  isChecked: true,
-                  label: 'flex. Arbeitszeit',
-                  value: 'option-1'
-                },
-                  {
-                    id: 'option-2',
-                    isChecked: false,
-                    label: 'Homeoffice',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-3',
-                    isChecked: false,
-                    label: 'Kantine',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-4',
-                    isChecked: false,
-                    label: 'Essenszulagen',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-5',
-                    isChecked: false,
-                    label: 'Kinderbetreuung',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-6',
-                    isChecked: false,
-                    label: 'Betr. Altersvorsorge',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-7',
-                    isChecked: false,
-                    label: 'Barrierefreiheit',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-8',
-                    isChecked: false,
-                    label: 'Gesundheitsmaßnahmen',
-                    value: 'option-2'
-                  },
-                  {
-                    id: 'option-9',
-                    isChecked: false,
-                    label: 'Betriebsartzt',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-10',
-                    isChecked: false,
-                    label: 'Coaching',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-11',
-                    isChecked: false,
-                    label: 'Parkplatz',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-12',
-                    isChecked: false,
-                    label: 'gute Verkehrsanbindung',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-13',
-                    isChecked: false,
-                    label: 'Mitarbeiterrabatte',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-14',
-                    isChecked: false,
-                    label: 'Firmenwagen',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-15',
-                    isChecked: false,
-                    label: 'Mitarbeiterhandy',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-16',
-                    isChecked: false,
-                    label: 'Mitarbeiterbeteiligung',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-17',
-                    isChecked: false,
-                    label: 'Mitarbeiterevents',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-18',
-                    isChecked: false,
-                    label: 'Internetnutzung',
-                    value: 'option-4'
-                  },
-                  {
-                    id: 'option-19',
-                    isChecked: false,
-                    label: 'Hunde geduldet',
-                    value: 'option-4'
-                  }
-                ]}/>
+              [{
+                id: 'option-1',
+                isChecked: true,
+                label: 'flex. Arbeitszeit',
+                value: 'option-1'
+              },
+              {
+                id: 'option-2',
+                isChecked: false,
+                label: 'Homeoffice',
+                value: 'option-2'
+              },
+              {
+                id: 'option-3',
+                isChecked: false,
+                label: 'Kantine',
+                value: 'option-2'
+              },
+              {
+                id: 'option-4',
+                isChecked: false,
+                label: 'Essenszulagen',
+                value: 'option-2'
+              },
+              {
+                id: 'option-5',
+                isChecked: false,
+                label: 'Kinderbetreuung',
+                value: 'option-2'
+              },
+              {
+                id: 'option-6',
+                isChecked: false,
+                label: 'Betr. Altersvorsorge',
+                value: 'option-2'
+              },
+              {
+                id: 'option-7',
+                isChecked: false,
+                label: 'Barrierefreiheit',
+                value: 'option-2'
+              },
+              {
+                id: 'option-8',
+                isChecked: false,
+                label: 'Gesundheitsmaßnahmen',
+                value: 'option-2'
+              },
+              {
+                id: 'option-9',
+                isChecked: false,
+                label: 'Betriebsartzt',
+                value: 'option-4'
+              },
+              {
+                id: 'option-10',
+                isChecked: false,
+                label: 'Coaching',
+                value: 'option-4'
+              },
+              {
+                id: 'option-11',
+                isChecked: false,
+                label: 'Parkplatz',
+                value: 'option-4'
+              },
+              {
+                id: 'option-12',
+                isChecked: false,
+                label: 'gute Verkehrsanbindung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-13',
+                isChecked: false,
+                label: 'Mitarbeiterrabatte',
+                value: 'option-4'
+              },
+              {
+                id: 'option-14',
+                isChecked: false,
+                label: 'Firmenwagen',
+                value: 'option-4'
+              },
+              {
+                id: 'option-15',
+                isChecked: false,
+                label: 'Mitarbeiterhandy',
+                value: 'option-4'
+              },
+              {
+                id: 'option-16',
+                isChecked: false,
+                label: 'Mitarbeiterbeteiligung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-17',
+                isChecked: false,
+                label: 'Mitarbeiterevents',
+                value: 'option-4'
+              },
+              {
+                id: 'option-18',
+                isChecked: false,
+                label: 'Internetnutzung',
+                value: 'option-4'
+              },
+              {
+                id: 'option-19',
+                isChecked: false,
+                label: 'Hunde geduldet',
+                value: 'option-4'
+              }
+              ]} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-4">
@@ -173,17 +173,17 @@ const App = ({location: {pathname, query}}) => (
               value={3}
               name="test"
               selectable
-              colors={['red', 'green']}/>
+              colors={['red', 'green']} />
 
             <Stars
               value={3}
               name="test2"
               selectable
-              colors={['red', 'green']}/>
+              colors={['red', 'green']} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -191,7 +191,7 @@ const App = ({location: {pathname, query}}) => (
               totalPages={10}
               pathname={pathname}
               query={query}
-              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>}/>
+              baseLink={<Link to={{pathname: '/playground/', query}}>1</Link>} />
           </div>
         </div>
 
@@ -203,11 +203,11 @@ const App = ({location: {pathname, query}}) => (
                 <Link to={{pathname: '/playground/2', query}}>Second Tab</Link>,
                 <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
               ]}
-              pathname={pathname}/>
+              pathname={pathname} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -219,19 +219,19 @@ const App = ({location: {pathname, query}}) => (
                   Tab</Link>,
                 <Link to={{pathname: '/playground/3', query}}>Third Tab</Link>
               ]}
-              pathname={pathname}/>
+              pathname={pathname} />
           </div>
         </div>
 
-        <br/><br/>
+        <br /><br />
 
         <div className="row">
           <div className="col-md-8">
-            <Stars name="test" value={2.5}/>
+            <Stars name="test" value={2.5} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -255,7 +255,7 @@ const App = ({location: {pathname, query}}) => (
               label="Autocomplete"
               isRequired
               requiredLabel="Required"
-              name="autocomplete"/>
+              name="autocomplete" />
           </div>
         </div>
 
@@ -282,11 +282,11 @@ const App = ({location: {pathname, query}}) => (
               label="Autocomplete with Error"
               isRequired
               requiredLabel="Required"
-              name="autocomplete"/>
+              name="autocomplete" />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -295,9 +295,9 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               isRequired
-              requiredLabel="Required"/>
+              requiredLabel="Required" />
             <InfoText
-              text="I am the info text for the TextField component."/>
+              text="I am the info text for the TextField component." />
           </div>
         </div>
 
@@ -308,14 +308,16 @@ const App = ({location: {pathname, query}}) => (
               label={
                 (<span>
                   <label className={controlLabel} htmlFor="text-field">TextField</label>
-                  <ToolTip position="bottomLeft" label="TextField Info"
-                           content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."/>
+                  <ToolTip
+                    position="bottomLeft"
+                    label="TextField Info"
+                    content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
                 </span>
                 )
               }
               name="text-field"
               isRequired
-              requiredLabel="Required"/>
+              requiredLabel="Required" />
           </div>
         </div>
 
@@ -328,7 +330,7 @@ const App = ({location: {pathname, query}}) => (
               displayLength
               maxLength={120}
               isRequired
-              requiredLabel="Required"/>
+              requiredLabel="Required" />
           </div>
         </div>
 
@@ -341,11 +343,11 @@ const App = ({location: {pathname, query}}) => (
               error="This is an error message"
               errorSubInfo="Some useful hints"
               isRequired
-              requiredLabel="Required"/>
+              requiredLabel="Required" />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -353,7 +355,7 @@ const App = ({location: {pathname, query}}) => (
               id="text-field-password"
               label="TextField (password)"
               name="text-field-password"
-              type="password"/>
+              type="password" />
           </div>
         </div>
 
@@ -364,11 +366,11 @@ const App = ({location: {pathname, query}}) => (
               label="TextField (multiLine)"
               name="text-area"
               multiLine
-              query={query}/>
+              query={query} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -380,7 +382,7 @@ const App = ({location: {pathname, query}}) => (
               displayLength
               inputStyle="inline mediumSize"
               multiLine
-              query={query}/>
+              query={query} />
           </div>
         </div>
 
@@ -390,22 +392,24 @@ const App = ({location: {pathname, query}}) => (
             items={[
               {
                 active: true,
-                icon: <img alt="test"
-                           src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNEY5MkZFRTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNEY5MkZERTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABZcAAAZWAAAG5AAAB3j/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xACnAAEBAQAAAAAAAAAAAAAAAAAJBggBAQEAAwAAAAAAAAAAAAAAAAgHBAYJEAACAgMBAQAAAAAAAAAAAAADBQAEAQIGBwgRAAEDAgQHAQAAAAAAAAAAAAMBAgQSBSIyFAYAEBExQYETFRIAAQEHBQEAAAAAAAAAAAAAAQIAEBEhMUEDUWHxEgQyEwEBAAEEAgMBAAAAAAAAAAABESEAEDFBUWFxgaGx/9oADAMBAAIRAxEAAAHLhd7vIbQSAY00b9Zla+htBIBjTRv/AP/aAAgBAQABBQJGjadI06D57uV+UiN405tp0H0JcscpP//aAAgBAgABBQIANibWEGcCgD7D2sP85FP/2gAIAQMAAQUCaNAUgKPXh7340VgugUeQj0vz/9oACAECAgY/AuqasCn6vR3ZNWAT9Xo7/9oACAEDAgY/AjmzGCBxZsifQUp84j1IComctbbBxw5hFB5s2RXoCVecx6gFUROWlty7/9oACAEBAQY/AotlssXW3ObXpo1Yx1fMbiuxFc1uVq+eLJL27Glz93H037trLKgoANUZzjUKqDyk6ImNffflFvVllaK5wq9NJoGSn6DcJ2ErXNyuXxxZIm3ZMuBu4Gm/duhYsFQGpjOaahFUmYnRUwJ67cv/2gAIAQEDAT8h+vsAAlRWf1rqfALZgYxY3Y+/sAAlUWf1rqfALZgKxYzY/9oACAECAwE/IQ4VaGFcYsGM+O/ewdINLCmNSHGfPfrb/9oACAEDAwE/IcYn1iyoMBeU611FA7CX7Wvd442xifSpYgyh5DvXcUDsLfpY93nnb//aAAwDAQACEQMRAAAQwGA//9oACAEBAwE/EP58B/wDGshUD8xnekR/uGSMNf34D/gGNLSAT4jO9Ij/AHDBGWv/2gAIAQIDAT8QyAFChYK5UOB70pr5GQTHpAZY887ZACjBlEcInC9aE18jAIj2hMMeONv/2gAIAQMDAT8Q+ytW2B02FLWAplj9VjDFl6oAPPr6K1bYHHYFkaKOGP1WcMGzqoh8ev/Z"/>,
+                icon: <img
+                  alt="test"
+                  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNEY5MkZFRTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNEY5MkZERTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABZcAAAZWAAAG5AAAB3j/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xACnAAEBAQAAAAAAAAAAAAAAAAAJBggBAQEAAwAAAAAAAAAAAAAAAAgHBAYJEAACAgMBAQAAAAAAAAAAAAADBQAEAQIGBwgRAAEDAgQHAQAAAAAAAAAAAAMBAgQSBSIyFAYAEBExQYETFRIAAQEHBQEAAAAAAAAAAAAAAQIAEBEhMUEDUWHxEgQyEwEBAAEEAgMBAAAAAAAAAAABESEAEDFBUWFxgaGx/9oADAMBAAIRAxEAAAHLhd7vIbQSAY00b9Zla+htBIBjTRv/AP/aAAgBAQABBQJGjadI06D57uV+UiN405tp0H0JcscpP//aAAgBAgABBQIANibWEGcCgD7D2sP85FP/2gAIAQMAAQUCaNAUgKPXh7340VgugUeQj0vz/9oACAECAgY/AuqasCn6vR3ZNWAT9Xo7/9oACAEDAgY/AjmzGCBxZsifQUp84j1IComctbbBxw5hFB5s2RXoCVecx6gFUROWlty7/9oACAEBAQY/AotlssXW3ObXpo1Yx1fMbiuxFc1uVq+eLJL27Glz93H037trLKgoANUZzjUKqDyk6ImNffflFvVllaK5wq9NJoGSn6DcJ2ErXNyuXxxZIm3ZMuBu4Gm/duhYsFQGpjOaahFUmYnRUwJ67cv/2gAIAQEDAT8h+vsAAlRWf1rqfALZgYxY3Y+/sAAlUWf1rqfALZgKxYzY/9oACAECAwE/IQ4VaGFcYsGM+O/ewdINLCmNSHGfPfrb/9oACAEDAwE/IcYn1iyoMBeU611FA7CX7Wvd442xifSpYgyh5DvXcUDsLfpY93nnb//aAAwDAQACEQMRAAAQwGA//9oACAEBAwE/EP58B/wDGshUD8xnekR/uGSMNf34D/gGNLSAT4jO9Ij/AHDBGWv/2gAIAQIDAT8QyAFChYK5UOB70pr5GQTHpAZY887ZACjBlEcInC9aE18jAIj2hMMeONv/2gAIAQMDAT8Q+ytW2B02FLWAplj9VjDFl6oAPPr6K1bYHHYFkaKOGP1WcMGzqoh8ev/Z" />,
                 link: <a href="/playground">test</a>,
                 value: 'Schweiz'
               },
               {
                 active: false,
-                icon: <img alt="test"
-                           src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNTA3Qjg1RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNTA3Qjg0RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABbUAAAaaAAAHLAAAB8H/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xADHAAADAQAAAAAAAAAAAAAAAAACBwgFAQEBAQAAAAAAAAAAAAAAAAAHCAYQAAAGAQMFAAAAAAAAAAAAAAACAwQFBgEjJQcTFBUmFxEAAAUCAwUJAQAAAAAAAAAAAQIDEwQREgAxBUEiFAYHIVFxMnLTNUamlxIAAQEEBQYPAAAAAAAAAAAAAQIAETED8EFREgQhYdFCkjOBkbEiMnKi0uITI5NElKQTAQABAwQCAwEBAAAAAAAAAAERITFBABDwUWFxkbHB0eH/2gAMAwEAAhEDEQAAAZRtPOMoMoSoYzt5IqhqeZ2eieK3/9oACAEBAAEFAoU+zVxu5WtPipgEaU1MJNaWjn08f//aAAgBAgABBQJxjUvxc5j+kcZ5CkRLWpy+T0h//9oACAEDAAEFAsDjZUhH/ftx8nYiDpBY1XcR/9oACAECAgY/AjSkbK63+oOuKr1SqR433lQPthunL2fDnLXJykEPfAi2wZy2p22//9oACAEDAgY/AmVeIHMMZqpVadZPJobeS/uzdDbnE7UjvN5mHRiUqIdHDnJwk2N8n8rf/9oACAEBAQY/AtJUcyjIC7flYkA1ud2cPm4FG/MRqsCNGixJElROBNEYkbQ4munKBZERCoxJgolIAWWXtFEtG92nDx/gtW/muhe5hNuTy4m1Y1SZ1FC1tq2lFNnDp09Be4MEEp+WDNhakU63UBQChYml2AoYQDdRIXwKAbMfU/3WP//aAAgBAQMBPyHm3wnF7tWkTIM0H4LzGgaK2Kv+WyxYxVqGLFA+f5jZB4AbP//aAAgBAgMBPyGk+X79f0w04mF6zl59zMrzo+H/ALpV+V4O3vQg/wDJspB/ot9r/9oACAEDAwE/IbOc58KB9wn1Cr6w3wN9ARvPZbwjEGuPNNj/AP/aAAwDAQACEQMRAAAQpQN//9oACAEBAwE/EIqZjTo31lH1MjWNbeAGCG1H/wDFBLe+MsVrD68ZGpVCSQqkNb//2gAIAQIDAT8QsDFEdqkXzhKxb6oDOVq2zSHIPM7EKTlTMy6zXOU1O690mwYQbEAl16FSWEp2n//aAAgBAwMBPxB0+ufXeMRq+TkKLYITDDBC0SaLnFuYPjTj41HRwBKZAsDCjqf/2Q=="/>,
+                icon: <img
+                  alt="test"
+                  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABaAAD/4QOBaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2E3ODg1MjItZDI4YS00MDhlLTk1MDItYTdmMTk5OWYxYmU1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNTA3Qjg1RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNTA3Qjg0RTcwMDExRTZCOTcwQkE3QkRFREZBMzk3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTZiNjZiZTMtNzJkYS00NTgxLWEzNWQtY2I2ODU5ZmQwNDNlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmNhNzg4NTIyLWQyOGEtNDA4ZS05NTAyLWE3ZjE5OTlmMWJlNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uACZBZG9iZQBkwAAAAAEDABUEAwYKDQAABbUAAAaaAAAHLAAAB8H/2wCEAAEBAQEBAQEBAQECAQEBAgICAQECAgICAgICAgIDAgMDAwMCAwMEBAQEBAMFBQUFBQUHBwcHBwgICAgICAgICAgBAQEBAgICBQMDBQcFBAUHCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/CABEIABAAFgMBEQACEQEDEQH/xADHAAADAQAAAAAAAAAAAAAAAAACBwgFAQEBAQAAAAAAAAAAAAAAAAAHCAYQAAAGAQMFAAAAAAAAAAAAAAACAwQFBgEjJQcTFBUmFxEAAAUCAwUJAQAAAAAAAAAAAQIDEwQREgAxBUEiFAYHIVFxMnLTNUamlxIAAQEEBQYPAAAAAAAAAAAAAQIAETED8EFREgQhYdFCkjOBkbEiMnKi0uITI5NElKQTAQABAwQCAwEBAAAAAAAAAAERITFBABDwUWFxkbHB0eH/2gAMAwEAAhEDEQAAAZRtPOMoMoSoYzt5IqhqeZ2eieK3/9oACAEBAAEFAoU+zVxu5WtPipgEaU1MJNaWjn08f//aAAgBAgABBQJxjUvxc5j+kcZ5CkRLWpy+T0h//9oACAEDAAEFAsDjZUhH/ftx8nYiDpBY1XcR/9oACAECAgY/AjSkbK63+oOuKr1SqR433lQPthunL2fDnLXJykEPfAi2wZy2p22//9oACAEDAgY/AmVeIHMMZqpVadZPJobeS/uzdDbnE7UjvN5mHRiUqIdHDnJwk2N8n8rf/9oACAEBAQY/AtJUcyjIC7flYkA1ud2cPm4FG/MRqsCNGixJElROBNEYkbQ4munKBZERCoxJgolIAWWXtFEtG92nDx/gtW/muhe5hNuTy4m1Y1SZ1FC1tq2lFNnDp09Be4MEEp+WDNhakU63UBQChYml2AoYQDdRIXwKAbMfU/3WP//aAAgBAQMBPyHm3wnF7tWkTIM0H4LzGgaK2Kv+WyxYxVqGLFA+f5jZB4AbP//aAAgBAgMBPyGk+X79f0w04mF6zl59zMrzo+H/ALpV+V4O3vQg/wDJspB/ot9r/9oACAEDAwE/IbOc58KB9wn1Cr6w3wN9ARvPZbwjEGuPNNj/AP/aAAwDAQACEQMRAAAQpQN//9oACAEBAwE/EIqZjTo31lH1MjWNbeAGCG1H/wDFBLe+MsVrD68ZGpVCSQqkNb//2gAIAQIDAT8QsDFEdqkXzhKxb6oDOVq2zSHIPM7EKTlTMy6zXOU1O690mwYQbEAl16FSWEp2n//aAAgBAwMBPxB0+ufXeMRq+TkKLYITDDBC0SaLnFuYPjTj41HRwBKZAsDCjqf/2Q==" />,
                 link: <a href="/playground">test</a>,
                 value: 'United States'
               }
-            ]}/>
+            ]} />
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -413,62 +417,62 @@ const App = ({location: {pathname, query}}) => (
               name="choices[]"
               heading="MultipleChoice"
               choices={
-                [{
-                  id: 'option-a',
-                  isChecked: true,
-                  label: 'option a',
-                  value: 'option-a'
-                },
-                  {
-                    id: 'option-b',
-                    isChecked: false,
-                    label: 'option b',
-                    value: 'option-b'
-                  },
-                  {
-                    id: 'option-c',
-                    isChecked: false,
-                    label: 'option c',
-                    value: 'option-c'
-                  },
-                  {
-                    id: 'option-d',
-                    isChecked: false,
-                    label: 'option d',
-                    value: 'option-d'
-                  }]}/>
+              [{
+                id: 'option-a',
+                isChecked: true,
+                label: 'option a',
+                value: 'option-a'
+              },
+              {
+                id: 'option-b',
+                isChecked: false,
+                label: 'option b',
+                value: 'option-b'
+              },
+              {
+                id: 'option-c',
+                isChecked: false,
+                label: 'option c',
+                value: 'option-c'
+              },
+              {
+                id: 'option-d',
+                isChecked: false,
+                label: 'option d',
+                value: 'option-d'
+              }]} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
             <DatePicker
-              icon={<i className="fa fa-calendar" aria-hidden="true"/>}
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker"
               name="date-picker"
               isRequired
               requiredLabel="Required"
-              title="DatePicker"/>
+              title="DatePicker" />
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-8">
             <DatePicker
-              icon={<i className="fa fa-calendar" aria-hidden="true"/>}
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker-with-error"
               name="date-picker-with-error"
               error="Wrong Date"
               errorSubInfo="Maybe provide hints about Date Formats"
               isRequired
               requiredLabel="Required"
-              title="DatePicker with Error"/>
+              title="DatePicker with Error" />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -483,7 +487,7 @@ const App = ({location: {pathname, query}}) => (
                 {key: 'option1', value: 'Option 1'},
                 {key: 'option2', value: 'Option 2'},
                 {key: 'option3', value: 'Option 3'}
-              ]}/>
+              ]} />
           </div>
         </div>
 
@@ -498,7 +502,7 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               value="option"
-              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}}/>
+              items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
           </div>
         </div>
 
@@ -512,16 +516,16 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               value={13}
-              items={{10: 'New York', 13: 'Texas', 14: 'Arizona'}}/>
+              items={{10: 'New York', 13: 'Texas', 14: 'Arizona'}} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
             <Combobox
-              handle={<i className="fa fa-chevron-down" aria-hidden="true"/>}
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name"
               label="Combobox"
               id="name"
@@ -529,14 +533,14 @@ const App = ({location: {pathname, query}}) => (
               requiredLabel="Required"
               placeholder="Type m"
               keyName="name"
-              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']}/>
+              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-8">
             <Combobox
-              handle={<i className="fa fa-chevron-down" aria-hidden="true"/>}
+              handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
               name="name-error"
               label="Combobox with Error"
               id="name-error"
@@ -546,11 +550,11 @@ const App = ({location: {pathname, query}}) => (
               requiredLabel="Required"
               placeholder="Type m"
               keyName="name"
-              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']}/>
+              items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
@@ -567,190 +571,210 @@ const App = ({location: {pathname, query}}) => (
                   'Four',
                   <Link to="/playground/">Five</Link>
                 ]
-              }}/>
+              }} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-8">
             <Table
               defaultRowCount={2}
-              defaultTitleCount={2}/>
+              defaultTitleCount={2} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text={<i className="fa fa-calendar"/>}/>
+            <Button type="default" text={<i className="fa fa-calendar" />} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button"/>
+            <Button type="primary" text="Primary Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button"/>
+            <Button type="secondary" text="Secondary Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button"/>
+            <Button type="info" text="Info Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button"/>
+            <Button type="danger" text="Danger Button" />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button"/>
+            <Button type="link" text="Link Button" />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" disabled/>
+            <Button type="default" text="Default Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" disabled/>
+            <Button type="primary" text="Primary Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" disabled/>
+            <Button type="secondary" text="Secondary Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" disabled/>
+            <Button type="info" text="Info Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" disabled/>
+            <Button type="danger" text="Danger Button" disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" disabled/>
+            <Button type="link" text="Link Button" disabled />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" outline/>
+            <Button type="default" text="Default Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" outline/>
+            <Button type="primary" text="Primary Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" outline/>
+            <Button type="secondary" text="Secondary Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" outline/>
+            <Button type="info" text="Info Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" outline/>
+            <Button type="danger" text="Danger Button" outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" outline/>
+            <Button type="link" text="Link Button" outline />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="default" text="Default Button" outline disabled/>
+            <Button type="default" text="Default Button" outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="primary" text="Primary Button" outline disabled/>
+            <Button type="primary" text="Primary Button" outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="secondary" text="Secondary Button" outline disabled/>
+            <Button type="secondary" text="Secondary Button" outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="info" text="Info Button" outline disabled/>
+            <Button type="info" text="Info Button" outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="danger" text="Danger Button" outline disabled/>
+            <Button type="danger" text="Danger Button" outline disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="link" text="Link Button" outline disabled/>
+            <Button type="link" text="Link Button" outline disabled />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {
-            }} customTheme={styles.customThemeButton}/>
+            <Button
+              type="custom"
+              text="Custom Button"
+              onClick={() => {
+              }}
+              customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {
-            }} customTheme={styles.customThemeButton} disabled/>
+            <Button
+              type="custom"
+              text="Custom Button"
+              onClick={() => {
+              }}
+              customTheme={styles.customThemeButton}
+              disabled />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {
-            }} customTheme={styles.customThemeButton} outline/>
+            <Button
+              type="custom"
+              text="Custom Button"
+              onClick={() => {
+              }}
+              customTheme={styles.customThemeButton}
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {
-            }} customTheme={styles.customThemeButton} outline disabled/>
+            <Button
+              type="custom"
+              text="Custom Button"
+              onClick={() => {
+              }}
+              customTheme={styles.customThemeButton}
+              outline
+              disabled />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="default"
-              link={<Link to="/playground">Button Link</Link>}/>
+              link={<Link to="/playground">Button Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="primary"
               disabled
-              link={<Link to="/playground">Primary Link</Link>}/>
+              link={<Link to="/playground">Primary Link</Link>} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="secondary"
               link={<Link to="/playground">Secondary Link</Link>}
-              outline/>
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="info"
               link={<Link to="/playground/huhuh">Info Link</Link>}
               disabled
-              outline/>
+              outline />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="custom"
               link={<Link to="/playground">Danger Link</Link>}
-              customTheme={styles.customThemeButton}/>
+              customTheme={styles.customThemeButton} />
           </div>
           <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
             <Button
               type="link"
-              link={<Link to="/playground">Link Link</Link>}/>
+              link={<Link to="/playground">Link Link</Link>} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
-            <Button type="primary" text="Full width Button" fullWidth/>
+            <Button type="primary" text="Full width Button" fullWidth />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
-            <Button type="primary" text="Mobile Full width Button" mobileFullWidth/>
+            <Button type="primary" text="Mobile Full width Button" mobileFullWidth />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-10">
@@ -792,11 +816,11 @@ const App = ({location: {pathname, query}}) => (
                   label: 'Option F',
                   value: 'option-f'
                 }
-              ]}/>
+              ]} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-10">
@@ -823,11 +847,11 @@ const App = ({location: {pathname, query}}) => (
                   label: 'Option C',
                   value: 'option-c'
                 }
-              ]}/>
+              ]} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-10">
@@ -870,11 +894,11 @@ const App = ({location: {pathname, query}}) => (
                 }
               ]}
               optionsPerRow="3"
-              query={query}/>
+              query={query} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-10">
@@ -911,11 +935,11 @@ const App = ({location: {pathname, query}}) => (
                 }
               ]}
               optionsPerRow="3"
-              query={query}/>
+              query={query} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-10">
@@ -967,11 +991,11 @@ const App = ({location: {pathname, query}}) => (
                 }
               ]}
               optionsPerRow="5"
-              query={query}/>
+              query={query} />
           </div>
         </div>
 
-        <br/>
+        <br />
 
         <div className="row">
           <div className="col-md-4">
@@ -982,7 +1006,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               isRequired
               requiredLabel="Required"
-              name="text-field-grid"/>
+              name="text-field-grid" />
           </div>
           <div className="col-md-4">
             <TextField
@@ -991,18 +1015,18 @@ const App = ({location: {pathname, query}}) => (
               name="text-field-grid-password"
               isRequired
               requiredLabel="Required"
-              type="password"/>
+              type="password" />
           </div>
           <div className="col-md-4">
             <DatePicker
-              icon={<i className="fa fa-calendar" aria-hidden="true"/>}
+              icon={<i className="fa fa-calendar" aria-hidden="true" />}
               id="date-picker-grid-with-error"
               name="date-picker-grid-with-error"
               error="Wrong Date"
               errorSubInfo="Maybe provide hints about Date Formats"
               isRequired
               requiredLabel="Required"
-              title="DatePicker with Error"/>
+              title="DatePicker with Error" />
           </div>
         </div>
       </div>
@@ -1010,8 +1034,8 @@ const App = ({location: {pathname, query}}) => (
 
     <Notification
       message="Hello, I am a notification box"
-      icon={<i className="fa fa-check"/>}
-      visible/>
+      icon={<i className="fa fa-check" />}
+      visible />
   </div>
 );
 

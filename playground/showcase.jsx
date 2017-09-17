@@ -1,5 +1,7 @@
 import React from 'react';
+import {browserHistory, Route, Router} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
+import AllComponents from './components/allcomponents';
 // import Autocomplete from 'components/Autocomplete/index';
 // import Button from 'components/Button/index';
 // import Choice from 'components/Choice/index';
@@ -11,7 +13,7 @@ import MultipleChoice from 'components/MultipleChoice/index';
 // import Notification from 'components/Notification/index';
 // import Paginator from 'components/Paginator/index';
 // import Table from 'components/Table/index';
-// import Tabs from 'components/Tabs/index';
+import Tabs from 'components/Tabs/index';
 // import TextField from 'components/TextField/index';
 // import ToolTip from 'components/ToolTip/index';
 // import Select from 'components/Select/index';
@@ -161,6 +163,52 @@ export default ({
       title: 'Rating starts',
       wrapperStyle: {
         maxWidth: '50%'
+      }
+    },
+    {
+      center: true,
+      component: <Tabs items={[]} pathname="" />,
+      props: [
+        {
+          forceProps: true,
+          props: {
+            items: [
+              <a href="http://www.google.com">First tab</a>,
+              <span>Second tab</span>,
+              <span>Third tab</span>
+            ],
+            pathname: 'playground/tabs/tabs-plain'
+          },
+          slug: 'tabs-plain',
+          title: 'Tabs with plain text'
+        }
+      ],
+      slug: 'tabs',
+      title: 'Tabs',
+      wrapperStyle: {}
+    },
+    {
+      center: false,
+      component: (() => {
+        const routes = (
+          <Route path="/playground/all-components" component={AllComponents}>
+            <Route path="2" component={AllComponents} />
+            <Route path="3" component={AllComponents} />
+          </Route>
+        );
+        return (
+          <Router
+            routes={routes}
+            history={browserHistory} />
+        );
+      })(),
+      description: 'All nukleus together',
+      slug: 'all-components',
+      title: 'All together',
+      wrapperStyle: {
+        height: '100%',
+        overflowY: 'auto',
+        width: '100%'
       }
     },
     {
