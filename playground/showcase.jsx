@@ -107,60 +107,81 @@ export default ({
         <Stars name="star-name" />
       ),
       hide: false,
-      props: [
-        {
+      props: [].concat(
+        Array(6).fill(null).map((v, index) => ({
           forceProps: true,
           props: {
-            name: 'test-0',
+            name: `test-${index}`,
             selectable: true,
-            value: 0
+            value: index
           },
-          slug: 'simple-star-0',
-          title: 'Value 0'
-        },
+          slug: `simple-star-${index}`,
+          title: `${index} stars`
+        })),
         {
           forceProps: true,
           props: {
-            name: 'test-1',
-            selectable: true,
-            value: 3
-          },
-          slug: 'simple-star',
-          title: 'Value 3'
-        },
-        {
-          forceProps: true,
-          props: {
-            colors: ['red', 'green', 'blue', 'tomato', 'orange'],
-            name: 'test-2',
-            selectable: true,
-            value: 3
-          },
-          slug: 'color-star',
-          title: 'Value 3 with colours'
-        },
-        {
-          forceProps: true,
-          props: {
-            name: 'test-3',
+            colors: ['red', 'tomato', 'orange', 'blue', 'green'],
+            name: 'color-star',
             selectable: true,
             value: 5
           },
-          slug: 'color-star-5',
-          title: 'Value 5'
+          slug: 'color-stars',
+          title: '5, color stars'
         },
         {
-          description: 'buggy :( selectable false has an issue with the size',
           forceProps: true,
           props: {
-            name: 'test-4',
+            name: 'color-star-2-4',
+            selectable: true,
+            value: 2.5
+          },
+          slug: 'two-and-half-stars',
+          title: '2.5 stars'
+        },
+        {
+          forceProps: true,
+          props: {
+            name: 'test-unselectable',
+            selectable: false,
+            value: 3
+          },
+          slug: '3-unselectable',
+          title: '3 stars unselectable'
+        },
+        {
+          forceProps: true,
+          props: {
+            name: 'test-unselectable',
             selectable: false,
             value: 5
           },
-          slug: 'color-unselectable',
-          title: 'Value 5 unselectable'
+          slug: '5-unselectable',
+          title: '5 stars unselectable'
+        },
+        {
+          forceProps: true,
+          props: {
+            colors: ['red', 'tomato', 'orange', 'blue', 'green'],
+            name: 'test-unselectable',
+            selectable: false,
+            value: 3
+          },
+          slug: '3-color-unselectable',
+          title: '3 stars unselectable'
+        },
+        {
+          forceProps: true,
+          props: {
+            colors: ['red', 'tomato', 'orange', 'blue', 'green'],
+            name: 'test-unselectable',
+            selectable: false,
+            value: 5
+          },
+          slug: '5-color-unselectable',
+          title: '5 stars unselectable'
         }
-      ],
+      ),
       slug: 'stars',
       title: 'Rating starts',
       wrapperStyle: {
@@ -215,27 +236,27 @@ export default ({
       title: 'Tabs'
     },
     {
-      center: false,
-      component: (() => {
-        const routes = (
-          <Route path="/playground/all-components" component={AllComponents}>
-            <Route path="2" component={AllComponents} />
-            <Route path="3" component={AllComponents} />
-          </Route>
-        );
-        return (
-          <Router
-            routes={routes}
-            history={browserHistory} />
-        );
-      })(),
-      description: 'All nukleus together',
-      slug: 'all-components',
-      title: 'All together',
+      center: true,
+      component: (
+        <div />
+      ),
+      hide: true,
+      props: [
+        {
+          forceProps: true,
+          props: {
+            name: 'test-0',
+            selectable: true,
+            value: 0
+          },
+          slug: 'simple-star-0',
+          title: 'Value 0'
+        }
+      ],
+      slug: 'prototype!!!',
+      title: 'Rating starts',
       wrapperStyle: {
-        height: '100%',
-        overflowY: 'auto',
-        width: '100%'
+        maxWidth: '50%'
       }
     },
     {
@@ -261,6 +282,30 @@ export default ({
       title: 'Rating starts',
       wrapperStyle: {
         maxWidth: '50%'
+      }
+    },
+    {
+      center: false,
+      component: (() => {
+        const routes = (
+          <Route path="/playground/all-components" component={AllComponents}>
+            <Route path="2" component={AllComponents} />
+            <Route path="3" component={AllComponents} />
+          </Route>
+        );
+        return (
+          <Router
+            routes={routes}
+            history={browserHistory} />
+        );
+      })(),
+      description: 'All nukleus together',
+      slug: 'all-components',
+      title: 'All together',
+      wrapperStyle: {
+        height: '100%',
+        overflowY: 'auto',
+        width: '100%'
       }
     }
   ]
