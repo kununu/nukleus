@@ -97,8 +97,7 @@ export default ({
       slug: 'multipleChoice',
       title: 'Multiple choice',
       wrapperStyle: {
-        overflowY: 'auto',
-        width: '80%'
+        width: '90%'
       }
     },
     {
