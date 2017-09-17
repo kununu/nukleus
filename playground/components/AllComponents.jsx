@@ -248,8 +248,8 @@ const App = ({location: {pathname, query}}) => (
               value="purrr"
               query={query}
               onSelectSuggestion={suggestion => {
-                console.log('You have chosen ', suggestion);
-              }} // eslint-disable-line no-console
+                console.log('You have chosen ', suggestion); // eslint-disable-line no-console
+              }}
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete"
@@ -275,8 +275,8 @@ const App = ({location: {pathname, query}}) => (
               errorSubInfo="with useful hints"
               query={query}
               onSelectSuggestion={suggestion => {
-                console.log('You have chosen ', suggestion);
-              }} // eslint-disable-line no-console
+                console.log('You have chosen ', suggestion); // eslint-disable-line no-console
+              }}
               placeholder="Type something..."
               suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
               label="Autocomplete with Error"
