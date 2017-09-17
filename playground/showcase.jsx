@@ -19,6 +19,8 @@ import Tabs from 'components/Tabs/index';
 // import Select from 'components/Select/index';
 import Stars from 'components/Stars/index';
 
+import styles from './components/allcomponents.scss';
+
 import Logo from './Logo';
 import {multipleChoiceManyItems, multipleChoiceTwoItems} from './data/MultipleChoice';
 // import {
@@ -173,7 +175,7 @@ export default ({
           forceProps: true,
           props: {
             items: [
-              <a href="http://www.google.com">First tab</a>,
+              <span>First tab</span>,
               <span>Second tab</span>,
               <span>Third tab</span>
             ],
@@ -181,11 +183,36 @@ export default ({
           },
           slug: 'tabs-plain',
           title: 'Tabs with plain text'
+        },
+        {
+          forceProps: true,
+          props: {
+            items: [
+              <a href="/playground/tabs/tabs-plain">First tab</a>,
+              <a href="/playground/tabs/tabs-plain">Second tab</a>,
+              <a href="/playground/tabs/tabs-plain">Third tab</a>
+            ],
+            pathname: 'playground/tabs/tabs-links'
+          },
+          slug: 'tabs-links',
+          title: 'Tabs with links'
+        },
+        {
+          forceProps: true,
+          props: {
+            items: [
+              <a href="/playground/tabs/tabs-plain"><span className={styles.itemNumber}>1</span> First tab</a>,
+              <a href="/playground/tabs/tabs-plain"><span className={styles.itemNumber}>2</span> Second tab</a>,
+              <a href="/playground/tabs/tabs-plain"><span className={styles.itemNumber}>3</span> Third tab</a>
+            ],
+            pathname: 'playground/tabs/tabs-links-style'
+          },
+          slug: 'tabs-links-style',
+          title: 'Tabs with styled links'
         }
       ],
       slug: 'tabs',
-      title: 'Tabs',
-      wrapperStyle: {}
+      title: 'Tabs'
     },
     {
       center: false,
