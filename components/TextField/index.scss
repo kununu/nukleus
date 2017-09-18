@@ -12,3 +12,36 @@
 .textarea {
   resize: none;
 }
+
+.highlightOverlay {
+  margin-bottom: 0;
+  position: absolute;
+  z-index: 40;
+  top: 1px;
+  left: 1px;
+  bottom: 0;
+  height: auto;
+  background-color: #fff;
+  color: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  padding-bottom: 30px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: start;
+  vertical-align: text-bottom;
+  border: 0;
+
+  & + input {
+    margin: 0;
+    position: relative;
+    z-index: 50;
+    background-color: transparent;
+  }
+}
+
+.highlighted {
+  background-color: lighten($red, 90%);
+  border: 1px solid $red;
+  color: $red;
+}

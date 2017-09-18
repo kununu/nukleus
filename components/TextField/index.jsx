@@ -20,6 +20,8 @@ export default class TextField extends React.Component {
   static propTypes = {
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,
+    badwordsCallback: PropTypes.func,
+    badwordsList: PropTypes.object,
     disable: PropTypes.bool,
     displayLength: PropTypes.bool,
     error: PropTypes.string,
@@ -58,6 +60,8 @@ export default class TextField extends React.Component {
   static defaultProps = {
     autoComplete: 'off',
     autoFocus: false,
+    badwordsCallback: () => {},
+    badwordsList: null,
     disable: false,
     displayLength: false,
     error: null,
@@ -83,6 +87,7 @@ export default class TextField extends React.Component {
   };
 
   state = {
+    highlightedContent: '',
     showError: false,
     value: this.props.value || ''
   };
@@ -109,10 +114,35 @@ export default class TextField extends React.Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    this.updateValue(this.props.sanitizeValue(args[0].target.value));
+    const contents = args[0].target.value;
+
+    this.updateValue(this.props.sanitizeValue(contents));
     if (this.props.onChange) this.props.onChange(...args);
+
+    if (this.props.badwordsList) {
+      this.setState({
+        highlightedContent: this.getHighlightedContent(contents)
+      });
+    }
+
     this.hideError();
   };
+
+  getHighlightedContent = contents => {
+    const userInputArray = contents.split(/(\s+)/);
+    const {
+      badwordsList,
+      badwordsCallback
+    } = this.props;
+
+    return userInputArray.map(part => {
+      if (badwordsList[part]) {
+        badwordsCallback();
+        return <span className={styles.highlighted} key={part}>{part}</span>;
+      }
+      return part;
+    });
+  }
 
   needsUpdate ({value, query}) {
     return (
@@ -241,6 +271,7 @@ export default class TextField extends React.Component {
     const {
       autoComplete,
       autoFocus,
+      badwordsList,
       disable,
       displayLength,
       error,
@@ -263,8 +294,11 @@ export default class TextField extends React.Component {
       type
     } = this.props;
 
+    const highlightedContent = this.state.highlightedContent;
+
     return (
       <div className={this.containerClassNames}>
+        {this.state.highlightContent}
         <InfoLabel
           requiredLabel={requiredLabel}
           inputValue={this.state.value}
@@ -275,6 +309,12 @@ export default class TextField extends React.Component {
         {this.label}
 
         <div className={styles.inputContainer}>
+          {badwordsList ?
+            <div className={`${styles.highlightOverlay} ${this.textFieldClassNames}`}>
+              {highlightedContent}
+            </div>
+            : null
+          }
           {
             multiLine ?
               <textarea
