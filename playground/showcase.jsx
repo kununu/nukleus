@@ -114,8 +114,8 @@ export default ({
             selectable: true,
             value: index
           },
-          slug: `simple-star-${index}`,
-          title: `${index} stars`
+          slug: `simple-star-sel-${index}`,
+          title: `${index} selectable stars`
         })),
         {
           forceProps: true,
@@ -126,7 +126,7 @@ export default ({
             value: 5
           },
           slug: 'color-stars',
-          title: '5, color stars'
+          title: '5 color stars'
         },
         {
           forceProps: true,
@@ -137,6 +137,16 @@ export default ({
           },
           slug: 'two-and-half-stars',
           title: '2.5 stars'
+        },
+        {
+          forceProps: true,
+          props: {
+            name: 'color-star-2-4',
+            selectable: false,
+            value: 2.5
+          },
+          slug: 'two-and-half-stars-unselectable',
+          title: '2.5 stars unselectable'
         },
         {
           forceProps: true,
