@@ -224,7 +224,7 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <form onSubmit={console.log('HI')}>
+            <form>
               <Autocomplete
                 autoFocus
                 data={{
@@ -283,7 +283,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               isRequired
-              badwordsList={{test: 'test'}}
+              badwordsList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
               requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
@@ -352,6 +352,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField (multiLine)"
               name="text-area"
               multiLine
+              badwordsList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
               query={query} />
           </div>
         </div>
