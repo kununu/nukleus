@@ -1,3 +1,5 @@
+/* eslint "react/no-array-index-key": 0 */
+
 // Read more about controlled components
 // https://facebook.github.io/react/docs/forms.html#controlled-components
 import React from 'react';
@@ -129,16 +131,17 @@ export default class TextField extends React.Component {
   };
 
   getHighlightedContent = contents => {
-    const userInputArray = contents.split(/(\s+)/);
+    const contentRegex = /(\s+)/;
+    const userInputArray = contents.split(contentRegex);
     const {
       badwordsList,
       badwordsCallback
     } = this.props;
 
-    return userInputArray.map(part => {
+    return userInputArray.map((part, i) => {
       if (badwordsList[part]) {
         badwordsCallback();
-        return <span className={styles.highlighted} key={part}>{part}</span>;
+        return <span className={styles.highlighted} key={i}>{part}</span>;
       }
       return part;
     });

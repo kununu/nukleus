@@ -21,8 +21,6 @@
   left: 1px;
   bottom: 0;
   height: auto;
-  background-color: #fff;
-  color: transparent;
   pointer-events: none;
   overflow: hidden;
   padding-bottom: 30px;
@@ -31,17 +29,29 @@
   text-align: start;
   vertical-align: text-bottom;
   border: 0;
+  background-color: transparent;
+  color: transparent;
 
-  & + input {
+  & + input,
+  & + textarea {
     margin: 0;
     position: relative;
-    z-index: 50;
     background-color: transparent;
   }
 }
 
 .highlighted {
-  background-color: lighten($red, 90%);
-  border: 1px solid $red;
+  background-color: rgba($red, .1);
   color: $red;
+  padding: 2px;
+  top: 2px;
+  margin: -2px;
+  line-height: 0;
+  position: relative;
+}
+
+.highlightOverlay.textarea {
+  .highlighted {
+    position: static;
+  }
 }
