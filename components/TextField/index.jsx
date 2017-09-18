@@ -133,13 +133,14 @@ export default class TextField extends React.Component {
   getHighlightedContent = contents => {
     const contentRegex = /(\s+)/;
     const userInputArray = contents.split(contentRegex);
+
     const {
       badwordsList,
       badwordsCallback
     } = this.props;
 
     return userInputArray.map((part, i) => {
-      if (badwordsList[part]) {
+      if (badwordsList[part.toLowerCase()]) {
         badwordsCallback();
         return <span className={styles.highlighted} key={i}>{part}</span>;
       }
