@@ -1,5 +1,8 @@
 {
   "name": "nukleus",
+  "engines": {
+    "npm": ">=5.0.0"
+  },
   "jest": {
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy",
@@ -42,6 +45,7 @@
     "bootstrap-sass": "3.3.7",
     "cross-env": "5.0.1",
     "css-loader": "0.28.4",
+    "dyna-react-component-showcase": "^0.3.1",
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
     "eslint": "3.19.0",
@@ -56,6 +60,7 @@
     "file-loader": "0.11.2",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "^0.0.5-beta.2",
+    "history": "3.3.0",
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "18.0.0",
@@ -92,7 +97,7 @@
     "react-dom": ">=15.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
+    "start": "webpack-dev-server --inline --hot --open",
     "babel": "babel ./components --out-dir ./dist/components && babel ./utils --out-dir ./dist/utils",
     "presass": "node-sass ./components --output ./dist/components --importer node_modules/node-sass-module-importer",
     "sass": "postcss dist/components/**/*.css --replace --use autoprefixer --no-map",
@@ -100,7 +105,7 @@
     "build": "cross-env NODE_ENV=dist npm run babel",
     "eslint": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint ./components ./playground ./tests --max-warnings 0 --ext jsx --ext js --fix",
-    "prepublish": "in-publish && npm run dist",
+    "prepublishOnly": "npm run dist",
     "clean": "rimraf ./dist",
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",

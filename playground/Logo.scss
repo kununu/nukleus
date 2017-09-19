@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  padding: 4px 20px 20px 14px;
+  background-color: lightgray;
+}
+
+.logo {
+  font-size: 50px;
+  padding-right: 16px;
+  transform: rotate(-90deg);
+}
+
+.line1 {
+  font-weight: bold;
+  position: relative;
+  top: 14px;
+  font-size: 20px;
+}
+
+.line2 {
+  font-style: italic;
+  font-size: 30px;
+  position: relative;
+  top: 3px;
+  left: 13px;
+}

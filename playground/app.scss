@@ -1,28 +1,16 @@
-@import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/mixins';
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
 
-@import 'components/Button/index';
+  > div {
+    height: 100%;
 
-input:checked + label.customThemeChoice {
-  &,
-  &:hover {
-    background: #2286dc;
+    > div {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      height: 100%;
+    }
   }
-}
-
-label.customThemeChoice {
-  background: #fffaec;
-
-  &:hover {
-    background: #778992;
-  }
-
-  .customThemeButton {
-    @include button-default(#cc0, #c90);
-    @include button-outline(#fff, #c90);
-  }
-}
-
-.itemNumber {
-  font-weight: $font-weight-regular;
 }
