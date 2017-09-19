@@ -91,6 +91,7 @@ export default class TextField extends React.Component {
   state = {
     highlightedContent: '',
     showError: false,
+    textAreaHeight: '1',
     value: this.props.value || ''
   };
 
@@ -116,19 +117,35 @@ export default class TextField extends React.Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    const contents = args[0].target.value;
-
-    this.updateValue(this.props.sanitizeValue(contents));
+    const target = args[0].target;
+    this.updateValue(this.props.sanitizeValue(target.value));
     if (this.props.onChange) this.props.onChange(...args);
+
 
     if (this.props.badwordsList) {
       this.setState({
-        highlightedContent: this.getHighlightedContent(contents)
+        highlightedContent: this.getHighlightedContent(target.value)
       });
+
+      // In order to show the bad words correctly in a textarea
+      // we need to disable scrolling and expand the textarea
+      // dynamically.
+      if (this.props.multiLine) this.setDynamicTextAreaHeight(target);
     }
 
     this.hideError();
   };
+
+  setDynamicTextAreaHeight = target => {
+    const oldHeight = Number(this.state.textAreaHeight);
+    const currentHeight = target.scrollHeight;
+    // Fix so when you backspace it will reduce the correct height
+    const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
+
+    this.setState({
+      textAreaHeight: newHeight
+    });
+  }
 
   getHighlightedContent = contents => {
     const contentRegex = /(\s+)/;
@@ -223,11 +240,16 @@ export default class TextField extends React.Component {
    * @return {string} [list of classNames split by space]
    */
   get textFieldClassNames () {
-    const {multiLine} = this.props;
+    const {
+      multiLine,
+      badwordsList
+    } = this.props;
     const classNames = [formControl];
 
     // Check if textarea styles need to be added
     if (multiLine) classNames.push(styles.textarea);
+
+    if (multiLine && badwordsList) classNames.push(styles.dynamicHeight);
 
     // Check if error styles need to be added
     if (this.hasError()) classNames.push(formControlError);
@@ -336,6 +358,7 @@ export default class TextField extends React.Component {
                 required={isRequired}
                 ref={reference}
                 rows={rows}
+                style={{height: `${this.state.textAreaHeight}px`}}
                 value={this.state.value} /> :
               <input
                 autoComplete={autoComplete}

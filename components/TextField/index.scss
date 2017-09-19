@@ -11,6 +11,11 @@
 
 .textarea {
   resize: none;
+
+  &.dynamicHeight {
+    min-height: 134px;
+    overflow-y: 'hidden';
+  }
 }
 
 .highlightOverlay {
