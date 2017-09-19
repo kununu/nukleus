@@ -17,6 +17,7 @@ import TextField from 'components/TextField';
 import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import ModalComponent from 'playground/ModalImpl';
 import {
   controlLabel
 } from 'components/index.scss';
@@ -27,6 +28,8 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
+        <ModalComponent />
+        <div />
 
         <div className="row">
           <div className="col-md-8">
