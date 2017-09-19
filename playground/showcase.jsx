@@ -51,45 +51,45 @@ export default ({
       props: [
         {
           description: `${multipleChoiceTwoItems.length} options`,
-          forceProps: true,
           props: {
             choices: multipleChoiceTwoItems,
             heading: 'Multiple Choice - Buttons',
             inputStyle: 'buttons'
           },
+          redraw: true,
           slug: 'multipleChoiceManyItems-buttons-two-items',
           title: 'with two items'
         },
         {
           description: `${multipleChoiceManyItems.length} options`,
-          forceProps: true,
           props: {
             choices: multipleChoiceManyItems,
             heading: 'Multiple Choice - Buttons',
             inputStyle: 'buttons'
           },
+          redraw: true,
           slug: 'multipleChoiceManyItems-buttons-many-items',
           title: 'with many items'
         },
         {
           description: `${multipleChoiceTwoItems.length} options`,
-          forceProps: true,
           props: {
             choices: multipleChoiceTwoItems,
             heading: 'Multiple Choice - In Line',
             inputStyle: 'inline'
           },
+          redraw: true,
           slug: 'multipleChoiceManyItems-inline-two-items',
           title: 'with two items'
         },
         {
           description: `${multipleChoiceManyItems.length} options`,
-          forceProps: true,
           props: {
             choices: multipleChoiceManyItems,
             heading: 'Multiple Choice - In Line',
             inputStyle: 'inline'
           },
+          redraw: true,
           slug: 'multipleChoiceManyItems-inline-many-items',
           title: 'with many items'
         }
@@ -108,85 +108,85 @@ export default ({
       hide: false,
       props: [].concat(
         Array(6).fill(null).map((v, index) => ({
-          forceProps: true,
           props: {
             name: `test-${index}`,
             selectable: true,
             value: index
           },
+          redraw: true,
           slug: `simple-star-sel-${index}`,
           title: `${index} selectable stars`
         })),
         {
-          forceProps: true,
           props: {
             colors: ['red', 'tomato', 'orange', 'blue', 'green'],
             name: 'color-star',
             selectable: true,
             value: 5
           },
+          redraw: true,
           slug: 'color-stars',
           title: '5 color stars'
         },
         {
-          forceProps: true,
           props: {
             name: 'color-star-2-4',
             selectable: true,
             value: 2.5
           },
+          redraw: true,
           slug: 'two-and-half-stars',
           title: '2.5 stars'
         },
         {
-          forceProps: true,
           props: {
             name: 'color-star-2-4',
             selectable: false,
             value: 2.5
           },
+          redraw: true,
           slug: 'two-and-half-stars-unselectable',
           title: '2.5 stars unselectable'
         },
         {
-          forceProps: true,
           props: {
             name: 'test-unselectable',
             selectable: false,
             value: 3
           },
+          redraw: true,
           slug: '3-unselectable',
           title: '3 stars unselectable'
         },
         {
-          forceProps: true,
           props: {
             name: 'test-unselectable',
             selectable: false,
             value: 5
           },
+          redraw: true,
           slug: '5-unselectable',
           title: '5 stars unselectable'
         },
         {
-          forceProps: true,
           props: {
             colors: ['red', 'tomato', 'orange', 'blue', 'green'],
             name: 'test-unselectable',
             selectable: false,
             value: 3
           },
+          redraw: true,
           slug: '3-color-unselectable',
           title: '3 stars unselectable'
         },
         {
-          forceProps: true,
           props: {
             colors: ['red', 'tomato', 'orange', 'blue', 'green'],
             name: 'test-unselectable',
             selectable: false,
             value: 5
           },
+          redraw: true,
           slug: '5-color-unselectable',
           title: '5 stars unselectable'
         }
@@ -202,7 +202,6 @@ export default ({
       component: <Tabs items={[]} pathname="" />,
       props: [
         {
-          forceProps: true,
           props: {
             items: [
               <span>First tab</span>,
@@ -211,11 +210,11 @@ export default ({
             ],
             pathname: 'playground/tabs/tabs-plain'
           },
+          redraw: true,
           slug: 'tabs-plain',
           title: 'Tabs with plain text'
         },
         {
-          forceProps: true,
           props: {
             items: [
               <a href="/playground/tabs/tabs-plain">First tab</a>,
@@ -224,11 +223,11 @@ export default ({
             ],
             pathname: 'playground/tabs/tabs-links'
           },
+          redraw: true,
           slug: 'tabs-links',
           title: 'Tabs with links'
         },
         {
-          forceProps: true,
           props: {
             items: [
               <a href="/playground/tabs/tabs-plain"><span className={styles.itemNumber}>1</span> First tab</a>,
@@ -237,6 +236,7 @@ export default ({
             ],
             pathname: 'playground/tabs/tabs-links-style'
           },
+          redraw: true,
           slug: 'tabs-links-style',
           title: 'Tabs with styled links'
         }
@@ -267,7 +267,6 @@ export default ({
               <div>Items starts with meow</div>
             </div>
           ),
-          forceProps: true,
           props: {
             data: {
               items: [
@@ -279,6 +278,7 @@ export default ({
             placeholder: 'Type something...',
             value: ''
           },
+          redraw: true,
           slug: 'autocomplete-simple',
           title: 'Autocomplete with items only'
         },
@@ -293,7 +293,6 @@ export default ({
               <div>Items starts with meow</div>
             </div>
           ),
-          forceProps: true,
           props: {
             autoFocus: true,
             data: {
@@ -310,6 +309,7 @@ export default ({
             suggestionsFooter: <a>No suggestions found?</a>,
             value: 'purrr'
           },
+          redraw: true,
           slug: 'autocomplete-full',
           title: 'Autocomplete with all features (see props)'
         }
@@ -326,12 +326,12 @@ export default ({
       hide: true,
       props: [
         {
-          forceProps: true,
           props: {
             name: 'test-0',
             selectable: true,
             value: 0
           },
+          redraw: true,
           slug: 'simple-star-0',
           title: 'Value 0'
         }
