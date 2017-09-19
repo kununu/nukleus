@@ -367,6 +367,8 @@ const App = ({location: {pathname, query}}) => (
               maxLength={120}
               displayLength
               inputStyle="inline mediumSize"
+              minHeight={80}
+              badwordsList={{fuck: 'fuck'}}
               multiLine
               query={query} />
           </div>

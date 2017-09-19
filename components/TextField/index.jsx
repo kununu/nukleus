@@ -37,6 +37,7 @@ export default class TextField extends React.Component {
     ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
+    minHeight: PropTypes.number,
     multiLine: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
@@ -72,6 +73,7 @@ export default class TextField extends React.Component {
     isRequired: false,
     labelHidden: false,
     maxLength: 500,
+    minHeight: null,
     multiLine: false,
     onBlur: () => {},
     onChange: null,
@@ -91,7 +93,7 @@ export default class TextField extends React.Component {
   state = {
     highlightedContent: '',
     showError: false,
-    textAreaHeight: '1',
+    textAreaHeight: null,
     value: this.props.value || ''
   };
 
@@ -257,6 +259,24 @@ export default class TextField extends React.Component {
     return classNames.join(' ');
   }
 
+  /**
+   * determines which styles should be applied to the textarea
+   *
+   * @return {object} [object with camelCased properties]
+   */
+  textAreaStyles = () => {
+    const {
+      badwordsList,
+      minHeight
+    } = this.props;
+    const textAreaStyles = {};
+
+    if (badwordsList && minHeight) textAreaStyles.minHeight = minHeight;
+    if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
+
+    return textAreaStyles;
+  }
+
   hasError () {
     return this.state.showError && this.props.error;
   }
@@ -358,7 +378,7 @@ export default class TextField extends React.Component {
                 required={isRequired}
                 ref={reference}
                 rows={rows}
-                style={{height: `${this.state.textAreaHeight}px`}}
+                style={this.textAreaStyles()}
                 value={this.state.value} /> :
               <input
                 autoComplete={autoComplete}
