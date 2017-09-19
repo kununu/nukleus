@@ -282,7 +282,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               isRequired
-              badwordsList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
+              highlightList={{bad: 'bad', fuck: 'fuck', shit: 'shit', test: 'test'}}
               requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
@@ -351,7 +351,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField (multiLine)"
               name="text-area"
               multiLine
-              badwordsList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
+              highlightList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
               query={query} />
           </div>
         </div>
@@ -368,7 +368,7 @@ const App = ({location: {pathname, query}}) => (
               displayLength
               inputStyle="inline mediumSize"
               minHeight={80}
-              badwordsList={{fuck: 'fuck'}}
+              highlightList={{fuck: 'fuck'}}
               multiLine
               query={query} />
           </div>

@@ -22,12 +22,11 @@ export default class TextField extends React.Component {
   static propTypes = {
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,
-    badwordsCallback: PropTypes.func,
-    badwordsList: PropTypes.object,
     disable: PropTypes.bool,
     displayLength: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
+    highlightList: PropTypes.object,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -43,6 +42,7 @@ export default class TextField extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    onHighlight: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
@@ -63,12 +63,11 @@ export default class TextField extends React.Component {
   static defaultProps = {
     autoComplete: 'off',
     autoFocus: false,
-    badwordsCallback: () => {},
-    badwordsList: null,
     disable: false,
     displayLength: false,
     error: null,
     errorSubInfo: null,
+    highlightList: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
@@ -78,6 +77,7 @@ export default class TextField extends React.Component {
     onBlur: () => {},
     onChange: null,
     onFocus: () => {},
+    onHighlight: () => {},
     pattern: '',
     placeholder: '',
     query: {},
@@ -124,7 +124,7 @@ export default class TextField extends React.Component {
     if (this.props.onChange) this.props.onChange(...args);
 
 
-    if (this.props.badwordsList) {
+    if (this.props.highlightList) {
       this.setState({
         highlightedContent: this.getHighlightedContent(target.value)
       });
@@ -154,13 +154,13 @@ export default class TextField extends React.Component {
     const userInputArray = contents.split(contentRegex);
 
     const {
-      badwordsList,
-      badwordsCallback
+      highlightList,
+      onHighlight
     } = this.props;
 
     return userInputArray.map((part, i) => {
-      if (badwordsList[part.toLowerCase()]) {
-        badwordsCallback();
+      if (highlightList[part.toLowerCase()]) {
+        onHighlight();
         return <span className={styles.highlighted} key={i}>{part}</span>;
       }
       return part;
@@ -244,14 +244,14 @@ export default class TextField extends React.Component {
   get textFieldClassNames () {
     const {
       multiLine,
-      badwordsList
+      highlightList
     } = this.props;
     const classNames = [formControl];
 
     // Check if textarea styles need to be added
     if (multiLine) classNames.push(styles.textarea);
 
-    if (multiLine && badwordsList) classNames.push(styles.dynamicHeight);
+    if (multiLine && highlightList) classNames.push(styles.dynamicHeight);
 
     // Check if error styles need to be added
     if (this.hasError()) classNames.push(formControlError);
@@ -266,12 +266,12 @@ export default class TextField extends React.Component {
    */
   textAreaStyles = () => {
     const {
-      badwordsList,
+      highlightList,
       minHeight
     } = this.props;
     const textAreaStyles = {};
 
-    if (badwordsList && minHeight) textAreaStyles.minHeight = minHeight;
+    if (highlightList && minHeight) textAreaStyles.minHeight = minHeight;
     if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
 
     return textAreaStyles;
@@ -317,7 +317,7 @@ export default class TextField extends React.Component {
     const {
       autoComplete,
       autoFocus,
-      badwordsList,
+      highlightList,
       disable,
       displayLength,
       error,
@@ -355,7 +355,7 @@ export default class TextField extends React.Component {
         {this.label}
 
         <div className={styles.inputContainer}>
-          {badwordsList ?
+          {highlightList ?
             <div className={`${styles.highlightOverlay} ${this.textFieldClassNames}`}>
               {highlightedContent}
             </div>
