@@ -2,7 +2,6 @@ exports[`test Badwords should highlight correctly 1`] = `
 <TextField
   autoComplete="off"
   autoFocus={false}
-  badwordsCallback={[Function]}
   badwordsList={
     Object {
       "bad": "bad",
@@ -13,6 +12,7 @@ exports[`test Badwords should highlight correctly 1`] = `
   displayLength={false}
   error={null}
   errorSubInfo={null}
+  highlightList={null}
   id="text-field"
   inputStyle="inline"
   isRequired={false}
@@ -43,11 +43,13 @@ exports[`test Badwords should highlight correctly 1`] = `
   }
   labelHidden={false}
   maxLength={500}
+  minHeight={null}
   multiLine={true}
   name="text-field"
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onHighlight={[Function]}
   pattern=""
   placeholder=""
   query={Object {}}
@@ -114,26 +116,6 @@ exports[`test Badwords should highlight correctly 1`] = `
     </span>
     <div
       className="inputContainer">
-      <div
-        className="highlightOverlay formControl textarea">
-        These
-         
-        are
-         
-        some
-         
-        really
-         
-        <span
-          className="highlighted">
-          bad
-        </span>
-         
-        <span
-          className="highlighted">
-          words
-        </span>
-      </div>
       <textarea
         autoFocus={false}
         className="formControl textarea"
@@ -148,6 +130,7 @@ exports[`test Badwords should highlight correctly 1`] = `
         placeholder=""
         required={false}
         rows={5}
+        style={Object {}}
         value="These are some really bad words" />
     </div>
   </div>
@@ -158,23 +141,24 @@ exports[`test Changes output on value change manipulation 1`] = `
 <TextField
   autoComplete="off"
   autoFocus={false}
-  badwordsCallback={[Function]}
-  badwordsList={null}
   disable={false}
   displayLength={false}
   error={null}
   errorSubInfo={null}
+  highlightList={null}
   id="text-field"
   inputStyle="inline"
   isRequired={true}
   label="TextField"
   labelHidden={false}
   maxLength={500}
+  minHeight={null}
   multiLine={false}
   name="text-field"
   onBlur={[Function]}
   onChange={null}
   onFocus={[Function]}
+  onHighlight={[Function]}
   pattern=""
   placeholder=""
   query={Object {}}
@@ -336,6 +320,7 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
       placeholder=""
       required={true}
       rows={5}
+      style={Object {}}
       value="test2" />
   </div>
 </div>
@@ -455,6 +440,7 @@ exports[`test Renders a medium size Textfield with multiline without crashing 1`
       placeholder=""
       required={false}
       rows={5}
+      style={Object {}}
       value="" />
   </div>
 </div>
