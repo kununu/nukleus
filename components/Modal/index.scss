@@ -1,0 +1,65 @@
+@import '~kununu-theme/scss/base/variables';
+
+.modal {
+  background: $white;
+  z-index: 10;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .3);
+  min-width: 400px;
+
+  & > header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: .1px solid $gray-base-20;
+  }
+
+  & > footer {
+    text-align: right;
+    padding: 15px 10px;
+
+    & > button {
+      min-width: 100px;
+      margin-left: 5px;
+    }
+  }
+
+}
+
+.modalTitle {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: normal;
+}
+
+.modalBody {
+  padding: 10px;
+}
+
+.closeButton {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    svg {
+      fill: $blue-lighter;
+    }
+  }
+}
+
+.closeIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  stroke: none;
+  fill: $blue;
+}
