@@ -158,7 +158,7 @@ const App = ({location: {pathname, query}}) => (
         <br />
 
         <div className="row">
-          <div className="col-xs-12 col-sm-5 col-md-2">
+          <div className="col-xs-12 col-sm-5 col-md-4">
             <Stars
               value={3}
               name="test"
@@ -249,7 +249,6 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
-              autoFocus
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
@@ -462,7 +461,11 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               value="option"
-              items={[{key: 'test', value: 'test'}]} />
+              items={[
+                {key: 'option1', value: 'Option 1'},
+                {key: 'option2', value: 'Option 2'},
+                {key: 'option3', value: 'Option 3'}
+              ]} />
           </div>
         </div>
 
@@ -478,6 +481,20 @@ const App = ({location: {pathname, query}}) => (
               requiredLabel="Required"
               value="option"
               items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Select
+              title="Select Sorted"
+              name="select-error"
+              id="select-error"
+              sort={(current, next) => current.value.localeCompare(next.value)}
+              isRequired
+              requiredLabel="Required"
+              value={13}
+              items={{10: 'New York', 13: 'Texas', 14: 'Arizona'}} />
           </div>
         </div>
 
