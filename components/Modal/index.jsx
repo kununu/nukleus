@@ -9,31 +9,70 @@ import Button from '../Button';
 export default class Modal extends React.Component {
 
   static propTypes = {
+    actionText: PropTypes.string,
+    cancelText: PropTypes.string,
     children: PropTypes.element.isRequired,
-    onClose: PropTypes.func.isRequired,
-    onSuccess: PropTypes.func.isRequired,
+    onAction: PropTypes.func,
+    onCancel: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     titleText: PropTypes.string.isRequired
   }
 
   static defaultProps = {
+    actionText: '',
+    cancelText: '',
     focusDialog: true,
+    initialFocus: '#nukleus-modal-close',
+    onAction: () => {},
     verticallyCenter: true
   };
+
+  onAction = ev => {
+    this.props.onAction(ev);
+  }
+
+  onCancel = ev => {
+    this.props.onCancel(ev);
+  }
+
+  renderFooter () {
+    const {
+      actionText,
+      cancelText
+    } = this.props;
+
+    if (actionText || cancelText) {
+      return (
+        <footer className={styles.modalFooter}>
+          {actionText && <Button
+            type="primary"
+            text={actionText}
+            onClick={this.props.onAction} />}
+          {cancelText && <Button
+            type="secondary"
+            text={cancelText}
+            onClick={this.props.onCancel} />}
+        </footer>
+      );
+    }
+
+    return null;
+  }
 
   render () {
     return (
       this.props.open ? <AriaModal
         {...this.props}>
         <section className={styles.modal}>
-          <header>
+          <header className={styles.modalHeader}>
             <span className={styles.modalTitle}>
               {this.props.titleText}
             </span>
 
             <button
+              id="nukleus-modal-close"
               className={styles.closeButton}
-              onClick={this.props.onClose}>
+              onClick={this.props.onCancel}>
               <span role="presentation">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,16 +89,7 @@ export default class Modal extends React.Component {
             </button>
           </header>
           <div className={styles.modalBody}>{this.props.children}</div>
-          <footer className={styles.modalFooter}>
-            <Button
-              type="primary"
-              text="Annehmen"
-              onClick={this.props.onSuccess} />
-            <Button
-              type="secondary"
-              text="Abbrechen"
-              onClick={this.props.onClose} />
-          </footer>
+          {this.renderFooter()}
         </section>
       </AriaModal> : null
     );
