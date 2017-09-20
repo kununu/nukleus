@@ -6,8 +6,7 @@ exports[`test Renders Modal without crashing 1`] = `
   onAction={[Function]}
   onExit={[Function]}
   open={true}
-  titleText="Modal"
-  verticallyCenter={true}>
+  titleText="Modal">
   <Displaced
     actionText="Ok"
     cancelText="Cancel"
@@ -18,6 +17,7 @@ exports[`test Renders Modal without crashing 1`] = `
     onExit={[Function]}
     open={true}
     titleText="Modal"
+    underlayClass="underlay underlayHasEntered"
     verticallyCenter={true} />
 </Modal>
 `;

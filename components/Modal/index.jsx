@@ -10,8 +10,14 @@ import Button from '../Button';
 export default class Modal extends React.Component {
 
   static propTypes = {
-    actionText: PropTypes.string,
-    cancelText: PropTypes.string,
+    actionText: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]),
+    cancelText: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]),
     children: PropTypes.element.isRequired,
     closeText: PropTypes.string,
     onAction: PropTypes.func, // This should be a promise, so that onExit can be executed on success (nicer animation)
@@ -24,12 +30,11 @@ export default class Modal extends React.Component {
     actionText: '',
     cancelText: '',
     closeText: 'Close',
-    onAction: () => {},
-    verticallyCenter: true
+    onAction: () => {}
   };
 
   state = {
-    modalHasEntered: false
+    isOpen: false
   };
 
   onAction = ev => {
@@ -40,17 +45,17 @@ export default class Modal extends React.Component {
   onExit = ev => {
     // First set state for nicer animation
     this.setState({
-      modalHasEntered: false
+      isOpen: false
     }, () => {
       setTimeout(() => {
         // Call parent onExit
         this.props.onExit(ev);
-      }, 300);
+      }, 250); // Time until animation has finished
     });
   }
 
   onModalEnter = () => {
-    this.setState({modalHasEntered: true});
+    this.setState({isOpen: true});
   }
 
   renderFooter () {
@@ -78,15 +83,20 @@ export default class Modal extends React.Component {
   }
 
   render () {
+    const overrideProps = {
+      ...this.props,
+      verticallyCenter: true // here we override react-aria-modal defaults
+    };
+
     return (
       this.props.open ? <AriaModal
-        {...this.props}
+        {...overrideProps}
         onExit={this.onExit}
         underlayClass={
           classNames(
             styles.underlay,
             {
-              [styles.underlayHasEntered]: this.state.modalHasEntered
+              [styles.underlayHasEntered]: this.state.isOpen
             }
           )
         }
@@ -95,7 +105,7 @@ export default class Modal extends React.Component {
           classNames(
             styles.modal,
             {
-              [styles.modalHasEntered]: this.state.modalHasEntered
+              [styles.isOpen]: this.state.isOpen
             }
           )}>
           <header className={styles.modalHeader}>
