@@ -1,0 +1,8 @@
+static defaultProps = {
+  actionText: '',
+  cancelText: '',
+  focusDialog: true,
+  initialFocus: '#nukleus-modal-close',
+  onAction: () => {},
+  verticallyCenter: true
+};
