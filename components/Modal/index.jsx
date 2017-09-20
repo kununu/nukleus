@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
+import classNames from 'classnames';
 
 import styles from './index.scss';
 
@@ -13,7 +14,7 @@ export default class Modal extends React.Component {
     cancelText: PropTypes.string,
     children: PropTypes.element.isRequired,
     closeText: PropTypes.string,
-    onAction: PropTypes.func,
+    onAction: PropTypes.func, // This should be a promise, so that onExit can be executed on success (nicer animation)
     onExit: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     titleText: PropTypes.string.isRequired
@@ -27,12 +28,29 @@ export default class Modal extends React.Component {
     verticallyCenter: true
   };
 
+  state = {
+    modalHasEntered: false
+  };
+
   onAction = ev => {
-    this.props.onAction(ev);
+    this.props.onAction(ev)
+      .then(() => this.onExit());
   }
 
   onExit = ev => {
-    this.props.onExit(ev);
+    // First set state for nicer animation
+    this.setState({
+      modalHasEntered: false
+    }, () => {
+      setTimeout(() => {
+        // Call parent onExit
+        this.props.onExit(ev);
+      }, 300);
+    });
+  }
+
+  onModalEnter = () => {
+    this.setState({modalHasEntered: true});
   }
 
   renderFooter () {
@@ -47,11 +65,11 @@ export default class Modal extends React.Component {
           {actionText && <Button
             type="primary"
             text={actionText}
-            onClick={this.props.onAction} />}
+            onClick={this.onAction} />}
           {cancelText && <Button
             type="secondary"
             text={cancelText}
-            onClick={this.props.onExit} />}
+            onClick={this.onExit} />}
         </footer>
       );
     }
@@ -62,8 +80,24 @@ export default class Modal extends React.Component {
   render () {
     return (
       this.props.open ? <AriaModal
-        {...this.props}>
-        <section className={styles.modal}>
+        {...this.props}
+        onExit={this.onExit}
+        underlayClass={
+          classNames(
+            styles.underlay,
+            {
+              [styles.underlayHasEntered]: this.state.modalHasEntered
+            }
+          )
+        }
+        onEnter={this.onModalEnter}>
+        <section className={
+          classNames(
+            styles.modal,
+            {
+              [styles.modalHasEntered]: this.state.modalHasEntered
+            }
+          )}>
           <header className={styles.modalHeader}>
             <span className={styles.modalTitle}>
               {this.props.titleText}
@@ -71,7 +105,7 @@ export default class Modal extends React.Component {
             <button
               type="button"
               className={styles.closeButton}
-              onClick={this.props.onExit}>
+              onClick={this.onExit}>
               <span role="presentation">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Modal from 'components/Modal';
-import Button from 'components/Button';
+import Modal from '../../components/Modal';
+import Button from '../../components/Button';
 
 export default class ModalImplementation extends React.Component {
   constructor (props) {
@@ -12,6 +12,16 @@ export default class ModalImplementation extends React.Component {
     };
   }
 
+  onAction = () => new Promise(resolve => {
+    this.setState({
+      success: true
+    }, resolve);
+  });
+
+  onExit = () => {
+    this.setState({modalOpen: false});
+  }
+
   render () {
     return (
       <div>
@@ -19,6 +29,7 @@ export default class ModalImplementation extends React.Component {
         <Button
           type="primary"
           text="Open Modal"
+          id="toggle-modal"
           onClick={() => this.setState({modalOpen: true})} />
         <Modal
           titleText="dafuq"
@@ -26,11 +37,8 @@ export default class ModalImplementation extends React.Component {
           state={this.state}
           actionText="Ok"
           cancelText="Cancel"
-          onExit={() => this.setState({modalOpen: false})}
-          onAction={() => this.setState({
-            modalOpen: false,
-            success: true
-          })}>
+          onExit={this.onExit}
+          onAction={this.onAction}>
           <p>O rly ?</p>
         </Modal>
       </div>

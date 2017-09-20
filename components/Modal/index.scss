@@ -5,6 +5,24 @@
   z-index: 10;
   box-shadow: 0 0 25px rgba(0, 0, 0, .3);
   min-width: 400px;
+  opacity: .01;
+  transform: scale(.85);
+  transition: transform .15s ease-in-out, opacity .15s ease-in-out;
+  transition-delay: .05s;
+}
+
+.modalHasEntered {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.underlay {
+  opacity: .01;
+  transition: opacity .1s ease-in-out;
+}
+
+.underlayHasEntered {
+  opacity: 1;
 }
 
 .modalHeader {

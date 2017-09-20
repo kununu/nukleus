@@ -1,0 +1,23 @@
+exports[`test Renders Modal without crashing 1`] = `
+<Modal
+  actionText="Ok"
+  cancelText="Cancel"
+  closeText="Close"
+  onAction={[Function]}
+  onExit={[Function]}
+  open={true}
+  titleText="Modal"
+  verticallyCenter={true}>
+  <Displaced
+    actionText="Ok"
+    cancelText="Cancel"
+    closeText="Close"
+    mounted={true}
+    onAction={[Function]}
+    onEnter={[Function]}
+    onExit={[Function]}
+    open={true}
+    titleText="Modal"
+    verticallyCenter={true} />
+</Modal>
+`;
