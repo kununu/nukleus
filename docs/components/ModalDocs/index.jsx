@@ -33,7 +33,7 @@ class ModalDocs extends Component {
               state={this.state}
               actionText="Ok"
               cancelText="Cancel"
-              onCancel={() => this.setState({modalOpen: false})}
+              onExit={() => this.setState({modalOpen: false})}
               onAction={() => this.setState({
                 modalOpen: false,
                 success: true

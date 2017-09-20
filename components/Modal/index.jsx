@@ -12,8 +12,9 @@ export default class Modal extends React.Component {
     actionText: PropTypes.string,
     cancelText: PropTypes.string,
     children: PropTypes.element.isRequired,
+    closeText: PropTypes.string,
     onAction: PropTypes.func,
-    onCancel: PropTypes.func.isRequired,
+    onExit: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     titleText: PropTypes.string.isRequired
   }
@@ -21,8 +22,7 @@ export default class Modal extends React.Component {
   static defaultProps = {
     actionText: '',
     cancelText: '',
-    focusDialog: true,
-    initialFocus: '#nukleus-modal-close',
+    closeText: 'Close',
     onAction: () => {},
     verticallyCenter: true
   };
@@ -31,8 +31,8 @@ export default class Modal extends React.Component {
     this.props.onAction(ev);
   }
 
-  onCancel = ev => {
-    this.props.onCancel(ev);
+  onExit = ev => {
+    this.props.onExit(ev);
   }
 
   renderFooter () {
@@ -51,7 +51,7 @@ export default class Modal extends React.Component {
           {cancelText && <Button
             type="secondary"
             text={cancelText}
-            onClick={this.props.onCancel} />}
+            onClick={this.props.onExit} />}
         </footer>
       );
     }
@@ -68,11 +68,10 @@ export default class Modal extends React.Component {
             <span className={styles.modalTitle}>
               {this.props.titleText}
             </span>
-
             <button
-              id="nukleus-modal-close"
+              type="button"
               className={styles.closeButton}
-              onClick={this.props.onCancel}>
+              onClick={this.props.onExit}>
               <span role="presentation">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,6 +82,7 @@ export default class Modal extends React.Component {
                   width="100%"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 16 16">
+                  <title>{this.props.closeText}</title>
                   <path d="M9,7 L9,3.55271368e-15 L7,3.55271368e-15 L7,7 L7.10542736e-15,7 L7.10542736e-15,9 L7,9 L7,16 L9,16 L9,9 L16,9 L16,7 L9,7 Z" transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) " />
                 </svg>
               </span>

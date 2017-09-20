@@ -1,18 +1,10 @@
 static propTypes = {
-  choices: PropTypes.array.isRequired,
-  error: PropTypes.string,
-  errorSubInfo: PropTypes.string,
-  heading: PropTypes.string,
-  inputStyle: PropTypes.oneOf([
-    'inline',
-    'buttons'
-  ]),
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  query: PropTypes.object,
-  reference: PropTypes.func,
-  requiredLabel: PropTypes.string
+  actionText: PropTypes.string,
+  cancelText: PropTypes.string,
+  children: PropTypes.element.isRequired,
+  closeText: PropTypes.string,
+  onAction: PropTypes.func,
+  onExit: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  titleText: PropTypes.string.isRequired
 };
