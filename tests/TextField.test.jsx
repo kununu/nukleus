@@ -220,6 +220,7 @@ test('Changing a TextField Textarea calls the onChange Event', () => {
 
   component.find('#text-field').simulate('change', {target: {value: 'change'}});
   component.find('#text-field').simulate('change', {target: {value: 'change again'}});
+
   expect(spyFunc.mock.calls.length).toBe(2);
 });
 
@@ -247,17 +248,17 @@ test('Badwords should highlight correctly', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Changing a TextField Textarea calls the onChange Event', () => {
+test('Changing a TextField Textarea with highlighted words calls the onHighlight Event', () => {
   const spyFunc = jest.fn();
   const component = mount(
     <TextField
       multiLine
       id="text-field"
-      badwordsList={{
+      highlightList={{
         bad: 'bad',
         words: 'words'
       }}
-      badwordsCallback={spyFunc}
+      onHighlight={spyFunc}
       label={(
         <span>
           <label htmlFor="text-field">TextField</label>
