@@ -15,7 +15,7 @@ export default class ModalImplementation extends React.Component {
   render () {
     return (
       <div>
-        <h1>{JSON.stringify(this.state.modalOpen)}</h1>
+        <h1>Modal is open: {JSON.stringify(this.state.modalOpen)}</h1>
         <Button
           type="primary"
           text="Open Modal"
@@ -24,8 +24,13 @@ export default class ModalImplementation extends React.Component {
           titleText="dafuq"
           open={this.state.modalOpen}
           state={this.state}
-          onClose={() => this.setState({modalOpen: false})}
-          onSuccess={() => this.setState({success: true})}>
+          actionText="Ok"
+          cancelText="Cancel"
+          onCancel={() => this.setState({modalOpen: false})}
+          onAction={() => this.setState({
+            modalOpen: false,
+            success: true
+          })}>
           <p>O rly ?</p>
         </Modal>
       </div>
