@@ -10,6 +10,7 @@ exports[`test Badwords should highlight correctly 1`] = `
   }
   disable={false}
   displayLength={false}
+  dynamicTextareaHeight={true}
   error={null}
   errorSubInfo={null}
   highlightList={null}
@@ -143,6 +144,7 @@ exports[`test Changes output on value change manipulation 1`] = `
   autoFocus={false}
   disable={false}
   displayLength={false}
+  dynamicTextareaHeight={true}
   error={null}
   errorSubInfo={null}
   highlightList={null}
