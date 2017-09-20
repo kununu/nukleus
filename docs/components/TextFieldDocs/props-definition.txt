@@ -3,6 +3,7 @@ static propTypes = {
   autoFocus: PropTypes.bool,
   disable: PropTypes.bool,
   displayLength: PropTypes.bool,
+  dynamicTextareaHeight: true,
   error: PropTypes.string,
   errorSubInfo: PropTypes.string,
   highlightList: PropTypes.object,

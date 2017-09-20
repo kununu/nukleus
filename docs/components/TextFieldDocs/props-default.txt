@@ -3,6 +3,7 @@ static defaultProps = {
   autoFocus: false,
   disable: false,
   displayLength: false,
+  dynamicTextareaHeight: PropTypes.bool,
   error: null,
   errorSubInfo: null,
   highlightList: null,

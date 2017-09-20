@@ -14,6 +14,10 @@ const TextFieldDocs = () => (
       <TextField
         id="text-field"
         label="TextField"
+        inputStyle="mediumSize"
+        highlightList={{bad: 'bad'}}
+        multiLine
+        minHeight={80}
         name="text-field" />
     }
     example={example}

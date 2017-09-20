@@ -24,6 +24,7 @@ export default class TextField extends React.Component {
     autoFocus: PropTypes.bool,
     disable: PropTypes.bool,
     displayLength: PropTypes.bool,
+    dynamicTextareaHeight: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
     highlightList: PropTypes.object,
@@ -65,6 +66,7 @@ export default class TextField extends React.Component {
     autoFocus: false,
     disable: false,
     displayLength: false,
+    dynamicTextareaHeight: true,
     error: null,
     errorSubInfo: null,
     highlightList: null,
@@ -120,19 +122,24 @@ export default class TextField extends React.Component {
   // Property initializer binds method to class instance
   onChange = (...args) => {
     const target = args[0].target;
+    const {
+      dynamicTextareaHeight,
+      highlightList,
+      multiLine,
+      onChange
+    } = this.props;
+
     this.updateValue(this.props.sanitizeValue(target.value));
-    if (this.props.onChange) this.props.onChange(...args);
+    if (onChange) this.props.onChange(...args);
 
+    if (dynamicTextareaHeight && multiLine) {
+      this.setDynamicTextAreaHeight(target);
+    }
 
-    if (this.props.highlightList) {
+    if (highlightList) {
       this.setState({
         highlightedContent: this.getHighlightedContent(target.value)
       });
-
-      // In order to show the bad words correctly in a textarea
-      // we need to disable scrolling and expand the textarea
-      // dynamically.
-      if (this.props.multiLine) this.setDynamicTextAreaHeight(target);
     }
 
     this.hideError();
@@ -141,12 +148,15 @@ export default class TextField extends React.Component {
   setDynamicTextAreaHeight = target => {
     const oldHeight = Number(this.state.textAreaHeight);
     const currentHeight = target.scrollHeight;
+
     // Fix so when you backspace it will reduce the correct height
     const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
 
-    this.setState({
-      textAreaHeight: newHeight
-    });
+    if (newHeight > (this.props.minHeight || 134)) {
+      this.setState({
+        textAreaHeight: newHeight
+      });
+    }
   }
 
   getHighlightedContent = contents => {
@@ -230,7 +240,7 @@ export default class TextField extends React.Component {
     // Check if TextField contains an error
     if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(sharedStyles.controlLabelMediumSize);
+    if (inputStyles.indexOf('mediumSize') !== -1) classNames.push(sharedStyles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }

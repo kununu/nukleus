@@ -14,7 +14,7 @@
 
   &.dynamicHeight {
     min-height: 134px;
-    overflow-y: 'hidden';
+    overflow-y: hidden;
   }
 }
 
@@ -47,12 +47,13 @@
 
 .highlighted {
   background-color: rgba($red, .1);
-  color: $red;
   padding: 2px;
   top: 2px;
-  margin: -2px;
+  margin: -3px;
   line-height: 0;
   position: relative;
+  border-radius: 2px;
+  border: 1px solid rgba($red, .15);
 }
 
 .highlightOverlay.textarea {
