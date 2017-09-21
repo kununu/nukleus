@@ -13,6 +13,7 @@ const components = [
   'DropDown',
   'Error',
   'InfoText',
+  'Modal',
   'MultipleChoice',
   'Notification',
   'Paginator',
