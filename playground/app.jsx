@@ -224,31 +224,33 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Autocomplete
-              autoFocus
-              data={{
-                items: [
-                  {item: 'meow', itemInfo: 'hard'},
-                  {item: 'meowing', itemInfo: 'harder'}
-                ]
-              }}
-              scrollTo
-              id="test"
-              value="purrr"
-              query={query}
-              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
-              placeholder="Type something..."
-              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
-              label="Autocomplete"
-              isRequired
-              requiredLabel="Required"
-              name="autocomplete" />
+            <form>
+              <Autocomplete
+                autoFocus
+                data={{
+                  items: [
+                    {item: 'meow', itemInfo: 'hard'},
+                    {item: 'meowing', itemInfo: 'harder'}
+                  ]
+                }}
+                scrollTo
+                id="test"
+                value="purrr"
+                query={query}
+                placeholder="Type something..."
+                suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+                label="Autocomplete"
+                isRequired
+                requiredLabel="Required"
+                name="autocomplete" />
+            </form>
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
+              onKeyDown={e => { console.log('test', e); }}
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
@@ -280,6 +282,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               isRequired
+              highlightList={{bad: 'bad', fuck: 'fuck', shit: 'shit', test: 'test'}}
               requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
@@ -348,6 +351,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField (multiLine)"
               name="text-area"
               multiLine
+              highlightList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
               query={query} />
           </div>
         </div>
@@ -363,6 +367,8 @@ const App = ({location: {pathname, query}}) => (
               maxLength={120}
               displayLength
               inputStyle="inline mediumSize"
+              minHeight={80}
+              highlightList={{fuck: 'fuck'}}
               multiLine
               query={query} />
           </div>

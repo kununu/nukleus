@@ -1,3 +1,5 @@
+/* eslint "react/no-array-index-key": 0 */
+
 // Read more about controlled components
 // https://facebook.github.io/react/docs/forms.html#controlled-components
 import React from 'react';
@@ -22,8 +24,10 @@ export default class TextField extends React.Component {
     autoFocus: PropTypes.bool,
     disable: PropTypes.bool,
     displayLength: PropTypes.bool,
+    dynamicTextareaHeight: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
+    highlightList: PropTypes.object,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
@@ -33,11 +37,13 @@ export default class TextField extends React.Component {
     ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
+    minHeight: PropTypes.number,
     multiLine: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    onHighlight: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
     query: PropTypes.object,
@@ -60,16 +66,20 @@ export default class TextField extends React.Component {
     autoFocus: false,
     disable: false,
     displayLength: false,
+    dynamicTextareaHeight: true,
     error: null,
     errorSubInfo: null,
+    highlightList: null,
     inputStyle: 'inline',
     isRequired: false,
     labelHidden: false,
     maxLength: 500,
+    minHeight: null,
     multiLine: false,
     onBlur: () => {},
     onChange: null,
     onFocus: () => {},
+    onHighlight: () => {},
     pattern: '',
     placeholder: '',
     query: {},
@@ -83,7 +93,9 @@ export default class TextField extends React.Component {
   };
 
   state = {
+    highlightedContent: '',
     showError: false,
+    textAreaHeight: null,
     value: this.props.value || ''
   };
 
@@ -109,10 +121,61 @@ export default class TextField extends React.Component {
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    this.updateValue(this.props.sanitizeValue(args[0].target.value));
-    if (this.props.onChange) this.props.onChange(...args);
+    const target = args[0].target;
+    const {
+      dynamicTextareaHeight,
+      highlightList,
+      multiLine,
+      onChange
+    } = this.props;
+
+    this.updateValue(this.props.sanitizeValue(target.value));
+    if (onChange) this.props.onChange(...args);
+
+    if (dynamicTextareaHeight && multiLine) {
+      this.setDynamicTextAreaHeight(target);
+    }
+
+    if (highlightList) {
+      this.setState({
+        highlightedContent: this.getHighlightedContent(target.value)
+      });
+    }
+
     this.hideError();
   };
+
+  setDynamicTextAreaHeight = target => {
+    const oldHeight = Number(this.state.textAreaHeight);
+    const currentHeight = target.scrollHeight;
+
+    // Fix so when you backspace it will reduce the correct height
+    const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
+
+    if (newHeight > (this.props.minHeight || 134)) {
+      this.setState({
+        textAreaHeight: newHeight
+      });
+    }
+  }
+
+  getHighlightedContent = contents => {
+    const contentRegex = /([^a-zA-Z]+)/;
+    const userInputArray = contents.split(contentRegex);
+
+    const {
+      highlightList,
+      onHighlight
+    } = this.props;
+
+    return userInputArray.map((part, i) => {
+      if (highlightList[part.toLowerCase()]) {
+        onHighlight();
+        return <span className={styles.highlighted} key={i}>{part}</span>;
+      }
+      return part;
+    });
+  }
 
   needsUpdate ({value, query}) {
     return (
@@ -177,7 +240,7 @@ export default class TextField extends React.Component {
     // Check if TextField contains an error
     if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.includes('mediumSize')) classNames.push(sharedStyles.controlLabelMediumSize);
+    if (inputStyles.indexOf('mediumSize') !== -1) classNames.push(sharedStyles.controlLabelMediumSize);
 
     return classNames.join(' ');
   }
@@ -189,16 +252,39 @@ export default class TextField extends React.Component {
    * @return {string} [list of classNames split by space]
    */
   get textFieldClassNames () {
-    const {multiLine} = this.props;
+    const {
+      multiLine,
+      highlightList
+    } = this.props;
     const classNames = [formControl];
 
     // Check if textarea styles need to be added
     if (multiLine) classNames.push(styles.textarea);
 
+    if (multiLine && highlightList) classNames.push(styles.dynamicHeight);
+
     // Check if error styles need to be added
     if (this.hasError()) classNames.push(formControlError);
 
     return classNames.join(' ');
+  }
+
+  /**
+   * determines which styles should be applied to the textarea
+   *
+   * @return {object} [object with camelCased properties]
+   */
+  textAreaStyles = () => {
+    const {
+      highlightList,
+      minHeight
+    } = this.props;
+    const textAreaStyles = {};
+
+    if (highlightList && minHeight) textAreaStyles.minHeight = minHeight;
+    if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
+
+    return textAreaStyles;
   }
 
   hasError () {
@@ -241,6 +327,7 @@ export default class TextField extends React.Component {
     const {
       autoComplete,
       autoFocus,
+      highlightList,
       disable,
       displayLength,
       error,
@@ -263,8 +350,11 @@ export default class TextField extends React.Component {
       type
     } = this.props;
 
+    const highlightedContent = this.state.highlightedContent;
+
     return (
       <div className={this.containerClassNames}>
+        {this.state.highlightContent}
         <InfoLabel
           requiredLabel={requiredLabel}
           inputValue={this.state.value}
@@ -275,6 +365,12 @@ export default class TextField extends React.Component {
         {this.label}
 
         <div className={styles.inputContainer}>
+          {highlightList ?
+            <div className={`${styles.highlightOverlay} ${this.textFieldClassNames}`}>
+              {highlightedContent}
+            </div>
+            : null
+          }
           {
             multiLine ?
               <textarea
@@ -292,6 +388,7 @@ export default class TextField extends React.Component {
                 required={isRequired}
                 ref={reference}
                 rows={rows}
+                style={this.textAreaStyles()}
                 value={this.state.value} /> :
               <input
                 autoComplete={autoComplete}
