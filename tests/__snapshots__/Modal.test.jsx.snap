@@ -83,10 +83,10 @@ exports[`test Renders Modal without crashing 1`] = `
               className="modal isOpen">
               <header
                 className="modalHeader">
-                <span
+                <h1
                   className="modalTitle">
                   Modal
-                </span>
+                </h1>
                 <button
                   className="closeButton"
                   id="nukleus-modal-close"

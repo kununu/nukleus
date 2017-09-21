@@ -32,7 +32,7 @@ export default class ModalImplementation extends React.Component {
           id="toggle-modal"
           onClick={() => this.setState({modalOpen: true})} />
         <Modal
-          titleText="dafuq"
+          titleText="Modal"
           open={this.state.modalOpen}
           state={this.state}
           actionText="Ok"

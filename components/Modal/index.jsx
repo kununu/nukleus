@@ -120,9 +120,7 @@ export default class Modal extends React.Component {
             }
           )}>
           <header className={styles.modalHeader}>
-            <span className={styles.modalTitle}>
-              {this.props.titleText}
-            </span>
+            <h1 className={styles.modalTitle}>{this.props.titleText}</h1>
             <button
               type="button"
               id="nukleus-modal-close"
