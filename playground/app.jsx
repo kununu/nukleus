@@ -17,6 +17,7 @@ import TextField from 'components/TextField';
 import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import Modal from 'playground/Implementations/Modal';
 import {
   controlLabel
 } from 'components/index.scss';
@@ -27,7 +28,6 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
-
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
@@ -976,6 +976,12 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               title="DatePicker with Error" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Modal />
           </div>
         </div>
       </div>
