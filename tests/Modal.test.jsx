@@ -22,6 +22,25 @@ test('Renders Modal without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders a Modal with custom title text without crashing', () => {
+  const component = mount(
+    <Modal
+      actionText="Ok"
+      cancelText="Cancel"
+      closeText="Close"
+      applicationNode="#test"
+      onAction={() => {}}
+      onExit={() => {}}
+      open
+      titleText={<h2>Modal</h2>}>
+      <p>Hello world</p>
+    </Modal>
+  );
+
+  const tree = toJson(component);
+  expect(tree).toMatchSnapshot();
+});
+
 test('Calls onEnter, when the modal is mounted', () => {
   const onEnter = window.spyOn(Modal.prototype, 'onEnter');
   mount(

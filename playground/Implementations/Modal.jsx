@@ -2,6 +2,7 @@ import React from 'react';
 
 import Modal from '../../components/Modal';
 import Button from '../../components/Button';
+import styles from '../app.scss';
 
 export default class ModalImplementation extends React.Component {
   constructor (props) {
@@ -32,7 +33,7 @@ export default class ModalImplementation extends React.Component {
           id="toggle-modal"
           onClick={() => this.setState({modalOpen: true})} />
         <Modal
-          titleText="dafuq"
+          titleText={<h2 className={styles.modalHeading}>Modal</h2>}
           open={this.state.modalOpen}
           state={this.state}
           actionText="Ok"

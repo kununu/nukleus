@@ -168,3 +168,185 @@ exports[`test Renders Modal without crashing 1`] = `
   </Modal>
 </Modal>
 `;
+
+exports[`test Renders a Modal with custom title text without crashing 1`] = `
+<Modal
+  actionText="Ok"
+  applicationNode="#test"
+  cancelText="Cancel"
+  closeText="Close"
+  onAction={[Function]}
+  onExit={[Function]}
+  open={true}
+  titleText={
+    <h2>
+      Modal
+    </h2>
+  }>
+  <Modal
+    actionText="Ok"
+    applicationNode="#test"
+    cancelText="Cancel"
+    closeText="Close"
+    dialogId="react-aria-modal-dialog"
+    escapeExits={true}
+    focusTrapPaused={false}
+    includeDefaultStyles={true}
+    onAction={[Function]}
+    onEnter={[Function]}
+    onExit={[Function]}
+    open={true}
+    titleText={
+      <h2>
+        Modal
+      </h2>
+    }
+    underlayClass="underlay underlayHasEntered"
+    underlayClickExits={true}
+    underlayColor="rgba(0,0,0,0.5)"
+    verticallyCenter={true}>
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={
+        Object {
+          "initialFocus": undefined,
+        }
+      }
+      paused={false}
+      tag="div">
+      <div>
+        <div
+          className="underlay underlayHasEntered"
+          onClick={[Function]}
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "rgba(0,0,0,0.5)",
+              "cursor": "pointer",
+              "height": "100%",
+              "left": 0,
+              "overflowX": "hidden",
+              "overflowY": "auto",
+              "position": "fixed",
+              "textAlign": "center",
+              "top": 0,
+              "width": "100%",
+              "zIndex": 1050,
+            }
+          }>
+          <div
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "100%",
+                "verticalAlign": "middle",
+              }
+            } />
+          <div
+            aria-label={
+              <h2>
+                Modal
+              </h2>
+            }
+            id="react-aria-modal-dialog"
+            role="dialog"
+            style={
+              Object {
+                "cursor": "default",
+                "display": "inline-block",
+                "maxWidth": "100%",
+                "outline": null,
+                "textAlign": "left",
+                "top": 0,
+                "verticalAlign": "middle",
+              }
+            }>
+            <section
+              className="modal isOpen">
+              <header
+                className="modalHeader">
+                <h2>
+                  Modal
+                </h2>
+                <button
+                  className="closeButton"
+                  id="nukleus-modal-close"
+                  onClick={[Function]}
+                  type="button">
+                  <span
+                    role="presentation">
+                    <svg
+                      className="closeIcon"
+                      preserveAspectRatio="xMidYMid meet"
+                      version="1.1"
+                      viewBox="0 0 16 16"
+                      width="100%"
+                      xmlSpace="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink">
+                      <title>
+                        Close
+                      </title>
+                      <path
+                        d="M9,7 L9,3.55271368e-15 L7,3.55271368e-15 L7,7 L7.10542736e-15,7 L7.10542736e-15,9 L7,9 L7,16 L9,16 L9,9 L16,9 L16,7 L9,7 Z"
+                        transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) " />
+                    </svg>
+                  </span>
+                </button>
+              </header>
+              <div
+                className="modalBody">
+                <p>
+                  Hello world
+                </p>
+              </div>
+              <footer
+                className="modalFooter">
+                <Button
+                  customTheme=""
+                  disabled={false}
+                  fullWidth={false}
+                  htmlType="button"
+                  link={null}
+                  mobileFullWidth={false}
+                  onClick={[Function]}
+                  outline={false}
+                  text="Ok"
+                  type="primary">
+                  <button
+                    className="button primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button">
+                    Ok
+                  </button>
+                </Button>
+                <Button
+                  customTheme=""
+                  disabled={false}
+                  fullWidth={false}
+                  htmlType="button"
+                  link={null}
+                  mobileFullWidth={false}
+                  onClick={[Function]}
+                  outline={false}
+                  text="Cancel"
+                  type="secondary">
+                  <button
+                    className="button secondary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button">
+                    Cancel
+                  </button>
+                </Button>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </FocusTrap>
+  </Modal>
+</Modal>
+`;

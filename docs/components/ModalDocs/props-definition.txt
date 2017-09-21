@@ -6,5 +6,8 @@ static propTypes = {
   onAction: PropTypes.func, // This should be a promise, so that onExit can be executed on success (nicer animation)
   onExit: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  titleText: PropTypes.string.isRequired
+  titleText: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]).isRequired
 };

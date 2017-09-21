@@ -23,7 +23,10 @@ export default class Modal extends React.Component {
     onAction: PropTypes.func, // This should be a promise, so that onExit can be executed on success (nicer animation)
     onExit: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
-    titleText: PropTypes.string.isRequired
+    titleText: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]).isRequired
   }
 
   static defaultProps = {
@@ -93,6 +96,19 @@ export default class Modal extends React.Component {
     return null;
   }
 
+  renderTitleText () {
+    // when it is only a string, it needs to be styled correctly
+    if (typeof this.props.titleText === 'string') {
+      return (
+        <span className={styles.modalTitle}>
+          {this.props.titleText}
+        </span>
+      );
+    }
+
+    return this.props.titleText;
+  }
+
   render () {
     const overrideProps = {
       ...this.props,
@@ -120,9 +136,7 @@ export default class Modal extends React.Component {
             }
           )}>
           <header className={styles.modalHeader}>
-            <span className={styles.modalTitle}>
-              {this.props.titleText}
-            </span>
+            {this.renderTitleText()}
             <button
               type="button"
               id="nukleus-modal-close"
