@@ -11,7 +11,7 @@
   transition-delay: .05s;
 }
 
-.modalHasEntered {
+.isOpen {
   opacity: 1;
   transform: scale(1);
 }

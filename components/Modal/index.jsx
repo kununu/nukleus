@@ -33,16 +33,25 @@ export default class Modal extends React.Component {
     onAction: () => {}
   };
 
-  state = {
-    isOpen: false
-  };
+  constructor (props) {
+    super(props);
 
-  onAction = ev => {
+    this.state = {
+      isOpen: false
+    };
+
+    // needed to have real binding to get tests working
+    this.onExit = this.onExit.bind(this);
+    this.onAction = this.onAction.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+  }
+
+  onAction (ev) {
     this.props.onAction(ev)
       .then(() => this.onExit());
   }
 
-  onExit = ev => {
+  onExit (ev) {
     // First set state for nicer animation
     this.setState({
       isOpen: false
@@ -54,7 +63,7 @@ export default class Modal extends React.Component {
     });
   }
 
-  onModalEnter = () => {
+  onEnter () {
     this.setState({isOpen: true});
   }
 
@@ -69,10 +78,12 @@ export default class Modal extends React.Component {
         <footer className={styles.modalFooter}>
           {actionText && <Button
             type="primary"
+            htmlType="button"
             text={actionText}
             onClick={this.onAction} />}
           {cancelText && <Button
             type="secondary"
+            htmlType="button"
             text={cancelText}
             onClick={this.onExit} />}
         </footer>
@@ -100,7 +111,7 @@ export default class Modal extends React.Component {
             }
           )
         }
-        onEnter={this.onModalEnter}>
+        onEnter={this.onEnter}>
         <section className={
           classNames(
             styles.modal,
@@ -114,6 +125,7 @@ export default class Modal extends React.Component {
             </span>
             <button
               type="button"
+              id="nukleus-modal-close"
               className={styles.closeButton}
               onClick={this.onExit}>
               <span role="presentation">
