@@ -25,6 +25,7 @@ exports[`test Renders Modal without crashing 1`] = `
     underlayClass="underlay underlayHasEntered"
     underlayClickExits={true}
     underlayColor="rgba(0,0,0,0.5)"
+    underlayProps={Object {}}
     verticallyCenter={true}>
     <FocusTrap
       _createFocusTrap={[Function]}

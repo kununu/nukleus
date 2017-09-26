@@ -35,13 +35,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 10px;
+  padding: 25px 20px;
   border-bottom: .1px solid $gray-base-20;
 }
 
 .modalFooter {
   text-align: right;
-  padding: 15px 10px;
+  padding: 25px 20px;
   display: flex;
   justify-content: flex-end;
   margin: 0 -5px;
@@ -57,7 +57,7 @@
 }
 
 .modalBody {
-  padding: 10px;
+  padding: 20px;
 }
 
 .closeButton {
