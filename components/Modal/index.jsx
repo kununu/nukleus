@@ -94,8 +94,11 @@ export default class Modal extends React.Component {
   }
 
   render () {
+    const titleId = 'nukleus-modal-title'; // will be used for aria-labelledby
+
     const overrideProps = {
       ...this.props,
+      titleId,
       verticallyCenter: true // here we override react-aria-modal defaults
     };
 
@@ -120,10 +123,11 @@ export default class Modal extends React.Component {
             }
           )}>
           <header className={styles.modalHeader}>
-            <h1 className={styles.modalTitle}>{this.props.titleText}</h1>
+            <h1 id={titleId} className={styles.modalTitle}>{this.props.titleText}</h1>
             <button
               type="button"
               id="nukleus-modal-close"
+              title={this.props.closeText}
               className={styles.closeButton}
               onClick={this.onExit}>
               <span role="presentation">
@@ -136,7 +140,6 @@ export default class Modal extends React.Component {
                   width="100%"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 16 16">
-                  <title>{this.props.closeText}</title>
                   <path d="M9,7 L9,3.55271368e-15 L7,3.55271368e-15 L7,7 L7.10542736e-15,7 L7.10542736e-15,9 L7,9 L7,16 L9,16 L9,9 L16,9 L16,7 L9,7 Z" transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) " />
                 </svg>
               </span>
