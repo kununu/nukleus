@@ -27,26 +27,6 @@ exports[`test Hides no suggestions on blur 1`] = `
         Object {
           "item": "kununu",
         },
-        Object {
-          "item": "kununu",
-          "itemInfo": null,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": "",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": 0,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": false,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": true,
-        },
       ],
     }
   }
@@ -317,26 +297,6 @@ exports[`test Renders no suggestions container 1`] = `
         Object {
           "item": "kununu",
         },
-        Object {
-          "item": "kununu",
-          "itemInfo": null,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": "",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": 0,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": false,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": true,
-        },
       ],
     }
   }
@@ -513,26 +473,6 @@ exports[`test Renders suggestions container 1`] = `
         },
         Object {
           "item": "kununu",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": null,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": "",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": 0,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": false,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": true,
         },
       ],
     }
@@ -849,26 +789,6 @@ exports[`test Updates value on selection 1`] = `
         },
         Object {
           "item": "kununu",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": null,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": "",
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": 0,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": false,
-        },
-        Object {
-          "item": "kununu",
-          "itemInfo": true,
         },
       ],
     }
