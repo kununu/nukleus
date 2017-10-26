@@ -17,7 +17,7 @@ const staticAutocomplete = (
         {item: 'IBM', itemInfo: 'US'},
         {item: 'kununu', itemInfo: 'Vienna'},
         {item: 'kununu', itemInfo: 'US'},
-        {item: 'kununu'},
+        {item: 'kununu'}
       ]
     }}
     value="test"
