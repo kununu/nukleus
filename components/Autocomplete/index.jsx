@@ -253,7 +253,13 @@ export default class Autocomplete extends React.Component {
     return classNames.join(' ');
   }
 
-  renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span></span>;
+  renderSuggestion = suggestion =>
+    (<span>
+      {suggestion.item}
+      {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
+        <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
+      }
+    </span>);
 
   render () {
     const {

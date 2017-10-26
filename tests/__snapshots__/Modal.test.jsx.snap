@@ -21,6 +21,7 @@ exports[`test Renders Modal without crashing 1`] = `
     onEnter={[Function]}
     onExit={[Function]}
     open={true}
+    scrollDisabled={true}
     titleId="nukleus-modal-title"
     titleText="Modal"
     underlayClass="underlay underlayHasEntered"

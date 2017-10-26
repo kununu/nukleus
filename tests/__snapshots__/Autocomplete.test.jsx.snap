@@ -24,6 +24,9 @@ exports[`test Hides no suggestions on blur 1`] = `
           "item": "kununu",
           "itemInfo": "US",
         },
+        Object {
+          "item": "kununu",
+        },
       ],
     }
   }
@@ -291,6 +294,9 @@ exports[`test Renders no suggestions container 1`] = `
           "item": "kununu",
           "itemInfo": "US",
         },
+        Object {
+          "item": "kununu",
+        },
       ],
     }
   }
@@ -464,6 +470,9 @@ exports[`test Renders suggestions container 1`] = `
         Object {
           "item": "kununu",
           "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
         },
       ],
     }
@@ -777,6 +786,9 @@ exports[`test Updates value on selection 1`] = `
         Object {
           "item": "kununu",
           "itemInfo": "US",
+        },
+        Object {
+          "item": "kununu",
         },
       ],
     }
