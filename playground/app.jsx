@@ -230,7 +230,8 @@ const App = ({location: {pathname, query}}) => (
                 data={{
                   items: [
                     {item: 'meow', itemInfo: 'hard'},
-                    {item: 'meowing', itemInfo: 'harder'}
+                    {item: 'meowing', itemInfo: 'harder'},
+                    {item: 'meeeow'}
                   ]
                 }}
                 scrollTo
