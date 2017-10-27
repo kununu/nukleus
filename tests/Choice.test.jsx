@@ -59,6 +59,27 @@ test('Renders a disabled Choice without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders a Choice with a disabled option without crashing', () => {
+  let newOptions = options.concat([
+    {
+      id: 'opD',
+      label: 'Option D',
+      value: 'opD',
+      disabled: true
+    }
+  ]);
+
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={newOptions}
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Renders a Choice with default checked without crashing', () => {
   const component = renderer.create(
     <Choice
@@ -214,6 +235,28 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
   );
 
   component.find('#testopA').simulate('change');
+  expect(spyFunc).not.toHaveBeenCalled();
+});
+
+test('Does not fire onChange function when clicked option is disabled', () => {
+  let newOptions = options.concat([
+    {
+      id: 'opD',
+      label: 'Option D',
+      value: 'opD',
+      disabled: true
+    }
+  ]);
+
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      options={newOptions}
+      onChange={spyFunc} />
+  );
+
+  component.find('#testopD').simulate('change');
   expect(spyFunc).not.toHaveBeenCalled();
 });
 

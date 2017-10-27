@@ -151,6 +151,102 @@ exports[`test Renders Choice with radio buttons without crashing 1`] = `
 </div>
 `;
 
+exports[`test Renders a Choice with a disabled option without crashing 1`] = `
+<div
+  className="formGroup">
+  
+  
+  <div
+    className="radioContainer flexible"
+    data-options-per-row={null}>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopA"
+        name="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="radio"
+        value="opA" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopA"
+        id={0}>
+        Option A
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopB"
+        name="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="radio"
+        value="opB" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopB"
+        id={1}>
+        Option B
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopC"
+        name="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="radio"
+        value="opC" />
+      <label
+        className=""
+        disabled={false}
+        htmlFor="testopC"
+        id={2}>
+        Option C
+      </label>
+    </div>
+    <div
+      className="radioButton">
+      <input
+        checked={false}
+        id="testopD"
+        name="test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="radio"
+        value="opD" />
+      <label
+        className=""
+        disabled={true}
+        htmlFor="testopD"
+        id={3}>
+        Option D
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`test Renders a Choice with checked from route 1`] = `
 <div
   className="formGroup">
