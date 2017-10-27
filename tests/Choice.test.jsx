@@ -62,8 +62,8 @@ test('Renders a disabled Choice without crashing', () => {
 test('Renders a Choice with a disabled option without crashing', () => {
   const newOptions = options.concat([
     {
-      id: 'opD',
       disabled: true,
+      id: 'opD',
       label: 'Option D',
       value: 'opD'
     }
@@ -241,8 +241,8 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
 test('Does not fire onChange function when clicked option is disabled', () => {
   const newOptions = options.concat([
     {
-      id: 'opD',
       disabled: true,
+      id: 'opD',
       label: 'Option D',
       value: 'opD'
     }
