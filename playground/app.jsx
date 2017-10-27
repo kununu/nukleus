@@ -804,6 +804,36 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-10">
             <Choice
+              checked="option-a"
+              name="custom-option-disabled"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B Disabled',
+                  value: 'option-b',
+                  disabled: true,
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
               heading="Choice with multiple rows"
               name="option-3-6"
               onChange={() => {}}

@@ -83,9 +83,9 @@ export default class Choice extends React.Component {
     }
   }
 
-  onChange = e => {
+  onChange = (option, e) => {
     const value = e.target.value;
-    if (this.props.disabled || value === this.state.checked) return;
+    if (this.isOptionDisabled(option) || value === this.state.checked) return;
 
     this.props.onChange(e);
     this.setState({
@@ -93,9 +93,10 @@ export default class Choice extends React.Component {
     });
   };
 
-  onClick = e => {
+  onClick = (option, e) => {
+    if (this.isOptionDisabled(option)) return;
+
     const value = e.target.value;
-    if (this.props.disabled) return;
 
     this.props.onClick(e);
     // As long as the component is not required and the component is deselected set to null.
@@ -118,10 +119,14 @@ export default class Choice extends React.Component {
     return this.state.showError && this.props.error;
   }
 
+  isOptionDisabled (option) {
+    const disabled = this.props.disabled;
+    return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
+  }
+
   render () {
     const {
       customTheme,
-      disabled,
       error,
       errorSubInfo,
       heading,
@@ -161,13 +166,13 @@ export default class Choice extends React.Component {
                 name={name}
                 checked={checked === item.value}
                 onBlur={onBlur}
-                onChange={this.onChange}
+                onChange={e => this.onChange(item, e)}
                 onFocus={onFocus}
-                onClick={this.onClick}
+                onClick={e => this.onClick(item, e)}
                 ref={reference}
                 required={isRequired} />
               <label
-                disabled={disabled}
+                disabled={this.isOptionDisabled(item)}
                 id={idx}
                 htmlFor={`${name}${item.id}`}
                 className={customTheme}>
