@@ -10,7 +10,8 @@ import sharedStyles, {
   controlNote,
   formControl,
   formGroup,
-  formGroupMultipleChoice
+  formGroupMultipleChoice,
+  srOnly
 } from '../index.scss';
 
 
@@ -22,6 +23,11 @@ export default class MultipleChoice extends React.Component {
     heading: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -34,10 +40,12 @@ export default class MultipleChoice extends React.Component {
   static defaultProps = {
     error: null,
     errorSubInfo: null,
-    heading: '',
+    heading: null,
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
+    label: '',
+    labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
@@ -132,6 +140,40 @@ export default class MultipleChoice extends React.Component {
     return classNames.join(' ');
   }
 
+  get label () {
+    const {
+      heading,
+      name,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !heading) return null;
+
+    if (labelHidden) return <span className={srOnly}>{label || heading}</span>;
+
+    /**
+     * generates the TextField label based on the Textfield label prop
+     *
+     * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
+    */
+    if (typeof label === 'string' || typeof heading === 'string') {
+      return <label className={controlLabel} htmlFor={name}>{label || heading}</label>;
+    }
+
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: controlLabel
+      }
+    );
+  }
+
   render () {
     const {choices} = this.state;
 
@@ -143,7 +185,7 @@ export default class MultipleChoice extends React.Component {
           </span>
         }
 
-        {this.props.heading && <label htmlFor={this.props.name} className={controlLabel}>{this.props.heading}</label>}
+        {this.label}
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
