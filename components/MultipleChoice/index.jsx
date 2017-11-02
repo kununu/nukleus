@@ -44,7 +44,7 @@ export default class MultipleChoice extends React.Component {
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
-    label: '',
+    label: null,
     labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
@@ -158,7 +158,7 @@ export default class MultipleChoice extends React.Component {
      * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
     */
     if (typeof label === 'string' || typeof heading === 'string') {
-      return <label className={controlLabel} htmlFor={name}>{label || heading}</label>;
+      return <div className={controlLabel} htmlFor={name}>{label || heading}</div>;
     }
 
     // We don't simply put a more complex element inside a label to prevent a
