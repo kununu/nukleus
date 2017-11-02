@@ -8,7 +8,8 @@ import {
   controlLabel,
   controlLabelRequired,
   controlNote,
-  formGroup
+  formGroup,
+  srOnly
 } from '../index.scss';
 
 export default class Choice extends React.Component {
@@ -21,6 +22,11 @@ export default class Choice extends React.Component {
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
     isRequired: PropTypes.bool,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -39,9 +45,11 @@ export default class Choice extends React.Component {
     disabled: false,
     error: null,
     errorSubInfo: null,
-    heading: '',
+    heading: null,
     headingStyle: 'control-label',
     isRequired: false,
+    label: null,
+    labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onClick: () => {},
@@ -124,12 +132,45 @@ export default class Choice extends React.Component {
     return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
   }
 
+  get label () {
+    const {
+      heading,
+      headingStyle,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !heading) return null;
+
+    if (labelHidden) return <span className={srOnly}>{label || heading}</span>;
+
+    /**
+     * generates the TextField label based on the Textfield label prop
+     *
+     * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
+    */
+    if (typeof label === 'string' || typeof heading === 'string') {
+      return <div className={`${controlLabel} ${headingStyle}`}>{label || heading}</div>;
+    }
+
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: controlLabel
+      }
+    );
+  }
+
   render () {
     const {
       customTheme,
       error,
       errorSubInfo,
-      heading,
       isRequired,
       name,
       onBlur,
@@ -154,7 +195,7 @@ export default class Choice extends React.Component {
           </span>
         }
 
-        {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
+        {this.label}
 
         <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
