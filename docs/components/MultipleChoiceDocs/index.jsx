@@ -13,9 +13,9 @@ const MultipleChoiceDocs = () => (
     component={
       <div>
         <MultipleChoice
-          name="choices[]"
-          heading="MultipleChoice"
-          choices={
+          name="choicßes[]"
+          label="MultipleChoice"
+          options={
           [
             {
               id: 'option-1',
@@ -35,7 +35,7 @@ const MultipleChoiceDocs = () => (
         <MultipleChoice
           name="choices[]"
           inputStyle="buttons"
-          choices={
+          options={
           [{
             id: 'option-1',
             isChecked: true,

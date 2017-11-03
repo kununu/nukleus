@@ -1,10 +1,10 @@
 <Select
-  title="Select"
+  label="Select"
   name="select"
   id="select"
   isRequired
   value="option"
-  items={{
+  options={{
     'option-1': 'Option 1',
     'option-2': 'Option 2',
     'option-3': 'Option 3'

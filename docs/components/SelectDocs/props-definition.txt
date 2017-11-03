@@ -21,15 +21,32 @@ static propTypes = {
       ])
     }))
   ]),
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
+  options: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.shape({
+      key: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ])
+    }))
+  ]),
   query: PropTypes.object,
   reference: PropTypes.func,
   requiredLabel: PropTypes.string,
   sort: PropTypes.func,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   value: PropTypes.any
 };

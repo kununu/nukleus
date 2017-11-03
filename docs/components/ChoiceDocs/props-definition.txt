@@ -7,6 +7,11 @@ static propTypes = {
   heading: PropTypes.string,
   headingStyle: PropTypes.string,
   isRequired: PropTypes.bool,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
