@@ -51,6 +51,19 @@ export default class Select extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    options: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ]),
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ])
+      }))
+    ]),
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
@@ -68,12 +81,13 @@ export default class Select extends React.Component {
     errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
-    items: {},
+    items: [],
     label: null,
     labelHidden: false,
     onBlur: () => {},
     onChange: null,
     onFocus: () => {},
+    options: [],
     query: {},
     reference: () => {},
     requiredLabel: '',
@@ -210,19 +224,22 @@ export default class Select extends React.Component {
       name,
       onBlur,
       onFocus,
+      options,
       reference,
       requiredLabel,
       sort
     } = this.props;
 
-    let options = Object.keys(items)
+    const allOptions = (options.length && options) || items;
+
+    let mappedOptions = Object.keys(allOptions)
       .map(key => ({
-        key: items[key].key || key,
-        value: items[key].value || items[key]
+        key: (allOptions)[key].key || key,
+        value: (allOptions)[key].value || (allOptions)[key]
       }));
 
     if (sort) {
-      options = options.sort(sort);
+      mappedOptions = mappedOptions.sort(sort);
     }
 
     return (
@@ -256,7 +273,7 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {options.map(item =>
+            {mappedOptions.map(item =>
               (<option
                 key={item.key}
                 value={item.key}>
