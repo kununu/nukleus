@@ -55,7 +55,7 @@ export default class Select extends React.Component {
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     sort: PropTypes.func,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     value: PropTypes.any
   };
 
@@ -77,6 +77,7 @@ export default class Select extends React.Component {
     query: {},
     reference: () => {},
     requiredLabel: '',
+    title: null,
     sort: null,
     value: ''
   };
