@@ -58,7 +58,7 @@ export default class MultipleChoice extends React.Component {
   };
 
   state = {
-    choices: this.props.options || this.props.choices || [],
+    choices: (this.props.options.length && this.props.options) || this.props.choices,
     showError: false
   };
 

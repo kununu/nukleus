@@ -230,7 +230,7 @@ export default class Select extends React.Component {
       sort
     } = this.props;
 
-    const allOptions = (options.length && options) || items;
+    const allOptions = (Object.keys(options).length && options) || items;
 
     let mappedOptions = Object.keys(allOptions)
       .map(key => ({
