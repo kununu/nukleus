@@ -34,7 +34,7 @@ test('Renders Choice with radio buttons without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders Choice with an heading without crashing', () => {
+test('Renders Choice with a heading without crashing', () => {
   const component = renderer.create(
     <Choice
       heading="heading"
@@ -46,6 +46,20 @@ test('Renders Choice with an heading without crashing', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Renders Choice with a label without crashing', () => {
+  const component = renderer.create(
+    <Choice
+      label="heading"
+      name="test"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Renders a disabled Choice without crashing', () => {
   const component = renderer.create(
     <Choice

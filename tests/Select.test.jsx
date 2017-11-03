@@ -4,7 +4,7 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Select from 'Select'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
-const select = (
+const deprecatedSelect = (
   <Select
     title="Select"
     name="select"
@@ -14,31 +14,46 @@ const select = (
     items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
 );
 
+const select = (
+  <Select
+    label="Select"
+    name="select"
+    id="select"
+    isRequired
+    value="option"
+    options={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+);
+
 const selectWithError = (
   <Select
-    title="Select"
+    label="Select"
     name="select"
     error="An Error"
     errorSubInfo="with useful hints"
     id="select"
     isRequired
     value="option"
-    items={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
+    options={{option: 'Option', 'option-2': 'Option 2', 'option-3': 'Option 3'}} />
 );
 
-const selectWithArrayOfItems = (
+const selectWithArrayOfOptions = (
   <Select
-    title="Select"
+    label="Select"
     name="select"
     id="select"
     isRequired
     value="option"
-    items={[
+    options={[
       {key: 'test-key', value: 'test'},
       {key: 'test2-key', value: 'test2'},
       {key: 'test3-key', value: 'test3'}
     ]} />
 );
+
+test('Renders deprecated select without crashing', () => {
+  const component = renderer.create(deprecatedSelect);
+  expect(component.toJSON()).toMatchSnapshot();
+});
 
 test('Renders Select without crashing', () => {
   const component = renderer.create(select);
@@ -57,6 +72,6 @@ test('Renders Select with an error message without crashing', () => {
 });
 
 test('Renders Select with an array of items', () => {
-  const component = renderer.create(selectWithArrayOfItems);
+  const component = renderer.create(selectWithArrayOfOptions);
   expect(component.toJSON()).toMatchSnapshot();
 });

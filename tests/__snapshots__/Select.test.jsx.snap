@@ -9,23 +9,25 @@ exports[`test Changes status on value change 1`] = `
   id="select"
   inputStyle="inline"
   isRequired={true}
-  items={
+  items={Array []}
+  label="Select"
+  labelHidden={false}
+  name="select"
+  onBlur={[Function]}
+  onChange={null}
+  onFocus={[Function]}
+  options={
     Object {
       "option": "Option",
       "option-2": "Option 2",
       "option-3": "Option 3",
     }
   }
-  labelHidden={false}
-  name="select"
-  onBlur={[Function]}
-  onChange={null}
-  onFocus={[Function]}
   query={Object {}}
   reference={[Function]}
   requiredLabel=""
   sort={null}
-  title="Select"
+  title={null}
   value="option">
   <div
     className="formGroup inline">
@@ -156,6 +158,47 @@ exports[`test Renders Select with an error message without crashing 1`] = `
 `;
 
 exports[`test Renders Select without crashing 1`] = `
+<div
+  className="formGroup inline">
+  
+  <label
+    className="controlLabel"
+    htmlFor="select">
+    Select
+  </label>
+  <div
+    className="inputContainer">
+    <select
+      autoFocus={false}
+      className="formControl select "
+      disabled={false}
+      id="select"
+      name="select"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={true}
+      value="option">
+      
+      
+      <option
+        value="option">
+        Option
+      </option>
+      <option
+        value="option-2">
+        Option 2
+      </option>
+      <option
+        value="option-3">
+        Option 3
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`test Renders deprecated select without crashing 1`] = `
 <div
   className="formGroup inline">
   
