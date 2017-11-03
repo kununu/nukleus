@@ -17,7 +17,7 @@ import sharedStyles, {
 
 export default class MultipleChoice extends React.Component {
   static propTypes = {
-    choices: PropTypes.array.isRequired,
+    choices: PropTypes.array,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
     heading: PropTypes.string,
@@ -32,12 +32,14 @@ export default class MultipleChoice extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    options: PropTypes.array,
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
+    choices: [],
     error: null,
     errorSubInfo: null,
     heading: null,
@@ -49,13 +51,14 @@ export default class MultipleChoice extends React.Component {
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
+    options: [],
     query: {},
     reference: () => {},
     requiredLabel: ''
   };
 
   state = {
-    choices: this.props.choices || [],
+    choices: this.props.options || this.props.choices || [],
     showError: false
   };
 
