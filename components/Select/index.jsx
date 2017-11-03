@@ -77,8 +77,8 @@ export default class Select extends React.Component {
     query: {},
     reference: () => {},
     requiredLabel: '',
-    title: null,
     sort: null,
+    title: null,
     value: ''
   };
 
