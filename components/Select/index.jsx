@@ -42,6 +42,10 @@ export default class Select extends React.Component {
         ])
       }))
     ]),
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
@@ -65,6 +69,7 @@ export default class Select extends React.Component {
     inputStyle: 'inline',
     isRequired: false,
     items: {},
+    label: null,
     labelHidden: false,
     onBlur: () => {},
     onChange: null,
@@ -156,6 +161,40 @@ export default class Select extends React.Component {
     return classNames.join(' ');
   }
 
+  get label () {
+    const {
+      id,
+      title,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !title) return null;
+
+    if (labelHidden) return <span className={srOnly}>{label || title}</span>;
+
+    /**
+     * generates the TextField label based on the Textfield label prop
+     *
+     * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
+    */
+    if (typeof label === 'string' || typeof title === 'string') {
+      return <label htmlFor={id} className={this.labelClassNames}>{label || title}</label>;
+    }
+
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: controlLabel
+      }
+    );
+  }
+
   render () {
     const {
       autoFocus,
@@ -167,14 +206,12 @@ export default class Select extends React.Component {
       id,
       isRequired,
       items,
-      labelHidden,
       name,
       onBlur,
       onFocus,
       reference,
       requiredLabel,
-      sort,
-      title
+      sort
     } = this.props;
 
     let options = Object.keys(items)
@@ -189,7 +226,6 @@ export default class Select extends React.Component {
 
     return (
       <div className={this.containerClassNames}>
-        {labelHidden && <span className={srOnly}>{title}</span>}
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
@@ -197,12 +233,9 @@ export default class Select extends React.Component {
           </span>
         }
 
-        <label
-          className={this.labelClassNames}
-          htmlFor={id}>{title}</label>
+        {this.label}
 
         <div className={styles.inputContainer}>
-
           <select
             name={name}
             value={this.state.value}
