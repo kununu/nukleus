@@ -13,7 +13,7 @@ const MultipleChoiceDocs = () => (
     component={
       <div>
         <MultipleChoice
-          name="choicßes[]"
+          name="choices[]"
           label="MultipleChoice"
           options={
           [
