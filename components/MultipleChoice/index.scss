@@ -2,6 +2,12 @@
 
 @import '~kununu-theme/scss/base/variables';
 
+.label {
+  margin-right: 10px;
+  margin-bottom: 0;
+  width: 140px;
+}
+
 .choice {
   position: relative;
   display: block;
