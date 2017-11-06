@@ -8,13 +8,11 @@ import styles from './index.scss';
 import Error from '../Error';
 import Label from '../Label';
 import sharedStyles, {
-  controlLabel,
   controlLabelRequired,
   controlNote,
   formControl,
   formControlError,
-  formGroup,
-  hidden
+  formGroup
 } from '../index.scss';
 
 
@@ -166,14 +164,9 @@ export default class Select extends React.Component {
    * @return {string} [list of classNames split by space]
    */
   get labelClassNames () {
-    const {labelHidden} = this.props;
-    const classNames = [controlLabel];
+    if (this.hasError()) return sharedStyles.controlLabelError;
 
-    if (labelHidden) classNames.push(hidden);
-
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
-
-    return classNames.join(' ');
+    return [];
   }
 
   get label () {
@@ -188,7 +181,13 @@ export default class Select extends React.Component {
 
     const value = label || title;
 
-    return <Label id={id} value={value} labelHidden={labelHidden} classNames={this.labelClassNames} />;
+    return (
+      <Label
+        id={id}
+        value={value}
+        labelHidden={labelHidden}
+        classNames={this.labelClassNames} />
+    );
   }
 
   render () {

@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import Error from '../Error';
+import Label from '../Label';
 import {
-  controlLabel,
   controlLabelRequired,
   controlNote,
-  formGroup,
-  srOnly
+  formGroup
 } from '../index.scss';
 
 export default class Choice extends React.Component {
@@ -142,27 +141,14 @@ export default class Choice extends React.Component {
 
     if (!label && !heading) return null;
 
-    if (labelHidden) return <span className={srOnly}>{label || heading}</span>;
+    const value = label || heading;
 
-    /**
-     * generates the TextField label based on the Textfield label prop
-     *
-     * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
-    */
-    if (typeof label === 'string' || typeof heading === 'string') {
-      return <div className={`${controlLabel} ${headingStyle}`}>{label || heading}</div>;
-    }
-
-    // We don't simply put a more complex element inside a label to prevent a
-    // clickable element like a link or button inside a label
-    // However to also add the labelContainer class, we need to return a cloned
-    // element and not just the label - element itself
-    return React.cloneElement(
-      label,
-      {
-        ...label.props,
-        className: controlLabel
-      }
+    return (
+      <Label
+        value={value}
+        labelHidden={labelHidden}
+        classNames={headingStyle}
+        isTitle />
     );
   }
 
