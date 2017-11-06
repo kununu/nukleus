@@ -3,7 +3,7 @@ exports[`test Renders Choice with a heading without crashing 1`] = `
   className="formGroup">
   
   <div
-    className="control-label controlLabel  ">
+    className="control-label controlLabel ">
     heading
   </div>
   <div
@@ -81,7 +81,7 @@ exports[`test Renders Choice with a label without crashing 1`] = `
   className="formGroup">
   
   <div
-    className="control-label controlLabel  ">
+    className="control-label controlLabel ">
     heading
   </div>
   <div
