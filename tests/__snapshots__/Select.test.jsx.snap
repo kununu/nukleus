@@ -31,11 +31,18 @@ exports[`test Changes status on value change 1`] = `
   value="option">
   <div
     className="formGroup inline">
-    <label
-      className="controlLabel"
-      htmlFor="select">
-      Select
-    </label>
+    <Label
+      classNames={Array []}
+      id="select"
+      isTitle={false}
+      labelHidden={false}
+      value="Select">
+      <label
+        className=" controlLabel "
+        htmlFor="select">
+        Select
+      </label>
+    </Label>
     <div
       className="inputContainer">
       <select
@@ -72,7 +79,7 @@ exports[`test Renders Select with an array of items 1`] = `
   className="formGroup inline">
   
   <label
-    className="controlLabel"
+    className=" controlLabel "
     htmlFor="select">
     Select
   </label>
@@ -113,7 +120,7 @@ exports[`test Renders Select with an error message without crashing 1`] = `
   className="formGroup inline">
   
   <label
-    className="controlLabel controlLabelError"
+    className="controlLabelError controlLabel "
     htmlFor="select">
     Select
   </label>
@@ -162,7 +169,7 @@ exports[`test Renders Select without crashing 1`] = `
   className="formGroup inline">
   
   <label
-    className="controlLabel"
+    className=" controlLabel "
     htmlFor="select">
     Select
   </label>
@@ -203,7 +210,7 @@ exports[`test Renders deprecated select without crashing 1`] = `
   className="formGroup inline">
   
   <label
-    className="controlLabel"
+    className=" controlLabel "
     htmlFor="select">
     Select
   </label>

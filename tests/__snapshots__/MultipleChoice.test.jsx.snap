@@ -46,10 +46,17 @@ exports[`test Change status of MultipleChoice on onChange with lots of options 1
   requiredLabel="">
   <div
     className="formGroup formGroupMultipleChoice inline">
-    <div
-      className="controlLabel">
-      MultipleChoice
-    </div>
+    <Label
+      classNames="label"
+      id=""
+      isTitle={true}
+      labelHidden={false}
+      value="MultipleChoice">
+      <div
+        className="label controlLabel  ">
+        MultipleChoice
+      </div>
+    </Label>
     <div
       className="inputContainer">
       <div
@@ -159,10 +166,17 @@ exports[`test Changes status on MultipleChoice onChange 1`] = `
   requiredLabel="">
   <div
     className="formGroup formGroupMultipleChoice inline">
-    <div
-      className="controlLabel">
-      Test
-    </div>
+    <Label
+      classNames="label"
+      id=""
+      isTitle={true}
+      labelHidden={false}
+      value="Test">
+      <div
+        className="label controlLabel  ">
+        Test
+      </div>
+    </Label>
     <div
       className="inputContainer">
       <div
@@ -193,7 +207,7 @@ exports[`test Renders MultipleChoice with inputStyle buttons without crashing 1`
   className="formGroup formGroupMultipleChoice buttons">
   
   <div
-    className="controlLabel">
+    className="label controlLabel  ">
     Button Choice
   </div>
   <div
@@ -225,7 +239,7 @@ exports[`test Renders MultipleChoice without crashing 1`] = `
   className="formGroup formGroupMultipleChoice inline">
   
   <div
-    className="controlLabel">
+    className="label controlLabel  ">
     Test
   </div>
   <div
@@ -257,7 +271,7 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
   className="formGroup formGroupMultipleChoice inline">
   
   <div
-    className="controlLabel">
+    className="label controlLabel  ">
     MultipleChoice
   </div>
   <div
@@ -368,10 +382,17 @@ exports[`test Renders an error if errors prop is set 1`] = `
   requiredLabel="">
   <div
     className="formGroup formGroupMultipleChoice buttons">
-    <div
-      className="controlLabel">
-      Button Choice
-    </div>
+    <Label
+      classNames="label"
+      id=""
+      isTitle={true}
+      labelHidden={false}
+      value="Button Choice">
+      <div
+        className="label controlLabel  ">
+        Button Choice
+      </div>
+    </Label>
     <div
       className="inputContainer">
       <div
@@ -414,7 +435,7 @@ exports[`test Renders deprecated MultipleChoice without crashing 1`] = `
   className="formGroup formGroupMultipleChoice inline">
   
   <div
-    className="controlLabel">
+    className="label controlLabel  ">
     Test
   </div>
   <div
