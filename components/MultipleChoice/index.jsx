@@ -145,6 +145,7 @@ export default class MultipleChoice extends React.Component {
   get label () {
     const {
       heading,
+      inputStyle,
       label,
       labelHidden
     } = this.props;
@@ -152,12 +153,13 @@ export default class MultipleChoice extends React.Component {
     if (!label && !heading) return null;
 
     const value = label || heading;
+    const classNames = inputStyle === 'inline' ? styles.inlineLabel : '';
 
     return (
       <Label
         value={value}
         labelHidden={labelHidden}
-        classNames={styles.label}
+        classNames={classNames}
         isTitle />
     );
   }
