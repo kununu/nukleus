@@ -7,14 +7,17 @@ static defaultProps = {
   errorSubInfo: null,
   inputStyle: 'inline',
   isRequired: false,
-  items: {},
+  items: [],
+  label: null,
   labelHidden: false,
   onBlur: () => {},
   onChange: null,
   onFocus: () => {},
+  options: [],
   query: {},
   reference: () => {},
   requiredLabel: '',
   sort: () => 0,
+  title: null,
   value: ''
 };

@@ -1,6 +1,6 @@
 // Choice
 <Choice
-  heading="Choice"
+  label="Choice"
   name="basic"
   onChange={() => {}}
   checked="option-a"
@@ -25,7 +25,7 @@
 
 // Choice with multiple Rows
 <Choice
-  heading="Choice with multiple rows"
+  label="Choice with multiple rows"
   name="multiple-rows"
   onChange={() => {}}
   optionsPerRow="3"

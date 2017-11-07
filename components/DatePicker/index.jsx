@@ -14,7 +14,8 @@ import {
   controlNote,
   formControl,
   formControlError,
-  formGroup
+  formGroup,
+  srOnly
 } from '../index.scss';
 
 export default class DatePickerComponent extends React.Component {
@@ -26,13 +27,18 @@ export default class DatePickerComponent extends React.Component {
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     value: PropTypes.string
   };
 
@@ -43,11 +49,14 @@ export default class DatePickerComponent extends React.Component {
     icon: null,
     inputStyle: 'inline',
     isRequired: false,
+    label: null,
+    labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
     query: {},
     requiredLabel: '',
+    title: null,
     value: ''
   };
 
@@ -99,9 +108,42 @@ export default class DatePickerComponent extends React.Component {
     return this.state.showError && this.props.error;
   }
 
+  get label () {
+    const {
+      id,
+      title,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !title) return null;
+
+    if (labelHidden) return <span className={srOnly}>{label || title}</span>;
+
+    /**
+     * generates the TextField label based on the Textfield label prop
+     *
+     * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
+    */
+    if (typeof label === 'string' || typeof title === 'string') {
+      return <label className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`} htmlFor={id}>{label || title}</label>;
+    }
+
+    // We don't simply put a more complex element inside a label to prevent a
+    // clickable element like a link or button inside a label
+    // However to also add the labelContainer class, we need to return a cloned
+    // element and not just the label - element itself
+    return React.cloneElement(
+      label,
+      {
+        ...label.props,
+        className: controlLabel
+      }
+    );
+  }
+
   render () {
     const {
-      title,
       name,
       icon,
       id,
@@ -121,12 +163,7 @@ export default class DatePickerComponent extends React.Component {
           </span>
         }
 
-        <label
-          className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`}
-          htmlFor={id}>
-
-          {title}
-        </label>
+        {this.label}
 
         <div className={styles.innerContainer}>
           <DatePicker

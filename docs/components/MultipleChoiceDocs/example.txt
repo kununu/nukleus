@@ -1,8 +1,8 @@
 // Standard styled
 <MultipleChoice
   name="choices[]"
-  heading="MultipleChoice"
-  choices={
+  label="MultipleChoice"
+  options={
     [
       {
         id: 'option-1',
@@ -21,7 +21,7 @@
 <MultipleChoice
   name="choices[]"
   inputStyle="buttons"
-  choices={
+  options={
     [{
       id: 'option-1',
       isChecked: true,
