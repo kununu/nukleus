@@ -32,7 +32,7 @@ export default class Choice extends React.Component {
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
     options: PropTypes.array.isRequired,
-    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
+    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
