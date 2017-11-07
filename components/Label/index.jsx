@@ -8,12 +8,13 @@ import {
 export default function Label ({id, value, labelHidden, classNames, isTitle}) {
   const hidden = labelHidden ? srOnly : '';
   const allClassNames = `${classNames} ${controlLabel} ${hidden}`;
+
   /**
    * For checkbox groups or radio button groups you may want
    * to have a title that looks like a label
    *
    * @return {ReactElement} [Returns a div with the label styles]
-   */
+  */
   if (isTitle) {
     return <div className={allClassNames}>{value}</div>;
   }
