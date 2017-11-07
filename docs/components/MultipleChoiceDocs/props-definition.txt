@@ -1,7 +1,9 @@
 static propTypes = {
+  // Choices is deprecated: Use options instead
   choices: PropTypes.array,
   error: PropTypes.string,
   errorSubInfo: PropTypes.string,
+  // Heading is deprecated: Use label instead
   heading: PropTypes.string,
   inputStyle: PropTypes.oneOf([
     'inline',

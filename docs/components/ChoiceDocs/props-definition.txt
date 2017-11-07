@@ -4,6 +4,7 @@ static propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
   errorSubInfo: PropTypes.string,
+  // Heading is deprecated: Use label instead
   heading: PropTypes.string,
   headingStyle: PropTypes.string,
   isRequired: PropTypes.bool,

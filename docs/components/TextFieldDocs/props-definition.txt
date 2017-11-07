@@ -30,6 +30,7 @@ static propTypes = {
   requiredLabel: PropTypes.string,
   rows: PropTypes.number,
   sanitizeValue: PropTypes.func,
+  // Title is deprecated: Use label instead
   title: PropTypes.string,
   type: PropTypes.oneOf([
     'email',

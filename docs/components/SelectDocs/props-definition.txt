@@ -8,6 +8,7 @@ static propTypes = {
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   isRequired: PropTypes.bool,
+  // Heading is deprecated: Use options instead
   items: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.shape({
@@ -47,6 +48,7 @@ static propTypes = {
   reference: PropTypes.func,
   requiredLabel: PropTypes.string,
   sort: PropTypes.func,
+  // Title is deprecated: Use label instead
   title: PropTypes.string,
   value: PropTypes.any
 };
