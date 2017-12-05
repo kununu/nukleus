@@ -261,6 +261,18 @@ export default class Autocomplete extends React.Component {
       }
     </span>);
 
+  renderSuggestionsContainer = ({containerProps, children}) => {
+    if (this.state.suggestions.length) {
+      return (
+        <div {...containerProps} className={styles.suggestionsContainer}>
+          {children}
+        </div>
+      );
+    }
+
+    return null;
+  }
+
   render () {
     const {
       autoFocus,
@@ -332,6 +344,7 @@ export default class Autocomplete extends React.Component {
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             renderSuggestion={this.renderSuggestion}
+            renderSuggestionsContainer={this.renderSuggestionsContainer}
             suggestions={suggestions}
             theme={styles} />
 
