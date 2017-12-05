@@ -155,9 +155,6 @@ exports[`test Hides no suggestions on blur 1`] = `
               style={Object {}}
               type="text"
               value="z" />
-            <div
-              id="react-autowhatever-1"
-              style={Object {}} />
           </div>
         </Autowhatever>
       </Autosuggest>
@@ -205,6 +202,7 @@ exports[`test Renders Autocomplete with Error without crashing 1`] = `
         type="text"
         value="test" />
       <div
+        className="suggestionsContainer"
         id="react-autowhatever-1"
         style={Object {}} />
     </div>
@@ -260,6 +258,7 @@ exports[`test Renders Autocomplete without crashing 1`] = `
         type="text"
         value="test" />
       <div
+        className="suggestionsContainer"
         id="react-autowhatever-1"
         style={Object {}} />
     </div>
@@ -425,9 +424,6 @@ exports[`test Renders no suggestions container 1`] = `
               style={Object {}}
               type="text"
               value="z" />
-            <div
-              id="react-autowhatever-1"
-              style={Object {}} />
           </div>
         </Autowhatever>
       </Autosuggest>
@@ -625,6 +621,7 @@ exports[`test Renders suggestions container 1`] = `
               type="text"
               value="a" />
             <div
+              className="suggestionsContainer"
               id="react-autowhatever-1"
               style={Object {}}>
               <ItemsList
@@ -918,9 +915,6 @@ exports[`test Updates value on selection 1`] = `
               style={Object {}}
               type="text"
               value="apple" />
-            <div
-              id="react-autowhatever-1"
-              style={Object {}} />
           </div>
         </Autowhatever>
       </Autosuggest>
