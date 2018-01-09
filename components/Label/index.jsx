@@ -49,7 +49,7 @@ Label.propTypes = {
   ]),
   id: PropTypes.string,
   isTitle: PropTypes.bool,
-  labelHidden: PropTypes.bool.isRequired,
+  labelHidden: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
@@ -57,6 +57,7 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
+  labelHidden: false,
   classNames: '',
   id: '',
   isTitle: false
