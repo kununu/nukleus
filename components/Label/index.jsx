@@ -57,8 +57,8 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
-  labelHidden: false,
   classNames: '',
   id: '',
-  isTitle: false
+  isTitle: false,
+  labelHidden: false
 };
