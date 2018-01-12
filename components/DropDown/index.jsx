@@ -47,7 +47,9 @@ export default class Dropdown extends React.Component {
 
   onClickDocument = e => {
     if (this.isButtonElement(e)) return;
-    this.setState({isOpen: false});
+    setTimeout(() => {
+      this.setState({isOpen: false});
+    }, 100);
   }
 
   getActiveItem () {
