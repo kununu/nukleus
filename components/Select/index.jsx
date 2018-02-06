@@ -270,7 +270,6 @@ export default class Select extends React.Component {
 
           <span className={styles.caret}>
             <svg
-              className={styles.icon}
               x="0px"
               y="0px"
               viewBox="-248 252.9 13.4 9.1">
