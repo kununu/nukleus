@@ -72,7 +72,6 @@ exports[`test Changes status on value change 1`] = `
       <span
         className="caret">
         <svg
-          className="icon"
           viewBox="-248 252.9 13.4 9.1"
           x="0px"
           y="0px">
@@ -126,7 +125,6 @@ exports[`test Renders Select with an array of items 1`] = `
     <span
       className="caret">
       <svg
-        className="icon"
         viewBox="-248 252.9 13.4 9.1"
         x="0px"
         y="0px">
@@ -187,7 +185,6 @@ exports[`test Renders Select with an error message without crashing 1`] = `
     <span
       className="caret">
       <svg
-        className="icon"
         viewBox="-248 252.9 13.4 9.1"
         x="0px"
         y="0px">
@@ -240,7 +237,6 @@ exports[`test Renders Select without crashing 1`] = `
     <span
       className="caret">
       <svg
-        className="icon"
         viewBox="-248 252.9 13.4 9.1"
         x="0px"
         y="0px">
@@ -293,7 +289,6 @@ exports[`test Renders deprecated select without crashing 1`] = `
     <span
       className="caret">
       <svg
-        className="icon"
         viewBox="-248 252.9 13.4 9.1"
         x="0px"
         y="0px">
