@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   controlLabel,
@@ -48,7 +49,7 @@ Label.propTypes = {
   ]),
   id: PropTypes.string,
   isTitle: PropTypes.bool,
-  labelHidden: PropTypes.bool.isRequired,
+  labelHidden: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
@@ -58,5 +59,6 @@ Label.propTypes = {
 Label.defaultProps = {
   classNames: '',
   id: '',
-  isTitle: false
+  isTitle: false,
+  labelHidden: false
 };
