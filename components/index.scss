@@ -52,7 +52,6 @@
   min-height: 50px;
   padding: $padding-base-vertical + 1 $padding-base-horizontal;
   font-size: $font-size-md;
-  letter-spacing: -.02em;
   line-height: $line-height-base;
   color: $gray-base-70;
   background-color: $input-bg;
@@ -123,7 +122,6 @@
   color: $gray-base-90;
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
-  letter-spacing: -.01em;
   margin-bottom: 6px;
 
   .faInfoCircle {

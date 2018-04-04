@@ -35,7 +35,6 @@
       text-transform: none;
       font-size: $font-size-base;
       font-weight: normal;
-      letter-spacing: -.01em;
       min-height: 20px;
       margin-bottom: 0;
 
@@ -120,7 +119,6 @@ form .inline {
         border: 1px solid $blue-new;
         transition: background-color .25s;
         font-weight: $font-weight-semibold;
-        letter-spacing: -.02em;
 
         @media (max-width: $screen-sm-max) {
           font-size: $font-size-xs;
