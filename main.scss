@@ -1,12 +1,11 @@
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
-@import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/functions';
-@import '~kununu-theme/scss/base/mixins';
-@import '~kununu-theme/scss/base/core';
-@import '~kununu-theme/scss/effects/core';
-@import '~kununu-theme/scss/base/panels';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/mixins';
+@import '~@kununu/kununu-theme-v2/scss/base/core';
+@import '~@kununu/kununu-theme-v2/scss/effects/core';
+@import '~@kununu/kununu-theme-v2/scss/base/panels';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/code';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/forms';

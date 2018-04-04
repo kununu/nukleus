@@ -1,4 +1,4 @@
-@import '~kununu-theme/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .container {
   position: relative;
@@ -56,7 +56,7 @@
   padding: 0;
   position: absolute;
   right: 0;
-  z-index: $zindex-popover;
+  z-index: 1060;
   overflow: hidden;
 
   li {
@@ -71,7 +71,7 @@
 .item {
   cursor: pointer;
   font-size: $font-size-small;
-  color: $gray-dark;
+  color: $text-color;
 
   &:hover {
     background-color: $gray-base-03;

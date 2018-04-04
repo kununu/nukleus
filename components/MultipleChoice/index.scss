@@ -1,6 +1,6 @@
 // sass-lint:disable class-name-format
 
-@import '~kununu-theme/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .inlineLabel {
   @media (min-width: $screen-xs-min) {
@@ -115,8 +115,8 @@ form .inline {
 
     input {
       & + label {
-        color: $blue-new;
-        border: 1px solid $blue-new;
+        color: $blue;
+        border: 1px solid $blue;
         transition: background-color .25s;
         font-weight: $font-weight-semibold;
 
@@ -128,7 +128,7 @@ form .inline {
       & + label:hover,
       &:focus + label {
         background-color: transparent;
-        color: $blue-new;
+        color: $blue;
       }
 
       &:checked + label,
@@ -138,17 +138,17 @@ form .inline {
       }
 
       &:active + label {
-        background-color: $blue-new;
+        background-color: $blue;
         color: $white;
       }
 
       &:checked + label {
-        background-color: $blue-new;
+        background-color: $blue;
         color: $white;
 
         &,
         &:hover {
-          background-color: $blue-new;
+          background-color: $blue;
           color: $white;
         }
       }

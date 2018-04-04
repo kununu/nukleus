@@ -29,6 +29,7 @@
   ],
   "readme": "README.md",
   "devDependencies": {
+    "@kununu/kununu-theme-v2": "2.0.0",
     "autoprefixer": "7.1.2",
     "babel-cli": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -58,7 +59,6 @@
     "font-awesome-webpack": "^0.0.5-beta.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "18.0.0",
-    "kununu-theme": "3.1.1",
     "less": "2.7.1",
     "node-sass": "4.5.3",
     "node-sass-module-importer": "0.1.0",
