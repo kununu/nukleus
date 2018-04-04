@@ -57,7 +57,7 @@ pre {
     transition: all .2s;
 
     &:hover {
-      color: $teal-light;
+      color: $teal;
       text-shadow: 1px 1px 1px rgba($white, .5);
     }
   }
@@ -97,7 +97,7 @@ pre {
       transform: translateX(-266px);
       transition: transform 450ms cubic-bezier(.23, 1, .32, 1) 0ms;
       width: 256px;
-      z-index: $zindex-overlay + 1;
+      z-index: 991;
 
       a:hover {
         text-decoration: none;
@@ -130,7 +130,7 @@ pre {
       position: fixed;
       transition: all .5s;
       will-change: opacity;
-      z-index: $zindex-overlay;
+      z-index: 990;
     }
 
     &.open {
