@@ -5,6 +5,8 @@ static defaultProps = {
   icon: null,
   inputStyle: 'inline',
   isRequired: false,
+  label: null,
+  labelHidden: false,
   onBlur: () => {},
   onChange: () => {},
   onFocus: () => {},

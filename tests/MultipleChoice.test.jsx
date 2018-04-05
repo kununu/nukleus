@@ -6,7 +6,7 @@ import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-un
 
 const spyFunc = jest.fn();
 
-const choice = (
+const deprecatedMultipleChoice = (
   <MultipleChoice
     name="choice[]"
     heading="Test"
@@ -24,13 +24,13 @@ const choice = (
   } />
 );
 
-const choiceWithButton = (
+const multipleChoice = (
   <MultipleChoice
     name="choice[]"
-    heading="Button Choice"
-    inputStyle="buttons"
+    label="Test"
     isRequired
-    choices={
+    onChange={spyFunc}
+    options={
     [
       {
         id: 'option-1',
@@ -42,11 +42,29 @@ const choiceWithButton = (
   } />
 );
 
-const choices = (
+const multipleChoiceWithButton = (
   <MultipleChoice
     name="choice[]"
-    heading="MultipleChoice"
-    choices={
+    label="Button Choice"
+    inputStyle="buttons"
+    isRequired
+    options={
+    [
+      {
+        id: 'option-1',
+        isChecked: false,
+        label: 'test',
+        value: 'test'
+      }
+    ]
+  } />
+);
+
+const multipleChoices = (
+  <MultipleChoice
+    name="choice[]"
+    label="MultipleChoice"
+    options={
     [{
       id: 'option-1',
       isChecked: false,
@@ -73,29 +91,34 @@ const choices = (
     }]} />
 );
 
-test('Renders choice without crashing', () => {
-  const component = renderer.create(choice);
+test('Renders deprecated MultipleChoice without crashing', () => {
+  const component = renderer.create(deprecatedMultipleChoice);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Changes status on choice change', () => {
-  const component = mount(choice);
+test('Renders MultipleChoice without crashing', () => {
+  const component = renderer.create(multipleChoice);
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Changes status on MultipleChoice onChange', () => {
+  const component = mount(multipleChoice);
   component.find('input').simulate('change');
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Renders choices without crashing', () => {
-  const component = renderer.create(choices);
+test('Renders MultipleCoices without crashing', () => {
+  const component = renderer.create(multipleChoices);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Renders choices with inputStyle buttons withouth crashing', () => {
-  const component = renderer.create(choiceWithButton);
+test('Renders MultipleChoice with inputStyle buttons without crashing', () => {
+  const component = renderer.create(multipleChoiceWithButton);
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Change status of choices change', () => {
-  const component = mount(choices);
+test('Change status of MultipleChoice on onChange with lots of options', () => {
+  const component = mount(multipleChoices);
   component.find({value: 'option-1'}).simulate('change');
   component.find({value: 'option-4'}).simulate('change');
   expect(toJson(component)).toMatchSnapshot();
@@ -105,12 +128,12 @@ test('Renders an error if errors prop is set', () => {
   const component = mount(
     <MultipleChoice
       name="choice[]"
-      heading="Button Choice"
+      label="Button Choice"
       inputStyle="buttons"
       error="error"
       errorSubInfo="Subinfo"
       isRequired
-      choices={
+      options={
       [
         {
           id: 'option-1',
@@ -125,13 +148,13 @@ test('Renders an error if errors prop is set', () => {
 });
 
 test('Fires on change function', () => {
-  const component = mount(choice);
+  const component = mount(multipleChoice);
   component.find('input').simulate('click');
   expect(spyFunc).toHaveBeenCalled();
 });
 
-test('Changing a choice returns correct values in onChange Event', done => {
-  const initialChoices = [
+test('Changing a MultipleChoice returns correct values in onChange Event', done => {
+  const initialOptions = [
     {
       id: 'option-1',
       isChecked: false,
@@ -152,7 +175,7 @@ test('Changing a choice returns correct values in onChange Event', done => {
     }
   ];
 
-  const updatedChoices = initialChoices.map(ch => {
+  const updatedOptions = initialOptions.map(ch => {
     if (ch.id === 'option-2') {
       return {
         ...ch,
@@ -164,20 +187,20 @@ test('Changing a choice returns correct values in onChange Event', done => {
 
   const component = mount(<MultipleChoice
     name="choice[]"
-    heading="Button Choice"
+    label="Button Choice"
     inputStyle="buttons"
     isRequired
-    onChange={(ch, allChoices) => {
-      expect(allChoices).toEqual(updatedChoices);
+    onChange={(ch, allOptions) => {
+      expect(allOptions).toEqual(updatedOptions);
       done();
     }}
-    choices={initialChoices} />
+    options={initialOptions} />
   );
   component.find({value: 'option-2'}).simulate('change');
 });
 
-describe('Multiple Choice Events', () => {
-  const initialChoices = [
+describe('MultipleChoice Events', () => {
+  const initialOptions = [
     {
       id: 'option-1',
       isChecked: false,
@@ -203,11 +226,11 @@ describe('Multiple Choice Events', () => {
     const component = mount(
       <MultipleChoice
         name="test[]"
-        heading="Button Choice"
+        label="Button Choice"
         inputStyle="buttons"
         isRequired
         onFocus={spyFunc}
-        choices={initialChoices} />
+        options={initialOptions} />
       );
 
     component.find('[type="checkbox"]').first().simulate('focus');
@@ -219,11 +242,11 @@ describe('Multiple Choice Events', () => {
     const component = mount(
       <MultipleChoice
         name="test[]"
-        heading="Button Choice"
+        label="Button Choice"
         inputStyle="buttons"
         isRequired
         onBlur={spyFunc}
-        choices={initialChoices} />
+        options={initialOptions} />
       );
 
     component.find('[type="checkbox"]').first().simulate('focus');

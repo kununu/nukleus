@@ -253,7 +253,25 @@ export default class Autocomplete extends React.Component {
     return classNames.join(' ');
   }
 
-  renderSuggestion = suggestion => <span>{suggestion.item}<span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span></span>;
+  renderSuggestion = suggestion =>
+    (<span>
+      {suggestion.item}
+      {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
+        <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
+      }
+    </span>);
+
+  renderSuggestionsContainer = ({containerProps, children}) => {
+    if (this.state.suggestions.length) {
+      return (
+        <div {...containerProps} className={styles.suggestionsContainer}>
+          {children}
+        </div>
+      );
+    }
+
+    return null;
+  }
 
   render () {
     const {
@@ -326,6 +344,7 @@ export default class Autocomplete extends React.Component {
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             renderSuggestion={this.renderSuggestion}
+            renderSuggestionsContainer={this.renderSuggestionsContainer}
             suggestions={suggestions}
             theme={styles} />
 

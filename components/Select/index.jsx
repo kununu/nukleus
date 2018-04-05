@@ -6,15 +6,13 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import Error from '../Error';
+import Label from '../Label';
 import sharedStyles, {
-  controlLabel,
   controlLabelRequired,
   controlNote,
   formControl,
   formControlError,
-  formGroup,
-  hidden,
-  srOnly
+  formGroup
 } from '../index.scss';
 
 
@@ -42,16 +40,33 @@ export default class Select extends React.Component {
         ])
       }))
     ]),
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    options: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ]),
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ])
+      }))
+    ]),
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     sort: PropTypes.func,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     value: PropTypes.any
   };
 
@@ -64,15 +79,18 @@ export default class Select extends React.Component {
     errorSubInfo: null,
     inputStyle: 'inline',
     isRequired: false,
-    items: {},
+    items: [],
+    label: null,
     labelHidden: false,
     onBlur: () => {},
     onChange: null,
     onFocus: () => {},
+    options: [],
     query: {},
     reference: () => {},
     requiredLabel: '',
     sort: null,
+    title: null,
     value: ''
   };
 
@@ -146,14 +164,30 @@ export default class Select extends React.Component {
    * @return {string} [list of classNames split by space]
    */
   get labelClassNames () {
-    const {labelHidden} = this.props;
-    const classNames = [controlLabel];
+    if (this.hasError()) return sharedStyles.controlLabelError;
 
-    if (labelHidden) classNames.push(hidden);
+    return [];
+  }
 
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+  get label () {
+    const {
+      id,
+      title,
+      label,
+      labelHidden
+    } = this.props;
 
-    return classNames.join(' ');
+    if (!label && !title) return null;
+
+    const value = label || title;
+
+    return (
+      <Label
+        id={id}
+        value={value}
+        labelHidden={labelHidden}
+        classNames={this.labelClassNames} />
+    );
   }
 
   render () {
@@ -167,29 +201,29 @@ export default class Select extends React.Component {
       id,
       isRequired,
       items,
-      labelHidden,
       name,
       onBlur,
       onFocus,
+      options,
       reference,
       requiredLabel,
-      sort,
-      title
+      sort
     } = this.props;
 
-    let options = Object.keys(items)
+    const allOptions = (Object.keys(options).length && options) || items;
+
+    let mappedOptions = Object.keys(allOptions)
       .map(key => ({
-        key: items[key].key || key,
-        value: items[key].value || items[key]
+        key: (allOptions)[key].key || key,
+        value: (allOptions)[key].value || (allOptions)[key]
       }));
 
     if (sort) {
-      options = options.sort(sort);
+      mappedOptions = mappedOptions.sort(sort);
     }
 
     return (
       <div className={this.containerClassNames}>
-        {labelHidden && <span className={srOnly}>{title}</span>}
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
@@ -197,12 +231,9 @@ export default class Select extends React.Component {
           </span>
         }
 
-        <label
-          className={this.labelClassNames}
-          htmlFor={id}>{title}</label>
+        {this.label}
 
         <div className={styles.inputContainer}>
-
           <select
             name={name}
             value={this.state.value}
@@ -222,7 +253,7 @@ export default class Select extends React.Component {
             {defaultItem &&
               <option value="">{defaultItem}</option>}
 
-            {options.map(item =>
+            {mappedOptions.map(item =>
               (<option
                 key={item.key}
                 value={item.key}>
@@ -236,6 +267,19 @@ export default class Select extends React.Component {
               info={error}
               subInfo={errorSubInfo} />
           }
+
+          <span className={styles.caret}>
+            <svg
+              x="0px"
+              y="0px"
+              viewBox="-248 252.9 13.4 9.1">
+              <path
+                fill="#20292D"
+                d="M-235,255.7l-5.9,5.8c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0-0.3-0.1-0.4-0.2l-5.9-5.8c-0.1-0.2-0.1-0.3-0.1-0.4
+    c0-0.1,0-0.3,0.2-0.4l1.3-1.3c0.1-0.1,0.2-0.2,0.4-0.2s0.3,0.1,0.4,0.2l4.2,4.2l4.1-4.2c0.1-0.1,0.2-0.2,0.4-0.2
+    c0.1,0,0.3,0.1,0.4,0.2l1.2,1.3c0.1,0.1,0.2,0.2,0.2,0.4C-234.8,255.4-234.9,255.5-235,255.7z" />
+            </svg>
+          </span>
         </div>
       </div>
     );

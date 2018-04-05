@@ -16,7 +16,8 @@ const staticAutocomplete = (
         {item: 'alpha', itemInfo: 'Vienna'},
         {item: 'IBM', itemInfo: 'US'},
         {item: 'kununu', itemInfo: 'Vienna'},
-        {item: 'kununu', itemInfo: 'US'}
+        {item: 'kununu', itemInfo: 'US'},
+        {item: 'kununu'}
       ]
     }}
     value="test"
@@ -128,11 +129,11 @@ test('Fetches suggestions on change', done => {
 test('Fetches Value only when debounce is over', done => {
   const component = mount(staticAutocomplete);
   component.find('input').simulate('change', {target: {value: 'kunu'}});
-  expect(component.state().suggestions.length).toEqual(5);
+  expect(component.state().suggestions.length).toEqual(6);
 
   // waiting for debounce
   waitingForDebounce(() => {
-    expect(component.state().suggestions.length).toEqual(2);
+    expect(component.state().suggestions.length).toEqual(3);
     done();
   });
 });

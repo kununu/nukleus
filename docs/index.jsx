@@ -12,6 +12,7 @@ import DropDownDocs from 'components/DropDownDocs';
 import ErrorDocs from 'components/ErrorDocs';
 import InfoTextDocs from 'components/InfoTextDocs';
 import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
+import ModalDocs from 'components/ModalDocs';
 import PaginatorDocs from 'components/PaginatorDocs';
 import SelectDocs from 'components/SelectDocs';
 import StarsDocs from 'components/StarsDocs';
@@ -46,6 +47,7 @@ const getRoutes = () => (
     <Route path="/table" component={TableDocs} />
     <Route path="/tabs(/:page)" component={TabsDocs} />
     <Route path="/tool-tip" component={ToolTipDocs} />
+    <Route path="/modal" component={ModalDocs} />
   </Route>
 );
 

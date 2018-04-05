@@ -9,12 +9,12 @@ import {default as propsDefault} from './props-default.txt';
 
 const DatePickerDocs = () => (
   <DocsRoot
-    title="DatePicker"
+    label="DatePicker"
     component={
       <DatePicker
         id="date-picker"
         name="date-picker"
-        title="DatePicker"
+        label="DatePicker"
         icon={<i className="fa fa-calendar" aria-hidden="true" />} />
     }
     example={example}

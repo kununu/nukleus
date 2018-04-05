@@ -1,5 +1,5 @@
 <DatePicker
   id="date-picker"
   name="date-picker"
-  title="DatePicker"
+  label="DatePicker"
   icon={<i className="fa fa-calendar" aria-hidden="true" />} />

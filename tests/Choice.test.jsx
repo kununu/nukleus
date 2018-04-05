@@ -34,7 +34,7 @@ test('Renders Choice with radio buttons without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders Choice with an heading without crashing', () => {
+test('Renders Choice with a heading without crashing', () => {
   const component = renderer.create(
     <Choice
       heading="heading"
@@ -46,12 +46,47 @@ test('Renders Choice with an heading without crashing', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Renders Choice with a label without crashing', () => {
+  const component = renderer.create(
+    <Choice
+      label="heading"
+      name="test"
+      options={options}
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Renders a disabled Choice without crashing', () => {
   const component = renderer.create(
     <Choice
       name="test"
       options={options}
       disabled
+      onChange={() => {}} />
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a Choice with a disabled option without crashing', () => {
+  const newOptions = options.concat([
+    {
+      disabled: true,
+      id: 'opD',
+      label: 'Option D',
+      value: 'opD'
+    }
+  ]);
+
+  const component = renderer.create(
+    <Choice
+      name="test"
+      options={newOptions}
       onChange={() => {}} />
   );
 
@@ -214,6 +249,28 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
   );
 
   component.find('#testopA').simulate('change');
+  expect(spyFunc).not.toHaveBeenCalled();
+});
+
+test('Does not fire onChange function when clicked option is disabled', () => {
+  const newOptions = options.concat([
+    {
+      disabled: true,
+      id: 'opD',
+      label: 'Option D',
+      value: 'opD'
+    }
+  ]);
+
+  const spyFunc = jest.fn();
+  const component = mount(
+    <Choice
+      name="test"
+      options={newOptions}
+      onChange={spyFunc} />
+  );
+
+  component.find('#testopD').simulate('change');
   expect(spyFunc).not.toHaveBeenCalled();
 });
 

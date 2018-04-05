@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import Error from '../Error';
+import Label from '../Label';
 import {
-  controlLabel,
   controlLabelRequired,
   controlNote,
   formGroup
@@ -21,13 +21,18 @@ export default class Choice extends React.Component {
     heading: PropTypes.string,
     headingStyle: PropTypes.string,
     isRequired: PropTypes.bool,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
     options: PropTypes.array.isRequired,
-    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', null]),
+    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
@@ -39,9 +44,11 @@ export default class Choice extends React.Component {
     disabled: false,
     error: null,
     errorSubInfo: null,
-    heading: '',
+    heading: null,
     headingStyle: 'control-label',
     isRequired: false,
+    label: null,
+    labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onClick: () => {},
@@ -83,9 +90,9 @@ export default class Choice extends React.Component {
     }
   }
 
-  onChange = e => {
+  onChange = (option, e) => {
     const value = e.target.value;
-    if (this.props.disabled || value === this.state.checked) return;
+    if (this.isOptionDisabled(option) || value === this.state.checked) return;
 
     this.props.onChange(e);
     this.setState({
@@ -93,9 +100,10 @@ export default class Choice extends React.Component {
     });
   };
 
-  onClick = e => {
+  onClick = (option, e) => {
+    if (this.isOptionDisabled(option)) return;
+
     const value = e.target.value;
-    if (this.props.disabled) return;
 
     this.props.onClick(e);
     // As long as the component is not required and the component is deselected set to null.
@@ -118,13 +126,37 @@ export default class Choice extends React.Component {
     return this.state.showError && this.props.error;
   }
 
+  isOptionDisabled (option) {
+    const disabled = this.props.disabled;
+    return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
+  }
+
+  get label () {
+    const {
+      heading,
+      headingStyle,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !heading) return null;
+
+    const value = label || heading;
+
+    return (
+      <Label
+        value={value}
+        labelHidden={labelHidden}
+        classNames={headingStyle}
+        isTitle />
+    );
+  }
+
   render () {
     const {
       customTheme,
-      disabled,
       error,
       errorSubInfo,
-      heading,
       isRequired,
       name,
       onBlur,
@@ -149,7 +181,7 @@ export default class Choice extends React.Component {
           </span>
         }
 
-        {heading && <div className={`${this.props.headingStyle} ${controlLabel}`}>{heading}</div>}
+        {this.label}
 
         <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
@@ -161,13 +193,13 @@ export default class Choice extends React.Component {
                 name={name}
                 checked={checked === item.value}
                 onBlur={onBlur}
-                onChange={this.onChange}
+                onChange={e => this.onChange(item, e)}
                 onFocus={onFocus}
-                onClick={this.onClick}
+                onClick={e => this.onClick(item, e)}
                 ref={reference}
                 required={isRequired} />
               <label
-                disabled={disabled}
+                disabled={this.isOptionDisabled(item)}
                 id={idx}
                 htmlFor={`${name}${item.id}`}
                 className={customTheme}>

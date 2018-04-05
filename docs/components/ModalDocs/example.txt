@@ -1,0 +1,20 @@
+<div>
+  <p>Use this button, to show the modal</p>
+  <Button
+    type="primary"
+    text="Open Modal"
+    onClick={() => this.setState({modalOpen: true})} />
+  <Modal
+    titleText="Nukleus Modal"
+    open={this.state.modalOpen}
+    state={this.state}
+    actionText="Ok"
+    cancelText="Cancel"
+    onCancel={() => this.setState({modalOpen: false})}
+    onAction={() => this.setState({
+      modalOpen: false,
+      success: true
+    })}>
+    <p>With dynamic content</p>
+  </Modal>
+</div>

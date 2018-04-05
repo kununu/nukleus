@@ -27,3 +27,19 @@ body {
   height: 100%;
   font-size: 14px;
 }
+
+.flexRow {
+  
+  .flexCol {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 998px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .flexCol {
+      margin-right: 10px;
+    } 
+  }
+}

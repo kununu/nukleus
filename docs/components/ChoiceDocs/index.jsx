@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Choice} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
@@ -13,7 +14,7 @@ const ChoiceDocs = ({location: {query}}) => (
     component={
       <div>
         <Choice
-          heading="Choice"
+          label="Choice"
           name="basic"
           onChange={() => {}}
           checked="option-a"
@@ -37,7 +38,7 @@ const ChoiceDocs = ({location: {query}}) => (
           query={query} />
         <br /><br />
         <Choice
-          heading="Choice with multiple rows"
+          label="Choice with multiple rows"
           name="multiple-rows"
           onChange={() => {}}
           optionsPerRow="3"

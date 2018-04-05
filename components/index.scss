@@ -228,12 +228,14 @@
     }
   }
 
-  .controlLabelError,
-  .controlLabelMediumSize {
-    align-self: flex-start; // otherwise would be centered between Input Field and error
-    display: flex;
-    align-items: center;
-    min-height: 46px; // height of input
+  @media (min-width: $screen-xs-min) {
+    .controlLabelError,
+    .controlLabelMediumSize {
+      align-self: flex-start; // otherwise would be centered between Input Field and error
+      display: flex;
+      align-items: center;
+      min-height: 46px; // height of input
+    }
   }
 
   .choice:first-child {
@@ -262,5 +264,8 @@
   label {
     margin: 0 10px 0 0;
     width: auto;
+    color: $gray-base-90;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
   }
 }

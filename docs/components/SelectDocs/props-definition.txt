@@ -8,6 +8,7 @@ static propTypes = {
   id: PropTypes.string.isRequired,
   inputStyle: PropTypes.string,
   isRequired: PropTypes.bool,
+  // Heading is deprecated: Use options instead
   items: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.shape({
@@ -21,15 +22,33 @@ static propTypes = {
       ])
     }))
   ]),
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   labelHidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
+  options: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.shape({
+      key: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ])
+    }))
+  ]),
   query: PropTypes.object,
   reference: PropTypes.func,
   requiredLabel: PropTypes.string,
   sort: PropTypes.func,
-  title: PropTypes.string.isRequired,
+  // Title is deprecated: Use label instead
+  title: PropTypes.string,
   value: PropTypes.any
 };

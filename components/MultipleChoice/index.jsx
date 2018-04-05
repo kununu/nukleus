@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import Error from '../Error';
+import Label from '../Label';
 import sharedStyles, {
-  controlLabel,
   controlLabelRequired,
   controlNote,
   formControl,
@@ -16,38 +16,48 @@ import sharedStyles, {
 
 export default class MultipleChoice extends React.Component {
   static propTypes = {
-    choices: PropTypes.array.isRequired,
+    choices: PropTypes.array,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
     heading: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    options: PropTypes.array,
     query: PropTypes.object,
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
 
   static defaultProps = {
+    choices: [],
     error: null,
     errorSubInfo: null,
-    heading: '',
+    heading: null,
     headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
+    label: null,
+    labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
+    options: [],
     query: {},
     reference: () => {},
     requiredLabel: ''
   };
 
   state = {
-    choices: this.props.choices || [],
+    choices: (this.props.options.length && this.props.options) || this.props.choices,
     showError: false
   };
 
@@ -132,6 +142,28 @@ export default class MultipleChoice extends React.Component {
     return classNames.join(' ');
   }
 
+  get label () {
+    const {
+      heading,
+      inputStyle,
+      label,
+      labelHidden
+    } = this.props;
+
+    if (!label && !heading) return null;
+
+    const value = label || heading;
+    const classNames = inputStyle === 'inline' ? styles.inlineLabel : '';
+
+    return (
+      <Label
+        value={value}
+        labelHidden={labelHidden}
+        classNames={classNames}
+        isTitle />
+    );
+  }
+
   render () {
     const {choices} = this.state;
 
@@ -143,7 +175,7 @@ export default class MultipleChoice extends React.Component {
           </span>
         }
 
-        {this.props.heading && <label htmlFor={this.props.name} className={controlLabel}>{this.props.heading}</label>}
+        {this.label}
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>

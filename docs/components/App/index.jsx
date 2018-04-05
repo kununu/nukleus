@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Logo from 'kununu-logo';
 
@@ -13,6 +14,7 @@ const components = [
   'DropDown',
   'Error',
   'InfoText',
+  'Modal',
   'MultipleChoice',
   'Notification',
   'Paginator',

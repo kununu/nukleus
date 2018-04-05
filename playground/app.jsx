@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Autocomplete from 'components/Autocomplete';
@@ -17,6 +18,7 @@ import TextField from 'components/TextField';
 import ToolTip from 'components/ToolTip';
 import Select from 'components/Select';
 import Stars from 'components/Stars';
+import Modal from 'playground/Implementations/Modal';
 import {
   controlLabel
 } from 'components/index.scss';
@@ -27,7 +29,6 @@ const App = ({location: {pathname, query}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
-
         <div className="row">
           <div className="col-md-8">
             <MultipleChoice
@@ -224,31 +225,34 @@ const App = ({location: {pathname, query}}) => (
 
         <div className="row">
           <div className="col-md-8">
-            <Autocomplete
-              autoFocus
-              data={{
-                items: [
-                  {item: 'meow', itemInfo: 'hard'},
-                  {item: 'meowing', itemInfo: 'harder'}
-                ]
-              }}
-              scrollTo
-              id="test"
-              value="purrr"
-              query={query}
-              onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
-              placeholder="Type something..."
-              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
-              label="Autocomplete"
-              isRequired
-              requiredLabel="Required"
-              name="autocomplete" />
+            <form>
+              <Autocomplete
+                autoFocus
+                data={{
+                  items: [
+                    {item: 'meow', itemInfo: 'hard'},
+                    {item: 'meowing', itemInfo: 'harder'},
+                    {item: 'meeeow'}
+                  ]
+                }}
+                scrollTo
+                id="test"
+                value="purrr"
+                query={query}
+                placeholder="Type something..."
+                suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+                label="Autocomplete"
+                isRequired
+                requiredLabel="Required"
+                name="autocomplete" />
+            </form>
           </div>
         </div>
 
         <div className="row">
           <div className="col-md-8">
             <Autocomplete
+              onKeyDown={e => { console.log('test', e); }}
               data={{
                 items: [
                   {item: 'meow', itemInfo: 'hard'},
@@ -280,6 +284,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField"
               name="text-field"
               isRequired
+              highlightList={{bad: 'bad', fuck: 'fuck', shit: 'shit', test: 'test'}}
               requiredLabel="Required" />
             <InfoText
               text="I am the info text for the TextField component." />
@@ -348,6 +353,7 @@ const App = ({location: {pathname, query}}) => (
               label="TextField (multiLine)"
               name="text-area"
               multiLine
+              highlightList={{ass: 'ass', fuck: 'fuck', shit: 'shit', test: 'test'}}
               query={query} />
           </div>
         </div>
@@ -363,6 +369,8 @@ const App = ({location: {pathname, query}}) => (
               maxLength={120}
               displayLength
               inputStyle="inline mediumSize"
+              minHeight={80}
+              highlightList={{fuck: 'fuck'}}
               multiLine
               query={query} />
           </div>
@@ -565,154 +573,143 @@ const App = ({location: {pathname, query}}) => (
 
         <br />
 
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+        <div className="flexRow">
+          <div className="flexCol">
             <Button type="default" text={<i className="fa fa-calendar" />} />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="primary" text="Primary Button" />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="secondary" text="Secondary Button" />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="info" text="Info Button" />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="danger" text="Danger Button" />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="link" text="Link Button" />
           </div>
         </div>
 
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+        <div className="flexRow">
+          <div className="flexCol">
             <Button type="default" text="Default Button" disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="primary" text="Primary Button" disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="secondary" text="Secondary Button" disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="info" text="Info Button" disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="danger" text="Danger Button" disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="link" text="Link Button" disabled />
           </div>
         </div>
 
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+        <div className="flexRow">
+          <div className="flexCol">
             <Button type="default" text="Default Button" outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="primary" text="Primary Button" outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="secondary" text="Secondary Button" outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="info" text="Info Button" outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="danger" text="Danger Button" outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="link" text="Link Button" outline />
           </div>
         </div>
 
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+        <div className="flexRow">
+          <div className="flexCol">
             <Button type="default" text="Default Button" outline disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="primary" text="Primary Button" outline disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="secondary" text="Secondary Button" outline disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="info" text="Info Button" outline disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="danger" text="Danger Button" outline disabled />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button type="link" text="Link Button" outline disabled />
           </div>
         </div>
 
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} disabled />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline />
-          </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
-            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline disabled />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+        <div className="flexRow">
+          <div className="flexCol">
             <Button
               type="default"
               link={<Link to="/playground">Button Link</Link>} />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button
               type="primary"
               disabled
               link={<Link to="/playground">Primary Link</Link>} />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button
               type="secondary"
               link={<Link to="/playground">Secondary Link</Link>}
               outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button
               type="info"
               link={<Link to="/playground/huhuh">Info Link</Link>}
               disabled
               outline />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button
               type="custom"
               link={<Link to="/playground">Danger Link</Link>}
               customTheme={styles.customThemeButton} />
           </div>
-          <div className="col-lg-2 col-md-4 col-sm-6 margin-bottom-third">
+          <div className="flexCol">
             <Button
               type="link"
               link={<Link to="/playground">Link Link</Link>} />
           </div>
         </div>
 
-        <br />
+        <div className="flexRow">
+          <div className="flexCol">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} />
+          </div>
+          <div className="flexCol">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} disabled />
+          </div>
+          <div className="flexCol">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline />
+          </div>
+          <div className="flexCol">
+            <Button type="custom" text="Custom Button" onClick={() => {}} customTheme={styles.customThemeButton} outline disabled />
+          </div>
+        </div>
+
 
         <div className="row">
           <div className="col-lg-12 margin-bottom-third">
@@ -793,6 +790,36 @@ const App = ({location: {pathname, query}}) => (
                   id: 'option-b',
                   label: 'Option B',
                   value: 'option-b'
+                },
+                {
+                  id: 'option-c',
+                  label: 'Option C',
+                  value: 'option-c'
+                }
+              ]} />
+          </div>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <div className="col-md-10">
+            <Choice
+              checked="option-a"
+              name="custom-option-disabled"
+              onChange={() => {}}
+              customTheme={styles.customThemeChoice}
+              options={[
+                {
+                  id: 'option-a',
+                  label: 'Option A',
+                  value: 'option-a'
+                },
+                {
+                  id: 'option-b',
+                  label: 'Option B Disabled',
+                  value: 'option-b',
+                  disabled: true,
                 },
                 {
                   id: 'option-c',
@@ -976,6 +1003,12 @@ const App = ({location: {pathname, query}}) => (
               isRequired
               requiredLabel="Required"
               title="DatePicker with Error" />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-8">
+            <Modal />
           </div>
         </div>
       </div>

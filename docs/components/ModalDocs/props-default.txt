@@ -1,0 +1,6 @@
+static defaultProps = {
+  actionText: '',
+  cancelText: '',
+  closeText: 'Close',
+  onAction: () => {}
+};
