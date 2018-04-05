@@ -1,4 +1,4 @@
-@import '~kununu-theme/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .clearfix {
   &:before,
@@ -17,7 +17,7 @@
 }
 
 .errorStyles {
-  background-color: $label-danger-bg;
+  background-color: $brand-danger;
   border-radius: 4px;
   font-size: 11px;
   padding: 5px 12px;
@@ -52,12 +52,11 @@
   min-height: 50px;
   padding: $padding-base-vertical + 1 $padding-base-horizontal;
   font-size: $font-size-md;
-  letter-spacing: -.02em;
   line-height: $line-height-base;
   color: $gray-base-70;
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid $input-border;
+  border: 1px solid $gray-base-20;
   border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
 
   // Firefox
@@ -70,10 +69,10 @@
   &::-webkit-input-placeholder  { color: $input-color-placeholder; } // Safari and Chrome
 
   &:focus {
-    border: 1px solid $blue-new;
+    border: 1px solid $blue;
     // We don't increase the border-width here, to prevent jumping of textfields. 
     // Also the gray box-shadow is insetted 1px more, to account for the blue box-shadow
-    box-shadow: inset 0 0 0 1px $blue-new, inset 0 2px 1px rgba($black, .075);
+    box-shadow: inset 0 0 0 1px $blue, inset 0 2px 1px rgba($black, .075);
     outline: none;
     color: $gray-base-90;
   }
@@ -85,7 +84,7 @@
   }
 
   &[disabled] {
-    background-color: $gray-lighter;
+    background-color: $gray-light;
     cursor: not-allowed;
   }
 }
@@ -123,7 +122,6 @@
   color: $gray-base-90;
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
-  letter-spacing: -.01em;
   margin-bottom: 6px;
 
   .faInfoCircle {
