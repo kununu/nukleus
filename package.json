@@ -29,7 +29,6 @@
   ],
   "readme": "README.md",
   "devDependencies": {
-    "@kununu/kununu-theme-v2": "2.0.0",
     "autoprefixer": "7.1.2",
     "babel-cli": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -78,6 +77,7 @@
     "webpack-dev-server": "2.5.1"
   },
   "dependencies": {
+    "@kununu/kununu-theme-v2": "2.0.0",
     "classnames": "2.2.5",
     "debounce": "^1.0.2",
     "moment": "2.18.1",
