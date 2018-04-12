@@ -6,6 +6,7 @@ withEnv([
     ansiColor {
         timestamps {
             defaultPipeline.getSource()
+            defaultPipeline.prepareNodeContainer()
             defaultPipeline.runJsLint()
         }
     }
