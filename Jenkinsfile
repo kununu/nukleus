@@ -7,7 +7,18 @@ withEnv([
         timestamps {
             defaultPipeline.getSource()
             defaultPipeline.prepareNodeContainer()
-            defaultPipeline.runJsLint()
+
+            def execution = [:]
+            execution["eslint"] = {
+              defaultPipeline.runJsLint()
+            }
+            execution["tests"] = {
+              defaultPipeline.runJslibTests()
+            }
+
+            parallel execution
+
+            defaultPipeline.destroyNodeContainer()
         }
     }
 }
