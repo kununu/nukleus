@@ -1,7 +1,8 @@
 @Library("kununu@KUNTECH-2819-add-nukleus-client-gear") _
 
 withEnv([
-    "SERVICE_NAME=nukleus"
+    "SERVICE_NAME=nukleus",
+    "COVERAGE_DIR_EXPORT=/app/coverage"
     ]) {
     ansiColor {
         timestamps {
@@ -17,6 +18,8 @@ withEnv([
             }
 
             parallel execution
+
+            defaultPipeline.runSonar("js")
 
             defaultPipeline.destroyNodeContainer()
         }
