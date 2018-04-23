@@ -2,7 +2,8 @@
 
 withEnv([
     "SERVICE_NAME=nukleus",
-    "COVERAGE_DIR_EXPORT=/app/coverage"
+    "COVERAGE_DIR_EXPORT=/app/coverage",
+    "LOG_JUNIT_EXPORT=/app/coverage/junit.xml"
     ]) {
     ansiColor {
         timestamps {

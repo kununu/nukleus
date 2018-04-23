@@ -58,6 +58,7 @@
     "font-awesome-webpack": "^0.0.5-beta.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "18.0.0",
+    "jest-junit": "3.6.0",
     "less": "2.7.1",
     "node-sass": "4.5.3",
     "node-sass-module-importer": "0.1.0",
@@ -106,6 +107,9 @@
     "lint": "npm run eslint && npm run sasslint",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\""
+  },
+  "jest-junit": {
+    "output": "./coverage/junit.xml"
   }
 }
