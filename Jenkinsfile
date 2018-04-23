@@ -1,4 +1,4 @@
-@Library("kununu@KUNTECH-2819-add-nukleus-client-gear") _
+@Library("kununu") _
 
 withEnv([
     "SERVICE_NAME=nukleus",
