@@ -74,7 +74,7 @@ export default class Paginator extends React.Component {
     } = this.props;
 
     const currentPage = Number(query[queryKey]) || 1;
-    const totalPagesArray = this.getPageRange(currentPage, totalPages);
+    const totalPagesArray = this.getPageRange(currentPage);
     const previousPage = currentPage !== 1 ? currentPage - 1 : currentPage;
     const nextPage = currentPage !== totalPages ? currentPage + 1 : currentPage;
 

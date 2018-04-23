@@ -42,3 +42,6 @@ dist
 
 # IDEs
 .idea
+
+# Sonar
+.scannerwork
