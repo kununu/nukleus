@@ -212,14 +212,14 @@ export default class Select extends React.Component {
 
     const allOptions = (Object.keys(options).length && options) || items;
 
-    let mappedOptions = Object.keys(allOptions)
+    const mappedOptions = Object.keys(allOptions)
       .map(key => ({
         key: (allOptions)[key].key || key,
         value: (allOptions)[key].value || (allOptions)[key]
       }));
 
     if (sort) {
-      mappedOptions = mappedOptions.sort(sort);
+      mappedOptions.sort(sort);
     }
 
     return (
