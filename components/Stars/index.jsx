@@ -144,7 +144,7 @@ export default class Stars extends React.Component {
                   id={`${name}-${key}`} /> }
 
               {Boolean(key) &&
-                <label htmlFor={selectable && `${name}-${key}`}>
+                <label htmlFor={selectable ? `${name}-${key}` : undefined}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
