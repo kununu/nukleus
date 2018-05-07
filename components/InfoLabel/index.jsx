@@ -6,7 +6,9 @@ import {
   controlNote
 } from '../index.scss';
 
-const InfoLabel = ({requiredLabel, maxLength, displayLength, inputValue}) => {
+const InfoLabel = ({
+  requiredLabel, maxLength, displayLength, inputValue
+}) => {
   if (requiredLabel && (!displayLength || inputValue.trim() === '')) {
     return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
   }
@@ -22,7 +24,7 @@ const InfoLabel = ({requiredLabel, maxLength, displayLength, inputValue}) => {
 InfoLabel.propTypes = {
   displayLength: PropTypes.bool,
   inputValue: PropTypes.string,
-  maxLength: PropTypes.number.isRequired,
+  maxLength: PropTypes.number,
   requiredLabel: PropTypes.string
 };
 

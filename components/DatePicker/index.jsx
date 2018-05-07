@@ -66,11 +66,9 @@ export default class DatePickerComponent extends React.Component {
   }
 
   componentWillMount () {
-    this.updateValue(
-      this.props.query[this.props.name] ||
+    this.updateValue(this.props.query[this.props.name] ||
       this.props.value ||
-      ''
-    );
+      '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();
@@ -78,11 +76,9 @@ export default class DatePickerComponent extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
-    this.updateValue(
-      nextProps.query[this.props.name] ||
+    this.updateValue(nextProps.query[this.props.name] ||
       nextProps.value ||
-      ''
-    );
+      '');
   }
 
   // Property initializer binds method to class instance
@@ -91,22 +87,6 @@ export default class DatePickerComponent extends React.Component {
     this.props.onChange(date);
     this.hideError();
   };
-
-  updateValue (value) {
-    this.setState({value});
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
 
   get label () {
     const {
@@ -140,6 +120,22 @@ export default class DatePickerComponent extends React.Component {
         className: controlLabel
       }
     );
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  updateValue (value) {
+    this.setState({value});
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
   }
 
   render () {

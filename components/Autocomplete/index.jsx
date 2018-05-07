@@ -152,6 +152,38 @@ export default class Autocomplete extends React.Component {
     }
   }
 
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
+  }
+
   getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
@@ -221,45 +253,15 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
-  /**
-   * determines which classNames should be added to the container div of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get containerClassNames () {
-    const {inputStyle, requiredLabel} = this.props;
-    const classNames = [formGroup, sharedStyles[inputStyle]];
-
-    if (requiredLabel) classNames.push(styles.paddingTop);
-
-    return classNames.join(' ');
-  }
-
-  /**
-   * determines which classNames should be added to the label of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get labelClassNames () {
-    const {labelHidden} = this.props;
-    const classNames = [controlLabel];
-
-    if (labelHidden) classNames.push(hidden);
-
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
-
-    return classNames.join(' ');
-  }
-
   renderSuggestion = suggestion =>
-    (<span>
-      {suggestion.item}
-      {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
-        <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
-      }
-    </span>);
+    (
+      <span>
+        {suggestion.item}
+        {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
+          <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
+        }
+      </span>
+    );
 
   renderSuggestionsContainer = ({containerProps, children}) => {
     if (this.state.suggestions.length) {
@@ -332,47 +334,48 @@ export default class Autocomplete extends React.Component {
           className={this.labelClassNames}
           htmlFor={id}>
           {label}
+
+          <div className={styles.autoCompleteContainer}>
+            <Autosuggest
+              id={id}
+              focusFirstSuggestion
+              focusInputOnSuggestionClick={!isMobile}
+              getSuggestionValue={this.getSuggestionValue}
+              inputProps={inputProps}
+              onSuggestionSelected={this.onSuggestionSelected}
+              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+              renderSuggestion={this.renderSuggestion}
+              renderSuggestionsContainer={this.renderSuggestionsContainer}
+              suggestions={suggestions}
+              theme={styles} />
+
+            {isFetching &&
+              <span className={styles.spinner}>
+                <i
+                  className="fa fa-spinner fa-pulse fa-3x fa-fw"
+                  aria-hidden="true" />
+              </span>
+            }
+
+            {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
+              <div className={styles.suggestionsContainer}>
+                <ul>
+                  <li className={styles.suggestion}>
+                    {noSuggestionText}
+                  </li>
+                </ul>
+              </div>
+              : ''
+            }
+
+            {this.hasError() &&
+              <Error
+                info={error}
+                subInfo={errorSubInfo} />
+            }
+          </div>
         </label>
-
-        <div className={styles.autoCompleteContainer}>
-          <Autosuggest
-            focusFirstSuggestion
-            focusInputOnSuggestionClick={!isMobile}
-            getSuggestionValue={this.getSuggestionValue}
-            inputProps={inputProps}
-            onSuggestionSelected={this.onSuggestionSelected}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            renderSuggestion={this.renderSuggestion}
-            renderSuggestionsContainer={this.renderSuggestionsContainer}
-            suggestions={suggestions}
-            theme={styles} />
-
-          {isFetching &&
-            <span className={styles.spinner}>
-              <i
-                className="fa fa-spinner fa-pulse fa-3x fa-fw"
-                aria-hidden="true" />
-            </span>
-          }
-
-          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
-            <div className={styles.suggestionsContainer}>
-              <ul>
-                <li className={styles.suggestion}>
-                  {noSuggestionText}
-                </li>
-              </ul>
-            </div>
-            : ''
-          }
-
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
-        </div>
       </div>
     );
   }

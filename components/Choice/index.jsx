@@ -91,7 +91,7 @@ export default class Choice extends React.Component {
   }
 
   onChange = (option, e) => {
-    const value = e.target.value;
+    const {value} = e.target;
     if (this.isOptionDisabled(option) || value === this.state.checked) return;
 
     this.props.onChange(e);
@@ -103,7 +103,7 @@ export default class Choice extends React.Component {
   onClick = (option, e) => {
     if (this.isOptionDisabled(option)) return;
 
-    const value = e.target.value;
+    const {value} = e.target;
 
     this.props.onClick(e);
     // As long as the component is not required and the component is deselected set to null.
@@ -112,23 +112,6 @@ export default class Choice extends React.Component {
         checked: null
       });
     }
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
-
-  isOptionDisabled (option) {
-    const disabled = this.props.disabled;
-    return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
   }
 
   get label () {
@@ -145,11 +128,31 @@ export default class Choice extends React.Component {
 
     return (
       <Label
+        htmlFor={heading}
         value={value}
         labelHidden={labelHidden}
         classNames={headingStyle}
         isTitle />
     );
+  }
+
+  isOptionDisabled (option) {
+    const {disabled} = this.props;
+    return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
+  hideError () {
+    this.setState({
+      showError: false
+    });
+  }
+
+  showError () {
+    this.setState({showError: true});
   }
 
   render () {
@@ -185,28 +188,29 @@ export default class Choice extends React.Component {
 
         <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
           {options.map((item, idx) =>
-            (<div className={styles.radioButton} key={item.id}>
-              <input
-                type="radio"
-                value={item.value}
-                id={`${name}${item.id}`}
-                name={name}
-                checked={checked === item.value}
-                onBlur={onBlur}
-                onChange={e => this.onChange(item, e)}
-                onFocus={onFocus}
-                onClick={e => this.onClick(item, e)}
-                ref={reference}
-                required={isRequired} />
-              <label
-                disabled={this.isOptionDisabled(item)}
-                id={idx}
-                htmlFor={`${name}${item.id}`}
-                className={customTheme}>
-                {item.label}
-              </label>
-            </div>)
-          )}
+            (
+              <div className={styles.radioButton} key={item.id}>
+                <input
+                  type="radio"
+                  value={item.value}
+                  id={`${name}${item.id}`}
+                  name={name}
+                  checked={checked === item.value}
+                  onBlur={onBlur}
+                  onChange={e => this.onChange(item, e)}
+                  onFocus={onFocus}
+                  onClick={e => this.onClick(item, e)}
+                  ref={reference}
+                  required={isRequired} />
+                <label
+                  disabled={this.isOptionDisabled(item)}
+                  id={idx}
+                  htmlFor={`${name}${item.id}`}
+                  className={customTheme}>
+                  {item.label}
+                </label>
+              </div>
+            ))}
         </div>
 
         {this.hasError() &&

@@ -42,7 +42,6 @@ export default class MultipleChoice extends React.Component {
     error: null,
     errorSubInfo: null,
     heading: null,
-    headingStyle: 'control-label',
     inputStyle: 'inline',
     isRequired: false,
     label: null,
@@ -88,44 +87,6 @@ export default class MultipleChoice extends React.Component {
     });
   }
 
-  getChoicesToUpdate (newChoices) {
-    return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
-
-  updateValue (newChoices, status, cb = () => {}) {
-    // cb get's fired when setState is finished
-    this.setState({
-      choices: this.state.choices.map(choice => {
-        if (newChoices.some(newChoice => newChoice === choice)) {
-          /* eslint-disable sorting/sort-object-props */
-          const newStatus = {
-            checked: true,
-            unchecked: false,
-            toggle: !choice.isChecked
-          }[status];
-          /* eslint-enable sorting/sort-object-props */
-          return {
-            ...choice,
-            isChecked: newStatus
-          };
-        }
-        return choice;
-      })
-    }, cb);
-  }
-
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
 
@@ -164,6 +125,44 @@ export default class MultipleChoice extends React.Component {
     );
   }
 
+  getChoicesToUpdate (newChoices) {
+    return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
+  }
+
+  updateValue (newChoices, status, cb = () => {}) {
+    // cb get's fired when setState is finished
+    this.setState({
+      choices: this.state.choices.map(choice => {
+        if (newChoices.some(newChoice => newChoice === choice)) {
+          /* eslint-disable sorting/sort-object-props */
+          const newStatus = {
+            checked: true,
+            unchecked: false,
+            toggle: !choice.isChecked
+          }[status];
+          /* eslint-enable sorting/sort-object-props */
+          return {
+            ...choice,
+            isChecked: newStatus
+          };
+        }
+        return choice;
+      })
+    }, cb);
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {choices} = this.state;
 
@@ -179,24 +178,25 @@ export default class MultipleChoice extends React.Component {
 
         <div className={styles.inputContainer}>
           {choices.map(choice =>
-            (<div className={`${styles.choice}`} key={choice.id}>
-              <input
-                className={formControl}
-                id={`${this.props.name}${choice.id}`}
-                name={this.props.name}
-                key={choice.id}
-                value={choice.value}
-                type="checkbox"
-                checked={choice.isChecked}
-                ref={this.props.reference}
-                required={this.props.isRequired}
-                onBlur={this.props.onBlur}
-                onChange={() => this.onChange(choice)}
-                onFocus={this.props.onFocus} />
+            (
+              <div className={`${styles.choice}`} key={choice.id}>
+                <input
+                  className={formControl}
+                  id={`${this.props.name}${choice.id}`}
+                  name={this.props.name}
+                  key={choice.id}
+                  value={choice.value}
+                  type="checkbox"
+                  checked={choice.isChecked}
+                  ref={this.props.reference}
+                  required={this.props.isRequired}
+                  onBlur={this.props.onBlur}
+                  onChange={() => this.onChange(choice)}
+                  onFocus={this.props.onFocus} />
 
-              <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
-            </div>)
-          )}
+                <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
+              </div>
+            ))}
         </div>
         {this.hasError() &&
           <Error

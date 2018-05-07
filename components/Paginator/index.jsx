@@ -17,9 +17,7 @@ export default class Paginator extends React.Component {
   };
 
   static defaultProps = {
-    pathname: '/',
-    query: {},
-    queryKey: 'page'
+    query: {}
   };
 
   getPageRange (page) {
@@ -86,10 +84,11 @@ export default class Paginator extends React.Component {
           </li>
 
           {totalPagesArray.map(item =>
-            (<li key={item} className={currentPage === item && styles.active}>
-              {React.cloneElement(baseLink, this.getNewProps(item), item)}
-            </li>)
-          )}
+            (
+              <li key={item} className={currentPage === item && styles.active}>
+                {React.cloneElement(baseLink, this.getNewProps(item), item)}
+              </li>
+            ))}
 
           <li className={currentPage === totalPages && styles.disabled}>
             {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
