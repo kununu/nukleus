@@ -1,16 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
+import {StaticRouter} from 'react-router';
 import renderer from 'react-test-renderer';
 import Tabs from 'Tabs'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 test('Renders Tabs with react-router links as items without crashing', () => {
-  const component = renderer.create(<Tabs
-    items={[
-      <Link to={{pathname: '/playground/'}}>First Tab</Link>,
-      <Link to={{pathname: '/playground/2'}}>Second Tab</Link>,
-      <Link to={{pathname: '/playground/3'}}>Third Tab</Link>
-      ]}
-    pathname="test" />);
+  const component = renderer.create((
+    <StaticRouter location="test" context={{}}>
+      <Tabs
+        items={[
+          <Link to={{pathname: '/playground/'}}>First Tab</Link>,
+          <Link to={{pathname: '/playground/2'}}>Second Tab</Link>,
+          <Link to={{pathname: '/playground/3'}}>Third Tab</Link>
+          ]}
+        pathname="test" />
+    </StaticRouter>
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -47,11 +47,13 @@ export default class Paginator extends React.Component {
       queryKey
     } = this.props;
 
+    const queryParams = params({...query, [queryKey]: queryValue});
+
     if (baseLink.props.to) {
       return {
         to: {
           pathname,
-          query: {...query, [queryKey]: queryValue}
+          search: queryParams
         }
       };
     }
@@ -59,7 +61,7 @@ export default class Paginator extends React.Component {
     const location = baseLink.props.href ? 'href' : 'path';
 
     return {
-      [location]: `${pathname}?${params({...query, [queryKey]: queryValue})}`
+      [location]: `${pathname}?${queryParams}`
     };
   }
 
