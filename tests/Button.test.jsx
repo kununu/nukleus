@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
+import {StaticRouter} from 'react-router'
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Button from 'Button'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
@@ -21,9 +22,13 @@ test('Renders simple anchor button without crashing', () => {
 });
 
 test('Renders react-router anchor button without crashing', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    link={<Link to={{pathname: '/test'}}>Button</Link>} />);
+  const component = renderer.create((
+    <StaticRouter location="test" context={{}}>
+      <Button
+        text="Test"
+        link={<Link to={{pathname: '/test'}}>Button</Link>} />
+    </StaticRouter>
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
