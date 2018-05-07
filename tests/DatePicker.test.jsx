@@ -39,7 +39,7 @@ test('Focusing a datepicker calls the onFocus Event', () => {
     name="date-picker"
     title="DatePicker" />);
 
-  component.find('#date-picker').simulate('focus');
+  component.find('#date-picker').hostNodes().simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
 });
 
@@ -52,7 +52,7 @@ test('Bluring a datepicker calls the onBlur Event', () => {
     name="date-picker"
     title="DatePicker" />);
 
-  component.find('#date-picker').simulate('focus');
-  component.find('#date-picker').simulate('blur');
+  component.find('#date-picker').hostNodes().simulate('focus');
+  component.find('#date-picker').hostNodes().simulate('blur');
   expect(spyFunc.mock.calls.length).toBe(1);
 });
