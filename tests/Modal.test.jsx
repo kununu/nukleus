@@ -65,8 +65,8 @@ test('Closes the modal, when the close button is clicked', () => {
  * It would be cool, if we could rewrite this test in the future, so that it also tests,
  * if onExit was called, when onAction is a promise
  */
-test('Fires the onAction when the action button is clicked', done => {
-  const onAction = window.spyOn(Modal.prototype, 'onAction');
+test('Fires the onAction when the action button is clicked', () => {
+  const spyFunc = jest.fn();
 
   const component = mount((
     <Modal
@@ -74,7 +74,7 @@ test('Fires the onAction when the action button is clicked', done => {
       cancelText="Cancel"
       closeText="Close"
       applicationNode="#test"
-      onAction={() => {}}
+      onAction={async () => spyFunc()}
       onExit={() => {}}
       open
       titleText="Modal">
@@ -82,15 +82,14 @@ test('Fires the onAction when the action button is clicked', done => {
     </Modal>
   ));
 
-  component.find('footer button').first().simulate('click');
+  component.find('footer button.primary').hostNodes().simulate('click');
 
   setTimeout(() => {
-    expect(onAction).toHaveBeenCalled();
-    done();
+    expect(spyFunc).toHaveBeenCalled();
   }, 250);
 });
 
-test('Fires the onExit when the close button is clicked', done => {
+test('Fires the onExit when the close button is clicked', () => {
   const onExit = window.spyOn(Modal.prototype, 'onExit');
 
   const component = mount((
@@ -110,6 +109,5 @@ test('Fires the onExit when the close button is clicked', done => {
 
   setTimeout(() => {
     expect(onExit).toHaveBeenCalled();
-    done();
   }, 250);
 });
