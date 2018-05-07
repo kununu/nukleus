@@ -5,9 +5,8 @@ import Table from 'Table'; // eslint-disable-line import/no-unresolved, import/e
 
 
 test('Renders Table without crashing', () => {
-  const component = renderer.create(
-    <Table
-      items={{
+  const component = renderer.create(<Table
+    items={{
         id: [1, 2, 3, 4, 5],
         'in hiragana': ['いち', 'に', 'さん', 'よん', 'ご'],
         'in kanji': ['一', '二', '三', '四', '五'],
@@ -19,17 +18,14 @@ test('Renders Table without crashing', () => {
           'Four',
           <Link to="/playground/">Five</Link>
         ]
-      }} />
-  );
+      }} />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders empty Table without crashing', () => {
-  const component = renderer.create(
-    <Table />
-  );
+  const component = renderer.create(<Table />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

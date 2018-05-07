@@ -7,28 +7,24 @@ jest.mock('react-datepicker', () => 'Datepicker');
 jest.mock('moment', () => 'Moment');
 
 test('Renders datepicker without crashing', () => {
-  const component = renderer.create(
-    <DatePicker
-      id="date-picker"
-      isRequired
-      name="date-picker"
-      title="DatePicker" />
-  );
+  const component = renderer.create(<DatePicker
+    id="date-picker"
+    isRequired
+    name="date-picker"
+    title="DatePicker" />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders datepicker with an error message without crashing', () => {
-  const component = renderer.create(
-    <DatePicker
-      id="date-picker"
-      error="An Error"
-      errorSubInfo="with useful hints"
-      isRequired
-      name="date-picker"
-      title="DatePicker" />
-  );
+  const component = renderer.create(<DatePicker
+    id="date-picker"
+    error="An Error"
+    errorSubInfo="with useful hints"
+    isRequired
+    name="date-picker"
+    title="DatePicker" />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -36,14 +32,12 @@ test('Renders datepicker with an error message without crashing', () => {
 
 test('Focusing a datepicker calls the onFocus Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <DatePicker
-      id="date-picker"
-      isRequired
-      onFocus={spyFunc}
-      name="date-picker"
-      title="DatePicker" />
-  );
+  const component = mount(<DatePicker
+    id="date-picker"
+    isRequired
+    onFocus={spyFunc}
+    name="date-picker"
+    title="DatePicker" />);
 
   component.find('#date-picker').simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -51,14 +45,12 @@ test('Focusing a datepicker calls the onFocus Event', () => {
 
 test('Bluring a datepicker calls the onBlur Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <DatePicker
-      id="date-picker"
-      isRequired
-      onBlur={spyFunc}
-      name="date-picker"
-      title="DatePicker" />
-  );
+  const component = mount(<DatePicker
+    id="date-picker"
+    isRequired
+    onBlur={spyFunc}
+    name="date-picker"
+    title="DatePicker" />);
 
   component.find('#date-picker').simulate('focus');
   component.find('#date-picker').simulate('blur');

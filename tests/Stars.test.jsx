@@ -5,21 +5,17 @@ import toJson from 'enzyme-to-json';
 import Stars from 'Stars'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 test('Renders static Stars without crashing', () => {
-  const component = renderer.create(
-    <Stars name="stars" value={2.5} />
-  );
+  const component = renderer.create(<Stars name="stars" value={2.5} />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders selectable Stars without crashing', () => {
-  const component = renderer.create(
-    <Stars
-      name="stars"
-      value={3}
-      selectable />
-  );
+  const component = renderer.create(<Stars
+    name="stars"
+    value={3}
+    selectable />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

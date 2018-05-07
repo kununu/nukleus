@@ -78,7 +78,7 @@ describe('Searchable Combobox', () => {
       isSearchable={false}
       onSelect={spyFunc}
       items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-    );
+  );
 
   it('Renders notSearchableCombobox without crashing', () => {
     const component = renderer.create(notSearchableCombobox);
@@ -95,19 +95,17 @@ describe('Searchable Combobox', () => {
 
 test('Focusing a ComboBox calls the onFocus Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      id="name"
-      isRequired
-      onFocus={spyFunc}
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    id="name"
+    isRequired
+    onFocus={spyFunc}
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
   component.find('#name').simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -115,19 +113,17 @@ test('Focusing a ComboBox calls the onFocus Event', () => {
 
 test('Bluring a ComboBox calls the onBlur Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      id="name"
-      isRequired
-      onBlur={spyFunc}
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    id="name"
+    isRequired
+    onBlur={spyFunc}
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
   component.find('#name').simulate('focus');
   component.find('#name').simulate('blur');
@@ -136,19 +132,17 @@ test('Bluring a ComboBox calls the onBlur Event', () => {
 
 test('Changing a ComboBox calls the onChange Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      onChange={spyFunc}
-      id="name"
-      isRequired
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    onChange={spyFunc}
+    id="name"
+    isRequired
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
   component.find('#name').simulate('change', {target: {value: 'change'}});
   component.find('#name').simulate('change', {target: {value: 'change again'}});
