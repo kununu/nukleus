@@ -27,7 +27,13 @@ module.exports = {
     'quotes': ['error', 'single', {avoidEscape: true}],
     'space-before-function-paren': ['error', 'always'],
     'jsx-a11y/no-autofocus': 'off',
-
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      "error", {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
     // React rules
     'react/jsx-closing-bracket-location': ['error', 'after-props'],
     'react/self-closing-comp': ['error', {component: true, html: true}],
@@ -37,6 +43,13 @@ module.exports = {
     // Plugins
     'babel/object-curly-spacing': 'error',
     'import/order': ['error', {'newlines-between': 'always', groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index']}],
+    'import/no-extraneous-dependencies': [
+      'error', {
+        'devDependencies': [
+          'jestSetup.js'
+        ]
+      }
+    ],
     'sorting/sort-object-props': 'error'
   }
 };
