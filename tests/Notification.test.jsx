@@ -34,12 +34,6 @@ test('Closes when the close button is clicked', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Does not close on click when the close method is timeout', () => {
-  const component = mount(timeoutNotification);
-  expect(component.find('.closeButton').props.onClick).toThrow();
-  expect(toJson(component)).toMatchSnapshot();
-});
-
 test('It closes on timeout when the close method is timeout', () => {
   const component = shallow(timeoutNotification);
   expect(component.state('visible')).toEqual(true);
