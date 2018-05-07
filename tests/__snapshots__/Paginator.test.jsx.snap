@@ -1,154 +1,196 @@
-exports[`test Renders Paginator with react-router links without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Paginator with react-router links without crashing 1`] = `
 <div
-  className="paginator">
+  className="paginator"
+>
   <ul
     aria-label="Pagination"
     className="paginatorList"
-    role="navigation">
+    role="navigation"
+  >
     <li
-      className="disabled">
+      className="disabled"
+    >
       <a
+        href="/test?pagination=1"
         onClick={[Function]}
-        style={Object {}}>
-        <
+      >
+        &lt;
       </a>
     </li>
     <li
-      className="active">
+      className="active"
+    >
       <a
+        href="/test?pagination=1"
         onClick={[Function]}
-        style={Object {}}>
+      >
         1
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=2"
         onClick={[Function]}
-        style={Object {}}>
+      >
         2
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=3"
         onClick={[Function]}
-        style={Object {}}>
+      >
         3
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=4"
         onClick={[Function]}
-        style={Object {}}>
+      >
         4
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=5"
         onClick={[Function]}
-        style={Object {}}>
+      >
         5
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=6"
         onClick={[Function]}
-        style={Object {}}>
+      >
         6
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=7"
         onClick={[Function]}
-        style={Object {}}>
+      >
         7
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
+        href="/test?pagination=2"
         onClick={[Function]}
-        style={Object {}}>
-        >
+      >
+        &gt;
       </a>
     </li>
   </ul>
 </div>
 `;
 
-exports[`test Renders Paginator with react-router links without crashing 2`] = `
+exports[`Renders Paginator with react-router links without crashing 2`] = `
 <div
-  className="paginator">
+  className="paginator"
+>
   <ul
     aria-label="Pagination"
     className="paginatorList"
-    role="navigation">
+    role="navigation"
+  >
     <li
-      className="disabled">
+      className="disabled"
+    >
       <a
-        href="test?test=react-router&pagination=1">
-        <
+        href="test?test=react-router&pagination=1"
+      >
+        &lt;
       </a>
     </li>
     <li
-      className="active">
+      className="active"
+    >
       <a
-        href="test?test=react-router&pagination=1">
+        href="test?test=react-router&pagination=1"
+      >
         1
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=2">
+        href="test?test=react-router&pagination=2"
+      >
         2
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=3">
+        href="test?test=react-router&pagination=3"
+      >
         3
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=4">
+        href="test?test=react-router&pagination=4"
+      >
         4
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=5">
+        href="test?test=react-router&pagination=5"
+      >
         5
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=6">
+        href="test?test=react-router&pagination=6"
+      >
         6
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=7">
+        href="test?test=react-router&pagination=7"
+      >
         7
       </a>
     </li>
     <li
-      className={false}>
+      className={false}
+    >
       <a
-        href="test?test=react-router&pagination=2">
-        >
+        href="test?test=react-router&pagination=2"
+      >
+        &gt;
       </a>
     </li>
   </ul>
