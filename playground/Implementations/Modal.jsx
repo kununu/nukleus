@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+
 import React from 'react';
 
 import Modal from '../../components/Modal';
@@ -44,5 +46,4 @@ export default class ModalImplementation extends React.Component {
       </div>
     );
   }
-
 }
