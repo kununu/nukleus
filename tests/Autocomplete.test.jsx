@@ -100,9 +100,9 @@ test('Hides no suggestions on blur', () => {
 
 test('Updates value on selection', () => {
   const component = mount(staticAutocomplete);
-  component.find('input').simulate('change', {target: {value: 'a'}});
-  component.find('input').simulate('focus');
-  component.find('#react-autowhatever-1--item-0').simulate('click');
+  component.find('input').hostNodes().simulate('change', {target: {value: 'a'}});
+  component.find('input').hostNodes().simulate('focus');
+  component.find('#react-autowhatever-autocompletes--item-0').hostNodes().simulate('click');
   expect(toJson(component)).toMatchSnapshot();
 });
 
