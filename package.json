@@ -67,6 +67,7 @@
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-router": "4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-test-renderer": "16.3.2",
     "rimraf": "2.6.2",
     "sass-lint": "1.12.1",
@@ -105,7 +106,7 @@
     "clean": "rimraf ./dist",
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sass-lint",
-    "test": "jest --coverage --testPathPattern 'TextField.test.jsx'",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\""
   },
