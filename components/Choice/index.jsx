@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
+import {queryParamsToObject} from '../../utils/params';
 import Error from '../Error';
 import Label from '../Label';
 import {
@@ -33,7 +34,10 @@ export default class Choice extends React.Component {
     onFocus: PropTypes.func,
     options: PropTypes.array.isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
-    query: PropTypes.object,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     reference: PropTypes.func,
     requiredLabel: PropTypes.string
   };
@@ -65,23 +69,32 @@ export default class Choice extends React.Component {
   };
 
   componentWillMount () {
+    const {
+      query,
+      name
+    } = this.props;
+    const queryObject = queryParamsToObject(query);
+
     // Show error, if already set
     if (this.props.error !== null) this.showError();
 
-    const {query, name} = this.props;
-    if (!query[name]) return;
+    if (!queryObject[name]) return;
+
     this.setState({
-      checked: query[name]
+      checked: queryObject[name]
     });
   }
 
   componentWillReceiveProps (nextProps) {
     const {query, name, error} = nextProps;
+    const queryNextObject = queryParamsToObject(query);
+    const queryPropsObject = queryParamsToObject(this.props.query);
+
     if (error) this.showError();
     if (nextProps.query === this.props.query && nextProps.checked === this.props.checked) return;
-    if (query[name] && query[name] !== this.props.query[name]) {
+    if (queryNextObject[name] && queryNextObject[name] !== queryPropsObject[name]) {
       this.setState({
-        checked: query[name]
+        checked: queryNextObject[name]
       });
     } else if (nextProps.checked !== this.props.checked) {
       this.setState({

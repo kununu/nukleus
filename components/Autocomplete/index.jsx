@@ -8,6 +8,7 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import getElementPositionY from '../../utils/elementPosition';
+import {queryParamsToObject} from '../../utils/params';
 import isMobile from '../../utils/mobileDetection';
 import sharedStyles, {
   controlLabel,
@@ -44,7 +45,10 @@ export default class Autocomplete extends React.Component {
     onGetSuggestions: PropTypes.func,
     onSelectSuggestion: PropTypes.func,
     placeholder: PropTypes.string,
-    query: PropTypes.object,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     requiredLabel: PropTypes.string,
     scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
@@ -86,20 +90,25 @@ export default class Autocomplete extends React.Component {
   };
 
   componentWillMount () {
-    this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+    this.updateValue(queryObject[this.props.name] || this.props.value || '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
     }
 
     if (nextProps.error) this.showError();
     if (!this.needsUpdate(nextProps)) return;
-    this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
+    this.updateValue(queryObject[this.props.name] || nextProps.value || '');
   }
 
   onChange = (event, {newValue}) => {

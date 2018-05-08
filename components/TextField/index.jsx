@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
+import {queryParamsToObject} from '../../utils/params';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles, {
@@ -46,7 +47,10 @@ export default class TextField extends React.Component {
     onHighlight: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
-    query: PropTypes.object,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
@@ -100,18 +104,23 @@ export default class TextField extends React.Component {
   };
 
   componentWillMount () {
-    this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+
+    this.updateValue(queryObject[this.props.name] || this.props.value || '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const queryObject = queryParamsToObject(nextProps.query);
+
     if (nextProps.error) {
       this.showError();
     } else {
       if (!this.needsUpdate(nextProps)) return;
-      this.updateValue(nextProps.query[this.props.name] ||
+      this.updateValue(queryObject[this.props.name] ||
         nextProps.value ||
         '');
     }
