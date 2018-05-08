@@ -46,7 +46,8 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error', {
         'devDependencies': [
-          'jestSetup.js'
+          'jestSetup.js',
+          '**/*.test.jsx'
         ]
       }
     ],
