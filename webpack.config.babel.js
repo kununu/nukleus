@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   context: __dirname,
   entry: './playground/index.jsx',
   output: {
@@ -26,15 +27,6 @@ module.exports = {
         enforce: 'pre',
         query: {
           fix: true
-        }
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: 'sasslint-loader',
-        enforce: 'pre',
-        options: {
-          configFile: '.sass-lint.yml'
         }
       },
       {
