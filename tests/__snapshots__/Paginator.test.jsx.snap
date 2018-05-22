@@ -30,7 +30,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=2"
@@ -40,7 +40,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=3"
@@ -50,7 +50,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=4"
@@ -60,7 +60,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=5"
@@ -70,7 +70,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=6"
@@ -80,7 +80,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=7"
@@ -90,7 +90,7 @@ exports[`Renders Paginator with react-router links without crashing 1`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="/test?pagination=2"
@@ -131,7 +131,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=2"
@@ -140,7 +140,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=3"
@@ -149,7 +149,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=4"
@@ -158,7 +158,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=5"
@@ -167,7 +167,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=6"
@@ -176,7 +176,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=7"
@@ -185,7 +185,7 @@ exports[`Renders Paginator with react-router links without crashing 2`] = `
       </a>
     </li>
     <li
-      className={false}
+      className={undefined}
     >
       <a
         href="test?test=react-router&pagination=2"

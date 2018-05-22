@@ -343,48 +343,48 @@ export default class Autocomplete extends React.Component {
           className={this.labelClassNames}
           htmlFor={id}>
           {label}
-
-          <div className={styles.autoCompleteContainer}>
-            <Autosuggest
-              id={id}
-              focusFirstSuggestion
-              focusInputOnSuggestionClick={!isMobile}
-              getSuggestionValue={this.getSuggestionValue}
-              inputProps={inputProps}
-              onSuggestionSelected={this.onSuggestionSelected}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              renderSuggestion={this.renderSuggestion}
-              renderSuggestionsContainer={this.renderSuggestionsContainer}
-              suggestions={suggestions}
-              theme={styles} />
-
-            {isFetching &&
-              <span className={styles.spinner}>
-                <i
-                  className="fa fa-spinner fa-pulse fa-3x fa-fw"
-                  aria-hidden="true" />
-              </span>
-            }
-
-            {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
-              <div className={styles.suggestionsContainer}>
-                <ul>
-                  <li className={styles.suggestion}>
-                    {noSuggestionText}
-                  </li>
-                </ul>
-              </div>
-              : ''
-            }
-
-            {this.hasError() &&
-              <Error
-                info={error}
-                subInfo={errorSubInfo} />
-            }
-          </div>
         </label>
+
+        <div className={styles.autoCompleteContainer}>
+          <Autosuggest
+            id={id}
+            focusFirstSuggestion
+            focusInputOnSuggestionClick={!isMobile}
+            getSuggestionValue={this.getSuggestionValue}
+            inputProps={inputProps}
+            onSuggestionSelected={this.onSuggestionSelected}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            renderSuggestion={this.renderSuggestion}
+            renderSuggestionsContainer={this.renderSuggestionsContainer}
+            suggestions={suggestions}
+            theme={styles} />
+
+          {isFetching &&
+            <span className={styles.spinner}>
+              <i
+                className="fa fa-spinner fa-pulse fa-3x fa-fw"
+                aria-hidden="true" />
+            </span>
+          }
+
+          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
+            <div className={styles.suggestionsContainer}>
+              <ul>
+                <li className={styles.suggestion}>
+                  {noSuggestionText}
+                </li>
+              </ul>
+            </div>
+            : ''
+          }
+
+          {this.hasError() &&
+            <Error
+              info={error}
+              subInfo={errorSubInfo} />
+          }
+        </div>
       </div>
     );
   }

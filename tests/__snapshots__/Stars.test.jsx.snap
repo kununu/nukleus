@@ -543,7 +543,7 @@ exports[`Renders correctly rounded star values 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -598,7 +598,7 @@ exports[`Renders correctly rounded star values 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -653,7 +653,7 @@ exports[`Renders correctly rounded star values 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -708,7 +708,7 @@ exports[`Renders correctly rounded star values 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -763,7 +763,7 @@ exports[`Renders correctly rounded star values 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -832,7 +832,7 @@ exports[`Renders empty stars with no value 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -887,7 +887,7 @@ exports[`Renders empty stars with no value 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -942,7 +942,7 @@ exports[`Renders empty stars with no value 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -997,7 +997,7 @@ exports[`Renders empty stars with no value 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1052,7 +1052,7 @@ exports[`Renders empty stars with no value 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1361,7 +1361,7 @@ exports[`Renders static Stars without crashing 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1416,7 +1416,7 @@ exports[`Renders static Stars without crashing 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1471,7 +1471,7 @@ exports[`Renders static Stars without crashing 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1526,7 +1526,7 @@ exports[`Renders static Stars without crashing 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
@@ -1581,7 +1581,7 @@ exports[`Renders static Stars without crashing 1`] = `
       className="starsGroup"
     >
       <label
-        htmlFor={false}
+        htmlFor={undefined}
       >
         <svg
           className="star false"
