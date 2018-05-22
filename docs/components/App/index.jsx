@@ -44,8 +44,7 @@ export default class App extends Component {
       components: this.state.components.map(comp =>
         comp.name !== name ?
           comp :
-          {...comp, visible: !comp.visible}
-      )
+          {...comp, visible: !comp.visible})
     });
   }
 
@@ -105,22 +104,24 @@ export default class App extends Component {
                   <navigation>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
-                        (<li
-                          key={name}
-                          className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
-                          <Link
-                            to={link}
-                            onClick={(() => this.onClickToggleComponent(name))}
-                            className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
-                          </Link>
-                        </li>)
-                      )}
+                        (
+                          <li
+                            key={name}
+                            className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
+                            <Link
+                              to={link}
+                              onClick={(() => this.onClickToggleComponent(name))}
+                              className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
                   </navigation>
                 </div>
               </div>
               <div className={`${styles.flexChild}`}>
                 {children}
+                test
               </div>
             </div>
           </div>

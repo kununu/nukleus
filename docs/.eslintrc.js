@@ -27,7 +27,16 @@ module.exports = {
     'object-curly-spacing': 'off', // Disabled in favour of babel/object-curly-spacing in order to avoid false positives with es6
     'quotes': ['error', 'single', {avoidEscape: true}],
     'space-before-function-paren': ['error', 'always'],
-
+    'jsx-a11y/no-autofocus': 'off',
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      "error", {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
     // React rules
     'react/jsx-closing-bracket-location': ['error', 'after-props'],
     'react/self-closing-comp': ['error', {component: true, html: true}],

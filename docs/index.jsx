@@ -22,8 +22,6 @@ import TextFieldDocs from 'components/TextFieldDocs';
 import ToolTipDocs from 'components/ToolTipDocs';
 import NotificationDocs from 'components/NotificationDocs';
 
-import 'font-awesome-webpack';
-
 import '../main.scss';
 
 

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-const DocsRoot = ({title, component, example, propsDefinition, propsDefault}) => (
+const DocsRoot = ({
+  title, component, example, propsDefinition, propsDefault
+}) => (
   <div>
     <h2 className={styles.title}>{title}</h2>
     <div className={`${styles.tile} clearfix`}>
