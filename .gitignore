@@ -45,3 +45,6 @@ dist
 
 # Sonar
 .scannerwork
+
+# Package Locks
+package-lock.json
