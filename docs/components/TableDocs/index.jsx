@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 import {Table} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
