@@ -69,7 +69,7 @@ export default class DatePickerComponent extends React.Component {
     const {
       query,
       name,
-      value,
+      value
     } = this.props;
 
     this.updateValue(query[name] || value || '');
