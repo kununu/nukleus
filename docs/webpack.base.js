@@ -6,6 +6,7 @@ const webpack = require('webpack'); // eslint-disable-line no-unused-vars, impor
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  mode: 'development',
   context: __dirname,
   entry: './index.jsx',
   output: {
