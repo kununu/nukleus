@@ -39,8 +39,4 @@ TabsDocs.propTypes = {
   location: PropTypes.object.isRequired
 };
 
-TabsDocs.defaultProps = {
-  theme: 'default'
-};
-
 export default TabsDocs;
