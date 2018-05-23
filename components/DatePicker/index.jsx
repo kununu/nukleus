@@ -66,9 +66,13 @@ export default class DatePickerComponent extends React.Component {
   }
 
   componentWillMount () {
-    this.updateValue(this.props.query[this.props.name] ||
-      this.props.value ||
-      '');
+    const {
+      query,
+      name,
+      value,
+    } = this.props;
+
+    this.updateValue(query[name] || value || '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();

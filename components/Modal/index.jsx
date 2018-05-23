@@ -114,7 +114,8 @@ export default class Modal extends React.Component {
               }
             )
           }
-          onEnter={this.onEnter}>
+          onEnter={this.onEnter}
+        >
           <section className={
             classNames(
               styles.modal,

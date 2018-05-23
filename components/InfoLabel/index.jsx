@@ -7,7 +7,10 @@ import {
 } from '../index.scss';
 
 const InfoLabel = ({
-  requiredLabel, maxLength, displayLength, inputValue
+  displayLength,
+  inputValue,
+  maxLength,
+  requiredLabel
 }) => {
   if (requiredLabel && (!displayLength || inputValue.trim() === '')) {
     return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
