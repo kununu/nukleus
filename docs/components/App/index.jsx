@@ -119,22 +119,22 @@ export default class App extends Component {
                 <div // eslint-disable-line jsx-a11y/no-static-element-interactions
                   onClick={this.onClickCloseMenu}
                   className={`${styles.menu} ${this.state.menuVisible && styles.open}`}>
-                  <navigation>
+                  <nav>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
                         (
                           <li
                             key={name}
-                            className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
+                            className={this.state.components.filter(comp => comp.name === name)[0].visible ? styles.activeMobile : undefined}>
                             <Link
                               to={link}
                               onClick={(() => this.onClickToggleComponent(name))}
-                              className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
+                              className={`${(pathname === link || (pathname === '/' && !index)) ? styles.active : undefined} ${styles.link}`}>{name}
                             </Link>
                           </li>
                         ))}
                     </ul>
-                  </navigation>
+                  </nav>
                 </div>
               </div>
               <div className={`${styles.flexChild}`}>
