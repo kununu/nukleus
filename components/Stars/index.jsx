@@ -180,9 +180,10 @@ export default class Stars extends React.Component {
                     <span className={srOnly}>
                       {key}
                     </span>
-                  </label> }
+                  </label>
+                }
               </div>
-          ))}
+            ))}
         </div>
       </div>
     );
