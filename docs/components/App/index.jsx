@@ -145,7 +145,7 @@ export default class App extends Component {
                   <Route path="/choice" component={ChoiceDocs} />
                   <Route path="/combobox" component={ComboboxDocs} />
                   <Route path="/date-picker" component={DatePickerDocs} />
-                  <Route path="/drop-down/:country" component={DropDownDocs} />
+                  <Route path="/drop-down/:country?" component={DropDownDocs} />
                   <Route path="/error" component={ErrorDocs} />
                   <Route path="/multiple-choice" component={MultipleChoiceDocs} />
                   <Route path="/paginator" component={PaginatorDocs} />
@@ -155,7 +155,7 @@ export default class App extends Component {
                   <Route path="/notification" component={NotificationDocs} />
                   <Route path="/select" component={SelectDocs} />
                   <Route path="/table" component={TableDocs} />
-                  <Route path="/tabs(/:page)" component={TabsDocs} />
+                  <Route path="/tabs/:page?" component={TabsDocs} />
                   <Route path="/tool-tip" component={ToolTipDocs} />
                   <Route path="/modal" component={ModalDocs} />
                 </Switch>
