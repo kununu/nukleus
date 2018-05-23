@@ -9,7 +9,7 @@ import {default as propsDefinition} from './props-definition.txt';
 import {default as propsDefault} from './props-default.txt';
 import styles from './index.scss';
 
-const PaginatorDocs = ({location: {pathname, query}}) => {
+const PaginatorDocs = ({location: {pathname, search: query}}) => {
   const example = `<Paginator${'\n  '}totalPages={10}${'\n  '}pathname="${pathname}"${'\n  '}query={${JSON.stringify(query) || {}}}${'\n  '}baseLink={<Link to={{pathname: "${pathname}"}}>1</Link>} />`;
 
   return (
