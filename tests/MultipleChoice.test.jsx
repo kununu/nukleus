@@ -125,15 +125,14 @@ test('Change status of MultipleChoice on onChange with lots of options', () => {
 });
 
 test('Renders an error if errors prop is set', () => {
-  const component = mount(
-    <MultipleChoice
-      name="choice[]"
-      label="Button Choice"
-      inputStyle="buttons"
-      error="error"
-      errorSubInfo="Subinfo"
-      isRequired
-      options={
+  const component = mount(<MultipleChoice
+    name="choice[]"
+    label="Button Choice"
+    inputStyle="buttons"
+    error="error"
+    errorSubInfo="Subinfo"
+    isRequired
+    options={
       [
         {
           id: 'option-1',
@@ -142,8 +141,7 @@ test('Renders an error if errors prop is set', () => {
           value: 'test'
         }
       ]
-    } />
-  );
+    } />);
   expect(toJson(component)).toMatchSnapshot();
 });
 
@@ -194,8 +192,7 @@ test('Changing a MultipleChoice returns correct values in onChange Event', done 
       expect(allOptions).toEqual(updatedOptions);
       done();
     }}
-    options={initialOptions} />
-  );
+    options={initialOptions} />);
   component.find({value: 'option-2'}).simulate('change');
 });
 
@@ -223,15 +220,13 @@ describe('MultipleChoice Events', () => {
 
   it('Focusing a MultipleChoice calls the onFocus Event', () => {
     spyFunc.mockClear();
-    const component = mount(
-      <MultipleChoice
-        name="test[]"
-        label="Button Choice"
-        inputStyle="buttons"
-        isRequired
-        onFocus={spyFunc}
-        options={initialOptions} />
-      );
+    const component = mount(<MultipleChoice
+      name="test[]"
+      label="Button Choice"
+      inputStyle="buttons"
+      isRequired
+      onFocus={spyFunc}
+      options={initialOptions} />);
 
     component.find('[type="checkbox"]').first().simulate('focus');
     expect(spyFunc.mock.calls.length).toBe(1);
@@ -239,15 +234,13 @@ describe('MultipleChoice Events', () => {
 
   it('Bluring a MultipleChoice calls the onBlur Event', () => {
     spyFunc.mockClear();
-    const component = mount(
-      <MultipleChoice
-        name="test[]"
-        label="Button Choice"
-        inputStyle="buttons"
-        isRequired
-        onBlur={spyFunc}
-        options={initialOptions} />
-      );
+    const component = mount(<MultipleChoice
+      name="test[]"
+      label="Button Choice"
+      inputStyle="buttons"
+      isRequired
+      onBlur={spyFunc}
+      options={initialOptions} />);
 
     component.find('[type="checkbox"]').first().simulate('focus');
     component.find('[type="checkbox"]').first().simulate('blur');

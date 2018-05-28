@@ -6,6 +6,7 @@ const webpack = require('webpack'); // eslint-disable-line no-unused-vars, impor
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  mode: 'development',
   context: __dirname,
   entry: './index.jsx',
   output: {
@@ -59,29 +60,18 @@ module.exports = {
         ]
       },
       {
-        test: /kununu-logo\/index.scss/,
-        use: [
-          'style-loader',
-          'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins () {
-                return [
-                  autoprefixer
-                ];
-              }
-            }
-          },
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.css$/,
-        include: /node_modules/,
+        exclude: /kununu-logo/,
         use: [
           'style-loader',
           'css-loader'
+        ]
+      },
+      {
+        test: /kununu-logo\/dist\/index\.css$/,
+        use: [
+          'style-loader',
+          'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]'
         ]
       },
       {

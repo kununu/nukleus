@@ -34,9 +34,6 @@ export default class InfoBox extends React.Component {
     window.removeEventListener('resize', this.windowResize);
   }
 
-  needsLayoutUpdate = false;
-  currentTranslateX = 0;
-
   get translatedXByScreenEdge () {
     // Check if rect is outside right window border
     if (this.positionRight > window.innerWidth) return (this.positionRight - window.innerWidth) * -1;
@@ -55,6 +52,10 @@ export default class InfoBox extends React.Component {
     return this.container.getBoundingClientRect().left - this.translateX;
   }
 
+  get translateX () {
+    return this.currentTranslateX;
+  }
+
   set translateX (x) {
     this.currentTranslateX = x;
     if (x === 0) {
@@ -64,9 +65,8 @@ export default class InfoBox extends React.Component {
     }
   }
 
-  get translateX () {
-    return this.currentTranslateX;
-  }
+  currentTranslateX = 0;
+  needsLayoutUpdate = false;
 
   updateLayout = () => {
     /**

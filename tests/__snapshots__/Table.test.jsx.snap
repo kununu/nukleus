@@ -1,8 +1,12 @@
-exports[`test Renders Table without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Table without crashing 1`] = `
 <div
-  className="tableContainer full-panel">
+  className="tableContainer full-panel"
+>
   <table
-    className="table">
+    className="table"
+  >
     <thead>
       <tr>
         <th>
@@ -34,7 +38,8 @@ exports[`test Renders Table without crashing 1`] = `
     </thead>
     <tbody>
       <tr
-        className="">
+        className=""
+      >
         <td>
           1
         </td>
@@ -49,14 +54,16 @@ exports[`test Renders Table without crashing 1`] = `
         </td>
         <td>
           <a
+            href="/playground/"
             onClick={[Function]}
-            style={Object {}}>
+          >
             One
           </a>
         </td>
       </tr>
       <tr
-        className="">
+        className=""
+      >
         <td>
           2
         </td>
@@ -71,14 +78,16 @@ exports[`test Renders Table without crashing 1`] = `
         </td>
         <td>
           <a
+            href="/playground/"
             onClick={[Function]}
-            style={Object {}}>
+          >
             Two
           </a>
         </td>
       </tr>
       <tr
-        className="">
+        className=""
+      >
         <td>
           3
         </td>
@@ -93,14 +102,16 @@ exports[`test Renders Table without crashing 1`] = `
         </td>
         <td>
           <a
+            href="/playground/"
             onClick={[Function]}
-            style={Object {}}>
+          >
             Three
           </a>
         </td>
       </tr>
       <tr
-        className="">
+        className=""
+      >
         <td>
           4
         </td>
@@ -118,7 +129,8 @@ exports[`test Renders Table without crashing 1`] = `
         </td>
       </tr>
       <tr
-        className="">
+        className=""
+      >
         <td>
           5
         </td>
@@ -133,8 +145,9 @@ exports[`test Renders Table without crashing 1`] = `
         </td>
         <td>
           <a
+            href="/playground/"
             onClick={[Function]}
-            style={Object {}}>
+          >
             Five
           </a>
         </td>
@@ -144,28 +157,36 @@ exports[`test Renders Table without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders empty Table without crashing 1`] = `
+exports[`Renders empty Table without crashing 1`] = `
 <div
-  className="tableContainer full-panel">
+  className="tableContainer full-panel"
+>
   <table
-    className="table">
+    className="table"
+  >
     <thead>
       <tr>
         <th
-          className="emptyHeader" />
+          className="emptyHeader"
+        />
         <th
-          className="emptyHeader" />
+          className="emptyHeader"
+        />
         <th
-          className="emptyHeader" />
+          className="emptyHeader"
+        />
         <th
-          className="emptyHeader" />
+          className="emptyHeader"
+        />
         <th
-          className="emptyHeader" />
+          className="emptyHeader"
+        />
       </tr>
     </thead>
     <tbody>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -173,7 +194,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -181,7 +203,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -189,7 +212,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -197,7 +221,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -205,7 +230,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -213,7 +239,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />
@@ -221,7 +248,8 @@ exports[`test Renders empty Table without crashing 1`] = `
         <td />
       </tr>
       <tr
-        className="emptyTd">
+        className="emptyTd"
+      >
         <td />
         <td />
         <td />

@@ -100,22 +100,20 @@ test('Hides no suggestions on blur', () => {
 
 test('Updates value on selection', () => {
   const component = mount(staticAutocomplete);
-  component.find('input').simulate('change', {target: {value: 'a'}});
-  component.find('input').simulate('focus');
-  component.find('#react-autowhatever-1--item-0').simulate('click');
+  component.find('input').hostNodes().simulate('change', {target: {value: 'a'}});
+  component.find('input').hostNodes().simulate('focus');
+  component.find('#react-autowhatever-autocompletes--item-0').hostNodes().simulate('click');
   expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Fetches suggestions on change', done => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Autocomplete
-      data={{items: []}}
-      onGetSuggestions={spyFunc}
-      id="autocompletes"
-      label="Autocomplete"
-      name="autocomplete" />
-  );
+  const component = mount(<Autocomplete
+    data={{items: []}}
+    onGetSuggestions={spyFunc}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete" />);
 
   component.find('input').simulate('change', {target: {value: 'a'}});
 
@@ -140,14 +138,12 @@ test('Fetches Value only when debounce is over', done => {
 
 test('Focusing an Autocomplete calls the onFocus Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Autocomplete
-      data={{items: []}}
-      onFocus={spyFunc}
-      id="autocompletes"
-      label="Autocomplete"
-      name="autocomplete" />
-  );
+  const component = mount(<Autocomplete
+    data={{items: []}}
+    onFocus={spyFunc}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete" />);
 
   component.find('input').simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -155,14 +151,12 @@ test('Focusing an Autocomplete calls the onFocus Event', () => {
 
 test('Bluring an Autocomplete calls the onBlur Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Autocomplete
-      data={{items: []}}
-      onBlur={spyFunc}
-      id="autocompletes"
-      label="Autocomplete"
-      name="autocomplete" />
-  );
+  const component = mount(<Autocomplete
+    data={{items: []}}
+    onBlur={spyFunc}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete" />);
 
   component.find('input').simulate('focus');
   component.find('input').simulate('blur');
@@ -171,14 +165,12 @@ test('Bluring an Autocomplete calls the onBlur Event', () => {
 
 test('Changing an Autocomplete calls the onChange Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Autocomplete
-      data={{items: []}}
-      onChange={spyFunc}
-      id="autocompletes"
-      label="Autocomplete"
-      name="autocomplete" />
-  );
+  const component = mount(<Autocomplete
+    data={{items: []}}
+    onChange={spyFunc}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete" />);
 
   component.find('input').simulate('change', {target: {value: 'test'}});
   component.find('input').simulate('change', {target: {value: 'test2'}});

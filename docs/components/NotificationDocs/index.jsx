@@ -45,7 +45,7 @@ export default class NotificationDocs extends Component {
               className={styles.toggleLink}
               onClick={this.onClickToggleLink}>
                 Click to toggle to notification box.
-              </a>
+            </a>
             <Notification
               message="Hi, I am a notification box"
               icon={<i className="fa fa-check" />}

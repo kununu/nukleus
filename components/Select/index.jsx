@@ -119,29 +119,6 @@ export default class Select extends React.Component {
     this.hideError();
   };
 
-  needsUpdate ({value, query}) {
-    return (
-      value !== this.props.value ||
-      query !== this.props.query
-    );
-  }
-
-  updateValue (value) {
-    this.setState({value});
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
-
   /**
    * determines which classNames should be added to the container div of
    * the component
@@ -188,6 +165,29 @@ export default class Select extends React.Component {
         labelHidden={labelHidden}
         classNames={this.labelClassNames} />
     );
+  }
+
+  needsUpdate ({value, query}) {
+    return (
+      value !== this.props.value ||
+      query !== this.props.query
+    );
+  }
+
+  updateValue (value) {
+    this.setState({value});
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
   }
 
   render () {
@@ -254,12 +254,13 @@ export default class Select extends React.Component {
               <option value="">{defaultItem}</option>}
 
             {mappedOptions.map(item =>
-              (<option
-                key={item.key}
-                value={item.key}>
-                {item.value}
-              </option>),
-            )}
+              (
+                <option
+                  key={item.key}
+                  value={item.key}>
+                  {item.value}
+                </option>
+              ))}
           </select>
 
           {this.hasError() &&

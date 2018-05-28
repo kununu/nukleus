@@ -4,6 +4,7 @@ const base = require('./webpack.base');
 
 module.exports = {
   ...base,
+  mode: 'production',
   output: {
     ...base.output,
     publicPath: '/nukleus/build/'

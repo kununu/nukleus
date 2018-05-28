@@ -6,7 +6,9 @@ import {
   srOnly
 } from '../index.scss';
 
-export default function Label ({id, value, labelHidden, classNames, isTitle}) {
+export default function Label ({
+  id, value, labelHidden, classNames, isTitle
+}) {
   const hidden = labelHidden ? srOnly : '';
   const allClassNames = `${classNames} ${controlLabel} ${hidden}`;
 
@@ -34,12 +36,12 @@ export default function Label ({id, value, labelHidden, classNames, isTitle}) {
   // However to also add the labelContainer class, we need to return a cloned
   // element and not just the label - element itself
   return React.cloneElement(
-      value,
+    value,
     {
       ...value.props,
       className: allClassNames
     }
-    );
+  );
 }
 
 Label.propTypes = {

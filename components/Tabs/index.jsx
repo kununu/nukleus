@@ -52,7 +52,8 @@ export default class Tabs extends React.Component {
               styles.tabItem,
               {
                 [styles.pointerDisabled]: items.length <= 1
-              })}>
+              }
+)}>
             {React.cloneElement(item, this.getNewProps(item))}
           </li>
         ))}

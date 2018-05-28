@@ -5,14 +5,20 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-import params from '../../utils/params';
+import {
+  queryParamsToObject,
+  queryParamsToString
+} from '../../utils/params';
 
 export default class Paginator extends React.Component {
   static propTypes = {
     baseLink: PropTypes.element.isRequired,
-    pathname: PropTypes.string.isRequired,
-    query: PropTypes.object,
-    queryKey: PropTypes.string.isRequired,
+    pathname: PropTypes.string,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    queryKey: PropTypes.string,
     totalPages: PropTypes.number.isRequired
   };
 
@@ -49,11 +55,14 @@ export default class Paginator extends React.Component {
       queryKey
     } = this.props;
 
+    const queryObject = queryParamsToObject(query);
+    const queryParams = queryParamsToString({...queryObject, [queryKey]: queryValue});
+
     if (baseLink.props.to) {
       return {
         to: {
           pathname,
-          query: {...query, [queryKey]: queryValue}
+          search: queryParams
         }
       };
     }
@@ -61,7 +70,7 @@ export default class Paginator extends React.Component {
     const location = baseLink.props.href ? 'href' : 'path';
 
     return {
-      [location]: `${pathname}?${params({...query, [queryKey]: queryValue})}`
+      [location]: `${pathname}?${queryParams}`
     };
   }
 
@@ -73,7 +82,8 @@ export default class Paginator extends React.Component {
       query
     } = this.props;
 
-    const currentPage = Number(query[queryKey]) || 1;
+    const queryObject = queryParamsToObject(query);
+    const currentPage = Number(queryObject[queryKey]) || 1;
     const totalPagesArray = this.getPageRange(currentPage);
     const previousPage = currentPage !== 1 ? currentPage - 1 : currentPage;
     const nextPage = currentPage !== totalPages ? currentPage + 1 : currentPage;
@@ -81,17 +91,18 @@ export default class Paginator extends React.Component {
     return (
       <div className={styles.paginator}>
         <ul className={styles.paginatorList} role="navigation" aria-label="Pagination">
-          <li className={(totalPages === 1 || !currentPage || currentPage === 1) && styles.disabled}>
+          <li className={(totalPages === 1 || !currentPage || currentPage === 1) ? styles.disabled : undefined}>
             {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
           </li>
 
           {totalPagesArray.map(item =>
-            (<li key={item} className={currentPage === item && styles.active}>
-              {React.cloneElement(baseLink, this.getNewProps(item), item)}
-            </li>)
-          )}
+            (
+              <li key={item} className={currentPage === item ? styles.active : undefined}>
+                {React.cloneElement(baseLink, this.getNewProps(item), item)}
+              </li>
+            ))}
 
-          <li className={currentPage === totalPages && styles.disabled}>
+          <li className={currentPage === totalPages ? styles.disabled : undefined}>
             {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
           </li>
         </ul>

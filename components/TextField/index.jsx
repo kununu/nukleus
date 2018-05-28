@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
+import {queryParamsToObject} from '../../utils/params';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles, {
@@ -46,7 +47,10 @@ export default class TextField extends React.Component {
     onHighlight: PropTypes.func,
     pattern: PropTypes.string,
     placeholder: PropTypes.string,
-    query: PropTypes.object,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
     rows: PropTypes.number,
@@ -100,28 +104,31 @@ export default class TextField extends React.Component {
   };
 
   componentWillMount () {
-    this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+
+    this.updateValue(queryObject[this.props.name] || this.props.value || '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const queryObject = queryParamsToObject(nextProps.query);
+
     if (nextProps.error) {
       this.showError();
     } else {
       if (!this.needsUpdate(nextProps)) return;
-      this.updateValue(
-        nextProps.query[this.props.name] ||
+      this.updateValue(queryObject[this.props.name] ||
         nextProps.value ||
-        ''
-      );
+        '');
     }
   }
 
   // Property initializer binds method to class instance
   onChange = (...args) => {
-    const target = args[0].target;
+    const {target} = args[0];
     const {
       dynamicTextareaHeight,
       highlightList,
@@ -144,80 +151,6 @@ export default class TextField extends React.Component {
 
     this.hideError();
   };
-
-  setDynamicTextAreaHeight = target => {
-    const oldHeight = Number(this.state.textAreaHeight);
-    const currentHeight = target.scrollHeight;
-
-    // Fix so when you backspace it will reduce the correct height
-    const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
-
-    if (newHeight > (this.props.minHeight || 134)) {
-      this.setState({
-        textAreaHeight: newHeight
-      });
-    }
-  }
-
-  getHighlightedContent = contents => {
-    const contentRegex = /([^a-zA-Z]+)/;
-    const userInputArray = contents.split(contentRegex);
-
-    const {
-      highlightList,
-      onHighlight
-    } = this.props;
-
-    return userInputArray.map((part, i) => {
-      if (highlightList[part.toLowerCase()]) {
-        onHighlight();
-        return <span className={styles.highlighted} key={i}>{part}</span>;
-      }
-      return part;
-    });
-  }
-
-  needsUpdate ({value, query}) {
-    return (
-      value !== this.props.value ||
-      query !== this.props.query
-    );
-  }
-
-  updateValue (value) {
-    this.setState({value});
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
-  }
-
-  /**
-   * determines which classNames should be added to the container of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get containerClassNames () {
-    const {
-      inputStyle,
-      requiredLabel,
-      displayLength
-    } = this.props;
-    const classNames = [formGroup];
-
-    // Add all styles that are added via inputStyles
-    const inputStyles = inputStyle.split(' ');
-    inputStyles.map(style => classNames.push(sharedStyles[style]));
-
-    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
-
-    return classNames.join(' ');
-  }
 
   /**
    * determines which classNames should be added to the label of
@@ -270,25 +203,26 @@ export default class TextField extends React.Component {
   }
 
   /**
-   * determines which styles should be applied to the textarea
+   * determines which classNames should be added to the container of
+   * the component
    *
-   * @return {object} [object with camelCased properties]
+   * @return {string} [list of classNames split by space]
    */
-  textAreaStyles = () => {
+  get containerClassNames () {
     const {
-      highlightList,
-      minHeight
+      inputStyle,
+      requiredLabel,
+      displayLength
     } = this.props;
-    const textAreaStyles = {};
+    const classNames = [formGroup];
 
-    if (highlightList && minHeight) textAreaStyles.minHeight = minHeight;
-    if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
+    // Add all styles that are added via inputStyles
+    const inputStyles = inputStyle.split(' ');
+    inputStyles.map(style => classNames.push(sharedStyles[style]));
 
-    return textAreaStyles;
-  }
+    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
 
-  hasError () {
-    return this.state.showError && this.props.error;
+    return classNames.join(' ');
   }
 
   /**
@@ -323,6 +257,79 @@ export default class TextField extends React.Component {
     );
   }
 
+  getHighlightedContent = contents => {
+    const contentRegex = /([^a-zA-Z]+)/;
+    const userInputArray = contents.split(contentRegex);
+
+    const {
+      highlightList,
+      onHighlight
+    } = this.props;
+
+    return userInputArray.map((part, i) => {
+      if (highlightList[part.toLowerCase()]) {
+        onHighlight();
+        return <span className={styles.highlighted} key={i}>{part}</span>;
+      }
+      return part;
+    });
+  }
+
+  setDynamicTextAreaHeight = target => {
+    const oldHeight = Number(this.state.textAreaHeight);
+    const currentHeight = target.scrollHeight;
+
+    // Fix so when you backspace it will reduce the correct height
+    const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
+
+    if (newHeight > (this.props.minHeight || 134)) {
+      this.setState({
+        textAreaHeight: newHeight
+      });
+    }
+  }
+
+  needsUpdate ({value, query}) {
+    return (
+      value !== this.props.value ||
+      query !== this.props.query
+    );
+  }
+
+  updateValue (value) {
+    this.setState({value});
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  /**
+   * determines which styles should be applied to the textarea
+   *
+   * @return {object} [object with camelCased properties]
+   */
+  textAreaStyles = () => {
+    const {
+      highlightList,
+      minHeight
+    } = this.props;
+    const textAreaStyles = {};
+
+    if (highlightList && minHeight) textAreaStyles.minHeight = minHeight;
+    if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
+
+    return textAreaStyles;
+  }
+
+  hasError () {
+    return this.state.showError && this.props.error;
+  }
+
   render () {
     const {
       autoComplete,
@@ -350,7 +357,7 @@ export default class TextField extends React.Component {
       type
     } = this.props;
 
-    const highlightedContent = this.state.highlightedContent;
+    const {highlightedContent} = this.state;
 
     return (
       <div className={this.containerClassNames}>

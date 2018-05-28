@@ -1,26 +1,28 @@
-exports[`test Badwords should highlight correctly 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badwords should highlight correctly 1`] = `
 <TextField
   autoComplete="off"
   autoFocus={false}
-  badwordsList={
-    Object {
-      "bad": "bad",
-      "words": "words",
-    }
-  }
   disable={false}
   displayLength={false}
   dynamicTextareaHeight={true}
   error={null}
   errorSubInfo={null}
-  highlightList={null}
+  highlightList={
+    Object {
+      "bad": "bad",
+      "words": "words",
+    }
+  }
   id="text-field"
   inputStyle="inline"
   isRequired={false}
   label={
     <span>
       <label
-        htmlFor="text-field">
+        htmlFor="text-field"
+      >
         TextField
       </label>
       <ToolTip
@@ -33,13 +35,16 @@ exports[`test Badwords should highlight correctly 1`] = `
             xmlSpace="preserve"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0px">
+            y="0px"
+          >
             <path
-              d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+              d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25"
+            />
           </svg>
         }
         label="Test"
-        position="topLeft" />
+        position="topLeft"
+      />
     </span>
   }
   labelHidden={false}
@@ -48,7 +53,7 @@ exports[`test Badwords should highlight correctly 1`] = `
   multiLine={true}
   name="text-field"
   onBlur={[Function]}
-  onChange={[Function]}
+  onChange={null}
   onFocus={[Function]}
   onHighlight={[Function]}
   pattern=""
@@ -60,18 +65,23 @@ exports[`test Badwords should highlight correctly 1`] = `
   sanitizeValue={[Function]}
   title=""
   type="text"
-  value="">
+  value=""
+>
   <div
-    className="formGroup inline">
+    className="formGroup inline"
+  >
     <InfoLabel
       displayLength={false}
-      inputValue="These are some really bad words"
+      inputValue="These are some bad words"
       maxLength={500}
-      requiredLabel="" />
+      requiredLabel=""
+    />
     <span
-      className="labelContainer">
+      className="labelContainer"
+    >
       <label
-        htmlFor="text-field">
+        htmlFor="text-field"
+      >
         TextField
       </label>
       <ToolTip
@@ -84,22 +94,27 @@ exports[`test Badwords should highlight correctly 1`] = `
             xmlSpace="preserve"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            y="0px">
+            y="0px"
+          >
             <path
-              d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+              d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25"
+            />
           </svg>
         }
         label="Test"
-        position="topLeft">
+        position="topLeft"
+      >
         <div
-          className="toolTip">
+          className="toolTip"
+        >
           <button
             className="unstyledButton"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             title="Test"
-            type="button">
+            type="button"
+          >
             <svg
               version="1.1"
               viewBox="0 0 75 75"
@@ -107,19 +122,45 @@ exports[`test Badwords should highlight correctly 1`] = `
               xmlSpace="preserve"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
-              y="0px">
+              y="0px"
+            >
               <path
-                d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+                d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25"
+              />
             </svg>
           </button>
         </div>
       </ToolTip>
     </span>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
+      <div
+        className="highlightOverlay formControl textarea dynamicHeight"
+      >
+        These
+         
+        are
+         
+        some
+         
+        <span
+          className="highlighted"
+          key="6"
+        >
+          bad
+        </span>
+         
+        <span
+          className="highlighted"
+          key="8"
+        >
+          words
+        </span>
+      </div>
       <textarea
         autoFocus={false}
-        className="formControl textarea"
+        className="formControl textarea dynamicHeight"
         disabled={false}
         id="text-field"
         maxLength={500}
@@ -132,13 +173,14 @@ exports[`test Badwords should highlight correctly 1`] = `
         required={false}
         rows={5}
         style={Object {}}
-        value="These are some really bad words" />
+        value="These are some bad words"
+      />
     </div>
   </div>
 </TextField>
 `;
 
-exports[`test Changes output on value change manipulation 1`] = `
+exports[`Changes output on value change manipulation 1`] = `
 <TextField
   autoComplete="off"
   autoFocus={false}
@@ -170,26 +212,32 @@ exports[`test Changes output on value change manipulation 1`] = `
   sanitizeValue={[Function]}
   title=""
   type="text"
-  value="test">
+  value="test"
+>
   <div
-    className="formGroup inline paddingTop">
+    className="formGroup inline paddingTop"
+  >
     <InfoLabel
       displayLength={false}
       inputValue="UGH"
       maxLength={500}
-      requiredLabel="required">
+      requiredLabel="required"
+    >
       <span
-        className="controlNote controlLabelRequired">
+        className="controlNote controlLabelRequired"
+      >
         required
       </span>
     </InfoLabel>
     <label
       className="controlLabel"
-      htmlFor="text-field">
+      htmlFor="text-field"
+    >
       TextField
     </label>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
       <input
         autoComplete="off"
         autoFocus={false}
@@ -206,17 +254,20 @@ exports[`test Changes output on value change manipulation 1`] = `
         required={true}
         title=""
         type="text"
-        value="UGH" />
+        value="UGH"
+      />
     </div>
   </div>
 </TextField>
 `;
 
-exports[`test Renders A TextField with visible character counter without crashing 1`] = `
+exports[`Renders A TextField with visible character counter without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop">
+  className="formGroup inline paddingTop"
+>
   <span
-    className="controlNote controlLabelRequired">
+    className="controlNote controlLabelRequired"
+  >
     <strong>
       5
     </strong>
@@ -225,11 +276,13 @@ exports[`test Renders A TextField with visible character counter without crashin
   </span>
   <label
     className="controlLabel"
-    htmlFor="text-field">
+    htmlFor="text-field"
+  >
     TextField
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <input
       autoComplete="off"
       autoFocus={false}
@@ -246,25 +299,30 @@ exports[`test Renders A TextField with visible character counter without crashin
       required={true}
       title=""
       type="text"
-      value="test2" />
+      value="test2"
+    />
   </div>
 </div>
 `;
 
-exports[`test Renders TextField with an error message without crashing 1`] = `
+exports[`Renders TextField with an error message without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop">
+  className="formGroup inline paddingTop"
+>
   <span
-    className="controlNote controlLabelRequired">
+    className="controlNote controlLabelRequired"
+  >
     required
   </span>
   <label
     className="controlLabel controlLabelError"
-    htmlFor="text-field">
+    htmlFor="text-field"
+  >
     TextField
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <input
       autoComplete="off"
       autoFocus={false}
@@ -281,11 +339,14 @@ exports[`test Renders TextField with an error message without crashing 1`] = `
       required={true}
       title=""
       type="text"
-      value="test" />
+      value="test"
+    />
     <span
-      className="error">
+      className="error"
+    >
       <strong
-        className="info">
+        className="info"
+      >
         An Error
       </strong>
       with useful hints
@@ -294,20 +355,24 @@ exports[`test Renders TextField with an error message without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders TextField with multiline without crashing 1`] = `
+exports[`Renders TextField with multiline without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop">
+  className="formGroup inline paddingTop"
+>
   <span
-    className="controlNote controlLabelRequired">
+    className="controlNote controlLabelRequired"
+  >
     required
   </span>
   <label
     className="controlLabel"
-    htmlFor="text-field">
+    htmlFor="text-field"
+  >
     TextField
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <textarea
       autoFocus={false}
       className="formControl textarea"
@@ -323,25 +388,30 @@ exports[`test Renders TextField with multiline without crashing 1`] = `
       required={true}
       rows={5}
       style={Object {}}
-      value="test2" />
+      value="test2"
+    />
   </div>
 </div>
 `;
 
-exports[`test Renders TextField without crashing 1`] = `
+exports[`Renders TextField without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop">
+  className="formGroup inline paddingTop"
+>
   <span
-    className="controlNote controlLabelRequired">
+    className="controlNote controlLabelRequired"
+  >
     required
   </span>
   <label
     className="controlLabel"
-    htmlFor="text-field">
+    htmlFor="text-field"
+  >
     TextField
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <input
       autoComplete="off"
       autoFocus={false}
@@ -358,29 +428,35 @@ exports[`test Renders TextField without crashing 1`] = `
       required={true}
       title=""
       type="text"
-      value="test" />
+      value="test"
+    />
   </div>
 </div>
 `;
 
-exports[`test Renders a TextField with a ToolTip without crashing 1`] = `
+exports[`Renders a TextField with a ToolTip without crashing 1`] = `
 <div
-  className="formGroup inline">
+  className="formGroup inline"
+>
   <span
-    className="labelContainer">
+    className="labelContainer"
+  >
     <label
-      htmlFor="text-field">
+      htmlFor="text-field"
+    >
       TextField
     </label>
     <div
-      className="toolTip">
+      className="toolTip"
+    >
       <button
         className="unstyledButton"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         title="Test"
-        type="button">
+        type="button"
+      >
         <svg
           version="1.1"
           viewBox="0 0 75 75"
@@ -388,15 +464,18 @@ exports[`test Renders a TextField with a ToolTip without crashing 1`] = `
           xmlSpace="preserve"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          y="0px">
+          y="0px"
+        >
           <path
-            d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25" />
+            d="M37.5,20.398c-1.648,0-3,1.352-3,3c0,1.649,1.352,3,3,3c1.648,0,3-1.351,3-3C40.5,21.75,39.148,20.398,37.5,20.398z M39.75,52.648V34.051c0-1.274-0.977-2.25-2.25-2.25c-1.273,0-2.25,0.976-2.25,2.25v18.602c0,1.273,0.977,2.25,2.25,2.25 C38.773,54.902,39.75,53.852,39.75,52.648z M37.5,3.75C18.824,3.75,3.75,18.824,3.75,37.5S18.824,71.25,37.5,71.25 S71.25,56.176,71.25,37.5S56.176,3.75,37.5,3.75z M37.5,8.25c16.125,0,29.25,13.125,29.25,29.25S53.625,66.75,37.5,66.75 S8.25,53.625,8.25,37.5S21.375,8.25,37.5,8.25"
+          />
         </svg>
       </button>
     </div>
   </span>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <input
       autoComplete="off"
       autoFocus={false}
@@ -413,21 +492,25 @@ exports[`test Renders a TextField with a ToolTip without crashing 1`] = `
       required={false}
       title=""
       type="text"
-      value="" />
+      value=""
+    />
   </div>
 </div>
 `;
 
-exports[`test Renders a medium size Textfield with multiline without crashing 1`] = `
+exports[`Renders a medium size Textfield with multiline without crashing 1`] = `
 <div
-  className="formGroup mediumSize">
+  className="formGroup mediumSize"
+>
   <label
     className="controlLabel controlLabelMediumSize"
-    htmlFor="text-field">
+    htmlFor="text-field"
+  >
     TextField
   </label>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <textarea
       autoFocus={false}
       className="formControl textarea"
@@ -443,7 +526,8 @@ exports[`test Renders a medium size Textfield with multiline without crashing 1`
       required={false}
       rows={5}
       style={Object {}}
-      value="" />
+      value=""
+    />
   </div>
 </div>
 `;

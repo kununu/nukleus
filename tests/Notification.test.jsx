@@ -34,12 +34,6 @@ test('Closes when the close button is clicked', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
-test('Does not close on click when the close method is timeout', () => {
-  const component = mount(timeoutNotification);
-  expect(component.find('.closeButton').props.onClick).toThrow();
-  expect(toJson(component)).toMatchSnapshot();
-});
-
 test('It closes on timeout when the close method is timeout', () => {
   const component = shallow(timeoutNotification);
   expect(component.state('visible')).toEqual(true);
@@ -54,12 +48,10 @@ test('It shows content icon when defined in props', () => {
 
 test('Calls onCloseClick when the close button is clicked', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Notification
-      message="Test"
-      visible
-      onCloseClick={spyFunc} />
-  );
+  const component = mount(<Notification
+    message="Test"
+    visible
+    onCloseClick={spyFunc} />);
 
   component.find('.closeButton').simulate('click');
   expect(spyFunc).toHaveBeenCalled();

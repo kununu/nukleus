@@ -1,10 +1,11 @@
-exports[`test Change status of MultipleChoice on onChange with lots of options 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Change status of MultipleChoice on onChange with lots of options 1`] = `
 <MultipleChoice
   choices={Array []}
   error={null}
   errorSubInfo={null}
   heading={null}
-  headingStyle="control-label"
   inputStyle="inline"
   isRequired={false}
   label="MultipleChoice"
@@ -43,91 +44,116 @@ exports[`test Change status of MultipleChoice on onChange with lots of options 1
   }
   query={Object {}}
   reference={[Function]}
-  requiredLabel="">
+  requiredLabel=""
+>
   <div
-    className="formGroup formGroupMultipleChoice inline">
+    className="formGroup formGroupMultipleChoice inline"
+  >
     <Label
       classNames="inlineLabel"
       id=""
       isTitle={true}
       labelHidden={false}
-      value="MultipleChoice">
+      value="MultipleChoice"
+    >
       <div
-        className="inlineLabel controlLabel ">
+        className="inlineLabel controlLabel "
+      >
         MultipleChoice
       </div>
     </Label>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
       <div
-        className="choice">
+        className="choice"
+        key="option-1"
+      >
         <input
           checked={true}
           className="formControl"
           id="choice[]option-1"
+          key="option-1"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
           type="checkbox"
-          value="option-1" />
+          value="option-1"
+        />
         <label
-          htmlFor="choice[]option-1">
+          htmlFor="choice[]option-1"
+        >
           option 1
         </label>
       </div>
       <div
-        className="choice">
+        className="choice"
+        key="option-2"
+      >
         <input
           checked={false}
           className="formControl"
           id="choice[]option-2"
+          key="option-2"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
           type="checkbox"
-          value="option-2" />
+          value="option-2"
+        />
         <label
-          htmlFor="choice[]option-2">
+          htmlFor="choice[]option-2"
+        >
           option 2
         </label>
       </div>
       <div
-        className="choice">
+        className="choice"
+        key="option-3"
+      >
         <input
           checked={false}
           className="formControl"
           id="choice[]option-3"
+          key="option-3"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
           type="checkbox"
-          value="option-2" />
+          value="option-2"
+        />
         <label
-          htmlFor="choice[]option-3">
+          htmlFor="choice[]option-3"
+        >
           option 3
         </label>
       </div>
       <div
-        className="choice">
+        className="choice"
+        key="option-4"
+      >
         <input
           checked={true}
           className="formControl"
           id="choice[]option-4"
+          key="option-4"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
           type="checkbox"
-          value="option-4" />
+          value="option-4"
+        />
         <label
-          htmlFor="choice[]option-4">
+          htmlFor="choice[]option-4"
+        >
           option 4
         </label>
       </div>
@@ -136,20 +162,40 @@ exports[`test Change status of MultipleChoice on onChange with lots of options 1
 </MultipleChoice>
 `;
 
-exports[`test Changes status on MultipleChoice onChange 1`] = `
+exports[`Changes status on MultipleChoice onChange 1`] = `
 <MultipleChoice
   choices={Array []}
   error={null}
   errorSubInfo={null}
   heading={null}
-  headingStyle="control-label"
   inputStyle="inline"
   isRequired={true}
   label="Test"
   labelHidden={false}
   name="choice[]"
   onBlur={[Function]}
-  onChange={[Function]}
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "id": "option-1",
+            "isChecked": false,
+            "label": "test",
+            "value": "test",
+          },
+          Array [
+            Object {
+              "id": "option-1",
+              "isChecked": true,
+              "label": "test",
+              "value": "test",
+            },
+          ],
+        ],
+      ],
+    }
+  }
   onFocus={[Function]}
   options={
     Array [
@@ -163,37 +209,47 @@ exports[`test Changes status on MultipleChoice onChange 1`] = `
   }
   query={Object {}}
   reference={[Function]}
-  requiredLabel="">
+  requiredLabel=""
+>
   <div
-    className="formGroup formGroupMultipleChoice inline">
+    className="formGroup formGroupMultipleChoice inline"
+  >
     <Label
       classNames="inlineLabel"
       id=""
       isTitle={true}
       labelHidden={false}
-      value="Test">
+      value="Test"
+    >
       <div
-        className="inlineLabel controlLabel ">
+        className="inlineLabel controlLabel "
+      >
         Test
       </div>
     </Label>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
       <div
-        className="choice">
+        className="choice"
+        key="option-1"
+      >
         <input
           checked={true}
           className="formControl"
           id="choice[]option-1"
+          key="option-1"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={true}
           type="checkbox"
-          value="test" />
+          value="test"
+        />
         <label
-          htmlFor="choice[]option-1">
+          htmlFor="choice[]option-1"
+        >
           test
         </label>
       </div>
@@ -202,18 +258,22 @@ exports[`test Changes status on MultipleChoice onChange 1`] = `
 </MultipleChoice>
 `;
 
-exports[`test Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
+exports[`Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice buttons">
+  className="formGroup formGroupMultipleChoice buttons"
+>
   
   <div
-    className=" controlLabel ">
+    className=" controlLabel "
+  >
     Button Choice
   </div>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -224,9 +284,11 @@ exports[`test Renders MultipleChoice with inputStyle buttons without crashing 1`
         onFocus={[Function]}
         required={true}
         type="checkbox"
-        value="test" />
+        value="test"
+      />
       <label
-        htmlFor="choice[]option-1">
+        htmlFor="choice[]option-1"
+      >
         test
       </label>
     </div>
@@ -234,18 +296,22 @@ exports[`test Renders MultipleChoice with inputStyle buttons without crashing 1`
 </div>
 `;
 
-exports[`test Renders MultipleChoice without crashing 1`] = `
+exports[`Renders MultipleChoice without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline">
+  className="formGroup formGroupMultipleChoice inline"
+>
   
   <div
-    className="inlineLabel controlLabel ">
+    className="inlineLabel controlLabel "
+  >
     Test
   </div>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -256,9 +322,11 @@ exports[`test Renders MultipleChoice without crashing 1`] = `
         onFocus={[Function]}
         required={true}
         type="checkbox"
-        value="test" />
+        value="test"
+      />
       <label
-        htmlFor="choice[]option-1">
+        htmlFor="choice[]option-1"
+      >
         test
       </label>
     </div>
@@ -266,18 +334,22 @@ exports[`test Renders MultipleChoice without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders MultipleCoices without crashing 1`] = `
+exports[`Renders MultipleCoices without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline">
+  className="formGroup formGroupMultipleChoice inline"
+>
   
   <div
-    className="inlineLabel controlLabel ">
+    className="inlineLabel controlLabel "
+  >
     MultipleChoice
   </div>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -288,14 +360,17 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
         onFocus={[Function]}
         required={false}
         type="checkbox"
-        value="option-1" />
+        value="option-1"
+      />
       <label
-        htmlFor="choice[]option-1">
+        htmlFor="choice[]option-1"
+      >
         option 1
       </label>
     </div>
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -306,14 +381,17 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
         onFocus={[Function]}
         required={false}
         type="checkbox"
-        value="option-2" />
+        value="option-2"
+      />
       <label
-        htmlFor="choice[]option-2">
+        htmlFor="choice[]option-2"
+      >
         option 2
       </label>
     </div>
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -324,14 +402,17 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
         onFocus={[Function]}
         required={false}
         type="checkbox"
-        value="option-2" />
+        value="option-2"
+      />
       <label
-        htmlFor="choice[]option-3">
+        htmlFor="choice[]option-3"
+      >
         option 3
       </label>
     </div>
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -342,9 +423,11 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
         onFocus={[Function]}
         required={false}
         type="checkbox"
-        value="option-4" />
+        value="option-4"
+      />
       <label
-        htmlFor="choice[]option-4">
+        htmlFor="choice[]option-4"
+      >
         option 4
       </label>
     </div>
@@ -352,13 +435,12 @@ exports[`test Renders MultipleCoices without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders an error if errors prop is set 1`] = `
+exports[`Renders an error if errors prop is set 1`] = `
 <MultipleChoice
   choices={Array []}
   error="error"
   errorSubInfo="Subinfo"
   heading={null}
-  headingStyle="control-label"
   inputStyle="buttons"
   isRequired={true}
   label="Button Choice"
@@ -379,48 +461,61 @@ exports[`test Renders an error if errors prop is set 1`] = `
   }
   query={Object {}}
   reference={[Function]}
-  requiredLabel="">
+  requiredLabel=""
+>
   <div
-    className="formGroup formGroupMultipleChoice buttons">
+    className="formGroup formGroupMultipleChoice buttons"
+  >
     <Label
       classNames=""
       id=""
       isTitle={true}
       labelHidden={false}
-      value="Button Choice">
+      value="Button Choice"
+    >
       <div
-        className=" controlLabel ">
+        className=" controlLabel "
+      >
         Button Choice
       </div>
     </Label>
     <div
-      className="inputContainer">
+      className="inputContainer"
+    >
       <div
-        className="choice">
+        className="choice"
+        key="option-1"
+      >
         <input
           checked={false}
           className="formControl"
           id="choice[]option-1"
+          key="option-1"
           name="choice[]"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           required={true}
           type="checkbox"
-          value="test" />
+          value="test"
+        />
         <label
-          htmlFor="choice[]option-1">
+          htmlFor="choice[]option-1"
+        >
           test
         </label>
       </div>
     </div>
     <Error
       info="error"
-      subInfo="Subinfo">
+      subInfo="Subinfo"
+    >
       <span
-        className="error">
+        className="error"
+      >
         <strong
-          className="info">
+          className="info"
+        >
           error
         </strong>
         Subinfo
@@ -430,18 +525,22 @@ exports[`test Renders an error if errors prop is set 1`] = `
 </MultipleChoice>
 `;
 
-exports[`test Renders deprecated MultipleChoice without crashing 1`] = `
+exports[`Renders deprecated MultipleChoice without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline">
+  className="formGroup formGroupMultipleChoice inline"
+>
   
   <div
-    className="inlineLabel controlLabel ">
+    className="inlineLabel controlLabel "
+  >
     Test
   </div>
   <div
-    className="inputContainer">
+    className="inputContainer"
+  >
     <div
-      className="choice">
+      className="choice"
+    >
       <input
         checked={false}
         className="formControl"
@@ -452,9 +551,11 @@ exports[`test Renders deprecated MultipleChoice without crashing 1`] = `
         onFocus={[Function]}
         required={true}
         type="checkbox"
-        value="test" />
+        value="test"
+      />
       <label
-        htmlFor="choice[]option-1">
+        htmlFor="choice[]option-1"
+      >
         test
       </label>
     </div>

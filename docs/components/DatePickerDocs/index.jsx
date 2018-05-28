@@ -9,7 +9,7 @@ import {default as propsDefault} from './props-default.txt';
 
 const DatePickerDocs = () => (
   <DocsRoot
-    label="DatePicker"
+    title="DatePicker"
     component={
       <DatePicker
         id="date-picker"
