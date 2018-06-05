@@ -42,3 +42,9 @@ dist
 
 # IDEs
 .idea
+
+# Sonar
+.scannerwork
+
+# Package Locks
+package-lock.json

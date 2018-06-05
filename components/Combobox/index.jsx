@@ -171,7 +171,9 @@ export default class ComboboxComponent extends React.Component {
 
         <label
           className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
-          htmlFor={id}>{label}</label>
+          htmlFor={id}>
+          {label}
+        </label>
 
         <div className={styles.container}>
           <Autosuggest

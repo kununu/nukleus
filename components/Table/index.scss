@@ -1,4 +1,4 @@
-@import '~kununu-theme/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .tableContainer {
   margin-bottom: 15px;
@@ -35,7 +35,7 @@
     min-height: 50px;
 
     &:nth-of-type(odd) {
-      background-color: $table-bg-accent;
+      background-color: $gray-lightest;
     }
 
     > td {

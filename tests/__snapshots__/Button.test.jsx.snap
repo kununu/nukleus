@@ -1,84 +1,96 @@
-exports[`test Renders Button with outline 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Button with outline 1`] = `
 <button
   className="button outline primary"
   disabled={false}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders a custom theme button 1`] = `
+exports[`Renders a custom theme button 1`] = `
 <button
   className="button customCssModuleClass"
   disabled={false}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders a disabled Button 1`] = `
+exports[`Renders a disabled Button 1`] = `
 <button
   className="button primary"
   disabled={true}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders a full width button 1`] = `
+exports[`Renders a full width button 1`] = `
 <button
   className="button fullWidth primary"
   disabled={false}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders a mobile full width button 1`] = `
+exports[`Renders a mobile full width button 1`] = `
 <button
   className="button mobileFullWidth primary"
   disabled={false}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders button without crashing 1`] = `
+exports[`Renders button without crashing 1`] = `
 <button
   className="button primary"
   disabled={false}
   onClick={[Function]}
-  type="submit">
+  type="submit"
+>
   Test
 </button>
 `;
 
-exports[`test Renders react-router anchor button without crashing 1`] = `
+exports[`Renders react-router anchor button without crashing 1`] = `
 <div
-  className="">
+  className=""
+>
   <a
     className="button primary"
     disabled={false}
+    href="/test"
     onClick={[Function]}
-    style={Object {}}>
+  >
     Button
   </a>
 </div>
 `;
 
-exports[`test Renders simple anchor button without crashing 1`] = `
+exports[`Renders simple anchor button without crashing 1`] = `
 <div
-  className="">
+  className=""
+>
   <a
     className="button primary"
     disabled={false}
     href="/"
-    onClick={null}>
+    onClick={null}
+  >
     Button
   </a>
 </div>

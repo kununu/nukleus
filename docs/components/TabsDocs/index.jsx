@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 import {Tabs} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
@@ -37,10 +37,6 @@ const TabsDocs = ({location: {pathname}}) => {
 
 TabsDocs.propTypes = {
   location: PropTypes.object.isRequired
-};
-
-TabsDocs.defaultProps = {
-  theme: 'default'
 };
 
 export default TabsDocs;

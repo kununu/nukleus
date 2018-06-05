@@ -58,17 +58,18 @@ export default function Table ({
 
         <tbody>
           {[...Array(rowCount)].map((row, rowIndex) =>
-            (<tr
-              key={rowIndex} // eslint-disable-line react/no-array-index-key
-              className={(hasItems ? '' : styles.emptyTd)}>
+            (
+              <tr
+                key={rowIndex} // eslint-disable-line react/no-array-index-key
+                className={(hasItems ? '' : styles.emptyTd)}>
 
-              {
-                hasItems ?
-                  rows[rowIndex].map(getRow) :
-                  rows.map(getRow)
-              }
-            </tr>)
-          )}
+                {
+                  hasItems ?
+                    rows[rowIndex].map(getRow) :
+                    rows.map(getRow)
+                }
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

@@ -1,21 +1,26 @@
-exports[`test Renders a hidden label 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a hidden label 1`] = `
 <div
-  className="test-class controlLabel srOnly">
+  className="test-class controlLabel srOnly"
+>
   Test label
 </div>
 `;
 
-exports[`test Renders a label without crashing 1`] = `
+exports[`Renders a label without crashing 1`] = `
 <label
   className="test-class controlLabel "
-  htmlFor="2">
+  htmlFor="2"
+>
   Test label
 </label>
 `;
 
-exports[`test Renders a title instead of a label 1`] = `
+exports[`Renders a title instead of a label 1`] = `
 <div
-  className="test-class controlLabel ">
+  className="test-class controlLabel "
+>
   Test label
 </div>
 `;

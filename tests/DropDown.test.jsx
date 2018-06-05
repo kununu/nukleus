@@ -23,19 +23,16 @@ const items = [
 ];
 
 test('Renders DropDown without crashing', () => {
-  const component = renderer.create(
-    <DropDown
-      items={items} />
-  );
+  const component = renderer.create(<DropDown
+    items={items} />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders correct default selection', () => {
-  const component = renderer.create(
-    <DropDown
-      items={[
+  const component = renderer.create(<DropDown
+    items={[
         {
           active: true,
           icon: <img alt="Austrian flag" src="austrianflag.jpg" />,
@@ -48,28 +45,23 @@ test('Renders correct default selection', () => {
           link: <a href="/de">German</a>,
           value: 'German'
         }
-      ]} />
-  );
+      ]} />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders menu when button is clicked', () => {
-  const component = mount(
-    <DropDown
-      items={items} />
-  );
+  const component = mount(<DropDown
+    items={items} />);
   component.find('button').simulate('click');
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
 });
 
 test('Closes menu when document is clicked', () => {
-  const component = mount(
-    <DropDown
-      items={items} />
-  );
+  const component = mount(<DropDown
+    items={items} />);
   component.find('button').simulate('click');
   component.find('button').simulate('click');
   const tree = toJson(component);
@@ -77,9 +69,8 @@ test('Closes menu when document is clicked', () => {
 });
 
 test('Renders correctly when no icon is provided', () => {
-  const component = renderer.create(
-    <DropDown
-      items={[
+  const component = renderer.create(<DropDown
+    items={[
         {
           active: true,
           link: <a href="/at" alt="hi">Austria</a>,
@@ -90,18 +81,15 @@ test('Renders correctly when no icon is provided', () => {
           link: <a href="/de">German</a>,
           value: 'German'
         }
-      ]} />
-  );
+      ]} />);
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Updates selection on item click', () => {
-  const component = mount(
-    <DropDown
-      items={items} />
-  );
+  const component = mount(<DropDown
+    items={items} />);
   component.last('li').simulate('click');
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();

@@ -8,6 +8,7 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import getElementPositionY from '../../utils/elementPosition';
+import {queryParamsToObject} from '../../utils/params';
 import isMobile from '../../utils/mobileDetection';
 import sharedStyles, {
   controlLabel,
@@ -44,7 +45,10 @@ export default class Autocomplete extends React.Component {
     onGetSuggestions: PropTypes.func,
     onSelectSuggestion: PropTypes.func,
     placeholder: PropTypes.string,
-    query: PropTypes.object,
+    query: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
     requiredLabel: PropTypes.string,
     scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
@@ -86,20 +90,25 @@ export default class Autocomplete extends React.Component {
   };
 
   componentWillMount () {
-    this.updateValue(this.props.query[this.props.name] || this.props.value || '');
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+    this.updateValue(queryObject[this.props.name] || this.props.value || '');
 
     // Show error, if already set
     if (this.props.error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {query} = this.props;
+    const queryObject = queryParamsToObject(query);
+
     if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
       this.setState({suggestions: nextProps.data.items});
     }
 
     if (nextProps.error) this.showError();
     if (!this.needsUpdate(nextProps)) return;
-    this.updateValue(this.props.query[this.props.name] || nextProps.value || '');
+    this.updateValue(queryObject[this.props.name] || nextProps.value || '');
   }
 
   onChange = (event, {newValue}) => {
@@ -150,6 +159,38 @@ export default class Autocomplete extends React.Component {
     if (this.props.onSelectSuggestion) {
       this.props.onSelectSuggestion(suggestion);
     }
+  }
+
+  /**
+   * determines which classNames should be added to the container div of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get containerClassNames () {
+    const {inputStyle, requiredLabel} = this.props;
+    const classNames = [formGroup, sharedStyles[inputStyle]];
+
+    if (requiredLabel) classNames.push(styles.paddingTop);
+
+    return classNames.join(' ');
+  }
+
+  /**
+   * determines which classNames should be added to the label of
+   * the component
+   *
+   * @return {string} [list of classNames split by space]
+   */
+  get labelClassNames () {
+    const {labelHidden} = this.props;
+    const classNames = [controlLabel];
+
+    if (labelHidden) classNames.push(hidden);
+
+    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+
+    return classNames.join(' ');
   }
 
   getSuggestions = value => {
@@ -221,45 +262,15 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
-  /**
-   * determines which classNames should be added to the container div of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get containerClassNames () {
-    const {inputStyle, requiredLabel} = this.props;
-    const classNames = [formGroup, sharedStyles[inputStyle]];
-
-    if (requiredLabel) classNames.push(styles.paddingTop);
-
-    return classNames.join(' ');
-  }
-
-  /**
-   * determines which classNames should be added to the label of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get labelClassNames () {
-    const {labelHidden} = this.props;
-    const classNames = [controlLabel];
-
-    if (labelHidden) classNames.push(hidden);
-
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
-
-    return classNames.join(' ');
-  }
-
   renderSuggestion = suggestion =>
-    (<span>
-      {suggestion.item}
-      {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
-        <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
-      }
-    </span>);
+    (
+      <span>
+        {suggestion.item}
+        {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
+          <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
+        }
+      </span>
+    );
 
   renderSuggestionsContainer = ({containerProps, children}) => {
     if (this.state.suggestions.length) {
@@ -336,6 +347,7 @@ export default class Autocomplete extends React.Component {
 
         <div className={styles.autoCompleteContainer}>
           <Autosuggest
+            id={id}
             focusFirstSuggestion
             focusInputOnSuggestionClick={!isMobile}
             getSuggestionValue={this.getSuggestionValue}

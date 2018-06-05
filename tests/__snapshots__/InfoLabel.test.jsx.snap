@@ -1,6 +1,9 @@
-exports[`test Renders an InfoLabel with a characterCounter 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders an InfoLabel with a characterCounter 1`] = `
 <span
-  className="controlNote controlLabelRequired">
+  className="controlNote controlLabelRequired"
+>
   <strong>
     0
   </strong>
@@ -9,9 +12,10 @@ exports[`test Renders an InfoLabel with a characterCounter 1`] = `
 </span>
 `;
 
-exports[`test Renders an InfoLabel with a characterCounter and displays correct count and maxLength 1`] = `
+exports[`Renders an InfoLabel with a characterCounter and displays correct count and maxLength 1`] = `
 <span
-  className="controlNote controlLabelRequired">
+  className="controlNote controlLabelRequired"
+>
   <strong>
     4
   </strong>
@@ -20,16 +24,18 @@ exports[`test Renders an InfoLabel with a characterCounter and displays correct 
 </span>
 `;
 
-exports[`test Renders an InfoLabel with a characterCounter and displays the requiredLabel, when value isn't set 1`] = `
+exports[`Renders an InfoLabel with a characterCounter and displays the requiredLabel, when value isn't set 1`] = `
 <span
-  className="controlNote controlLabelRequired">
+  className="controlNote controlLabelRequired"
+>
   required
 </span>
 `;
 
-exports[`test Renders an InfoLabel without crashing 1`] = `
+exports[`Renders an InfoLabel without crashing 1`] = `
 <span
-  className="controlNote controlLabelRequired">
+  className="controlNote controlLabelRequired"
+>
   required
 </span>
 `;

@@ -55,7 +55,7 @@ test('Causes dropdown to show when input is focused', done => {
 
 test('Fetches Value only when debounce is over', done => {
   const component = mount(combobox);
-  component.find('input#name').simulate('change', {target: {value: 'music'}});
+  component.find('input#name').hostNodes().simulate('change', {target: {value: 'music'}});
   expect(component.state().suggestions.length).toEqual(11);
 
   // Waiting for debounce
@@ -78,7 +78,7 @@ describe('Searchable Combobox', () => {
       isSearchable={false}
       onSelect={spyFunc}
       items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-    );
+  );
 
   it('Renders notSearchableCombobox without crashing', () => {
     const component = renderer.create(notSearchableCombobox);
@@ -87,70 +87,64 @@ describe('Searchable Combobox', () => {
 
   it('Causes dropdown to show when input is focused', () => {
     const component = mount(notSearchableCombobox);
-    component.find('input#name').simulate('focus');
-    component.find('#react-autowhatever-1--item-0').simulate('click');
+    component.find('input#name').hostNodes().simulate('focus');
+    component.find('#react-autowhatever-1--item-0').hostNodes().simulate('click');
     expect(spyFunc).toHaveBeenCalled();
   });
 });
 
 test('Focusing a ComboBox calls the onFocus Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      id="name"
-      isRequired
-      onFocus={spyFunc}
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    id="name"
+    isRequired
+    onFocus={spyFunc}
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
-  component.find('#name').simulate('focus');
+  component.find('#name').hostNodes().simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Bluring a ComboBox calls the onBlur Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      id="name"
-      isRequired
-      onBlur={spyFunc}
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    id="name"
+    isRequired
+    onBlur={spyFunc}
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
-  component.find('#name').simulate('focus');
-  component.find('#name').simulate('blur');
+  component.find('#name').hostNodes().simulate('focus');
+  component.find('#name').hostNodes().simulate('blur');
   expect(spyFunc.mock.calls.length).toBe(1);
 });
 
 test('Changing a ComboBox calls the onChange Event', () => {
   const spyFunc = jest.fn();
-  const component = mount(
-    <Combobox
-      name="name"
-      label="Combobox"
-      onChange={spyFunc}
-      id="name"
-      isRequired
-      placeholder="Type m"
-      keyName="name"
-      isSearchable={false}
-      onSelect={spyFunc}
-      items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-  );
+  const component = mount(<Combobox
+    name="name"
+    label="Combobox"
+    onChange={spyFunc}
+    id="name"
+    isRequired
+    placeholder="Type m"
+    keyName="name"
+    isSearchable={false}
+    onSelect={spyFunc}
+    items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />);
 
-  component.find('#name').simulate('change', {target: {value: 'change'}});
-  component.find('#name').simulate('change', {target: {value: 'change again'}});
+  component.find('#name').hostNodes().simulate('change', {target: {value: 'change'}});
+  component.find('#name').hostNodes().simulate('change', {target: {value: 'change again'}});
   expect(spyFunc.mock.calls.length).toBe(2);
 });

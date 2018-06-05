@@ -1,7 +1,7 @@
-@import '~kununu-theme/scss/base/variables';
-@import '~kununu-theme/scss/base/mixins';
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+@import '~@kununu/kununu-theme-v2/scss/base/mixins';
 
-@import 'components/Button/index';
+@import '../components/Button/index';
 
 input:checked + label.customThemeChoice {
   &,

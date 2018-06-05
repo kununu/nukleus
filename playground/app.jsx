@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router'; // eslint-disable-line import/no-extraneous-dependencies
+import {Link} from 'react-router-dom'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Autocomplete from 'components/Autocomplete';
 import Button from 'components/Button';
@@ -25,7 +25,7 @@ import {
 
 import styles from './app.scss';
 
-const App = ({location: {pathname, query}}) => (
+const App = ({history: {location: {pathname, search: query}}}) => (
   <div className="app-container container">
     <div className="panel">
       <div className="panel-body">
@@ -240,7 +240,7 @@ const App = ({location: {pathname, query}}) => (
                 value="purrr"
                 query={query}
                 placeholder="Type something..."
-                suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+                suggestionsFooter={<Link to="hi">No suggestions found?</Link>}
                 label="Autocomplete"
                 isRequired
                 requiredLabel="Required"
@@ -267,7 +267,7 @@ const App = ({location: {pathname, query}}) => (
               query={query}
               onSelectSuggestion={suggestion => { console.log('You have chosen ', suggestion); }} // eslint-disable-line no-console
               placeholder="Type something..."
-              suggestionsFooter={<Link href="hi">No suggestions found?</Link>}
+              suggestionsFooter={<Link to="hi">No suggestions found?</Link>}
               label="Autocomplete with Error"
               isRequired
               requiredLabel="Required"
@@ -294,7 +294,7 @@ const App = ({location: {pathname, query}}) => (
         <div className="row">
           <div className="col-md-8">
             <TextField
-              id="text-field"
+              id="text-field2"
               label={
                 (<span>
                   <label className={controlLabel} htmlFor="text-field">TextField</label>

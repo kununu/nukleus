@@ -1,59 +1,16 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Route, Router, IndexRoute, hashHistory} from 'react-router';
+import {HashRouter as Router, Route} from 'react-router-dom';
 
 import App from 'components/App';
-import AutocompleteDocs from 'components/AutocompleteDocs';
-import ButtonDocs from 'components/ButtonDocs';
-import ChoiceDocs from 'components/ChoiceDocs';
-import ComboboxDocs from 'components/ComboboxDocs';
-import DatePickerDocs from 'components/DatePickerDocs';
-import DropDownDocs from 'components/DropDownDocs';
-import ErrorDocs from 'components/ErrorDocs';
-import InfoTextDocs from 'components/InfoTextDocs';
-import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
-import ModalDocs from 'components/ModalDocs';
-import PaginatorDocs from 'components/PaginatorDocs';
-import SelectDocs from 'components/SelectDocs';
-import StarsDocs from 'components/StarsDocs';
-import TabsDocs from 'components/TabsDocs';
-import TableDocs from 'components/TableDocs';
-import TextFieldDocs from 'components/TextFieldDocs';
-import ToolTipDocs from 'components/ToolTipDocs';
-import NotificationDocs from 'components/NotificationDocs';
-
-import 'font-awesome-webpack';
 
 import '../main.scss';
 
-
-const getRoutes = () => (
-  <Route path="/" component={App} >
-    <IndexRoute component={AutocompleteDocs} />
-    <Route path="/autocomplete" component={AutocompleteDocs} />
-    <Route path="/button" component={ButtonDocs} />
-    <Route path="/choice" component={ChoiceDocs} />
-    <Route path="/combobox" component={ComboboxDocs} />
-    <Route path="/date-picker" component={DatePickerDocs} />
-    <Route path="/drop-down(/:country)" component={DropDownDocs} />
-    <Route path="/error" component={ErrorDocs} />
-    <Route path="/multiple-choice" component={MultipleChoiceDocs} />
-    <Route path="/paginator" component={PaginatorDocs} />
-    <Route path="/text-field" component={TextFieldDocs} />
-    <Route path="/stars" component={StarsDocs} />
-    <Route path="/info-text" component={InfoTextDocs} />
-    <Route path="/notification" component={NotificationDocs} />
-    <Route path="/select" component={SelectDocs} />
-    <Route path="/table" component={TableDocs} />
-    <Route path="/tabs(/:page)" component={TabsDocs} />
-    <Route path="/tool-tip" component={ToolTipDocs} />
-    <Route path="/modal" component={ModalDocs} />
-  </Route>
-);
-
 render(
-  <Router
-    routes={getRoutes()}
-    history={hashHistory} />,
+  <Router>
+    <Route
+      path="/"
+      component={App} />
+  </Router>,
   document.getElementById('nukleus-docs')
 );

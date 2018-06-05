@@ -12,8 +12,8 @@ const ErrorDocs = () => (
     title="Error"
     component={
       <Error
-        info={'This is an error'}
-        subInfo={'And I am some sub info'} />
+        info="This is an error"
+        subInfo="And I am some sub info" />
     }
     example={example}
     propsDefinition={propsDefinition}

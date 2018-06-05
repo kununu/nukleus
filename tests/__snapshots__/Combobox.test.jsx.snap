@@ -1,47 +1,6 @@
-exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] = `
-<div
-  className="formGroup inline ">
-  
-  <label
-    className="controlLabel false "
-    htmlFor="name">
-    Combobox
-  </label>
-  <div
-    className="container">
-    <div
-      style={Object {}}>
-      <input
-        aria-activedescendant={null}
-        aria-autocomplete="list"
-        aria-expanded={false}
-        aria-haspopup={false}
-        aria-owns="react-autowhatever-1"
-        autoComplete="off"
-        className="formControl isNotSearchable "
-        disabled={false}
-        id="name"
-        name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Type m"
-        required={true}
-        role="combobox"
-        style={Object {}}
-        type="text"
-        value="" />
-      <div
-        id="react-autowhatever-1"
-        style={Object {}} />
-    </div>
-    
-  </div>
-</div>
-`;
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Causes dropdown to show when input is focused 1`] = `
+exports[`Causes dropdown to show when input is focused 1`] = `
 <ComboboxComponent
   debounceRate={500}
   disabled={false}
@@ -78,16 +37,20 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
   onFocus={[Function]}
   onSelect={null}
   placeholder="Type m"
-  requiredLabel="">
+  requiredLabel=""
+>
   <div
-    className="formGroup inline ">
+    className="formGroup inline "
+  >
     <label
       className="controlLabel false "
-      htmlFor="name">
+      htmlFor="name"
+    >
       Combobox
     </label>
     <div
-      className="container">
+      className="container"
+    >
       <Autosuggest
         alwaysRenderSuggestions={false}
         error={null}
@@ -154,7 +117,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
             },
           ]
         }
-        theme={undefined {}}>
+        theme={null}
+      >
         <Autowhatever
           getSectionItems={[Function]}
           highlightedItemIndex={null}
@@ -223,19 +187,22 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
           }
           renderItemsContainer={[Function]}
           renderSectionTitle={[Function]}
-          theme={Object {}}>
+          theme={Object {}}
+        >
           <div
-            style={Object {}}>
+            key="react-autowhatever-1-container"
+            style={Object {}}
+          >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
               aria-expanded={true}
-              aria-haspopup={true}
               aria-owns="react-autowhatever-1"
               autoComplete="off"
               className="formControl false "
               disabled={false}
               id="name"
+              key="react-autowhatever-1-input"
               name="name"
               onBlur={[Function]}
               onChange={[Function]}
@@ -246,10 +213,13 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
               role="combobox"
               style={Object {}}
               type="text"
-              value="" />
+              value=""
+            />
             <div
               id="react-autowhatever-1"
-              style={Object {}}>
+              key="react-autowhatever-1-items-container"
+              style={Object {}}
+            >
               <ItemsList
                 getItemId={[Function]}
                 highlightedItemIndex={null}
@@ -300,10 +270,13 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                   }
                 }
                 sectionIndex={null}
-                theme={[Function]}>
+                theme={[Function]}
+              >
                 <ul
+                  key="react-autowhatever-1-items-list"
                   role="listbox"
-                  style={Object {}}>
+                  style={Object {}}
+                >
                   <Item
                     data-section-index={null}
                     data-suggestion-index={0}
@@ -315,6 +288,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={0}
+                    key="react-autowhatever-1-item-0"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -327,7 +301,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={0}
@@ -338,7 +313,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         music
                       </span>
@@ -355,6 +331,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={1}
+                    key="react-autowhatever-1-item-1"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -367,7 +344,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={1}
@@ -378,7 +356,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         maths
                       </span>
@@ -395,6 +374,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={2}
+                    key="react-autowhatever-1-item-2"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -407,7 +387,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={2}
@@ -418,7 +399,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         manga
                       </span>
@@ -435,6 +417,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={3}
+                    key="react-autowhatever-1-item-3"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -447,7 +430,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={3}
@@ -458,7 +442,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         morning
                       </span>
@@ -475,6 +460,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={4}
+                    key="react-autowhatever-1-item-4"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -487,7 +473,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={4}
@@ -498,7 +485,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         musical
                       </span>
@@ -515,6 +503,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={5}
+                    key="react-autowhatever-1-item-5"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -527,7 +516,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={5}
@@ -538,7 +528,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         mania
                       </span>
@@ -555,6 +546,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={6}
+                    key="react-autowhatever-1-item-6"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -567,7 +559,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={6}
@@ -578,7 +571,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         message
                       </span>
@@ -595,6 +589,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={7}
+                    key="react-autowhatever-1-item-7"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -607,7 +602,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={7}
@@ -618,7 +614,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         metal
                       </span>
@@ -635,6 +632,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={8}
+                    key="react-autowhatever-1-item-8"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -647,7 +645,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={8}
@@ -658,7 +657,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         micro
                       </span>
@@ -675,6 +675,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={9}
+                    key="react-autowhatever-1-item-9"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -687,7 +688,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={9}
@@ -698,7 +700,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         macro
                       </span>
@@ -715,6 +718,7 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     itemIndex={10}
+                    key="react-autowhatever-1-item-10"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
@@ -727,7 +731,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       }
                     }
                     sectionIndex={null}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <li
                       data-section-index={null}
                       data-suggestion-index={10}
@@ -738,7 +743,8 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
                       onMouseLeave={[Function]}
                       onTouchStart={[Function]}
                       role="option"
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <span>
                         microphone
                       </span>
@@ -755,24 +761,27 @@ exports[`test Causes dropdown to show when input is focused 1`] = `
 </ComboboxComponent>
 `;
 
-exports[`test Renders Combobox with an error message without crashing 1`] = `
+exports[`Renders Combobox with an error message without crashing 1`] = `
 <div
-  className="formGroup inline ">
+  className="formGroup inline "
+>
   
   <label
     className="controlLabel false controlLabelError"
-    htmlFor="name">
+    htmlFor="name"
+  >
     Combobox
   </label>
   <div
-    className="container">
+    className="container"
+  >
     <div
-      style={Object {}}>
+      style={Object {}}
+    >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
         aria-expanded={false}
-        aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
         className="formControl false formControlError"
@@ -788,16 +797,20 @@ exports[`test Renders Combobox with an error message without crashing 1`] = `
         role="combobox"
         style={Object {}}
         type="text"
-        value="" />
+        value=""
+      />
       <div
         id="react-autowhatever-1"
-        style={Object {}} />
+        style={Object {}}
+      />
     </div>
     
     <span
-      className="error">
+      className="error"
+    >
       <strong
-        className="info">
+        className="info"
+      >
         An Error
       </strong>
       with useful hints
@@ -806,24 +819,27 @@ exports[`test Renders Combobox with an error message without crashing 1`] = `
 </div>
 `;
 
-exports[`test Renders Combobox without crashing 1`] = `
+exports[`Renders Combobox without crashing 1`] = `
 <div
-  className="formGroup inline ">
+  className="formGroup inline "
+>
   
   <label
     className="controlLabel false "
-    htmlFor="name">
+    htmlFor="name"
+  >
     Combobox
   </label>
   <div
-    className="container">
+    className="container"
+  >
     <div
-      style={Object {}}>
+      style={Object {}}
+    >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
         aria-expanded={false}
-        aria-haspopup={false}
         aria-owns="react-autowhatever-1"
         autoComplete="off"
         className="formControl false "
@@ -839,10 +855,60 @@ exports[`test Renders Combobox without crashing 1`] = `
         role="combobox"
         style={Object {}}
         type="text"
-        value="" />
+        value=""
+      />
       <div
         id="react-autowhatever-1"
-        style={Object {}} />
+        style={Object {}}
+      />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] = `
+<div
+  className="formGroup inline "
+>
+  
+  <label
+    className="controlLabel false "
+    htmlFor="name"
+  >
+    Combobox
+  </label>
+  <div
+    className="container"
+  >
+    <div
+      style={Object {}}
+    >
+      <input
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-expanded={false}
+        aria-owns="react-autowhatever-1"
+        autoComplete="off"
+        className="formControl isNotSearchable "
+        disabled={false}
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Type m"
+        required={true}
+        role="combobox"
+        style={Object {}}
+        type="text"
+        value=""
+      />
+      <div
+        id="react-autowhatever-1"
+        style={Object {}}
+      />
     </div>
     
   </div>

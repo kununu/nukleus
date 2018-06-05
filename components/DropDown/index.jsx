@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import {isBrowser} from '../../utils/executionEnvironment';
-import {
-  clearfix
-} from '../index.scss';
+import {clearfix} from '../index.scss';
 
 export default class Dropdown extends React.Component {
   static propTypes = {
@@ -101,8 +99,7 @@ export default class Dropdown extends React.Component {
               key={item.value}
               className={`${styles.item} ${clearfix}`}>
               {React.cloneElement(item.link, [], this.getItem(item))}
-            </li>
-          )}
+            </li>)}
         </ul>
       </div>
     );

@@ -12,7 +12,7 @@ class ModalDocs extends Component {
     super(props);
 
     this.state = {
-      modalOpen: false
+      modalOpen: false // eslint-disable-line react/no-unused-state
     };
   }
 
@@ -36,7 +36,7 @@ class ModalDocs extends Component {
               onExit={() => this.setState({modalOpen: false})}
               onAction={() => this.setState({
                 modalOpen: false,
-                success: true
+                success: true // eslint-disable-line react/no-unused-state
               })}>
               <p>With dynamic content</p>
             </Modal>

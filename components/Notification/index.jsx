@@ -38,7 +38,6 @@ export default class Notification extends React.Component {
     closeMethod: 'onClick',
     duration: 5000,
     icon: null,
-    message: '',
     onCloseClick: null,
     type: 'success',
     visible: false
@@ -49,9 +48,7 @@ export default class Notification extends React.Component {
   };
 
   componentWillReceiveProps (nextProps) {
-    if (this.newNotificationWillOverrideExisting(
-      nextProps.message
-    )) {
+    if (this.newNotificationWillOverrideExisting(nextProps.message)) {
       // Briefly set visible state to false to show animation again
       this.setState({visible: false});
       setTimeout(() => this.setState({visible: true}), 100);

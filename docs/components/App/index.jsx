@@ -1,7 +1,26 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
 import Logo from 'kununu-logo';
+import {Route, Link, Switch} from 'react-router-dom';
+
+import AutocompleteDocs from 'components/AutocompleteDocs';
+import ButtonDocs from 'components/ButtonDocs';
+import ChoiceDocs from 'components/ChoiceDocs';
+import ComboboxDocs from 'components/ComboboxDocs';
+import DatePickerDocs from 'components/DatePickerDocs';
+import DropDownDocs from 'components/DropDownDocs';
+import ErrorDocs from 'components/ErrorDocs';
+import InfoTextDocs from 'components/InfoTextDocs';
+import MultipleChoiceDocs from 'components/MultipleChoiceDocs';
+import ModalDocs from 'components/ModalDocs';
+import PaginatorDocs from 'components/PaginatorDocs';
+import SelectDocs from 'components/SelectDocs';
+import StarsDocs from 'components/StarsDocs';
+import TabsDocs from 'components/TabsDocs';
+import TableDocs from 'components/TableDocs';
+import TextFieldDocs from 'components/TextFieldDocs';
+import ToolTipDocs from 'components/ToolTipDocs';
+import NotificationDocs from 'components/NotificationDocs';
 
 import styles from './index.scss';
 
@@ -44,8 +63,7 @@ export default class App extends Component {
       components: this.state.components.map(comp =>
         comp.name !== name ?
           comp :
-          {...comp, visible: !comp.visible}
-      )
+          {...comp, visible: !comp.visible})
     });
   }
 
@@ -63,7 +81,6 @@ export default class App extends Component {
 
   render () {
     const {
-      children,
       location: {pathname}
     } = this.props;
 
@@ -102,25 +119,46 @@ export default class App extends Component {
                 <div // eslint-disable-line jsx-a11y/no-static-element-interactions
                   onClick={this.onClickCloseMenu}
                   className={`${styles.menu} ${this.state.menuVisible && styles.open}`}>
-                  <navigation>
+                  <nav>
                     <ul className={styles.navigation}>
                       {componentList.map(({name, link}, index) =>
-                        (<li
-                          key={name}
-                          className={this.state.components.filter(comp => comp.name === name)[0].visible && styles.activeMobile}>
-                          <Link
-                            to={link}
-                            onClick={(() => this.onClickToggleComponent(name))}
-                            className={`${(pathname === link || (pathname === '/' && !index)) && styles.active} ${styles.link}`}>{name}
-                          </Link>
-                        </li>)
-                      )}
+                        (
+                          <li
+                            key={name}
+                            className={this.state.components.filter(comp => comp.name === name)[0].visible ? styles.activeMobile : undefined}>
+                            <Link
+                              to={link}
+                              onClick={(() => this.onClickToggleComponent(name))}
+                              className={`${(pathname === link || (pathname === '/' && !index)) ? styles.active : undefined} ${styles.link}`}>{name}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
-                  </navigation>
+                  </nav>
                 </div>
               </div>
               <div className={`${styles.flexChild}`}>
-                {children}
+                <Switch>
+                  <Route exact path="/" component={AutocompleteDocs} />
+                  <Route path="/autocomplete" component={AutocompleteDocs} />
+                  <Route path="/button" component={ButtonDocs} />
+                  <Route path="/choice" component={ChoiceDocs} />
+                  <Route path="/combobox" component={ComboboxDocs} />
+                  <Route path="/date-picker" component={DatePickerDocs} />
+                  <Route path="/drop-down/:country?" component={DropDownDocs} />
+                  <Route path="/error" component={ErrorDocs} />
+                  <Route path="/multiple-choice" component={MultipleChoiceDocs} />
+                  <Route path="/paginator" component={PaginatorDocs} />
+                  <Route path="/text-field" component={TextFieldDocs} />
+                  <Route path="/stars" component={StarsDocs} />
+                  <Route path="/info-text" component={InfoTextDocs} />
+                  <Route path="/notification" component={NotificationDocs} />
+                  <Route path="/select" component={SelectDocs} />
+                  <Route path="/table" component={TableDocs} />
+                  <Route path="/tabs/:page?" component={TabsDocs} />
+                  <Route path="/tool-tip" component={ToolTipDocs} />
+                  <Route path="/modal" component={ModalDocs} />
+                </Switch>
               </div>
             </div>
           </div>
@@ -131,6 +169,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.element.isRequired,
   location: PropTypes.object.isRequired
 };
