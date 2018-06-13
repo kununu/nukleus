@@ -91,7 +91,7 @@
   },
   "peerDependencies": {
     "react": ">=16.4.1",
-    "react-dom": ">=15.0.0"
+    "react-dom": ">=16.4.1"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
