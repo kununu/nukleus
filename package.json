@@ -83,7 +83,7 @@
     "classnames": "2.2.5",
     "debounce": "^1.0.2",
     "moment": "2.22.2",
-    "prop-types": "15.6.1",
+    "prop-types": "15.6.2",
     "react-aria-modal": "2.12.1",
     "react-autosuggest": "9.3.4",
     "react-datepicker": "1.4.1",
