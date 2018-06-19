@@ -55,7 +55,7 @@
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.5-beta.2",
     "kununu-logo": "3.3.0",
-    "prop-types": "15.6.1",
+    "prop-types": "15.6.2",
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-router": "4.2.0",
