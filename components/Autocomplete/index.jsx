@@ -52,6 +52,7 @@ export default class Autocomplete extends React.Component {
     requiredLabel: PropTypes.string,
     scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
+    spinner: PropTypes.element,
     submitOnEnter: PropTypes.bool,
     value: PropTypes.string
   };
@@ -77,6 +78,7 @@ export default class Autocomplete extends React.Component {
     requiredLabel: '',
     scrollOffset: 0,
     scrollTo: false,
+    spinner: null,
     submitOnEnter: false,
     value: ''
   };
@@ -212,6 +214,32 @@ export default class Autocomplete extends React.Component {
   }
 
   getSuggestionValue = suggestion => suggestion.item;
+
+  getSpinner () {
+    const {
+      spinner
+    } = this.props;
+
+    return spinner || (
+      <span className={styles.spinner}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          viewBox="0 0 50 51.9"
+          aria-hidden="true">
+          <path d="M46.7,12.2c0,4.1-3.1,7.2-7.1,7.2c-4,0-7.1-3.1-7.2-7c-0.1-4,3.1-7.3,7.1-7.3C43.5,5,46.7,8.2,46.7,12.2z" />
+          <path d="M25.1,12.5c-3.5,0-6.3-2.6-6.3-6.1C18.7,2.8,21.4,0,24.9,0c3.5,0,6.3,2.6,6.3,6.1C31.3,9.6,28.6,12.4,25.1,12.5z" />
+          <path d="M10.3,17.6c-2.9,0-5.3-2.4-5.2-5.4c0-2.9,2.5-5.3,5.4-5.3c2.9,0,5.3,2.5,5.3,5.4C15.7,15.3,13.3,17.6,10.3,17.6z" />
+          <path d="M4.5,22.5c2.4,0,4.3,1.9,4.3,4.3c0,2.4-2,4.4-4.5,4.4c-2.4,0-4.3-1.9-4.3-4.3C0,24.4,1.9,22.5,4.5,22.5z" />
+          <path d="M45.8,22.5c2.4,0.1,4.3,2,4.2,4.4c-0.1,2.5-2,4.4-4.5,4.3c-2.4-0.1-4.3-2.1-4.2-4.4C41.3,24.3,43.3,22.5,45.8,22.5z" />
+          <path d="M6.1,41.4c0-2.5,1.9-4.3,4.3-4.3c2.5,0,4.4,2,4.4,4.4c0,2.4-2,4.3-4.4,4.3C8,45.9,6.1,43.8,6.1,41.4z" />
+          <path d="M43.9,41.6c-0.1,2.4-2.1,4.3-4.4,4.3c-2.4,0-4.4-2.1-4.3-4.5c0.1-2.4,2-4.2,4.4-4.2C42.2,37.1,44,39,43.9,41.6z" />
+          <path d="M25,43.2c2.5,0,4.5,2,4.4,4.4c-0.1,2.4-2,4.3-4.4,4.3c-2.4,0-4.3-1.9-4.4-4.3C20.5,45.1,22.5,43.2,25,43.2z" />
+        </svg>
+      </span>
+    );
+  }
 
   loadSuggestions (value) {
     this.setState({
@@ -360,25 +388,7 @@ export default class Autocomplete extends React.Component {
             suggestions={suggestions}
             theme={styles} />
 
-          {isFetching &&
-            <span className={styles.spinner}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                viewBox="0 0 50 51.9"
-                aria-hidden="true">
-                <path d="M46.7,12.2c0,4.1-3.1,7.2-7.1,7.2c-4,0-7.1-3.1-7.2-7c-0.1-4,3.1-7.3,7.1-7.3C43.5,5,46.7,8.2,46.7,12.2z" />
-                <path d="M25.1,12.5c-3.5,0-6.3-2.6-6.3-6.1C18.7,2.8,21.4,0,24.9,0c3.5,0,6.3,2.6,6.3,6.1C31.3,9.6,28.6,12.4,25.1,12.5z" />
-                <path d="M10.3,17.6c-2.9,0-5.3-2.4-5.2-5.4c0-2.9,2.5-5.3,5.4-5.3c2.9,0,5.3,2.5,5.3,5.4C15.7,15.3,13.3,17.6,10.3,17.6z" />
-                <path d="M4.5,22.5c2.4,0,4.3,1.9,4.3,4.3c0,2.4-2,4.4-4.5,4.4c-2.4,0-4.3-1.9-4.3-4.3C0,24.4,1.9,22.5,4.5,22.5z" />
-                <path d="M45.8,22.5c2.4,0.1,4.3,2,4.2,4.4c-0.1,2.5-2,4.4-4.5,4.3c-2.4-0.1-4.3-2.1-4.2-4.4C41.3,24.3,43.3,22.5,45.8,22.5z" />
-                <path d="M6.1,41.4c0-2.5,1.9-4.3,4.3-4.3c2.5,0,4.4,2,4.4,4.4c0,2.4-2,4.3-4.4,4.3C8,45.9,6.1,43.8,6.1,41.4z" />
-                <path d="M43.9,41.6c-0.1,2.4-2.1,4.3-4.4,4.3c-2.4,0-4.4-2.1-4.3-4.5c0.1-2.4,2-4.2,4.4-4.2C42.2,37.1,44,39,43.9,41.6z" />
-                <path d="M25,43.2c2.5,0,4.5,2,4.4,4.4c-0.1,2.4-2,4.3-4.4,4.3c-2.4,0-4.3-1.9-4.4-4.3C20.5,45.1,22.5,43.2,25,43.2z" />
-              </svg>
-            </span>
-          }
+          {isFetching && this.getSpinner()}
 
           {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
             <div className={styles.suggestionsContainer}>
