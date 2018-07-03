@@ -29,7 +29,7 @@
   ],
   "readme": "README.md",
   "devDependencies": {
-    "autoprefixer": "8.3.0",
+    "autoprefixer": "8.6.0",
     "babel-cli": "6.26.0",
     "babel-eslint": "8.2.3",
     "babel-jest": "22.4.3",
