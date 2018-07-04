@@ -54,7 +54,7 @@
     "autoprefixer": "8.6.4",
     "font-awesome": "4.7.0",
     "font-awesome-webpack": "0.0.5-beta.2",
-    "kununu-logo": "3.3.0",
+    "kununu-logo": "3.4.0",
     "prop-types": "15.6.1",
     "react": "16.3.2",
     "react-dom": "16.3.2",
