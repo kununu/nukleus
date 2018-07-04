@@ -1,27 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom'; // eslint-disable-line import/no-extraneous-dependencies
+import {Link} from 'react-router-dom';
 
-import Autocomplete from 'components/Autocomplete';
-import Button from 'components/Button';
-import Choice from 'components/Choice';
-import Combobox from 'components/Combobox';
-import DatePicker from 'components/DatePicker';
-import DropDown from 'components/DropDown';
-import InfoText from 'components/InfoText';
-import MultipleChoice from 'components/MultipleChoice';
-import Notification from 'components/Notification';
-import Paginator from 'components/Paginator';
-import Table from 'components/Table';
-import Tabs from 'components/Tabs';
-import TextField from 'components/TextField';
-import ToolTip from 'components/ToolTip';
-import Select from 'components/Select';
-import Stars from 'components/Stars';
-import Modal from 'playground/Implementations/Modal';
+import Autocomplete from '../components/Autocomplete';
+import Button from '../components/Button';
+import Choice from '../components/Choice';
+import Combobox from '../components/Combobox';
+import DatePicker from '../components/DatePicker';
+import DropDown from '../components/DropDown';
+import InfoText from '../components/InfoText';
+import MultipleChoice from '../components/MultipleChoice';
+import Notification from '../components/Notification';
+import Paginator from '../components/Paginator';
+import Table from '../components/Table';
+import Tabs from '../components/Tabs';
+import TextField from '../components/TextField';
+import ToolTip from '../components/ToolTip';
+import Select from '../components/Select';
+import Stars from '../components/Stars';
+import Modal from './Implementations/Modal';
 import {
   controlLabel
-} from 'components/index.scss';
+} from '../components/index.scss';
 
 import styles from './app.scss';
 
@@ -160,17 +160,24 @@ const App = ({history: {location: {pathname, search: query}}}) => (
 
         <div className="row">
           <div className="col-xs-12 col-sm-5 col-md-4">
+            <div className={styles.green}>
+              <Stars
+                value={3.6}
+                name="test" />
+            </div>
+            <div className={styles.red}>
+              <Stars
+                value={3.7}
+                name="test2" />
+            </div>
             <Stars
               value={3}
-              name="test"
-              selectable
-              colors={['red', 'green']} />
-
+              name="test3" />
             <Stars
               value={3}
-              name="test2"
+              name="test4"
               selectable
-              colors={['red', 'green']} />
+              colors={['red', 'orange', 'yellow', 'lime', 'green']} />
           </div>
         </div>
 
