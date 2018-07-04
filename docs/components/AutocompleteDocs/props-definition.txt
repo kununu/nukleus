@@ -25,6 +25,7 @@ static propTypes = {
   requiredLabel: PropTypes.string,
   scrollOffset: PropTypes.number,
   scrollTo: PropTypes.bool,
+  spinner: PropTypes.element,
   submitOnEnter: PropTypes.bool,
   value: PropTypes.string
 };
