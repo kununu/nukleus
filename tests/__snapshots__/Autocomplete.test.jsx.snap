@@ -53,6 +53,7 @@ exports[`Hides no suggestions on blur 1`] = `
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
+  spinner={null}
   submitOnEnter={false}
   value="test"
 >
@@ -141,14 +142,17 @@ exports[`Hides no suggestions on blur 1`] = `
           theme={Object {}}
         >
           <div
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-owns="react-autowhatever-autocompletes"
             key="react-autowhatever-autocompletes-container"
+            role="combobox"
             style={Object {}}
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
-              aria-expanded={false}
-              aria-owns="react-autowhatever-autocompletes"
+              aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
               className="formControl "
@@ -162,7 +166,6 @@ exports[`Hides no suggestions on blur 1`] = `
               onKeyDown={[Function]}
               placeholder="Type something..."
               required={true}
-              role="combobox"
               style={Object {}}
               type="text"
               value="z"
@@ -194,13 +197,16 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
     className="autoCompleteContainer"
   >
     <div
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="react-autowhatever-autocompletes"
+      role="combobox"
       style={Object {}}
     >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
-        aria-expanded={false}
-        aria-owns="react-autowhatever-autocompletes"
+        aria-controls="react-autowhatever-autocompletes"
         autoComplete="off"
         autoFocus={false}
         className="formControl formControlError"
@@ -213,7 +219,6 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
         onKeyDown={[Function]}
         placeholder="Type something..."
         required={true}
-        role="combobox"
         style={Object {}}
         type="text"
         value="test"
@@ -221,6 +226,7 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
       <div
         className="suggestionsContainer"
         id="react-autowhatever-autocompletes"
+        role="listbox"
         style={Object {}}
       />
     </div>
@@ -258,13 +264,16 @@ exports[`Renders Autocomplete without crashing 1`] = `
     className="autoCompleteContainer"
   >
     <div
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="react-autowhatever-autocompletes"
+      role="combobox"
       style={Object {}}
     >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
-        aria-expanded={false}
-        aria-owns="react-autowhatever-autocompletes"
+        aria-controls="react-autowhatever-autocompletes"
         autoComplete="off"
         autoFocus={false}
         className="formControl "
@@ -277,7 +286,6 @@ exports[`Renders Autocomplete without crashing 1`] = `
         onKeyDown={[Function]}
         placeholder="Type something..."
         required={true}
-        role="combobox"
         style={Object {}}
         type="text"
         value="test"
@@ -285,6 +293,7 @@ exports[`Renders Autocomplete without crashing 1`] = `
       <div
         className="suggestionsContainer"
         id="react-autowhatever-autocompletes"
+        role="listbox"
         style={Object {}}
       />
     </div>
@@ -346,6 +355,7 @@ exports[`Renders no suggestions container 1`] = `
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
+  spinner={null}
   submitOnEnter={false}
   value="test"
 >
@@ -486,14 +496,17 @@ exports[`Renders no suggestions container 1`] = `
           theme={Object {}}
         >
           <div
+            aria-expanded={true}
+            aria-haspopup="listbox"
+            aria-owns="react-autowhatever-autocompletes"
             key="react-autowhatever-autocompletes-container"
+            role="combobox"
             style={Object {}}
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
-              aria-expanded={true}
-              aria-owns="react-autowhatever-autocompletes"
+              aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
               className="formControl "
@@ -507,7 +520,6 @@ exports[`Renders no suggestions container 1`] = `
               onKeyDown={[Function]}
               placeholder="Type something..."
               required={true}
-              role="combobox"
               style={Object {}}
               type="text"
               value="z"
@@ -516,6 +528,7 @@ exports[`Renders no suggestions container 1`] = `
               className="suggestionsContainer"
               id="react-autowhatever-autocompletes"
               key="react-autowhatever-autocompletes-items-container"
+              role="listbox"
               style={Object {}}
             >
               <ItemsList
@@ -566,6 +579,7 @@ exports[`Renders no suggestions container 1`] = `
                   style={Object {}}
                 >
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-autocompletes--item-0"
@@ -593,6 +607,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={0}
                       id="react-autowhatever-autocompletes--item-0"
@@ -617,6 +632,7 @@ exports[`Renders no suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-autocompletes--item-1"
@@ -644,6 +660,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={1}
                       id="react-autowhatever-autocompletes--item-1"
@@ -668,6 +685,7 @@ exports[`Renders no suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={2}
                     id="react-autowhatever-autocompletes--item-2"
@@ -695,6 +713,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={2}
                       id="react-autowhatever-autocompletes--item-2"
@@ -719,6 +738,7 @@ exports[`Renders no suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={3}
                     id="react-autowhatever-autocompletes--item-3"
@@ -746,6 +766,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={3}
                       id="react-autowhatever-autocompletes--item-3"
@@ -770,6 +791,7 @@ exports[`Renders no suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={4}
                     id="react-autowhatever-autocompletes--item-4"
@@ -797,6 +819,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={4}
                       id="react-autowhatever-autocompletes--item-4"
@@ -821,6 +844,7 @@ exports[`Renders no suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={5}
                     id="react-autowhatever-autocompletes--item-5"
@@ -847,6 +871,7 @@ exports[`Renders no suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={5}
                       id="react-autowhatever-autocompletes--item-5"
@@ -927,6 +952,7 @@ exports[`Renders suggestions container 1`] = `
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
+  spinner={null}
   submitOnEnter={false}
   value="test"
 >
@@ -1067,14 +1093,17 @@ exports[`Renders suggestions container 1`] = `
           theme={Object {}}
         >
           <div
+            aria-expanded={true}
+            aria-haspopup="listbox"
+            aria-owns="react-autowhatever-autocompletes"
             key="react-autowhatever-autocompletes-container"
+            role="combobox"
             style={Object {}}
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
-              aria-expanded={true}
-              aria-owns="react-autowhatever-autocompletes"
+              aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
               className="formControl "
@@ -1088,7 +1117,6 @@ exports[`Renders suggestions container 1`] = `
               onKeyDown={[Function]}
               placeholder="Type something..."
               required={true}
-              role="combobox"
               style={Object {}}
               type="text"
               value="a"
@@ -1097,6 +1125,7 @@ exports[`Renders suggestions container 1`] = `
               className="suggestionsContainer"
               id="react-autowhatever-autocompletes"
               key="react-autowhatever-autocompletes-items-container"
+              role="listbox"
               style={Object {}}
             >
               <ItemsList
@@ -1147,6 +1176,7 @@ exports[`Renders suggestions container 1`] = `
                   style={Object {}}
                 >
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-autocompletes--item-0"
@@ -1174,6 +1204,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={0}
                       id="react-autowhatever-autocompletes--item-0"
@@ -1198,6 +1229,7 @@ exports[`Renders suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-autocompletes--item-1"
@@ -1225,6 +1257,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={1}
                       id="react-autowhatever-autocompletes--item-1"
@@ -1249,6 +1282,7 @@ exports[`Renders suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={2}
                     id="react-autowhatever-autocompletes--item-2"
@@ -1276,6 +1310,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={2}
                       id="react-autowhatever-autocompletes--item-2"
@@ -1300,6 +1335,7 @@ exports[`Renders suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={3}
                     id="react-autowhatever-autocompletes--item-3"
@@ -1327,6 +1363,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={3}
                       id="react-autowhatever-autocompletes--item-3"
@@ -1351,6 +1388,7 @@ exports[`Renders suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={4}
                     id="react-autowhatever-autocompletes--item-4"
@@ -1378,6 +1416,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={4}
                       id="react-autowhatever-autocompletes--item-4"
@@ -1402,6 +1441,7 @@ exports[`Renders suggestions container 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={5}
                     id="react-autowhatever-autocompletes--item-5"
@@ -1428,6 +1468,7 @@ exports[`Renders suggestions container 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={5}
                       id="react-autowhatever-autocompletes--item-5"
@@ -1508,6 +1549,7 @@ exports[`Updates value on selection 1`] = `
   requiredLabel="Required"
   scrollOffset={70}
   scrollTo={true}
+  spinner={null}
   submitOnEnter={false}
   value="test"
 >
@@ -1596,14 +1638,17 @@ exports[`Updates value on selection 1`] = `
           theme={Object {}}
         >
           <div
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-owns="react-autowhatever-autocompletes"
             key="react-autowhatever-autocompletes-container"
+            role="combobox"
             style={Object {}}
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
-              aria-expanded={false}
-              aria-owns="react-autowhatever-autocompletes"
+              aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
               className="formControl "
@@ -1617,7 +1662,6 @@ exports[`Updates value on selection 1`] = `
               onKeyDown={[Function]}
               placeholder="Type something..."
               required={true}
-              role="combobox"
               style={Object {}}
               type="text"
               value="apple"
