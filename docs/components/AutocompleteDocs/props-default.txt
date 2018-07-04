@@ -19,6 +19,7 @@ static defaultProps = {
   requiredLabel: '',
   scrollOffset: 0,
   scrollTo: false,
+  spinner: null,
   submitOnEnter: false,
   value: ''
 };
