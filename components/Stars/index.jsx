@@ -73,7 +73,7 @@ export default class Stars extends React.Component {
   }
 
   getFillValue = starNumber => {
-    const halfStarFill = 'url(#half)';
+    const halfStarFill = `url(#${this.props.name}-half)`;
     const emptyStarFill = 'transparent';
 
     if (this.isFullStar(starNumber)) {
@@ -158,13 +158,11 @@ export default class Stars extends React.Component {
                       className={`${styles.star} ${selectable && styles.ratingStar}`}
                       x="0"
                       y="0">
-                      {!selectable &&
+                      {!selectable && key === 1 && !this.isWholeNumber(value) &&
                         <defs>
-                          <linearGradient id="half">
-                            <stop offset="0%" stopColor={color} />
+                          <linearGradient id={`${name}-half`}>
                             <stop offset="50%" stopColor={color} />
                             <stop offset="50%" stopColor="white" />
-                            <stop offset="100%" stopColor="white" />
                           </linearGradient>
                         </defs>
                       }
