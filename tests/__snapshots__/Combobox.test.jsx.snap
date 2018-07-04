@@ -190,14 +190,17 @@ exports[`Causes dropdown to show when input is focused 1`] = `
           theme={Object {}}
         >
           <div
+            aria-expanded={true}
+            aria-haspopup="listbox"
+            aria-owns="react-autowhatever-1"
             key="react-autowhatever-1-container"
+            role="combobox"
             style={Object {}}
           >
             <input
               aria-activedescendant={null}
               aria-autocomplete="list"
-              aria-expanded={true}
-              aria-owns="react-autowhatever-1"
+              aria-controls="react-autowhatever-1"
               autoComplete="off"
               className="formControl false "
               disabled={false}
@@ -210,7 +213,6 @@ exports[`Causes dropdown to show when input is focused 1`] = `
               onKeyDown={[Function]}
               placeholder="Type m"
               required={true}
-              role="combobox"
               style={Object {}}
               type="text"
               value=""
@@ -218,6 +220,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
             <div
               id="react-autowhatever-1"
               key="react-autowhatever-1-items-container"
+              role="listbox"
               style={Object {}}
             >
               <ItemsList
@@ -278,6 +281,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                   style={Object {}}
                 >
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={0}
                     id="react-autowhatever-1--item-0"
@@ -304,6 +308,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={0}
                       id="react-autowhatever-1--item-0"
@@ -321,6 +326,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={1}
                     id="react-autowhatever-1--item-1"
@@ -347,6 +353,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={1}
                       id="react-autowhatever-1--item-1"
@@ -364,6 +371,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={2}
                     id="react-autowhatever-1--item-2"
@@ -390,6 +398,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={2}
                       id="react-autowhatever-1--item-2"
@@ -407,6 +416,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={3}
                     id="react-autowhatever-1--item-3"
@@ -433,6 +443,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={3}
                       id="react-autowhatever-1--item-3"
@@ -450,6 +461,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={4}
                     id="react-autowhatever-1--item-4"
@@ -476,6 +488,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={4}
                       id="react-autowhatever-1--item-4"
@@ -493,6 +506,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={5}
                     id="react-autowhatever-1--item-5"
@@ -519,6 +533,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={5}
                       id="react-autowhatever-1--item-5"
@@ -536,6 +551,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={6}
                     id="react-autowhatever-1--item-6"
@@ -562,6 +578,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={6}
                       id="react-autowhatever-1--item-6"
@@ -579,6 +596,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={7}
                     id="react-autowhatever-1--item-7"
@@ -605,6 +623,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={7}
                       id="react-autowhatever-1--item-7"
@@ -622,6 +641,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={8}
                     id="react-autowhatever-1--item-8"
@@ -648,6 +668,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={8}
                       id="react-autowhatever-1--item-8"
@@ -665,6 +686,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={9}
                     id="react-autowhatever-1--item-9"
@@ -691,6 +713,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={9}
                       id="react-autowhatever-1--item-9"
@@ -708,6 +731,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     </li>
                   </Item>
                   <Item
+                    aria-selected={false}
                     data-section-index={null}
                     data-suggestion-index={10}
                     id="react-autowhatever-1--item-10"
@@ -734,6 +758,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
                     style={Object {}}
                   >
                     <li
+                      aria-selected={false}
                       data-section-index={null}
                       data-suggestion-index={10}
                       id="react-autowhatever-1--item-10"
@@ -776,13 +801,16 @@ exports[`Renders Combobox with an error message without crashing 1`] = `
     className="container"
   >
     <div
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="react-autowhatever-1"
+      role="combobox"
       style={Object {}}
     >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
-        aria-expanded={false}
-        aria-owns="react-autowhatever-1"
+        aria-controls="react-autowhatever-1"
         autoComplete="off"
         className="formControl false formControlError"
         disabled={false}
@@ -794,13 +822,13 @@ exports[`Renders Combobox with an error message without crashing 1`] = `
         onKeyDown={[Function]}
         placeholder="Type m"
         required={true}
-        role="combobox"
         style={Object {}}
         type="text"
         value=""
       />
       <div
         id="react-autowhatever-1"
+        role="listbox"
         style={Object {}}
       />
     </div>
@@ -834,13 +862,16 @@ exports[`Renders Combobox without crashing 1`] = `
     className="container"
   >
     <div
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="react-autowhatever-1"
+      role="combobox"
       style={Object {}}
     >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
-        aria-expanded={false}
-        aria-owns="react-autowhatever-1"
+        aria-controls="react-autowhatever-1"
         autoComplete="off"
         className="formControl false "
         disabled={false}
@@ -852,13 +883,13 @@ exports[`Renders Combobox without crashing 1`] = `
         onKeyDown={[Function]}
         placeholder="Type m"
         required={true}
-        role="combobox"
         style={Object {}}
         type="text"
         value=""
       />
       <div
         id="react-autowhatever-1"
+        role="listbox"
         style={Object {}}
       />
     </div>
@@ -882,13 +913,16 @@ exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] 
     className="container"
   >
     <div
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="react-autowhatever-1"
+      role="combobox"
       style={Object {}}
     >
       <input
         aria-activedescendant={null}
         aria-autocomplete="list"
-        aria-expanded={false}
-        aria-owns="react-autowhatever-1"
+        aria-controls="react-autowhatever-1"
         autoComplete="off"
         className="formControl isNotSearchable "
         disabled={false}
@@ -900,13 +934,13 @@ exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] 
         onKeyDown={[Function]}
         placeholder="Type m"
         required={true}
-        role="combobox"
         style={Object {}}
         type="text"
         value=""
       />
       <div
         id="react-autowhatever-1"
+        role="listbox"
         style={Object {}}
       />
     </div>
