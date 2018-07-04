@@ -3,11 +3,24 @@
 .spinner {
   position: absolute;
   right: 13px;
-  top: 10px;
-  color: $gray-base-50;
+  top: 11px;
 
-  i {
-    font-size: $font-size-lg;
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $gray-base-50;
+    vertical-align: middle;
+    animation: spin 2s infinite linear;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
   }
 }
 
