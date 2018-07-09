@@ -36,7 +36,7 @@ export default class InfoBox extends React.Component {
 
   get translatedXByScreenEdge () {
     // Check if rect is outside right window border
-    if (this.positionRight > window.innerWidth) return (this.positionRight - window.innerWidth) * -1;
+    if (this.positionRight > window.innerWidth) return (((this.positionRight - window.innerWidth) * -1) - (window.innerWidth - document.body.clientWidth));
 
     // Check if rect is outside left window border
     if (this.positionLeft < 0) return this.positionLeft * -1;
