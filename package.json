@@ -63,7 +63,7 @@
     "node-sass": "4.9.0",
     "node-sass-module-importer": "0.1.0",
     "postcss-cli": "5.0.1",
-    "postcss-loader": "2.1.4",
+    "postcss-loader": "2.1.6",
     "react": "16.4.1",
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
