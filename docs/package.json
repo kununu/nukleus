@@ -38,7 +38,7 @@
     "moment": "2.22.2",
     "node-sass": "4.9.0",
     "node-sass-module-importer": "0.1.0",
-    "postcss-loader": "2.1.4",
+    "postcss-loader": "2.1.6",
     "raw-loader": "0.5.1",
     "rimraf": "2.6.2",
     "sass-lint": "1.12.1",
