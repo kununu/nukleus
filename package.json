@@ -84,7 +84,7 @@
     "debounce": "1.0.2",
     "moment": "2.22.2",
     "prop-types": "15.6.2",
-    "react-aria-modal": "2.12.2",
+    "react-aria-modal": "2.12.3",
     "react-autosuggest": "9.3.4",
     "react-datepicker": "1.4.1",
     "react-scroll": "1.7.9"
