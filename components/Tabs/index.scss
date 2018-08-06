@@ -13,12 +13,6 @@
   display: inline-block;
   padding: 0 5px;
   box-sizing: border-box;
-
-  @media (min-width: $screen-sm-min) {
-    & {
-      padding-right: 20px;
-    }
-  }
 }
 
 .pointerDisabled {
@@ -27,6 +21,14 @@
 
 .defaultTabs {
   @extend .tabs;
+  
+  .tabItem {
+    @media (min-width: $screen-sm-min) {
+      & {
+        padding-right: 20px;
+      }
+    }
+  }
 }
 
 .tabLink {
@@ -58,13 +60,25 @@
   @extend .tabs;
   border-bottom: 0;
 
+  @media (max-width: $screen-sm-min) {
+    display: table;
+  }
+  
   .tabItem {
     padding: 0;
     border: 0;
     border-right: 1px solid $gray-base-20;
+    display: table-cell;
+    text-align: center;
 
     &:first-child {
       border-left: 1px solid $gray-base-20;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+      display: block;
+      float: left;
     }
   }
 
