@@ -21,7 +21,7 @@
 
 .defaultTabs {
   @extend .tabs;
-  
+
   .tabItem {
     @media (min-width: $screen-sm-min) {
       & {
