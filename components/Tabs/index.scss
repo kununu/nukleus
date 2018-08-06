@@ -6,10 +6,6 @@
   margin: 0;
   list-style: none;
   border-bottom: 1px solid $gray-base-10;
-
-  @media (max-width: $screen-sm-min) {
-    display: table;
-  }
 }
 
 .tabItem {
@@ -31,7 +27,6 @@
 
 .defaultTabs {
   @extend .tabs;
-  border-bottom: 1px solid $gray-base-10;
 }
 
 .tabLink {
