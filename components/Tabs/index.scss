@@ -14,18 +14,13 @@
 
 .tabItem {
   position: relative;
-  display: table-cell;
+  display: inline-block;
   padding: 0 5px;
-  text-align: center;
   box-sizing: border-box;
 
   @media (min-width: $screen-sm-min) {
-    text-align: left;
-    display: block;
-    float: left;
-
-    &:not(:first-child) {
-      padding-left: 20px;
+    & {
+      padding-right: 20px;
     }
   }
 }
