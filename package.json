@@ -81,7 +81,7 @@
   "dependencies": {
     "@kununu/kununu-theme-v2": "2.0.1",
     "classnames": "2.2.6",
-    "debounce": "1.0.2",
+    "debounce": "1.2.0",
     "moment": "2.22.2",
     "prop-types": "15.6.2",
     "react-aria-modal": "2.12.2",
