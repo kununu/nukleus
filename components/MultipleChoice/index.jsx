@@ -165,9 +165,10 @@ export default class MultipleChoice extends React.Component {
 
   render () {
     const {choices} = this.state;
+    const {name} = this.props;
 
     return (
-      <div className={this.containerClassNames} id={`${this.props.name}-container`}>
+      <div className={this.containerClassNames} id={`${name}-container`}>
         {this.props.requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {this.props.requiredLabel}
