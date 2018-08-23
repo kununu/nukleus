@@ -125,7 +125,7 @@ export default class Stars extends React.Component {
     const {color, value} = this.state;
 
     return (
-      <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`}>
+      <div className={`${styles.starsContainer} ${!selectable && styles.staticStars}`} id={`${name}-container`}>
         <div className={styles.starsRow}>
           {[...Array(totalStars + 1)].map((star, key) =>
             (

@@ -360,7 +360,7 @@ export default class TextField extends React.Component {
     const {highlightedContent} = this.state;
 
     return (
-      <div className={this.containerClassNames}>
+      <div className={this.containerClassNames} id={`${name}-container`}>
         {this.state.highlightContent}
         <InfoLabel
           requiredLabel={requiredLabel}

@@ -353,7 +353,8 @@ export default class Autocomplete extends React.Component {
     return (
       <div
         ref={node => this.node = node}
-        className={this.containerClassNames}>
+        className={this.containerClassNames}
+        id={`${name}-container`}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
