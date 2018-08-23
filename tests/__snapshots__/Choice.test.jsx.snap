@@ -3,6 +3,7 @@
 exports[`Renders Choice with a heading without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -93,6 +94,7 @@ exports[`Renders Choice with a heading without crashing 1`] = `
 exports[`Renders Choice with a label without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -183,6 +185,7 @@ exports[`Renders Choice with a label without crashing 1`] = `
 exports[`Renders Choice with radio buttons without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -268,6 +271,7 @@ exports[`Renders Choice with radio buttons without crashing 1`] = `
 exports[`Renders a Choice with a disabled option without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -377,6 +381,7 @@ exports[`Renders a Choice with a disabled option without crashing 1`] = `
 exports[`Renders a Choice with checked from route 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -462,6 +467,7 @@ exports[`Renders a Choice with checked from route 1`] = `
 exports[`Renders a Choice with custom style 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -547,6 +553,7 @@ exports[`Renders a Choice with custom style 1`] = `
 exports[`Renders a Choice with custom style disabled 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -632,6 +639,7 @@ exports[`Renders a Choice with custom style disabled 1`] = `
 exports[`Renders a Choice with default checked without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -717,6 +725,7 @@ exports[`Renders a Choice with default checked without crashing 1`] = `
 exports[`Renders a Choice with no default checked from route if it is not an option 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -802,6 +811,7 @@ exports[`Renders a Choice with no default checked from route if it is not an opt
 exports[`Renders a Choice with no default checked from route if it is the other name 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -887,6 +897,7 @@ exports[`Renders a Choice with no default checked from route if it is the other 
 exports[`Renders a Choice with no default checked if it's not an option 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -972,6 +983,7 @@ exports[`Renders a Choice with no default checked if it's not an option 1`] = `
 exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -1057,6 +1069,7 @@ exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
 exports[`Renders a disabled Choice without crashing 1`] = `
 <div
   className="formGroup"
+  id="test-container"
 >
   
   <div
@@ -1182,6 +1195,7 @@ exports[`Renders an error if errors prop is set 1`] = `
 >
   <div
     className="formGroup"
+    id="test-container"
   >
     <div
       className="radioContainer false"

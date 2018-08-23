@@ -162,7 +162,7 @@ export default class ComboboxComponent extends React.Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}>
+      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}

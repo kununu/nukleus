@@ -156,7 +156,7 @@ export default class DatePickerComponent extends React.Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}>
+      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}

@@ -34,6 +34,7 @@ exports[`Changes status on value change 1`] = `
 >
   <div
     className="formGroup inline"
+    id="select-container"
   >
     <Label
       classNames={Array []}
@@ -105,6 +106,7 @@ exports[`Changes status on value change 1`] = `
 exports[`Renders Select with an array of items 1`] = `
 <div
   className="formGroup inline"
+  id="select-container"
 >
   
   <label
@@ -167,6 +169,7 @@ exports[`Renders Select with an array of items 1`] = `
 exports[`Renders Select with an error message without crashing 1`] = `
 <div
   className="formGroup inline"
+  id="select-container"
 >
   
   <label
@@ -239,6 +242,7 @@ exports[`Renders Select with an error message without crashing 1`] = `
 exports[`Renders Select without crashing 1`] = `
 <div
   className="formGroup inline"
+  id="select-container"
 >
   
   <label
@@ -301,6 +305,7 @@ exports[`Renders Select without crashing 1`] = `
 exports[`Renders deprecated select without crashing 1`] = `
 <div
   className="formGroup inline"
+  id="select-container"
 >
   
   <label

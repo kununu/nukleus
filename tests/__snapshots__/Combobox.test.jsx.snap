@@ -41,6 +41,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
 >
   <div
     className="formGroup inline "
+    id="name-container"
   >
     <label
       className="controlLabel false "
@@ -789,6 +790,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
 exports[`Renders Combobox with an error message without crashing 1`] = `
 <div
   className="formGroup inline "
+  id="name-container"
 >
   
   <label
@@ -850,6 +852,7 @@ exports[`Renders Combobox with an error message without crashing 1`] = `
 exports[`Renders Combobox without crashing 1`] = `
 <div
   className="formGroup inline "
+  id="name-container"
 >
   
   <label
@@ -901,6 +904,7 @@ exports[`Renders Combobox without crashing 1`] = `
 exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] = `
 <div
   className="formGroup inline "
+  id="name-container"
 >
   
   <label
