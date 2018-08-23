@@ -3,6 +3,7 @@
 exports[`Renders datepicker with an error message without crashing 1`] = `
 <div
   className="formGroup inline datePickerContainer "
+  id="date-picker-container"
 >
   
   <label
@@ -43,6 +44,7 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
 exports[`Renders datepicker without crashing 1`] = `
 <div
   className="formGroup inline datePickerContainer "
+  id="date-picker-container"
 >
   
   <label

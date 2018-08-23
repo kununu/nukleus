@@ -22,6 +22,7 @@ exports[`Deselects stars 1`] = `
   >
     <div
       className="starsContainer false"
+      id="stars-container"
     >
       <div
         className="starsRow"
@@ -284,6 +285,7 @@ exports[`Deselects stars 1`] = `
   >
     <div
       className="starsContainer false"
+      id="stars2-container"
     >
       <div
         className="starsRow"
@@ -532,6 +534,7 @@ exports[`Deselects stars 1`] = `
 exports[`Renders correctly rounded star values 1`] = `
 <div
   className="starsContainer staticStars"
+  id="stars-container"
 >
   <div
     className="starsRow"
@@ -711,6 +714,7 @@ exports[`Renders correctly rounded star values 1`] = `
 exports[`Renders empty stars with no value 1`] = `
 <div
   className="starsContainer staticStars"
+  id="stars-container"
 >
   <div
     className="starsRow"
@@ -890,6 +894,7 @@ exports[`Renders empty stars with no value 1`] = `
 exports[`Renders selectable Stars without crashing 1`] = `
 <div
   className="starsContainer false"
+  id="stars-container"
 >
   <div
     className="starsRow"
@@ -1130,6 +1135,7 @@ exports[`Renders selectable Stars without crashing 1`] = `
 exports[`Renders static Stars without crashing 1`] = `
 <div
   className="starsContainer staticStars"
+  id="stars-container"
 >
   <div
     className="starsRow"

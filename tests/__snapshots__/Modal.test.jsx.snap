@@ -36,7 +36,11 @@ exports[`Renders Modal without crashing 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
-      focusTrapOptions={Object {}}
+      focusTrapOptions={
+        Object {
+          "escapeDeactivates": true,
+        }
+      }
       paused={false}
       tag="div"
     >
