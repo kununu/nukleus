@@ -69,6 +69,7 @@ exports[`Badwords should highlight correctly 1`] = `
 >
   <div
     className="formGroup inline"
+    id="text-field-container"
   >
     <InfoLabel
       displayLength={false}
@@ -216,6 +217,7 @@ exports[`Changes output on value change manipulation 1`] = `
 >
   <div
     className="formGroup inline paddingTop"
+    id="text-field-container"
   >
     <InfoLabel
       displayLength={false}
@@ -264,6 +266,7 @@ exports[`Changes output on value change manipulation 1`] = `
 exports[`Renders A TextField with visible character counter without crashing 1`] = `
 <div
   className="formGroup inline paddingTop"
+  id="text-field-container"
 >
   <span
     className="controlNote controlLabelRequired"
@@ -308,6 +311,7 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
 exports[`Renders TextField with an error message without crashing 1`] = `
 <div
   className="formGroup inline paddingTop"
+  id="text-field-container"
 >
   <span
     className="controlNote controlLabelRequired"
@@ -358,6 +362,7 @@ exports[`Renders TextField with an error message without crashing 1`] = `
 exports[`Renders TextField with multiline without crashing 1`] = `
 <div
   className="formGroup inline paddingTop"
+  id="text-field-container"
 >
   <span
     className="controlNote controlLabelRequired"
@@ -397,6 +402,7 @@ exports[`Renders TextField with multiline without crashing 1`] = `
 exports[`Renders TextField without crashing 1`] = `
 <div
   className="formGroup inline paddingTop"
+  id="text-field-container"
 >
   <span
     className="controlNote controlLabelRequired"
@@ -437,6 +443,7 @@ exports[`Renders TextField without crashing 1`] = `
 exports[`Renders a TextField with a ToolTip without crashing 1`] = `
 <div
   className="formGroup inline"
+  id="text-field-container"
 >
   <span
     className="labelContainer"
@@ -501,6 +508,7 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
 exports[`Renders a medium size Textfield with multiline without crashing 1`] = `
 <div
   className="formGroup mediumSize"
+  id="text-field-container"
 >
   <label
     className="controlLabel controlLabelMediumSize"

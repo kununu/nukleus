@@ -223,7 +223,7 @@ export default class Select extends React.Component {
     }
 
     return (
-      <div className={this.containerClassNames}>
+      <div className={this.containerClassNames} id={`${name}-container`}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>

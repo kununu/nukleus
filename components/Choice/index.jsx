@@ -189,7 +189,7 @@ export default class Choice extends React.Component {
     } = this.state;
 
     return (
-      <div className={formGroup}>
+      <div className={formGroup} id={`${name}-container`}>
 
         {requiredLabel &&
           <span className={`${controlNote} ${controlLabelRequired}`}>
