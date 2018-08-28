@@ -185,15 +185,24 @@
   }
 }
 
+@function columns($count) {
+  $columns: ();
+
+  @for $i from 1 through $count {
+    $columns: append($columns, 1fr, space);
+  }
+
+  @return $columns;
+}
+
 @mixin options-per-row($count) {
   [data-options-per-row='#{$count}'] {
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
 
     @media (min-width: $screen-md-min) {
-      grid-template-columns: repeat($count, 1fr);
+      grid-template-columns: columns($count);
     }
 
     @media (min-width: $screen-md-min) {
