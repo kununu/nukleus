@@ -197,9 +197,13 @@
 
 @mixin options-per-row($count) {
   [data-options-per-row='#{$count}'] {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
+    display: flex;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+    }
 
     @media (min-width: $screen-md-min) {
       grid-template-columns: columns($count);
@@ -208,6 +212,7 @@
     @media (min-width: $screen-md-min) {
       .radioButton {
         flex: 0 0 100% / $count;
+        grid-column: $count;
 
         label {
           border-top: 0;
