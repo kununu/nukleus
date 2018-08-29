@@ -95,15 +95,15 @@
         border-radius: 0;
         border-left: 0;
         border-right: 0;
+      }
 
-        &:nth-child(odd) label {
-          border-right: 1px solid $blue;
-        }
+      &:nth-child(odd) label {
+        border-right: 1px solid $blue;
+      }
 
-        &:nth-last-child(2) label,
-        &:nth-last-child(1) label {
-          border-bottom: 0;
-        }
+      &:nth-last-child(2) label,
+      &:nth-last-child(1) label {
+        border-bottom: 0;
       }
     }
   }
