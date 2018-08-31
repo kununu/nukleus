@@ -1,63 +1,80 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.tableContainer {
-  margin-bottom: 15px;
+.table {
+  min-width: 0;
+  width: 100%;
+  overflow-x: auto;
 
-  * {
-    box-sizing: border-box;
+  th {
+    padding: 10px;
+    vertical-align: bottom;
+    font-weight: normal;
+
+    span {
+      color: $gray-base-70;
+      text-align: left;
+      font-size: $font-size-small;
+      text-transform: uppercase;
+    }
   }
 
-  @media (max-width: $screen-md-max) {
-    overflow: scroll;
+  td {
+    border: 0;
+    padding: 10px;
+  }
+
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: darken($gray-lightest, 1%);
+    }
+
+    tr:nth-of-type(even) {
+      border-bottom: 1px solid darken($gray-lightest, 1%);
+    }
   }
 }
 
-.table {
-  width: 100%;
-  min-width: 1060px;
-  border: 1px solid $table-border-color;
+.sortingContainer {
+  position: relative;
+  color: $gray-base-70;
+  font-size: $font-size-small;
+  text-transform: uppercase;
+}
 
-  & > thead > tr > th {
-    padding: 10px 20px;
-    background-color: $teal;
-    border-color: $th-border-color;
-    border-bottom: 0;
-    text-transform: uppercase;
-    font-size: $font-size-xs;
-    text-align: left;
+.sortingTitle {
+  text-align: left;
+  margin-right: 10px;
+}
 
-    span {
-      color: $white;
+.sorting {
+  cursor: pointer;
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+
+  .sortingButton {
+    background: none;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-left: 2px;
+    display: inline;
+
+    .sortingArrowIcon {
+      width: 8px;
+      height: 14px;
+      fill: $blue;
     }
   }
+}
 
-  & > tbody > tr {
-    min-height: 50px;
-
-    &:nth-of-type(odd) {
-      background-color: $gray-lightest;
-    }
-
-    > td {
+@media (min-width: $screen-sm-min) {
+  .table {
+    td, th {
       padding: 12px 18px;
-      max-width: 250px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: $font-size-base;
-      border: 1px solid $td-border-color;
     }
-  }
-
-  .emptyHeader {
-    height: 40px;
-    background-color: #e7e9e9;
-  }
-
-  .emptyTd {
-    height: 50px;
-  }
-
-  .highlighted {
-    background-color: #fcf8e3;
   }
 }
