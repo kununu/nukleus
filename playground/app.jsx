@@ -30,6 +30,70 @@ const App = ({history: {location: {pathname, search: query}}}) => (
     <div className="panel">
       <div className="panel-body">
         <div className="row">
+            <div className="col-md-8">
+            <div>
+              <Table
+                dataRows={[
+                   {
+                    name: 'Amanda',
+                    age: 11,
+                    color: 'red dasdasdasasd',
+                  },
+                  {
+                    name: 'Amanda',
+                    age: 11,
+                    color: 'red dasdasdasasd',
+                  },
+                  {
+                    name: 'Julia',
+                    age: 10,
+                    other: 'meow'
+                  },
+                  {
+                    name: 'Maria',
+                    age: 80.9,
+                    other: 'zed'
+                  },
+                  {
+                    name: 'Mike',
+                    age: 3,
+                    other: 'zed'
+                  }
+                ]}
+                columns={[
+                  {
+                    header: 'Name',
+                    accessor: 'name',
+                    sortable: true,
+                  },
+                  {
+                    header: 'Age',
+                    accessor: 'age',
+                    sortable: true,
+                  },
+                  {
+                    header: 'Color',
+                    accessor: 'color',
+                    sortable: true,
+                  },
+                  {
+                    header: '',
+                    accessor: 'other',
+                    sortable: false,
+                    cell: val => <a href="hi">{val}</a>
+                  },
+                  {
+                    header: 'Test',
+                    accessor: 'age',
+                    sortable: false,
+                    cell: val => <a href="hi">{val}</a>
+                  },
+                ]}
+              />
+              </div>
+            </div>
+          </div>
+        <div className="row">
           <div className="col-md-8">
             <MultipleChoice
               name="choices[]"
@@ -544,37 +608,6 @@ const App = ({history: {location: {pathname, search: query}}}) => (
               placeholder="Type m"
               keyName="name"
               items={['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone']} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-8">
-            <Table
-              items={{
-                id: [1, 2, 3, 4, 5],
-                'in hiragana': ['いち', 'に', 'さん', 'よん', 'ご'],
-                'in kanji': ['一', '二', '三', '四', '五'],
-                'in words': ['one', 'two', 'three', 'four', 'five'],
-                link: [
-                  <Link to="/playground/">One</Link>,
-                  <Link to="/playground/">Two</Link>,
-                  <Link to="/playground/">Three</Link>,
-                  'Four',
-                  <Link to="/playground/">Five</Link>
-                ]
-              }} />
-          </div>
-        </div>
-
-        <br />
-
-        <div className="row">
-          <div className="col-md-8">
-            <Table
-              defaultRowCount={2}
-              defaultTitleCount={2} />
           </div>
         </div>
 

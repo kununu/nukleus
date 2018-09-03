@@ -41,6 +41,16 @@ class Table extends Component {
     rows: this.props.dataRows
   }
 
+  componentWillReceiveProps (nextProps) {
+    const {
+      dataRows
+    } = this.props;
+
+    if (nextProps.dataRows !== dataRows) {
+      this.setState({rows: nextProps.dataRows});
+    }
+  }
+
   /**
    * Sort the rows based on
    * column and sort order
@@ -154,8 +164,8 @@ class Table extends Component {
     // from each row in order of columns.
     return rows.map((rowItem, index) => (
       <tr key={`row-${index}`}>
-        {columns.map(column => (
-          <td key={column.accessor}>
+        {columns.map((column, idx) => (
+          <td key={`${idx}-${column.accessor}`}>
             {this.renderBodyCell(rowItem, column)}
           </td>
         ))}
