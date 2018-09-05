@@ -1,3 +1,4 @@
 static defaultProps = {
   dataRows: [],
+  initialSortingColumn: -1,
 };

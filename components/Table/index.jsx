@@ -28,24 +28,34 @@ class Table extends Component {
       ]),
       sortable: PropTypes.bool
     })).isRequired,
-    dataRows: PropTypes.arrayOf(PropTypes.object)
+    dataRows: PropTypes.arrayOf(PropTypes.object),
+    initialSortingColumn: PropTypes.number
   };
 
   static defaultProps = {
-    dataRows: []
+    dataRows: [],
+    initialSortingColumn: -1
   };
 
-  state = {
-    rows: this.props.dataRows
+  state = {rows: this.props.dataRows} // eslint-disable-line
+
+  componentDidMount () {
+    const {initialSortingColumn, columns} = this.props;
+
+    if (initialSortingColumn >= 0) {
+      this.handleSorting(columns[initialSortingColumn].accessor, 1);
+    }
   }
 
   componentWillReceiveProps (nextProps) {
-    const {
-      dataRows
-    } = this.props;
+    const {dataRows, initialSortingColumn, columns} = this.props;
 
-    if (nextProps.dataRows !== dataRows) {
-      this.setState({rows: nextProps.dataRows});
+    if (JSON.stringify(nextProps.dataRows) !== JSON.stringify(dataRows)) {
+      this.setState({rows: nextProps.dataRows}, () => {
+        if (initialSortingColumn >= 0) {
+          this.handleSorting(columns[initialSortingColumn].accessor, 1);
+        }
+      });
     }
   }
 
@@ -62,11 +72,11 @@ class Table extends Component {
       // comparison
       const aVal = a[accessor] || '';
       const bVal = b[accessor] || '';
-      const isNumber = typeof aVal === 'number';
+      const isString = typeof aVal === 'string' && Number.isNaN(parseFloat(aVal));
 
       // If row data contains numbers
       // we should filter based on value
-      if (isNumber) return ((aVal || Number.NEGATIVE_INFINITY) - (bVal || Number.NEGATIVE_INFINITY)) * sortOrder;
+      if (!isString) return ((parseFloat(aVal) || Number.NEGATIVE_INFINITY) - (parseFloat(bVal) || Number.NEGATIVE_INFINITY)) * sortOrder;
 
       // If row data is a string
       // we first ignore upper & lowercase
@@ -92,16 +102,16 @@ class Table extends Component {
     return (
       <div className={styles.sorting}>
         <button
-          id="button-asc"
           className={styles.sortingButton}
+          id="button-asc"
           key={`${idx}-asc`}
           onClick={() => this.handleSorting(accessor, 1)}
           type="button">
           <IconCaretUp className={styles.sortingArrowIcon} ariaHidden />
         </button>
         <button
-          id="button-desc"
           className={styles.sortingButton}
+          id="button-desc"
           key={`${idx}-desc`}
           onClick={() => this.handleSorting(accessor, -1)}
           type="button">

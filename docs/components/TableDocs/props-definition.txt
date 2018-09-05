@@ -14,4 +14,5 @@ static propTypes = {
     sortable: PropTypes.bool,
   })).isRequired,
   dataRows: PropTypes.arrayOf(PropTypes.object),
+  initialSortingColumn: PropTypes.number
 };
