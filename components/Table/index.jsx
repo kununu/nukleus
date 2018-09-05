@@ -9,8 +9,6 @@ class Table extends Component {
   static propTypes = {
     columns: PropTypes.arrayOf(PropTypes.shape({
       // String that matches to data key.
-      // Can also access nested keys with
-      // 'name.first'
       accessor: PropTypes.string.isRequired,
       // For custom cells. You can use either
       // an element or custom func which will
