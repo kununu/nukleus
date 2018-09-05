@@ -13,8 +13,46 @@ test('Renders basic Table without crashing', () => {
       <Table
         dataRows={[
           {
-            test: 'test',
-            test2: 'test2'
+            test: 'amanda',
+            test2: 'brian'
+          },
+          {
+            test: 'brian',
+            test2: 'amanda'
+          }
+        ]}
+        columns={[
+          {
+            accessor: 'test',
+            header: 'testHeader',
+            sortable: false
+          },
+          {
+            accessor: 'test2',
+            header: 'testHeader2',
+            sortable: false
+          }
+        ]} />
+    </StaticRouter>
+  ));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders basic Table with initial sorting', () => {
+  const component = renderer.create((
+    <StaticRouter location="test" context={{}}>
+      <Table
+        initialSortingColumn={1}
+        dataRows={[
+          {
+            test: 'amanda',
+            test2: 'brian'
+          },
+          {
+            test: 'brian',
+            test2: 'amanda'
           }
         ]}
         columns={[

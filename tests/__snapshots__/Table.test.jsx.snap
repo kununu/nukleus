@@ -127,6 +127,59 @@ exports[`Renders basic Table with custom cells 1`] = `
 </table>
 `;
 
+exports[`Renders basic Table with initial sorting 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader
+          </div>
+          
+        </div>
+      </th>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader2
+          </div>
+          
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        brian
+      </td>
+      <td>
+        amanda
+      </td>
+    </tr>
+    <tr>
+      <td>
+        amanda
+      </td>
+      <td>
+        brian
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Renders basic Table with sorting 1`] = `
 <Table
   columns={
@@ -155,6 +208,7 @@ exports[`Renders basic Table with sorting 1`] = `
       },
     ]
   }
+  initialSortingColumn={-1}
 >
   <table
     className="table"
@@ -358,10 +412,18 @@ exports[`Renders basic Table without crashing 1`] = `
   <tbody>
     <tr>
       <td>
-        test
+        amanda
       </td>
       <td>
-        test2
+        brian
+      </td>
+    </tr>
+    <tr>
+      <td>
+        brian
+      </td>
+      <td>
+        amanda
       </td>
     </tr>
   </tbody>
