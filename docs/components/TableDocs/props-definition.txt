@@ -1,6 +1,17 @@
 static propTypes = {
-  defaultRowCount: PropTypes.number,
-  defaultTitleCount: PropTypes.number,
-  items: PropTypes.object,
-  tableStyle: PropTypes.string
+  columns: PropTypes.arrayOf(PropTypes.shape({
+    accessor: PropTypes.string.isRequired,
+    cell: PropTypes.onOfType([
+      PropTypes.element,
+      PropTypes.func,
+    ]),
+    header: PropTypes.onOfType([
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
+    sortable: PropTypes.bool,
+  })).isRequired,
+  dataRows: PropTypes.arrayOf(PropTypes.object),
 };
