@@ -17,13 +17,13 @@ const TableDocs = () => (
           dataRows={[
             {
               age: 11,
-              name: 'Joe',
-              color: 'red'
+              color: 'red',
+              name: 'Joe'
             },
             {
               age: 20,
-              name: 'Merry',
-              color: 'blue'
+              color: 'blue',
+              name: 'Merry'
             }
           ]}
           columns={[
