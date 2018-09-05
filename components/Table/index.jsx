@@ -92,6 +92,7 @@ class Table extends Component {
     return (
       <div className={styles.sorting}>
         <button
+          id="button-asc"
           className={styles.sortingButton}
           key={`${idx}-asc`}
           onClick={() => this.handleSorting(accessor, 1)}
@@ -99,6 +100,7 @@ class Table extends Component {
           <IconCaretUp className={styles.sortingArrowIcon} ariaHidden />
         </button>
         <button
+          id="button-desc"
           className={styles.sortingButton}
           key={`${idx}-desc`}
           onClick={() => this.handleSorting(accessor, -1)}
