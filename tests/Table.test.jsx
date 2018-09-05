@@ -5,23 +5,28 @@ import renderer from 'react-test-renderer';
 import Table from 'Table'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 
-test('Renders Table without crashing', () => {
+test('Renders basic Table without crashing', () => {
   const component = renderer.create((
     <StaticRouter location="test" context={{}}>
       <Table
-        items={{
-          id: [1, 2, 3, 4, 5],
-          'in hiragana': ['いち', 'に', 'さん', 'よん', 'ご'],
-          'in kanji': ['一', '二', '三', '四', '五'],
-          'in words': ['one', 'two', 'three', 'four', 'five'],
-          link: [
-            <Link to="/playground/">One</Link>,
-            <Link to="/playground/">Two</Link>,
-            <Link to="/playground/">Three</Link>,
-            'Four',
-            <Link to="/playground/">Five</Link>
-          ]
-        }} />
+        dataRows={[
+          {
+            test: 'test',
+            test2: 'test2'
+          }
+        ]}
+        columns={[
+          {
+            accessor: 'test',
+            header: 'testHeader',
+            sortable: false
+          },
+          {
+            accessor: 'test2',
+            header: 'testHeader2',
+            sortable: false
+          }
+        ]} />
     </StaticRouter>
   ));
 
@@ -29,8 +34,61 @@ test('Renders Table without crashing', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders empty Table without crashing', () => {
-  const component = renderer.create(<Table />);
+test('Renders basic Table with custom cells', () => {
+  const component = renderer.create((
+    <StaticRouter location="test" context={{}}>
+      <Table
+        dataRows={[
+          {
+            test: 'test',
+            test2: 'test2'
+          }
+        ]}
+        columns={[
+          {
+            accessor: 'test',
+            header: 'testHeader',
+            sortable: true,
+            cell: val => <Link to='/'>{val}</Link>
+          },
+          {
+            accessor: 'test2',
+            header: 'testHeader2',
+            sortable: true,
+            cell: val => <span>{val}$ - extra text</span>
+          }
+        ]} />
+    </StaticRouter>
+  ));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders basic Table with sorting', () => {
+  const component = renderer.create((
+    <StaticRouter location="test" context={{}}>
+      <Table
+        dataRows={[
+          {
+            test: 'test',
+            test2: 'test2'
+          }
+        ]}
+        columns={[
+          {
+            accessor: 'test',
+            header: 'testHeader',
+            sortable: true
+          },
+          {
+            accessor: 'test2',
+            header: 'testHeader2',
+            sortable: true
+          }
+        ]} />
+    </StaticRouter>
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -1,262 +1,284 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Table without crashing 1`] = `
-<div
-  className="tableContainer full-panel"
+exports[`Renders basic Table with custom cells 1`] = `
+<table
+  className="table"
 >
-  <table
-    className="table"
-  >
-    <thead>
-      <tr>
-        <th>
-          <span>
-            id
-          </span>
-        </th>
-        <th>
-          <span>
-            in hiragana
-          </span>
-        </th>
-        <th>
-          <span>
-            in kanji
-          </span>
-        </th>
-        <th>
-          <span>
-            in words
-          </span>
-        </th>
-        <th>
-          <span>
-            link
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className=""
-      >
-        <td>
-          1
-        </td>
-        <td>
-          いち
-        </td>
-        <td>
-          一
-        </td>
-        <td>
-          one
-        </td>
-        <td>
-          <a
-            href="/playground/"
-            onClick={[Function]}
+  <thead>
+    <tr>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
           >
-            One
-          </a>
-        </td>
-      </tr>
-      <tr
-        className=""
-      >
-        <td>
-          2
-        </td>
-        <td>
-          に
-        </td>
-        <td>
-          二
-        </td>
-        <td>
-          two
-        </td>
-        <td>
-          <a
-            href="/playground/"
-            onClick={[Function]}
+            testHeader
+          </div>
+          <div
+            className="sorting"
           >
-            Two
-          </a>
-        </td>
-      </tr>
-      <tr
-        className=""
-      >
-        <td>
-          3
-        </td>
-        <td>
-          さん
-        </td>
-        <td>
-          三
-        </td>
-        <td>
-          three
-        </td>
-        <td>
-          <a
-            href="/playground/"
-            onClick={[Function]}
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                />
+              </svg>
+            </button>
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </th>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
           >
-            Three
-          </a>
-        </td>
-      </tr>
-      <tr
-        className=""
-      >
-        <td>
-          4
-        </td>
-        <td>
-          よん
-        </td>
-        <td>
-          四
-        </td>
-        <td>
-          four
-        </td>
-        <td>
-          Four
-        </td>
-      </tr>
-      <tr
-        className=""
-      >
-        <td>
-          5
-        </td>
-        <td>
-          ご
-        </td>
-        <td>
-          五
-        </td>
-        <td>
-          five
-        </td>
-        <td>
-          <a
-            href="/playground/"
-            onClick={[Function]}
+            testHeader2
+          </div>
+          <div
+            className="sorting"
           >
-            Five
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                />
+              </svg>
+            </button>
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </td>
+      <td>
+        <span>
+          test2
+          $ - extra text
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
-exports[`Renders empty Table without crashing 1`] = `
-<div
-  className="tableContainer full-panel"
+exports[`Renders basic Table with sorting 1`] = `
+<table
+  className="table"
 >
-  <table
-    className="table"
-  >
-    <thead>
-      <tr>
-        <th
-          className="emptyHeader"
-        />
-        <th
-          className="emptyHeader"
-        />
-        <th
-          className="emptyHeader"
-        />
-        <th
-          className="emptyHeader"
-        />
-        <th
-          className="emptyHeader"
-        />
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      <tr
-        className="emptyTd"
-      >
-        <td />
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <thead>
+    <tr>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader
+          </div>
+          <div
+            className="sorting"
+          >
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                />
+              </svg>
+            </button>
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </th>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader2
+          </div>
+          <div
+            className="sorting"
+          >
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                />
+              </svg>
+            </button>
+            <button
+              className="sortingButton"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="sortingArrowIcon"
+                viewBox="0 0 293 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        test
+      </td>
+      <td>
+        test2
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Renders basic Table without crashing 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader
+          </div>
+          
+        </div>
+      </th>
+      <th>
+        <div
+          className="sortingContainer"
+        >
+          <div
+            className="sortingTitle"
+          >
+            testHeader2
+          </div>
+          
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        test
+      </td>
+      <td>
+        test2
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
