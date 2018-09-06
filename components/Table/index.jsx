@@ -179,7 +179,7 @@ class Table extends Component {
     return rows.map((rowItem, index) => (
       <tr key={`row-${index}`}>
         {columns.map((column, idx) => (
-          <td key={`${idx}-${column.accessor}`}>
+          <td key={`row-${index}-col-${idx}`}>
             {this.renderBodyCell(rowItem, column)}
           </td>
         ))}

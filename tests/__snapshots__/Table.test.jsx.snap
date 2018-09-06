@@ -348,12 +348,12 @@ exports[`Renders basic Table with sorting 1`] = `
         key="row-0"
       >
         <td
-          key="0-test"
+          key="row-0-col-0"
         >
           b
         </td>
         <td
-          key="1-test2"
+          key="row-0-col-1"
         >
           b
         </td>
@@ -362,12 +362,12 @@ exports[`Renders basic Table with sorting 1`] = `
         key="row-1"
       >
         <td
-          key="0-test"
+          key="row-1-col-0"
         >
           a
         </td>
         <td
-          key="1-test2"
+          key="row-1-col-1"
         >
           a
         </td>
@@ -598,12 +598,12 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
         key="row-0"
       >
         <td
-          key="0-name"
+          key="row-0-col-0"
         >
           second
         </td>
         <td
-          key="1-value"
+          key="row-0-col-1"
         >
           3,20
         </td>
@@ -612,12 +612,12 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
         key="row-1"
       >
         <td
-          key="0-name"
+          key="row-1-col-0"
         >
           first
         </td>
         <td
-          key="1-value"
+          key="row-1-col-1"
         >
           3,50
         </td>
