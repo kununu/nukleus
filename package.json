@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "12.1.4",
+  "version": "13.0.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -79,6 +79,7 @@
     "webpack-dev-server": "3.1.3"
   },
   "dependencies": {
+    "@kununu/kununu-icons": "1.2.0",
     "@kununu/kununu-theme-v2": "2.0.1",
     "classnames": "2.2.6",
     "debounce": "1.0.2",

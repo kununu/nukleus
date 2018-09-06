@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import {Table} from 'nukleus';
 import DocsRoot from 'components/DocsRoot';
@@ -15,18 +14,36 @@ const TableDocs = () => (
     component={
       <div className={styles.tableContainer}>
         <Table
-          items={{
-            id: [1, 2, 3, 4, 5],
-            'in hiragana': ['いち', 'に', 'さん', 'よん', 'ご'],
-            'in kanji': ['一', '二', '三', '四', '五'],
-            link: [
-              <Link to="/table">One</Link>,
-              <Link to="/table">Two</Link>,
-              <Link to="/table">Three</Link>,
-              'Four',
-              <Link to="/table">Five</Link>
-            ]
-          }} />
+          dataRows={[
+            {
+              age: 11,
+              color: 'red',
+              name: 'Joe'
+            },
+            {
+              age: 20,
+              color: 'blue',
+              name: 'Merry'
+            }
+          ]}
+          columns={[
+            {
+              accessor: 'name',
+              header: 'Name',
+              sortable: true
+            },
+            {
+              accessor: 'age',
+              header: 'Age',
+              sortable: false
+            },
+            {
+              accessor: 'color',
+              cell: val => <span>custom cell: {val}</span>,
+              header: 'color',
+              sortable: true
+            }
+          ]} />
       </div>
     }
     example={example}

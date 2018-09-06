@@ -39,6 +39,7 @@ module.exports = {
     'react/self-closing-comp': ['error', {component: true, html: true}],
     'react/sort-prop-types': 'error',
     'react/forbid-prop-types': 'off',
+    'react/no-array-index-key': 0,
 
     // Plugins
     'babel/object-curly-spacing': 'error',
