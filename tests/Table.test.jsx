@@ -134,3 +134,32 @@ test('Renders basic Table with sorting', () => {
   expect(toJson(component)).toMatchSnapshot();
 });
 
+test('Sort table correctly based on comma seperated numbers within strings', () => {
+  const component = mount(<Table
+    dataRows={[
+      {
+        name: 'first',
+        value: '3,50'
+      },
+      {
+        name: 'second',
+        value: '3,20'
+      }
+    ]}
+    initialSortingColumn={1}
+    columns={[
+      {
+        accessor: 'name',
+        header: 'Name',
+        sortable: true
+      },
+      {
+        accessor: 'value',
+        header: 'Value',
+        sortable: true
+      }
+    ]} />);
+
+  expect(toJson(component)).toMatchSnapshot();
+});
+

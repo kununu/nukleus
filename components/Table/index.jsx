@@ -65,6 +65,7 @@ class Table extends Component {
    */
   handleSorting = (accessor, sortOrder) => {
     const {rows} = this.state;
+    const getNumber = val => typeof val === 'string' ? parseFloat(val.replace(',', '.')) : val;
 
     rows.sort((a, b) => {
       // If a data entry is undefined it must be set it to
@@ -76,7 +77,7 @@ class Table extends Component {
 
       // If row data contains numbers
       // we should filter based on value
-      if (!isString) return ((parseFloat(aVal) || Number.NEGATIVE_INFINITY) - (parseFloat(bVal) || Number.NEGATIVE_INFINITY)) * sortOrder;
+      if (!isString) return ((getNumber(aVal) || Number.NEGATIVE_INFINITY) - (getNumber(bVal) || Number.NEGATIVE_INFINITY)) * sortOrder;
 
       // If row data is a string
       // we first ignore upper & lowercase
@@ -154,7 +155,6 @@ class Table extends Component {
    */
   renderBodyCell = (item, {accessor, cell}) => {
     const value = item[accessor];
-
     if (typeof cell === 'function') {
       return cell(value);
     }

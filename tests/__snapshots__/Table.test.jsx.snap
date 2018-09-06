@@ -429,3 +429,200 @@ exports[`Renders basic Table without crashing 1`] = `
   </tbody>
 </table>
 `;
+
+exports[`Sort table correctly based on comma seperated numbers within strings 1`] = `
+<Table
+  columns={
+    Array [
+      Object {
+        "accessor": "name",
+        "header": "Name",
+        "sortable": true,
+      },
+      Object {
+        "accessor": "value",
+        "header": "Value",
+        "sortable": true,
+      },
+    ]
+  }
+  dataRows={
+    Array [
+      Object {
+        "name": "second",
+        "value": "3,20",
+      },
+      Object {
+        "name": "first",
+        "value": "3,50",
+      },
+    ]
+  }
+  initialSortingColumn={1}
+>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th
+          key="column-0"
+        >
+          <div
+            className="sortingContainer"
+          >
+            <div
+              className="sortingTitle"
+            >
+              Name
+            </div>
+            <div
+              className="sorting"
+            >
+              <button
+                className="sortingButton"
+                id="button-asc"
+                key="0-asc"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  ariaHidden={true}
+                  className="sortingArrowIcon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="sortingArrowIcon"
+                    viewBox="0 0 293 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                    />
+                  </svg>
+                </Icon>
+              </button>
+              <button
+                className="sortingButton"
+                id="button-desc"
+                key="0-desc"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  ariaHidden={true}
+                  className="sortingArrowIcon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="sortingArrowIcon"
+                    viewBox="0 0 293 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                    />
+                  </svg>
+                </Icon>
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          key="column-1"
+        >
+          <div
+            className="sortingContainer"
+          >
+            <div
+              className="sortingTitle"
+            >
+              Value
+            </div>
+            <div
+              className="sorting"
+            >
+              <button
+                className="sortingButton"
+                id="button-asc"
+                key="1-asc"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  ariaHidden={true}
+                  className="sortingArrowIcon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="sortingArrowIcon"
+                    viewBox="0 0 293 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M292.572 347.428c0 10-8.286 18.286-18.286 18.286h-256c-10 0-18.285-8.286-18.285-18.286 0-4.857 2-9.428 5.428-12.857l128-128c3.429-3.429 8-5.428 12.857-5.428s9.428 2 12.857 5.428l128 128c3.428 3.428 5.428 8 5.428 12.857z"
+                    />
+                  </svg>
+                </Icon>
+              </button>
+              <button
+                className="sortingButton"
+                id="button-desc"
+                key="1-desc"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  ariaHidden={true}
+                  className="sortingArrowIcon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="sortingArrowIcon"
+                    viewBox="0 0 293 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M292.572 201.143c0 4.857-2 9.429-5.428 12.857l-128 128c-3.429 3.428-8 5.428-12.857 5.428s-9.429-2-12.857-5.428l-128-128c-3.429-3.429-5.428-8-5.428-12.857 0-10 8.286-18.285 18.285-18.285h256c10 0 18.286 8.286 18.286 18.286z"
+                    />
+                  </svg>
+                </Icon>
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        key="row-0"
+      >
+        <td
+          key="0-name"
+        >
+          second
+        </td>
+        <td
+          key="1-value"
+        >
+          3,20
+        </td>
+      </tr>
+      <tr
+        key="row-1"
+      >
+        <td
+          key="0-name"
+        >
+          first
+        </td>
+        <td
+          key="1-value"
+        >
+          3,50
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</Table>
+`;
