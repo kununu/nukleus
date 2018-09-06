@@ -5,6 +5,10 @@ import IconCaretDown from '@kununu/kununu-icons/dist/CaretDown';
 
 import styles from './index.scss';
 
+// Polyfill for ie11 which doesn't support
+// Number.isNaN
+Number.isNaN = Number.isNaN || (value => value !== value); // eslint-disable-line
+
 class Table extends Component {
   static propTypes = {
     columns: PropTypes.arrayOf(PropTypes.shape({
