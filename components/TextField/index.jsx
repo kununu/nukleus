@@ -60,7 +60,9 @@ export default class TextField extends React.Component {
       'email',
       'password',
       'text',
-      'url'
+      'url',
+      'number',
+      'hidden'
     ]),
     value: PropTypes.string
   };

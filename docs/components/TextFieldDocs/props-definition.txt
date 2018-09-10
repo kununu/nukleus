@@ -36,7 +36,9 @@ static propTypes = {
     'email',
     'password',
     'text',
-    'url'
+    'url',
+    'number',
+    'hidden'
   ]),
   value: PropTypes.string
 };
