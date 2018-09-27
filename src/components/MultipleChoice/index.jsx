@@ -115,7 +115,7 @@ export default class MultipleChoice extends React.Component {
 
     const value = label || heading;
     const classNames = inputStyle === 'inline' ? styles.inlineLabel : '';
-
+    console.log('OH HIII', classNames);
     return (
       <Label
         value={value}

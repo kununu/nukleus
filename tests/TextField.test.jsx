@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 
-import TextField from '../components/TextField';
-import ToolTip from '../components/ToolTip';
+import TextField from 'TextField';
+import ToolTip from 'ToolTip';
 
 const textField = (
   <TextField

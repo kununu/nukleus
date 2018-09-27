@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Error from '../components/Error';
+import Error from 'Error';
 
 test('Renders an Error component without crashing', () => {
   const component = renderer.create(<Error info="Error" />);
