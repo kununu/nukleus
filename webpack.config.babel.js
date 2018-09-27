@@ -12,6 +12,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
+    alias: {
+      utils: path.resolve(__dirname, "../utils"),
+      defaultOptions: path.resolve(__dirname, "./defaultOptions"),
+    },
     modules: [
       __dirname,
       path.resolve(__dirname),
@@ -32,7 +36,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.scss$/,
