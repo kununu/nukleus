@@ -1,12 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-// import {action} from '@storybook/addon-actions';
-// import {withNotes} from '@storybook/addon-notes';
-// import {withInfo} from '@storybook/addon-info';
-// import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
-// import backgrounds from '@storybook/addon-backgrounds';
 import {withOptions} from '@storybook/addon-options';
 import {defaultOptions} from './defaultOptions';
+import ReactMarkdown from 'react-markdown';
+import Readme from '../README.md';
+
+import styles from './defaultStoryStyles.scss';
 
 storiesOf('Introduction', module)
   .addDecorator(
@@ -17,6 +16,11 @@ storiesOf('Introduction', module)
   )
   .add('welcome', () => (
     <div>
-    hi
+      <div className={styles.logoContainer}>
+        <img src="/logo.svg" className={styles.logo} />
+      </div>
+      <div className={styles.contentWrapper}>
+        <ReactMarkdown escapeHtml={false} source={Readme} />
+      </div>
     </div>
   ));
