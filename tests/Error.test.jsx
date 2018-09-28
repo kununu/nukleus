@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
 import Error from 'Error';
 
 test('Renders an Error component without crashing', () => {

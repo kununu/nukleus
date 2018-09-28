@@ -10,14 +10,7 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
-import sharedStyles, {
-  controlLabel,
-  formControl,
-  formControlError,
-  formGroup,
-  hidden,
-  srOnly
-} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 export default class TextField extends React.Component {
   static propTypes = {
@@ -165,12 +158,12 @@ export default class TextField extends React.Component {
       inputStyle,
       labelHidden
     } = this.props;
-    const classNames = [controlLabel];
+    const classNames = [sharedStyles.controlLabel];
 
     const inputStyles = inputStyle.split(' ');
 
     // Check if label should be hidden
-    if (labelHidden) classNames.push(hidden);
+    if (labelHidden) classNames.push(sharedStyles.hidden);
 
     // Check if TextField contains an error
     if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
@@ -191,7 +184,7 @@ export default class TextField extends React.Component {
       multiLine,
       highlightList
     } = this.props;
-    const classNames = [formControl];
+    const classNames = [sharedStyles.formControl];
 
     // Check if textarea styles need to be added
     if (multiLine) classNames.push(styles.textarea);
@@ -199,7 +192,7 @@ export default class TextField extends React.Component {
     if (multiLine && highlightList) classNames.push(styles.dynamicHeight);
 
     // Check if error styles need to be added
-    if (this.hasError()) classNames.push(formControlError);
+    if (this.hasError()) classNames.push(sharedStyles.formControlError);
 
     return classNames.join(' ');
   }
@@ -216,10 +209,11 @@ export default class TextField extends React.Component {
       requiredLabel,
       displayLength
     } = this.props;
-    const classNames = [formGroup];
+    const classNames = [sharedStyles.formGroup];
 
     // Add all styles that are added via inputStyles
     const inputStyles = inputStyle.split(' ');
+
     inputStyles.map(style => classNames.push(sharedStyles[style]));
 
     if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
@@ -369,7 +363,7 @@ export default class TextField extends React.Component {
           inputValue={this.state.value}
           displayLength={displayLength}
           maxLength={maxLength} />
-        {labelHidden && <span className={srOnly}>{label}</span>}
+        {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
 
         {this.label}
 

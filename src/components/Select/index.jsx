@@ -7,13 +7,7 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import Label from '../Label';
-import sharedStyles, {
-  controlLabelRequired,
-  controlNote,
-  formControl,
-  formControlError,
-  formGroup
-} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 
 export default class Select extends React.Component {
@@ -127,7 +121,7 @@ export default class Select extends React.Component {
    */
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
-    const classNames = [formGroup, sharedStyles[inputStyle]];
+    const classNames = [styles.formGroup, sharedStyles[inputStyle]];
 
     if (requiredLabel) classNames.push(styles.paddingTop);
 
@@ -226,7 +220,7 @@ export default class Select extends React.Component {
       <div className={this.containerClassNames} id={`${name}-container`}>
 
         {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
+          <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
             {requiredLabel}
           </span>
         }
@@ -244,7 +238,7 @@ export default class Select extends React.Component {
             onBlur={onBlur}
             onFocus={onFocus}
             onChange={this.onChange}
-            className={`${formControl} ${styles.select} ${this.hasError() ? formControlError : ''}`}
+            className={`${sharedStyles.formControl} ${styles.select} ${this.hasError() ? sharedStyles.formControlError : ''}`}
             disabled={disabled}>
 
             {defaultRequired &&

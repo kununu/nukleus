@@ -2,7 +2,6 @@ import React from 'react';
 import {mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 import toJson from 'enzyme-to-json';
-
 import ToolTip from 'ToolTip';
 
 // requestAnimationFrame isn't supported by node

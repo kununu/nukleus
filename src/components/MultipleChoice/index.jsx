@@ -5,14 +5,7 @@ import styles from './index.scss';
 
 import Error from '../Error';
 import Label from '../Label';
-import sharedStyles, {
-  controlLabelRequired,
-  controlNote,
-  formControl,
-  formGroup,
-  formGroupMultipleChoice
-} from '../index.scss';
-
+import sharedStyles from '../index.scss';
 
 export default class MultipleChoice extends React.Component {
   static propTypes = {
@@ -92,7 +85,7 @@ export default class MultipleChoice extends React.Component {
 
     const inputStyles = inputStyle.split(' ');
 
-    const classNames = [formGroup, formGroupMultipleChoice];
+    const classNames = [sharedStyles.formGroup, sharedStyles.formGroupMultipleChoice];
 
     // Inline Styles is shared in global index.scss, buttons is a local style
     if (inputStyles.includes('buttons')) classNames.push(styles.buttons);
@@ -115,7 +108,7 @@ export default class MultipleChoice extends React.Component {
 
     const value = label || heading;
     const classNames = inputStyle === 'inline' ? styles.inlineLabel : '';
-    console.log('OH HIII', classNames);
+
     return (
       <Label
         value={value}
@@ -170,7 +163,7 @@ export default class MultipleChoice extends React.Component {
     return (
       <div className={this.containerClassNames} id={`${name}-container`}>
         {this.props.requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
+          <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
             {this.props.requiredLabel}
           </span>
         }
@@ -182,7 +175,7 @@ export default class MultipleChoice extends React.Component {
             (
               <div className={`${styles.choice}`} key={choice.id}>
                 <input
-                  className={formControl}
+                  className={sharedStyles.formControl}
                   id={`${this.props.name}${choice.id}`}
                   name={this.props.name}
                   key={choice.id}

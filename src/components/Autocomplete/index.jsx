@@ -10,16 +10,7 @@ import isMobile from 'utils/mobileDetection';
 import styles from './index.scss';
 
 import Error from '../Error';
-import sharedStyles, {
-  controlLabel,
-  controlLabelRequired,
-  controlNote,
-  formControl,
-  formControlError,
-  formGroup,
-  hidden,
-  srOnly
-} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
@@ -171,7 +162,7 @@ export default class Autocomplete extends React.Component {
    */
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
-    const classNames = [formGroup, sharedStyles[inputStyle]];
+    const classNames = [sharedStyles.formGroup, sharedStyles[inputStyle]];
 
     if (requiredLabel) classNames.push(styles.paddingTop);
 
@@ -186,9 +177,9 @@ export default class Autocomplete extends React.Component {
    */
   get labelClassNames () {
     const {labelHidden} = this.props;
-    const classNames = [controlLabel];
+    const classNames = [sharedStyles.controlLabel];
 
-    if (labelHidden) classNames.push(hidden);
+    if (labelHidden) classNames.push(sharedStyles.hidden);
 
     if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
@@ -338,7 +329,7 @@ export default class Autocomplete extends React.Component {
 
     const inputProps = {
       autoFocus,
-      className: `${formControl} ${this.hasError() ? formControlError : ''}`,
+      className: `${sharedStyles.formControl} ${this.hasError() ? sharedStyles.formControlError : ''}`,
       disabled,
       id,
       name,
@@ -357,13 +348,13 @@ export default class Autocomplete extends React.Component {
         id={`${name}-container`}>
 
         {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
+          <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
             {requiredLabel}
           </span>
         }
 
         {labelHidden &&
-          <span className={srOnly}>
+          <span className={sharedStyles.srOnly}>
             {label}
           </span>
         }
