@@ -35,5 +35,5 @@ storiesOf('Choice', module)
           value: 'option-c'
         }
       ]}
-      />
+    // {/>}
   ));

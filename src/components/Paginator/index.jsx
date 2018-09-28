@@ -2,13 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './index.scss';
-
 import {
   queryParamsToObject,
   queryParamsToString
 } from 'utils/params';
+
+import styles from './index.scss';
 
 export default class Paginator extends React.Component {
   static propTypes = {

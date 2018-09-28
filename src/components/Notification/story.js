@@ -16,5 +16,5 @@ storiesOf('Notification', module)
     <Notification
       message="Hi, I am a notification box"
       icon={<i className="fa fa-check" />}
-      visible={true} />
+      visible />
   ));

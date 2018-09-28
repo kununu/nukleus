@@ -8,12 +8,16 @@ import {withOptions} from '@storybook/addon-options';
 // import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
 // import backgrounds from '@storybook/addon-backgrounds';
 
-import DropDown from './index';
+// import DropDown from './index';
 
 storiesOf('DropDown', module)
   .addDecorator(withOptions({...defaultOptions}))
   .add('with some emoji', () => (
-    <DropDown
+    <div>to come</div>
+  ));
+
+
+{/*<DropDown
       position="bottom"
       items={[
         {
@@ -48,5 +52,4 @@ storiesOf('DropDown', module)
           link: <Link to={{pathname: '/drop-down/us'}}>United States</Link>,
           value: 'United States'
         }
-      ]} />
-  ));
+      ]} />*/}

@@ -8,12 +8,15 @@ import {withOptions} from '@storybook/addon-options';
 // import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
 // import backgrounds from '@storybook/addon-backgrounds';
 
-import InfoBox from './index';
+// import InfoBox from './index';
 
 storiesOf('InfoBox', module)
   .addDecorator(withOptions({...defaultOptions}))
   .add('with some emoji', () => (
-    <InfoBox
+    <div>hi</div>
+  ));
+
+{/*<InfoBox
       position="bottom"
       items={[
         {
@@ -48,5 +51,4 @@ storiesOf('InfoBox', module)
           link: <Link to={{pathname: '/drop-down/us'}}>United States</Link>,
           value: 'United States'
         }
-      ]} />
-  ));
+      ]} />*/}
