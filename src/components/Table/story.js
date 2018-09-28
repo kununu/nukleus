@@ -12,7 +12,7 @@ import Table from './index';
 
 storiesOf('Table', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Table
       dataRows={[
         {

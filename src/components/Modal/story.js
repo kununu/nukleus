@@ -49,6 +49,6 @@ class ModalExample extends Component {
 
 storiesOf('Modal', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <ModalExample />
   ));

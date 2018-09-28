@@ -2,18 +2,17 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
-// import {action} from '@storybook/addon-actions';
-// import {withNotes} from '@storybook/addon-notes';
-// import {withInfo} from '@storybook/addon-info';
-// import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
-// import backgrounds from '@storybook/addon-backgrounds';
+import {withInfo} from '@storybook/addon-info';
+import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import ErrorComponent from './index';
 
 storiesOf('Error', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .addDecorator(withKnobs)
+  .addDecorator((story, context) => withInfo('Basic error block')(story)(context))
+  .add('basics', () => (
     <ErrorComponent
-      info="This is an error"
-      subInfo="And I am some sub info" />
+      info={text('info', 'This is an error')}
+      subInfo={text('subinfo', 'And I am some sub info')} />
   ));

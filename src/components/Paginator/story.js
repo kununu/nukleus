@@ -13,7 +13,7 @@ import Paginator from './index';
 
 storiesOf('Paginator', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Paginator
       totalPages={10}
       pathname="/"

@@ -12,7 +12,7 @@ import Select from './index';
 
 storiesOf('Select', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Select
       title="Select"
       name="select"

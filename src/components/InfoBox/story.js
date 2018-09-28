@@ -12,8 +12,8 @@ import {withOptions} from '@storybook/addon-options';
 
 storiesOf('InfoBox', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
-    <div>hi</div>
+  .add('basics', () => (
+    <div>Coming soon</div>
   ));
 
 //  <InfoBox

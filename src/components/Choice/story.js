@@ -6,7 +6,6 @@ import {action} from '@storybook/addon-actions';
 // import {withNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, boolean, number} from '@storybook/addon-knobs/react';
-// import backgrounds from '@storybook/addon-backgrounds';
 
 import Choice from './index';
 

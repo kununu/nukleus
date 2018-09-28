@@ -12,7 +12,7 @@ import Stars from './index';
 
 storiesOf('Stars', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Stars
       colors={[
         '#ff464e',

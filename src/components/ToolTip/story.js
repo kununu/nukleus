@@ -12,7 +12,7 @@ import ToolTip from './index';
 
 storiesOf('ToolTip', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <ToolTip
       label="Tooltip"
       content="This could be useful" />

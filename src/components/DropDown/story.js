@@ -12,7 +12,7 @@ import {withOptions} from '@storybook/addon-options';
 
 storiesOf('DropDown', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <div>to come</div>
   ));
 

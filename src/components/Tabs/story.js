@@ -12,7 +12,7 @@ import Tabs from './index';
 
 storiesOf('Tabs', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Tabs
       items={[
         <a href={{pathname: '/tabs'}}>First Tab</a>,

@@ -12,7 +12,7 @@ import MultipleChoice from './index';
 
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <MultipleChoice
       name="choices[]"
       label="MultipleChoice"

@@ -14,7 +14,7 @@ import InfoText from './index';
 
 storiesOf('InfoText', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <div>
       <TextField
         id="text-field"

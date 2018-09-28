@@ -12,7 +12,7 @@ import Notification from './index';
 
 storiesOf('Notification', module)
   .addDecorator(withOptions({...defaultOptions}))
-  .add('with some emoji', () => (
+  .add('basics', () => (
     <Notification
       message="Hi, I am a notification box"
       icon={<i className="fa fa-check" />}
