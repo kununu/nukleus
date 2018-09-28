@@ -34,6 +34,5 @@ storiesOf('Choice', module)
           label: 'Option C',
           value: 'option-c'
         }
-      ]}
-    // {/>}
+      ]} />
   ));
