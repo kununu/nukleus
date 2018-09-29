@@ -58,7 +58,7 @@
     "file-loader": "1.1.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "22.4.3",
-    "jest-junit": "5.1.0",
+    "jest-junit": "5.2.0",
     "less": "3.0.2",
     "node-sass": "4.9.0",
     "node-sass-module-importer": "0.1.0",
