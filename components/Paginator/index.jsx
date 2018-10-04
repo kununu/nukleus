@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import queryString 'query-string';
 
 import styles from './index.scss';
 
