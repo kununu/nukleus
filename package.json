@@ -55,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.9.0",
     "eslint-plugin-sorting": "0.3.0",
-    "file-loader": "1.1.11",
+    "file-loader": "2.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "22.4.3",
     "jest-junit": "5.1.0",
