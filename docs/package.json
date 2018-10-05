@@ -33,7 +33,7 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.9.0",
     "eslint-plugin-sorting": "0.3.0",
-    "file-loader": "1.1.11",
+    "file-loader": "2.0.0",
     "less": "3.0.2",
     "moment": "2.22.2",
     "node-sass": "4.9.0",
