@@ -2,14 +2,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import queryString 'query-string';
+import queryString from 'query-string';
 
 import styles from './index.scss';
-
-import {
-  queryParamsToObject,
-  queryParamsToString
-} from '../../utils/params';
 
 export default class Paginator extends React.Component {
   static propTypes = {
@@ -56,8 +51,8 @@ export default class Paginator extends React.Component {
       queryKey
     } = this.props;
 
-    const queryObject = queryParamsToObject(query);
-    const queryParams = queryParamsToString({...queryObject, [queryKey]: queryValue});
+    const queryObject = (typeof query === 'object') ? query : queryString.parse(query);
+    const queryParams = queryString.stringify({...queryObject, [queryKey]: queryValue});
 
     if (baseLink.props.to) {
       return {
@@ -83,7 +78,8 @@ export default class Paginator extends React.Component {
       query
     } = this.props;
 
-    const queryObject = queryParamsToObject(query);
+    const queryObject = (typeof query === 'object') ? query : queryString.parse(query);
+
     const currentPage = Number(queryObject[queryKey]) || 1;
     const totalPagesArray = this.getPageRange(currentPage);
     const previousPage = currentPage !== 1 ? currentPage - 1 : currentPage;
