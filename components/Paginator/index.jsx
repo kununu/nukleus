@@ -43,10 +43,6 @@ export default class Paginator extends React.Component {
     return pageRange;
   }
 
-  parseQueryObject(query = {}) {
-    return (typeof query === 'object') ? query : queryString.parse(query);
-  }
-
   getNewProps (queryValue) {
     const {
       baseLink,
@@ -73,6 +69,8 @@ export default class Paginator extends React.Component {
       [location]: `${pathname}?${queryParams}`
     };
   }
+
+  parseQueryObject = query => (typeof query === 'object') ? query : queryString.parse(query);
 
   render () {
     const {
