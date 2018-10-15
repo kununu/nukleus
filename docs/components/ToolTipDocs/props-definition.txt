@@ -4,7 +4,7 @@ static propTypes = {
     PropTypes.object
   ]),
   icon: PropTypes.element,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   position: PropTypes.oneOf([
     'topLeft',
     'topRight',
