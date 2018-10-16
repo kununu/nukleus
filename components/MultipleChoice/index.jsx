@@ -22,6 +22,7 @@ export default class MultipleChoice extends React.Component {
     heading: PropTypes.string,
     inputStyle: PropTypes.oneOf(['inline', 'buttons']),
     isRequired: PropTypes.bool,
+    isLabelTitle: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object
@@ -44,6 +45,7 @@ export default class MultipleChoice extends React.Component {
     heading: null,
     inputStyle: 'inline',
     isRequired: false,
+    isLabelTitle: true,
     label: null,
     labelHidden: false,
     onBlur: () => {},
@@ -107,6 +109,7 @@ export default class MultipleChoice extends React.Component {
     const {
       heading,
       inputStyle,
+      isLabelTitle,
       label,
       labelHidden
     } = this.props;
@@ -121,7 +124,7 @@ export default class MultipleChoice extends React.Component {
         value={value}
         labelHidden={labelHidden}
         classNames={classNames}
-        isTitle />
+        isTitle={isLabelTitle} />
     );
   }
 
