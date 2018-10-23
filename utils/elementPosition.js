@@ -5,9 +5,10 @@ export default function getElementPositionY (element, offset = 0) {
   const box = element.getBoundingClientRect();
   const {
     body,
-    docElem
+    documentElement
   } = document;
-  const scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
-  const clientTop = docElem.clientTop || body.clientTop || 0;
+
+  const scrollTop = window.pageYOffset || documentElement.scrollTop || body.scrollTop;
+  const clientTop = documentElement.clientTop || body.clientTop || 0;
   return (box.top + scrollTop) - clientTop - offset;
 }
