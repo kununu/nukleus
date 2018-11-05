@@ -88,7 +88,7 @@
     "query-string": "6.2.0",
     "react-aria-modal": "2.12.2",
     "react-autosuggest": "9.3.4",
-    "react-datepicker": "1.7.0",
+    "react-datepicker": "1.8.0",
     "react-scroll": "1.7.9"
   },
   "peerDependencies": {
