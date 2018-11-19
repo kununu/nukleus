@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "13.0.1",
+  "version": "13.0.5",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -109,6 +109,7 @@
     "debounce": "1.0.2",
     "moment": "2.22.2",
     "prop-types": "15.6.2",
+    "query-string": "6.2.0",
     "react-aria-modal": "2.12.2",
     "react-autosuggest": "9.3.4",
     "react-datepicker": "1.4.1",
