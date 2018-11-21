@@ -34,8 +34,8 @@ You will need a module bundler that supports css modules. To do this with [webpa
 
 ```javascript
 {
-    test: /\.scss$/,
-    exclude: /node_modules/,
+    test: /\.css$/,
+    include: /nukleus/,
     use: [
       'style-loader',
       'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
@@ -49,7 +49,6 @@ You will need a module bundler that supports css modules. To do this with [webpa
           }
         }
       },
-      'sass-loader'
     ]
   }
 ```
