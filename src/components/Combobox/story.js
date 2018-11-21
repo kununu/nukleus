@@ -13,7 +13,7 @@ storiesOf('Combobox', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The combobox is a select box / text input combo')(story)(context))
-  .add('basic', () => (
+  .add('basics', () => (
     <Combobox
       handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
       name="name"
