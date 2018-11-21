@@ -81,6 +81,7 @@ export default class Paginator extends React.Component {
     } = this.props;
 
     const queryObject = this.parseQueryObject(query);
+    console.log('TEST', queryObject);
 
     const currentPage = Number(queryObject[queryKey]) || 1;
     const totalPagesArray = this.getPageRange(currentPage);

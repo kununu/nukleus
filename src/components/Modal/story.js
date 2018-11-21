@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
-// import {action} from '@storybook/addon-actions';
-// import {withNotes} from '@storybook/addon-notes';
-// import {withInfo} from '@storybook/addon-info';
-// import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
-// import backgrounds from '@storybook/addon-backgrounds';
+import {withInfo} from '@storybook/addon-info';
+import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Button from '../Button';
 
@@ -30,17 +27,17 @@ class ModalExample extends Component {
           text="Open Modal"
           onClick={() => this.setState({modalOpen: true})} />
         <Modal
-          titleText="Nukleus Modal"
+          titleText={text('titleText', 'Nukleus Modal')}
           open={this.state.modalOpen}
           state={this.state}
-          actionText="Ok"
-          cancelText="Cancel"
+          actionText={text('actionText', 'Ok')}
+          cancelText={text('cancelText', 'Cancel')}
           onExit={() => this.setState({modalOpen: false})}
           onAction={() => this.setState({
             modalOpen: false,
             success: true // eslint-disable-line react/no-unused-state
           })}>
-          <p>With dynamic content</p>
+          <p>{text('dynamic text content', 'dynamic text content')}</p>
         </Modal>
       </div>
     );
@@ -49,6 +46,8 @@ class ModalExample extends Component {
 
 storiesOf('Modal', module)
   .addDecorator(withOptions({...defaultOptions}))
+  .addDecorator(withKnobs)
+  .addDecorator((story, context) => withInfo('The modal component! You can wrap any children components that you like in this fabulous modal.')(story)(context))
   .add('basics', () => (
     <ModalExample />
   ));

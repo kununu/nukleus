@@ -3,15 +3,14 @@ import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 // import {action} from '@storybook/addon-actions';
-// import {withNotes} from '@storybook/addon-notes';
-// import {withInfo} from '@storybook/addon-info';
-// import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
-// import backgrounds from '@storybook/addon-backgrounds';
+import {withKnobs, text} from '@storybook/addon-knobs/react';
+import {withInfo} from '@storybook/addon-info';
 
 import MultipleChoice from './index';
 
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))
+  .addDecorator((story, context) => withInfo('The MultipleChoice component!')(story)(context))
   .add('basics', () => (
     <MultipleChoice
       name="choices[]"
