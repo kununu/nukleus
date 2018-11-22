@@ -120,7 +120,7 @@
     "react-dom": ">=16.0.0"
   },
   "scripts": {
-    "start": "start-storybook -s ./public -p 3000",
+    "start": "start-storybook -p 3000",
     "build": "build-storybook -c .storybook -o docs",
     "babel": "cross-env NODE_ENV=dist babel ./src/components --out-dir ./dist/components --ignore 'src/components/**/story.js' && babel ./utils --out-dir ./dist/utils",
     "presass": "node-sass ./src/components --output ./dist/components --importer node_modules/node-sass-module-importer",
