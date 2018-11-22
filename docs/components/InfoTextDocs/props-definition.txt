@@ -1,4 +1,0 @@
-static propTypes = {
-  infoStyle: PropTypes.oneOf(['inline']),
-  text: PropTypes.string.isRequired
-};

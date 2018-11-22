@@ -1,4 +1,0 @@
-static propTypes = {
-  info: PropTypes.string.isRequired,
-  subInfo: PropTypes.string
-};

@@ -1,5 +1,0 @@
-static defaultProps = {
-  pathname: '/',
-  query: {},
-  queryKey: 'page'
-};

@@ -1,3 +1,0 @@
-<Button
-  type="primary"
-  text="Primary Button"/>

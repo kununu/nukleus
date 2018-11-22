@@ -1,9 +1,0 @@
-static propTypes = {
-  baseLink: PropTypes.element.isRequired,
-  pathname: PropTypes.string.isRequired,
-  query: PropTypes.object,
-  queryKey: PropTypes.string.isRequired,
-  totalPages: PropTypes.number.isRequired
-};
-
-
