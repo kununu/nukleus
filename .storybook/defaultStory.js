@@ -17,7 +17,7 @@ storiesOf('Introduction', module)
   .add('welcome', () => (
     <div>
       <div className={styles.logoContainer}>
-        <img src="/logo.svg" className={styles.logo} />
+        <img src="https://assets.kununu.com/nukleus/logo.svg" className={styles.logo} />
       </div>
       <div className={styles.contentWrapper}>
         <ReactMarkdown escapeHtml={false} source={Readme} />
