@@ -120,14 +120,12 @@
     "react-dom": ">=16.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --port 3000 ./playground",
-    "storybook": "start-storybook -s ./public -p 9001",
-    "storybook:build": "build-storybook -c .storybook -o build",
-    "babel": "babel ./src/components --out-dir ./dist/components --ignore 'src/components/**/story.js' && babel ./utils --out-dir ./dist/utils",
+    "start": "start-storybook -s ./public -p 3000",
+    "build": "build-storybook -c .storybook -o docs",
+    "babel": "cross-env NODE_ENV=dist babel ./src/components --out-dir ./dist/components --ignore 'src/components/**/story.js' && babel ./utils --out-dir ./dist/utils",
     "presass": "node-sass ./src/components --output ./dist/components --importer node_modules/node-sass-module-importer",
     "sass": "postcss dist/components/**/*.css --replace --use autoprefixer --no-map",
-    "dist": "npm run clean && npm run build && npm run sass",
-    "build": "cross-env NODE_ENV=dist npm run babel",
+    "dist": "npm run clean && npm run babel && npm run sass",
     "eslint": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js --fix",
     "prepublish": "npm run dist",
