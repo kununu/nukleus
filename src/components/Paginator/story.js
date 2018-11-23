@@ -1,10 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-// import {Link} from 'react-router-dom';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
-// import {action} from '@storybook/addon-actions';
-// import {withNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, number, boolean} from '@storybook/addon-knobs/react';
 
