@@ -28,7 +28,6 @@ storiesOf('ToolTip', module)
           bottomRight: 'bottomRight',
           topLeft: 'topLeft',
           topRight: 'topRight'
-        })}
-      />
+        })} />
     </div>
   ));

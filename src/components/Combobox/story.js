@@ -4,7 +4,7 @@ import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, text, boolean, array, radios} from '@storybook/addon-knobs/react';
+import {withKnobs, text, boolean, array} from '@storybook/addon-knobs/react';
 
 import Combobox from './index';
 

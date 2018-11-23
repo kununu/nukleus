@@ -28,7 +28,7 @@ class DropDownExample extends Component {
           Dropdown
         </h3>
         <p>
-          The dropdown itself does not have any background color so it's important to
+          The dropdown itself does not have any background color so it is important to
           position it how you like on whichever background you prefer. That is why
           there are two shade props <code>light</code> and <code>dark</code>. The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
         </p>

@@ -106,8 +106,7 @@ storiesOf('Stars', module)
             '#7cb532',
             '#96d04a']}
           name="stars2"
-          selectable
-         />
+          selectable />
       </div>
 
       <br />

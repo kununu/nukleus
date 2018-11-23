@@ -101,7 +101,7 @@ storiesOf('TextField', module)
         Text field with a custom sanitizing function
       </h3>
       <p>
-        Here you can control what users are allowed to type - perhaps special characters or more than one white space. Just pass a simple replace() callback to sanitizeValue: <code>value => value.replace(/a/, 'b')</code> - now all As will be replaced with Bs!
+        Here you can control what users are allowed to type - perhaps special characters or more than one white space. Just pass a simple replace() callback to sanitizeValue: <code>value =&gt; value.replace(/a/, &apos;b&apos;)</code> - now all As will be replaced with Bs!
       </p>
 
       <div style={{position: 'relative'}}>
@@ -126,7 +126,7 @@ storiesOf('TextField', module)
           requiredLabel={text('requiredLabel', 'required')}
           type={select('type', typeOptions, 'text')}
           placeholder={text('placeholder', 'Placeholder text')}
-          sanitizeValue={(value) => value.replace(/a/, 'b')}
+          sanitizeValue={value => value.replace(/a/, 'b')}
           value={text('value', '')}
           name="text-field" />
       </div>

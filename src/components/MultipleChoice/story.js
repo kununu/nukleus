@@ -9,11 +9,12 @@ import MultipleChoice from './index';
 
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))
+  .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The MultipleChoice component!')(story)(context))
   .add('basics', () => (
     <MultipleChoice
       name="choices[]"
-      label="MultipleChoice"
+      label={text('label', 'MultipleChoice')}
       options={
       [
         {
@@ -31,7 +32,7 @@ storiesOf('MultipleChoice', module)
   ))
   .add('Button style', () => (
     <MultipleChoice
-      label="Multiple choice component"
+      label={text('label', 'MultipleChoice')}
       name="choices[]"
       inputStyle="buttons"
       options={

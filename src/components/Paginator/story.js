@@ -3,10 +3,10 @@ import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, number, boolean} from '@storybook/addon-knobs/react';
+import {withKnobs, number} from '@storybook/addon-knobs/react';
 
 import Paginator from './index';
-console.log('SERAC', window.parent.location.search);
+
 storiesOf('Paginator', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
