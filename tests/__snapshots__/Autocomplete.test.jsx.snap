@@ -108,6 +108,7 @@ exports[`Hides no suggestions on blur 1`] = `
         theme={null}
       >
         <Autowhatever
+          containerProps={Object {}}
           getSectionItems={[Function]}
           highlightedItemIndex={null}
           highlightedSectionIndex={null}
@@ -439,6 +440,7 @@ exports[`Renders no suggestions container 1`] = `
         theme={null}
       >
         <Autowhatever
+          containerProps={Object {}}
           getSectionItems={[Function]}
           highlightedItemIndex={null}
           highlightedSectionIndex={null}
@@ -1037,6 +1039,7 @@ exports[`Renders suggestions container 1`] = `
         theme={null}
       >
         <Autowhatever
+          containerProps={Object {}}
           getSectionItems={[Function]}
           highlightedItemIndex={null}
           highlightedSectionIndex={null}
@@ -1609,6 +1612,7 @@ exports[`Updates value on selection 1`] = `
         theme={null}
       >
         <Autowhatever
+          containerProps={Object {}}
           getSectionItems={[Function]}
           highlightedItemIndex={null}
           highlightedSectionIndex={null}
