@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-import {queryParamsToObject} from '../../utils/params';
+import {queryParamsToObject} from 'utils/params';
 import Error from '../Error';
 import Label from '../Label';
 import {

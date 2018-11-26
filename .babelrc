@@ -3,13 +3,33 @@
   "plugins": [
     ["@babel/plugin-proposal-class-properties", { "loose": false }],
     "@babel/plugin-proposal-export-default-from",
+    ["transform-rename-import", {
+      "replacements": [
+        {
+          "original": "utils/executionEnvironment",
+          "replacement": "../../utils/executionEnvironment",
+        },
+        {
+          "original": "utils/mobileDetection",
+          "replacement": "../../utils/mobileDetection",
+        },
+        {
+          "original": "utils/elementPosition",
+          "replacement": "../../utils/elementPosition",
+        },
+        {
+          "original": "utils/params",
+          "replacement": "../../utils/params",
+        },
+        {
+          "original": "./index.scss",
+          "replacement": "./index.css"
+        },
+        {
+          "original": "../index.scss",
+          "replacement": "../index.css"
+        }
+      ],
+    }],
   ],
-  "env": {
-    "dist": {
-      "plugins": [
-        ["transform-rename-import", { "original": "./index.scss", "replacement": "./index.css" }],
-        ["transform-rename-import", { "original": "../index.scss", "replacement": "../index.css" }, 'transform']
-      ]
-    }
-  }
 }

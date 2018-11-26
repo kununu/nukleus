@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {isBrowser} from 'utils/executionEnvironment';
+
 import styles from './index.scss';
 
-import {isBrowser} from '../../utils/executionEnvironment';
 import {clearfix} from '../index.scss';
 
 export default class Dropdown extends React.Component {

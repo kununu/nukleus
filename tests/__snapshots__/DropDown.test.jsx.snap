@@ -35,7 +35,6 @@ exports[`Closes menu when document is clicked 1`] = `
   }
   position="top"
   shade="light"
-  visibleOnHover={false}
 >
   <div
     className="container top"
@@ -43,8 +42,6 @@ exports[`Closes menu when document is clicked 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
     >
       German
       <span
@@ -124,8 +121,6 @@ exports[`Renders DropDown without crashing 1`] = `
   <button
     className="selection clearfix light"
     onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
   >
     German
     <span
@@ -202,8 +197,6 @@ exports[`Renders correct default selection 1`] = `
   <button
     className="selection clearfix light"
     onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
   >
     Austria
     <span
@@ -280,8 +273,6 @@ exports[`Renders correctly when no icon is provided 1`] = `
   <button
     className="selection clearfix light"
     onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
   >
     Austria
     
@@ -365,7 +356,6 @@ exports[`Renders menu when button is clicked 1`] = `
   }
   position="top"
   shade="light"
-  visibleOnHover={false}
 >
   <div
     className="container top"
@@ -373,8 +363,6 @@ exports[`Renders menu when button is clicked 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
     >
       German
       <span
@@ -482,7 +470,6 @@ exports[`Updates selection on item click 1`] = `
   }
   position="top"
   shade="light"
-  visibleOnHover={false}
 >
   <div
     className="container top"
@@ -490,8 +477,6 @@ exports[`Updates selection on item click 1`] = `
     <button
       className="selection clearfix light"
       onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
     >
       German
       <span
