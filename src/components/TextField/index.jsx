@@ -4,10 +4,10 @@
 // https://facebook.github.io/react/docs/forms.html#controlled-components
 import React from 'react';
 import PropTypes from 'prop-types';
-import {queryParamsToObject} from 'utils/params';
 
 import styles from './index.scss';
 
+import {queryParamsToObject} from '../../utils/params';
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles from '../index.scss';

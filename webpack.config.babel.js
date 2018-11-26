@@ -13,8 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
     alias: {
-      utils: path.resolve(__dirname, "../utils"),
-      defaultOptions: path.resolve(__dirname, "./defaultOptions"),
+      utils: path.resolve(__dirname, "./utils"),
     },
     modules: [
       __dirname,

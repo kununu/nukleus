@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import Scroll from 'react-scroll';
 import debounce from 'debounce';
-import getElementPositionY from 'utils/elementPosition';
-import {queryParamsToObject} from 'utils/params';
-import isMobile from 'utils/mobileDetection';
 
 import styles from './index.scss';
 
 import Error from '../Error';
 import sharedStyles from '../index.scss';
+import getElementPositionY from '../../utils/elementPosition';
+import {queryParamsToObject} from '../../utils/params';
+import isMobile from '../../utils/mobileDetection';
+
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
