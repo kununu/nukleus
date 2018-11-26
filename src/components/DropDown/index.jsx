@@ -86,8 +86,6 @@ export default class Dropdown extends React.Component {
           ref={node => this.node = node}
           className={`${styles.selection} ${clearfix} ${styles[shade]}`}
           onClick={this.onButtonClick}
-          onMouseEnter={this.onHover}
-          onMouseLeave={this.onHover}>
           {activeItem.value}
           {activeItem.icon ?
             <span className={styles.pullRight}>
