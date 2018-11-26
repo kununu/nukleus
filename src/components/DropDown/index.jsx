@@ -20,7 +20,7 @@ export default class Dropdown extends React.Component {
 
   static defaultProps = {
     position: 'top',
-    shade: 'light',
+    shade: 'light'
   };
 
   state = {

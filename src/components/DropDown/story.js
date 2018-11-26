@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, select, boolean} from '@storybook/addon-knobs/react';
+import {withKnobs, select} from '@storybook/addon-knobs/react';
 
 import DropDown from './index';
 
