@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {queryParamsToObject} from 'utils/params';
+
 import styles from './index.scss';
 
-import {queryParamsToObject} from 'utils/params';
 import Error from '../Error';
 import Label from '../Label';
 import {
