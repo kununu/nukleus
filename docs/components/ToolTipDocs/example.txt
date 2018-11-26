@@ -1,3 +1,0 @@
-<ToolTip
-  label="Tooltip"
-  content="This could be useful" />

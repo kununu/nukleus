@@ -1,6 +1,6 @@
 module.exports = {
   moduleDirectories: [
-    'components',
+    'src/components',
     'node_modules'
   ],
   moduleNameMapper: {
@@ -12,5 +12,6 @@ module.exports = {
   ],
   snapshotSerializers: [
     'enzyme-to-json/serializer'
-  ]
+  ],
+  testURL: 'http://localhost'
 };

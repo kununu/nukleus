@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
-import InfoLabel from '../components/InfoLabel';
+import InfoLabel from 'InfoLabel';
 
 test('Renders an InfoLabel without crashing', () => {
   const component = renderer.create(<InfoLabel requiredLabel="required" />);

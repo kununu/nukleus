@@ -1,3 +1,0 @@
-<Error
-  info={'This is an error'}
-  subInfo={'And I am some sub info'} />

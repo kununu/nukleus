@@ -40,6 +40,7 @@ module.exports = {
     'react/sort-prop-types': 'error',
     'react/forbid-prop-types': 'off',
     'react/no-array-index-key': 0,
+    "react/jsx-filename-extension": 'off',
 
     // Plugins
     'babel/object-curly-spacing': 'error',
@@ -47,11 +48,16 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error', {
         'devDependencies': [
+          '.storybook/**',
+          'src/components/**',
+          'stories/**',
           'jestSetup.js',
           '**/*.test.jsx'
         ]
       }
     ],
+    "import/extensions": 'off',
+    "import/no-unresolved": 'off',
     'sorting/sort-object-props': 'error'
   }
 };

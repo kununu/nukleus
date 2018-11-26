@@ -1,9 +1,0 @@
-static defaultProps = {
-  colors: ['currentColor'],
-  onChange: () => {},
-  onClick: () => {},
-  selectable: false,
-  strokeColor: 'currentColor',
-  totalStars: 5,
-  value: 0
-};
