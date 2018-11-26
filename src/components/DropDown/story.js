@@ -52,7 +52,6 @@ class DropDownExample extends Component {
                 top: 'top'
               }, 'bottom')}
               shade="light"
-              visibleOnHover={boolean('visibleOnHover', false)}
               items={[
                {
                  active: activeValue === '/',
@@ -100,7 +99,6 @@ class DropDownExample extends Component {
                 top: 'top'
               }, 'bottom')}
               shade="dark"
-              visibleOnHover={boolean('visibleOnHover', false)}
               items={[
                {
                  active: activeValue === '/',

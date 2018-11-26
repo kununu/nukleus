@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {isBrowser} from 'utils/executionEnvironment';
 
 import styles from './index.scss';
 
+import {isBrowser} from '../../utils/executionEnvironment';
 import {clearfix} from '../index.scss';
 
 export default class Dropdown extends React.Component {
@@ -15,14 +15,12 @@ export default class Dropdown extends React.Component {
       value: PropTypes.string.isRequired
     })).isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
-    shade: PropTypes.oneOf(['light', 'dark']),
-    visibleOnHover: PropTypes.boolean
+    shade: PropTypes.oneOf(['light', 'dark'])
   };
 
   static defaultProps = {
     position: 'top',
     shade: 'light',
-    visibleOnHover: false
   };
 
   state = {
@@ -51,14 +49,6 @@ export default class Dropdown extends React.Component {
     setTimeout(() => {
       this.setState({isOpen: false});
     }, 100);
-  }
-
-  onHover = () => {
-    const {visibleOnHover} = this.props;
-
-    if (visibleOnHover) {
-      this.setState({isOpen: !this.state.isOpen});
-    }
   }
 
   getActiveItem () {
