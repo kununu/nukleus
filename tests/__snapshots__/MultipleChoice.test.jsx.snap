@@ -512,7 +512,7 @@ exports[`Renders an error if errors prop is set 1`] = `
         </label>
       </div>
     </div>
-    <Error
+    <ErrorComponent
       info="error"
       subInfo="Subinfo"
     >
@@ -526,7 +526,7 @@ exports[`Renders an error if errors prop is set 1`] = `
         </strong>
         Subinfo
       </span>
-    </Error>
+    </ErrorComponent>
   </div>
 </MultipleChoice>
 `;

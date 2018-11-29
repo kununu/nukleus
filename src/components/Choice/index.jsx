@@ -5,7 +5,7 @@ import {queryParamsToObject} from 'utils/params';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import Label from '../Label';
 import {
   controlLabelRequired,
@@ -228,7 +228,7 @@ export default class Choice extends React.Component {
         </div>
 
         {this.hasError() &&
-          <Error
+          <ErrorComponent
             info={error}
             subInfo={errorSubInfo} />
         }

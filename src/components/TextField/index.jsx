@@ -9,7 +9,7 @@ import {queryParamsToObject} from 'utils/params';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles from '../index.scss';
 
@@ -415,7 +415,7 @@ export default class TextField extends React.Component {
           }
 
           {this.hasError() &&
-            <Error
+            <ErrorComponent
               info={error}
               subInfo={errorSubInfo} />
           }

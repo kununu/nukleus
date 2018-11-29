@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import Label from '../Label';
 import sharedStyles from '../index.scss';
 
@@ -258,7 +258,7 @@ export default class Select extends React.Component {
           </select>
 
           {this.hasError() &&
-            <Error
+            <ErrorComponent
               info={error}
               subInfo={errorSubInfo} />
           }
