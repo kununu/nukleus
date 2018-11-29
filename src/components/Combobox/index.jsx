@@ -8,7 +8,7 @@ import debounce from 'debounce';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import {
   controlLabel,
   controlNote,
@@ -18,7 +18,6 @@ import {
   controlLabelRequired,
   hidden
 } from '../index.scss';
-
 
 export default class ComboboxComponent extends React.Component {
   static propTypes = {
@@ -108,7 +107,8 @@ export default class ComboboxComponent extends React.Component {
       const inputValue = value.trim().toLowerCase();
       const inputLength = inputValue.length;
       return items
-        .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
+        .filter(item =>
+          item && item.toLowerCase().slice(0, inputLength) === inputValue)
         .map(item => ({value: item}));
     }
     return items.map(item => ({value: item}));
@@ -122,10 +122,13 @@ export default class ComboboxComponent extends React.Component {
     });
   }
 
-  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
+  debouncedLoadSuggestions = debounce(
+    this.loadSuggestions,
+    this.props.debounceRate
+  );
 
   handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
-    if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
+    if (this.props.onSelect) { this.props.onSelect(suggestionIndex, suggestionValue); }
     if (method === 'enter') {
       e.preventDefault();
     }
@@ -162,15 +165,21 @@ export default class ComboboxComponent extends React.Component {
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
-        {requiredLabel &&
+      <div
+        className={`${formGroup} ${styles[inputStyles]} ${
+          requiredLabel ? styles.paddingTop : ''
+        }`}
+        id={`${name}-container`}>
+        {requiredLabel && (
           <span className={`${controlNote} ${controlLabelRequired}`}>
             {requiredLabel}
           </span>
-        }
+        )}
 
         <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
+          className={`${controlLabel} ${labelHidden && hidden} ${
+            this.hasError() ? styles.controlLabelError : ''
+          }`}
           htmlFor={id}>
           {label}
         </label>
@@ -190,7 +199,10 @@ export default class ComboboxComponent extends React.Component {
             focusInputOnSuggestionClick={this.props.isSearchable}
             inputProps={{
               ...this.props.inputProps,
-              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
+              className: `${formControl} ${!this.props.isSearchable &&
+                styles.isNotSearchable} ${
+                this.hasError() ? formControlError : ''
+              }`,
               disabled,
               id,
               name,
@@ -202,17 +214,11 @@ export default class ComboboxComponent extends React.Component {
               value: this.state.value
             }} />
 
-          {handle ?
-            <span className={styles.handle}>
-              {handle}
-            </span>
-            : ''}
+          {handle ? <span className={styles.handle}>{handle}</span> : ''}
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+            <ErrorComponent info={error} subInfo={errorSubInfo} />
+          )}
         </div>
       </div>
     );

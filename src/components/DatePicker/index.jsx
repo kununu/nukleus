@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import {
   controlLabel,
   controlLabelRequired,
@@ -183,7 +183,7 @@ export default class DatePickerComponent extends React.Component {
             : ''}
 
           {this.hasError() &&
-            <Error
+            <ErrorComponent
               info={error}
               subInfo={errorSubInfo} />
           }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-import Error from '../Error';
+import ErrorComponent from '../Error';
 import Label from '../Label';
 import sharedStyles from '../index.scss';
 
@@ -193,7 +193,7 @@ export default class MultipleChoice extends React.Component {
             ))}
         </div>
         {this.hasError() &&
-          <Error
+          <ErrorComponent
             info={this.props.error}
             subInfo={this.props.errorSubInfo} />
         }

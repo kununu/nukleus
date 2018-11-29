@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-const Error = ({info, subInfo}) => (
+const ErrorComponent = ({info, subInfo}) => (
   <span className={`${styles.error}`}>
     <strong className={styles.info}>{info}</strong>
     {subInfo}
   </span>
 );
 
-Error.propTypes = {
+ErrorComponent.propTypes = {
   info: PropTypes.string.isRequired,
   subInfo: PropTypes.string
 };
 
-Error.defaultProps = {
+ErrorComponent.defaultProps = {
   subInfo: ''
 };
 
-export default Error;
+export default ErrorComponent;
