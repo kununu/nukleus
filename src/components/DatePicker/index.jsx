@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -39,7 +38,8 @@ export default class DatePickerComponent extends React.Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     title: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.string,
+    dateFormat: PropTypes.string,
   };
 
   static defaultProps = {
@@ -57,7 +57,8 @@ export default class DatePickerComponent extends React.Component {
     query: {},
     requiredLabel: '',
     title: null,
-    value: ''
+    value: '',
+    dateFormat: 'dd/MM/yyyy',
   };
 
   state = {
@@ -152,7 +153,8 @@ export default class DatePickerComponent extends React.Component {
       inputStyle,
       disabled,
       isRequired,
-      requiredLabel
+      requiredLabel,
+      dateFormat
     } = this.props;
 
     return (
@@ -171,7 +173,8 @@ export default class DatePickerComponent extends React.Component {
             name={name}
             id={id}
             disabled={disabled}
-            selected={this.state.value ? moment(this.state.value) : null}
+            dateFormat={dateFormat}
+            selected={this.state.value ? this.state.value : null}
             required={isRequired}
             onBlur={this.props.onBlur}
             onChange={this.onChange}

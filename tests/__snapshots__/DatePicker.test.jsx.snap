@@ -17,6 +17,7 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
   >
     <Datepicker
       className="formControl formControlError"
+      dateFormat="dd/MM/yyyy"
       disabled={false}
       id="date-picker"
       name="date-picker"
@@ -58,6 +59,7 @@ exports[`Renders datepicker without crashing 1`] = `
   >
     <Datepicker
       className="formControl "
+      dateFormat="dd/MM/yyyy"
       disabled={false}
       id="date-picker"
       name="date-picker"

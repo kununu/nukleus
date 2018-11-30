@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "13.0.6",
+  "version": "13.1.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -87,8 +87,8 @@
     "node-sass-module-importer": "0.1.0",
     "postcss-cli": "5.0.1",
     "postcss-loader": "2.1.4",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
     "react-markdown": "^3.6.0",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
@@ -107,12 +107,11 @@
     "@kununu/kununu-theme-v2": "2.0.1",
     "classnames": "2.2.6",
     "debounce": "1.0.2",
-    "moment": "2.22.2",
     "prop-types": "15.6.2",
     "query-string": "6.2.0",
     "react-aria-modal": "2.12.2",
     "react-autosuggest": "9.3.4",
-    "react-datepicker": "1.4.1",
+    "react-datepicker": "2.0.0",
     "react-scroll": "1.7.9"
   },
   "peerDependencies": {

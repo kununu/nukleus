@@ -22,7 +22,7 @@ storiesOf('Datepicker', module)
       onFocus={action('onFocus')}
       onBlur={action('onBlur')}
       onClick={action('onClick')}
-      error={boolean('error', false)}
+      error={boolean('error', null)}
       errorSubInfo={text('errorSubInfo', 'Error!')}
       requiredLabel={text('requiredLabel', 'required')}
       labelHidden={boolean('labelHidden', false)}
