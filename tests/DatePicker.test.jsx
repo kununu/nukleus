@@ -5,6 +5,10 @@ import DatePicker from 'DatePicker'; // eslint-disable-line import/no-unresolved
 
 jest.mock('react-datepicker', () => 'Datepicker');
 
+function waitingForDebounce (cb) {
+  setTimeout(cb, 550);
+}
+
 test('Renders datepicker without crashing', () => {
   const component = renderer.create(<DatePicker
     id="date-picker"
@@ -113,8 +117,10 @@ test('Renders a datepicker and send an error later', () => {
     name="date-picker"
     title="DatePicker" />);
 
-  component.setProps({ error: 'Date field should be filledi n' });
+  component.setProps({ error: 'Date is empty' });
 
-  // const tree = component.toJSON();
-  // expect(tree).toMatchSnapshot();
+  waitingForDebounce(() => {
+    expect(toJson(component)).toMatchSnapshot();
+    done();
+  });
 });
