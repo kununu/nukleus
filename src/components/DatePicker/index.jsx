@@ -35,7 +35,6 @@ export default class DatePickerComponent extends React.Component {
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
-    onChangeRaw: PropTypes.func,
     onFocus: PropTypes.func,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
@@ -55,7 +54,6 @@ export default class DatePickerComponent extends React.Component {
     labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
-    onChangeRaw: () => {},
     onFocus: () => {},
     query: {},
     requiredLabel: '',
@@ -89,16 +87,27 @@ export default class DatePickerComponent extends React.Component {
   }
 
   // Property initializer binds method to class instance
-  onChange = date => {
-    this.updateValue(date);
-    this.props.onChange(date);
-    this.hideError();
-  };
+  onChange = value => {
+    const {
+      onChange,
+      name
+    } = this.props;
 
-  onChangeRaw = e => {
-    this.updateValue(e.target.value);
-    this.props.onChangeRaw(e);
+    this.updateValue(value);
     this.hideError();
+
+    /*
+     * react-datepicker won't return a native DOM event
+     * on their onChange callback, so we need to create
+     * a fake one, because kununu-form-wrapper and other
+     * form libs will expect a DOM event object to process this field
+     */
+    onChange({
+      target: {
+        name,
+        value
+      }
+    });
   };
 
   get label () {
@@ -186,7 +195,6 @@ export default class DatePickerComponent extends React.Component {
             required={isRequired}
             onBlur={this.props.onBlur}
             onChange={this.onChange}
-            onChangeRaw={this.onChangeRaw}
             onFocus={this.props.onFocus} />
           {icon ?
             <span className={styles.icon}>
