@@ -55,3 +55,66 @@ test('Bluring a datepicker calls the onBlur Event', () => {
   component.find('#date-picker').hostNodes().simulate('blur');
   expect(spyFunc.mock.calls.length).toBe(1);
 });
+
+test('Fires onChange function when changed', () => {
+  const spyFunc = jest.fn();
+  const component = mount(<DatePicker
+    id="date-picker"
+    isRequired
+    onChange={spyFunc}
+    name="date-picker"
+    title="DatePicker" />);
+
+  component.find('#date-picker').hostNodes().simulate('change');
+  expect(spyFunc.mock.calls.length).toBe(1);
+});
+
+test('Renders a datepicker without title and label', () => {
+  const component = renderer.create(<DatePicker
+    id="date-picker"
+    isRequired
+    name="date-picker" />);
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Renders a datepicker with labelHidden', () => {
+  const component = renderer.create(<DatePicker
+    id="date-picker"
+    isRequired
+    name="date-picker"
+    title="DatePicker"
+    labelHidden />);
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Renders a datepicker with a JSX label', () => {
+  const component = renderer.create(<DatePicker
+    id="date-picker"
+    isRequired
+    name="date-picker"
+    label={(
+      <label htmlFor="date-picker">
+        Date
+      </label>
+    )} />);
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Renders a datepicker and send an error later', () => {
+  const component = mount(<DatePicker
+    id="date-picker"
+    isRequired
+    name="date-picker"
+    title="DatePicker" />);
+
+  component.setProps({ error: 'Date field should be filledi n' });
+
+  // const tree = component.toJSON();
+  // expect(tree).toMatchSnapshot();
+});

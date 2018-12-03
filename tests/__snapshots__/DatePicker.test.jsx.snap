@@ -1,5 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders a datepicker with a JSX label 1`] = `
+<div
+  className="formGroup inline datePickerContainer "
+  id="date-picker-container"
+>
+  
+  <label
+    className="controlLabel"
+    htmlFor="date-picker"
+  >
+    Date
+  </label>
+  <div
+    className="innerContainer"
+  >
+    <Datepicker
+      className="formControl "
+      dateFormat="dd/MM/yyyy"
+      disabled={false}
+      id="date-picker"
+      name="date-picker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={true}
+      selected={null}
+    />
+    
+  </div>
+</div>
+`;
+
+exports[`Renders a datepicker with labelHidden 1`] = `
+<div
+  className="formGroup inline datePickerContainer "
+  id="date-picker-container"
+>
+  
+  <span
+    className="srOnly"
+  >
+    DatePicker
+  </span>
+  <div
+    className="innerContainer"
+  >
+    <Datepicker
+      className="formControl "
+      dateFormat="dd/MM/yyyy"
+      disabled={false}
+      id="date-picker"
+      name="date-picker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={true}
+      selected={null}
+    />
+    
+  </div>
+</div>
+`;
+
+exports[`Renders a datepicker without title and label 1`] = `
+<div
+  className="formGroup inline datePickerContainer "
+  id="date-picker-container"
+>
+  
+  <div
+    className="innerContainer"
+  >
+    <Datepicker
+      className="formControl "
+      dateFormat="dd/MM/yyyy"
+      disabled={false}
+      id="date-picker"
+      name="date-picker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={true}
+      selected={null}
+    />
+    
+  </div>
+</div>
+`;
+
 exports[`Renders datepicker with an error message without crashing 1`] = `
 <div
   className="formGroup inline datePickerContainer "
