@@ -92,7 +92,12 @@ export default class DatePickerComponent extends React.Component {
   onChange = date => {
     this.updateValue(date);
     this.props.onChange(date);
-    this.props.onChangeRaw(date);
+    this.hideError();
+  };
+
+  onChangeRaw = e => {
+    this.updateValue(e.target.value);
+    this.props.onChangeRaw(e);
     this.hideError();
   };
 
@@ -181,6 +186,7 @@ export default class DatePickerComponent extends React.Component {
             required={isRequired}
             onBlur={this.props.onBlur}
             onChange={this.onChange}
+            onChangeRaw={this.onChangeRaw}
             onFocus={this.props.onFocus} />
           {icon ?
             <span className={styles.icon}>
