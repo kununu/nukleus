@@ -19,6 +19,7 @@ import {
 
 export default class DatePickerComponent extends React.Component {
   static propTypes = {
+    dateFormat: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
@@ -38,11 +39,11 @@ export default class DatePickerComponent extends React.Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     title: PropTypes.string,
-    value: PropTypes.string,
-    dateFormat: PropTypes.string,
+    value: PropTypes.string
   };
 
   static defaultProps = {
+    dateFormat: 'dd/MM/yyyy',
     disabled: false,
     error: null,
     errorSubInfo: null,
@@ -57,8 +58,7 @@ export default class DatePickerComponent extends React.Component {
     query: {},
     requiredLabel: '',
     title: null,
-    value: '',
-    dateFormat: 'dd/MM/yyyy',
+    value: ''
   };
 
   state = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import DatePicker from 'DatePicker'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 jest.mock('react-datepicker', () => 'Datepicker');
@@ -79,8 +80,8 @@ test('Renders a datepicker without title and label', () => {
     isRequired
     name="date-picker" />);
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Renders a datepicker with labelHidden', () => {
@@ -91,8 +92,8 @@ test('Renders a datepicker with labelHidden', () => {
     title="DatePicker"
     labelHidden />);
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Renders a datepicker with a JSX label', () => {
@@ -106,18 +107,18 @@ test('Renders a datepicker with a JSX label', () => {
       </label>
     )} />);
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
-test('Renders a datepicker and send an error later', () => {
+test('Renders a datepicker and send an error later', done => {
   const component = mount(<DatePicker
     id="date-picker"
     isRequired
     name="date-picker"
     title="DatePicker" />);
 
-  component.setProps({ error: 'Date is empty' });
+  component.setProps({error: 'Date is empty'});
 
   waitingForDebounce(() => {
     expect(toJson(component)).toMatchSnapshot();

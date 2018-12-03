@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders a datepicker and send an error later 1`] = `
+<DatePickerComponent
+  dateFormat="dd/MM/yyyy"
+  disabled={false}
+  error="Date is empty"
+  errorSubInfo={null}
+  icon={null}
+  id="date-picker"
+  inputStyle="inline"
+  isRequired={true}
+  label={null}
+  labelHidden={false}
+  name="date-picker"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  query={Object {}}
+  requiredLabel=""
+  title="DatePicker"
+  value=""
+>
+  <div
+    className="formGroup inline datePickerContainer "
+    id="date-picker-container"
+  >
+    <label
+      className="controlLabel controlLabelError"
+      htmlFor="date-picker"
+    >
+      DatePicker
+    </label>
+    <div
+      className="innerContainer"
+    >
+      <Datepicker
+        className="formControl formControlError"
+        dateFormat="dd/MM/yyyy"
+        disabled={false}
+        id="date-picker"
+        name="date-picker"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={true}
+        selected={null}
+      />
+      <Error
+        info="Date is empty"
+        subInfo={null}
+      >
+        <span
+          className="error"
+        >
+          <strong
+            className="info"
+          >
+            Date is empty
+          </strong>
+        </span>
+      </Error>
+    </div>
+  </div>
+</DatePickerComponent>
+`;
+
 exports[`Renders a datepicker with a JSX label 1`] = `
 <div
   className="formGroup inline datePickerContainer "
