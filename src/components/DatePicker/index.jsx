@@ -39,7 +39,7 @@ export default class DatePickerComponent extends React.Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     title: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.date
   };
 
   static defaultProps = {
@@ -187,10 +187,10 @@ export default class DatePickerComponent extends React.Component {
         <div className={styles.innerContainer}>
           <DatePicker
             className={`${formControl} ${this.hasError() ? formControlError : ''}`}
+            dateFormat={dateFormat}
             name={name}
             id={id}
             disabled={disabled}
-            dateFormat={dateFormat}
             selected={this.state.value ? this.state.value : null}
             required={isRequired}
             onBlur={this.props.onBlur}
