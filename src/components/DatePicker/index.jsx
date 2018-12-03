@@ -170,7 +170,6 @@ export default class DatePickerComponent extends React.Component {
       errorSubInfo,
       inputStyle,
       disabled,
-      isRequired,
       requiredLabel,
       dateFormat
     } = this.props;
