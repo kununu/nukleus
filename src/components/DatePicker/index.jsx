@@ -39,7 +39,10 @@ export default class DatePickerComponent extends React.Component {
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
     title: PropTypes.string,
-    value: PropTypes.date
+    value: PropTypes.oneOfType([
+      PropTypes.instanceOf(Date),
+      PropTypes.string
+    ])
   };
 
   static defaultProps = {
