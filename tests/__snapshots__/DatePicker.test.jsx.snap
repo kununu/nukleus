@@ -15,6 +15,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
   name="date-picker"
   onBlur={[Function]}
   onChange={[Function]}
+  onChangeRaw={[Function]}
   onFocus={[Function]}
   query={Object {}}
   requiredLabel=""

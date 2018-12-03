@@ -19,6 +19,7 @@ storiesOf('Datepicker', module)
       label="Datepicker"
       inputStyle="block"
       onChange={action('onChange')}
+      onChangeRaw={action('onChangeRaw')}
       onFocus={action('onFocus')}
       onBlur={action('onBlur')}
       onClick={action('onClick')}

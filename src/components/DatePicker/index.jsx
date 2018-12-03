@@ -35,6 +35,7 @@ export default class DatePickerComponent extends React.Component {
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
+    onChangeRaw: PropTypes.func,
     onFocus: PropTypes.func,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
@@ -54,6 +55,7 @@ export default class DatePickerComponent extends React.Component {
     labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
+    onChangeRaw: () => {},
     onFocus: () => {},
     query: {},
     requiredLabel: '',
@@ -90,6 +92,7 @@ export default class DatePickerComponent extends React.Component {
   onChange = date => {
     this.updateValue(date);
     this.props.onChange(date);
+    this.props.onChangeRaw(date);
     this.hideError();
   };
 
