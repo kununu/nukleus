@@ -26,7 +26,6 @@ export default class DatePickerComponent extends React.Component {
     icon: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
-    isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object
@@ -52,7 +51,6 @@ export default class DatePickerComponent extends React.Component {
     errorSubInfo: null,
     icon: null,
     inputStyle: 'inline',
-    isRequired: false,
     label: null,
     labelHidden: false,
     onBlur: () => {},
@@ -189,13 +187,13 @@ export default class DatePickerComponent extends React.Component {
 
         <div className={styles.innerContainer}>
           <DatePicker
+            {...this.props}
             className={`${formControl} ${this.hasError() ? formControlError : ''}`}
             dateFormat={dateFormat}
             name={name}
             id={id}
             disabled={disabled}
             selected={this.state.value ? this.state.value : null}
-            required={isRequired}
             onBlur={this.props.onBlur}
             onChange={this.onChange}
             onFocus={this.props.onFocus} />
