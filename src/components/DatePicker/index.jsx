@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
+import isDate from 'date-fns/isDate';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -36,12 +37,13 @@ export default class DatePickerComponent extends React.Component {
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     query: PropTypes.object,
+    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
+    showMonthDropdown: PropTypes.bool,
+    showYearDropdown: PropTypes.bool,
     title: PropTypes.string,
-    value: PropTypes.oneOfType([
-      PropTypes.instanceOf(Date),
-      PropTypes.string
-    ])
+    useShortMonthInDropdown: PropTypes.bool,
+    value: PropTypes.instanceOf(Date)
   };
 
   static defaultProps = {
@@ -57,8 +59,12 @@ export default class DatePickerComponent extends React.Component {
     onChange: () => {},
     onFocus: () => {},
     query: {},
+    required: false,
     requiredLabel: '',
+    showMonthDropdown: false,
+    showYearDropdown: false,
     title: null,
+    useShortMonthInDropdown: false,
     value: ''
   };
 
@@ -163,15 +169,19 @@ export default class DatePickerComponent extends React.Component {
 
   render () {
     const {
-      name,
-      icon,
-      id,
+      dateFormat,
+      disabled,
       error,
       errorSubInfo,
+      icon,
+      id,
       inputStyle,
-      disabled,
+      name,
+      required,
       requiredLabel,
-      dateFormat
+      showMonthDropdown,
+      showYearDropdown,
+      useShortMonthInDropdown
     } = this.props;
 
     return (
@@ -186,16 +196,19 @@ export default class DatePickerComponent extends React.Component {
 
         <div className={styles.innerContainer}>
           <DatePicker
-            {...this.props}
             className={`${formControl} ${this.hasError() ? formControlError : ''}`}
             dateFormat={dateFormat}
-            name={name}
-            id={id}
             disabled={disabled}
-            selected={this.state.value ? this.state.value : null}
+            id={id}
+            name={name}
             onBlur={this.props.onBlur}
             onChange={this.onChange}
-            onFocus={this.props.onFocus} />
+            onFocus={this.props.onFocus}
+            required={required}
+            selected={isDate(this.state.value) ? this.state.value : null}
+            showMonthDropdown={showMonthDropdown}
+            showYearDropdown={showYearDropdown}
+            useShortMonthInDropdown={useShortMonthInDropdown} />
           {icon ?
             <span className={styles.icon}>
               {icon}
