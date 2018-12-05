@@ -14,11 +14,13 @@ storiesOf('Datepicker', module)
   .addDecorator((story, context) => withInfo('Basic datepicker')(story)(context))
   .add('basics', () => (
     <DatePicker
+      dateFormat={text('dateFormat', 'dd/MM/yyyy')}
       error={boolean('error', null)}
       errorSubInfo={text('errorSubInfo', 'Error!')}
       icon={<i className="fa fa-calendar" aria-hidden="true" />}
       id="date-picker"
       inputStyle="block"
+      isRequired={boolean('isRequired', false)}
       label="Datepicker"
       labelHidden={boolean('labelHidden', false)}
       name="date-picker"
@@ -28,5 +30,8 @@ storiesOf('Datepicker', module)
       onClick={action('onClick')}
       onFocus={action('onFocus')}
       requiredLabel={text('requiredLabel', 'required')}
+      showAbbreviatedMonthDropdown={boolean('showAbbreviatedMonthDropdown', false)}
+      showMonthDropdown={boolean('showMonthDropdown', false)}
+      showYearDropdown={boolean('showYearDropdown', false)}
       value={text('value', new Date())} />
   ));

@@ -18,6 +18,9 @@ exports[`Renders a datepicker and send an error later 1`] = `
   onFocus={[Function]}
   query={Object {}}
   requiredLabel=""
+  showAbbreviatedMonthDropdown={false}
+  showMonthDropdown={false}
+  showYearDropdown={false}
   title="DatePicker"
   value=""
 >
@@ -45,6 +48,9 @@ exports[`Renders a datepicker and send an error later 1`] = `
         onFocus={[Function]}
         required={true}
         selected={null}
+        showMonthDropdown={false}
+        showYearDropdown={false}
+        useShortMonthInDropdown={false}
       />
       <Error
         info="Date is empty"
@@ -91,6 +97,9 @@ exports[`Renders a datepicker with a JSX label 1`] = `
       onFocus={[Function]}
       required={true}
       selected={null}
+      showMonthDropdown={false}
+      showYearDropdown={false}
+      useShortMonthInDropdown={false}
     />
     
   </div>
@@ -122,6 +131,9 @@ exports[`Renders a datepicker with labelHidden 1`] = `
       onFocus={[Function]}
       required={true}
       selected={null}
+      showMonthDropdown={false}
+      showYearDropdown={false}
+      useShortMonthInDropdown={false}
     />
     
   </div>
@@ -148,6 +160,9 @@ exports[`Renders a datepicker without title and label 1`] = `
       onFocus={[Function]}
       required={true}
       selected={null}
+      showMonthDropdown={false}
+      showYearDropdown={false}
+      useShortMonthInDropdown={false}
     />
     
   </div>
@@ -180,6 +195,9 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
       onFocus={[Function]}
       required={true}
       selected={null}
+      showMonthDropdown={false}
+      showYearDropdown={false}
+      useShortMonthInDropdown={false}
     />
     
     <span
@@ -222,6 +240,9 @@ exports[`Renders datepicker without crashing 1`] = `
       onFocus={[Function]}
       required={true}
       selected={null}
+      showMonthDropdown={false}
+      showYearDropdown={false}
+      useShortMonthInDropdown={false}
     />
     
   </div>

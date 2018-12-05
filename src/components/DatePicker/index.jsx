@@ -27,6 +27,7 @@ export default class DatePickerComponent extends React.Component {
     icon: PropTypes.element,
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
+    isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object
@@ -37,12 +38,11 @@ export default class DatePickerComponent extends React.Component {
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     query: PropTypes.object,
-    required: PropTypes.bool,
     requiredLabel: PropTypes.string,
+    showAbbreviatedMonthDropdown: PropTypes.bool,
     showMonthDropdown: PropTypes.bool,
     showYearDropdown: PropTypes.bool,
     title: PropTypes.string,
-    useShortMonthInDropdown: PropTypes.bool,
     value: PropTypes.instanceOf(Date)
   };
 
@@ -53,18 +53,18 @@ export default class DatePickerComponent extends React.Component {
     errorSubInfo: null,
     icon: null,
     inputStyle: 'inline',
+    isRequired: false,
     label: null,
     labelHidden: false,
     onBlur: () => {},
     onChange: () => {},
     onFocus: () => {},
     query: {},
-    required: false,
     requiredLabel: '',
+    showAbbreviatedMonthDropdown: false,
     showMonthDropdown: false,
     showYearDropdown: false,
     title: null,
-    useShortMonthInDropdown: false,
     value: ''
   };
 
@@ -106,8 +106,8 @@ export default class DatePickerComponent extends React.Component {
     /*
      * react-datepicker won't return a native DOM event
      * on their onChange callback, so we need to create
-     * a fake one, because kununu-form-wrapper and other
-     * form libs will expect a DOM event object to process this field
+     * a fake one, because React form libraries will
+     * expect a DOM event object to process this field
      */
     onChange({
       target: {
@@ -177,12 +177,14 @@ export default class DatePickerComponent extends React.Component {
       id,
       inputStyle,
       name,
-      required,
+      isRequired,
       requiredLabel,
       showMonthDropdown,
       showYearDropdown,
-      useShortMonthInDropdown
+      showAbbreviatedMonthDropdown
     } = this.props;
+
+    const {value} = this.state;
 
     return (
       <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
@@ -204,11 +206,11 @@ export default class DatePickerComponent extends React.Component {
             onBlur={this.props.onBlur}
             onChange={this.onChange}
             onFocus={this.props.onFocus}
-            required={required}
-            selected={isDate(this.state.value) ? this.state.value : null}
+            required={isRequired}
+            selected={isDate(value) ? value : null}
             showMonthDropdown={showMonthDropdown}
             showYearDropdown={showYearDropdown}
-            useShortMonthInDropdown={useShortMonthInDropdown} />
+            useShortMonthInDropdown={showAbbreviatedMonthDropdown} />
           {icon ?
             <span className={styles.icon}>
               {icon}
