@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
+import isDate from 'date-fns/isDate';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -20,6 +20,7 @@ import {
 
 export default class DatePickerComponent extends React.Component {
   static propTypes = {
+    dateFormat: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
@@ -38,11 +39,15 @@ export default class DatePickerComponent extends React.Component {
     onFocus: PropTypes.func,
     query: PropTypes.object,
     requiredLabel: PropTypes.string,
+    showAbbreviatedMonthDropdown: PropTypes.bool,
+    showMonthDropdown: PropTypes.bool,
+    showYearDropdown: PropTypes.bool,
     title: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.instanceOf(Date)
   };
 
   static defaultProps = {
+    dateFormat: 'dd/MM/yyyy',
     disabled: false,
     error: null,
     errorSubInfo: null,
@@ -56,6 +61,9 @@ export default class DatePickerComponent extends React.Component {
     onFocus: () => {},
     query: {},
     requiredLabel: '',
+    showAbbreviatedMonthDropdown: false,
+    showMonthDropdown: false,
+    showYearDropdown: false,
     title: null,
     value: ''
   };
@@ -86,10 +94,27 @@ export default class DatePickerComponent extends React.Component {
   }
 
   // Property initializer binds method to class instance
-  onChange = date => {
-    this.updateValue(date);
-    this.props.onChange(date);
+  onChange = value => {
+    const {
+      onChange,
+      name
+    } = this.props;
+
+    this.updateValue(value);
     this.hideError();
+
+    /*
+     * react-datepicker won't return a native DOM event
+     * on their onChange callback, so we need to create
+     * a fake one, because React form libraries will
+     * expect a DOM event object to process this field
+     */
+    onChange({
+      target: {
+        name,
+        value
+      }
+    });
   };
 
   get label () {
@@ -144,16 +169,22 @@ export default class DatePickerComponent extends React.Component {
 
   render () {
     const {
-      name,
-      icon,
-      id,
+      dateFormat,
+      disabled,
       error,
       errorSubInfo,
+      icon,
+      id,
       inputStyle,
-      disabled,
+      name,
       isRequired,
-      requiredLabel
+      requiredLabel,
+      showMonthDropdown,
+      showYearDropdown,
+      showAbbreviatedMonthDropdown
     } = this.props;
+
+    const {value} = this.state;
 
     return (
       <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
@@ -168,14 +199,18 @@ export default class DatePickerComponent extends React.Component {
         <div className={styles.innerContainer}>
           <DatePicker
             className={`${formControl} ${this.hasError() ? formControlError : ''}`}
-            name={name}
-            id={id}
+            dateFormat={dateFormat}
             disabled={disabled}
-            selected={this.state.value ? moment(this.state.value) : null}
-            required={isRequired}
+            id={id}
+            name={name}
             onBlur={this.props.onBlur}
             onChange={this.onChange}
-            onFocus={this.props.onFocus} />
+            onFocus={this.props.onFocus}
+            required={isRequired}
+            selected={isDate(value) ? value : null}
+            showMonthDropdown={showMonthDropdown}
+            showYearDropdown={showYearDropdown}
+            useShortMonthInDropdown={showAbbreviatedMonthDropdown} />
           {icon ?
             <span className={styles.icon}>
               {icon}
