@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "13.1.0",
+  "version": "13.1.1",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -128,7 +128,7 @@
     "dist": "npm run clean && npm run babel && npm run sass",
     "eslint": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js",
     "eslint-fix": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js --fix",
-    "prepublish": "npm run dist",
+    "prepare": "npm run dist",
     "clean": "rimraf ./dist",
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sass-lint",
