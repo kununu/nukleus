@@ -87,7 +87,7 @@
     "node-sass-module-importer": "0.1.0",
     "postcss-cli": "5.0.1",
     "postcss-loader": "2.1.4",
-    "react": "16.6.3",
+    "react": "16.7.0",
     "react-dom": "16.6.3",
     "react-markdown": "^3.6.0",
     "react-router": "4.3.1",
