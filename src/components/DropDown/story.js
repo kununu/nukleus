@@ -76,9 +76,6 @@ class DropDownExample extends Component {
         <h3>
           Dropdown
         </h3>
-        <p>
-
-        </p>
         <br />
         <h2>Country Switcher</h2>
         <p>
@@ -105,8 +102,7 @@ class DropDownExample extends Component {
                 top: 'top'
               }, 'bottom')}
               shade="light"
-              showOnHover={false}
-              >
+              showOnHover={false}>
               <DropDownSelector>
                 {this.selectedMenuItem()}
               </DropDownSelector>
