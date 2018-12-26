@@ -1,103 +1,207 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
+// .container {
+//   position: relative;
+//   display: inline-block;
+// }
+//
+// .container.top {
+//   .menu {
+//     top: auto;
+//     bottom: 100%;
+//     border-radius: 4px 4px 0 0;
+//   }
+// }
+//
+// .container.bottom {
+//   .menu {
+//     border-radius: 0 0 4px 4px;
+//   }
+// }
+//
+// .selection {
+//   border: 0;
+//   background-color: transparent;
+//   padding: 12px 0 12px 12px;
+//   font-weight: $font-weight-semibold;
+//   line-height: 20px;
+//   min-width: 130px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//
+//   span {
+//     padding-left: 10px;
+//   }
+//
+//   &.light {
+//     color: $white;
+//   }
+//
+//   &.dark {
+//     color: $text-color;
+//   }
+//
+//   &,
+//   &:focus {
+//     outline: none;
+//   }
+// }
+//
+// .menu {
+//   background-color: $white;
+//   display: none;
+//   min-width: 160px;
+//   margin: 0;
+//   padding: 0;
+//   position: absolute;
+//   right: 0;
+//   z-index: 1060;
+//   overflow: hidden;
+//
+//   li {
+//     list-style-type: none;
+//   }
+//
+//   &.open {
+//     display: block;
+//   }
+// }
+//
+// .item {
+//   cursor: pointer;
+//   font-size: $font-size-small;
+//   color: $text-color;
+//
+//   &:hover {
+//     background-color: $gray-base-03;
+//   }
+//
+//   &:first-child a {
+//     padding-top: 20px;
+//   }
+//
+//   a {
+//     display: block;
+//     padding: 10px 20px;
+//
+//     &,
+//     &:hover {
+//       text-decoration: none;
+//       color: inherit;
+//     }
+//   }
+// }
+
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+
 .container {
   position: relative;
   display: inline-block;
-}
 
-.container.top {
-  .menu {
-    top: auto;
-    bottom: 100%;
-    border-radius: 4px 4px 0 0;
+  &.top {
+    .items {
+      top: auto;
+      bottom: 40px;
+      left: -50px;
+      border-radius: $border-radius-base 0 0;
+    }
   }
-}
 
-.container.bottom {
-  .menu {
-    border-radius: 0 0 4px 4px;
-  }
-}
-
-.selection {
-  border: 0;
-  background-color: transparent;
-  padding: 12px 0 12px 12px;
-  font-weight: $font-weight-semibold;
-  line-height: 20px;
-  min-width: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  span {
-    padding-left: 10px;
+  &.bottom {
+    .items {
+      border-radius: 0 0 $border-radius-base;
+    }
   }
 
   &.light {
-    color: $white;
+    .selectedItem a {
+      color: $white;
+    }
   }
 
   &.dark {
-    color: $text-color;
-  }
-
-  &,
-  &:focus {
-    outline: none;
+    .selectedItem a {
+      color: $text-color;
+    }
   }
 }
 
-.menu {
-  background-color: $white;
-  display: none;
-  min-width: 160px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  right: 0;
-  z-index: 1060;
-  overflow: hidden;
+.selectedItem {
+  .item {
+    a {
+      padding: 10px 30px;
+      font-weight: $font-weight-semibold;
+      text-align: right;
 
-  li {
-    list-style-type: none;
+      &:hover {
+        background-color: none;
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
   }
+}
 
-  &.open {
-    display: block;
+.items {
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  min-width: 160px;
+  background-color: $white;
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .1);
+  z-index: 1060;
+
+  .item {
+    &.hasIcon a {
+      padding-right: 40px;
+    }
+
+    .icon {
+      right: 20px;
+    }
   }
 }
 
 .item {
-  cursor: pointer;
+  position: relative;
   font-size: $font-size-small;
-  color: $text-color;
+  cursor: pointer;
 
-  &:hover {
-    background-color: $gray-base-03;
-  }
-
-  &:first-child a {
-    padding-top: 20px;
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -9px;
   }
 
   a {
     display: block;
     padding: 10px 20px;
+    color: $text-color;
+    text-align: left;
 
-    &,
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
       text-decoration: none;
-      color: inherit;
     }
+  }
+
+  &.active,
+  &:hover {
+    background-color: $gray-base-03;
   }
 }
 
-.pullLeft {
-  float: left;
-}
+.activeHeader a {
+  color: $teal-dark;
 
-.pullRight {
-  float: right;
-  text-align: right;
+  &:focus {
+    text-decoration: none;
+  }
 }

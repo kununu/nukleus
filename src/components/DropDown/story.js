@@ -5,16 +5,65 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, select} from '@storybook/addon-knobs/react';
 
-import DropDown from './index';
+import {
+  DropDown,
+  DropDownSelector,
+  DropDownItem,
+  DropDownItems
+} from './index';
 
 class DropDownExample extends Component {
   state = {
-    activeValue: '/'
+    activeValue: 'at'
   }
 
   updateActiveValue = (e, val) => {
     e.preventDefault();
     this.setState({activeValue: val});
+  }
+
+  selectedMenuItem = () => {
+    const {activeValue: v} = this.state;
+
+    const countries = {
+      at: {
+        code: 'at',
+        icon: <span aria-label="at" role="img">🇦🇹</span>,
+        link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
+        path: '/',
+        value: 'Austria'
+      },
+
+      ch: {
+        code: 'ch',
+        icon: <span aria-label="ch" role="img">🇨🇭</span>,
+        link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
+        path: '/ch',
+        value: 'Switzerland'
+      },
+      de: {
+        code: 'de',
+        icon: <span aria-label="de" role="img">🇩🇪</span>,
+        link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
+        path: '/de',
+        value: 'German'
+      },
+      us: {
+        code: 'us',
+        icon: <span aria-label="us" role="img">🇺🇸</span>,
+        link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
+        path: '/us',
+        value: 'United States'
+      }
+    };
+
+    return (
+      <DropDownItem
+        isActive={v === countries[v].path}
+        icon={countries[v].icon}>
+        <a onClick={e => this.updateActiveValue(e, countries[v].code)} href={countries[v].code}>{countries[v].value}</a>
+      </DropDownItem>
+    );
   }
 
   render () {
@@ -28,11 +77,15 @@ class DropDownExample extends Component {
           Dropdown
         </h3>
         <p>
+
+        </p>
+        <br />
+        <h2>Country Switcher</h2>
+        <p>
           The dropdown itself does not have any background color so it is important to
           position it how you like on whichever background you prefer. That is why
           there are two shade props <code>light</code> and <code>dark</code>. The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
         </p>
-        <br />
         <div style={{
           background: '#f7f7f7',
           display: 'inline-block',
@@ -52,32 +105,34 @@ class DropDownExample extends Component {
                 top: 'top'
               }, 'bottom')}
               shade="light"
-              items={[
-               {
-                 active: activeValue === '/',
-                 icon: <span aria-label="at" role="img">🇦🇹</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
-                 value: 'Austria'
-               },
-               {
-                 active: activeValue === '/de',
-                 icon: <span aria-label="de" role="img">🇩🇪</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
-                 value: 'German'
-               },
-               {
-                 active: activeValue === '/ch',
-                 icon: <span aria-label="ch" role="img">🇨🇭</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
-                 value: 'Switzerland'
-               },
-               {
-                 active: activeValue === '/us',
-                 icon: <span aria-label="us" role="img">🇺🇸</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
-                 value: 'United States'
-               }
-             ]} />
+              showOnHover={false}
+              >
+              <DropDownSelector>
+                {this.selectedMenuItem()}
+              </DropDownSelector>
+              <DropDownItems>
+                <DropDownItem
+                  isActive={activeValue === 'at'}
+                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'de'}
+                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'ch'}
+                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'us'}
+                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
+                </DropDownItem>
+              </DropDownItems>
+            </DropDown>
           </div>
         </div>
         <div style={{
@@ -86,7 +141,7 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#f7f7f7'}}>Dark shade on light background</span>
+          <span style={{color: '#f7f7f7'}}>Dark shade on light background and top position</span>
           <div style={{
             background: '#f7f7f7',
             margin: '100px 0 100px',
@@ -97,34 +152,35 @@ class DropDownExample extends Component {
               position={select('position', {
                 bottom: 'bottom',
                 top: 'top'
-              }, 'bottom')}
+              }, 'top')}
               shade="dark"
-              items={[
-               {
-                 active: activeValue === '/',
-                 icon: <span aria-label="at" role="img">🇦🇹</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
-                 value: 'Austria'
-               },
-               {
-                 active: activeValue === '/de',
-                 icon: <span aria-label="de" role="img">🇩🇪</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
-                 value: 'German'
-               },
-               {
-                 active: activeValue === '/ch',
-                 icon: <span aria-label="ch" role="img">🇨🇭</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
-                 value: 'Switzerland'
-               },
-               {
-                 active: activeValue === '/us',
-                 icon: <span aria-label="us" role="img">🇺🇸</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
-                 value: 'United States'
-               }
-             ]} />
+              showOnHover={false}>
+              <DropDownSelector>
+                {this.selectedMenuItem()}
+              </DropDownSelector>
+              <DropDownItems>
+                <DropDownItem
+                  isActive={activeValue === 'at'}
+                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'de'}
+                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'ch'}
+                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'us'}
+                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
+                </DropDownItem>
+              </DropDownItems>
+            </DropDown>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import styles from './index.scss';
 
 import {clearfix} from '../index.scss';
 
-export default class Dropdown extends React.Component {
+export default class CountrySwitcher extends React.Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       active: PropTypes.boolean,
