@@ -14,13 +14,11 @@ export default class DropDown extends Component {
       PropTypes.element
     ]).isRequired,
     position: PropTypes.oneOf(['top', 'bottom']),
-    shade: PropTypes.oneOf(['light', 'dark']),
     showOnHover: PropTypes.bool
   }
 
   static defaultProps = {
     position: 'bottom',
-    shade: 'light',
     showOnHover: true
   }
 
@@ -94,12 +92,12 @@ export default class DropDown extends Component {
 
   render () {
     /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-    const {position, shade} = this.props;
+    const {position} = this.props;
     const {isOpen} = this.state;
 
     return (
       <div
-        className={`${styles.container} ${styles[position]} ${styles[shade]}`}
+        className={`${styles.container} ${styles[position]}`}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         onClick={this.onClick}

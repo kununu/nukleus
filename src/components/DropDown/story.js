@@ -8,8 +8,8 @@ import {withKnobs, select} from '@storybook/addon-knobs/react';
 import {
   DropDown,
   DropDownSelector,
-  DropDownItem,
-  DropDownItems
+  DropDownItems,
+  DropDownItem
 } from './index';
 
 class DropDownExample extends Component {
@@ -79,18 +79,12 @@ class DropDownExample extends Component {
         <p>
           DropDown component can behave differently depending on purpose it will be used. With <code>showOnHover</code> prop enabled,
           it will show and hide menu when your mouse pass by. y default, it will only toggle when clicked.
-          <br />
-          Note that the dropdown itself does not have any background color so it is important to
-          position it how you like on whichever background you prefer. That is why
-          there are two shade props <code>light</code> and <code>dark</code>.
-          <br />
-          The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
         </p>
         <div style={{
-          background: '#f7f7f7',
+          background: '#d1d3d5',
           display: 'inline-block',
           padding: '10px',
-          width: '33%'
+          width: '50%'
         }}>
           <span>Navigation menu with dropdown</span>
           <div style={{
@@ -101,9 +95,9 @@ class DropDownExample extends Component {
           }}>
             <ul>
               <li>
-                <DropDown shade="dark">
+                <DropDown>
                   <DropDownSelector>
-                    <DropDownItem>
+                    <DropDownItem isActive>
                       <a href="/" onClick={e => e.preventDefault()}>Products&nbsp;&nbsp;<span aria-label="Arrow down" role="img">🔽</span></a>
                     </DropDownItem>
                   </DropDownSelector>
@@ -136,62 +130,14 @@ class DropDownExample extends Component {
           </div>
         </div>
         <div style={{
-          background: '#f7f7f7',
+          background: '#5d656a',
           display: 'inline-block',
           padding: '10px',
-          width: '33%'
+          width: '50%'
         }}>
-          <span>Light shade on dark background</span>
+          <span style={{color: '#ffffff'}}>Country Switcher with flags as icons</span>
           <div style={{
-            background: 'black',
-            margin: '100px 0 100px',
-            paddingRight: '10px',
-            textAlign: 'right'
-          }}>
-            <DropDown
-              position={select('position', {
-                bottom: 'bottom',
-                top: 'top'
-              }, 'bottom')}
-              shade="light"
-              showOnHover={false}>
-              <DropDownSelector>
-                {this.selectedMenuItem()}
-              </DropDownSelector>
-              <DropDownItems>
-                <DropDownItem
-                  isActive={activeValue === 'at'}
-                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'de'}
-                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'ch'}
-                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'us'}
-                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
-                </DropDownItem>
-              </DropDownItems>
-            </DropDown>
-          </div>
-        </div>
-        <div style={{
-          background: 'black',
-          display: 'inline-block',
-          padding: '10px',
-          width: '33%'
-        }}>
-          <span style={{color: '#f7f7f7'}}>Dark shade on light background and top position</span>
-          <div style={{
-            background: '#f7f7f7',
+            background: '#ffffff',
             margin: '100px 0 100px',
             paddingRight: '10px',
             textAlign: 'right'
@@ -201,7 +147,6 @@ class DropDownExample extends Component {
                 bottom: 'bottom',
                 top: 'top'
               }, 'top')}
-              shade="dark"
               showOnHover={false}>
               <DropDownSelector>
                 {this.selectedMenuItem()}
