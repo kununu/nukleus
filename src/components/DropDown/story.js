@@ -76,18 +76,70 @@ class DropDownExample extends Component {
         <h3>
           Dropdown
         </h3>
-        <br />
-        <h2>Country Switcher</h2>
         <p>
-          The dropdown itself does not have any background color so it is important to
+          DropDown component can behave differently depending on purpose it will be used. With <code>showOnHover</code> prop enabled,
+          it will show and hide menu when your mouse pass by. y default, it will only toggle when clicked.
+          <br />
+          Note that the dropdown itself does not have any background color so it is important to
           position it how you like on whichever background you prefer. That is why
-          there are two shade props <code>light</code> and <code>dark</code>. The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
+          there are two shade props <code>light</code> and <code>dark</code>.
+          <br />
+          The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
         </p>
         <div style={{
           background: '#f7f7f7',
           display: 'inline-block',
           padding: '10px',
-          width: '50%'
+          width: '33%'
+        }}>
+          <span>Navigation menu with dropdown</span>
+          <div style={{
+            background: '#ffffff',
+            margin: '100px 0 100px',
+            paddingRight: '10px',
+            textAlign: 'right'
+          }}>
+            <ul>
+              <li>
+                <DropDown shade="dark">
+                  <DropDownSelector>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Products&nbsp;&nbsp;🔽</a>
+                    </DropDownItem>
+                  </DropDownSelector>
+                  <DropDownItems>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Bathroom</a>
+                    </DropDownItem>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Bedroom</a>
+                    </DropDownItem>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Cooking</a>
+                    </DropDownItem>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Decoration</a>
+                    </DropDownItem>
+                    <DropDownItem>
+                      <a href="#" onClick={(e) => {e.preventDefault()}}>Home Electronics</a>
+                    </DropDownItem>
+                  </DropDownItems>
+                </DropDown>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => {e.preventDefault()}}>Offers</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => {e.preventDefault()}}>Services</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style={{
+          background: '#f7f7f7',
+          display: 'inline-block',
+          padding: '10px',
+          width: '33%'
         }}>
           <span>Light shade on dark background</span>
           <div style={{
@@ -135,7 +187,7 @@ class DropDownExample extends Component {
           background: 'black',
           display: 'inline-block',
           padding: '10px',
-          width: '50%'
+          width: '33%'
         }}>
           <span style={{color: '#f7f7f7'}}>Dark shade on light background and top position</span>
           <div style={{

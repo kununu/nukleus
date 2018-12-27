@@ -22,7 +22,10 @@ DropDownItem.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element
   ]).isRequired,
-  icon: PropTypes.element,
+  icon: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.bool,
+  ]),
   isActive: PropTypes.bool
 };
 

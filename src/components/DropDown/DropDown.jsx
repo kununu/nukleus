@@ -56,14 +56,14 @@ export default class DropDown extends Component {
   onClick = () => this.toggleDropDown();
 
   onClickDocument = e => {
-    if (this.isButtonElement(e)) return;
+    if (this.isClickOutside(e)) return;
 
     setTimeout(() => {
       this.setState({isOpen: false});
     }, 100);
   }
 
-  isButtonElement (e) {
+  isClickOutside (e) {
     return this.node.contains(e.target);
   }
 
@@ -102,7 +102,8 @@ export default class DropDown extends Component {
         className={`${styles.container} ${styles[position]} ${styles[shade]}`}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
-        onClick={this.onClick}>
+        onClick={this.onClick}
+        ref={node => this.node = node}>
         {this.renderChildren(DropDownSelector)}
         {isOpen &&
           this.renderChildren(DropDownItems)}
