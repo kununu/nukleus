@@ -5,19 +5,32 @@
   position: relative;
   display: inline-block;
 
-  &.top {
+  &.up {
     .items {
       top: auto;
       bottom: 100%;
-      right: -10px;
-      left: auto;
       border-radius: $border-radius-base 0 0;
     }
   }
 
-  &.bottom {
+  &.down {
     .items {
+      top: 100%;
+      left: 0;
       border-radius: 0 0 $border-radius-base;
+    }
+  }
+
+  &.left {
+    .items {
+      left: 0;
+    }
+  }
+
+  &.right {
+    .items {
+      right: 0;
+      left: auto;
     }
   }
 }
@@ -25,7 +38,7 @@
 .selectedItem {
   .item {
     &.hasIcon a {
-      padding: 10px 30px;
+      padding: 10px 35px 10px 30px;
       font-weight: $font-weight-semibold;
       text-align: right;
     }
@@ -38,8 +51,6 @@
 
 .items {
   position: absolute;
-  top: 100%;
-  left: 0;
   min-width: 160px;
   background-color: $white;
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .1);
@@ -51,7 +62,7 @@
     }
 
     .icon {
-      right: 20px;
+      right: 15px;
     }
   }
 }
@@ -64,13 +75,13 @@
   .icon {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 10px;
     margin-top: -9px;
   }
 
   a {
     display: block;
-    padding: 10px;
+    padding: 10px 15px;
     text-align: left;
 
     &:hover,

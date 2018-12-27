@@ -9,16 +9,18 @@ import styles from './index.scss';
 
 export default class DropDown extends Component {
   static propTypes = {
+    align: PropTypes.oneOf(['left', 'right']),
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.element),
       PropTypes.element
     ]).isRequired,
-    position: PropTypes.oneOf(['top', 'bottom']),
+    direction: PropTypes.oneOf(['up', 'down']),
     showOnHover: PropTypes.bool
   }
 
   static defaultProps = {
-    position: 'bottom',
+    align: 'left',
+    direction: 'down',
     showOnHover: true
   }
 
@@ -41,39 +43,35 @@ export default class DropDown extends Component {
     const {showOnHover} = this.props;
 
     if (!showOnHover) return;
-    this.openDropDown();
+    this.open();
   }
 
   onMouseLeave = () => {
     const {showOnHover} = this.props;
 
     if (!showOnHover) return;
-    this.closeDropDown();
+    this.close();
   }
 
-  onClick = () => this.toggleDropDown();
+  onClick = () => this.toggle();
 
   onClickDocument = e => {
-    if (this.isClickOutside(e)) return;
+    if (this.node.contains(e.target)) return;
 
     setTimeout(() => {
       this.setState({isOpen: false});
     }, 100);
   }
 
-  isClickOutside (e) {
-    return this.node.contains(e.target);
-  }
-
-  toggleDropDown () {
+  toggle () {
     this.setState({isOpen: !this.state.isOpen});
   }
 
-  openDropDown () {
+  open () {
     this.setState({isOpen: true});
   }
 
-  closeDropDown () {
+  close () {
     this.setState({isOpen: false});
   }
 
@@ -92,12 +90,12 @@ export default class DropDown extends Component {
 
   render () {
     /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-    const {position} = this.props;
+    const {direction, align} = this.props;
     const {isOpen} = this.state;
 
     return (
       <div
-        className={`${styles.container} ${styles[position]}`}
+        className={`${styles.container} ${styles[direction]} ${styles[align]}`}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         onClick={this.onClick}

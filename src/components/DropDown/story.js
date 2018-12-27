@@ -78,7 +78,9 @@ class DropDownExample extends Component {
         </h3>
         <p>
           DropDown component can behave differently depending on purpose it will be used. With <code>showOnHover</code> prop enabled,
-          it will show and hide menu when your mouse pass by. y default, it will only toggle when clicked.
+          it will show and hide menu when your mouse pass by.
+          <br />
+          <code>align</code> and <code>direction</code> can also be used to control alignment and direction in which dropdown will open.
         </p>
         <div style={{
           background: '#d1d3d5',
@@ -135,18 +137,59 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#ffffff'}}>Country Switcher with flags as icons</span>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>icon</code>, <code>align="right"</code> and <code>showOnHover=&#123;false&#125;</code> props</span>
           <div style={{
             background: '#ffffff',
             margin: '100px 0 100px',
-            paddingRight: '10px',
             textAlign: 'right'
           }}>
             <DropDown
-              position={select('position', {
-                bottom: 'bottom',
-                top: 'top'
-              }, 'top')}
+              align="right"
+              showOnHover={false}>
+              <DropDownSelector>
+                {this.selectedMenuItem()}
+              </DropDownSelector>
+              <DropDownItems>
+                <DropDownItem
+                  isActive={activeValue === 'at'}
+                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'de'}
+                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'ch'}
+                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
+                </DropDownItem>
+                <DropDownItem
+                  isActive={activeValue === 'us'}
+                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
+                </DropDownItem>
+              </DropDownItems>
+            </DropDown>
+          </div>
+        </div>
+        <br />
+        <div style={{
+          background: '#5d656a',
+          display: 'inline-block',
+          padding: '10px',
+          width: '50%'
+        }}>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>align="right"</code> and <code>direction="up"</code> props</span>
+          <div style={{
+            background: '#ffffff',
+            margin: '100px 0 100px',
+            textAlign: 'right'
+          }}>
+            <DropDown
+              align="right"
+              direction="up"
               showOnHover={false}>
               <DropDownSelector>
                 {this.selectedMenuItem()}
