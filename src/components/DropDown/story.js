@@ -190,8 +190,7 @@ class DropDownExample extends Component {
           }}>
             <DropDown
               align="right"
-              direction="up"
-              showOnHover={false}>
+              direction="up">
               <DropDownSelector>
                 {this.selectedMenuItem()}
               </DropDownSelector>
