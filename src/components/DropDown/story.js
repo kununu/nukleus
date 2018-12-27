@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import React, {Component} from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, select} from '@storybook/addon-knobs/react';
+import {withKnobs} from '@storybook/addon-knobs/react';
 
 import {
   DropDown,
@@ -137,7 +138,7 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#ffffff'}}>Dropdown with <code>icon</code>, <code>align="right"</code> and <code>showOnHover=&#123;false&#125;</code> props</span>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>icon</code>, <code>{'align="right"'}</code> and <code>{'showOnHover={false}'}</code> props</span>
           <div style={{
             background: '#ffffff',
             margin: '100px 0 100px',
@@ -181,7 +182,7 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#ffffff'}}>Dropdown with <code>align="right"</code> and <code>direction="up"</code> props</span>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>{'align="right"'}</code> and <code>{'direction="up"'}</code> props</span>
           <div style={{
             background: '#ffffff',
             margin: '100px 0 100px',
@@ -229,3 +230,4 @@ storiesOf('DropDown', module)
   .addDecorator((story, context) => withInfo('The DropDown component!')(story)(context))
   .addDecorator(withKnobs)
   .add('basics', () => <DropDownExample />);
+/* eslint-enable react/jsx-curly-brace-presence */
