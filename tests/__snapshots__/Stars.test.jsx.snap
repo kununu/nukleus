@@ -545,9 +545,7 @@ exports[`Renders correctly rounded star values 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -578,9 +576,7 @@ exports[`Renders correctly rounded star values 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -611,9 +607,7 @@ exports[`Renders correctly rounded star values 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -644,9 +638,7 @@ exports[`Renders correctly rounded star values 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -677,9 +669,7 @@ exports[`Renders correctly rounded star values 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -725,9 +715,7 @@ exports[`Renders empty stars with no value 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -758,9 +746,7 @@ exports[`Renders empty stars with no value 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -791,9 +777,7 @@ exports[`Renders empty stars with no value 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -824,9 +808,7 @@ exports[`Renders empty stars with no value 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -857,9 +839,7 @@ exports[`Renders empty stars with no value 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -1146,9 +1126,7 @@ exports[`Renders static Stars without crashing 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -1193,9 +1171,7 @@ exports[`Renders static Stars without crashing 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -1226,9 +1202,7 @@ exports[`Renders static Stars without crashing 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -1259,9 +1233,7 @@ exports[`Renders static Stars without crashing 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
@@ -1292,9 +1264,7 @@ exports[`Renders static Stars without crashing 1`] = `
     <div
       className="starsGroup"
     >
-      <label
-        htmlFor={undefined}
-      >
+      <label>
         <svg
           className="star false"
           preserveAspectRatio="xMidYMid meet"
