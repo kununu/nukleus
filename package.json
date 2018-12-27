@@ -10,7 +10,7 @@
       "node_modules"
     ]
   },
-  "version": "13.1.1",
+  "version": "13.2.0-beta.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {

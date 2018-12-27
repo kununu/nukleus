@@ -104,33 +104,33 @@ class DropDownExample extends Component {
                 <DropDown shade="dark">
                   <DropDownSelector>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Products&nbsp;&nbsp;🔽</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Products&nbsp;&nbsp;<span aria-label="Arrow down" role="img">🔽</span></a>
                     </DropDownItem>
                   </DropDownSelector>
                   <DropDownItems>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Bathroom</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
                     </DropDownItem>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Bedroom</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
                     </DropDownItem>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Cooking</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
                     </DropDownItem>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Decoration</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Decoration</a>
                     </DropDownItem>
                     <DropDownItem>
-                      <a href="#" onClick={(e) => {e.preventDefault()}}>Home Electronics</a>
+                      <a href="/" onClick={e => e.preventDefault()}>Home Electronics</a>
                     </DropDownItem>
                   </DropDownItems>
                 </DropDown>
               </li>
               <li>
-                <a href="#" onClick={(e) => {e.preventDefault()}}>Offers</a>
+                <a href="/" onClick={e => e.preventDefault()}>Offers</a>
               </li>
               <li>
-                <a href="#" onClick={(e) => {e.preventDefault()}}>Services</a>
+                <a href="/" onClick={e => e.preventDefault()}>Services</a>
               </li>
             </ul>
           </div>
