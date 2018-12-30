@@ -30,24 +30,24 @@ class DropDownExample extends Component {
       at: {
         code: 'at',
         icon: <span aria-label="at" role="img">🇦🇹</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
+        link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Österreich</a>,
         path: '/',
-        value: 'Austria'
+        value: 'Österreich'
       },
 
       ch: {
         code: 'ch',
         icon: <span aria-label="ch" role="img">🇨🇭</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
+        link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Schweiz</a>,
         path: '/ch',
-        value: 'Switzerland'
+        value: 'Schweiz'
       },
       de: {
         code: 'de',
         icon: <span aria-label="de" role="img">🇩🇪</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
+        link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">Deutschland</a>,
         path: '/de',
-        value: 'German'
+        value: 'Deutschland'
       },
       us: {
         code: 'us',
@@ -154,17 +154,17 @@ class DropDownExample extends Component {
                 <DropDownItem
                   isActive={activeValue === 'at'}
                   icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
+                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'de'}
                   icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
+                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'ch'}
                   icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
+                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'us'}
@@ -198,17 +198,17 @@ class DropDownExample extends Component {
                 <DropDownItem
                   isActive={activeValue === 'at'}
                   icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Austria</a>
+                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'de'}
                   icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">German</a>
+                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'ch'}
                   icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Switzerland</a>
+                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
                 </DropDownItem>
                 <DropDownItem
                   isActive={activeValue === 'us'}

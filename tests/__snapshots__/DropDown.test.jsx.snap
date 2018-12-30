@@ -1,550 +1,260 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Closes menu when document is clicked 1`] = `
-<Dropdown
-  items={
-    Array [
-      Object {
-        "active": false,
-        "icon": <img
-          alt="Austrian flag"
-          src="austrianflag.jpg"
-        />,
-        "link": <a
-          alt="hi"
-          href="/at"
-        >
-          Austria
-        </a>,
-        "value": "Austria",
-      },
-      Object {
-        "active": true,
-        "icon": <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />,
-        "link": <a
-          href="/de"
-        >
-          German
-        </a>,
-        "value": "German",
-      },
-    ]
-  }
-  position="top"
-  shade="light"
+<DropDown
+  align="left"
+  direction="down"
+  showOnHover={false}
 >
   <div
-    className="container top"
+    className="container down left"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    <button
-      className="selection clearfix light"
-      onClick={[Function]}
+    <DropDownSelector
+      isActive={false}
     >
-      German
-      <span
-        className="pullRight"
+      <div
+        className="selectedItem false"
       >
-        <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />
-      </span>
-    </button>
-    <ul
-      className="menu "
-    >
-      <li
-        className="item clearfix"
-        key="Austria"
-      >
-        <a
-          alt="hi"
-          href="/at"
+        <DropDownItem
+          icon={
+            <span
+              aria-label="de"
+              role="img"
+            >
+              🇩🇪
+            </span>
+          }
+          isActive={true}
         >
-          <span
-            className="clearfix"
+          <div
+            className="item active hasIcon"
           >
-            <span
-              className="pullLeft"
+            <a
+              href="/de"
             >
-              Austria
-            </span>
+              Deutschland
+            </a>
             <span
-              className="pullRight"
+              className="icon"
             >
-              <img
-                alt="Austrian flag"
-                src="austrianflag.jpg"
-              />
+              <span
+                aria-label="de"
+                role="img"
+              >
+                🇩🇪
+              </span>
             </span>
-          </span>
-        </a>
-      </li>
-      <li
-        className="item clearfix"
-        key="German"
-      >
-        <a
-          href="/de"
-        >
-          <span
-            className="clearfix"
-          >
-            <span
-              className="pullLeft"
-            >
-              German
-            </span>
-            <span
-              className="pullRight"
-            >
-              <img
-                alt="German flag"
-                src="germanflag.jpg"
-              />
-            </span>
-          </span>
-        </a>
-      </li>
-    </ul>
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownSelector>
   </div>
-</Dropdown>
+</DropDown>
 `;
 
 exports[`Renders DropDown without crashing 1`] = `
 <div
-  className="container top"
+  className="container down left"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <button
-    className="selection clearfix light"
-    onClick={[Function]}
+  <div
+    className="selectedItem false"
   >
-    German
-    <span
-      className="pullRight"
-    >
-      <img
-        alt="German flag"
-        src="germanflag.jpg"
-      />
-    </span>
-  </button>
-  <ul
-    className="menu "
-  >
-    <li
-      className="item clearfix"
+    <div
+      className="item active false"
     >
       <a
-        alt="hi"
-        href="/at"
+        href="/"
       >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            Austria
-          </span>
-          <span
-            className="pullRight"
-          >
-            <img
-              alt="Austrian flag"
-              src="austrianflag.jpg"
-            />
-          </span>
-        </span>
+        Products
       </a>
-    </li>
-    <li
-      className="item clearfix"
-    >
-      <a
-        href="/de"
-      >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            German
-          </span>
-          <span
-            className="pullRight"
-          >
-            <img
-              alt="German flag"
-              src="germanflag.jpg"
-            />
-          </span>
-        </span>
-      </a>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`Renders correct default selection 1`] = `
-<div
-  className="container top"
->
-  <button
-    className="selection clearfix light"
-    onClick={[Function]}
-  >
-    Austria
-    <span
-      className="pullRight"
-    >
-      <img
-        alt="Austrian flag"
-        src="austrianflag.jpg"
-      />
-    </span>
-  </button>
-  <ul
-    className="menu "
-  >
-    <li
-      className="item clearfix"
-    >
-      <a
-        alt="hi"
-        href="/at"
-      >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            Austria
-          </span>
-          <span
-            className="pullRight"
-          >
-            <img
-              alt="Austrian flag"
-              src="austrianflag.jpg"
-            />
-          </span>
-        </span>
-      </a>
-    </li>
-    <li
-      className="item clearfix"
-    >
-      <a
-        href="/de"
-      >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            German
-          </span>
-          <span
-            className="pullRight"
-          >
-            <img
-              alt="German flag"
-              src="germanflag.jpg"
-            />
-          </span>
-        </span>
-      </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Renders correctly when no icon is provided 1`] = `
 <div
-  className="container top"
+  className="container down left"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <button
-    className="selection clearfix light"
-    onClick={[Function]}
+  <div
+    className="selectedItem false"
   >
-    Austria
-    
-  </button>
-  <ul
-    className="menu "
-  >
-    <li
-      className="item clearfix"
+    <div
+      className="item false false"
     >
       <a
-        alt="hi"
-        href="/at"
+        href="/"
       >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            Austria
-          </span>
-          
-        </span>
+        Österreich
       </a>
-    </li>
-    <li
-      className="item clearfix"
-    >
-      <a
-        href="/de"
-      >
-        <span
-          className="clearfix"
-        >
-          <span
-            className="pullLeft"
-          >
-            German
-          </span>
-          
-        </span>
-      </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Renders menu when button is clicked 1`] = `
-<Dropdown
-  items={
-    Array [
-      Object {
-        "active": false,
-        "icon": <img
-          alt="Austrian flag"
-          src="austrianflag.jpg"
-        />,
-        "link": <a
-          alt="hi"
-          href="/at"
-        >
-          Austria
-        </a>,
-        "value": "Austria",
-      },
-      Object {
-        "active": true,
-        "icon": <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />,
-        "link": <a
-          href="/de"
-        >
-          German
-        </a>,
-        "value": "German",
-      },
-    ]
-  }
-  position="top"
-  shade="light"
+<DropDown
+  align="left"
+  direction="down"
+  showOnHover={false}
 >
   <div
-    className="container top"
+    className="container down left"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    <button
-      className="selection clearfix light"
-      onClick={[Function]}
+    <DropDownSelector
+      isActive={false}
     >
-      German
-      <span
-        className="pullRight"
+      <div
+        className="selectedItem false"
       >
-        <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />
-      </span>
-    </button>
-    <ul
-      className="menu open"
-    >
-      <li
-        className="item clearfix"
-        key="Austria"
-      >
-        <a
-          alt="hi"
-          href="/at"
+        <DropDownItem
+          icon={
+            <span
+              aria-label="us"
+              role="img"
+            >
+              🇺🇸
+            </span>
+          }
+          isActive={true}
         >
-          <span
-            className="clearfix"
+          <div
+            className="item active hasIcon"
           >
-            <span
-              className="pullLeft"
+            <a
+              href="/us"
             >
-              Austria
-            </span>
+              United States
+            </a>
             <span
-              className="pullRight"
+              className="icon"
             >
-              <img
-                alt="Austrian flag"
-                src="austrianflag.jpg"
-              />
+              <span
+                aria-label="us"
+                role="img"
+              >
+                🇺🇸
+              </span>
             </span>
-          </span>
-        </a>
-      </li>
-      <li
-        className="item clearfix"
-        key="German"
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownSelector>
+    <DropDownItems>
+      <div
+        className="items"
       >
-        <a
-          href="/de"
+        <DropDownItem
+          icon={
+            <span
+              aria-label="at"
+              role="img"
+            >
+              🇦🇹
+            </span>
+          }
+          isActive={false}
         >
-          <span
-            className="clearfix"
+          <div
+            className="item false hasIcon"
           >
-            <span
-              className="pullLeft"
+            <a
+              href="/"
             >
-              German
-            </span>
+              Österreich
+            </a>
             <span
-              className="pullRight"
+              className="icon"
             >
-              <img
-                alt="German flag"
-                src="germanflag.jpg"
-              />
+              <span
+                aria-label="at"
+                role="img"
+              >
+                🇦🇹
+              </span>
             </span>
-          </span>
-        </a>
-      </li>
-    </ul>
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownItems>
   </div>
-</Dropdown>
+</DropDown>
 `;
 
-exports[`Updates selection on item click 1`] = `
-<Dropdown
-  items={
-    Array [
-      Object {
-        "active": false,
-        "icon": <img
-          alt="Austrian flag"
-          src="austrianflag.jpg"
-        />,
-        "link": <a
-          alt="hi"
-          href="/at"
-        >
-          Austria
-        </a>,
-        "value": "Austria",
-      },
-      Object {
-        "active": true,
-        "icon": <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />,
-        "link": <a
-          href="/de"
-        >
-          German
-        </a>,
-        "value": "German",
-      },
-    ]
-  }
-  position="top"
-  shade="light"
+exports[`Renders with align right and showOnHover false 1`] = `
+<div
+  className="container down right"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
-    className="container top"
+    className="selectedItem false"
   >
-    <button
-      className="selection clearfix light"
-      onClick={[Function]}
+    <div
+      className="item active hasIcon"
     >
-      German
+      <a
+        href="/"
+      >
+        Österreich
+      </a>
       <span
-        className="pullRight"
+        className="icon"
       >
-        <img
-          alt="German flag"
-          src="germanflag.jpg"
-        />
+        <span
+          aria-label="at"
+          role="img"
+        >
+          🇦🇹
+        </span>
       </span>
-    </button>
-    <ul
-      className="menu "
-    >
-      <li
-        className="item clearfix"
-        key="Austria"
-      >
-        <a
-          alt="hi"
-          href="/at"
-        >
-          <span
-            className="clearfix"
-          >
-            <span
-              className="pullLeft"
-            >
-              Austria
-            </span>
-            <span
-              className="pullRight"
-            >
-              <img
-                alt="Austrian flag"
-                src="austrianflag.jpg"
-              />
-            </span>
-          </span>
-        </a>
-      </li>
-      <li
-        className="item clearfix"
-        key="German"
-      >
-        <a
-          href="/de"
-        >
-          <span
-            className="clearfix"
-          >
-            <span
-              className="pullLeft"
-            >
-              German
-            </span>
-            <span
-              className="pullRight"
-            >
-              <img
-                alt="German flag"
-                src="germanflag.jpg"
-              />
-            </span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    </div>
   </div>
-</Dropdown>
+</div>
+`;
+
+exports[`Renders with direction up 1`] = `
+<div
+  className="container up left"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="selectedItem false"
+  >
+    <div
+      className="item active hasIcon"
+    >
+      <a
+        href="/"
+      >
+        Österreich
+      </a>
+      <span
+        className="icon"
+      >
+        <span
+          aria-label="at"
+          role="img"
+        >
+          🇦🇹
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
 `;
