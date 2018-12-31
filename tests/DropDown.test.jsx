@@ -1,8 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-
 import {
   DropDown,
   DropDownSelector,
@@ -11,7 +10,7 @@ import {
 } from 'DropDown'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
 test('Renders DropDown without crashing', () => {
-  const component = renderer.create(
+  const component = renderer.create((
     <DropDown>
       <DropDownSelector>
         <DropDownItem isActive>
@@ -36,20 +35,18 @@ test('Renders DropDown without crashing', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders with align right and showOnHover false', () => {
-  const component = renderer.create(
-    <DropDown
-      align="right"
-      showOnHover={false}>
+  const component = renderer.create((
+    <DropDown align="right" showOnHover={false}>
       <DropDownSelector>
         <DropDownItem
-          isActive={true}
+          isActive
           icon={<span aria-label="at" role="img">🇦🇹</span>}>
           <a href="/">Österreich</a>
         </DropDownItem>
@@ -73,19 +70,18 @@ test('Renders with align right and showOnHover false', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders with direction up', () => {
-  const component = renderer.create(
-    <DropDown
-      direction="up">
+  const component = renderer.create((
+    <DropDown direction="up">
       <DropDownSelector>
         <DropDownItem
-          isActive={true}
+          isActive
           icon={<span aria-label="at" role="img">🇦🇹</span>}>
           <a href="/">Österreich</a>
         </DropDownItem>
@@ -97,18 +93,18 @@ test('Renders with direction up', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders menu when button is clicked', () => {
-  const component = mount(
+  const component = mount((
     <DropDown showOnHover={false}>
       <DropDownSelector>
         <DropDownItem
-          isActive={true}
+          isActive
           icon={<span aria-label="us" role="img">🇺🇸</span>}>
           <a href="/us">United States</a>
         </DropDownItem>
@@ -120,41 +116,46 @@ test('Renders menu when button is clicked', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
-  component.find('div.selectedItem a').simulate('click');
-  const tree = toJson(component);
-  expect(tree).toMatchSnapshot();
-});
-
-test('Closes menu when document is clicked', () => {
-  const component = mount(
-    <DropDown showOnHover={false}>
-      <DropDownSelector>
-        <DropDownItem
-          isActive={true}
-          icon={<span aria-label="de" role="img">🇩🇪</span>}>
-          <a href="/de">Deutschland</a>
-        </DropDownItem>
-      </DropDownSelector>
-      <DropDownItems>
-        <DropDownItem
-          icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-          <a href="/ch">Schweiz</a>
-        </DropDownItem>
-      </DropDownItems>
-    </DropDown>
-  );
-
-  component.find('div.selectedItem a').simulate('click');
   component.find('div.selectedItem a').simulate('click');
 
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
 });
 
-test.skip('Renders menu when hovered', () => {
-  const component = mount(
+test.skip('Closes menu when click outside', () => {
+  const component = mount((
+    <div>
+      <DropDown showOnHover={false}>
+        <DropDownSelector>
+          <DropDownItem
+            isActive
+            icon={<span aria-label="de" role="img">🇩🇪</span>}>
+            <a href="/de">Deutschland</a>
+          </DropDownItem>
+        </DropDownSelector>
+        <DropDownItems>
+          <DropDownItem
+            icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+            <a href="/ch">Schweiz</a>
+          </DropDownItem>
+        </DropDownItems>
+      </DropDown>
+
+      <button type="button">Click outside</button>
+    </div>
+  ));
+
+  component.find('div.container').simulate('click');
+  component.find('button').simulate('click');
+
+  const tree = toJson(component);
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders menu when hovered', () => {
+  const component = mount((
     <DropDown>
       <DropDownSelector>
         <DropDownItem>
@@ -167,19 +168,39 @@ test.skip('Renders menu when hovered', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
-  console.log(component.debug());
-  component.find('div.selectedItem a').simulate('mouseenter');
-  console.log(component.debug());
-  // component.find('div.selectedItem a').simulate('click');
+  component.find('div.container').simulate('mouseenter');
 
-  // const tree = component.toJSON();
-  // expect(tree).toMatchSnapshot();
+  const tree = toJson(component);
+  expect(tree).toMatchSnapshot();
 });
 
-test.skip('Renders menu when hovered', () => {
-  const component = mount(
+test('Closes menu when not hovered', () => {
+  const component = mount((
+    <DropDown>
+      <DropDownSelector>
+        <DropDownItem>
+          <a href="/">Österreich</a>
+        </DropDownItem>
+      </DropDownSelector>
+      <DropDownItems>
+        <DropDownItem>
+          <a href="/ch">Schweiz</a>
+        </DropDownItem>
+      </DropDownItems>
+    </DropDown>
+  ));
+
+  component.find('div.container').simulate('mouseenter');
+  component.find('div.container').simulate('mouseleave');
+
+  const tree = toJson(component);
+  expect(tree).toMatchSnapshot();
+});
+
+test('Does not open menu when hovered while showOnHover is enabled', () => {
+  const component = mount((
     <DropDown showOnHover={false}>
       <DropDownSelector>
         <DropDownItem>
@@ -192,15 +213,38 @@ test.skip('Renders menu when hovered', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
+
+  component.find('div.container').simulate('mouseenter');
+  component.find('div.container').simulate('mouseleave');
+
+  const tree = toJson(component);
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders correctly when no icon is provided', () => {
+  const component = renderer.create((
+    <DropDown showOnHover={false}>
+      <DropDownSelector>
+        <DropDownItem>
+          <a href="/">Österreich</a>
+        </DropDownItem>
+      </DropDownSelector>
+      <DropDownItems>
+        <DropDownItem>
+          <a href="/ch">Schweiz</a>
+        </DropDownItem>
+      </DropDownItems>
+    </DropDown>
+  ));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders correctly when no icon is provided', () => {
-  const component = renderer.create(
-    <DropDown showOnHover={false}>
+test('Unmount triggers lifecycle method', () => {
+  const component = mount((
+    <DropDown>
       <DropDownSelector>
         <DropDownItem>
           <a href="/">Österreich</a>
@@ -212,8 +256,10 @@ test('Renders correctly when no icon is provided', () => {
         </DropDownItem>
       </DropDownItems>
     </DropDown>
-  );
+  ));
 
-  const tree = component.toJSON();
+  component.unmount();
+
+  const tree = toJson(component);
   expect(tree).toMatchSnapshot();
 });

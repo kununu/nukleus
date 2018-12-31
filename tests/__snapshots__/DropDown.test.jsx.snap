@@ -1,6 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Closes menu when document is clicked 1`] = `
+exports[`Closes menu when click outside 1`] = `
+<div>
+  <DropDown
+    align="left"
+    direction="down"
+    showOnHover={false}
+  >
+    <div
+      className="container down left"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <DropDownSelector
+        isActive={false}
+      >
+        <div
+          className="selectedItem false"
+        >
+          <DropDownItem
+            icon={
+              <span
+                aria-label="de"
+                role="img"
+              >
+                🇩🇪
+              </span>
+            }
+            isActive={true}
+          >
+            <div
+              className="item active hasIcon"
+            >
+              <a
+                href="/de"
+              >
+                Deutschland
+              </a>
+              <span
+                className="icon"
+              >
+                <span
+                  aria-label="de"
+                  role="img"
+                >
+                  🇩🇪
+                </span>
+              </span>
+            </div>
+          </DropDownItem>
+        </div>
+      </DropDownSelector>
+      <DropDownItems>
+        <div
+          className="items"
+        >
+          <DropDownItem
+            icon={
+              <span
+                aria-label="ch"
+                role="img"
+              >
+                🇨🇭
+              </span>
+            }
+            isActive={false}
+          >
+            <div
+              className="item false hasIcon"
+            >
+              <a
+                href="/ch"
+              >
+                Schweiz
+              </a>
+              <span
+                className="icon"
+              >
+                <span
+                  aria-label="ch"
+                  role="img"
+                >
+                  🇨🇭
+                </span>
+              </span>
+            </div>
+          </DropDownItem>
+        </div>
+      </DropDownItems>
+    </div>
+  </DropDown>
+  <button
+    type="button"
+  >
+    Click outside
+  </button>
+</div>
+`;
+
+exports[`Closes menu when not hovered 1`] = `
+<DropDown
+  align="left"
+  direction="down"
+  showOnHover={true}
+>
+  <div
+    className="container down left"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <DropDownSelector
+      isActive={false}
+    >
+      <div
+        className="selectedItem false"
+      >
+        <DropDownItem
+          icon={false}
+          isActive={false}
+        >
+          <div
+            className="item false false"
+          >
+            <a
+              href="/"
+            >
+              Österreich
+            </a>
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownSelector>
+  </div>
+</DropDown>
+`;
+
+exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
 <DropDown
   align="left"
   direction="down"
@@ -19,34 +156,17 @@ exports[`Closes menu when document is clicked 1`] = `
         className="selectedItem false"
       >
         <DropDownItem
-          icon={
-            <span
-              aria-label="de"
-              role="img"
-            >
-              🇩🇪
-            </span>
-          }
-          isActive={true}
+          icon={false}
+          isActive={false}
         >
           <div
-            className="item active hasIcon"
+            className="item false false"
           >
             <a
-              href="/de"
+              href="/"
             >
-              Deutschland
+              Österreich
             </a>
-            <span
-              className="icon"
-            >
-              <span
-                aria-label="de"
-                role="img"
-              >
-                🇩🇪
-              </span>
-            </span>
           </div>
         </DropDownItem>
       </div>
@@ -193,6 +313,64 @@ exports[`Renders menu when button is clicked 1`] = `
 </DropDown>
 `;
 
+exports[`Renders menu when hovered 1`] = `
+<DropDown
+  align="left"
+  direction="down"
+  showOnHover={true}
+>
+  <div
+    className="container down left"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <DropDownSelector
+      isActive={false}
+    >
+      <div
+        className="selectedItem false"
+      >
+        <DropDownItem
+          icon={false}
+          isActive={false}
+        >
+          <div
+            className="item false false"
+          >
+            <a
+              href="/"
+            >
+              Österreich
+            </a>
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownSelector>
+    <DropDownItems>
+      <div
+        className="items"
+      >
+        <DropDownItem
+          icon={false}
+          isActive={false}
+        >
+          <div
+            className="item false false"
+          >
+            <a
+              href="/ch"
+            >
+              Schweiz
+            </a>
+          </div>
+        </DropDownItem>
+      </div>
+    </DropDownItems>
+  </div>
+</DropDown>
+`;
+
 exports[`Renders with align right and showOnHover false 1`] = `
 <div
   className="container down right"
@@ -258,3 +436,5 @@ exports[`Renders with direction up 1`] = `
   </div>
 </div>
 `;
+
+exports[`Unmount triggers lifecycle method 1`] = `""`;

@@ -26,19 +26,18 @@ export default class DropDown extends Component {
 
   state = {isOpen: false}
 
-  componentWillMount () {
+  componentDidMount () {
     if (!isBrowser) return;
-    document.addEventListener('click', this.onClickDocument, false);
-    document.addEventListener('touchend', this.onClickDocument, false);
+    document.addEventListener('click', this.handleClickOutside, false);
+    document.addEventListener('touchend', this.handleClickOutside, false);
   }
 
   componentWillUnmount () {
     if (!isBrowser) return;
-    document.removeEventListener('click', this.onClickDocument, false);
-    document.removeEventListener('touchend', this.onClickDocument, false);
+    document.removeEventListener('click', this.handleClickOutside, false);
+    document.removeEventListener('touchend', this.handleClickOutside, false);
   }
 
-  // Property initializer binds method to class instance
   onMouseEnter = () => {
     const {showOnHover} = this.props;
 
@@ -53,27 +52,19 @@ export default class DropDown extends Component {
     this.close();
   }
 
-  onClick = () => this.toggle();
-
-  onClickDocument = e => {
+  handleClickOutside = e => {
     if (this.node.contains(e.target)) return;
 
     setTimeout(() => {
-      this.setState({isOpen: false});
+      this.close();
     }, 100);
   }
 
-  toggle () {
-    this.setState({isOpen: !this.state.isOpen});
-  }
+  toggle = () => this.setState({isOpen: !this.state.isOpen});
 
-  open () {
-    this.setState({isOpen: true});
-  }
+  open = () => this.setState({isOpen: true});
 
-  close () {
-    this.setState({isOpen: false});
-  }
+  close = () => this.setState({isOpen: false});
 
   renderChildren (childType) {
     const {children} = this.props;
@@ -98,7 +89,7 @@ export default class DropDown extends Component {
         className={`${styles.container} ${styles[direction]} ${styles[align]}`}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
-        onClick={this.onClick}
+        onClick={this.toggle}
         ref={node => this.node = node}>
         {this.renderChildren(DropDownSelector)}
         {isOpen &&
