@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {
   DropDown,
