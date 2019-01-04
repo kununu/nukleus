@@ -8,8 +8,6 @@ import {withKnobs} from '@storybook/addon-knobs/react';
 
 import {
   DropDown,
-  DropDownSelector,
-  DropDownItems,
   DropDownItem
 } from './index';
 
@@ -81,7 +79,7 @@ class DropDownExample extends Component {
           DropDown component can behave differently depending on purpose it will be used. With <code>showOnHover</code> prop enabled,
           it will show and hide menu when your mouse pass by.
           <br />
-          <code>align</code> and <code>direction</code> can also be used to control alignment and direction in which dropdown will open.
+          <code>pullRight</code> and <code>direction</code> can also be used to control alignment and direction in which dropdown will open.
         </p>
         <div style={{
           background: '#d1d3d5',
@@ -98,29 +96,22 @@ class DropDownExample extends Component {
           }}>
             <ul>
               <li>
-                <DropDown>
-                  <DropDownSelector>
-                    <DropDownItem isActive>
-                      <a href="/" onClick={e => e.preventDefault()}>Products&nbsp;&nbsp;<span aria-label="Arrow down" role="img">🔽</span></a>
-                    </DropDownItem>
-                  </DropDownSelector>
-                  <DropDownItems>
-                    <DropDownItem>
-                      <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
-                    </DropDownItem>
-                    <DropDownItem>
-                      <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
-                    </DropDownItem>
-                    <DropDownItem>
-                      <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
-                    </DropDownItem>
-                    <DropDownItem>
-                      <a href="/" onClick={e => e.preventDefault()}>Decoration</a>
-                    </DropDownItem>
-                    <DropDownItem>
-                      <a href="/" onClick={e => e.preventDefault()}>Home Electronics</a>
-                    </DropDownItem>
-                  </DropDownItems>
+                <DropDown title="Products">
+                  <DropDownItem isActive>
+                    <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
+                  </DropDownItem>
+                  <DropDownItem>
+                    <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
+                  </DropDownItem>
+                  <DropDownItem>
+                    <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
+                  </DropDownItem>
+                  <DropDownItem>
+                    <a href="/" onClick={e => e.preventDefault()}>Decoration</a>
+                  </DropDownItem>
+                  <DropDownItem>
+                    <a href="/" onClick={e => e.preventDefault()}>Home Electronics</a>
+                  </DropDownItem>
                 </DropDown>
               </li>
               <li>
@@ -138,40 +129,36 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#ffffff'}}>Dropdown with <code>icon</code>, <code>{'align="right"'}</code> and <code>{'showOnHover={false}'}</code> props</span>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>icon</code>, <code>{'pullRight'}</code> and <code>{'showOnHover={false}'}</code> props</span>
           <div style={{
             background: '#ffffff',
             margin: '100px 0 100px',
             textAlign: 'right'
           }}>
             <DropDown
-              align="right"
-              showOnHover={false}>
-              <DropDownSelector>
-                {this.selectedMenuItem()}
-              </DropDownSelector>
-              <DropDownItems>
-                <DropDownItem
-                  isActive={activeValue === 'at'}
-                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'de'}
-                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'ch'}
-                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'us'}
-                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
-                </DropDownItem>
-              </DropDownItems>
+              pullRight
+              showOnHover={false}
+              title={this.selectedMenuItem()}>
+              <DropDownItem
+                isActive={activeValue === 'at'}
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'de'}
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'ch'}
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'us'}
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
+              </DropDownItem>
             </DropDown>
           </div>
         </div>
@@ -182,40 +169,36 @@ class DropDownExample extends Component {
           padding: '10px',
           width: '50%'
         }}>
-          <span style={{color: '#ffffff'}}>Dropdown with <code>{'align="right"'}</code> and <code>{'direction="up"'}</code> props</span>
+          <span style={{color: '#ffffff'}}>Dropdown with <code>{'pullRight'}</code> and <code>{'direction="up"'}</code> props</span>
           <div style={{
             background: '#ffffff',
             margin: '100px 0 100px',
             textAlign: 'right'
           }}>
             <DropDown
-              align="right"
-              direction="up">
-              <DropDownSelector>
-                {this.selectedMenuItem()}
-              </DropDownSelector>
-              <DropDownItems>
-                <DropDownItem
-                  isActive={activeValue === 'at'}
-                  icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'de'}
-                  icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'ch'}
-                  icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
-                </DropDownItem>
-                <DropDownItem
-                  isActive={activeValue === 'us'}
-                  icon={<span aria-label="us" role="img">🇺🇸</span>}>
-                  <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
-                </DropDownItem>
-              </DropDownItems>
+              direction="up"
+              pullRight
+              title={this.selectedMenuItem()}>
+              <DropDownItem
+                isActive={activeValue === 'at'}
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'at')} href="/">Österreich</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'de'}
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'de')} href="/de">Deutschland</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'ch'}
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'ch')} href="/ch">Schweiz</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive={activeValue === 'us'}
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a onClick={e => this.updateActiveValue(e, 'us')} href="/us">United States</a>
+              </DropDownItem>
             </DropDown>
           </div>
         </div>

@@ -3,10 +3,12 @@
 
 .container {
   position: relative;
+  padding: 0;
+  margin: 0;
   display: inline-block;
 
   &.up {
-    .items {
+    .itemsList {
       top: auto;
       bottom: 100%;
       border-radius: $border-radius-base 0 0;
@@ -14,25 +16,24 @@
   }
 
   &.down {
-    .items {
+    .itemsList {
       top: 100%;
       left: 0;
       border-radius: 0 0 $border-radius-base;
     }
   }
 
-  &.left {
-    .items {
-      left: 0;
-    }
-  }
-
-  &.right {
-    .items {
+  &.pullRight {
+    .itemsList {
       right: 0;
       left: auto;
     }
   }
+}
+
+.toggleButton {
+  background-color: transparent;
+  border: 0;
 }
 
 .selectedItem {
@@ -49,8 +50,10 @@
   }
 }
 
-.items {
+.itemsList {
   position: absolute;
+  left: 0;
+  padding: 0;
   min-width: 160px;
   background-color: $white;
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .1);
@@ -69,7 +72,11 @@
 
 .item {
   position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
   font-size: $font-size-base;
+  list-style: none;
   cursor: pointer;
 
   .icon {
