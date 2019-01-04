@@ -69,7 +69,6 @@ export default class DropDown extends Component {
   close = () => this.setState({isOpen: false});
 
   render () {
-    /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
     const {
       children,
       direction,
