@@ -158,19 +158,19 @@ storiesOf('DropDown', module)
           }}>
             <DropDown
               pullRight
-              title={(<span>Österreich <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
               <DropDownItem
                 isActive
                 icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Österreich</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Deutschland</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Schweiz</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="us" role="img">🇺🇸</span>}>
@@ -190,15 +190,15 @@ storiesOf('DropDown', module)
               title={<span>United States <span aria-label="us" role="img">🇺🇸</span></span>}>
               <DropDownItem
                 icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Österreich</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Deutschland</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Schweiz</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
               </DropDownItem>
               <DropDownItem
                 isActive
@@ -231,19 +231,19 @@ storiesOf('DropDown', module)
             <DropDown
               direction="up"
               pullRight
-              title={(<span>Österreich <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
               <DropDownItem
                 isActive
                 icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Österreich</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Deutschland</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Schweiz</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="us" role="img">🇺🇸</span>}>
@@ -268,15 +268,15 @@ storiesOf('DropDown', module)
               title={<span>United States <span aria-label="us" role="img">🇺🇸</span></span>}>
               <DropDownItem
                 icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Österreich</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Deutschland</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Schweiz</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
               </DropDownItem>
               <DropDownItem
                 isActive
@@ -304,19 +304,19 @@ storiesOf('DropDown', module)
           <p style={{marginTop: '0'}}>Add <code>icon</code> prop (e.g. <code>{'<DropDownItem icon={...} />'}</code>) with an emoji or image tag</p>
           <div style={{background: '#ffffff'}}>
             <DropDown
-              title={(<span>Österreich <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
               <DropDownItem
                 isActive
                 icon={<span aria-label="at" role="img">🇦🇹</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Österreich</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="de" role="img">🇩🇪</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Deutschland</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="ch" role="img">🇨🇭</span>}>
-                <a href="/" onClick={e => { e.preventDefault(); }}>Schweiz</a>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
               </DropDownItem>
               <DropDownItem
                 icon={<span aria-label="us" role="img">🇺🇸</span>}>
