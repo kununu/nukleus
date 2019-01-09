@@ -89,7 +89,6 @@ export default class DropDown extends Component {
           onMouseLeave={this.onMouseLeave}
           onClick={this.onClick}
           ref={node => this.node = node}
-          role="button"
           aria-haspopup="listbox"
           aria-expanded={isOpen}>
           {title}
@@ -101,7 +100,8 @@ export default class DropDown extends Component {
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
             aria-labelledby="dropdown"
-            role="listbox">
+            role="listbox"
+            tabIndex={0}>
             {children}
           </div>
         }

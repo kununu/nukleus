@@ -101,77 +101,53 @@ exports[`Closes menu when click outside 1`] = `
 
 exports[`Closes menu when not hovered 1`] = `
 <DropDown
-  align="left"
   direction="down"
+  pullRight={false}
   showOnHover={true}
+  title="Österreich"
 >
-  <div
-    className="container down left"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <ul
+    className="container down "
   >
-    <DropDownSelector
-      isActive={false}
+    <button
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      className="toggleButton selectedItem"
+      id="dropdown"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <div
-        className="selectedItem false"
-      >
-        <DropDownItem
-          icon={false}
-          isActive={false}
-        >
-          <div
-            className="item false false"
-          >
-            <a
-              href="/"
-            >
-              Österreich
-            </a>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownSelector>
-  </div>
+      Österreich
+    </button>
+  </ul>
 </DropDown>
 `;
 
 exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
 <DropDown
-  align="left"
   direction="down"
+  pullRight={false}
   showOnHover={false}
+  title="Österreich"
 >
-  <div
-    className="container down left"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <ul
+    className="container down "
   >
-    <DropDownSelector
-      isActive={false}
+    <button
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      className="toggleButton selectedItem"
+      id="dropdown"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <div
-        className="selectedItem false"
-      >
-        <DropDownItem
-          icon={false}
-          isActive={false}
-        >
-          <div
-            className="item false false"
-          >
-            <a
-              href="/"
-            >
-              Österreich
-            </a>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownSelector>
-  </div>
+      Österreich
+    </button>
+  </ul>
 </DropDown>
 `;
 
@@ -187,9 +163,10 @@ exports[`Renders DropDown without crashing 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    role="button"
     type="button"
-  />
+  >
+    Products
+  </button>
 </ul>
 `;
 
@@ -205,178 +182,144 @@ exports[`Renders correctly when no icon is provided 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    role="button"
     type="button"
-  />
+  >
+    Österreich
+  </button>
 </ul>
 `;
 
 exports[`Renders menu when button is clicked 1`] = `
 <DropDown
-  align="left"
   direction="down"
+  pullRight={false}
   showOnHover={false}
+  title={
+    <span>
+      United States 
+      <span
+        aria-label="us"
+        role="img"
+      >
+        🇺🇸
+      </span>
+    </span>
+  }
 >
-  <div
-    className="container down left"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <ul
+    className="container down "
   >
-    <DropDownSelector
-      isActive={false}
+    <button
+      aria-expanded={true}
+      aria-haspopup="listbox"
+      className="toggleButton selectedItem"
+      id="dropdown"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <div
-        className="selectedItem false"
-      >
-        <DropDownItem
-          icon={
-            <span
-              aria-label="us"
-              role="img"
-            >
-              🇺🇸
-            </span>
-          }
-          isActive={true}
+      <span>
+        United States 
+        <span
+          aria-label="us"
+          role="img"
         >
-          <div
-            className="item active hasIcon"
+          🇺🇸
+        </span>
+      </span>
+    </button>
+    <div
+      aria-labelledby="dropdown"
+      className="itemsList"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <DropDownItem
+        icon={
+          <span
+            aria-label="at"
+            role="img"
           >
-            <a
-              href="/us"
-            >
-              United States
-            </a>
-            <span
-              className="icon"
-            >
-              <span
-                aria-label="us"
-                role="img"
-              >
-                🇺🇸
-              </span>
-            </span>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownSelector>
-    <DropDownItems>
-      <div
-        className="items"
+            🇦🇹
+          </span>
+        }
+        isActive={false}
       >
-        <DropDownItem
-          icon={
+        <li
+          className="item  hasIcon"
+        >
+          <a
+            href="/"
+          >
+            Österreich
+          </a>
+          <span
+            className="icon"
+          >
             <span
               aria-label="at"
               role="img"
             >
               🇦🇹
             </span>
-          }
-          isActive={false}
-        >
-          <div
-            className="item false hasIcon"
-          >
-            <a
-              href="/"
-            >
-              Österreich
-            </a>
-            <span
-              className="icon"
-            >
-              <span
-                aria-label="at"
-                role="img"
-              >
-                🇦🇹
-              </span>
-            </span>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownItems>
-  </div>
+          </span>
+        </li>
+      </DropDownItem>
+    </div>
+  </ul>
 </DropDown>
 `;
 
 exports[`Renders menu when hovered 1`] = `
 <DropDown
-  align="left"
   direction="down"
+  pullRight={false}
   showOnHover={true}
+  title="Österreich"
 >
-  <div
-    className="container down left"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <ul
+    className="container down "
   >
-    <DropDownSelector
-      isActive={false}
+    <button
+      aria-expanded={true}
+      aria-haspopup="listbox"
+      className="toggleButton selectedItem"
+      id="dropdown"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <div
-        className="selectedItem false"
+      Österreich
+    </button>
+    <div
+      aria-labelledby="dropdown"
+      className="itemsList"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <DropDownItem
+        icon={false}
+        isActive={false}
       >
-        <DropDownItem
-          icon={false}
-          isActive={false}
+        <li
+          className="item  "
         >
-          <div
-            className="item false false"
+          <a
+            href="/ch"
           >
-            <a
-              href="/"
-            >
-              Österreich
-            </a>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownSelector>
-    <DropDownItems>
-      <div
-        className="items"
-      >
-        <DropDownItem
-          icon={false}
-          isActive={false}
-        >
-          <div
-            className="item false false"
-          >
-            <a
-              href="/ch"
-            >
-              Schweiz
-            </a>
-          </div>
-        </DropDownItem>
-      </div>
-    </DropDownItems>
-  </div>
+            Schweiz
+          </a>
+        </li>
+      </DropDownItem>
+    </div>
+  </ul>
 </DropDown>
-`;
-
-exports[`Renders with align right and showOnHover false 1`] = `
-<ul
-  className="container down "
->
-  <button
-    aria-expanded={false}
-    aria-haspopup="listbox"
-    className="toggleButton selectedItem"
-    id="dropdown"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    type="button"
-  />
-</ul>
 `;
 
 exports[`Renders with direction up 1`] = `
@@ -391,9 +334,45 @@ exports[`Renders with direction up 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    role="button"
     type="button"
-  />
+  >
+    <span>
+      Österreich 
+      <span
+        aria-label="at"
+        role="img"
+      >
+        🇦🇹
+      </span>
+    </span>
+  </button>
+</ul>
+`;
+
+exports[`Renders with pullRight and showOnHover false 1`] = `
+<ul
+  className="container down pullRight"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    className="toggleButton selectedItem"
+    id="dropdown"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  >
+    <span>
+      Österreich 
+      <span
+        aria-label="at"
+        role="img"
+      >
+        🇦🇹
+      </span>
+    </span>
+  </button>
 </ul>
 `;
 
