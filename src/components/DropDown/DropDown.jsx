@@ -46,6 +46,7 @@ export default class DropDown extends Component {
     const {showOnHover} = this.props;
 
     if (!showOnHover) return;
+
     this.open();
   }
 
@@ -53,6 +54,7 @@ export default class DropDown extends Component {
     const {showOnHover} = this.props;
 
     if (!showOnHover) return;
+
     this.close();
   }
 
@@ -80,9 +82,10 @@ export default class DropDown extends Component {
     const {isOpen} = this.state;
 
     return (
-      <ul className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''}`}>
+      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''}`}>
         <button
           type="button"
+          role="button"
           id="dropdown"
           className={`${styles.toggleButton} ${styles.selectedItem}`}
           onMouseEnter={this.onMouseEnter}
@@ -95,7 +98,7 @@ export default class DropDown extends Component {
         </button>
 
         {isOpen &&
-          <div
+          <ul
             className={styles.itemsList}
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
@@ -103,9 +106,9 @@ export default class DropDown extends Component {
             role="listbox"
             tabIndex={0}>
             {children}
-          </div>
+          </ul>
         }
-      </ul>
+      </div>
     );
   }
 }
