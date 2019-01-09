@@ -26,42 +26,26 @@ class DropDownExample extends Component {
 
     const countries = {
       at: {
-        code: 'at',
         icon: <span aria-label="at" role="img">🇦🇹</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Österreich</a>,
-        path: '/',
         value: 'Österreich'
       },
 
       ch: {
-        code: 'ch',
         icon: <span aria-label="ch" role="img">🇨🇭</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Schweiz</a>,
-        path: '/ch',
         value: 'Schweiz'
       },
       de: {
-        code: 'de',
         icon: <span aria-label="de" role="img">🇩🇪</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">Deutschland</a>,
-        path: '/de',
         value: 'Deutschland'
       },
       us: {
-        code: 'us',
         icon: <span aria-label="us" role="img">🇺🇸</span>,
-        link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
-        path: '/us',
         value: 'United States'
       }
     };
 
     return (
-      <DropDownItem
-        isActive={v === countries[v].path}
-        icon={countries[v].icon}>
-        <a onClick={e => this.updateActiveValue(e, countries[v].code)} href={countries[v].code}>{countries[v].value}</a>
-      </DropDownItem>
+      <>{countries[v].value} {countries[v].icon}</>
     );
   }
 
@@ -76,10 +60,10 @@ class DropDownExample extends Component {
           Dropdown
         </h3>
         <p>
-          DropDown component can behave differently depending on purpose it will be used. With <code>showOnHover</code> prop enabled,
-          it will show and hide menu when your mouse pass by.
+          The DropDown component behaves differently depending on the <code>showOnHover</code> property.
+          If true the menu will be shown on mouse hover. Otherwise, the menu will only open with a user click.
           <br />
-          <code>pullRight</code> and <code>direction</code> can also be used to control alignment and direction in which dropdown will open.
+          The props <code>pullRight</code> and <code>direction</code> may be used to control alignment and direction in which dropdown will open.
         </p>
         <div style={{
           background: '#d1d3d5',

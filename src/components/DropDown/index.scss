@@ -32,8 +32,21 @@
 }
 
 .toggleButton {
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
   background-color: transparent;
   border: 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  span[role="img"] {
+    margin-left: 10px;
+  }
 }
 
 .selectedItem {

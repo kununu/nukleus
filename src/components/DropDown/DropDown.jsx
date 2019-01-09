@@ -30,12 +30,14 @@ export default class DropDown extends Component {
 
   componentDidMount () {
     if (!isBrowser) return;
+
     document.addEventListener('click', this.handleClickOutside, false);
     document.addEventListener('touchend', this.handleClickOutside, false);
   }
 
   componentWillUnmount () {
     if (!isBrowser) return;
+
     document.removeEventListener('click', this.handleClickOutside, false);
     document.removeEventListener('touchend', this.handleClickOutside, false);
   }
@@ -80,22 +82,28 @@ export default class DropDown extends Component {
     return (
       <ul className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''}`}>
         <button
+          type="button"
+          id="dropdown"
           className={`${styles.toggleButton} ${styles.selectedItem}`}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
           onClick={this.onClick}
-          ref={node => this.node = node}>
+          ref={node => this.node = node}
+          role="button"
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}>
           {title}
         </button>
 
         {isOpen &&
-          <ul
+          <div
             className={styles.itemsList}
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
+            aria-labelledby="dropdown"
             role="listbox">
             {children}
-          </ul>
+          </div>
         }
       </ul>
     );
