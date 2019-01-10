@@ -121,7 +121,6 @@ exports[`Causes dropdown to show when input is focused 1`] = `
         theme={null}
       >
         <Autowhatever
-          containerProps={Object {}}
           getSectionItems={[Function]}
           highlightedItemIndex={null}
           highlightedSectionIndex={null}

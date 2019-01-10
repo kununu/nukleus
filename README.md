@@ -8,6 +8,7 @@ Welcome to [kununu's](https://wwww.kununu.com) collection of [React](https://fac
 [![Greenkeeper badge](https://badges.greenkeeper.io/kununu/nukleus.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/kununu/nukleus.svg?branch=master)](https://travis-ci.org/kununu/nukleus) [![Dependencies](https://david-dm.org/kununu/nukleus/master/status.svg)](https://david-dm.org/kununu/nukleus/master)
 [![Dev dependencies](https://david-dm.org/kununu/nukleus/master/dev-status.svg)](https://david-dm.org/kununu/nukleus/master)
+[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://kununu.github.io/nukleus)
 
 ## Features
 * Over 80% code coverage
