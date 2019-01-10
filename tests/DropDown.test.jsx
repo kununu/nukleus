@@ -98,26 +98,6 @@ test('Renders menu when button is clicked', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test.skip('Closes menu when click outside', () => {
-  const component = mount((
-    <div>
-      <DropDown showOnHover={false} title="Deutschland">
-        <DropDownItem>
-          <a href="/ch">Schweiz</a>
-        </DropDownItem>
-      </DropDown>
-
-      <button id="outside" type="button">Click outside</button>
-    </div>
-  ));
-
-  component.find('.container button').simulate('click');
-  component.find('#outside').simulate('click');
-
-  const tree = toJson(component);
-  expect(tree).toMatchSnapshot();
-});
-
 test('Renders menu when hovered', () => {
   const component = mount((
     <DropDown title="Österreich">
