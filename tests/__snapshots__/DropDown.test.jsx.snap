@@ -106,7 +106,7 @@ exports[`Closes menu when not hovered 1`] = `
   showOnHover={true}
   title="Österreich"
 >
-  <ul
+  <div
     className="container down "
   >
     <button
@@ -121,7 +121,7 @@ exports[`Closes menu when not hovered 1`] = `
     >
       Österreich
     </button>
-  </ul>
+  </div>
 </DropDown>
 `;
 
@@ -132,7 +132,7 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
   showOnHover={false}
   title="Österreich"
 >
-  <ul
+  <div
     className="container down "
   >
     <button
@@ -147,12 +147,12 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
     >
       Österreich
     </button>
-  </ul>
+  </div>
 </DropDown>
 `;
 
 exports[`Renders DropDown without crashing 1`] = `
-<ul
+<div
   className="container down "
 >
   <button
@@ -167,11 +167,11 @@ exports[`Renders DropDown without crashing 1`] = `
   >
     Products
   </button>
-</ul>
+</div>
 `;
 
 exports[`Renders correctly when no icon is provided 1`] = `
-<ul
+<div
   className="container down "
 >
   <button
@@ -186,7 +186,7 @@ exports[`Renders correctly when no icon is provided 1`] = `
   >
     Österreich
   </button>
-</ul>
+</div>
 `;
 
 exports[`Renders menu when button is clicked 1`] = `
@@ -206,7 +206,7 @@ exports[`Renders menu when button is clicked 1`] = `
     </span>
   }
 >
-  <ul
+  <div
     className="container down "
   >
     <button
@@ -229,7 +229,7 @@ exports[`Renders menu when button is clicked 1`] = `
         </span>
       </span>
     </button>
-    <div
+    <ul
       aria-labelledby="dropdown"
       className="itemsList"
       onMouseEnter={[Function]}
@@ -268,8 +268,8 @@ exports[`Renders menu when button is clicked 1`] = `
           </span>
         </li>
       </DropDownItem>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </DropDown>
 `;
 
@@ -280,7 +280,7 @@ exports[`Renders menu when hovered 1`] = `
   showOnHover={true}
   title="Österreich"
 >
-  <ul
+  <div
     className="container down "
   >
     <button
@@ -295,7 +295,7 @@ exports[`Renders menu when hovered 1`] = `
     >
       Österreich
     </button>
-    <div
+    <ul
       aria-labelledby="dropdown"
       className="itemsList"
       onMouseEnter={[Function]}
@@ -317,13 +317,13 @@ exports[`Renders menu when hovered 1`] = `
           </a>
         </li>
       </DropDownItem>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </DropDown>
 `;
 
 exports[`Renders with direction up 1`] = `
-<ul
+<div
   className="container up "
 >
   <button
@@ -346,11 +346,11 @@ exports[`Renders with direction up 1`] = `
       </span>
     </span>
   </button>
-</ul>
+</div>
 `;
 
 exports[`Renders with pullRight and showOnHover false 1`] = `
-<ul
+<div
   className="container down pullRight"
 >
   <button
@@ -373,7 +373,7 @@ exports[`Renders with pullRight and showOnHover false 1`] = `
       </span>
     </span>
   </button>
-</ul>
+</div>
 `;
 
 exports[`Unmount triggers lifecycle method 1`] = `""`;

@@ -85,7 +85,6 @@ export default class DropDown extends Component {
       <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''}`}>
         <button
           type="button"
-          role="button"
           id="dropdown"
           className={`${styles.toggleButton} ${styles.selectedItem}`}
           onMouseEnter={this.onMouseEnter}

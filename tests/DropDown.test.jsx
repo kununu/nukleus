@@ -92,7 +92,7 @@ test('Renders menu when button is clicked', () => {
     </DropDown>
   ));
 
-  component.find('ul button').simulate('click');
+  component.find('.container button').simulate('click');
 
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
@@ -111,7 +111,7 @@ test.skip('Closes menu when click outside', () => {
     </div>
   ));
 
-  component.find('ul button').simulate('click');
+  component.find('.container button').simulate('click');
   component.find('#outside').simulate('click');
 
   const tree = toJson(component);
@@ -127,7 +127,7 @@ test('Renders menu when hovered', () => {
     </DropDown>
   ));
 
-  component.find('ul button').simulate('mouseenter');
+  component.find('.container button').simulate('mouseenter');
 
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
@@ -142,8 +142,8 @@ test('Closes menu when not hovered', () => {
     </DropDown>
   ));
 
-  component.find('ul button').simulate('mouseenter');
-  component.find('ul button').simulate('mouseleave');
+  component.find('.container button').simulate('mouseenter');
+  component.find('.container button').simulate('mouseleave');
 
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
@@ -158,8 +158,8 @@ test('Does not open menu when hovered while showOnHover is enabled', () => {
     </DropDown>
   ));
 
-  component.find('ul button').simulate('mouseenter');
-  component.find('ul button').simulate('mouseleave');
+  component.find('.container button').simulate('mouseenter');
+  component.find('.container button').simulate('mouseleave');
 
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
