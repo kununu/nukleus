@@ -64,7 +64,7 @@ export default class DatePickerComponent extends React.Component {
     showAbbreviatedMonthDropdown: false,
     showMonthDropdown: false,
     showYearDropdown: false,
-    title: '',
+    title: null,
     value: null
   };
 

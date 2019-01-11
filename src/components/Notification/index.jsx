@@ -11,6 +11,14 @@ export default class Notification extends React.Component {
     icon: PropTypes.element,
     message: PropTypes.string.isRequired,
     onClose: PropTypes.func,
+    onCloseClick: ((props, propName) => {
+      if (props[propName]) {
+        return new Error(
+          'This prop is marked as deprecated and will be removed on upcoming release. ' + 
+          'Please use `onClose` instead.'
+        );
+      }
+    }),
     type: PropTypes.oneOf([
       'error',
       'success'
@@ -38,7 +46,7 @@ export default class Notification extends React.Component {
     closeMethod: 'onClick',
     duration: 5000,
     icon: null,
-    onClose: null,
+    onClose: () => {},
     type: 'success',
     visible: false
   };
@@ -59,17 +67,18 @@ export default class Notification extends React.Component {
 
   onClickClose = () => {
     this.hideNotification();
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
+    this.props.onClose();
   };
 
   onTimeout () {
-    if (this.props.closeMethod === 'onTimeout') {
+    const {
+      closeMethod,
+      onClose
+    } = this.props;
+
+    if (closeMethod === 'onTimeout') {
       this.hideNotification();
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
+      onClose();
     }
   }
 
