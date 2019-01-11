@@ -10,7 +10,7 @@ export default class Notification extends React.Component {
     duration: PropTypes.number,
     icon: PropTypes.element,
     message: PropTypes.string.isRequired,
-    onCloseClick: PropTypes.func,
+    onClose: PropTypes.func,
     type: PropTypes.oneOf([
       'error',
       'success'
@@ -38,7 +38,7 @@ export default class Notification extends React.Component {
     closeMethod: 'onClick',
     duration: 5000,
     icon: null,
-    onCloseClick: null,
+    onClose: null,
     type: 'success',
     visible: false
   };
@@ -59,13 +59,18 @@ export default class Notification extends React.Component {
 
   onClickClose = () => {
     this.hideNotification();
-    if (this.props.onCloseClick) {
-      this.props.onCloseClick();
+    if (this.props.onClose) {
+      this.props.onClose();
     }
   };
 
   onTimeout () {
-    if (this.props.closeMethod === 'onTimeout') this.hideNotification();
+    if (this.props.closeMethod === 'onTimeout') {
+      this.hideNotification();
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
+    }
   }
 
   newNotificationWillOverrideExisting (message) {
@@ -90,8 +95,9 @@ export default class Notification extends React.Component {
       icon,
       message,
       type,
-      visible
     } = this.props;
+    
+    const {visible} = this.state;
 
     if (visible && !this.isError()) {
       setTimeout(() => {
