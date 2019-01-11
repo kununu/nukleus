@@ -94,9 +94,9 @@ export default class Notification extends React.Component {
       duration,
       icon,
       message,
-      type,
+      type
     } = this.props;
-    
+
     const {visible} = this.state;
 
     if (visible && !this.isError()) {
