@@ -11,14 +11,12 @@ export default class Notification extends React.Component {
     icon: PropTypes.element,
     message: PropTypes.string.isRequired,
     onClose: PropTypes.func,
-    onCloseClick: ((props, propName) => {
+    onCloseClick (props, propName) { // eslint-disable-line
       if (props[propName]) {
-        return new Error(
-          'This prop is marked as deprecated and will be removed on upcoming release. ' + 
-          'Please use `onClose` instead.'
-        );
+        return new Error('This prop is marked as deprecated and will be removed on upcoming release. ' +
+          'Please use `onClose` instead.');
       }
-    }),
+    },
     type: PropTypes.oneOf([
       'error',
       'success'
