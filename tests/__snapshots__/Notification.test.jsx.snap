@@ -21,7 +21,7 @@ exports[`Closes when the close button is clicked 1`] = `
   duration={5000}
   icon={null}
   message="Test"
-  onCloseClick={null}
+  onClose={[Function]}
   type="success"
   visible={true}
 >

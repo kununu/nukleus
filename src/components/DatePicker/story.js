@@ -8,7 +8,7 @@ import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
 
 import DatePicker from './index';
 
-storiesOf('Datepicker', module)
+storiesOf('DatePicker', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('Basic datepicker')(story)(context))
@@ -21,7 +21,7 @@ storiesOf('Datepicker', module)
       id="date-picker"
       inputStyle="block"
       isRequired={boolean('isRequired', false)}
-      label="Datepicker"
+      label="DatePicker"
       labelHidden={boolean('labelHidden', false)}
       name="date-picker"
       onBlur={action('onBlur')}
