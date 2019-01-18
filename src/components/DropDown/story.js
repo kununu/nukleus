@@ -11,6 +11,8 @@ import {
   DropDownItem
 } from './index';
 
+import styles from './storyStyles.scss';
+
 const DropDownInfo = () => (
   <div>
     <h3>
@@ -30,7 +32,7 @@ storiesOf('DropDown', module)
   .addDecorator((story, context) => withInfo('The DropDown component!')(story)(context))
   .addDecorator(withKnobs)
   .add('basics', () => (
-    <div>
+    <div className={styles.dropDownStory}>
       <DropDownInfo />
       <div style={{
         display: 'block',
