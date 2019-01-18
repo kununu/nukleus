@@ -47,7 +47,7 @@ exports[`Renders Modal without crashing 1`] = `
       <div>
         <div
           className="underlay underlayHasEntered"
-          onClick={[Function]}
+          onMouseDown={[Function]}
           style={
             Object {
               "WebkitOverflowScrolling": "touch",
