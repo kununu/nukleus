@@ -6,12 +6,13 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs} from '@storybook/addon-knobs/react';
 
+import styles from './storyStyles.scss';
+
 import {
   DropDown,
   DropDownItem
 } from './index';
 
-import styles from './storyStyles.scss';
 
 const DropDownInfo = () => (
   <div>
