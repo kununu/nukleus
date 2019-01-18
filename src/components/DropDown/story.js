@@ -6,10 +6,13 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs} from '@storybook/addon-knobs/react';
 
+import styles from './storyStyles.scss';
+
 import {
   DropDown,
   DropDownItem
 } from './index';
+
 
 const DropDownInfo = () => (
   <div>
@@ -30,7 +33,7 @@ storiesOf('DropDown', module)
   .addDecorator((story, context) => withInfo('The DropDown component!')(story)(context))
   .addDecorator(withKnobs)
   .add('basics', () => (
-    <div>
+    <div className={styles.dropDownStory}>
       <DropDownInfo />
       <div style={{
         display: 'block',

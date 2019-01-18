@@ -195,6 +195,12 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
           ],
         ],
       ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
     }
   }
   onFocus={[Function]}

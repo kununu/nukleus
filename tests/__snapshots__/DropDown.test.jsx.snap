@@ -277,4 +277,4 @@ exports[`Renders with pullRight and showOnHover false 1`] = `
 </div>
 `;
 
-exports[`Unmount triggers lifecycle method 1`] = `""`;
+exports[`Unmount triggers lifecycle method 1`] = `null`;
