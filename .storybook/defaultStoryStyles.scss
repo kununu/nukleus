@@ -12,3 +12,19 @@
 .contentWrapper {
   margin-bottom: 200px;
 }
+
+ul {
+  li {
+    display: inline-block;
+    padding: 10px;
+    list-style: none;
+
+    &:first-child {
+      padding: 0 0;
+    }
+
+    & + li {
+      margin-left: 10px;
+    }
+  }
+}

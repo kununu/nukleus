@@ -48,3 +48,5 @@ dist
 
 # Package Locks
 package-lock.json
+
+.cache

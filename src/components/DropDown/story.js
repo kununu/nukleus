@@ -1,139 +1,331 @@
-import React, {Component} from 'react';
+/* eslint-disable react/jsx-curly-brace-presence */
+import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, select} from '@storybook/addon-knobs/react';
+import {withKnobs} from '@storybook/addon-knobs/react';
 
-import DropDown from './index';
+import {
+  DropDown,
+  DropDownItem
+} from './index';
 
-class DropDownExample extends Component {
-  state = {
-    activeValue: '/'
-  }
-
-  updateActiveValue = (e, val) => {
-    e.preventDefault();
-    this.setState({activeValue: val});
-  }
-
-  render () {
-    const {
-      activeValue
-    } = this.state;
-
-    return (
-      <div>
-        <h3>
-          Dropdown
-        </h3>
-        <p>
-          The dropdown itself does not have any background color so it is important to
-          position it how you like on whichever background you prefer. That is why
-          there are two shade props <code>light</code> and <code>dark</code>. The shade is only to do with the color of the text. So if you place the dropdown over a dark background choose the light shade for white text and vice versa.
-        </p>
-        <br />
-        <div style={{
-          background: '#f7f7f7',
-          display: 'inline-block',
-          padding: '10px',
-          width: '50%'
-        }}>
-          <span>Light shade on dark background</span>
-          <div style={{
-            background: 'black',
-            margin: '100px 0 100px',
-            paddingRight: '10px',
-            textAlign: 'right'
-          }}>
-            <DropDown
-              position={select('position', {
-                bottom: 'bottom',
-                top: 'top'
-              }, 'bottom')}
-              shade="light"
-              items={[
-               {
-                 active: activeValue === '/',
-                 icon: <span aria-label="at" role="img">🇦🇹</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
-                 value: 'Austria'
-               },
-               {
-                 active: activeValue === '/de',
-                 icon: <span aria-label="de" role="img">🇩🇪</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
-                 value: 'German'
-               },
-               {
-                 active: activeValue === '/ch',
-                 icon: <span aria-label="ch" role="img">🇨🇭</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
-                 value: 'Switzerland'
-               },
-               {
-                 active: activeValue === '/us',
-                 icon: <span aria-label="us" role="img">🇺🇸</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
-                 value: 'United States'
-               }
-             ]} />
-          </div>
-        </div>
-        <div style={{
-          background: 'black',
-          display: 'inline-block',
-          padding: '10px',
-          width: '50%'
-        }}>
-          <span style={{color: '#f7f7f7'}}>Dark shade on light background</span>
-          <div style={{
-            background: '#f7f7f7',
-            margin: '100px 0 100px',
-            paddingRight: '10px',
-            textAlign: 'right'
-          }}>
-            <DropDown
-              position={select('position', {
-                bottom: 'bottom',
-                top: 'top'
-              }, 'bottom')}
-              shade="dark"
-              items={[
-               {
-                 active: activeValue === '/',
-                 icon: <span aria-label="at" role="img">🇦🇹</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/')} href="/">Austria</a>,
-                 value: 'Austria'
-               },
-               {
-                 active: activeValue === '/de',
-                 icon: <span aria-label="de" role="img">🇩🇪</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/de')} href="/de">German</a>,
-                 value: 'German'
-               },
-               {
-                 active: activeValue === '/ch',
-                 icon: <span aria-label="ch" role="img">🇨🇭</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/ch')} href="/ch">Switzerland</a>,
-                 value: 'Switzerland'
-               },
-               {
-                 active: activeValue === '/us',
-                 icon: <span aria-label="us" role="img">🇺🇸</span>,
-                 link: <a onClick={e => this.updateActiveValue(e, '/us')} href="/us">United States</a>,
-                 value: 'United States'
-               }
-             ]} />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+const DropDownInfo = () => (
+  <div>
+    <h3>
+      Dropdown
+    </h3>
+    <p>
+      The DropDown component behaves differently depending on the <code>showOnHover</code> property.
+      If true the menu will be shown on mouse hover. Otherwise, the menu will only open with a user click.
+      <br />
+      The props <code>pullRight</code> and <code>direction</code> may be used to control alignment and direction in which dropdown will open.
+    </p>
+  </div>
+);
 
 storiesOf('DropDown', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator((story, context) => withInfo('The DropDown component!')(story)(context))
   .addDecorator(withKnobs)
-  .add('basics', () => <DropDownExample />);
+  .add('basics', () => (
+    <div>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%'
+      }}>
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>DropDown opens on hover with <code>{'showOnHover={true}'}</code> prop by default</p>
+          <ul style={{
+            background: '#ffffff',
+            margin: '0',
+            padding: '0'
+          }}>
+            <li>
+              <DropDown title="Products">
+                <DropDownItem isActive>
+                  <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
+                </DropDownItem>
+              </DropDown>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Offers</a>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Services</a>
+            </li>
+          </ul>
+        </div>
+        <div style={{
+          background: '#f1f1f1',
+          margin: '50px 0 0',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>DropDown opens only when clicked with <code>{'showOnHover={false}'}</code> prop by default</p>
+          <ul style={{
+            background: '#ffffff',
+            margin: '0',
+            padding: '0'
+          }}>
+            <li>
+              <DropDown
+                showOnHover={false}
+                title="Products">
+                <DropDownItem isActive>
+                  <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
+                </DropDownItem>
+              </DropDown>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Offers</a>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Services</a>
+            </li>
+          </ul>
+        </div>
+        <div style={{
+          background: '#f1f1f1',
+          margin: '50px 0 0',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>A <code>title</code> prop value is required. It can be either a <code>string</code> or <code>element</code>.</p>
+          <ul style={{
+            background: '#ffffff',
+            margin: '0',
+            padding: '0'
+          }}>
+            <li>
+              <DropDown
+                showOnHover={false}
+                title="Products">
+                <DropDownItem isActive>
+                  <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Bedroom</a>
+                </DropDownItem>
+                <DropDownItem>
+                  <a href="/" onClick={e => e.preventDefault()}>Cooking</a>
+                </DropDownItem>
+              </DropDown>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Offers</a>
+            </li>
+            <li>
+              <a href="/" onClick={e => e.preventDefault()}>Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  ))
+  .add('alignment control', () => (
+    <div>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%'
+      }}>
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>Add <code>pullRight</code> prop to open dropdown aligned to right side</p>
+          <div style={{
+            background: '#ffffff',
+            textAlign: 'right'
+          }}>
+            <DropDown
+              pullRight
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              <DropDownItem
+                isActive
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>United States</a>
+              </DropDownItem>
+            </DropDown>
+          </div>
+        </div>
+        <div style={{
+          background: '#f1f1f1',
+          margin: '50px 0 0',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>DropDown opens aligned to left side by default</p>
+          <div style={{background: '#ffffff'}}>
+            <DropDown
+              title={<span>United States <span aria-label="us" role="img">🇺🇸</span></span>}>
+              <DropDownItem
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>United States</a>
+              </DropDownItem>
+            </DropDown>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))
+  .add('direction control', () => (
+    <div>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%'
+      }}>
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>Add <code>{'direction="up"'}</code> prop to open dropdown in up direction</p>
+          <div style={{
+            background: '#ffffff',
+            textAlign: 'right'
+          }}>
+            <DropDown
+              direction="up"
+              pullRight
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              <DropDownItem
+                isActive
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>United States</a>
+              </DropDownItem>
+            </DropDown>
+          </div>
+        </div>
+        <div style={{
+          background: '#f1f1f1',
+          margin: '50px 0 0',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>DropDown opens with <code>{'direction="down"'}</code> prop by default</p>
+          <div style={{
+            background: '#ffffff',
+            textAlign: 'right'
+          }}>
+            <DropDown
+              direction="down"
+              pullRight
+              title={<span>United States <span aria-label="us" role="img">🇺🇸</span></span>}>
+              <DropDownItem
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
+              </DropDownItem>
+              <DropDownItem
+                isActive
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>United States</a>
+              </DropDownItem>
+            </DropDown>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))
+  .add('with icons', () => (
+    <div>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%'
+      }}>
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px'
+        }}>
+          <p style={{marginTop: '0'}}>Add <code>icon</code> prop (e.g. <code>{'<DropDownItem icon={...} />'}</code>) with an emoji or image tag</p>
+          <div style={{background: '#ffffff'}}>
+            <DropDown
+              title={(<span>Austria <span aria-label="at" role="img">🇦🇹</span></span>)}>
+              <DropDownItem
+                isActive
+                icon={<span aria-label="at" role="img">🇦🇹</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Austria</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="de" role="img">🇩🇪</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Germany</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="ch" role="img">🇨🇭</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>Switzerland</a>
+              </DropDownItem>
+              <DropDownItem
+                icon={<span aria-label="us" role="img">🇺🇸</span>}>
+                <a href="/" onClick={e => { e.preventDefault(); }}>United States</a>
+              </DropDownItem>
+            </DropDown>
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
+/* eslint-enable react/jsx-curly-brace-presence */
