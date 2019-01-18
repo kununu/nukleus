@@ -22,7 +22,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
   showMonthDropdown={false}
   showYearDropdown={false}
   title="DatePicker"
-  value=""
+  value={null}
 >
   <div
     className="formGroup inline datePickerContainer "
@@ -37,7 +37,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
     <div
       className="innerContainer"
     >
-      <Datepicker
+      <DatePicker
         className="formControl formControlError"
         dateFormat="dd/MM/yyyy"
         disabled={false}
@@ -86,7 +86,7 @@ exports[`Renders a datepicker with a JSX label 1`] = `
   <div
     className="innerContainer"
   >
-    <Datepicker
+    <DatePicker
       className="formControl "
       dateFormat="dd/MM/yyyy"
       disabled={false}
@@ -120,7 +120,7 @@ exports[`Renders a datepicker with labelHidden 1`] = `
   <div
     className="innerContainer"
   >
-    <Datepicker
+    <DatePicker
       className="formControl "
       dateFormat="dd/MM/yyyy"
       disabled={false}
@@ -149,7 +149,7 @@ exports[`Renders a datepicker without title and label 1`] = `
   <div
     className="innerContainer"
   >
-    <Datepicker
+    <DatePicker
       className="formControl "
       dateFormat="dd/MM/yyyy"
       disabled={false}
@@ -184,7 +184,7 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
   <div
     className="innerContainer"
   >
-    <Datepicker
+    <DatePicker
       className="formControl formControlError"
       dateFormat="dd/MM/yyyy"
       disabled={false}
@@ -229,7 +229,7 @@ exports[`Renders datepicker without crashing 1`] = `
   <div
     className="innerContainer"
   >
-    <Datepicker
+    <DatePicker
       className="formControl "
       dateFormat="dd/MM/yyyy"
       disabled={false}

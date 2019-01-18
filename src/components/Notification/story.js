@@ -15,14 +15,14 @@ storiesOf('Notification', module)
   .add('error', () => (
     <Notification
       type="error"
-      onCloseClick={action('onCloseClick')}
+      onClose={action('onClose')}
       message={text('message', 'Hi, I am an error notification box')}
       icon={<i className="fa fa-cross" />}
       visible />
   ))
   .add('success', () => (
     <Notification
-      onCloseClick={action('onCloseClick')}
+      onClose={action('onClose')}
       message={text('message', 'Hi, I am a success notification box')}
       icon={<i className="fa fa-check" />}
       visible />
@@ -31,7 +31,7 @@ storiesOf('Notification', module)
     <Notification
       closeMethod="onTimeout"
       duraction={number('duration', 3000)}
-      onCloseClick={action('onCloseClick')}
+      onClose={action('onClose')}
       message={text('message', 'Hi, I am a success notification box')}
       icon={<i className="fa fa-check" />}
       visible />

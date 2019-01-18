@@ -4,7 +4,7 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import DatePicker from 'DatePicker'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 
-jest.mock('react-datepicker', () => 'Datepicker');
+jest.mock('react-datepicker', () => 'DatePicker');
 
 function waitingForDebounce (cb) {
   setTimeout(cb, 550);

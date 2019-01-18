@@ -51,7 +51,7 @@ test('Calls onCloseClick when the close button is clicked', () => {
   const component = mount(<Notification
     message="Test"
     visible
-    onCloseClick={spyFunc} />);
+    onClose={spyFunc} />);
 
   component.find('.closeButton').simulate('click');
   expect(spyFunc).toHaveBeenCalled();
