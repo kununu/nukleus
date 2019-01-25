@@ -8,7 +8,7 @@ module.exports = {
     '^utils(.*)$': '<rootDir>/utils$1'
   },
   setupFiles: [
-    './jestSetup.js'
+    './jest.setup.js'
   ],
   snapshotSerializers: [
     'enzyme-to-json/serializer'

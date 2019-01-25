@@ -97,7 +97,7 @@ exports[`Renders menu when button is clicked 1`] = `
   showOnHover={false}
   title={
     <span>
-      United States 
+      United States
       <span
         aria-label="us"
         role="img"
@@ -121,7 +121,7 @@ exports[`Renders menu when button is clicked 1`] = `
       type="button"
     >
       <span>
-        United States 
+        United States
         <span
           aria-label="us"
           role="img"
@@ -238,7 +238,7 @@ exports[`Renders with direction up 1`] = `
     type="button"
   >
     <span>
-      Österreich 
+      Österreich
       <span
         aria-label="at"
         role="img"
@@ -265,7 +265,7 @@ exports[`Renders with pullRight and showOnHover false 1`] = `
     type="button"
   >
     <span>
-      Österreich 
+      Österreich
       <span
         aria-label="at"
         role="img"

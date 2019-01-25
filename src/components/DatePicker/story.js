@@ -17,7 +17,12 @@ storiesOf('DatePicker', module)
       dateFormat={text('dateFormat', 'dd/MM/yyyy')}
       error={boolean('error', null)}
       errorSubInfo={text('errorSubInfo', 'Error!')}
-      icon={<i className="fa fa-calendar" aria-hidden="true" />}
+      icon={(
+        <i
+          className="fa fa-calendar"
+          aria-hidden="true"
+        />
+)}
       id="date-picker"
       inputStyle="block"
       isRequired={boolean('isRequired', false)}
@@ -33,5 +38,6 @@ storiesOf('DatePicker', module)
       showAbbreviatedMonthDropdown={boolean('showAbbreviatedMonthDropdown', false)}
       showMonthDropdown={boolean('showMonthDropdown', false)}
       showYearDropdown={boolean('showYearDropdown', false)}
-      value={text('value', new Date())} />
+      value={text('value', new Date())}
+    />
   ));

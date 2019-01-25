@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import debounce from 'debounce';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import {
@@ -16,8 +15,10 @@ import {
   formControlError,
   formGroup,
   controlLabelRequired,
-  hidden
+  hidden,
 } from '../index.scss';
+
+import styles from './index.scss';
 
 
 export default class ComboboxComponent extends React.Component {
@@ -42,7 +43,7 @@ export default class ComboboxComponent extends React.Component {
     onFocus: PropTypes.func,
     onSelect: PropTypes.func,
     placeholder: PropTypes.string,
-    requiredLabel: PropTypes.string
+    requiredLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -64,13 +65,13 @@ export default class ComboboxComponent extends React.Component {
     onFocus: () => {},
     onSelect: null,
     placeholder: '',
-    requiredLabel: ''
+    requiredLabel: '',
   };
 
   state = {
     showError: false,
     suggestions: this.getSuggestions('', this.props.items),
-    value: this.props.inputValue
+    value: this.props.inputValue,
   };
 
   componentWillMount () {
@@ -82,7 +83,7 @@ export default class ComboboxComponent extends React.Component {
     if (nextProps.error) this.showError();
     if (nextProps.inputValue !== this.props.inputValue) {
       this.setState({
-        value: nextProps.inputValue
+        value: nextProps.inputValue,
       });
     }
   }
@@ -99,7 +100,7 @@ export default class ComboboxComponent extends React.Component {
     }
     this.hideError();
     this.setState({
-      value: newValue
+      value: newValue,
     });
   };
 
@@ -107,6 +108,7 @@ export default class ComboboxComponent extends React.Component {
     if (this.props.isSearchable) {
       const inputValue = value.trim().toLowerCase();
       const inputLength = inputValue.length;
+
       return items
         .filter(item => item && item.toLowerCase().slice(0, inputLength) === inputValue)
         .map(item => ({value: item}));
@@ -118,7 +120,7 @@ export default class ComboboxComponent extends React.Component {
 
   loadSuggestions (value) {
     this.setState({
-      suggestions: this.getSuggestions(value, this.props.items)
+      suggestions: this.getSuggestions(value, this.props.items),
     });
   }
 
@@ -158,20 +160,24 @@ export default class ComboboxComponent extends React.Component {
       requiredLabel,
       inputStyles,
       placeholder,
-      disabled
+      disabled,
     } = this.props;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
-        {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
-            {requiredLabel}
-          </span>
-        }
+      <div
+        className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}
+        id={`${name}-container`}
+      >
+        {requiredLabel && (
+        <span className={`${controlNote} ${controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
         <label
           className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
-          htmlFor={id}>
+          htmlFor={id}
+        >
           {label}
         </label>
 
@@ -199,20 +205,22 @@ export default class ComboboxComponent extends React.Component {
               onFocus: this.props.onFocus,
               placeholder,
               required: isRequired,
-              value: this.state.value
-            }} />
+              value: this.state.value,
+            }}
+          />
 
-          {handle ?
+          {handle ? (
             <span className={styles.handle}>
               {handle}
             </span>
-            : ''}
+          ) : ''}
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+          <Error
+            info={error}
+            subInfo={errorSubInfo}
+          />
+          )}
         </div>
       </div>
     );

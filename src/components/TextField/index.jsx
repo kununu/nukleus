@@ -1,5 +1,4 @@
-/* eslint "react/no-array-index-key": 0 */
-
+/* eslint-disable jsx-a11y/no-autofocus */
 // Read more about controlled components
 // https://facebook.github.io/react/docs/forms.html#controlled-components
 import React from 'react';
@@ -7,11 +6,11 @@ import PropTypes from 'prop-types';
 
 import {queryParamsToObject} from 'utils/params';
 
-import styles from './index.scss';
-
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
 import sharedStyles from '../index.scss';
+
+import styles from './index.scss';
 
 export default class TextField extends React.Component {
   static propTypes = {
@@ -22,13 +21,13 @@ export default class TextField extends React.Component {
     dynamicTextareaHeight: PropTypes.bool,
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
-    highlightList: PropTypes.object,
+    highlightList: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     id: PropTypes.string.isRequired,
     inputStyle: PropTypes.string,
     isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]).isRequired,
     labelHidden: PropTypes.bool,
     maxLength: PropTypes.number,
@@ -43,7 +42,7 @@ export default class TextField extends React.Component {
     placeholder: PropTypes.string,
     query: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
@@ -56,9 +55,9 @@ export default class TextField extends React.Component {
       'text',
       'url',
       'number',
-      'hidden'
+      'hidden',
     ]),
-    value: PropTypes.string
+    value: PropTypes.string,
   };
 
   static defaultProps = {
@@ -89,34 +88,40 @@ export default class TextField extends React.Component {
     sanitizeValue: value => value,
     title: '',
     type: 'text',
-    value: ''
+    value: '',
   };
 
   state = {
     highlightedContent: '',
     showError: false,
     textAreaHeight: null,
-    value: this.props.value || ''
+    value: this.props.value || '', // eslint-disable-line react/destructuring-assignment
   };
 
   componentWillMount () {
-    const {query} = this.props;
+    const {
+      error,
+      name,
+      query,
+      value,
+    } = this.props;
     const queryObject = queryParamsToObject(query);
 
-    this.updateValue(queryObject[this.props.name] || this.props.value || '');
+    this.updateValue(queryObject[name] || value || '');
 
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {name} = this.props;
     const queryObject = queryParamsToObject(nextProps.query);
 
     if (nextProps.error) {
       this.showError();
     } else {
       if (!this.needsUpdate(nextProps)) return;
-      this.updateValue(queryObject[this.props.name] ||
+      this.updateValue(queryObject[name] ||
         nextProps.value ||
         '');
     }
@@ -129,11 +134,12 @@ export default class TextField extends React.Component {
       dynamicTextareaHeight,
       highlightList,
       multiLine,
-      onChange
+      onChange,
+      sanitizeValue,
     } = this.props;
 
-    this.updateValue(this.props.sanitizeValue(target.value));
-    if (onChange) this.props.onChange(...args);
+    this.updateValue(sanitizeValue(target.value));
+    if (onChange) onChange(...args);
 
     if (dynamicTextareaHeight && multiLine) {
       this.setDynamicTextAreaHeight(target);
@@ -141,7 +147,7 @@ export default class TextField extends React.Component {
 
     if (highlightList) {
       this.setState({
-        highlightedContent: this.getHighlightedContent(target.value)
+        highlightedContent: this.getHighlightedContent(target.value),
       });
     }
 
@@ -157,7 +163,7 @@ export default class TextField extends React.Component {
   get labelClassNames () {
     const {
       inputStyle,
-      labelHidden
+      labelHidden,
     } = this.props;
     const classNames = [sharedStyles.controlLabel];
 
@@ -183,7 +189,7 @@ export default class TextField extends React.Component {
   get textFieldClassNames () {
     const {
       multiLine,
-      highlightList
+      highlightList,
     } = this.props;
     const classNames = [sharedStyles.formControl];
 
@@ -208,7 +214,7 @@ export default class TextField extends React.Component {
     const {
       inputStyle,
       requiredLabel,
-      displayLength
+      displayLength,
     } = this.props;
     const classNames = [sharedStyles.formGroup];
 
@@ -230,11 +236,18 @@ export default class TextField extends React.Component {
   get label () {
     const {
       id,
-      label
+      label,
     } = this.props;
 
     if (typeof label === 'string') {
-      return <label className={this.labelClassNames} htmlFor={id}>{label}</label>;
+      return (
+        <label
+          className={this.labelClassNames}
+          htmlFor={id}
+        >
+          {label}
+        </label>
+      );
     }
 
     // We don't simply put a more complex element inside a label to prevent a
@@ -249,60 +262,50 @@ export default class TextField extends React.Component {
       label,
       {
         ...label.props,
-        className: classNames.join(' ')
-      }
+        className: classNames.join(' '),
+      },
     );
   }
 
-  getHighlightedContent = contents => {
+  getHighlightedContent = (contents) => {
     const contentRegex = /([^a-zA-Z]+)/;
     const userInputArray = contents.split(contentRegex);
 
     const {
       highlightList,
-      onHighlight
+      onHighlight,
     } = this.props;
 
-    return userInputArray.map((part, i) => {
+    return userInputArray.map((part) => {
       if (highlightList[part.toLowerCase()]) {
         onHighlight();
-        return <span className={styles.highlighted} key={i}>{part}</span>;
+        return (
+          <span
+            className={styles.highlighted}
+            key={part}
+          >
+            {part}
+          </span>
+        );
       }
       return part;
     });
   }
 
-  setDynamicTextAreaHeight = target => {
-    const oldHeight = Number(this.state.textAreaHeight);
+  setDynamicTextAreaHeight = (target) => {
+    const {minHeight} = this.props;
+    const {textAreaHeight} = this.state;
+    const oldHeight = Number(textAreaHeight);
     const currentHeight = target.scrollHeight;
 
     // Fix so when you backspace it will reduce the correct height
     const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
 
-    if (newHeight > (this.props.minHeight || 134)) {
+    if (newHeight > (minHeight || 134)) {
       this.setState({
-        textAreaHeight: newHeight
+        textAreaHeight: newHeight,
       });
     }
-  }
-
-  needsUpdate ({value, query}) {
-    return (
-      value !== this.props.value ||
-      query !== this.props.query
-    );
-  }
-
-  updateValue (value) {
-    this.setState({value});
-  }
-
-  showError () {
-    this.setState({showError: true});
-  }
-
-  hideError () {
-    this.setState({showError: false});
   }
 
   /**
@@ -313,18 +316,47 @@ export default class TextField extends React.Component {
   textAreaStyles = () => {
     const {
       highlightList,
-      minHeight
+      minHeight,
     } = this.props;
+    const {textAreaHeight} = this.state;
     const textAreaStyles = {};
 
     if (highlightList && minHeight) textAreaStyles.minHeight = minHeight;
-    if (this.state.textAreaHeight) textAreaStyles.height = `${this.state.textAreaHeight}px`;
+    if (textAreaHeight) textAreaStyles.height = `${textAreaHeight}px`;
 
     return textAreaStyles;
   }
 
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  updateValue (value) {
+    this.setState({value});
+  }
+
+  needsUpdate ({value, query}) {
+    const {
+      value: pValue,
+      query: pQuery,
+    } = this.props;
+
+    return (
+      value !== pValue ||
+        query !== pQuery
+    );
+  }
+
   hasError () {
-    return this.state.showError && this.props.error;
+    const {showError} = this.state;
+    const {error} = this.props;
+
+    return showError && error;
   }
 
   render () {
@@ -351,32 +383,38 @@ export default class TextField extends React.Component {
       requiredLabel,
       rows,
       title,
-      type
+      type,
     } = this.props;
 
-    const {highlightedContent} = this.state;
+    const {
+      highlightedContent,
+      value,
+    } = this.state;
 
     return (
-      <div className={this.containerClassNames} id={`${name}-container`}>
-        {this.state.highlightContent}
+      <div
+        className={this.containerClassNames}
+        id={`${name}-container`}
+      >
         <InfoLabel
           requiredLabel={requiredLabel}
-          inputValue={this.state.value}
+          inputValue={value}
           displayLength={displayLength}
-          maxLength={maxLength} />
+          maxLength={maxLength}
+        />
         {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
 
         {this.label}
 
         <div className={styles.inputContainer}>
-          {highlightList ?
+          {highlightList ? (
             <div className={`${styles.highlightOverlay} ${this.textFieldClassNames}`}>
               {highlightedContent}
             </div>
-            : null
+          ) : null
           }
           {
-            multiLine ?
+            multiLine ? (
               <textarea
                 autoFocus={autoFocus}
                 className={this.textFieldClassNames}
@@ -393,7 +431,9 @@ export default class TextField extends React.Component {
                 ref={reference}
                 rows={rows}
                 style={this.textAreaStyles()}
-                value={this.state.value} /> :
+                value={value}
+              />
+            ) : (
               <input
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
@@ -411,14 +451,16 @@ export default class TextField extends React.Component {
                 required={isRequired}
                 title={title}
                 type={type}
-                value={this.state.value} />
-          }
+                value={value}
+              />
+            )}
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+          <Error
+            info={error}
+            subInfo={errorSubInfo}
+          />
+          )}
         </div>
       </div>
     );

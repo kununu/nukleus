@@ -15,5 +15,6 @@ storiesOf('Paginator', module)
     <Paginator
       totalPages={number('totalPages', 5)}
       query={window.parent.location.search}
-      baseLink={<a href="/">baselink</a>} />
+      baseLink={<a href="/">baselink</a>}
+    />
   ));

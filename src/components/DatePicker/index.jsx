@@ -5,7 +5,6 @@ import isDate from 'date-fns/isDate';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import {
@@ -15,8 +14,10 @@ import {
   formControl,
   formControlError,
   formGroup,
-  srOnly
+  srOnly,
 } from '../index.scss';
+
+import styles from './index.scss';
 
 export default class DatePickerComponent extends React.Component {
   static propTypes = {
@@ -30,7 +31,7 @@ export default class DatePickerComponent extends React.Component {
     isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
@@ -43,7 +44,7 @@ export default class DatePickerComponent extends React.Component {
     showMonthDropdown: PropTypes.bool,
     showYearDropdown: PropTypes.bool,
     title: PropTypes.string,
-    value: PropTypes.instanceOf(Date)
+    value: PropTypes.instanceOf(Date),
   };
 
   static defaultProps = {
@@ -65,19 +66,19 @@ export default class DatePickerComponent extends React.Component {
     showMonthDropdown: false,
     showYearDropdown: false,
     title: null,
-    value: null
+    value: null,
   };
 
   state = {
     showError: false,
-    value: this.props.value
+    value: this.props.value,
   }
 
   componentWillMount () {
     const {
       query,
       name,
-      value
+      value,
     } = this.props;
 
     this.updateValue(query[name] || value || '');
@@ -94,10 +95,10 @@ export default class DatePickerComponent extends React.Component {
   }
 
   // Property initializer binds method to class instance
-  onChange = value => {
+  onChange = (value) => {
     const {
       onChange,
-      name
+      name,
     } = this.props;
 
     this.updateValue(value);
@@ -112,8 +113,8 @@ export default class DatePickerComponent extends React.Component {
     onChange({
       target: {
         name,
-        value
-      }
+        value,
+      },
     });
   };
 
@@ -122,7 +123,7 @@ export default class DatePickerComponent extends React.Component {
       id,
       title,
       label,
-      labelHidden
+      labelHidden,
     } = this.props;
 
     if (!label && !title) return null;
@@ -135,7 +136,14 @@ export default class DatePickerComponent extends React.Component {
      * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
     */
     if (typeof label === 'string' || typeof title === 'string') {
-      return <label className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`} htmlFor={id}>{label || title}</label>;
+      return (
+        <label
+          className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`}
+          htmlFor={id}
+        >
+          {label || title}
+        </label>
+      );
     }
 
     // We don't simply put a more complex element inside a label to prevent a
@@ -146,8 +154,8 @@ export default class DatePickerComponent extends React.Component {
       label,
       {
         ...label.props,
-        className: controlLabel
-      }
+        className: controlLabel,
+      },
     );
   }
 
@@ -181,18 +189,21 @@ export default class DatePickerComponent extends React.Component {
       requiredLabel,
       showMonthDropdown,
       showYearDropdown,
-      showAbbreviatedMonthDropdown
+      showAbbreviatedMonthDropdown,
     } = this.props;
 
     const {value} = this.state;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
-        {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
-            {requiredLabel}
-          </span>
-        }
+      <div
+        className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}
+        id={`${name}-container`}
+      >
+        {requiredLabel && (
+        <span className={`${controlNote} ${controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
         {this.label}
 
@@ -210,18 +221,20 @@ export default class DatePickerComponent extends React.Component {
             selected={isDate(value) ? value : null}
             showMonthDropdown={showMonthDropdown}
             showYearDropdown={showYearDropdown}
-            useShortMonthInDropdown={showAbbreviatedMonthDropdown} />
-          {icon ?
+            useShortMonthInDropdown={showAbbreviatedMonthDropdown}
+          />
+          {icon ? (
             <span className={styles.icon}>
               {icon}
             </span>
-            : ''}
+          ) : ''}
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+          <Error
+            info={error}
+            subInfo={errorSubInfo}
+          />
+          )}
         </div>
 
       </div>

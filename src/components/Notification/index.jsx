@@ -19,9 +19,9 @@ export default class Notification extends React.Component {
     },
     type: PropTypes.oneOf([
       'error',
-      'success'
+      'success',
     ]),
-    visible: PropTypes.bool
+    visible: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -33,12 +33,14 @@ export default class Notification extends React.Component {
         x="0px"
         y="0px"
         viewBox="0 0 68.3 61.2"
-        xmlSpace="preserve">
+        xmlSpace="preserve"
+      >
         <path
           d="M55,43.3c0,0.9-0.3,1.7-1,2.4l-4.8,4.8c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1L34.1,40.2L23.8,50.5
             c-0.7,0.7-1.5,1-2.4,1c-0.9,0-1.7-0.3-2.4-1l-4.8-4.8c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l10.3-10.3L14.2,20.3
             c-0.7-0.7-1-1.5-1-2.4s0.3-1.7,1-2.4l4.8-4.8c0.7-0.7,1.5-1,2.4-1c0.9,0,1.7,0.3,2.4,1L34.1,21l10.3-10.3c0.7-0.7,1.5-1,2.4-1
-            c0.9,0,1.7,0.3,2.4,1l4.8,4.8c0.7,0.7,1,1.5,1,2.4s-0.3,1.7-1,2.4L43.7,30.6L54,40.9C54.7,41.6,55,42.4,55,43.3z" />
+            c0.9,0,1.7,0.3,2.4,1l4.8,4.8c0.7,0.7,1,1.5,1,2.4s-0.3,1.7-1,2.4L43.7,30.6L54,40.9C54.7,41.6,55,42.4,55,43.3z"
+        />
       </svg>
     ),
     closeMethod: 'onClick',
@@ -46,11 +48,11 @@ export default class Notification extends React.Component {
     icon: null,
     onClose: () => {},
     type: 'success',
-    visible: false
+    visible: false,
   };
 
   state = {
-    visible: this.props.visible
+    visible: this.props.visible, // eslint-disable-line react/destructuring-assignment
   };
 
   componentWillReceiveProps (nextProps) {
@@ -64,14 +66,16 @@ export default class Notification extends React.Component {
   }
 
   onClickClose = () => {
+    const {onClose} = this.props;
+
     this.hideNotification();
-    this.props.onClose();
+    onClose();
   };
 
   onTimeout () {
     const {
       closeMethod,
-      onClose
+      onClose,
     } = this.props;
 
     if (closeMethod === 'onTimeout') {
@@ -81,9 +85,14 @@ export default class Notification extends React.Component {
   }
 
   newNotificationWillOverrideExisting (message) {
+    const {
+      visible,
+      message: pmessage,
+    } = this.props;
+
     return (
-      this.props.visible &&
-      this.props.message !== message
+      visible &&
+      pmessage !== message
     );
   }
 
@@ -92,7 +101,9 @@ export default class Notification extends React.Component {
   }
 
   isError () {
-    return this.props.type === 'error';
+    const {type} = this.props;
+
+    return type === 'error';
   }
 
   render () {
@@ -101,7 +112,8 @@ export default class Notification extends React.Component {
       duration,
       icon,
       message,
-      type
+      type,
+      closeMethod,
     } = this.props;
 
     const {visible} = this.state;
@@ -116,23 +128,27 @@ export default class Notification extends React.Component {
       <div
         className={`
           ${styles.container}
-          ${styles[this.state.visible ? 'visible' : 'hidden']}
+          ${styles[visible ? 'visible' : 'hidden']}
           ${this.isError() && styles.error}
-        `}>
+        `}
+      >
 
         <p>
-          {this.props.closeMethod === 'onClick' &&
-            <button
-              className={styles.closeButton}
-              onClick={this.onClickClose}>
-              {closeIcon}
-            </button> }
+          {closeMethod === 'onClick' && (
+          <button
+            className={styles.closeButton}
+            onClick={this.onClickClose}
+            type="button"
+          >
+            {closeIcon}
+          </button>
+          )}
 
-          {icon &&
-            <span className={styles[type]}>
-              {icon}
-            </span>
-          }
+          {icon && (
+          <span className={styles[type]}>
+            {icon}
+          </span>
+          )}
 
           {message}
         </p>

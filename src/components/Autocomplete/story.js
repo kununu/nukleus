@@ -15,8 +15,8 @@ const staticData = {
     {item: 'alpha', itemInfo: 'Vienna'},
     {item: 'IBM', itemInfo: 'US'},
     {item: 'kununu', itemInfo: 'Vienna'},
-    {item: 'kununu', itemInfo: 'US'}
-  ]
+    {item: 'kununu', itemInfo: 'US'},
+  ],
 };
 
 storiesOf('Autocomplete', module)
@@ -50,7 +50,8 @@ storiesOf('Autocomplete', module)
             error={boolean('error', false)}
             errorSubInfo={text('errorSubInfo', 'Error!')}
             scrollOffset={70}
-            scrollTo />
+            scrollTo
+          />
 
           <br />
 
@@ -74,7 +75,8 @@ storiesOf('Autocomplete', module)
             errorSubInfo={text('errorSubInfo', 'Error!')}
             requiredLabel
             scrollOffset={70}
-            scrollTo />
+            scrollTo
+          />
         </div>
       </div>
     </div>

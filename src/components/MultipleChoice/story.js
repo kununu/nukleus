@@ -21,14 +21,15 @@ storiesOf('MultipleChoice', module)
           id: 'option-a',
           isChecked: true,
           label: 'option a',
-          value: 'option-a'
+          value: 'option-a',
         },
         {
           id: 'option-b',
           isChecked: false,
           label: 'option b',
-          value: 'option-b'
-        }]} />
+          value: 'option-b',
+        }]}
+    />
   ))
   .add('Button style', () => (
     <MultipleChoice
@@ -40,42 +41,43 @@ storiesOf('MultipleChoice', module)
         id: 'option-1',
         isChecked: true,
         label: 'Elephant',
-        value: 'option-1'
+        value: 'option-1',
       },
       {
         id: 'option-2',
         isChecked: false,
         label: 'Fox',
-        value: 'option-2'
+        value: 'option-2',
       },
       {
         id: 'option-3',
         isChecked: false,
         label: 'Dog',
-        value: 'option-3'
+        value: 'option-3',
       },
       {
         id: 'option-4',
         isChecked: false,
         label: 'Dasypus novemcinctus',
-        value: 'option-4'
+        value: 'option-4',
       },
       {
         id: 'option-5',
         isChecked: false,
         label: 'Horse',
-        value: 'option-5'
+        value: 'option-5',
       },
       {
         id: 'option-6',
         isChecked: false,
         label: 'Chimpanzee',
-        value: 'option-6'
+        value: 'option-6',
       },
       {
         id: 'option-7',
         isChecked: false,
         label: 'Goldfish',
-        value: 'option-7'
-      }]} />
+        value: 'option-7',
+      }]}
+    />
   ));

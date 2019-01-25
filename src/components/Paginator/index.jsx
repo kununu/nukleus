@@ -12,16 +12,16 @@ export default class Paginator extends React.Component {
     pathname: PropTypes.string,
     query: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     queryKey: PropTypes.string,
-    totalPages: PropTypes.number.isRequired
+    totalPages: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
     pathname: '/',
     query: {},
-    queryKey: 'page'
+    queryKey: 'page',
   };
 
   getPageRange (page) {
@@ -48,7 +48,7 @@ export default class Paginator extends React.Component {
       baseLink,
       pathname,
       query,
-      queryKey
+      queryKey,
     } = this.props;
 
     const queryObject = this.parseQueryObject(query);
@@ -58,15 +58,15 @@ export default class Paginator extends React.Component {
       return {
         to: {
           pathname,
-          search: queryParams
-        }
+          search: queryParams,
+        },
       };
     }
 
     const location = baseLink.props.href ? 'href' : 'path';
 
     return {
-      [location]: `${pathname}?${queryParams}`
+      [location]: `${pathname}?${queryParams}`,
     };
   }
 
@@ -77,7 +77,7 @@ export default class Paginator extends React.Component {
       baseLink,
       totalPages,
       queryKey,
-      query
+      query,
     } = this.props;
 
     const queryObject = this.parseQueryObject(query);
@@ -89,17 +89,23 @@ export default class Paginator extends React.Component {
 
     return (
       <div className={styles.paginator}>
-        <ul className={styles.paginatorList} role="navigation" aria-label="Pagination">
+        <ul
+          className={styles.paginatorList}
+          role="navigation"
+          aria-label="Pagination"
+        >
           <li className={(totalPages === 1 || !currentPage || currentPage === 1) ? styles.disabled : undefined}>
             {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
           </li>
 
-          {totalPagesArray.map(item =>
-            (
-              <li key={item} className={currentPage === item ? styles.active : undefined}>
-                {React.cloneElement(baseLink, this.getNewProps(item), item)}
-              </li>
-            ))}
+          {totalPagesArray.map(item => (
+            <li
+              key={item}
+              className={currentPage === item ? styles.active : undefined}
+            >
+              {React.cloneElement(baseLink, this.getNewProps(item), item)}
+            </li>
+          ))}
 
           <li className={currentPage === totalPages ? styles.disabled : undefined}>
             {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}

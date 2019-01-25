@@ -12,11 +12,11 @@ const Error = ({info, subInfo}) => (
 
 Error.propTypes = {
   info: PropTypes.string.isRequired,
-  subInfo: PropTypes.string
+  subInfo: PropTypes.string,
 };
 
 Error.defaultProps = {
-  subInfo: ''
+  subInfo: '',
 };
 
 export default Error;

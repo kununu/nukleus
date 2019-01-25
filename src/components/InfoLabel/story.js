@@ -2,7 +2,9 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
-import {withKnobs, text, boolean, number} from '@storybook/addon-knobs';
+import {
+  withKnobs, text, boolean, number,
+} from '@storybook/addon-knobs';
 import {withInfo} from '@storybook/addon-info';
 
 import InfoLabel from './index';
@@ -21,13 +23,15 @@ storiesOf('InfoLabel', module)
       </p>
       <div style={{
         maxWidth: '100px',
-        position: 'relative'
-      }}>
+        position: 'relative',
+      }}
+      >
         <InfoLabel
           inputValue={text('inputValue', 'Simple info label')}
           displayLength={boolean('displayLength', true)}
           maxLength={number('maxLength', 500)}
-          requiredLabel={text('requiredLabel', 'Required')} />
+          requiredLabel={text('requiredLabel', 'Required')}
+        />
       </div>
     </div>
   ));

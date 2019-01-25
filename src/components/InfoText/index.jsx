@@ -13,9 +13,9 @@ export default function InfoText ({text, infoStyle}) {
 
 InfoText.propTypes = {
   infoStyle: PropTypes.oneOf(['inline']),
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
 };
 
 InfoText.defaultProps = {
-  infoStyle: 'inline'
+  infoStyle: 'inline',
 };

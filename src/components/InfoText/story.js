@@ -18,11 +18,13 @@ storiesOf('InfoText', module)
       <TextField
         id="text-field"
         label="TextField"
-        name="text-field" />
+        name="text-field"
+      />
 
       <div>
         <InfoText
-          text={text('text', 'I am an info text.')} />
+          text={text('text', 'I am an info text.')}
+        />
       </div>
     </div>
   ));

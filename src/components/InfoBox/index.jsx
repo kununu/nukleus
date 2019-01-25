@@ -7,18 +7,18 @@ export default class InfoBox extends React.Component {
   static propTypes = {
     content: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]).isRequired,
     position: PropTypes.oneOf([
       'topLeft',
       'topRight',
       'bottomLeft',
-      'bottomRight'
-    ])
+      'bottomRight',
+    ]),
   };
 
   static defaultProps = {
-    position: 'topLeft'
+    position: 'topLeft',
   };
 
   componentWillMount () {
@@ -66,6 +66,7 @@ export default class InfoBox extends React.Component {
   }
 
   currentTranslateX = 0;
+
   needsLayoutUpdate = false;
 
   updateLayout = () => {
@@ -95,10 +96,12 @@ export default class InfoBox extends React.Component {
 
   render () {
     const CustomTag = typeof (this.props.content) === 'object' ? 'div' : 'p';
+
     return (
       <CustomTag
-        ref={container => { this.container = container; }}
-        className={`${styles.infoBox} ${styles[this.props.position]}`}>
+        ref={(container) => { this.container = container; }}
+        className={`${styles.infoBox} ${styles[this.props.position]}`}
+      >
         {this.props.content}
       </CustomTag>
     );

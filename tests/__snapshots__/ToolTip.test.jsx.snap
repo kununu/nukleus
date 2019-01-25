@@ -224,7 +224,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
 <ToolTip
   content={
     <span>
-      More Test 
+      More Test
       <span>
         Info
       </span>
@@ -276,7 +276,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
     <InfoBox
       content={
         <span>
-          More Test 
+          More Test
           <span>
             Info
           </span>
@@ -288,7 +288,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
         className="infoBox topLeft"
       >
         <span>
-          More Test 
+          More Test
           <span>
             Info
           </span>

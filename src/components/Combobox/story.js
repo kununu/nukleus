@@ -4,7 +4,9 @@ import {defaultOptions} from 'defaultOptions';
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, text, boolean, array} from '@storybook/addon-knobs/react';
+import {
+  withKnobs, text, boolean, array,
+} from '@storybook/addon-knobs/react';
 
 import Combobox from './index';
 
@@ -14,7 +16,12 @@ storiesOf('Combobox', module)
   .addDecorator((story, context) => withInfo('The combobox is a select box / text input combo')(story)(context))
   .add('basics', () => (
     <Combobox
-      handle={<i className="fa fa-chevron-down" aria-hidden="true" />}
+      handle={(
+        <i
+          className="fa fa-chevron-down"
+          aria-hidden="true"
+        />
+)}
       name="name"
       inputStyles="block"
       isSearchable={boolean('isSearchable', true)}
@@ -29,5 +36,6 @@ storiesOf('Combobox', module)
       onFocus={action('onFocus')}
       isRequired={boolean('isRequired', false)}
       placeholder={text('placeholder', 'type m')}
-      items={array('items', ['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone'], ', ')} />
+      items={array('items', ['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone'], ', ')}
+    />
   ));

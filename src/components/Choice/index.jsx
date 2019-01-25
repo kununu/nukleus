@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 import {queryParamsToObject} from 'utils/params';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import Label from '../Label';
 import {
   controlLabelRequired,
   controlNote,
-  formGroup
+  formGroup,
 } from '../index.scss';
+
+import styles from './index.scss';
 
 export default class Choice extends React.Component {
   static propTypes = {
@@ -25,7 +26,7 @@ export default class Choice extends React.Component {
     isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
@@ -37,10 +38,10 @@ export default class Choice extends React.Component {
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
     query: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     reference: PropTypes.func,
-    requiredLabel: PropTypes.string
+    requiredLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -61,18 +62,18 @@ export default class Choice extends React.Component {
     optionsPerRow: null,
     query: {},
     reference: () => {},
-    requiredLabel: ''
+    requiredLabel: '',
   };
 
   state = {
     checked: this.props.checked,
-    showError: false
+    showError: false,
   };
 
   componentWillMount () {
     const {
       query,
-      name
+      name,
     } = this.props;
     const queryObject = queryParamsToObject(query);
 
@@ -82,7 +83,7 @@ export default class Choice extends React.Component {
     if (!queryObject[name]) return;
 
     this.setState({
-      checked: queryObject[name]
+      checked: queryObject[name],
     });
   }
 
@@ -95,22 +96,23 @@ export default class Choice extends React.Component {
     if (nextProps.query === this.props.query && nextProps.checked === this.props.checked) return;
     if (queryNextObject[name] && queryNextObject[name] !== queryPropsObject[name]) {
       this.setState({
-        checked: queryNextObject[name]
+        checked: queryNextObject[name],
       });
     } else if (nextProps.checked !== this.props.checked) {
       this.setState({
-        checked: nextProps.checked
+        checked: nextProps.checked,
       });
     }
   }
 
   onChange = (option, e) => {
     const {value} = e.target;
+
     if (this.isOptionDisabled(option) || value === this.state.checked) return;
 
     this.props.onChange(e);
     this.setState({
-      checked: value
+      checked: value,
     });
   };
 
@@ -123,7 +125,7 @@ export default class Choice extends React.Component {
     // As long as the component is not required and the component is deselected set to null.
     if (!this.props.isRequired && value === this.state.checked) {
       this.setState({
-        checked: null
+        checked: null,
       });
     }
   }
@@ -133,7 +135,7 @@ export default class Choice extends React.Component {
       heading,
       headingStyle,
       label,
-      labelHidden
+      labelHidden,
     } = this.props;
 
     if (!label && !heading) return null;
@@ -146,12 +148,14 @@ export default class Choice extends React.Component {
         value={value}
         labelHidden={labelHidden}
         classNames={headingStyle}
-        isTitle />
+        isTitle
+      />
     );
   }
 
   isOptionDisabled (option) {
     const {disabled} = this.props;
+
     return disabled || (typeof (option.disabled) === 'boolean' ? option.disabled : disabled);
   }
 
@@ -161,7 +165,7 @@ export default class Choice extends React.Component {
 
   hideError () {
     this.setState({
-      showError: false
+      showError: false,
     });
   }
 
@@ -180,58 +184,69 @@ export default class Choice extends React.Component {
       onFocus,
       options,
       reference,
-      requiredLabel
+      requiredLabel,
     } = this.props;
 
     const optionsPerRow = this.props.optionsPerRow && parseInt(this.props.optionsPerRow, 10);
 
     const {
-      checked
+      checked,
     } = this.state;
 
     return (
-      <div className={formGroup} id={`${name}-container`}>
+      <div
+        className={formGroup}
+        id={`${name}-container`}
+      >
 
-        {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
-            {requiredLabel}
-          </span>
-        }
+        {requiredLabel && (
+        <span className={`${controlNote} ${controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
         {this.label}
 
-        <div className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`} data-options-per-row={optionsPerRow}>
-          {options.map((item, idx) =>
-            (
-              <div className={styles.radioButton} key={item.id}>
-                <input
-                  type="radio"
-                  value={item.value}
-                  id={`${name}${item.id}`}
-                  name={name}
-                  checked={checked === item.value}
-                  onBlur={onBlur}
-                  onChange={e => this.onChange(item, e)}
-                  onFocus={onFocus}
-                  onClick={e => this.onClick(item, e)}
-                  ref={reference}
-                  required={isRequired} />
-                <label
-                  disabled={this.isOptionDisabled(item)}
-                  id={idx}
-                  htmlFor={`${name}${item.id}`}
-                  className={customTheme}>
-                  {item.label}
-                </label>
-              </div>
-            ))}
+        <div
+          className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`}
+          data-options-per-row={optionsPerRow}
+        >
+          {options.map((item, idx) => (
+            <div
+              className={styles.radioButton}
+              key={item.id}
+            >
+              <input
+                type="radio"
+                value={item.value}
+                id={`${name}${item.id}`}
+                name={name}
+                checked={checked === item.value}
+                onBlur={onBlur}
+                onChange={e => this.onChange(item, e)}
+                onFocus={onFocus}
+                onClick={e => this.onClick(item, e)}
+                ref={reference}
+                required={isRequired}
+              />
+              <label
+                disabled={this.isOptionDisabled(item)}
+                id={idx}
+                htmlFor={`${name}${item.id}`}
+                className={customTheme}
+              >
+                {item.label}
+              </label>
+            </div>
+          ))}
         </div>
 
-        {this.hasError() &&
-          <Error
-            info={error}
-            subInfo={errorSubInfo} />
-        }
+        {this.hasError() && (
+        <Error
+          info={error}
+          subInfo={errorSubInfo}
+        />
+        )}
       </div>
     );
   }

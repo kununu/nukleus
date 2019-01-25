@@ -1,0 +1,14 @@
+{
+  "extends": "@kununu",
+  "settings": {
+    "import/resolver": {
+      "webpack": "webpack.config.babel.js"
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true
+    }
+  ]
+}
+}

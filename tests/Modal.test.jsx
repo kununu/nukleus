@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import {mount} from 'enzyme';
-import Modal from 'Modal'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import Modal from 'Modal'; // eslint-disable-line import/no-unresolved
 
 test('Renders Modal without crashing', () => {
   const component = mount((
@@ -13,17 +13,20 @@ test('Renders Modal without crashing', () => {
       onAction={() => {}}
       onExit={() => {}}
       open
-      titleText="Modal">
+      titleText="Modal"
+    >
       <p>Hello world</p>
     </Modal>
   ));
 
   const tree = toJson(component);
+
   expect(tree).toMatchSnapshot();
 });
 
 test('Calls onEnter, when the modal is mounted', () => {
   const onEnter = window.spyOn(Modal.prototype, 'onEnter');
+
   mount((
     <Modal
       actionText="Ok"
@@ -33,7 +36,8 @@ test('Calls onEnter, when the modal is mounted', () => {
       onAction={() => {}}
       onExit={() => {}}
       open
-      titleText="Modal">
+      titleText="Modal"
+    >
       <p>Hello world</p>
     </Modal>
   ));
@@ -52,7 +56,8 @@ test('Closes the modal, when the close button is clicked', () => {
       onAction={() => {}}
       onExit={() => {}}
       open
-      titleText="Modal">
+      titleText="Modal"
+    >
       <p>Hello world</p>
     </Modal>
   ));
@@ -77,7 +82,8 @@ test('Fires the onAction when the action button is clicked', () => {
       onAction={async () => spyFunc()}
       onExit={() => {}}
       open
-      titleText="Modal">
+      titleText="Modal"
+    >
       <p>Hello world</p>
     </Modal>
   ));
@@ -101,7 +107,8 @@ test('Fires the onExit when the close button is clicked', () => {
       onAction={() => {}}
       onExit={() => {}}
       open
-      titleText="Modal">
+      titleText="Modal"
+    >
       <p>Hello world</p>
     </Modal>));
 

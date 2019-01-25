@@ -9,21 +9,21 @@ export default class DropDown extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.element),
-      PropTypes.element
+      PropTypes.element,
     ]).isRequired,
     direction: PropTypes.oneOf(['up', 'down']),
     pullRight: PropTypes.bool,
     showOnHover: PropTypes.bool,
     title: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element
-    ]).isRequired
+      PropTypes.element,
+    ]).isRequired,
   }
 
   static defaultProps = {
     direction: 'down',
     pullRight: false,
-    showOnHover: true
+    showOnHover: true,
   }
 
   state = {isOpen: false}
@@ -60,7 +60,7 @@ export default class DropDown extends Component {
 
   onClick = () => this.setState({isOpen: !this.state.isOpen});
 
-  handleClickOutside = e => {
+  handleClickOutside = (e) => {
     if (this.node.contains(e.target)) return;
 
     setTimeout(() => {
@@ -77,7 +77,7 @@ export default class DropDown extends Component {
       children,
       direction,
       pullRight,
-      title
+      title,
     } = this.props;
     const {isOpen} = this.state;
 
@@ -92,21 +92,23 @@ export default class DropDown extends Component {
           onClick={this.onClick}
           ref={node => this.node = node}
           aria-haspopup="listbox"
-          aria-expanded={isOpen}>
+          aria-expanded={isOpen}
+        >
           {title}
         </button>
 
-        {isOpen &&
-          <ul
-            className={styles.itemsList}
-            onMouseEnter={this.onMouseEnter}
-            onMouseLeave={this.onMouseLeave}
-            aria-labelledby="dropdown"
-            role="listbox"
-            tabIndex={0}>
-            {children}
-          </ul>
-        }
+        {isOpen && (
+        <ul
+          className={styles.itemsList}
+          onMouseEnter={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}
+          aria-labelledby="dropdown"
+          role="listbox"
+          tabIndex={0}
+        >
+          {children}
+        </ul>
+        )}
       </div>
     );
   }

@@ -14,5 +14,6 @@ storiesOf('Error', module)
   .add('basics', () => (
     <ErrorComponent
       info={text('info', 'This is an error')}
-      subInfo={text('subinfo', 'And I am some sub info')} />
+      subInfo={text('subinfo', 'And I am some sub info')}
+    />
   ));

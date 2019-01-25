@@ -9,6 +9,7 @@ import Tabs from './index';
 function updateUrl (e, path) {
   e.preventDefault();
   const queryString = window.parent.location.search;
+
   window.parent.history.pushState({}, 'new', `${path}${queryString}`);
   window.history.go('/');
 }
@@ -23,12 +24,28 @@ storiesOf('Tabs', module)
       </h3>
       <Tabs
         items={[
-          <a onClick={e => updateUrl(e, '/')} href="/">First Tab</a>,
-          <a onClick={e => updateUrl(e, '/2')} href="/2">Second Tab</a>,
-          <a onClick={e => updateUrl(e, '/3')} href="/3">Third Tab</a>
+          <a
+            onClick={e => updateUrl(e, '/')}
+            href="/"
+          >
+First Tab
+          </a>,
+          <a
+            onClick={e => updateUrl(e, '/2')}
+            href="/2"
+          >
+Second Tab
+          </a>,
+          <a
+            onClick={e => updateUrl(e, '/3')}
+            href="/3"
+          >
+Third Tab
+          </a>,
         ]}
         pathname={window.parent.location.pathname}
-        theme="default" />
+        theme="default"
+      />
 
       <br />
       <br />
@@ -39,11 +56,27 @@ storiesOf('Tabs', module)
       </h3>
       <Tabs
         items={[
-          <a onClick={e => updateUrl(e, '/')} href="/">First Tab</a>,
-          <a onClick={e => updateUrl(e, '/2')} href="/2">Second Tab</a>,
-          <a onClick={e => updateUrl(e, '/3')} href="/3">Third Tab</a>
+          <a
+            onClick={e => updateUrl(e, '/')}
+            href="/"
+          >
+First Tab
+          </a>,
+          <a
+            onClick={e => updateUrl(e, '/2')}
+            href="/2"
+          >
+Second Tab
+          </a>,
+          <a
+            onClick={e => updateUrl(e, '/3')}
+            href="/3"
+          >
+Third Tab
+          </a>,
         ]}
         pathname={window.parent.location.pathname}
-        theme="block" />
+        theme="block"
+      />
     </div>
   ));
