@@ -23,18 +23,18 @@ const DropDownInfo = () => (
       {' '}
       <code>showOnHover</code>
       {' '}
-property.
+      property.
       If true the menu will be shown on mouse hover. Otherwise, the menu will only open with a user click.
       <br />
       The props
       {' '}
       <code>pullRight</code>
       {' '}
-and
+      and
       {' '}
       <code>direction</code>
       {' '}
-may be used to control alignment and direction in which dropdown will open.
+    may be used to control alignment and direction in which dropdown will open.
     </p>
   </div>
 );
@@ -58,10 +58,10 @@ storiesOf('DropDown', module)
         }}
         >
           <p style={{marginTop: '0'}}>
-DropDown opens on hover with
+            DropDown opens on hover with
             <code>{'showOnHover={true}'}</code>
             {' '}
-prop by default
+            prop by default
           </p>
           <ul style={{
             background: '#ffffff',
@@ -76,7 +76,7 @@ prop by default
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bathroom
+                    Bathroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -84,7 +84,7 @@ Bathroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bedroom
+                    Bedroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -92,7 +92,7 @@ Bedroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Cooking
+                    Cooking
                   </a>
                 </DropDownItem>
               </DropDown>
@@ -102,7 +102,7 @@ Cooking
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Offers
+                Offers
               </a>
             </li>
             <li>
@@ -110,7 +110,7 @@ Offers
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Services
+                Services
               </a>
             </li>
           </ul>
@@ -122,10 +122,10 @@ Services
         }}
         >
           <p style={{marginTop: '0'}}>
-DropDown opens only when clicked with
+            DropDown opens only when clicked with
             <code>{'showOnHover={false}'}</code>
             {' '}
-prop by default
+            prop by default
           </p>
           <ul style={{
             background: '#ffffff',
@@ -143,7 +143,7 @@ prop by default
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bathroom
+                      Bathroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -151,7 +151,7 @@ Bathroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bedroom
+                    Bedroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -159,7 +159,7 @@ Bedroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Cooking
+                  Cooking
                   </a>
                 </DropDownItem>
               </DropDown>
@@ -169,7 +169,7 @@ Cooking
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Offers
+                Offers
               </a>
             </li>
             <li>
@@ -177,7 +177,7 @@ Offers
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Services
+                Services
               </a>
             </li>
           </ul>
@@ -189,15 +189,15 @@ Services
         }}
         >
           <p style={{marginTop: '0'}}>
-A
+            A
             <code>title</code>
             {' '}
-prop value is required. It can be either a
+            prop value is required. It can be either a
             <code>string</code>
             {' '}
-or
+            or
             <code>element</code>
-.
+            .
           </p>
           <ul style={{
             background: '#ffffff',
@@ -215,7 +215,7 @@ or
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bathroom
+                    Bathroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -223,7 +223,7 @@ Bathroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Bedroom
+                    Bedroom
                   </a>
                 </DropDownItem>
                 <DropDownItem>
@@ -231,7 +231,7 @@ Bedroom
                     href="/"
                     onClick={e => e.preventDefault()}
                   >
-Cooking
+                    Cooking
                   </a>
                 </DropDownItem>
               </DropDown>
@@ -241,7 +241,7 @@ Cooking
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Offers
+                Offers
               </a>
             </li>
             <li>
@@ -249,7 +249,7 @@ Offers
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-Services
+                Services
               </a>
             </li>
           </ul>
@@ -272,10 +272,10 @@ Services
         }}
         >
           <p style={{marginTop: '0'}}>
-Add
+            Add
             <code>pullRight</code>
             {' '}
-prop to open dropdown aligned to right side
+            prop to open dropdown aligned to right side
           </p>
           <div style={{
             background: '#ffffff',
@@ -286,15 +286,15 @@ prop to open dropdown aligned to right side
               pullRight
               title={(
                 <span>
-Austria
+                  Austria
                   <span
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
                 </span>
-)}
+              )}
             >
               <DropDownItem
                 isActive
@@ -303,15 +303,15 @@ Austria
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Austria
+                  Austria
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -320,15 +320,15 @@ Austria
                     aria-label="de"
                     role="img"
                   >
-🇩🇪
+                    🇩🇪
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Germany
+                  Germany
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -337,15 +337,15 @@ Germany
                     aria-label="ch"
                     role="img"
                   >
-🇨🇭
+                    🇨🇭
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Switzerland
+                  Switzerland
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -354,15 +354,15 @@ Switzerland
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-United States
+                  United States
                 </a>
               </DropDownItem>
             </DropDown>
@@ -379,15 +379,15 @@ United States
             <DropDown
               title={(
                 <span>
-United States
+                  United States
                   <span
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
                 </span>
-)}
+              )}
             >
               <DropDownItem
                 icon={(
@@ -395,15 +395,15 @@ United States
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Austria
+                  Austria
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -412,15 +412,15 @@ Austria
                     aria-label="de"
                     role="img"
                   >
-🇩🇪
+                    🇩🇪
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Germany
+                  Germany
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -429,15 +429,15 @@ Germany
                     aria-label="ch"
                     role="img"
                   >
-🇨🇭
+                    🇨🇭
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Switzerland
+                  Switzerland
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -447,15 +447,15 @@ Switzerland
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-United States
+                  United States
                 </a>
               </DropDownItem>
             </DropDown>
@@ -479,10 +479,10 @@ United States
         }}
         >
           <p style={{marginTop: '0'}}>
-Add
+            Add
             <code>direction="up"</code>
             {' '}
-prop to open dropdown in up direction
+            prop to open dropdown in up direction
           </p>
           <div style={{
             background: '#ffffff',
@@ -494,15 +494,15 @@ prop to open dropdown in up direction
               pullRight
               title={(
                 <span>
-Austria
+                  Austria
                   <span
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
                 </span>
-)}
+              )}
             >
               <DropDownItem
                 isActive
@@ -511,15 +511,15 @@ Austria
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Austria
+                  Austria
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -528,15 +528,15 @@ Austria
                     aria-label="de"
                     role="img"
                   >
-🇩🇪
+                    🇩🇪
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Germany
+                  Germany
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -545,15 +545,15 @@ Germany
                     aria-label="ch"
                     role="img"
                   >
-🇨🇭
+                    🇨🇭
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Switzerland
+                  Switzerland
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -562,15 +562,15 @@ Switzerland
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-United States
+                  United States
                 </a>
               </DropDownItem>
             </DropDown>
@@ -583,10 +583,10 @@ United States
         }}
         >
           <p style={{marginTop: '0'}}>
-DropDown opens with
+            DropDown opens with
             <code>direction="down"</code>
             {' '}
-prop by default
+            prop by default
           </p>
           <div style={{
             background: '#ffffff',
@@ -598,15 +598,15 @@ prop by default
               pullRight
               title={(
                 <span>
-United States
+                  United States
                   <span
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
                 </span>
-)}
+              )}
             >
               <DropDownItem
                 icon={(
@@ -614,15 +614,15 @@ United States
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Austria
+                  Austria
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -631,15 +631,15 @@ Austria
                     aria-label="de"
                     role="img"
                   >
-🇩🇪
+                    🇩🇪
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Germany
+                  Germany
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -648,15 +648,15 @@ Germany
                     aria-label="ch"
                     role="img"
                   >
-🇨🇭
+                    🇨🇭
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Switzerland
+                  Switzerland
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -666,15 +666,15 @@ Switzerland
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-United States
+                  United States
                 </a>
               </DropDownItem>
             </DropDown>
@@ -698,26 +698,26 @@ United States
         }}
         >
           <p style={{marginTop: '0'}}>
-Add
+            Add
             <code>icon</code>
             {' '}
-prop (e.g.
+            prop (e.g.
             <code>{'<DropDownItem icon={...} />'}</code>
-) with an emoji or image tag
+            ) with an emoji or image tag
           </p>
           <div style={{background: '#ffffff'}}>
             <DropDown
               title={(
                 <span>
-Austria
+                  Austria
                   <span
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
                 </span>
-)}
+              )}
             >
               <DropDownItem
                 isActive
@@ -726,15 +726,15 @@ Austria
                     aria-label="at"
                     role="img"
                   >
-🇦🇹
+                    🇦🇹
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Austria
+                  Austria
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -743,15 +743,15 @@ Austria
                     aria-label="de"
                     role="img"
                   >
-🇩🇪
+                    🇩🇪
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Germany
+                  Germany
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -760,15 +760,15 @@ Germany
                     aria-label="ch"
                     role="img"
                   >
-🇨🇭
+                  🇨🇭
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-Switzerland
+                  Switzerland
                 </a>
               </DropDownItem>
               <DropDownItem
@@ -777,15 +777,15 @@ Switzerland
                     aria-label="us"
                     role="img"
                   >
-🇺🇸
+                    🇺🇸
                   </span>
-)}
+                )}
               >
                 <a
                   href="/"
                   onClick={(e) => { e.preventDefault(); }}
                 >
-United States
+                  United States
                 </a>
               </DropDownItem>
             </DropDown>

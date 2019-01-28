@@ -29,12 +29,12 @@ export default class ComboboxComponent extends React.Component {
     errorSubInfo: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
-    inputProps: PropTypes.object,
+    inputProps: PropTypes.object, // eslint-disablie-line react/forbid-prop-types
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     isRequired: PropTypes.bool,
     isSearchable: PropTypes.bool,
-    items: PropTypes.array,
+    items: PropTypes.arrayOf(PropTypes.string),
     label: PropTypes.string,
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
@@ -74,16 +74,20 @@ export default class ComboboxComponent extends React.Component {
     value: this.props.inputValue, // eslint-disable-line react/destructuring-assignment
   };
 
-  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate); // eslint-disable-line react/destructuring-assignment
 
   componentWillMount () {
+    const {error} = this.props;
+
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {inputValue} = this.props;
+
     if (nextProps.error) this.showError();
-    if (nextProps.inputValue !== this.props.inputValue) {
+    if (nextProps.inputValue !== inputValue) {
       this.setState({value: nextProps.inputValue});
     }
   }
@@ -93,8 +97,14 @@ export default class ComboboxComponent extends React.Component {
   };
 
   onChange = (event, {newValue}) => {
-    this.props.onChange(event);
-    if (!this.props.isSearchable && this.props.items.indexOf(newValue) === -1) {
+    const {
+      isSearchable,
+      items,
+      onChange,
+    } = this.props;
+
+    onChange(event);
+    if (!isSearchable && items.indexOf(newValue) === -1) {
       event.preventDefault();
       return;
     }
@@ -103,7 +113,9 @@ export default class ComboboxComponent extends React.Component {
   };
 
   getSuggestions (value, items = []) {
-    if (this.props.isSearchable) {
+    const {isSearchable} = this.props;
+
+    if (isSearchable) {
       const inputValue = value.trim().toLowerCase();
       const inputLength = inputValue.length;
 
@@ -116,16 +128,20 @@ export default class ComboboxComponent extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.value;
 
-  loadSuggestions (value) {
-    this.setState({suggestions: this.getSuggestions(value, this.props.items)});
-  }
-
   handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
-    if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
+    const {onSelect} = this.props;
+
+    if (onSelect) onSelect(suggestionIndex, suggestionValue);
     if (method === 'enter') {
       e.preventDefault();
     }
   };
+
+  loadSuggestions (value) {
+    const {items} = this.props;
+
+    this.setState({suggestions: this.getSuggestions(value, items)});
+  }
 
   showError () {
     this.setState({showError: true});
@@ -136,7 +152,10 @@ export default class ComboboxComponent extends React.Component {
   }
 
   hasError () {
-    return this.state.showError && this.props.error;
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
   }
 
   renderSuggestion = suggestion => <span>{suggestion.value}</span>;
@@ -155,7 +174,15 @@ export default class ComboboxComponent extends React.Component {
       inputStyles,
       placeholder,
       disabled,
+      isSearchable,
+      inputProps,
+      onBlur,
+      onFocus,
     } = this.props;
+    const {
+      suggestions,
+      value,
+    } = this.state;
 
     return (
       <div
@@ -177,7 +204,7 @@ export default class ComboboxComponent extends React.Component {
 
         <div className={styles.container}>
           <Autosuggest
-            suggestions={this.state.suggestions}
+            suggestions={suggestions}
             theme={styles}
             error={error}
             errorSubInfo={errorSubInfo}
@@ -187,19 +214,19 @@ export default class ComboboxComponent extends React.Component {
             onSuggestionsClearRequested={() => true}
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
-            focusInputOnSuggestionClick={this.props.isSearchable}
+            focusInputOnSuggestionClick={isSearchable}
             inputProps={{
-              ...this.props.inputProps,
-              className: `${formControl} ${!this.props.isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
+              ...inputProps,
+              className: `${formControl} ${!isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
               disabled,
               id,
               name,
-              onBlur: this.props.onBlur,
+              onBlur,
               onChange: this.onChange,
-              onFocus: this.props.onFocus,
+              onFocus,
               placeholder,
               required: isRequired,
-              value: this.state.value,
+              value,
             }}
           />
 

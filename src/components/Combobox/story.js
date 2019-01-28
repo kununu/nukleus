@@ -28,8 +28,6 @@ storiesOf('Combobox', module)
       label={text('label', 'Combobox')}
       labelHidden={boolean('lableHidden', false)}
       id="name"
-      error={boolean('error', false)}
-      errorSubInfo={text('errorSubInfo', 'Error!')}
       onSelect={action('onSelect')}
       onChange={action('onChange')}
       onBlur={action('onBlur')}

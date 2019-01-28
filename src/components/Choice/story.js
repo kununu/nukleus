@@ -22,8 +22,6 @@ storiesOf('Choice', module)
         labelHidden={boolean('labelHidden', false)}
         name="basic"
         disabled={boolean('disabled', false)}
-        error={boolean('error', false)}
-        errorSubInfo={text('errorSubInfo', 'Error!')}
         onChange={action('onChange')}
         onFocus={action('onFocus')}
         onBlur={action('onBlur')}
@@ -72,8 +70,6 @@ storiesOf('Choice', module)
         onFocus={action('onFocus')}
         onBlur={action('onBlur')}
         onClick={action('onClick')}
-        error={boolean('error', false)}
-        errorSubInfo={text('errorSubInfo', 'Error!')}
         optionsPerRow={number(
           'optionsPerRow',
           '3',

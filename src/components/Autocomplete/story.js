@@ -47,8 +47,6 @@ storiesOf('Autocomplete', module)
             noSuggestionText={text('noSuggestionText', 'No results found')}
             onFocus={action('onFocus')}
             onBlur={action('onBlur')}
-            error={boolean('error', false)}
-            errorSubInfo={text('errorSubInfo', 'Error!')}
             scrollOffset={70}
             scrollTo
           />
@@ -71,9 +69,7 @@ storiesOf('Autocomplete', module)
             noSuggestionText={text('noSuggestionText', 'No results found')}
             onFocus={action('onFocus')}
             onBlur={action('onBlur')}
-            error={boolean('error', false)}
-            errorSubInfo={text('errorSubInfo', 'Error!')}
-            requiredLabel
+            requiredLabel={text('requiredLabel', 'required')}
             scrollOffset={70}
             scrollTo
           />

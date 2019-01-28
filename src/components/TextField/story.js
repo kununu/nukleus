@@ -47,8 +47,6 @@ storiesOf('TextField', module)
           onFocus={action('onFocus')}
           onBlur={action('onBlur')}
           onClick={action('onClick')}
-          error={boolean('error', false)}
-          errorSubInfo={text('errorSubInfo', 'Error!')}
           requiredLabel={text('requiredLabel', 'required')}
           type={select('type', typeOptions, 'text')}
           placeholder={text('placeholder', 'Placeholder text')}
@@ -69,17 +67,17 @@ storiesOf('TextField', module)
           {' '}
           <code>multiLine: true</code>
           {' '}
-your text input will turn into a textarea. If you select
+          your text input will turn into a textarea. If you select
           {' '}
           <code>dynamicTextareaHeight: true</code>
           {' '}
-the height of the textarea will increase as the user types - which is default. Otherwise it will use scoll auto.
+          the height of the textarea will increase as the user types - which is default. Otherwise it will use scoll auto.
         </p>
         <p>
           Additionally, you can enable text highlighting to warn your users about bad words in their text. In order to do this you just need to pass an array of objects to match when the users type to
           {' '}
           <code>highlightList</code>
-. You can handle highlighting behaviour with the onHighlight callback.
+          . You can handle highlighting behaviour with the onHighlight callback.
         </p>
       </div>
 
@@ -101,8 +99,6 @@ the height of the textarea will increase as the user types - which is default. O
           onFocus={action('onFocus')}
           onBlur={action('onBlur')}
           onClick={action('onClick')}
-          error={boolean('error', false)}
-          errorSubInfo={text('errorSubInfo', 'Error!')}
           placeholder={text('placeholder', 'Placeholder text')}
           value={text('value', '')}
           name="text-field"
@@ -120,7 +116,7 @@ the height of the textarea will increase as the user types - which is default. O
         {' '}
         <code>value =&gt; value.replace(/a/, &apos;b&apos;)</code>
         {' '}
-- now all As will be replaced with Bs!
+        - now all As will be replaced with Bs!
       </p>
 
       <div style={{position: 'relative'}}>
@@ -140,8 +136,6 @@ the height of the textarea will increase as the user types - which is default. O
           onFocus={action('onFocus')}
           onBlur={action('onBlur')}
           onClick={action('onClick')}
-          error={boolean('error', false)}
-          errorSubInfo={text('errorSubInfo', 'Error!')}
           requiredLabel={text('requiredLabel', 'required')}
           type={select('type', typeOptions, 'text')}
           placeholder={text('placeholder', 'Placeholder text')}

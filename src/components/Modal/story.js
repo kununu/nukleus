@@ -13,9 +13,7 @@ class ModalExample extends Component {
   constructor (props) {
     super(props);
 
-    this.state = {
-      modalOpen: false, // eslint-disable-line react/no-unused-state
-    };
+    this.state = {modalOpen: false}; // eslint-disable-line react/no-unused-state
   }
 
   render () {

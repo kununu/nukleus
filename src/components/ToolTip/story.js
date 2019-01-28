@@ -21,7 +21,7 @@ storiesOf('ToolTip', module)
         {' '}
         <code>icon</code>
         {' '}
-prop.
+        prop.
       </p>
 
       <ToolTip

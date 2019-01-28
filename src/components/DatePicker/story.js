@@ -15,8 +15,6 @@ storiesOf('DatePicker', module)
   .add('basics', () => (
     <DatePicker
       dateFormat={text('dateFormat', 'dd/MM/yyyy')}
-      error={boolean('error', null)}
-      errorSubInfo={text('errorSubInfo', 'Error!')}
       icon={(
         <i
           className="fa fa-calendar"

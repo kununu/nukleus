@@ -16,6 +16,4 @@ InfoText.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-InfoText.defaultProps = {
-  infoStyle: 'inline',
-};
+InfoText.defaultProps = {infoStyle: 'inline'};

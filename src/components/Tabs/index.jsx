@@ -51,9 +51,7 @@ export default class Tabs extends React.Component {
             key={key} // eslint-disable-line react/no-array-index-key
             className={classNames(
               styles.tabItem,
-              {
-                [styles.pointerDisabled]: items.length <= 1,
-              },
+              {[styles.pointerDisabled]: items.length <= 1},
             )}
           >
             {React.cloneElement(item, this.getNewProps(item))}

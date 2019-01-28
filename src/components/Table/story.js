@@ -43,7 +43,7 @@ storiesOf('Table', module)
           accessor: 'color',
           cell: val => (
             <span style={{color: 'red'}}>
-custom cell:
+              custom cell:
               {val}
             </span>
           ),

@@ -28,19 +28,19 @@ storiesOf('Tabs', module)
             onClick={e => updateUrl(e, '/')}
             href="/"
           >
-First Tab
+            First Tab
           </a>,
           <a
             onClick={e => updateUrl(e, '/2')}
             href="/2"
           >
-Second Tab
+            Second Tab
           </a>,
           <a
             onClick={e => updateUrl(e, '/3')}
             href="/3"
           >
-Third Tab
+            Third Tab
           </a>,
         ]}
         pathname={window.parent.location.pathname}
@@ -60,19 +60,19 @@ Third Tab
             onClick={e => updateUrl(e, '/')}
             href="/"
           >
-First Tab
+            First Tab
           </a>,
           <a
             onClick={e => updateUrl(e, '/2')}
             href="/2"
           >
-Second Tab
+            Second Tab
           </a>,
           <a
             onClick={e => updateUrl(e, '/3')}
             href="/3"
           >
-Third Tab
+            Third Tab
           </a>,
         ]}
         pathname={window.parent.location.pathname}

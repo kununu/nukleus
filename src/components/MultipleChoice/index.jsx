@@ -208,7 +208,7 @@ export default class MultipleChoice extends React.Component {
         <div className={styles.inputContainer}>
           {choices.map(choice => (
             <div
-              className={`${styles.choice}`}
+              className={styles.choice}
               key={choice.id}
             >
               <input

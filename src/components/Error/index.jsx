@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 const Error = ({info, subInfo}) => (
-  <span className={`${styles.error}`}>
+  <span className={styles.error}>
     <strong className={styles.info}>{info}</strong>
     {subInfo}
   </span>
