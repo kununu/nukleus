@@ -62,7 +62,7 @@
   z-index: 1060;
 
   .item {
-    &.hasIcon a {
+    &.hasIcon {
       padding-right: 40px;
     }
 
@@ -75,7 +75,7 @@
 .item {
   position: relative;
   display: block;
-  padding: 0;
+  padding: 10px 15px;
   margin: 0;
   font-size: $font-size-base;
   list-style: none;
@@ -90,7 +90,6 @@
 
   a {
     display: block;
-    padding: 10px 15px;
     text-align: left;
 
     &:hover,
