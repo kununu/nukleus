@@ -50,7 +50,7 @@ storiesOf('DropDown', module)
             margin: '0',
             padding: '0'
           }}>
-            <li>
+            <li className={styles.menuItem}>
               <DropDown title="Products">
                 <DropDownItem isActive>
                   <a href="/" onClick={e => e.preventDefault()}>Bathroom</a>
@@ -63,10 +63,10 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Offers</a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Services</a>
             </li>
           </ul>
@@ -82,7 +82,7 @@ storiesOf('DropDown', module)
             margin: '0',
             padding: '0'
           }}>
-            <li>
+            <li className={styles.menuItem}>
               <DropDown
                 showOnHover={false}
                 title="Products">
@@ -97,10 +97,10 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Offers</a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Services</a>
             </li>
           </ul>
@@ -116,7 +116,7 @@ storiesOf('DropDown', module)
             margin: '0',
             padding: '0'
           }}>
-            <li>
+            <li className={styles.menuItem}>
               <DropDown
                 showOnHover={false}
                 title="Products">
@@ -131,10 +131,10 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Offers</a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a href="/" onClick={e => e.preventDefault()}>Services</a>
             </li>
           </ul>

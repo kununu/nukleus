@@ -44,22 +44,10 @@
     text-decoration: none;
   }
 
-  span[role="img"] {
+  span[role="img"],
+  img {
+    display: inline;
     margin-left: 10px;
-  }
-}
-
-.selectedItem {
-  .item {
-    &.hasIcon a {
-      padding: 10px 35px 10px 30px;
-      font-weight: $font-weight-semibold;
-      text-align: right;
-    }
-
-    &:hover {
-      background-color: transparent;
-    }
   }
 }
 
@@ -67,6 +55,7 @@
   position: absolute;
   left: 0;
   padding: 0;
+  margin: 0;
   min-width: 160px;
   background-color: $white;
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .1);

@@ -2,16 +2,17 @@
   ul {
     li {
       display: inline-block;
-      padding: 10px;
+      padding: 0;
       list-style: none;
 
       &:first-child {
         padding: 0 0;
       }
+    }
 
-      & + li {
-        margin-left: 10px;
-      }
+    li.menuItem + li.menuItem {
+      padding: 0 10px;
+      margin-left: 10px;
     }
   }
 }
