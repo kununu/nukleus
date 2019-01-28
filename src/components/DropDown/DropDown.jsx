@@ -22,6 +22,7 @@ export default class DropDown extends Component {
   }
 
   static defaultProps = {
+    className: '',
     direction: 'down',
     pullRight: false,
     showOnHover: true
