@@ -51,9 +51,7 @@ export default class Notification extends React.Component {
     visible: false,
   };
 
-  state = {
-    visible: this.props.visible, // eslint-disable-line react/destructuring-assignment
-  };
+  state = {visible: this.props.visible}; // eslint-disable-line react/destructuring-assignment
 
   componentWillReceiveProps (nextProps) {
     if (this.newNotificationWillOverrideExisting(nextProps.message)) {
@@ -86,8 +84,8 @@ export default class Notification extends React.Component {
 
   newNotificationWillOverrideExisting (message) {
     const {
-      visible,
       message: pmessage,
+      visible,
     } = this.props;
 
     return (
@@ -109,11 +107,11 @@ export default class Notification extends React.Component {
   render () {
     const {
       closeIcon,
+      closeMethod,
       duration,
       icon,
       message,
       type,
-      closeMethod,
     } = this.props;
 
     const {visible} = this.state;

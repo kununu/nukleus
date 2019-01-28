@@ -317,9 +317,9 @@ export default class Autocomplete extends React.Component {
       {suggestion.item}
       {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) && (
         <span className={styles.suggestionInfo}>
-&nbsp;(
+          &nbsp;(
           {suggestion.itemInfo}
-)
+          )
         </span>
       )}
     </span>

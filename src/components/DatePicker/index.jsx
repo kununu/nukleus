@@ -38,7 +38,7 @@ export default class DatePickerComponent extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    query: PropTypes.object,
+    query: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     requiredLabel: PropTypes.string,
     showAbbreviatedMonthDropdown: PropTypes.bool,
     showMonthDropdown: PropTypes.bool,
@@ -76,6 +76,7 @@ export default class DatePickerComponent extends React.Component {
 
   componentWillMount () {
     const {
+      error,
       query,
       name,
       value,
@@ -84,12 +85,14 @@ export default class DatePickerComponent extends React.Component {
     this.updateValue(query[name] || value || '');
 
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {name} = this.props;
+
     if (nextProps.error) this.showError();
-    this.updateValue(nextProps.query[this.props.name] ||
+    this.updateValue(nextProps.query[name] ||
       nextProps.value ||
       '');
   }

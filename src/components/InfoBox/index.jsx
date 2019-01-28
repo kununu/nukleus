@@ -17,9 +17,7 @@ export default class InfoBox extends React.Component {
     ]),
   };
 
-  static defaultProps = {
-    position: 'topLeft',
-  };
+  static defaultProps = {position: 'topLeft'};
 
   componentWillMount () {
     window.addEventListener('resize', this.windowResize);

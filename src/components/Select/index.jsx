@@ -156,9 +156,9 @@ export default class Select extends React.Component {
   get label () {
     const {
       id,
-      title,
       label,
       labelHidden,
+      title,
     } = this.props;
 
     if (!label && !title) return null;
@@ -167,10 +167,10 @@ export default class Select extends React.Component {
 
     return (
       <Label
-        id={id}
-        value={value}
-        labelHidden={labelHidden}
         classNames={this.labelClassNames}
+        id={id}
+        labelHidden={labelHidden}
+        value={value}
       />
     );
   }
@@ -255,23 +255,23 @@ export default class Select extends React.Component {
 
         <div className={styles.inputContainer}>
           <select
-            name={name}
-            value={value}
-            id={id}
-            ref={reference}
-            required={isRequired}
             autoFocus={autoFocus}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            onChange={this.onChange}
             className={`${sharedStyles.formControl} ${styles.select} ${this.hasError() ? sharedStyles.formControlError : ''}`}
             disabled={disabled}
+            id={id}
+            name={name}
+            onBlur={onBlur}
+            onChange={this.onChange}
+            onFocus={onFocus}
+            ref={reference}
+            required={isRequired}
+            value={value}
           >
 
             {defaultRequired && (
             <option
-              value=""
               hidden
+              value=""
             >
               {defaultRequired}
             </option>

@@ -7,7 +7,11 @@ import {
 } from '../index.scss';
 
 export default function Label ({
-  id, value, labelHidden, classNames, isTitle,
+  classNames,
+  id,
+  isTitle,
+  labelHidden,
+  value,
 }) {
   const hidden = labelHidden ? srOnly : '';
   const allClassNames = `${classNames} ${controlLabel} ${hidden}`;

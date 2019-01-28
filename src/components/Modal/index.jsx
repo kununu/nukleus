@@ -36,9 +36,7 @@ export default class Modal extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {
-      isOpen: false,
-    };
+    this.state = {isOpen: false};
 
     // needed to have real binding to get tests working
     this.onExit = this.onExit.bind(this);
@@ -53,9 +51,7 @@ export default class Modal extends React.Component {
 
   onExit (ev) {
     // First set state for nicer animation
-    this.setState({
-      isOpen: false,
-    }, () => {
+    this.setState({isOpen: false}, () => {
       setTimeout(() => {
         // Call parent onExit
         this.props.onExit(ev);
@@ -78,18 +74,18 @@ export default class Modal extends React.Component {
         <footer className={styles.modalFooter}>
           {actionText && (
           <Button
-            type="primary"
             htmlType="button"
-            text={actionText}
             onClick={this.onAction}
+            text={actionText}
+            type="primary"
           />
           )}
           {cancelText && (
           <Button
-            type="secondary"
             htmlType="button"
-            text={cancelText}
             onClick={this.onExit}
+            text={cancelText}
+            type="secondary"
           />
           )}
         </footer>
@@ -116,9 +112,7 @@ export default class Modal extends React.Component {
           underlayClass={
             classNames(
               styles.underlay,
-              {
-                [styles.underlayHasEntered]: this.state.isOpen,
-              },
+              {[styles.underlayHasEntered]: this.state.isOpen},
             )
           }
           onEnter={this.onEnter}
@@ -126,9 +120,7 @@ export default class Modal extends React.Component {
           <section className={
             classNames(
               styles.modal,
-              {
-                [styles.isOpen]: this.state.isOpen,
-              },
+              {[styles.isOpen]: this.state.isOpen},
             )}
           >
             <header className={styles.modalHeader}>
@@ -139,11 +131,11 @@ export default class Modal extends React.Component {
                 {this.props.titleText}
               </h1>
               <button
-                type="button"
-                id="nukleus-modal-close"
-                title={this.props.closeText}
                 className={styles.closeButton}
+                id="nukleus-modal-close"
                 onClick={this.onExit}
+                title={this.props.closeText}
+                type="button"
               >
                 <span role="presentation">
                   <svg

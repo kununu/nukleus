@@ -127,10 +127,10 @@ export default class MultipleChoice extends React.Component {
 
     return (
       <Label
-        value={value}
-        labelHidden={labelHidden}
         classNames={classNames}
         isTitle
+        labelHidden={labelHidden}
+        value={value}
       />
     );
   }
@@ -182,14 +182,14 @@ export default class MultipleChoice extends React.Component {
   render () {
     const {choices} = this.state;
     const {
-      name,
-      requiredLabel,
-      reference,
-      isRequired,
-      onBlur,
-      onFocus,
       error,
       errorSubInfo,
+      isRequired,
+      name,
+      onBlur,
+      onFocus,
+      reference,
+      requiredLabel,
     } = this.props;
 
     return (
@@ -212,18 +212,18 @@ export default class MultipleChoice extends React.Component {
               key={choice.id}
             >
               <input
+                checked={choice.isChecked}
                 className={sharedStyles.formControl}
                 id={`${name}${choice.id}`}
-                name={name}
                 key={choice.id}
-                value={choice.value}
-                type="checkbox"
-                checked={choice.isChecked}
-                ref={reference}
-                required={isRequired}
+                name={name}
                 onBlur={onBlur}
                 onChange={() => this.onChange(choice)}
                 onFocus={onFocus}
+                ref={reference}
+                required={isRequired}
+                type="checkbox"
+                value={choice.value}
               />
 
               <label htmlFor={`${name}${choice.id}`}>{choice.label}</label>

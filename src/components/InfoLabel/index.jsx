@@ -20,7 +20,7 @@ const InfoLabel = ({
   return displayLength ? (
     <span className={`${controlNote} ${controlLabelRequired}`}>
       <strong>{inputValue.length}</strong>
-/
+      /
       {maxLength}
     </span>
   ) : null;

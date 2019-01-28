@@ -15,8 +15,6 @@ Error.propTypes = {
   subInfo: PropTypes.string,
 };
 
-Error.defaultProps = {
-  subInfo: '',
-};
+Error.defaultProps = {subInfo: ''};
 
 export default Error;

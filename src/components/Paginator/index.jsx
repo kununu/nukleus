@@ -65,9 +65,7 @@ export default class Paginator extends React.Component {
 
     const location = baseLink.props.href ? 'href' : 'path';
 
-    return {
-      [location]: `${pathname}?${queryParams}`,
-    };
+    return {[location]: `${pathname}?${queryParams}`};
   }
 
   parseQueryObject = query => (typeof query === 'object') ? query : queryString.parse(query);
@@ -75,9 +73,9 @@ export default class Paginator extends React.Component {
   render () {
     const {
       baseLink,
-      totalPages,
-      queryKey,
       query,
+      queryKey,
+      totalPages,
     } = this.props;
 
     const queryObject = this.parseQueryObject(query);

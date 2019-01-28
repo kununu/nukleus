@@ -82,9 +82,7 @@ export default class Stars extends React.Component {
       strokeColor,
     } = this.props;
 
-    this.setState({
-      color: colors[value - 1] || strokeColor,
-    });
+    this.setState({color: colors[value - 1] || strokeColor});
   }
 
   getFillValue = (starNumber) => {
@@ -133,9 +131,7 @@ export default class Stars extends React.Component {
   }
 
   updateValue (newValue) {
-    this.setState({
-      value: newValue,
-    });
+    this.setState({value: newValue});
   }
 
   render () {
@@ -161,14 +157,14 @@ export default class Stars extends React.Component {
 
               {selectable && (
                 <input
-                  className={styles.hiddenInput}
-                  type="radio"
-                  name={name}
-                  value={key}
                   checked={key === value}
+                  className={styles.hiddenInput}
+                  id={`${name}-${key}`}
+                  name={name}
                   onChange={this.onClick}
                   onClick={this.onClick}
-                  id={`${name}-${key}`}
+                  type="radio"
+                  value={key}
                 />
               )}
 

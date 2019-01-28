@@ -146,9 +146,7 @@ export default class TextField extends React.Component {
     }
 
     if (highlightList) {
-      this.setState({
-        highlightedContent: this.getHighlightedContent(target.value),
-      });
+      this.setState({highlightedContent: this.getHighlightedContent(target.value)});
     }
 
     this.hideError();
@@ -188,8 +186,8 @@ export default class TextField extends React.Component {
    */
   get textFieldClassNames () {
     const {
-      multiLine,
       highlightList,
+      multiLine,
     } = this.props;
     const classNames = [sharedStyles.formControl];
 
@@ -212,9 +210,9 @@ export default class TextField extends React.Component {
    */
   get containerClassNames () {
     const {
+      displayLength,
       inputStyle,
       requiredLabel,
-      displayLength,
     } = this.props;
     const classNames = [sharedStyles.formGroup];
 
@@ -302,9 +300,7 @@ export default class TextField extends React.Component {
     const newHeight = oldHeight > currentHeight ? currentHeight - 20 : currentHeight;
 
     if (newHeight > (minHeight || 134)) {
-      this.setState({
-        textAreaHeight: newHeight,
-      });
+      this.setState({textAreaHeight: newHeight});
     }
   }
 
@@ -363,18 +359,18 @@ export default class TextField extends React.Component {
     const {
       autoComplete,
       autoFocus,
-      highlightList,
       disable,
       displayLength,
       error,
       errorSubInfo,
+      highlightList,
       id,
       isRequired,
       label,
       labelHidden,
       maxLength,
-      name,
       multiLine,
+      name,
       onBlur,
       onFocus,
       pattern,
@@ -397,10 +393,10 @@ export default class TextField extends React.Component {
         id={`${name}-container`}
       >
         <InfoLabel
-          requiredLabel={requiredLabel}
-          inputValue={value}
           displayLength={displayLength}
+          inputValue={value}
           maxLength={maxLength}
+          requiredLabel={requiredLabel}
         />
         {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
 
@@ -420,15 +416,15 @@ export default class TextField extends React.Component {
                 className={this.textFieldClassNames}
                 disabled={disable}
                 id={id}
-                name={name}
                 maxLength={maxLength}
-                onChange={this.onChange}
+                name={name}
                 onBlur={onBlur}
+                onChange={this.onChange}
                 onFocus={onFocus}
                 pattern={pattern}
                 placeholder={placeholder}
-                required={isRequired}
                 ref={reference}
+                required={isRequired}
                 rows={rows}
                 style={this.textAreaStyles()}
                 value={value}
@@ -440,10 +436,10 @@ export default class TextField extends React.Component {
                 className={this.textFieldClassNames}
                 disabled={disable}
                 id={id}
-                name={name}
                 maxLength={maxLength}
-                onChange={this.onChange}
+                name={name}
                 onBlur={onBlur}
+                onChange={this.onChange}
                 onFocus={onFocus}
                 pattern={pattern}
                 placeholder={placeholder}

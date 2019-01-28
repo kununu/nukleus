@@ -134,11 +134,11 @@ export default class ToolTip extends React.Component {
       >
         <button
           className={unstyledButton}
-          title={label}
-          type="button"
           onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
+          title={label}
+          type="button"
         >
           {icon}
         </button>
