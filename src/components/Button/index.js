@@ -39,11 +39,16 @@ export default class Button extends React.Component {
   };
 
   onClick = (e) => {
+    const {
+      disabled,
+      onClick,
+    } = this.props;
+
     e.preventDefault();
 
-    if (this.props.disabled) return;
+    if (disabled) return;
 
-    this.props.onClick();
+    onClick();
   }
 
   render () {
@@ -53,6 +58,7 @@ export default class Button extends React.Component {
       fullWidth,
       link,
       mobileFullWidth,
+      onClick,
       outline,
       text,
       htmlType,
@@ -70,7 +76,7 @@ export default class Button extends React.Component {
     const props = {
       className: classes,
       disabled,
-      onClick: this.props.onClick && this.onClick,
+      onClick: onClick && this.onClick,
     };
 
     if (link) {
@@ -82,7 +88,7 @@ export default class Button extends React.Component {
     }
 
     return (
-      <button
+      <button // eslint-disable-line react/button-has-type
         {...props}
         type={htmlType}
       >

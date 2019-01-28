@@ -348,7 +348,7 @@ export default class TextField extends React.Component {
 
     return (
       value !== pValue ||
-        query !== pQuery
+      query !== pQuery
     );
   }
 

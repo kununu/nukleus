@@ -18,7 +18,14 @@ import styles from './index.scss';
 export default class Autocomplete extends React.Component {
   static propTypes = {
     autoFocus: PropTypes.bool,
-    data: PropTypes.object,
+    data: PropTypes.shape({
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          item: PropTypes.string,
+          itemInfo: PropTypes.string,
+        }),
+      ),
+    }),
     debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
@@ -81,9 +88,11 @@ export default class Autocomplete extends React.Component {
     hasInitialized: false,
     showError: false,
     showNoSuggestionsText: false,
-    suggestions: this.props.data.items || [],
+    suggestions: this.props.data.items || [], // eslint-disable-line react/destructuring-assignment
     value: '',
   };
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate); // eslint-disable-line react/destructuring-assignment
 
   componentWillMount () {
     const {
@@ -118,17 +127,17 @@ export default class Autocomplete extends React.Component {
   }
 
   onChange = (event, {newValue}) => {
-    this.setState({
-      value: newValue,
-    });
-    this.props.onChange(event);
+    const {onChange} = this.props;
+
+    this.setState({value: newValue});
+    onChange(event);
     this.hideError();
   }
 
   onFocus = (ev) => {
-    this.setState({
-      showNoSuggestionsText: true,
-    });
+    const {onFocus} = this.props;
+
+    this.setState({showNoSuggestionsText: true});
 
     // Prevents autoscroll if element is not
     // in the DOM
@@ -136,13 +145,15 @@ export default class Autocomplete extends React.Component {
       this.scrollToElement();
     }
 
-    this.props.onFocus(ev);
+    onFocus(ev);
   }
 
   onBlur = (ev) => {
+    const {onBlur} = this.props;
+
     this.hideNoSuggestionsText();
     this.setState({hasInitialized: false});
-    this.props.onBlur(ev);
+    onBlur(ev);
   }
 
   onSuggestionsFetchRequested = ({value}) => {
@@ -150,20 +161,23 @@ export default class Autocomplete extends React.Component {
   }
 
   onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
+    this.setState({suggestions: []});
   };
 
   onSuggestionSelected = (e, {method, suggestion}) => {
+    const {
+      submitOnEnter,
+      onSelectSuggestion,
+    } = this.props;
+
     this.hideNoSuggestionsText();
 
-    if (method === 'enter' && !this.props.submitOnEnter) {
+    if (method === 'enter' && !submitOnEnter) {
       e.preventDefault();
     }
 
-    if (this.props.onSelectSuggestion) {
-      this.props.onSelectSuggestion(suggestion);
+    if (onSelectSuggestion) {
+      onSelectSuggestion(suggestion);
     }
   }
 
@@ -200,18 +214,22 @@ export default class Autocomplete extends React.Component {
   }
 
   getSuggestions = (value) => {
+    const {
+      data: {items},
+      onGetSuggestions,
+    } = this.props;
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
     if (inputValue) {
       this.setState({hasInitialized: true});
 
-      if (this.props.onGetSuggestions) {
-        this.props.onGetSuggestions(inputValue);
-        return this.props.data.items;
+      if (onGetSuggestions) {
+        onGetSuggestions(inputValue);
+        return items;
       }
 
-      return this.props.data.items.filter(data => data.item.toLowerCase().slice(0, inputLength) === inputValue);
+      return items.filter(data => data.item.toLowerCase().slice(0, inputLength) === inputValue);
     }
 
     return [];
@@ -244,49 +262,49 @@ export default class Autocomplete extends React.Component {
     );
   }
 
-  loadSuggestions (value) {
-    this.setState({
-      suggestions: this.getSuggestions(value),
-    });
-  }
-
-  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
-
-  hideNoSuggestionsText = () => {
-    this.setState({
-      showNoSuggestionsText: false,
-    });
-  }
-
-  showError () {
-    this.setState({
-      showError: true,
-    });
-  }
-
-  hideError () {
-    this.setState({
-      showError: false,
-    });
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
 
   scrollToElement = () => {
-    if (this.props.scrollTo && isMobile) {
-      const elementPos = getElementPositionY(this.node, this.props.scrollOffset);
+    const {
+      scrollTo,
+      scrollOffset,
+    } = this.props;
+
+    if (scrollTo && isMobile) {
+      const elementPos = getElementPositionY(this.node, scrollOffset);
       const scroll = Scroll.animateScroll;
 
       scroll.scrollTo(elementPos);
     }
   }
 
+  hideNoSuggestionsText = () => {
+    this.setState({showNoSuggestionsText: false});
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  hasError () {
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
+  }
+
   needsUpdate ({value, query}) {
+    const {
+      value: pValue,
+      query: pQuery,
+    } = this.props;
+
     return (
-      value !== this.props.value ||
-      query !== this.props.query
+      value !== pValue ||
+      query !== pQuery
     );
   }
 
@@ -307,19 +325,8 @@ export default class Autocomplete extends React.Component {
     </span>
   );
 
-  renderSuggestionsContainer = ({containerProps, children}) => {
-    if (this.state.suggestions.length) {
-      return (
-        <div
-          {...containerProps}
-          className={styles.suggestionsContainer}
-        >
-          {children}
-        </div>
-      );
-    }
-
-    return null;
+  loadSuggestions (value) {
+    this.setState({suggestions: this.getSuggestions(value)});
   }
 
   render () {
@@ -362,7 +369,7 @@ export default class Autocomplete extends React.Component {
 
     return (
       <div
-        ref={node => this.node = node}
+        ref={(node) => { this.node = node; }}
         className={this.containerClassNames}
         id={`${name}-container`}
       >

@@ -34,7 +34,11 @@ export default class Choice extends React.Component {
     onChange: PropTypes.func,
     onClick: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      value: PropTypes.string,
+    })).isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
     query: PropTypes.oneOfType([
       PropTypes.string,
@@ -66,67 +70,70 @@ export default class Choice extends React.Component {
   };
 
   state = {
-    checked: this.props.checked,
+    checked: this.props.checked, // eslint-disable-line react/destructuring-assignment
     showError: false,
   };
 
   componentWillMount () {
     const {
+      error,
       query,
       name,
     } = this.props;
     const queryObject = queryParamsToObject(query);
 
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
 
     if (!queryObject[name]) return;
 
-    this.setState({
-      checked: queryObject[name],
-    });
+    this.setState({checked: queryObject[name]});
   }
 
   componentWillReceiveProps (nextProps) {
-    const {query, name, error} = nextProps;
+    const {
+      checked,
+      error,
+      query,
+      name,
+    } = nextProps;
     const queryNextObject = queryParamsToObject(query);
-    const queryPropsObject = queryParamsToObject(this.props.query);
+    const queryPropsObject = queryParamsToObject(query);
 
     if (error) this.showError();
-    if (nextProps.query === this.props.query && nextProps.checked === this.props.checked) return;
+    if (nextProps.query === query && nextProps.checked === checked) return;
     if (queryNextObject[name] && queryNextObject[name] !== queryPropsObject[name]) {
-      this.setState({
-        checked: queryNextObject[name],
-      });
-    } else if (nextProps.checked !== this.props.checked) {
-      this.setState({
-        checked: nextProps.checked,
-      });
+      this.setState({checked: queryNextObject[name]});
+    } else if (nextProps.checked !== checked) {
+      this.setState({checked: nextProps.checked});
     }
   }
 
   onChange = (option, e) => {
     const {value} = e.target;
+    const {checked} = this.state;
+    const {onChange} = this.props;
 
-    if (this.isOptionDisabled(option) || value === this.state.checked) return;
+    if (this.isOptionDisabled(option) || value === checked) return;
 
-    this.props.onChange(e);
-    this.setState({
-      checked: value,
-    });
+    onChange(e);
+    this.setState({checked: value});
   };
 
   onClick = (option, e) => {
     if (this.isOptionDisabled(option)) return;
 
     const {value} = e.target;
+    const {checked} = this.state;
+    const {
+      onClick,
+      isRequired,
+    } = this.props;
 
-    this.props.onClick(e);
+    onClick(e);
     // As long as the component is not required and the component is deselected set to null.
-    if (!this.props.isRequired && value === this.state.checked) {
-      this.setState({
-        checked: null,
-      });
+    if (!isRequired && value === checked) {
+      this.setState({checked: null});
     }
   }
 
@@ -160,13 +167,14 @@ export default class Choice extends React.Component {
   }
 
   hasError () {
-    return this.state.showError && this.props.error;
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
   }
 
   hideError () {
-    this.setState({
-      showError: false,
-    });
+    this.setState({showError: false});
   }
 
   showError () {
@@ -183,15 +191,11 @@ export default class Choice extends React.Component {
       onBlur,
       onFocus,
       options,
+      optionsPerRow,
       reference,
       requiredLabel,
     } = this.props;
-
-    const optionsPerRow = this.props.optionsPerRow && parseInt(this.props.optionsPerRow, 10);
-
-    const {
-      checked,
-    } = this.state;
+    const {checked} = this.state;
 
     return (
       <div

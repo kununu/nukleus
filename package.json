@@ -130,10 +130,20 @@
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\""
+    "test:watch": "jest --watch"
   },
   "jest-junit": {
     "output": "./coverage/junit.xml"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "eslint",
+      "eslint-import-resolver-webpack",
+      "eslint-loader",
+      "eslint-plugin-babel",
+      "eslint-plugin-import",
+      "eslint-plugin-jsx-a11y",
+      "eslint-plugin-react"
+    ]
   }
 }

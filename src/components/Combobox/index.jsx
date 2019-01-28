@@ -70,9 +70,11 @@ export default class ComboboxComponent extends React.Component {
 
   state = {
     showError: false,
-    suggestions: this.getSuggestions('', this.props.items),
-    value: this.props.inputValue,
+    suggestions: this.getSuggestions('', this.props.items), // eslint-disable-line react/destructuring-assignment
+    value: this.props.inputValue, // eslint-disable-line react/destructuring-assignment
   };
+
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
   componentWillMount () {
     // Show error, if already set
@@ -82,9 +84,7 @@ export default class ComboboxComponent extends React.Component {
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
     if (nextProps.inputValue !== this.props.inputValue) {
-      this.setState({
-        value: nextProps.inputValue,
-      });
+      this.setState({value: nextProps.inputValue});
     }
   }
 
@@ -99,9 +99,7 @@ export default class ComboboxComponent extends React.Component {
       return;
     }
     this.hideError();
-    this.setState({
-      value: newValue,
-    });
+    this.setState({value: newValue});
   };
 
   getSuggestions (value, items = []) {
@@ -119,12 +117,8 @@ export default class ComboboxComponent extends React.Component {
   getSuggestionValue = suggestion => suggestion.value;
 
   loadSuggestions (value) {
-    this.setState({
-      suggestions: this.getSuggestions(value, this.props.items),
-    });
+    this.setState({suggestions: this.getSuggestions(value, this.props.items)});
   }
-
-  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
 
   handleSelection = (e, {method, suggestionIndex, suggestionValue}) => {
     if (this.props.onSelect) this.props.onSelect(suggestionIndex, suggestionValue);
