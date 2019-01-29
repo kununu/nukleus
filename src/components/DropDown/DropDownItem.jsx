@@ -5,7 +5,7 @@ import styles from './index.scss';
 
 export default function DropDownItem ({children, icon, isActive}) {
   return (
-    <li className={`${styles.item} ${isActive ? styles.active : ''} ${icon ? styles.hasIcon : ''}`}>
+    <li className={`${styles.item} ${isActive ? styles.active : ''}`}>
       {children}
 
       {icon &&
