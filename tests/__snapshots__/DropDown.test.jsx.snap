@@ -6,14 +6,15 @@ exports[`Closes menu when not hovered 1`] = `
   pullRight={false}
   showOnHover={true}
   title="Österreich"
+  type="default"
 >
   <div
-    className="container down "
+    className="container down  "
   >
     <button
       aria-expanded={false}
       aria-haspopup="listbox"
-      className="toggleButton selectedItem"
+      className="toggleButton"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -32,14 +33,15 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
   pullRight={false}
   showOnHover={false}
   title="Österreich"
+  type="default"
 >
   <div
-    className="container down "
+    className="container down  "
   >
     <button
       aria-expanded={false}
       aria-haspopup="listbox"
-      className="toggleButton selectedItem"
+      className="toggleButton"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -54,12 +56,12 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
 
 exports[`Renders DropDown without crashing 1`] = `
 <div
-  className="container down "
+  className="container down  "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton selectedItem"
+    className="toggleButton"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -73,12 +75,12 @@ exports[`Renders DropDown without crashing 1`] = `
 
 exports[`Renders correctly when no icon is provided 1`] = `
 <div
-  className="container down "
+  className="container down  "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton selectedItem"
+    className="toggleButton"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -106,14 +108,15 @@ exports[`Renders menu when button is clicked 1`] = `
       </span>
     </span>
   }
+  type="default"
 >
   <div
-    className="container down "
+    className="container down  "
   >
     <button
       aria-expanded={true}
       aria-haspopup="listbox"
-      className="toggleButton selectedItem"
+      className="toggleButton"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -150,7 +153,7 @@ exports[`Renders menu when button is clicked 1`] = `
         isActive={false}
       >
         <li
-          className="item  hasIcon"
+          className="item "
         >
           <a
             href="/"
@@ -180,14 +183,15 @@ exports[`Renders menu when hovered 1`] = `
   pullRight={false}
   showOnHover={true}
   title="Österreich"
+  type="default"
 >
   <div
-    className="container down "
+    className="container down  "
   >
     <button
       aria-expanded={true}
       aria-haspopup="listbox"
-      className="toggleButton selectedItem"
+      className="toggleButton"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -209,7 +213,7 @@ exports[`Renders menu when hovered 1`] = `
         isActive={false}
       >
         <li
-          className="item  "
+          className="item "
         >
           <a
             href="/ch"
@@ -225,12 +229,12 @@ exports[`Renders menu when hovered 1`] = `
 
 exports[`Renders with direction up 1`] = `
 <div
-  className="container up "
+  className="container up  "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton selectedItem"
+    className="toggleButton"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -252,12 +256,12 @@ exports[`Renders with direction up 1`] = `
 
 exports[`Renders with pullRight and showOnHover false 1`] = `
 <div
-  className="container down pullRight"
+  className="container down pullRight "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton selectedItem"
+    className="toggleButton"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -272,6 +276,32 @@ exports[`Renders with pullRight and showOnHover false 1`] = `
       >
         🇦🇹
       </span>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Renders with type set as countrySwitcher 1`] = `
+<div
+  className="container up pullRight countrySwitcher"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    className="toggleButton"
+    id="dropdown"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  >
+    <span>
+      United States 
+      <img
+        alt="American Flag"
+        src="https://assets.kununu.com/images/footer/us.png"
+        title="American Flag"
+      />
     </span>
   </button>
 </div>
