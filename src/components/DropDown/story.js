@@ -376,7 +376,7 @@ storiesOf('DropDown', module)
       </div>
     </div>
   ))
-  .add('as country switcher', () => (
+  .add('shades', () => (
     <div>
       <DropDownInfo />
       <div style={{
@@ -388,14 +388,14 @@ storiesOf('DropDown', module)
           background: '#f1f1f1',
           padding: '20px'
         }}>
-          <p style={{marginTop: '0'}}>Add <code>{'type="countrySwitcher"'}</code> prop (e.g. <code>{'<DropDown type="countrySwitcher" />'}</code>) to show with country switch style.</p>
+          <p style={{marginTop: '0'}}>Add <code>{'shade="light"'}</code> prop (e.g. <code>{'<DropDown shade="light" />'}</code>) to enable light shade on dark backgrounds.</p>
           <div style={{background: '#18242b'}}>
             <DropDown
               direction="up"
               showOnHover={false}
               pullRight
-              title={activeCountry()}
-              type="countrySwitcher">
+              shade="light"
+              title={activeCountry()}>
               {countries.map((item, index) => (
                 <DropDownItem
                   key={index}

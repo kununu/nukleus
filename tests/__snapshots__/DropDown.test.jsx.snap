@@ -4,9 +4,9 @@ exports[`Closes menu when not hovered 1`] = `
 <DropDown
   direction="down"
   pullRight={false}
+  shade="dark"
   showOnHover={true}
   title="Österreich"
-  type="default"
 >
   <div
     className="container down  "
@@ -31,9 +31,9 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
 <DropDown
   direction="down"
   pullRight={false}
+  shade="dark"
   showOnHover={false}
   title="Österreich"
-  type="default"
 >
   <div
     className="container down  "
@@ -96,6 +96,7 @@ exports[`Renders menu when button is clicked 1`] = `
 <DropDown
   direction="down"
   pullRight={false}
+  shade="dark"
   showOnHover={false}
   title={
     <span>
@@ -108,7 +109,6 @@ exports[`Renders menu when button is clicked 1`] = `
       </span>
     </span>
   }
-  type="default"
 >
   <div
     className="container down  "
@@ -181,9 +181,9 @@ exports[`Renders menu when hovered 1`] = `
 <DropDown
   direction="down"
   pullRight={false}
+  shade="dark"
   showOnHover={true}
   title="Österreich"
-  type="default"
 >
   <div
     className="container down  "
@@ -283,7 +283,7 @@ exports[`Renders with pullRight and showOnHover false 1`] = `
 
 exports[`Renders with type set as countrySwitcher 1`] = `
 <div
-  className="container up pullRight countrySwitcher"
+  className="container up pullRight "
 >
   <button
     aria-expanded={false}

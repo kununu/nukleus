@@ -39,7 +39,7 @@
     }
   }
 
-  &.countrySwitcher {
+  &.lightShade {
     .toggleButton {
       padding-right: 0;
       font-weight: $font-weight-semibold;
@@ -52,7 +52,13 @@
       }
 
       .icon {
-        margin-top: 2px;
+        line-height: 18px;
+
+        img,
+        span[role="img"] {
+          display: inline-block;
+          vertical-align: middle;
+        }
       }
 
       a {

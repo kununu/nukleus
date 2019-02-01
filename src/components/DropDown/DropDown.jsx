@@ -13,19 +13,19 @@ export default class DropDown extends Component {
     ]).isRequired,
     direction: PropTypes.oneOf(['up', 'down']),
     pullRight: PropTypes.bool,
+    shade: PropTypes.oneOf(['dark', 'light']),
     showOnHover: PropTypes.bool,
     title: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element
-    ]).isRequired,
-    type: PropTypes.oneOf(['default', 'countrySwitcher'])
+    ]).isRequired
   }
 
   static defaultProps = {
     direction: 'down',
     pullRight: false,
-    showOnHover: true,
-    type: 'default'
+    shade: 'dark',
+    showOnHover: true
   }
 
   state = {isOpen: false}
@@ -79,13 +79,13 @@ export default class DropDown extends Component {
       children,
       direction,
       pullRight,
-      title,
-      type
+      shade,
+      title
     } = this.props;
     const {isOpen} = this.state;
 
     return (
-      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''} ${type === 'countrySwitcher' ? styles.countrySwitcher : ''}`}>
+      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''} ${shade === 'light' ? styles.lightShade : ''}`}>
         <button
           type="button"
           id="dropdown"
