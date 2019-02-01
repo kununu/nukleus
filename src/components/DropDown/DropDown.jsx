@@ -17,13 +17,15 @@ export default class DropDown extends Component {
     title: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element
-    ]).isRequired
+    ]).isRequired,
+    type: PropTypes.oneOf(['default', 'countrySwitcher']),
   }
 
   static defaultProps = {
     direction: 'down',
     pullRight: false,
-    showOnHover: true
+    showOnHover: true,
+    type: 'default',
   }
 
   state = {isOpen: false}
@@ -77,12 +79,13 @@ export default class DropDown extends Component {
       children,
       direction,
       pullRight,
-      title
+      title,
+      type
     } = this.props;
     const {isOpen} = this.state;
 
     return (
-      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''}`}>
+      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''} ${type === 'countrySwitcher' ? styles.countrySwitcher : ''}`}>
         <button
           type="button"
           id="dropdown"

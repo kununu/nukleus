@@ -38,6 +38,32 @@
       left: auto;
     }
   }
+
+  &.countrySwitcher {
+    .toggleButton {
+      padding-right: 0;
+      font-weight: $font-weight-semibold;
+      color: $white;
+    }
+
+    .item {
+      &:first-child {
+        padding-top: 15px;
+      }
+
+      a {
+        color: $text-color;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      font-size: $font-size-base;
+
+      .item {
+        font-size: $font-size-base;
+      }
+    }
+  }
 }
 
 .toggleButton {
