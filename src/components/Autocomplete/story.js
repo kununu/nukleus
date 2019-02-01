@@ -1,11 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withMarkdownNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
+import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Autocomplete from './index';
 

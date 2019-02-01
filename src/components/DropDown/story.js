@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs} from '@storybook/addon-knobs/react';
@@ -480,7 +480,7 @@ storiesOf('DropDown', module)
         >
           <p style={{marginTop: '0'}}>
             Add
-            <code>direction="up"</code>
+            <code>direction=&quot;up&quot;</code>
             {' '}
             prop to open dropdown in up direction
           </p>
@@ -584,7 +584,7 @@ storiesOf('DropDown', module)
         >
           <p style={{marginTop: '0'}}>
             DropDown opens with
-            <code>direction="down"</code>
+            <code>direction=&quot;down&quot;</code>
             {' '}
             prop by default
           </p>

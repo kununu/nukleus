@@ -45,7 +45,9 @@ export default class Modal extends React.Component {
   }
 
   onAction (ev) {
-    this.props.onAction(ev)
+    const {onAction} = this.props;
+
+    onAction(ev)
       .then(() => this.onExit());
   }
 
@@ -54,7 +56,9 @@ export default class Modal extends React.Component {
     this.setState({isOpen: false}, () => {
       setTimeout(() => {
         // Call parent onExit
-        this.props.onExit(ev);
+        const {onExit} = this.props;
+
+        onExit(ev);
       }, 250); // Time until animation has finished
     });
   }
@@ -96,6 +100,16 @@ export default class Modal extends React.Component {
   }
 
   render () {
+    const {
+      isOpen,
+    } = this.state;
+    const {
+      children,
+      closeText,
+      open,
+      titleText,
+    } = this.props;
+
     const titleId = 'nukleus-modal-title'; // will be used for aria-labelledby
 
     const overrideProps = {
@@ -105,14 +119,14 @@ export default class Modal extends React.Component {
     };
 
     return (
-      this.props.open ? (
+      open ? (
         <AriaModal
           {...overrideProps}
           onExit={this.onExit}
           underlayClass={
             classNames(
               styles.underlay,
-              {[styles.underlayHasEntered]: this.state.isOpen},
+              {[styles.underlayHasEntered]: isOpen},
             )
           }
           onEnter={this.onEnter}
@@ -120,7 +134,7 @@ export default class Modal extends React.Component {
           <section className={
             classNames(
               styles.modal,
-              {[styles.isOpen]: this.state.isOpen},
+              {[styles.isOpen]: isOpen},
             )}
           >
             <header className={styles.modalHeader}>
@@ -128,13 +142,13 @@ export default class Modal extends React.Component {
                 id={titleId}
                 className={styles.modalTitle}
               >
-                {this.props.titleText}
+                {titleText}
               </h1>
               <button
                 className={styles.closeButton}
                 id="nukleus-modal-close"
                 onClick={this.onExit}
-                title={this.props.closeText}
+                title={closeText}
                 type="button"
               >
                 <span role="presentation">
@@ -156,7 +170,7 @@ export default class Modal extends React.Component {
                 </span>
               </button>
             </header>
-            <div className={styles.modalBody}>{this.props.children}</div>
+            <div className={styles.modalBody}>{children}</div>
             {this.renderFooter()}
           </section>
         </AriaModal>

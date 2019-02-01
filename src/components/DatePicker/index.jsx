@@ -71,7 +71,7 @@ export default class DatePickerComponent extends React.Component {
 
   state = {
     showError: false,
-    value: this.props.value,
+    value: this.props.value, // eslint-disable-line react/destructuring-assignment
   }
 
   componentWillMount () {
@@ -175,7 +175,10 @@ export default class DatePickerComponent extends React.Component {
   }
 
   hasError () {
-    return this.state.showError && this.props.error;
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
   }
 
   render () {
@@ -187,12 +190,14 @@ export default class DatePickerComponent extends React.Component {
       icon,
       id,
       inputStyle,
-      name,
       isRequired,
+      name,
+      onBlur,
+      onFocus,
       requiredLabel,
+      showAbbreviatedMonthDropdown,
       showMonthDropdown,
       showYearDropdown,
-      showAbbreviatedMonthDropdown,
     } = this.props;
 
     const {value} = this.state;
@@ -217,9 +222,9 @@ export default class DatePickerComponent extends React.Component {
             disabled={disabled}
             id={id}
             name={name}
-            onBlur={this.props.onBlur}
+            onBlur={onBlur}
             onChange={this.onChange}
-            onFocus={this.props.onFocus}
+            onFocus={onFocus}
             required={isRequired}
             selected={isDate(value) ? value : null}
             showMonthDropdown={showMonthDropdown}

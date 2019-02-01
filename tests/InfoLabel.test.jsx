@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import InfoLabel from 'InfoLabel';
+import InfoLabel from 'InfoLabel'; // eslint-disable-line import/no-unresolved
 
 test('Renders an InfoLabel without crashing', () => {
   const component = renderer.create(<InfoLabel requiredLabel="required" />);

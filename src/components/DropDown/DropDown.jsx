@@ -58,7 +58,11 @@ export default class DropDown extends Component {
     this.close();
   }
 
-  onClick = () => this.setState({isOpen: !this.state.isOpen});
+  onClick = () => {
+    const {isOpen} = this.state;
+
+    this.setState({isOpen: !isOpen});
+  };
 
   handleClickOutside = (e) => {
     if (this.node.contains(e.target)) return;

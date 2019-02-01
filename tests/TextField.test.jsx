@@ -2,8 +2,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
-import ToolTip from 'ToolTip';
-import TextField from 'TextField';
+import ToolTip from 'ToolTip'; // eslint-disable-line import/no-unresolved
+import TextField from 'TextField'; // eslint-disable-line import/no-unresolved
 
 const textField = (
   <TextField

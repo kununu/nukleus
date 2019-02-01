@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Error from 'Error';
+import Error from 'Error'; // eslint-disable-line import/no-unresolved
 
 test('Renders an Error component without crashing', () => {
   const component = renderer.create(<Error info="Error" />);

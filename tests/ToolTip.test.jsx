@@ -2,7 +2,7 @@ import React from 'react';
 import {mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 import toJson from 'enzyme-to-json';
-import ToolTip from 'ToolTip';
+import ToolTip from 'ToolTip'; // eslint-disable-line import/no-unresolved
 
 // requestAnimationFrame isn't supported by node
 if (!window.requestAnimationFrame) {

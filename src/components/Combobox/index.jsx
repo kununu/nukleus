@@ -29,7 +29,7 @@ export default class ComboboxComponent extends React.Component {
     errorSubInfo: PropTypes.string,
     handle: PropTypes.element,
     id: PropTypes.string.isRequired,
-    inputProps: PropTypes.object, // eslint-disablie-line react/forbid-prop-types
+    inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     inputStyles: PropTypes.string,
     inputValue: PropTypes.string,
     isRequired: PropTypes.bool,
