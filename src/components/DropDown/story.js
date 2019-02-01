@@ -36,7 +36,7 @@ const countries = [
       <a href="/" onClick={e => e.preventDefault()}>
         Austria
       </a>),
-    value: 'Austria',
+    value: 'Austria'
   },
   {
     active: false,
@@ -45,7 +45,7 @@ const countries = [
       <a href="/" onClick={e => e.preventDefault()}>
         Germany
       </a>),
-    value: 'Germany',
+    value: 'Germany'
   },
   {
     active: false,
@@ -54,7 +54,7 @@ const countries = [
       <a href="/" onClick={e => e.preventDefault()}>
         Switzerland
       </a>),
-    value: 'Switzerland',
+    value: 'Switzerland'
   },
   {
     active: true,

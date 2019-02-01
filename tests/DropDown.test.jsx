@@ -165,11 +165,10 @@ test('Renders with type set as countrySwitcher', () => {
       showOnHover={false}
       pullRight
       title={<span>United States <img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" /></span>}
-      type="countrySwitcher"
-      >
-        <DropDownItem icon={<img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" />}>
-          <a href="/us">United States</a>
-        </DropDownItem>
+      type="countrySwitcher">
+      <DropDownItem icon={<img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" />}>
+        <a href="/us">United States</a>
+      </DropDownItem>
     </DropDown>
   ));
 
