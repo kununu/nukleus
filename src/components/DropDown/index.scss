@@ -48,7 +48,11 @@
 
     .item {
       &:first-child {
-        padding-top: 15px;
+        padding-top: 20px;
+      }
+
+      .icon {
+        margin-top: 2px;
       }
 
       a {
