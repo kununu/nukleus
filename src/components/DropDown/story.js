@@ -33,7 +33,7 @@ const countries = [
     active: false,
     icon: <img title="Austrian Flag" alt="Austrian Flag" src="https://assets.kununu.com/images/footer/at.png" />,
     link: (
-      <a href="#" onClick={(e) => e.preventDefault()}>
+      <a href="/" onClick={e => e.preventDefault()}>
         Austria
       </a>),
     value: 'Austria',
@@ -42,7 +42,7 @@ const countries = [
     active: false,
     icon: <img title="German Flag" alt="German Flag" src="https://assets.kununu.com/images/footer/de.png" />,
     link: (
-      <a href="#" onClick={(e) => e.preventDefault()}>
+      <a href="/" onClick={e => e.preventDefault()}>
         Germany
       </a>),
     value: 'Germany',
@@ -51,7 +51,7 @@ const countries = [
     active: false,
     icon: <img title="Swiss Flag" alt="Swiss Flag" src="https://assets.kununu.com/images/footer/ch.png" />,
     link: (
-      <a href="#" onClick={(e) => e.preventDefault()}>
+      <a href="/" onClick={e => e.preventDefault()}>
         Switzerland
       </a>),
     value: 'Switzerland',
@@ -60,18 +60,18 @@ const countries = [
     active: true,
     icon: <img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" />,
     link: (
-      <a href="#" onClick={(e) => e.preventDefault()}>
+      <a href="/" onClick={e => e.preventDefault()}>
         United States
       </a>),
-    value: 'United States',
-  },
+    value: 'United States'
+  }
 ];
 
 const activeCountry = () => {
   const active = countries.filter(item => item.active);
 
   return (<span>{active[0].value} {active[0].icon}</span>);
-}
+};
 
 storiesOf('DropDown', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -388,7 +388,7 @@ storiesOf('DropDown', module)
           background: '#f1f1f1',
           padding: '20px'
         }}>
-          <p style={{marginTop: '0'}}>Add <code>type="countrySwitcher"</code> prop (e.g. <code>{'<DropDown type="countrySwitcher" />'}</code>) to show with country switch style.</p>
+          <p style={{marginTop: '0'}}>Add <code>{'type="countrySwitcher"'}</code> prop (e.g. <code>{'<DropDown type="countrySwitcher" />'}</code>) to show with country switch style.</p>
           <div style={{background: '#18242b'}}>
             <DropDown
               direction="up"
@@ -396,14 +396,13 @@ storiesOf('DropDown', module)
               pullRight
               title={activeCountry()}
               type="countrySwitcher">
-                {countries.map((item, index) => (
-                  <DropDownItem
-                    key={index}
-                    icon={item.icon}
-                  >
-                    {item.link}
-                  </DropDownItem>
-                ))}
+              {countries.map((item, index) => (
+                <DropDownItem
+                  key={index}
+                  icon={item.icon}>
+                  {item.link}
+                </DropDownItem>
+              ))}
             </DropDown>
           </div>
         </div>

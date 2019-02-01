@@ -18,14 +18,14 @@ export default class DropDown extends Component {
       PropTypes.string,
       PropTypes.element
     ]).isRequired,
-    type: PropTypes.oneOf(['default', 'countrySwitcher']),
+    type: PropTypes.oneOf(['default', 'countrySwitcher'])
   }
 
   static defaultProps = {
     direction: 'down',
     pullRight: false,
     showOnHover: true,
-    type: 'default',
+    type: 'default'
   }
 
   state = {isOpen: false}
