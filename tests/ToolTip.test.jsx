@@ -30,7 +30,7 @@ test('Renders ToolTip component with content as Object', () => {
     label="Test"
     content={(
       <span>
-More Test
+        More Test
         <span>Info</span>
       </span>
 )}
@@ -54,7 +54,7 @@ test('Hovering on the ToolTip Button shows an InfoBox with Content as Object', (
     label="Test"
     content={(
       <span>
-More Test
+        More Test
         <span>Info</span>
       </span>
 )}

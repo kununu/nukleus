@@ -37,12 +37,12 @@ test('Renders with pullRight and showOnHover false', () => {
       showOnHover={false}
       title={(
         <span>
-Österreich
+          Österreich
           <span
             aria-label="at"
             role="img"
           >
-🇦🇹
+            🇦🇹
           </span>
         </span>
       )}
@@ -53,9 +53,9 @@ test('Renders with pullRight and showOnHover false', () => {
             aria-label="at"
             role="img"
           >
-🇦🇹
+            🇦🇹
           </span>
-)}
+        )}
       >
         <a href="/">Österreich</a>
       </DropDownItem>
@@ -65,9 +65,9 @@ test('Renders with pullRight and showOnHover false', () => {
             aria-label="de"
             role="img"
           >
-🇩🇪
+            🇩🇪
           </span>
-)}
+        )}
       >
         <a href="/de">Deutschland</a>
       </DropDownItem>
@@ -77,9 +77,9 @@ test('Renders with pullRight and showOnHover false', () => {
             aria-label="ch"
             role="img"
           >
-🇨🇭
+            🇨🇭
           </span>
-)}
+        )}
       >
         <a href="/ch">Schweiz</a>
       </DropDownItem>
@@ -89,9 +89,9 @@ test('Renders with pullRight and showOnHover false', () => {
             aria-label="us"
             role="img"
           >
-🇺🇸
+            🇺🇸
           </span>
-)}
+        )}
       >
         <a href="/us">United States</a>
       </DropDownItem>
@@ -109,12 +109,12 @@ test('Renders with direction up', () => {
       direction="up"
       title={(
         <span>
-Österreich
+          Österreich
           <span
             aria-label="at"
             role="img"
           >
-🇦🇹
+            🇦🇹
           </span>
         </span>
       )}
@@ -125,9 +125,9 @@ test('Renders with direction up', () => {
             aria-label="us"
             role="img"
           >
-🇺🇸
+            🇺🇸
           </span>
-)}
+        )}
       >
         <a href="/us">United States</a>
       </DropDownItem>
@@ -145,12 +145,12 @@ test('Renders menu when button is clicked', () => {
       showOnHover={false}
       title={(
         <span>
-United States
+          United States
           <span
             aria-label="us"
             role="img"
           >
-🇺🇸
+            🇺🇸
           </span>
         </span>
       )}
@@ -161,9 +161,9 @@ United States
             aria-label="at"
             role="img"
           >
-🇦🇹
+            🇦🇹
           </span>
-)}
+        )}
       >
         <a href="/">Österreich</a>
       </DropDownItem>
