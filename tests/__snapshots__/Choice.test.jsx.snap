@@ -988,7 +988,7 @@ exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
   
   <div
     className="radioContainer false"
-    data-options-per-row={3}
+    data-options-per-row="3"
   >
     <div
       className="radioButton"

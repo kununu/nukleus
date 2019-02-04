@@ -312,18 +312,34 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
-  renderSuggestion = suggestion => (
+  renderSuggestion = ({item, itemInfo}) => (
     <span>
-      {suggestion.item}
-      {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) && (
+      {item}
+      {(itemInfo !== undefined && itemInfo !== null && itemInfo.length > 0) && (
         <span className={styles.suggestionInfo}>
           &nbsp;(
-          {suggestion.itemInfo}
+          {itemInfo}
           )
         </span>
       )}
     </span>
   );
+
+  renderSuggestionsContainer = ({containerProps, children}) => {
+    const {suggestions} = this.state;
+
+    if (suggestions.length) {
+      return (
+        <div
+          {...containerProps}
+          className={styles.suggestionsContainer}
+        >
+          {children}
+        </div>
+      );
+    }
+    return null;
+  }
 
   loadSuggestions (value) {
     this.setState({suggestions: this.getSuggestions(value)});

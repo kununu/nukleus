@@ -89,9 +89,10 @@ export default class MultipleChoice extends React.Component {
 
   onChange (choice) {
     const {onChange} = this.props;
-    const {choices} = this.state;
 
     this.updateValue([choice], 'toggle', () => {
+      const {choices} = this.state;
+
       onChange(choice, choices);
     });
   }

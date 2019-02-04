@@ -77,8 +77,8 @@ export default class Choice extends React.Component {
   componentWillMount () {
     const {
       error,
-      query,
       name,
+      query,
     } = this.props;
     const queryObject = queryParamsToObject(query);
 
@@ -94,14 +94,15 @@ export default class Choice extends React.Component {
     const {
       checked,
       error,
-      query,
       name,
-    } = nextProps;
-    const queryNextObject = queryParamsToObject(query);
+      query,
+    } = this.props;
+    const queryNextObject = queryParamsToObject(nextProps.query);
     const queryPropsObject = queryParamsToObject(query);
 
     if (error) this.showError();
     if (nextProps.query === query && nextProps.checked === checked) return;
+
     if (queryNextObject[name] && queryNextObject[name] !== queryPropsObject[name]) {
       this.setState({checked: queryNextObject[name]});
     } else if (nextProps.checked !== checked) {
