@@ -120,7 +120,8 @@
     "sasslint": "sass-lint --verbose",
     "lint": "npm run eslint && npm run sasslint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\""
   },
   "jest-junit": {
     "output": "./coverage/junit.xml"
