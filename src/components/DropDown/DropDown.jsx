@@ -85,7 +85,7 @@ export default class DropDown extends Component {
     const {isOpen} = this.state;
 
     return (
-      <div className={`${styles.container} ${styles[direction]} ${pullRight ? styles.pullRight : ''} ${shade === 'light' ? styles.lightShade : ''}`}>
+      <div className={`${styles.container} ${styles[direction]} ${styles[shade]} ${pullRight ? styles.pullRight : ''}`}>
         <button
           type="button"
           id="dropdown"

@@ -39,7 +39,7 @@
     }
   }
 
-  &.lightShade {
+  &.light {
     .toggleButton {
       padding-right: 0;
       font-weight: $font-weight-semibold;
@@ -47,16 +47,6 @@
     }
 
     .item {
-      .icon {
-        line-height: 18px;
-
-        img,
-        span[role="img"] {
-          display: inline-block;
-          vertical-align: middle;
-        }
-      }
-
       a {
         color: $text-color;
       }
@@ -115,7 +105,13 @@
 
   .icon {
     float: right;
-    margin-left: 5px;
+    margin-left: 10px;
+    line-height: 18px;
+
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   a {
