@@ -1,15 +1,5 @@
 {
   "name": "nukleus",
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy",
-      "^utils(.*)$": "<rootDir>/utils$1"
-    },
-    "moduleDirectories": [
-      "src/components",
-      "node_modules"
-    ]
-  },
   "version": "14.1.0",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",

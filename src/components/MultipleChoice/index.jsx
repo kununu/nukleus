@@ -89,7 +89,7 @@ export default class MultipleChoice extends React.Component {
 
   onChange (choice) {
     const {onChange} = this.props;
-    const {choices} = this.props;
+    const {choices} = this.state;
 
     this.updateValue([choice], 'toggle', () => {
       onChange(choice, choices);
@@ -136,13 +136,13 @@ export default class MultipleChoice extends React.Component {
   }
 
   getChoicesToUpdate (newChoices) {
-    const {choices} = this.props;
+    const {choices} = this.state;
 
     return choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
   }
 
   updateValue (newChoices, status, cb = () => {}) {
-    const {choices} = this.props;
+    const {choices} = this.state;
 
     // cb get's fired when setState is finished
     this.setState({
