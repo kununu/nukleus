@@ -41,22 +41,12 @@
 
   &.light {
     .toggleButton {
-      padding-right: 0;
-      font-weight: $font-weight-semibold;
       color: $white;
     }
 
     .item {
       a {
         color: $text-color;
-      }
-    }
-
-    @media (min-width: $screen-md-min) {
-      font-size: $font-size-base;
-
-      .item {
-        font-size: $font-size-base;
       }
     }
   }
