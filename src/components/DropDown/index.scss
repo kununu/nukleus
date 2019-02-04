@@ -108,7 +108,8 @@
     margin-left: 10px;
     line-height: 18px;
 
-    * {
+    img,
+    span[role="img"] {
       display: inline-block;
       vertical-align: middle;
     }
