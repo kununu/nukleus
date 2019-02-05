@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -13,7 +12,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
     alias: {
-      utils: path.resolve(__dirname, "./utils"),
+      utils: path.resolve(__dirname, './utils'),
     },
     modules: [
       __dirname,

@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, number} from '@storybook/addon-knobs/react';
@@ -15,5 +15,6 @@ storiesOf('Paginator', module)
     <Paginator
       totalPages={number('totalPages', 5)}
       query={window.parent.location.search}
-      baseLink={<a href="/">baselink</a>} />
+      baseLink={<a href="/">baselink</a>}
+    />
   ));

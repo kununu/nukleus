@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
@@ -33,7 +33,8 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={number('totalStars', 5)}
-        value={1} />
+        value={1}
+      />
 
       <Stars
         colors={[
@@ -46,7 +47,8 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={number('totalStars', 5)}
-        value={2} />
+        value={2}
+      />
 
       <Stars
         colors={[
@@ -59,7 +61,8 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={number('totalStars', 5)}
-        value={3} />
+        value={3}
+      />
 
       <Stars
         colors={[
@@ -72,7 +75,8 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={number('totalStars', 5)}
-        value={4} />
+        value={4}
+      />
 
       <Stars
         colors={[
@@ -85,7 +89,8 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={number('totalStars', 5)}
-        value={5} />
+        value={5}
+      />
 
       <br />
       <hr />
@@ -106,7 +111,8 @@ storiesOf('Stars', module)
             '#7cb532',
             '#96d04a']}
           name="stars2"
-          selectable />
+          selectable
+        />
       </div>
 
       <br />
@@ -121,6 +127,7 @@ storiesOf('Stars', module)
         onChange={action('onChange')}
         onClick={action('onClick')}
         totalStars={5}
-        value={2.3} />
+        value={2.3}
+      />
     </div>
   ));

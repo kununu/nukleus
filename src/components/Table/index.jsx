@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import IconCaretUp from '@kununu/kununu-icons/dist/CaretUp';
@@ -7,7 +8,7 @@ import styles from './index.scss';
 
 // Polyfill for ie11 which doesn't support
 // Number.isNaN
-Number.isNaN = Number.isNaN || (value => value !== value); // eslint-disable-line
+Number.isNaN = Number.isNaN || (value => value !== value); // eslint-disable-line no-self-compare
 
 class Table extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ class Table extends Component {
       // ie: value => <span>{value}</span>
       cell: PropTypes.oneOfType([
         PropTypes.element,
-        PropTypes.func
+        PropTypes.func,
       ]),
       // Header is the value that will be shown
       // in the hr cell per column
@@ -28,20 +29,20 @@ class Table extends Component {
         PropTypes.number,
         PropTypes.element,
         PropTypes.bool,
-        PropTypes.string
+        PropTypes.string,
       ]),
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
     })).isRequired,
     dataRows: PropTypes.arrayOf(PropTypes.object),
-    initialSortingColumn: PropTypes.number
+    initialSortingColumn: PropTypes.number,
   };
 
   static defaultProps = {
     dataRows: [],
-    initialSortingColumn: -1
+    initialSortingColumn: -1,
   };
 
-  state = {rows: this.props.dataRows} // eslint-disable-line
+  state = {rows: this.props.dataRows}; // eslint-disable-line react/destructuring-assignment
 
   componentDidMount () {
     const {initialSortingColumn, columns} = this.props;
@@ -111,16 +112,24 @@ class Table extends Component {
           id="button-asc"
           key={`${idx}-asc`}
           onClick={() => this.handleSorting(accessor, 1)}
-          type="button">
-          <IconCaretUp className={styles.sortingArrowIcon} ariaHidden />
+          type="button"
+        >
+          <IconCaretUp
+            className={styles.sortingArrowIcon}
+            ariaHidden
+          />
         </button>
         <button
           className={styles.sortingButton}
           id="button-desc"
           key={`${idx}-desc`}
           onClick={() => this.handleSorting(accessor, -1)}
-          type="button">
-          <IconCaretDown className={styles.sortingArrowIcon} ariaHidden />
+          type="button"
+        >
+          <IconCaretDown
+            className={styles.sortingArrowIcon}
+            ariaHidden
+          />
         </button>
       </div>
     );
@@ -159,6 +168,7 @@ class Table extends Component {
    */
   renderBodyCell = (item, {accessor, cell}) => {
     const value = item[accessor];
+
     if (typeof cell === 'function') {
       return cell(value);
     }

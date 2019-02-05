@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import Label from '../Label';
 import sharedStyles from '../index.scss';
 
+import styles from './index.scss';
+
 export default class MultipleChoice extends React.Component {
   static propTypes = {
-    choices: PropTypes.array,
+    choices: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      isChecked: PropTypes.bool,
+      label: PropTypes.string,
+    })),
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
     heading: PropTypes.string,
@@ -17,17 +22,21 @@ export default class MultipleChoice extends React.Component {
     isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.array,
-    query: PropTypes.object,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      isChecked: PropTypes.bool,
+      label: PropTypes.string,
+    })),
+    query: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     reference: PropTypes.func,
-    requiredLabel: PropTypes.string
+    requiredLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -45,38 +54,46 @@ export default class MultipleChoice extends React.Component {
     options: [],
     query: {},
     reference: () => {},
-    requiredLabel: ''
+    requiredLabel: '',
   };
 
   state = {
-    choices: (this.props.options.length && this.props.options) || this.props.choices,
-    showError: false
+    choices: (this.props.options.length && this.props.options) || this.props.choices, // eslint-disable-line react/destructuring-assignment
+    showError: false,
   };
 
   componentWillMount () {
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
-    const {query, name} = this.props;
+    const {query, name, error} = this.props;
+
+    if (error !== null) this.showError();
+
     if (!query[name]) return;
     this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
   }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
-    const {query, name} = nextProps;
+    const {query} = this.props;
+    const {choices} = this.state;
+
     // We do not yet control the state when the query does not change,
     // for instance when updates are triggered by tweaking with other components.
-    if (nextProps.query === this.props.query) return;
-    if (!query[name]) {
-      this.updateValue(this.state.choices, 'unchecked');
+    if (nextProps.query === query) return;
+    if (!nextProps.query[nextProps.name]) {
+      this.updateValue(choices, 'unchecked');
     } else {
-      this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
+      this.updateValue(this.getChoicesToUpdate(nextProps.query[nextProps.name]), 'checked');
     }
   }
 
   onChange (choice) {
+    const {onChange} = this.props;
+
     this.updateValue([choice], 'toggle', () => {
-      this.props.onChange(choice, this.state.choices);
+      const {choices} = this.state;
+
+      onChange(choice, choices);
     });
   }
 
@@ -101,7 +118,7 @@ export default class MultipleChoice extends React.Component {
       heading,
       inputStyle,
       label,
-      labelHidden
+      labelHidden,
     } = this.props;
 
     if (!label && !heading) return null;
@@ -111,36 +128,40 @@ export default class MultipleChoice extends React.Component {
 
     return (
       <Label
-        value={value}
-        labelHidden={labelHidden}
         classNames={classNames}
-        isTitle />
+        isTitle
+        labelHidden={labelHidden}
+        value={value}
+      />
     );
   }
 
   getChoicesToUpdate (newChoices) {
-    return this.state.choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
+    const {choices} = this.state;
+
+    return choices.filter(choice => [].concat(newChoices).some(value => value === choice.value));
   }
 
   updateValue (newChoices, status, cb = () => {}) {
+    const {choices} = this.state;
+
     // cb get's fired when setState is finished
     this.setState({
-      choices: this.state.choices.map(choice => {
+      choices: choices.map((choice) => {
         if (newChoices.some(newChoice => newChoice === choice)) {
-          /* eslint-disable sorting/sort-object-props */
           const newStatus = {
             checked: true,
             unchecked: false,
-            toggle: !choice.isChecked
+            toggle: !choice.isChecked,
           }[status];
-          /* eslint-enable sorting/sort-object-props */
+
           return {
             ...choice,
-            isChecked: newStatus
+            isChecked: newStatus,
           };
         }
         return choice;
-      })
+      }),
     }, cb);
   }
 
@@ -153,50 +174,69 @@ export default class MultipleChoice extends React.Component {
   }
 
   hasError () {
-    return this.state.showError && this.props.error;
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
   }
 
   render () {
     const {choices} = this.state;
-    const {name} = this.props;
+    const {
+      error,
+      errorSubInfo,
+      isRequired,
+      name,
+      onBlur,
+      onFocus,
+      reference,
+      requiredLabel,
+    } = this.props;
 
     return (
-      <div className={this.containerClassNames} id={`${name}-container`}>
-        {this.props.requiredLabel &&
-          <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
-            {this.props.requiredLabel}
-          </span>
-        }
+      <div
+        className={this.containerClassNames}
+        id={`${name}-container`}
+      >
+        {requiredLabel && (
+        <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
         {this.label}
 
         <div className={styles.inputContainer}>
-          {choices.map(choice =>
-            (
-              <div className={`${styles.choice}`} key={choice.id}>
-                <input
-                  className={sharedStyles.formControl}
-                  id={`${this.props.name}${choice.id}`}
-                  name={this.props.name}
-                  key={choice.id}
-                  value={choice.value}
-                  type="checkbox"
-                  checked={choice.isChecked}
-                  ref={this.props.reference}
-                  required={this.props.isRequired}
-                  onBlur={this.props.onBlur}
-                  onChange={() => this.onChange(choice)}
-                  onFocus={this.props.onFocus} />
+          {choices.map(choice => (
+            <div
+              className={styles.choice}
+              key={choice.id}
+            >
+              <input
+                checked={choice.isChecked}
+                className={sharedStyles.formControl}
+                id={`${name}${choice.id}`}
+                key={choice.id}
+                name={name}
+                onBlur={onBlur}
+                onChange={() => this.onChange(choice)}
+                onFocus={onFocus}
+                ref={reference}
+                required={isRequired}
+                type="checkbox"
+                value={choice.value}
+              />
 
-                <label htmlFor={`${this.props.name}${choice.id}`}>{choice.label}</label>
-              </div>
-            ))}
+              <label htmlFor={`${name}${choice.id}`}>{choice.label}</label>
+            </div>
+          ))}
         </div>
-        {this.hasError() &&
-          <Error
-            info={this.props.error}
-            subInfo={this.props.errorSubInfo} />
-        }
+        {this.hasError() && (
+        <Error
+          info={error}
+          subInfo={errorSubInfo}
+        />
+        )}
       </div>
     );
   }

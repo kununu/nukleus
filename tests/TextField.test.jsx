@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
-import ToolTip from 'ToolTip';
-import TextField from 'TextField';
+import ToolTip from 'ToolTip'; // eslint-disable-line import/no-unresolved
+import TextField from 'TextField'; // eslint-disable-line import/no-unresolved
 
 const textField = (
   <TextField
@@ -11,7 +12,8 @@ const textField = (
     name="text-field"
     value="test"
     isRequired
-    requiredLabel="required" />
+    requiredLabel="required"
+  />
 );
 
 const textFieldWithError = (
@@ -23,23 +25,27 @@ const textFieldWithError = (
     errorSubInfo="with useful hints"
     value="test"
     isRequired
-    requiredLabel="required" />
+    requiredLabel="required"
+  />
 );
 
 // input
 test('Renders TextField without crashing', () => {
   const component = renderer.create(textField);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Changes output on value change manipulation', () => {
   const component = mount(textField);
+
   component.find('input').simulate('change', {target: {value: 'UGH'}});
   expect(component).toMatchSnapshot();
 });
 
 test('Renders TextField with an error message without crashing', () => {
   const component = renderer.create(textFieldWithError);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -52,7 +58,9 @@ test('Renders TextField with multiline without crashing', () => {
     value="test2"
     multiLine
     isRequired
-    requiredLabel="required" />);
+    requiredLabel="required"
+  />);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -62,7 +70,9 @@ test('Renders a medium size Textfield with multiline without crashing', () => {
     label="TextField"
     name="text-field"
     multiLine
-    inputStyle="mediumSize" />);
+    inputStyle="mediumSize"
+  />);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -75,7 +85,9 @@ test('Renders A TextField with visible character counter without crashing', () =
     value="test2"
     displayLength
     isRequired
-    requiredLabel="required" />);
+    requiredLabel="required"
+  />);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -85,10 +97,15 @@ test('Renders a TextField with a ToolTip without crashing', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -100,10 +117,14 @@ test('Focusing a TextField calls the onFocus Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -117,10 +138,14 @@ test('Bluring a TextField calls the onBlur Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('focus');
   component.find('#text-field').hostNodes().simulate('blur');
@@ -135,10 +160,14 @@ test('Changing a TextField calls the onChange Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'change'}});
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'change again'}});
@@ -154,10 +183,14 @@ test('Focusing a TextField Textarea calls the onFocus Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -172,10 +205,14 @@ test('Bluring a TextField Textarea calls the onBlur Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('focus');
   component.find('#text-field').hostNodes().simulate('blur');
@@ -191,10 +228,14 @@ test('Changing a TextField Textarea calls the onChange Event', () => {
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'change'}});
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'change again'}});
@@ -207,16 +248,20 @@ test('Badwords should highlight correctly', () => {
     multiLine
     id="text-field"
     highlightList={{
-        bad: 'bad',
-        words: 'words'
-      }}
+      bad: 'bad',
+      words: 'words',
+    }}
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'These are some ...'}});
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'These are some bad words'}});
@@ -229,17 +274,21 @@ test('Changing a TextField Textarea with highlighted words calls the onHighlight
     multiLine
     id="text-field"
     highlightList={{
-        bad: 'bad',
-        words: 'words'
-      }}
+      bad: 'bad',
+      words: 'words',
+    }}
     onHighlight={spyFunc}
     label={(
       <span>
         <label htmlFor="text-field">TextField</label>
-        <ToolTip content="content" label="Test" />
+        <ToolTip
+          content="content"
+          label="Test"
+        />
       </span>
       )}
-    name="text-field" />);
+    name="text-field"
+  />);
 
   component.find('#text-field').hostNodes().simulate('change', {target: {value: 'These are some ...'}});
   expect(spyFunc.mock.calls.length).toBe(0);

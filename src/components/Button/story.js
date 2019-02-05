@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
@@ -24,7 +24,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
 
@@ -38,7 +39,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
 
@@ -52,7 +54,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
 
@@ -66,7 +69,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
 
@@ -80,7 +84,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
     </div>
@@ -98,7 +103,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
       <hr />
 
@@ -112,7 +118,8 @@ storiesOf('Button', module)
         mobileFullWidth={boolean('mobileFullWidth', false)}
         onClick={action('click')}
         outline={boolean('outline', false)}
-        text={text('text', 'button')} />
+        text={text('text', 'button')}
+      />
 
     </div>
   ));

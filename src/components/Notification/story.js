@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {action} from '@storybook/addon-actions';
@@ -18,14 +18,16 @@ storiesOf('Notification', module)
       onClose={action('onClose')}
       message={text('message', 'Hi, I am an error notification box')}
       icon={<i className="fa fa-cross" />}
-      visible />
+      visible
+    />
   ))
   .add('success', () => (
     <Notification
       onClose={action('onClose')}
       message={text('message', 'Hi, I am a success notification box')}
       icon={<i className="fa fa-check" />}
-      visible />
+      visible
+    />
   ))
   .add('time out', () => (
     <Notification
@@ -34,5 +36,6 @@ storiesOf('Notification', module)
       onClose={action('onClose')}
       message={text('message', 'Hi, I am a success notification box')}
       icon={<i className="fa fa-check" />}
-      visible />
+      visible
+    />
   ));

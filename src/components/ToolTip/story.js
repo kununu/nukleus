@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, select} from '@storybook/addon-knobs/react';
@@ -17,7 +17,11 @@ storiesOf('ToolTip', module)
         Tooltip
       </h3>
       <p>
-        The tooltip component is usually used along with TextField labels to add some additional info regarding that input field. You can customize your own icon via the <code>icon</code> prop.
+        The tooltip component is usually used along with TextField labels to add some additional info regarding that input field. You can customize your own icon via the
+        {' '}
+        <code>icon</code>
+        {' '}
+        prop.
       </p>
 
       <ToolTip
@@ -27,7 +31,8 @@ storiesOf('ToolTip', module)
           bottomLeft: 'bottomLeft',
           bottomRight: 'bottomRight',
           topLeft: 'topLeft',
-          topRight: 'topRight'
-        })} />
+          topRight: 'topRight',
+        })}
+      />
     </div>
   ));

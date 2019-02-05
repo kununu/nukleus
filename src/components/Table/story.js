@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 
@@ -15,35 +15,41 @@ storiesOf('Table', module)
         {
           age: 11,
           color: 'red',
-          name: 'Joe'
+          name: 'Joe',
         },
         {
           age: 20,
           color: 'blue',
-          name: 'Merry'
+          name: 'Merry',
         },
         {
           age: 24,
           color: 'green',
-          name: 'Paul'
-        }
+          name: 'Paul',
+        },
       ]}
       columns={[
         {
           accessor: 'name',
           header: 'Name',
-          sortable: true
+          sortable: true,
         },
         {
           accessor: 'age',
           header: 'Age',
-          sortable: false
+          sortable: false,
         },
         {
           accessor: 'color',
-          cell: val => <span style={{color: 'red'}}>custom cell: {val}</span>,
+          cell: val => (
+            <span style={{color: 'red'}}>
+              custom cell:
+              {val}
+            </span>
+          ),
           header: 'Fav color',
-          sortable: true
-        }
-      ]} />
+          sortable: true,
+        },
+      ]}
+    />
   ));

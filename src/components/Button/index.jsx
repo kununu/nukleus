@@ -12,7 +12,7 @@ export default class Button extends React.Component {
     htmlType: PropTypes.oneOf([
       'button',
       'submit',
-      'reset'
+      'reset',
     ]),
     link: PropTypes.element,
     mobileFullWidth: PropTypes.bool,
@@ -20,9 +20,9 @@ export default class Button extends React.Component {
     outline: PropTypes.bool,
     text: PropTypes.oneOfType([
       PropTypes.element,
-      PropTypes.string
+      PropTypes.string,
     ]),
-    type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom'])
+    type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom']),
   };
 
   static defaultProps = {
@@ -35,15 +35,20 @@ export default class Button extends React.Component {
     onClick: null,
     outline: false,
     text: '',
-    type: 'primary'
+    type: 'primary',
   };
 
-  onClick = e => {
+  onClick = (e) => {
+    const {
+      disabled,
+      onClick,
+    } = this.props;
+
     e.preventDefault();
 
-    if (this.props.disabled) return;
+    if (disabled) return;
 
-    this.props.onClick();
+    onClick();
   }
 
   render () {
@@ -53,10 +58,11 @@ export default class Button extends React.Component {
       fullWidth,
       link,
       mobileFullWidth,
+      onClick,
       outline,
       text,
       htmlType,
-      type
+      type,
     } = this.props;
 
     const classes = classNames({
@@ -64,13 +70,13 @@ export default class Button extends React.Component {
       [styles.fullWidth]: fullWidth,
       [styles.mobileFullWidth]: mobileFullWidth,
       [styles.outline]: outline,
-      [type === 'custom' ? customTheme : styles[type]]: true
+      [type === 'custom' ? customTheme : styles[type]]: true,
     });
 
     const props = {
       className: classes,
       disabled,
-      onClick: this.props.onClick && this.onClick
+      onClick: onClick && this.onClick,
     };
 
     if (link) {
@@ -82,9 +88,10 @@ export default class Button extends React.Component {
     }
 
     return (
-      <button
+      <button // eslint-disable-line react/button-has-type
         {...props}
-        type={htmlType}>
+        type={htmlType}
+      >
         {text}
       </button>
     );

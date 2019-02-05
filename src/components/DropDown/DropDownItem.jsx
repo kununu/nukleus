@@ -8,11 +8,11 @@ export default function DropDownItem ({children, icon, isActive}) {
     <li className={`${styles.item} ${isActive ? styles.active : ''} ${icon ? styles.hasIcon : ''}`}>
       {children}
 
-      {icon &&
-        <span className={styles.icon}>
-          {icon}
-        </span>
-      }
+      {icon && (
+      <span className={styles.icon}>
+        {icon}
+      </span>
+      )}
     </li>
   );
 }
@@ -20,16 +20,16 @@ export default function DropDownItem ({children, icon, isActive}) {
 DropDownItem.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
   icon: PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.bool
+    PropTypes.bool,
   ]),
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
 };
 
 DropDownItem.defaultProps = {
   icon: false,
-  isActive: false
+  isActive: false,
 };

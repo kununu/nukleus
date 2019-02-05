@@ -5,7 +5,6 @@ import isDate from 'date-fns/isDate';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import {
@@ -15,8 +14,10 @@ import {
   formControl,
   formControlError,
   formGroup,
-  srOnly
+  srOnly,
 } from '../index.scss';
+
+import styles from './index.scss';
 
 export default class DatePickerComponent extends React.Component {
   static propTypes = {
@@ -30,20 +31,20 @@ export default class DatePickerComponent extends React.Component {
     isRequired: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     labelHidden: PropTypes.bool,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    query: PropTypes.object,
+    query: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     requiredLabel: PropTypes.string,
     showAbbreviatedMonthDropdown: PropTypes.bool,
     showMonthDropdown: PropTypes.bool,
     showYearDropdown: PropTypes.bool,
     title: PropTypes.string,
-    value: PropTypes.instanceOf(Date)
+    value: PropTypes.instanceOf(Date),
   };
 
   static defaultProps = {
@@ -65,39 +66,42 @@ export default class DatePickerComponent extends React.Component {
     showMonthDropdown: false,
     showYearDropdown: false,
     title: null,
-    value: null
+    value: null,
   };
 
   state = {
     showError: false,
-    value: this.props.value
+    value: this.props.value, // eslint-disable-line react/destructuring-assignment
   }
 
   componentWillMount () {
     const {
+      error,
       query,
       name,
-      value
+      value,
     } = this.props;
 
     this.updateValue(query[name] || value || '');
 
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
+    const {name} = this.props;
+
     if (nextProps.error) this.showError();
-    this.updateValue(nextProps.query[this.props.name] ||
+    this.updateValue(nextProps.query[name] ||
       nextProps.value ||
       '');
   }
 
   // Property initializer binds method to class instance
-  onChange = value => {
+  onChange = (value) => {
     const {
       onChange,
-      name
+      name,
     } = this.props;
 
     this.updateValue(value);
@@ -112,8 +116,8 @@ export default class DatePickerComponent extends React.Component {
     onChange({
       target: {
         name,
-        value
-      }
+        value,
+      },
     });
   };
 
@@ -122,7 +126,7 @@ export default class DatePickerComponent extends React.Component {
       id,
       title,
       label,
-      labelHidden
+      labelHidden,
     } = this.props;
 
     if (!label && !title) return null;
@@ -135,7 +139,14 @@ export default class DatePickerComponent extends React.Component {
      * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
     */
     if (typeof label === 'string' || typeof title === 'string') {
-      return <label className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`} htmlFor={id}>{label || title}</label>;
+      return (
+        <label
+          className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`}
+          htmlFor={id}
+        >
+          {label || title}
+        </label>
+      );
     }
 
     // We don't simply put a more complex element inside a label to prevent a
@@ -146,8 +157,8 @@ export default class DatePickerComponent extends React.Component {
       label,
       {
         ...label.props,
-        className: controlLabel
-      }
+        className: controlLabel,
+      },
     );
   }
 
@@ -164,7 +175,10 @@ export default class DatePickerComponent extends React.Component {
   }
 
   hasError () {
-    return this.state.showError && this.props.error;
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
   }
 
   render () {
@@ -176,23 +190,28 @@ export default class DatePickerComponent extends React.Component {
       icon,
       id,
       inputStyle,
-      name,
       isRequired,
+      name,
+      onBlur,
+      onFocus,
       requiredLabel,
+      showAbbreviatedMonthDropdown,
       showMonthDropdown,
       showYearDropdown,
-      showAbbreviatedMonthDropdown
     } = this.props;
 
     const {value} = this.state;
 
     return (
-      <div className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`} id={`${name}-container`}>
-        {requiredLabel &&
-          <span className={`${controlNote} ${controlLabelRequired}`}>
-            {requiredLabel}
-          </span>
-        }
+      <div
+        className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}
+        id={`${name}-container`}
+      >
+        {requiredLabel && (
+        <span className={`${controlNote} ${controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
         {this.label}
 
@@ -203,25 +222,27 @@ export default class DatePickerComponent extends React.Component {
             disabled={disabled}
             id={id}
             name={name}
-            onBlur={this.props.onBlur}
+            onBlur={onBlur}
             onChange={this.onChange}
-            onFocus={this.props.onFocus}
+            onFocus={onFocus}
             required={isRequired}
             selected={isDate(value) ? value : null}
             showMonthDropdown={showMonthDropdown}
             showYearDropdown={showYearDropdown}
-            useShortMonthInDropdown={showAbbreviatedMonthDropdown} />
-          {icon ?
+            useShortMonthInDropdown={showAbbreviatedMonthDropdown}
+          />
+          {icon ? (
             <span className={styles.icon}>
               {icon}
             </span>
-            : ''}
+          ) : ''}
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+          <Error
+            info={error}
+            subInfo={errorSubInfo}
+          />
+          )}
         </div>
 
       </div>

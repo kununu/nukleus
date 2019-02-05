@@ -2,33 +2,35 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Choice from 'Choice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import Choice from 'Choice'; // eslint-disable-line import/no-unresolved
 
 const options = [
   {
     id: 'opA',
     label: 'Option A',
-    value: 'opA'
+    value: 'opA',
   },
   {
     id: 'opB',
     label: 'Option B',
-    value: 'opB'
+    value: 'opB',
   },
   {
     id: 'opC',
     label: 'Option C',
-    value: 'opC'
-  }
+    value: 'opC',
+  },
 ];
 
 test('Renders Choice with radio buttons without crashing', () => {
   const component = renderer.create(<Choice
     name="test"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -37,9 +39,11 @@ test('Renders Choice with a heading without crashing', () => {
     heading="heading"
     name="test"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -48,9 +52,11 @@ test('Renders Choice with a label without crashing', () => {
     label="heading"
     name="test"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -59,9 +65,11 @@ test('Renders a disabled Choice without crashing', () => {
     name="test"
     options={options}
     disabled
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -71,16 +79,18 @@ test('Renders a Choice with a disabled option without crashing', () => {
       disabled: true,
       id: 'opD',
       label: 'Option D',
-      value: 'opD'
-    }
+      value: 'opD',
+    },
   ]);
 
   const component = renderer.create(<Choice
     name="test"
     options={newOptions}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -89,9 +99,11 @@ test('Renders a Choice with default checked without crashing', () => {
     name="test"
     options={options}
     checked="opB"
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -102,7 +114,9 @@ test('Renders an error if errors prop is set', () => {
     error="Test"
     errorSubInfo="SubInfo"
     checked="opB"
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
+
   expect(toJson(component)).toMatchSnapshot();
 });
 
@@ -111,9 +125,11 @@ test('Renders a Choice with no default checked if it\'s not an option', () => {
     name="test"
     options={options}
     checked="opD"
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -122,9 +138,11 @@ test('Renders a Choice with checked from route', () => {
     name="test"
     options={options}
     onChange={() => {}}
-    query={{test: 'opC'}} />);
+    query={{test: 'opC'}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -133,9 +151,11 @@ test('Renders a Choice with no default checked from route if it is not an option
     name="test"
     options={options}
     onChange={() => {}}
-    query={{test: 'opD'}} />);
+    query={{test: 'opD'}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -144,9 +164,11 @@ test('Renders a Choice with no default checked from route if it is the other nam
     name="test"
     options={options}
     onChange={() => {}}
-    query={{otherTest: 'opC'}} />);
+    query={{otherTest: 'opC'}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -155,9 +177,11 @@ test('Renders a Choice with custom style', () => {
     name="test"
     options={options}
     customTheme="customThemeClass"
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -167,9 +191,11 @@ test('Renders a Choice with custom style disabled', () => {
     options={options}
     customTheme="customThemeClass"
     disabled
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -178,9 +204,11 @@ test('Renders a Choice with optionsPerRow set without crashing', () => {
     name="test"
     options={options}
     optionsPerRow="3"
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
@@ -188,7 +216,8 @@ test('Change checked when changed', () => {
   const component = mount(<Choice
     name="test"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   expect(component.state('checked')).toEqual('');
   component.find('#testopA').simulate('change');
@@ -200,7 +229,8 @@ test('Fires onChange function when changed', () => {
   const component = mount(<Choice
     name="test"
     options={options}
-    onChange={spyFunc} />);
+    onChange={spyFunc}
+  />);
 
   component.find('#testopA').simulate('change');
   expect(spyFunc).toHaveBeenCalled();
@@ -212,7 +242,8 @@ test('Does not fire onChange function when clicked if Choice is disabled', () =>
     name="test"
     options={options}
     disabled
-    onChange={spyFunc} />);
+    onChange={spyFunc}
+  />);
 
   component.find('#testopA').simulate('change');
   expect(spyFunc).not.toHaveBeenCalled();
@@ -224,15 +255,16 @@ test('Does not fire onChange function when clicked option is disabled', () => {
       disabled: true,
       id: 'opD',
       label: 'Option D',
-      value: 'opD'
-    }
+      value: 'opD',
+    },
   ]);
 
   const spyFunc = jest.fn();
   const component = mount(<Choice
     name="test"
     options={newOptions}
-    onChange={spyFunc} />);
+    onChange={spyFunc}
+  />);
 
   component.find('#testopD').simulate('change');
   expect(spyFunc).not.toHaveBeenCalled();
@@ -243,7 +275,8 @@ test('Change checked prop change checked state', () => {
     name="test"
     checked="opA"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   expect(component.state('checked')).toEqual('opA');
   component.setProps({checked: 'opB'});
@@ -255,7 +288,8 @@ test('No change checked prop does not change checked state', () => {
     name="test"
     checked="opA"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.setState({checked: 'opB'});
   component.setProps({checked: 'opA'});
@@ -268,7 +302,8 @@ test('Change checked query changes state', () => {
     name="test"
     checked="opA"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   expect(component.state('checked')).toEqual('opA');
   component.setProps({query: {test: 'opB'}});
@@ -280,7 +315,8 @@ test('No change checked query does not change state', () => {
     name="test"
     query={{test: 'opA'}}
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.setState({checked: 'opB'});
   expect(component.state('checked')).toEqual('opB');
@@ -293,7 +329,8 @@ test('Uncheck predefined option', () => {
     name="test"
     checked="opA"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.find('#testopA').simulate('click');
   expect(component.state('checked')).toEqual(null);
@@ -303,7 +340,8 @@ test('Uncheck previously checked option', () => {
   const component = mount(<Choice
     name="test"
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.find('#testopA').simulate('change');
   component.find('#testopA').simulate('click');
@@ -316,7 +354,8 @@ test('Focusing a Choice calls the onFocus Event', () => {
     name="test"
     onFocus={spyFunc}
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.find('#testopA').simulate('focus');
   expect(spyFunc.mock.calls.length).toBe(1);
@@ -328,7 +367,8 @@ test('Bluring a Choice calls the onBlur Event', () => {
     name="test"
     onBlur={spyFunc}
     options={options}
-    onChange={() => {}} />);
+    onChange={() => {}}
+  />);
 
   component.find('#testopA').simulate('focus');
   component.find('#testopA').simulate('blur');
@@ -340,7 +380,8 @@ test('Changing a Choice calls the onChange Event', () => {
   const component = mount(<Choice
     name="test"
     onChange={spyFunc}
-    options={options} />);
+    options={options}
+  />);
 
   component.find('#testopA').simulate('change', {target: {value: true}});
   component.find('#testopA').simulate('change', {target: {value: false}});
