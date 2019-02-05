@@ -36,7 +36,10 @@ export default class Choice extends React.Component {
     onFocus: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string,
-      label: PropTypes.string,
+      label: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+      ]),
       value: PropTypes.string,
     })).isRequired,
     optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),

@@ -1,20 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-export default function DropDownItem ({children, icon, isActive}) {
-  return (
-    <li className={`${styles.item} ${isActive ? styles.active : ''} ${icon ? styles.hasIcon : ''}`}>
-      {children}
+export default class DropDownItem extends Component {
+  getItem = ({props: {children}}) => {
+    const {icon} = this.props;
 
-      {icon && (
-      <span className={styles.icon}>
-        {icon}
-      </span>
-      )}
-    </li>
-  );
+    return (
+      <>
+        {children}
+
+        {icon && (
+        <span className={styles.icon}>
+          {icon}
+        </span>
+        )}
+      </>
+    );
+  }
+
+  render () {
+    const {
+      children,
+      isActive,
+    } = this.props;
+
+    return (
+      <li className={`${styles.item} ${isActive ? styles.active : ''}`}>
+        {React.cloneElement(children, [], this.getItem(children))}
+      </li>
+    );
+  }
 }
 
 DropDownItem.propTypes = {

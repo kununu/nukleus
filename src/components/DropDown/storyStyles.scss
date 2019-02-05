@@ -1,15 +1,18 @@
 .dropDownStory {
   ul {
     li {
-      display: inline-block;
-      padding: 10px;
       list-style: none;
+    }
+
+    li.menuItem {
+      display: inline-block;
+      padding: 0 10px;
 
       &:first-child {
         padding: 0 0;
       }
 
-      & + li {
+      & + & {
         margin-left: 10px;
       }
     }

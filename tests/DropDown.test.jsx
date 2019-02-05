@@ -247,6 +247,42 @@ test('Renders correctly when no icon is provided', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders with light shade', () => {
+  const component = renderer.create((
+    <DropDown
+      direction="up"
+      shade="light"
+      showOnHover={false}
+      pullRight
+      title={(
+        <span>
+United States
+          <img
+            title="American Flag"
+            alt="American Flag"
+            src="https://assets.kununu.com/images/footer/us.png"
+          />
+        </span>
+)}
+    >
+      <DropDownItem icon={(
+        <img
+          title="American Flag"
+          alt="American Flag"
+          src="https://assets.kununu.com/images/footer/us.png"
+        />
+)}
+      >
+        <a href="/us">United States</a>
+      </DropDownItem>
+    </DropDown>
+  ));
+
+  const tree = component.toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
 test('Unmount triggers lifecycle method', () => {
   const component = mount((
     <DropDown title="Österreich">
