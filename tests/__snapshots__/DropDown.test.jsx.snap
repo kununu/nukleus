@@ -159,17 +159,17 @@ exports[`Renders menu when button is clicked 1`] = `
             href="/"
           >
             Österreich
-          </a>
-          <span
-            className="icon"
-          >
             <span
-              aria-label="at"
-              role="img"
+              className="icon"
             >
-              🇦🇹
+              <span
+                aria-label="at"
+                role="img"
+              >
+                🇦🇹
+              </span>
             </span>
-          </span>
+          </a>
         </li>
       </DropDownItem>
     </ul>
@@ -269,7 +269,7 @@ exports[`Renders with light shade 1`] = `
     type="button"
   >
     <span>
-      United States 
+      United States
       <img
         alt="American Flag"
         src="https://assets.kununu.com/images/footer/us.png"
