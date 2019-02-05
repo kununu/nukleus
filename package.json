@@ -72,7 +72,7 @@
     "jest-junit": "6.0.1",
     "node-sass": "4.11.0",
     "node-sass-module-importer": "0.1.0",
-    "postcss-cli": "6.1.1",
+    "postcss-cli": "6.1.0",
     "postcss-loader": "3.0.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
