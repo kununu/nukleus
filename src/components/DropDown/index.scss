@@ -86,7 +86,7 @@
 .item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 0;
   margin: 0;
   font-size: $font-size-base;
   list-style: none;
@@ -106,8 +106,8 @@
   }
 
   a {
-    display: inline-block;
-    float: left;
+    display: block;
+    padding: 10px 15px;
 
     &:hover,
     &:active,
