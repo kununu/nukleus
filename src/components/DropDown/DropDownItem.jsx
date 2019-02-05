@@ -11,11 +11,11 @@ export default class DropDownItem extends Component {
       <>
         {children}
 
-        {icon &&
-          <span className={styles.icon}>
-            {icon}
-          </span>
-        }
+        {icon && (
+        <span className={styles.icon}>
+          {icon}
+        </span>
+        )}
       </>
     );
   }
@@ -23,7 +23,7 @@ export default class DropDownItem extends Component {
   render () {
     const {
       children,
-      isActive
+      isActive,
     } = this.props;
 
     return (

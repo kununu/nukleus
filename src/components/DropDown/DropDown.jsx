@@ -25,7 +25,7 @@ export default class DropDown extends Component {
     direction: 'down',
     pullRight: false,
     shade: 'dark',
-    showOnHover: true
+    showOnHover: true,
   }
 
   state = {isOpen: false}
@@ -84,7 +84,7 @@ export default class DropDown extends Component {
       direction,
       pullRight,
       shade,
-      title
+      title,
     } = this.props;
     const {isOpen} = this.state;
 

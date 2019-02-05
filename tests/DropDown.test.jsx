@@ -254,14 +254,32 @@ test('Renders with light shade', () => {
       shade="light"
       showOnHover={false}
       pullRight
-      title={<span>United States <img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" /></span>}>
-      <DropDownItem icon={<img title="American Flag" alt="American Flag" src="https://assets.kununu.com/images/footer/us.png" />}>
+      title={(
+        <span>
+United States
+          <img
+            title="American Flag"
+            alt="American Flag"
+            src="https://assets.kununu.com/images/footer/us.png"
+          />
+        </span>
+)}
+    >
+      <DropDownItem icon={(
+        <img
+          title="American Flag"
+          alt="American Flag"
+          src="https://assets.kununu.com/images/footer/us.png"
+        />
+)}
+      >
         <a href="/us">United States</a>
       </DropDownItem>
     </DropDown>
   ));
 
   const tree = component.toJSON();
+
   expect(tree).toMatchSnapshot();
 });
 
