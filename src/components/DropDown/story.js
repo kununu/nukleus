@@ -22,9 +22,7 @@ const DropDownInfo = () => (
       The DropDown component behaves differently depending on the
       {' '}
       <code>showOnHover</code>
-      {' '}
-      property.
-      If true the menu will be shown on mouse hover. Otherwise, the menu will only open with a user click.
+      property. If true the menu will be shown on mouse hover. Otherwise, the menu will only open with a user click.
       <br />
       The props
       {' '}
@@ -34,10 +32,89 @@ const DropDownInfo = () => (
       {' '}
       <code>direction</code>
       {' '}
-    may be used to control alignment and direction in which dropdown will open.
+      may be used to control alignment and direction in which dropdown will open.
     </p>
   </div>
 );
+
+const countries = [
+  {
+    active: false,
+    icon: <img
+      title="Austrian Flag"
+      alt="Austrian Flag"
+      src="https://assets.kununu.com/images/footer/at.png"
+    />,
+    link: (
+      <a
+        href="/"
+        onClick={e => e.preventDefault()}
+      >
+        Austria
+      </a>),
+    value: 'Austria',
+  },
+  {
+    active: false,
+    icon: <img
+      title="German Flag"
+      alt="German Flag"
+      src="https://assets.kununu.com/images/footer/de.png"
+    />,
+    link: (
+      <a
+        href="/"
+        onClick={e => e.preventDefault()}
+      >
+        Germany
+      </a>),
+    value: 'Germany',
+  },
+  {
+    active: false,
+    icon: <img
+      title="Swiss Flag"
+      alt="Swiss Flag"
+      src="https://assets.kununu.com/images/footer/ch.png"
+    />,
+    link: (
+      <a
+        href="/"
+        onClick={e => e.preventDefault()}
+      >
+        Switzerland
+      </a>),
+    value: 'Switzerland',
+  },
+  {
+    active: true,
+    icon: <img
+      title="American Flag"
+      alt="American Flag"
+      src="https://assets.kununu.com/images/footer/us.png"
+    />,
+    link: (
+      <a
+        href="/"
+        onClick={e => e.preventDefault()}
+      >
+        United States
+      </a>),
+    value: 'United States',
+  },
+];
+
+const activeCountry = () => {
+  const active = countries.filter(item => item.active);
+
+  return (
+    <span>
+      {active[0].value}
+      {' '}
+      {active[0].icon}
+    </span>
+  );
+};
 
 storiesOf('DropDown', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -69,7 +146,7 @@ storiesOf('DropDown', module)
             padding: '0',
           }}
           >
-            <li>
+            <li className={styles.menuItem}>
               <DropDown title="Products">
                 <DropDownItem isActive>
                   <a
@@ -97,7 +174,7 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
@@ -105,12 +182,12 @@ storiesOf('DropDown', module)
                 Offers
               </a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
               >
-                Services
+              Services
               </a>
             </li>
           </ul>
@@ -133,7 +210,7 @@ storiesOf('DropDown', module)
             padding: '0',
           }}
           >
-            <li>
+            <li className={styles.menuItem}>
               <DropDown
                 showOnHover={false}
                 title="Products"
@@ -164,7 +241,7 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
@@ -172,7 +249,7 @@ storiesOf('DropDown', module)
                 Offers
               </a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
@@ -205,7 +282,7 @@ storiesOf('DropDown', module)
             padding: '0',
           }}
           >
-            <li>
+            <li className={styles.menuItem}>
               <DropDown
                 showOnHover={false}
                 title="Products"
@@ -236,7 +313,7 @@ storiesOf('DropDown', module)
                 </DropDownItem>
               </DropDown>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
@@ -244,7 +321,7 @@ storiesOf('DropDown', module)
                 Offers
               </a>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <a
                 href="/"
                 onClick={e => e.preventDefault()}
@@ -273,9 +350,10 @@ storiesOf('DropDown', module)
         >
           <p style={{marginTop: '0'}}>
             Add
+            {' '}
             <code>pullRight</code>
             {' '}
-            prop to open dropdown aligned to right side
+prop to open dropdown aligned to right side
           </p>
           <div style={{
             background: '#ffffff',
@@ -584,9 +662,10 @@ storiesOf('DropDown', module)
         >
           <p style={{marginTop: '0'}}>
             DropDown opens with
+            {' '}
             <code>direction=&quot;down&quot;</code>
             {' '}
-            prop by default
+prop by default
           </p>
           <div style={{
             background: '#ffffff',
@@ -793,5 +872,50 @@ storiesOf('DropDown', module)
         </div>
       </div>
     </div>
+  ))
+  .add('shades', () => (
+    <div>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%',
+      }}
+      >
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px',
+        }}
+        >
+          <p style={{marginTop: '0'}}>
+            Add
+            {' '}
+            <code>shade=&quot;light&quot;</code>
+            {' '}
+            prop (e.g.
+            {' '}
+            <code>{'<DropDown shade="light" />'}</code>
+            ) to enable light shade on dark backgrounds.
+          </p>
+          <div style={{background: '#18242b'}}>
+            <DropDown
+              direction="up"
+              showOnHover={false}
+              pullRight
+              shade="light"
+              title={activeCountry()}
+            >
+              {countries.map((item, index) => (
+                <DropDownItem
+                  key={index} // eslint-disable-line react/no-array-index-key
+                  icon={item.icon}
+                >
+                  {item.link}
+                </DropDownItem>
+              ))}
+            </DropDown>
+          </div>
+        </div>
+      </div>
+    </div>
   ));
-/* eslint-enable react/jsx-curly-brace-presence */
