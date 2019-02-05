@@ -6,10 +6,11 @@ import styles from './index.scss';
 export default class DropDownItem extends Component {
   getItem = children => {
     const {icon} = this.props;
+    const {props} = children;
 
     return (
       <>
-        {children.props.children}
+        {props.children}
 
         {icon &&
           <span className={styles.icon}>
