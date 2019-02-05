@@ -1,6 +1,6 @@
 {
   "name": "nukleus",
-  "version": "14.1.3",
+  "version": "14.1.4",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -109,7 +109,7 @@
   },
   "scripts": {
     "start": "start-storybook -s ./static -p 3000",
-    "build": "build-storybook -s ./static -c .storybook -o docs",
+    "build": "rimraf ./docs && build-storybook -s ./static -c .storybook -o docs",
     "babel": "cross-env NODE_ENV=dist babel ./src/components --out-dir ./dist/components --ignore 'src/components/**/story.js' && babel ./utils --out-dir ./dist/utils",
     "presass": "node-sass ./src/components --output ./dist/components --importer node_modules/node-sass-module-importer",
     "sass": "postcss dist/components/**/*.css --replace --use autoprefixer --no-map",

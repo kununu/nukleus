@@ -134,7 +134,7 @@ export default class Select extends React.Component {
    */
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
-    const classNames = [styles.formGroup, sharedStyles[inputStyle]];
+    const classNames = [sharedStyles.formGroup, sharedStyles[inputStyle]];
 
     if (requiredLabel) classNames.push(styles.paddingTop);
 
