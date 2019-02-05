@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
+import MultipleChoice from 'MultipleChoice'; // eslint-disable-line import/no-unresolved
 
 const spyFunc = jest.fn();
 
@@ -18,10 +18,11 @@ const deprecatedMultipleChoice = (
         id: 'option-1',
         isChecked: false,
         label: 'test',
-        value: 'test'
-      }
+        value: 'test',
+      },
     ]
-  } />
+  }
+  />
 );
 
 const multipleChoice = (
@@ -36,10 +37,11 @@ const multipleChoice = (
         id: 'option-1',
         isChecked: false,
         label: 'test',
-        value: 'test'
-      }
+        value: 'test',
+      },
     ]
-  } />
+  }
+  />
 );
 
 const multipleChoiceWithButton = (
@@ -54,10 +56,11 @@ const multipleChoiceWithButton = (
         id: 'option-1',
         isChecked: false,
         label: 'test',
-        value: 'test'
-      }
+        value: 'test',
+      },
     ]
-  } />
+  }
+  />
 );
 
 const multipleChoices = (
@@ -69,56 +72,63 @@ const multipleChoices = (
       id: 'option-1',
       isChecked: false,
       label: 'option 1',
-      value: 'option-1'
+      value: 'option-1',
     },
     {
       id: 'option-2',
       isChecked: false,
       label: 'option 2',
-      value: 'option-2'
+      value: 'option-2',
     },
     {
       id: 'option-3',
       isChecked: false,
       label: 'option 3',
-      value: 'option-2'
+      value: 'option-2',
     },
     {
       id: 'option-4',
       isChecked: false,
       label: 'option 4',
-      value: 'option-4'
-    }]} />
+      value: 'option-4',
+    }]}
+  />
 );
 
 test('Renders deprecated MultipleChoice without crashing', () => {
   const component = renderer.create(deprecatedMultipleChoice);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Renders MultipleChoice without crashing', () => {
   const component = renderer.create(multipleChoice);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Changes status on MultipleChoice onChange', () => {
   const component = mount(multipleChoice);
+
   component.find('input').simulate('change');
   expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Renders MultipleCoices without crashing', () => {
   const component = renderer.create(multipleChoices);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Renders MultipleChoice with inputStyle buttons without crashing', () => {
   const component = renderer.create(multipleChoiceWithButton);
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Change status of MultipleChoice on onChange with lots of options', () => {
   const component = mount(multipleChoices);
+
   component.find({value: 'option-1'}).simulate('change');
   component.find({value: 'option-4'}).simulate('change');
   expect(toJson(component)).toMatchSnapshot();
@@ -138,46 +148,49 @@ test('Renders an error if errors prop is set', () => {
           id: 'option-1',
           isChecked: false,
           label: 'test',
-          value: 'test'
-        }
+          value: 'test',
+        },
       ]
-    } />);
+    }
+  />);
+
   expect(toJson(component)).toMatchSnapshot();
 });
 
 test('Fires on change function', () => {
   const component = mount(multipleChoice);
+
   component.find('input').simulate('click');
   expect(spyFunc).toHaveBeenCalled();
 });
 
-test('Changing a MultipleChoice returns correct values in onChange Event', done => {
+test('Changing a MultipleChoice returns correct values in onChange Event', (done) => {
   const initialOptions = [
     {
       id: 'option-1',
       isChecked: false,
       label: 'test',
-      value: 'option-1'
+      value: 'option-1',
     },
     {
       id: 'option-2',
       isChecked: false,
       label: 'test',
-      value: 'option-2'
+      value: 'option-2',
     },
     {
       id: 'option-3',
       isChecked: false,
       label: 'test',
-      value: 'option-3'
-    }
+      value: 'option-3',
+    },
   ];
 
-  const updatedOptions = initialOptions.map(ch => {
+  const updatedOptions = initialOptions.map((ch) => {
     if (ch.id === 'option-2') {
       return {
         ...ch,
-        isChecked: true
+        isChecked: true,
       };
     }
     return ch;
@@ -192,7 +205,9 @@ test('Changing a MultipleChoice returns correct values in onChange Event', done 
       expect(allOptions).toEqual(updatedOptions);
       done();
     }}
-    options={initialOptions} />);
+    options={initialOptions}
+  />);
+
   component.find({value: 'option-2'}).simulate('change');
 });
 
@@ -202,20 +217,20 @@ describe('MultipleChoice Events', () => {
       id: 'option-1',
       isChecked: false,
       label: 'test',
-      value: 'option-1'
+      value: 'option-1',
     },
     {
       id: 'option-2',
       isChecked: false,
       label: 'test',
-      value: 'option-2'
+      value: 'option-2',
     },
     {
       id: 'option-3',
       isChecked: false,
       label: 'test',
-      value: 'option-3'
-    }
+      value: 'option-3',
+    },
   ];
 
   it('Focusing a MultipleChoice calls the onFocus Event', () => {
@@ -226,7 +241,8 @@ describe('MultipleChoice Events', () => {
       inputStyle="buttons"
       isRequired
       onFocus={spyFunc}
-      options={initialOptions} />);
+      options={initialOptions}
+    />);
 
     component.find('[type="checkbox"]').first().simulate('focus');
     expect(spyFunc.mock.calls.length).toBe(1);
@@ -240,7 +256,8 @@ describe('MultipleChoice Events', () => {
       inputStyle="buttons"
       isRequired
       onBlur={spyFunc}
-      options={initialOptions} />);
+      options={initialOptions}
+    />);
 
     component.find('[type="checkbox"]').first().simulate('focus');
     component.find('[type="checkbox"]').first().simulate('blur');

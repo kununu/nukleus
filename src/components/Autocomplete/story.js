@@ -1,11 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withMarkdownNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
+import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Autocomplete from './index';
 
@@ -15,8 +15,8 @@ const staticData = {
     {item: 'alpha', itemInfo: 'Vienna'},
     {item: 'IBM', itemInfo: 'US'},
     {item: 'kununu', itemInfo: 'Vienna'},
-    {item: 'kununu', itemInfo: 'US'}
-  ]
+    {item: 'kununu', itemInfo: 'US'},
+  ],
 };
 
 storiesOf('Autocomplete', module)
@@ -47,10 +47,9 @@ storiesOf('Autocomplete', module)
             noSuggestionText={text('noSuggestionText', 'No results found')}
             onFocus={action('onFocus')}
             onBlur={action('onBlur')}
-            error={boolean('error', false)}
-            errorSubInfo={text('errorSubInfo', 'Error!')}
             scrollOffset={70}
-            scrollTo />
+            scrollTo
+          />
 
           <br />
 
@@ -70,11 +69,10 @@ storiesOf('Autocomplete', module)
             noSuggestionText={text('noSuggestionText', 'No results found')}
             onFocus={action('onFocus')}
             onBlur={action('onBlur')}
-            error={boolean('error', false)}
-            errorSubInfo={text('errorSubInfo', 'Error!')}
-            requiredLabel
+            requiredLabel={text('requiredLabel', 'required')}
             scrollOffset={70}
-            scrollTo />
+            scrollTo
+          />
         </div>
       </div>
     </div>

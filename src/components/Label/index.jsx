@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 
 import {
   controlLabel,
-  srOnly
+  srOnly,
 } from '../index.scss';
 
 export default function Label ({
-  id, value, labelHidden, classNames, isTitle
+  classNames,
+  id,
+  isTitle,
+  labelHidden,
+  value,
 }) {
   const hidden = labelHidden ? srOnly : '';
   const allClassNames = `${classNames} ${controlLabel} ${hidden}`;
@@ -28,7 +32,14 @@ export default function Label ({
    * @return {ReactElement} [Either returns a label or div or a react element]
   */
   if (typeof value === 'string') {
-    return <label htmlFor={id} className={allClassNames}>{value}</label>;
+    return (
+      <label
+        htmlFor={id}
+        className={allClassNames}
+      >
+        {value}
+      </label>
+    );
   }
 
   // We don't simply put a more complex element inside a label to prevent a
@@ -39,28 +50,28 @@ export default function Label ({
     value,
     {
       ...value.props,
-      className: allClassNames
-    }
+      className: allClassNames,
+    },
   );
 }
 
 Label.propTypes = {
   classNames: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.array
+    PropTypes.array,
   ]),
   id: PropTypes.string,
   isTitle: PropTypes.bool,
   labelHidden: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.object
-  ]).isRequired
+    PropTypes.object,
+  ]).isRequired,
 };
 
 Label.defaultProps = {
   classNames: '',
   id: '',
   isTitle: false,
-  labelHidden: false
+  labelHidden: false,
 };

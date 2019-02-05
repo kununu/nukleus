@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withKnobs, select} from '@storybook/addon-knobs';
 import {withInfo} from '@storybook/addon-info';
@@ -15,11 +15,17 @@ storiesOf('InfoBox', module)
   .add('basics', () => (
     <div style={{marginTop: '100px', textAlign: 'center'}}>
       <div style={{
-          display: 'inline-block',
-          padding: '10px',
-          position: 'relative'
-        }}>
-        <span aria-label="button" role="img">🔘</span>
+        display: 'inline-block',
+        padding: '10px',
+        position: 'relative',
+      }}
+      >
+        <span
+          aria-label="button"
+          role="img"
+        >
+🔘
+        </span>
         <InfoBox
           content="hi there how are you!"
           position={
@@ -29,11 +35,12 @@ storiesOf('InfoBox', module)
                 bottomLeft: 'bottomLeft',
                 bottomRight: 'bottomRight',
                 topLeft: 'topLeft',
-                topRight: 'topRight'
+                topRight: 'topRight',
               },
               'topLeft',
             )
-          } />
+          }
+        />
       </div>
     </div>
   ));

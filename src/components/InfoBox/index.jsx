@@ -7,19 +7,21 @@ export default class InfoBox extends React.Component {
   static propTypes = {
     content: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]).isRequired,
     position: PropTypes.oneOf([
       'topLeft',
       'topRight',
       'bottomLeft',
-      'bottomRight'
-    ])
+      'bottomRight',
+    ]),
   };
 
-  static defaultProps = {
-    position: 'topLeft'
-  };
+  static defaultProps = {position: 'topLeft'};
+
+  currentTranslateX = 0;
+
+  needsLayoutUpdate = false;
 
   componentWillMount () {
     window.addEventListener('resize', this.windowResize);
@@ -65,9 +67,6 @@ export default class InfoBox extends React.Component {
     }
   }
 
-  currentTranslateX = 0;
-  needsLayoutUpdate = false;
-
   updateLayout = () => {
     /**
     * since the floating info box is positioned absolutely,
@@ -94,12 +93,18 @@ export default class InfoBox extends React.Component {
   }
 
   render () {
-    const CustomTag = typeof (this.props.content) === 'object' ? 'div' : 'p';
+    const {
+      content,
+      position,
+    } = this.props;
+    const CustomTag = typeof (content) === 'object' ? 'div' : 'p';
+
     return (
       <CustomTag
-        ref={container => { this.container = container; }}
-        className={`${styles.infoBox} ${styles[this.props.position]}`}>
-        {this.props.content}
+        ref={(container) => { this.container = container; }}
+        className={`${styles.infoBox} ${styles[position]}`}
+      >
+        {content}
       </CustomTag>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
@@ -15,9 +15,12 @@ storiesOf('DatePicker', module)
   .add('basics', () => (
     <DatePicker
       dateFormat={text('dateFormat', 'dd/MM/yyyy')}
-      error={boolean('error', null)}
-      errorSubInfo={text('errorSubInfo', 'Error!')}
-      icon={<i className="fa fa-calendar" aria-hidden="true" />}
+      icon={(
+        <i
+          className="fa fa-calendar"
+          aria-hidden="true"
+        />
+)}
       id="date-picker"
       inputStyle="block"
       isRequired={boolean('isRequired', false)}
@@ -33,5 +36,6 @@ storiesOf('DatePicker', module)
       showAbbreviatedMonthDropdown={boolean('showAbbreviatedMonthDropdown', false)}
       showMonthDropdown={boolean('showMonthDropdown', false)}
       showYearDropdown={boolean('showYearDropdown', false)}
-      value={text('value', new Date())} />
+      value={text('value', new Date())}
+    />
   ));

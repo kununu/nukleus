@@ -1,17 +1,17 @@
 module.exports = {
   moduleDirectories: [
     'src/components',
-    'node_modules'
+    'node_modules',
   ],
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
-    '^utils(.*)$': '<rootDir>/utils$1'
+    '^utils(.*)$': '<rootDir>/utils$1',
   },
   setupFiles: [
-    './jestSetup.js'
+    './jest.setup.js',
   ],
   snapshotSerializers: [
-    'enzyme-to-json/serializer'
+    'enzyme-to-json/serializer',
   ],
-  testURL: 'http://localhost'
+  testURL: 'http://localhost',
 };

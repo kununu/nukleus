@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
@@ -18,11 +18,13 @@ storiesOf('InfoText', module)
       <TextField
         id="text-field"
         label="TextField"
-        name="text-field" />
+        name="text-field"
+      />
 
       <div>
         <InfoText
-          text={text('text', 'I am an info text.')} />
+          text={text('text', 'I am an info text.')}
+        />
       </div>
     </div>
   ));

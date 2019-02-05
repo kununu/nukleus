@@ -8,16 +8,24 @@ import getElementPositionY from 'utils/elementPosition';
 import {queryParamsToObject} from 'utils/params';
 import isMobile from 'utils/mobileDetection';
 
-import styles from './index.scss';
 
 import Error from '../Error';
 import sharedStyles from '../index.scss';
+
+import styles from './index.scss';
 
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
     autoFocus: PropTypes.bool,
-    data: PropTypes.object,
+    data: PropTypes.shape({
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          item: PropTypes.string,
+          itemInfo: PropTypes.string,
+        }),
+      ),
+    }),
     debounceRate: PropTypes.number,
     disabled: PropTypes.bool,
     error: PropTypes.string,
@@ -30,7 +38,7 @@ export default class Autocomplete extends React.Component {
     name: PropTypes.string.isRequired,
     noSuggestionText: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element
+      PropTypes.element,
     ]),
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -40,14 +48,14 @@ export default class Autocomplete extends React.Component {
     placeholder: PropTypes.string,
     query: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.object
+      PropTypes.object,
     ]),
     requiredLabel: PropTypes.string,
     scrollOffset: PropTypes.number,
     scrollTo: PropTypes.bool,
     spinner: PropTypes.element,
     submitOnEnter: PropTypes.bool,
-    value: PropTypes.string
+    value: PropTypes.string,
   };
 
   static defaultProps = {
@@ -73,51 +81,63 @@ export default class Autocomplete extends React.Component {
     scrollTo: false,
     spinner: null,
     submitOnEnter: false,
-    value: ''
+    value: '',
   };
 
   state = {
     hasInitialized: false,
     showError: false,
     showNoSuggestionsText: false,
-    suggestions: this.props.data.items || [],
-    value: ''
+    suggestions: this.props.data.items || [], // eslint-disable-line react/destructuring-assignment
+    value: '',
   };
 
+  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate); // eslint-disable-line react/destructuring-assignment
+
   componentWillMount () {
-    const {query} = this.props;
+    const {
+      error,
+      name,
+      query,
+      value,
+    } = this.props;
     const queryObject = queryParamsToObject(query);
-    this.updateValue(queryObject[this.props.name] || this.props.value || '');
+
+    this.updateValue(queryObject[name] || value || '');
 
     // Show error, if already set
-    if (this.props.error !== null) this.showError();
+    if (error !== null) this.showError();
   }
 
   componentWillReceiveProps (nextProps) {
-    const {query} = this.props;
+    const {
+      data,
+      query,
+      name,
+    } = this.props;
     const queryObject = queryParamsToObject(query);
 
-    if (JSON.stringify(nextProps.data.items) !== JSON.stringify(this.props.data.items)) {
+    if (JSON.stringify(nextProps.data.items) !== JSON.stringify(data.items)) {
       this.setState({suggestions: nextProps.data.items});
     }
 
     if (nextProps.error) this.showError();
     if (!this.needsUpdate(nextProps)) return;
-    this.updateValue(queryObject[this.props.name] || nextProps.value || '');
+    this.updateValue(queryObject[name] || nextProps.value || '');
   }
 
   onChange = (event, {newValue}) => {
-    this.setState({
-      value: newValue
-    });
-    this.props.onChange(event);
+    const {onChange} = this.props;
+
+    this.setState({value: newValue});
+    onChange(event);
     this.hideError();
   }
 
-  onFocus = ev => {
-    this.setState({
-      showNoSuggestionsText: true
-    });
+  onFocus = (ev) => {
+    const {onFocus} = this.props;
+
+    this.setState({showNoSuggestionsText: true});
 
     // Prevents autoscroll if element is not
     // in the DOM
@@ -125,13 +145,15 @@ export default class Autocomplete extends React.Component {
       this.scrollToElement();
     }
 
-    this.props.onFocus(ev);
+    onFocus(ev);
   }
 
-  onBlur = ev => {
+  onBlur = (ev) => {
+    const {onBlur} = this.props;
+
     this.hideNoSuggestionsText();
     this.setState({hasInitialized: false});
-    this.props.onBlur(ev);
+    onBlur(ev);
   }
 
   onSuggestionsFetchRequested = ({value}) => {
@@ -139,20 +161,23 @@ export default class Autocomplete extends React.Component {
   }
 
   onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: []
-    });
+    this.setState({suggestions: []});
   };
 
   onSuggestionSelected = (e, {method, suggestion}) => {
+    const {
+      submitOnEnter,
+      onSelectSuggestion,
+    } = this.props;
+
     this.hideNoSuggestionsText();
 
-    if (method === 'enter' && !this.props.submitOnEnter) {
+    if (method === 'enter' && !submitOnEnter) {
       e.preventDefault();
     }
 
-    if (this.props.onSelectSuggestion) {
-      this.props.onSelectSuggestion(suggestion);
+    if (onSelectSuggestion) {
+      onSelectSuggestion(suggestion);
     }
   }
 
@@ -188,19 +213,23 @@ export default class Autocomplete extends React.Component {
     return classNames.join(' ');
   }
 
-  getSuggestions = value => {
+  getSuggestions = (value) => {
+    const {
+      data: {items},
+      onGetSuggestions,
+    } = this.props;
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
     if (inputValue) {
       this.setState({hasInitialized: true});
 
-      if (this.props.onGetSuggestions) {
-        this.props.onGetSuggestions(inputValue);
-        return this.props.data.items;
+      if (onGetSuggestions) {
+        onGetSuggestions(inputValue);
+        return items;
       }
 
-      return this.props.data.items.filter(data => data.item.toLowerCase().slice(0, inputLength) === inputValue);
+      return items.filter(data => data.item.toLowerCase().slice(0, inputLength) === inputValue);
     }
 
     return [];
@@ -209,9 +238,7 @@ export default class Autocomplete extends React.Component {
   getSuggestionValue = suggestion => suggestion.item;
 
   getSpinner () {
-    const {
-      spinner
-    } = this.props;
+    const {spinner} = this.props;
 
     return spinner || (
       <span className={styles.spinner}>
@@ -220,7 +247,8 @@ export default class Autocomplete extends React.Component {
           x="0px"
           y="0px"
           viewBox="0 0 50 51.9"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <path d="M46.7,12.2c0,4.1-3.1,7.2-7.1,7.2c-4,0-7.1-3.1-7.2-7c-0.1-4,3.1-7.3,7.1-7.3C43.5,5,46.7,8.2,46.7,12.2z" />
           <path d="M25.1,12.5c-3.5,0-6.3-2.6-6.3-6.1C18.7,2.8,21.4,0,24.9,0c3.5,0,6.3,2.6,6.3,6.1C31.3,9.6,28.6,12.4,25.1,12.5z" />
           <path d="M10.3,17.6c-2.9,0-5.3-2.4-5.2-5.4c0-2.9,2.5-5.3,5.4-5.3c2.9,0,5.3,2.5,5.3,5.4C15.7,15.3,13.3,17.6,10.3,17.6z" />
@@ -234,48 +262,49 @@ export default class Autocomplete extends React.Component {
     );
   }
 
-  loadSuggestions (value) {
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
-  }
-
-  debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate);
-
-  hideNoSuggestionsText = () => {
-    this.setState({
-      showNoSuggestionsText: false
-    });
-  }
-
-  showError () {
-    this.setState({
-      showError: true
-    });
-  }
-
-  hideError () {
-    this.setState({
-      showError: false
-    });
-  }
-
-  hasError () {
-    return this.state.showError && this.props.error;
-  }
 
   scrollToElement = () => {
-    if (this.props.scrollTo && isMobile) {
-      const elementPos = getElementPositionY(this.node, this.props.scrollOffset);
+    const {
+      scrollTo,
+      scrollOffset,
+    } = this.props;
+
+    if (scrollTo && isMobile) {
+      const elementPos = getElementPositionY(this.node, scrollOffset);
       const scroll = Scroll.animateScroll;
+
       scroll.scrollTo(elementPos);
     }
   }
 
+  hideNoSuggestionsText = () => {
+    this.setState({showNoSuggestionsText: false});
+  }
+
+  showError () {
+    this.setState({showError: true});
+  }
+
+  hideError () {
+    this.setState({showError: false});
+  }
+
+  hasError () {
+    const {error} = this.props;
+    const {showError} = this.state;
+
+    return showError && error;
+  }
+
   needsUpdate ({value, query}) {
+    const {
+      value: pValue,
+      query: pQuery,
+    } = this.props;
+
     return (
-      value !== this.props.value ||
-      query !== this.props.query
+      value !== pValue ||
+      query !== pQuery
     );
   }
 
@@ -283,26 +312,37 @@ export default class Autocomplete extends React.Component {
     this.setState({value});
   }
 
-  renderSuggestion = suggestion =>
-    (
-      <span>
-        {suggestion.item}
-        {(suggestion.itemInfo !== undefined && suggestion.itemInfo !== null && suggestion.itemInfo.length > 0) &&
-          <span className={styles.suggestionInfo}>&nbsp;({suggestion.itemInfo})</span>
-        }
-      </span>
-    );
+  renderSuggestion = ({item, itemInfo}) => (
+    <span>
+      {item}
+      {(itemInfo !== undefined && itemInfo !== null && itemInfo.length > 0) && (
+        <span className={styles.suggestionInfo}>
+          &nbsp;(
+          {itemInfo}
+          )
+        </span>
+      )}
+    </span>
+  );
 
   renderSuggestionsContainer = ({containerProps, children}) => {
-    if (this.state.suggestions.length) {
+    const {suggestions} = this.state;
+
+    if (suggestions.length) {
       return (
-        <div {...containerProps} className={styles.suggestionsContainer}>
+        <div
+          {...containerProps}
+          className={styles.suggestionsContainer}
+        >
           {children}
         </div>
       );
     }
-
     return null;
+  }
+
+  loadSuggestions (value) {
+    this.setState({suggestions: this.getSuggestions(value)});
   }
 
   render () {
@@ -319,14 +359,14 @@ export default class Autocomplete extends React.Component {
       name,
       noSuggestionText,
       placeholder,
-      requiredLabel
+      requiredLabel,
     } = this.props;
 
     const {
       hasInitialized,
       showNoSuggestionsText,
       suggestions,
-      value
+      value,
     } = this.state;
 
     const inputProps = {
@@ -340,30 +380,32 @@ export default class Autocomplete extends React.Component {
       onFocus: this.onFocus,
       placeholder,
       required: isRequired,
-      value
+      value,
     };
 
     return (
       <div
-        ref={node => this.node = node}
+        ref={(node) => { this.node = node; }}
         className={this.containerClassNames}
-        id={`${name}-container`}>
+        id={`${name}-container`}
+      >
 
-        {requiredLabel &&
-          <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
-            {requiredLabel}
-          </span>
-        }
+        {requiredLabel && (
+        <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
+          {requiredLabel}
+        </span>
+        )}
 
-        {labelHidden &&
-          <span className={sharedStyles.srOnly}>
-            {label}
-          </span>
-        }
+        {labelHidden && (
+        <span className={sharedStyles.srOnly}>
+          {label}
+        </span>
+        )}
 
         <label
           className={this.labelClassNames}
-          htmlFor={id}>
+          htmlFor={id}
+        >
           {label}
         </label>
 
@@ -380,11 +422,12 @@ export default class Autocomplete extends React.Component {
             renderSuggestion={this.renderSuggestion}
             renderSuggestionsContainer={this.renderSuggestionsContainer}
             suggestions={suggestions}
-            theme={styles} />
+            theme={styles}
+          />
 
           {isFetching && this.getSpinner()}
 
-          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ?
+          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ? (
             <div className={styles.suggestionsContainer}>
               <ul>
                 <li className={styles.suggestion}>
@@ -392,14 +435,15 @@ export default class Autocomplete extends React.Component {
                 </li>
               </ul>
             </div>
-            : ''
+          ) : ''
           }
 
-          {this.hasError() &&
-            <Error
-              info={error}
-              subInfo={errorSubInfo} />
-          }
+          {this.hasError() && (
+          <Error
+            info={error}
+            subInfo={errorSubInfo}
+          />
+          )}
         </div>
       </div>
     );

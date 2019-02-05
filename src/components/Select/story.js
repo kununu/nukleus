@@ -1,10 +1,12 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
-import {withKnobs, text, boolean, select, object} from '@storybook/addon-knobs/react';
+import {
+  withKnobs, text, boolean, select, object,
+} from '@storybook/addon-knobs/react';
 
 import Select from './index';
 
@@ -25,7 +27,7 @@ storiesOf('Select', module)
           isRequired={boolean('isRequired', false)}
           inputStyle={select('inputStyle', {
             block: 'block',
-            inline: 'inline'
+            inline: 'inline',
           }, 'block')}
           onChange={action('onChange')}
           onBlur={action('onBlur')}
@@ -34,8 +36,9 @@ storiesOf('Select', module)
           items={object('items', {
             'option-1': 'Banana',
             'option-2': 'Apple',
-            'option-3': 'Orange'
-          })} />
+            'option-3': 'Orange',
+          })}
+        />
       </div>
 
       <br />
@@ -57,7 +60,7 @@ storiesOf('Select', module)
           isRequired={boolean('isRequired', false)}
           inputStyle={select('inputStyle', {
             block: 'block',
-            inline: 'inline'
+            inline: 'inline',
           }, 'block')}
           requiredLabel={text('requiredLabel', 'required')}
           onChange={action('onChange')}
@@ -66,8 +69,9 @@ storiesOf('Select', module)
           items={object('items', {
             'option-1': 'Banana',
             'option-2': 'Apple',
-            'option-3': 'Orange'
-          })} />
+            'option-3': 'Orange',
+          })}
+        />
       </div>
 
       <br />
@@ -92,7 +96,7 @@ storiesOf('Select', module)
           isRequired={boolean('isRequired', false)}
           inputStyle={select('inputStyle', {
             block: 'block',
-            inline: 'inline'
+            inline: 'inline',
           }, 'block')}
           requiredLabel={text('requiredLabel', 'required')}
           onChange={action('onChange')}
@@ -101,8 +105,9 @@ storiesOf('Select', module)
           items={object('items', {
             'option-1': 'Banana',
             'option-2': 'Apple',
-            'option-3': 'Orange'
-          })} />
+            'option-3': 'Orange',
+          })}
+        />
       </div>
     </div>
   ))
@@ -118,7 +123,7 @@ storiesOf('Select', module)
         isRequired={boolean('isRequired', false)}
         inputStyle={select('inputStyle', {
           block: 'block',
-          inline: 'inline'
+          inline: 'inline',
         }, 'block')}
         requiredLabel={text('requiredLabel', 'required')}
         onChange={action('onChange')}
@@ -129,7 +134,8 @@ storiesOf('Select', module)
           'option-1': 'Plum',
           'option-2': 'Banana',
           'option-3': 'Apple',
-          'option-4': 'Orange'
-        })} />
+          'option-4': 'Orange',
+        })}
+      />
     </div>
   ));

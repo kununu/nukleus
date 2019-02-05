@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {defaultOptions} from 'defaultOptions';
+import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
@@ -14,5 +14,6 @@ storiesOf('Error', module)
   .add('basics', () => (
     <ErrorComponent
       info={text('info', 'This is an error')}
-      subInfo={text('subinfo', 'And I am some sub info')} />
+      subInfo={text('subinfo', 'And I am some sub info')}
+    />
   ));
