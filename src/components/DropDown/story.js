@@ -28,11 +28,11 @@ const DropDownInfo = () => (
       {' '}
       <code>pullRight</code>
       {' '}
-and
+      and
       {' '}
       <code>direction</code>
       {' '}
-may be used to control alignment and direction in which dropdown will open.
+      may be used to control alignment and direction in which dropdown will open.
     </p>
   </div>
 );
