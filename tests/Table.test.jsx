@@ -4,7 +4,7 @@ import {StaticRouter} from 'react-router';
 import renderer from 'react-test-renderer';
 import toJson from 'enzyme-to-json';
 import {mount} from 'enzyme';
-import Table from 'Table'; // eslint-disable-line
+import Table from 'Table'; // eslint-disable-line import/no-unresolved
 
 
 test('Renders basic Table without crashing', () => {

@@ -197,7 +197,7 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
