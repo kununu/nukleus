@@ -13,6 +13,7 @@ import {
   controlNote,
   formControl,
   formControlError,
+  formGroup,
   controlLabelRequired,
   hidden,
 } from '../index.scss';
@@ -185,7 +186,7 @@ export default class ComboboxComponent extends React.Component {
 
     return (
       <div
-        className={`${styles.formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}
+        className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}
         id={`${name}-container`}
       >
         {requiredLabel && (

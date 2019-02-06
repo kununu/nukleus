@@ -13,6 +13,7 @@ import {
   controlNote,
   formControl,
   formControlError,
+  formGroup,
   srOnly,
 } from '../index.scss';
 
@@ -203,7 +204,7 @@ export default class DatePickerComponent extends React.Component {
 
     return (
       <div
-        className={`${styles.formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}
+        className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}
         id={`${name}-container`}
       >
         {requiredLabel && (
