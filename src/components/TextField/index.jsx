@@ -240,7 +240,7 @@ export default class TextField extends React.Component {
       requiredLabel,
       value,
     } = this.props;
-    
+
     if (typeof label === 'string') {
       return (
         <label

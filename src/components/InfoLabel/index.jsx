@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   controlNote,
 } from '../index.scss';
+
 import styles from './index.scss';
 
 const InfoLabel = ({
