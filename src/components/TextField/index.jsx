@@ -233,17 +233,34 @@ export default class TextField extends React.Component {
    */
   get label () {
     const {
+      displayLength,
       id,
       label,
+      maxLength,
+      requiredLabel,
+      value,
     } = this.props;
+
+    if (maxLength || requiredLabel) {
+
+    }
 
     if (typeof label === 'string') {
       return (
         <label
-          className={this.labelClassNames}
+          className={`${this.labelClassNames} ${maxLength || requiredLabel ? styles.flexLabel : ''}`}
           htmlFor={id}
         >
-          {label}
+          <span>
+            {label}
+          </span>
+
+          <InfoLabel
+            displayLength={displayLength}
+            inputValue={value}
+            maxLength={maxLength}
+            requiredLabel={requiredLabel}
+          />
         </label>
       );
     }
@@ -360,7 +377,6 @@ export default class TextField extends React.Component {
       autoComplete,
       autoFocus,
       disable,
-      displayLength,
       error,
       errorSubInfo,
       highlightList,
@@ -376,7 +392,6 @@ export default class TextField extends React.Component {
       pattern,
       placeholder,
       reference,
-      requiredLabel,
       rows,
       title,
       type,
@@ -392,12 +407,6 @@ export default class TextField extends React.Component {
         className={this.containerClassNames}
         id={`${name}-container`}
       >
-        <InfoLabel
-          displayLength={displayLength}
-          inputValue={value}
-          maxLength={maxLength}
-          requiredLabel={requiredLabel}
-        />
         {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
 
         {this.label}

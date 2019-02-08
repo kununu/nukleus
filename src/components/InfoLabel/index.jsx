@@ -5,6 +5,7 @@ import {
   controlLabelRequired,
   controlNote,
 } from '../index.scss';
+import styles from './index.scss';
 
 const InfoLabel = ({
   displayLength,
@@ -13,12 +14,12 @@ const InfoLabel = ({
   requiredLabel,
 }) => {
   if (requiredLabel && (!displayLength || inputValue.trim() === '')) {
-    return (<span className={`${controlNote} ${controlLabelRequired}`}>{requiredLabel}</span>);
+    return (<span className={`${controlNote} ${styles.label}`}>{requiredLabel}</span>);
   }
 
   // Show requiredLabel if available and user hasn't typed any inputValues
   return displayLength ? (
-    <span className={`${controlNote} ${controlLabelRequired}`}>
+    <span className={`${controlNote} ${styles.label}`}>
       <strong>{inputValue.length}</strong>
       /
       {maxLength}
