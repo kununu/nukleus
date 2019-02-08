@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  controlLabelRequired,
   controlNote,
 } from '../index.scss';
 import styles from './index.scss';
