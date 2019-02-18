@@ -1,8 +1,25 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-$slider_height: 15px;
+$slider_height: 4px;
 $slider_background_color: #394b54;
-$slider_handle_width: 15px;
+$slider_handle_color: #394b54;
+$slider_handle_width: 20px;
+$slider_handle_height: 20px;
+
+@mixin slider_handle {
+  width: $slider_handle_width;
+  height: $slider_handle_height;
+  background: $slider_handle_color;
+  border-color: $slider_handle_color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@mixin slider_handle_hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
 
 .sliderWrapper {
   position: relative;
@@ -19,15 +36,81 @@ $slider_handle_width: 15px;
   }
   
   .slider {
-      padding:0;
-      margin: 0;
-      position: relative;
       -webkit-appearance: none;
       appearance: none;
       width: 100%;
-      height: $slider_height;
-      background: $slider_background_color;
-      opacity: 0.9;
+      height: 30px;
+      background: #fff;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: $slider_background_color;
+        top: 13px;
+        z-index: 1;
+      }
+
+      /* --------- Chrome / Safari --------- */
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        @include slider_handle;
+      }
+
+      &:hover::-webkit-slider-thumb {
+        @include slider_handle_hover;
+      }
+      
+      /* --------- Firefox --------- */
+
+      &::-moz-range-track {
+        width: 100%;
+        height: $slider_height;
+        background: $slider_background_color;
+      }
+    
+      &::-moz-range-thumb {
+        @include slider_handle;
+      }
+
+      &:hover::-moz-range-thumb {
+        @include slider_handle_hover;
+      }
+
+      /* --------- IE --------- */
+
+      // IE renders a tooltip with current slider value above the thumb
+      // no other browser does it so to be consistent we hide it
+      &::-ms-tooltip {
+        display: none;
+      }
+
+      // left side of the slider track
+      &::-ms-fill-lower {
+        background: $slider_background_color;
+      }
+
+      // right side of the slider track
+      &::-ms-fill-upper {
+        background: $slider_background_color;
+      }
+
+      &::-ms-thumb {
+        @include slider_handle;
+      }
+
+      &:hover::-ms-thumb {
+        @include slider_handle_hover;
+      }
+
+      &::-ms-track {
+        /* removed the ticks / steps */
+        color: transparent
+      }
   }
 
   .sliderMinLimit {
@@ -42,66 +125,4 @@ $slider_handle_width: 15px;
     text-align: right;
     top: 10px;
   }
-}
-
-
-/* Background fix for Firefox */
-.slider::-moz-range-track {
-  width: 100%;
-  height: $slider_height;
-  background: $slider_background_color;
-}
-
-.slider:focus {
-  /* outline: none; */
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: $slider_handle_width;
-    height: $slider_height;
-    background: $brand-primary;
-    cursor: pointer;
-    border-color: $brand-primary;
-}
-
-.slider::-moz-range-thumb {
-    width: $slider_handle_width;
-    height: $slider_height;
-    background: $brand-primary;
-    border-color: $brand-primary;
-    cursor: pointer;
-    border-radius: 0;
-}
-
-/* --------- internet explorer hacks --------- */
-
-// IE renders a tooltip with current slider value above the thumb
-// no other browser does it so to be consistent we hide it
-.slider::-ms-tooltip {
-  display: none;
-}
-
-// left side of the slider track
-.slider::-ms-fill-lower {
-  background: $slider_background_color;
-}
-
-// right side of the slider track
-.slider::-ms-fill-upper {
-  background: $slider_background_color;
-}
-
-.slider::-ms-thumb {
-  width: $slider_handle_width;
-  height: $slider_height;
-  background: $brand-primary;
-  cursor: pointer;
-  border-color: $brand-primary;
-}
-
-.slider::-ms-track {
-  /* removed the ticks / steps */
-  color: transparent
 }

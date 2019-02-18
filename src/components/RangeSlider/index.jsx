@@ -30,7 +30,7 @@ export default class RangeSlider extends React.Component {
   render () {
     const {step, min, max} = this.props;
     const {value} = this.state;
-    const labelValue = `${value.toLocaleString()} €`;
+    const labelValue = `${value.toLocaleString('de')} €`;
 
     return (
       <div className={styles.sliderWrapper}>
@@ -49,9 +49,9 @@ export default class RangeSlider extends React.Component {
           max={max}
           name="range-slider"
           value={value}
-          className={styles.slider}
           onInput={this.handleInput}
           onChange={this.handleInput}
+          className={styles.slider}
         />
         <span className={styles.sliderMaxLimit}>{max}</span>
       </div>
