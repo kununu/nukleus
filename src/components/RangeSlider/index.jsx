@@ -5,41 +5,40 @@ import styles from './index.scss';
 
 export default class RangeSlider extends React.Component {
   static propTypes = {
-    min: PropTypes.number,
-    max: PropTypes.number,
-    step: PropTypes.number,
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+    step: PropTypes.number.isRequired,
     onChange: PropTypes.func,
   };
 
   static defaultProps = {
-    min: 10000,
-    max: 150000,
-    step: 10,
     onChange: () => {},
   };
 
   state = {
-    value: 75000,
+    value: 10000,
   }
 
   handleInput = (e) => {
     // set value on the label above the slider
-    console.log("update");
-    this.setState({value: Number(e.target.value).toFixed(0)});
-    this.props.onChange();
+    const {onChange} = this.props;
+
+    this.setState({value: Number(e.target.value)});
+    onChange();
   };
 
   render () {
     const {step, min, max} = this.props;
     const {value} = this.state;
-    const labelValue = `${value} €`;
+    const labelValue = `${value.toLocaleString()} €`;
 
     return (
       <div className={styles.sliderWrapper}>
         <label
           htmlFor="range-slider"
           className={styles.sliderLabel}
-        >{labelValue}
+        >
+          {labelValue}
         </label>
         <span className={styles.sliderMinLimit}>{min}</span>
         <input

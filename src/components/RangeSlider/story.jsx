@@ -8,7 +8,7 @@ import RangeSlider from './index';
 
 const onChange = () => {
   console.log('external change event');
-}
+};
 
 storiesOf('RangeSlider', module)
   .addDecorator(withOptions({...defaultOptions}))

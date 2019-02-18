@@ -14,7 +14,7 @@ exports[`RangeSlider can handle input 1`] = `
       className="sliderLabel"
       htmlFor="range-slider"
     >
-      75000 €
+      10,000 €
     </label>
     <span
       className="sliderMinLimit"
@@ -31,7 +31,7 @@ exports[`RangeSlider can handle input 1`] = `
       onInput={[Function]}
       step={1000}
       type="range"
-      value="75000"
+      value={10000}
     />
     <span
       className="sliderMaxLimit"
@@ -50,7 +50,7 @@ exports[`Renders RangeSlider 1`] = `
     className="sliderLabel"
     htmlFor="range-slider"
   >
-    75000 €
+    10,000 €
   </label>
   <span
     className="sliderMinLimit"
@@ -67,7 +67,7 @@ exports[`Renders RangeSlider 1`] = `
     onInput={[Function]}
     step={1000}
     type="range"
-    value={75000}
+    value={10000}
   />
   <span
     className="sliderMaxLimit"

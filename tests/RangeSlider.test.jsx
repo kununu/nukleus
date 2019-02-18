@@ -25,13 +25,11 @@ test('RangeSlider can handle input', () => {
       min={10000}
       max={150000}
       step={1000}
-      onChange={() => {console.log('changed')}}
+      onChange={() => {}}
     />
   ));
+
   component.find('#range-slider').simulate('change');
 
   expect(toJson(component)).toMatchSnapshot();
 });
-
-
-
