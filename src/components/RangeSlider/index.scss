@@ -1,127 +1,143 @@
-$slider_height: 4px;
-$slider_background_color: #394b54;
-$slider_handle_color: #394b54;
-$slider_handle_width: 20px;
-$slider_handle_height: 20px;
+// excess height to improve interactive area / accessibility
+$height: 30px;
+$thumb-height: 13px;
+$track-height: 3px;
 
- @mixin slider_handle {
-  width: $slider_handle_width;
-  height: $slider_handle_height;
-  background: $slider_handle_color;
-  border-color: $slider_handle_color;
-  border-radius: 50%;
+// colours
+$upper-color: #cfcfcf;
+$lower-color: #0199ff;
+$thumb-color: #0199ff;
+$thumb-hover-color: #55c2ff;
+
+$upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+
+// Webkit cannot style progress so we fake it with a long shadow
+// on the thumb element
+@function webkit-slider-thumb-shadow($i: 1) {
+  $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+  @if $i == 1 {
+    @for $k from 2 through 1000 {
+      $val: #{$val}, webkit-slider-thumb-shadow($k);
+    }
+  }
+  @return $val;
+}
+
+.sliderWrapper {
+  max-width: 768px;
+}
+
+.slider {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0;
+  height: $height;
+  overflow: hidden;
   cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
 }
 
- @mixin slider_handle_hover {
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+// Webkit
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $height;
+  background: $lower-background;
 }
 
- .sliderWrapper {
+.slider::-webkit-slider-thumb {
   position: relative;
-  max-width: 568px; 
-  min-width: 240px;
+  appearance: none;
+  -webkit-appearance: none;
+  height: $thumb-height;
+  width: $thumb-height;
+  background: $thumb-color;
+  border-radius: 100%;
+  border: 0;
+  top: 54%;
+  margin-top: (-$thumb-height/2);
+  box-shadow: webkit-slider-thumb-shadow();
+  transition: background-color 150ms;
+}
 
-   .sliderLabel {
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+// Firefox
+.slider::-moz-range-track,
+.slider::-moz-range-progress {
+  width: 100%;
+  height: $height;
+  background: $upper-background;
+}
+
+.slider::-moz-range-progress {
+  background: $lower-background;
+}
+
+.slider::-moz-range-thumb {
+  appearance: none;
+  margin: 0;
+  height: $thumb-height;
+  width: $thumb-height;
+  background: $thumb-color;
+  border-radius: 100%;
+  border: 0;
+  transition: background-color 150ms;
+}
+
+// Internet Exploder
+.slider::-ms-track {
+  width: 100%;
+  height: $height;
+  border: 0;
+  // color needed to hide track marks
+  color: transparent;
+  background: transparent;
+}
+
+.slider::-ms-fill-lower {
+  background: $lower-background;
+}
+
+.slider::-ms-fill-upper {
+  background: $upper-background;
+}
+
+.slider::-ms-thumb {
+  appearance: none;
+  height: $thumb-height;
+  width: $thumb-height;
+  background: $thumb-color;
+  border-radius: 100%;
+  border: 0;
+  transition: background-color 150ms;
+  // IE Edge thinks it can support -webkit prefixes
+  top: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.slider:hover,
+.slider:focus {
+  &::-webkit-slider-thumb {
+    background-color: $thumb-hover-color;
   }
-
-   .slider {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 30px;
-      background: #fff;
-      position: relative;
-
-       &:before {
-        content: "";
-        position: absolute;
-        height: 4px;
-        width: 100%;
-        background-color: $slider_background_color;
-        top: 13px;
-        z-index: 0;
-      }
-
-       /* --------- Chrome / Safari --------- */
-
-       &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        @include slider_handle;
-        background-color: red;
-      }
-
-       &:hover::-webkit-slider-thumb {
-        @include slider_handle_hover;
-      }
-
-       /* --------- Firefox --------- */
-
-       &::-moz-range-track {
-        width: 100%;
-        height: $slider_height;
-        background: $slider_background_color;
-      }
-
-       &::-moz-range-thumb {
-        @include slider_handle;
-      }
-
-       &:hover::-moz-range-thumb {
-        @include slider_handle_hover;
-      }
-
-       /* --------- IE --------- */
-
-       // IE renders a tooltip with current slider value above the thumb
-      // no other browser does it so to be consistent we hide it
-      &::-ms-tooltip {
-        display: none;
-      }
-
-       // left side of the slider track
-      &::-ms-fill-lower {
-        background: $slider_background_color;
-      }
-
-       // right side of the slider track
-      &::-ms-fill-upper {
-        background: $slider_background_color;
-      }
-
-       &::-ms-thumb {
-        @include slider_handle;
-      }
-
-       &:hover::-ms-thumb {
-        @include slider_handle_hover;
-      }
-
-       &::-ms-track {
-        /* removed the ticks / steps */
-        color: transparent
-      }
+  &::-moz-range-thumb {
+    background-color: $thumb-hover-color;
   }
-
-   .sliderMinLimit {
-    position: absolute;
-    width: 100%;
-    top: 10px;
+  &::-ms-thumb {
+    background-color: $thumb-hover-color;
   }
+}
 
-   .sliderMaxLimit {
-    position: absolute;
-    width: 100%;
-    text-align: right;
-    top: 10px;
-  }
+.slider::-ms-tooltip {
+  display: none;
+}
+
+.slider-label {
+  display: block;
+  text-align: center
 }

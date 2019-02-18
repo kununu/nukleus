@@ -40,7 +40,6 @@ export default class RangeSlider extends React.Component {
         >
           {labelValue}
         </label>
-        <span className={styles.sliderMinLimit}>{min}</span>
         <input
           id="range-slider"
           type="range"
@@ -53,7 +52,6 @@ export default class RangeSlider extends React.Component {
           onChange={this.handleInput}
           className={styles.slider}
         />
-        <span className={styles.sliderMaxLimit}>{max}</span>
       </div>
     );
   }
