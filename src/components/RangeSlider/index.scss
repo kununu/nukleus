@@ -1,0 +1,127 @@
+$slider_height: 4px;
+$slider_background_color: #394b54;
+$slider_handle_color: #394b54;
+$slider_handle_width: 20px;
+$slider_handle_height: 20px;
+
+ @mixin slider_handle {
+  width: $slider_handle_width;
+  height: $slider_handle_height;
+  background: $slider_handle_color;
+  border-color: $slider_handle_color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+ @mixin slider_handle_hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+ .sliderWrapper {
+  position: relative;
+  max-width: 568px; 
+  min-width: 240px;
+
+   .sliderLabel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+   .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 30px;
+      background: #fff;
+      position: relative;
+
+       &:before {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: $slider_background_color;
+        top: 13px;
+        z-index: 0;
+      }
+
+       /* --------- Chrome / Safari --------- */
+
+       &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        @include slider_handle;
+        background-color: red;
+      }
+
+       &:hover::-webkit-slider-thumb {
+        @include slider_handle_hover;
+      }
+
+       /* --------- Firefox --------- */
+
+       &::-moz-range-track {
+        width: 100%;
+        height: $slider_height;
+        background: $slider_background_color;
+      }
+
+       &::-moz-range-thumb {
+        @include slider_handle;
+      }
+
+       &:hover::-moz-range-thumb {
+        @include slider_handle_hover;
+      }
+
+       /* --------- IE --------- */
+
+       // IE renders a tooltip with current slider value above the thumb
+      // no other browser does it so to be consistent we hide it
+      &::-ms-tooltip {
+        display: none;
+      }
+
+       // left side of the slider track
+      &::-ms-fill-lower {
+        background: $slider_background_color;
+      }
+
+       // right side of the slider track
+      &::-ms-fill-upper {
+        background: $slider_background_color;
+      }
+
+       &::-ms-thumb {
+        @include slider_handle;
+      }
+
+       &:hover::-ms-thumb {
+        @include slider_handle_hover;
+      }
+
+       &::-ms-track {
+        /* removed the ticks / steps */
+        color: transparent
+      }
+  }
+
+   .sliderMinLimit {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+  }
+
+   .sliderMaxLimit {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    top: 10px;
+  }
+}
