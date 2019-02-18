@@ -1,0 +1,107 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+$slider_height: 15px;
+$slider_background_color: #394b54;
+$slider_handle_width: 15px;
+
+.sliderWrapper {
+  position: relative;
+  max-width: 568px; 
+  min-width: 240px;
+
+  .sliderLabel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .slider {
+      padding:0;
+      margin: 0;
+      position: relative;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: $slider_height;
+      background: $slider_background_color;
+      opacity: 0.9;
+  }
+
+  .sliderMinLimit {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+  }
+  
+  .sliderMaxLimit {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    top: 10px;
+  }
+}
+
+
+/* Background fix for Firefox */
+.slider::-moz-range-track {
+  width: 100%;
+  height: $slider_height;
+  background: $slider_background_color;
+}
+
+.slider:focus {
+  /* outline: none; */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: $slider_handle_width;
+    height: $slider_height;
+    background: $brand-primary;
+    cursor: pointer;
+    border-color: $brand-primary;
+}
+
+.slider::-moz-range-thumb {
+    width: $slider_handle_width;
+    height: $slider_height;
+    background: $brand-primary;
+    border-color: $brand-primary;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+/* --------- internet explorer hacks --------- */
+
+// IE renders a tooltip with current slider value above the thumb
+// no other browser does it so to be consistent we hide it
+.slider::-ms-tooltip {
+  display: none;
+}
+
+// left side of the slider track
+.slider::-ms-fill-lower {
+  background: $slider_background_color;
+}
+
+// right side of the slider track
+.slider::-ms-fill-upper {
+  background: $slider_background_color;
+}
+
+.slider::-ms-thumb {
+  width: $slider_handle_width;
+  height: $slider_height;
+  background: $brand-primary;
+  cursor: pointer;
+  border-color: $brand-primary;
+}
+
+.slider::-ms-track {
+  /* removed the ticks / steps */
+  color: transparent
+}

@@ -15,52 +15,47 @@ export default class RangeSlider extends React.Component {
     min: 10000,
     max: 150000,
     step: 10,
-    onChange: null,
+    onChange: () => {},
   };
 
   state = {
-    value: 10000,
+    value: 75000,
   }
 
   handleInput = (e) => {
-    this.setState({
-      value: Number(e.target.value).toFixed(0),
-    });
-
-    this.props.onChange;
+    // set value on the label above the slider
+    console.log("update");
+    this.setState({value: Number(e.target.value).toFixed(0)});
+    this.props.onChange();
   };
-
-  isIe = () => {
-    const msie = window.navigator.userAgent.indexOf("MSIE ");
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-      return true;
-    }
-
-    return false;
-  }
 
   render () {
     const {step, min, max} = this.props;
     const {value} = this.state;
+    const labelValue = `${value} €`;
 
     return (
-      <span className={styles.sliderWrapper}>
+      <div className={styles.sliderWrapper}>
         <label
-          htmlFor="slider"
+          htmlFor="range-slider"
           className={styles.sliderLabel}
-        >{value}</label>
+        >{labelValue}
+        </label>
+        <span className={styles.sliderMinLimit}>{min}</span>
         <input
-          id="slider"
+          id="range-slider"
           type="range"
           step={step}
           min={min}
           max={max}
-          name="slider"
+          name="range-slider"
+          value={value}
           className={styles.slider}
           onInput={this.handleInput}
           onChange={this.handleInput}
         />
-      </span>
+        <span className={styles.sliderMaxLimit}>{max}</span>
+      </div>
     );
   }
 }
