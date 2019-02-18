@@ -1,0 +1,87 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+.sliderWrapper {
+  display: block;
+  position: relative;
+  max-width: 768px; 
+  min-width: 300px;
+
+  .sliderLabel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .slider {
+      padding:0;
+      margin: 0;
+      position: relative;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 15px;
+      background: #394b54;
+      opacity: 0.9;
+  }
+}
+
+
+/* Background fix for Firefox */
+.slider::-moz-range-track {
+  width: 100%;
+  height: 15px;
+  background: #394b54;
+}
+
+.slider:focus {
+  /* outline: none; */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 15px;
+    background: rgb(153, 198, 19);
+    cursor: pointer;
+    border-color: rgb(153, 198, 19);
+}
+
+.slider::-moz-range-thumb {
+    width: 40px;
+    height: 15px;
+    background: rgb(153, 198, 19);
+    border-color: rgb(153, 198, 19);
+    cursor: pointer;
+    border-radius: 0;
+}
+
+/* --------- internet explorer hacks --------- */
+
+.slider::-ms-tooltip {
+  display: none;
+}
+
+.slider::-ms-fill-lower {
+  background: #394b54;
+}
+
+.slider::-ms-fill-upper {
+  background: #394b54;
+}
+
+.slider::-ms-thumb {
+  width: 40px;
+  height: 15px;
+  background: rgb(153, 198, 19);
+  cursor: pointer;
+  border-color: rgb(153, 198, 19);
+}
+
+.slider::-ms-track {
+  width: 100%;
+  height: 10px;
+}
