@@ -1,16 +1,16 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 $height: 30px;
-$thumb-height: 24px;
+$thumb-height: 25px;
 $track-height: 5px;
 
-$upper-color: #ccc;
+$upper-color: lighten($btn-secondary-bg, 40);
 $lower-color: $btn-secondary-bg;
 $thumb-color: $btn-secondary-bg;
 $thumb-hover-color: $btn-secondary-bg;
 
-$upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
-$lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+$upper-background: linear-gradient(to top, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
 
 // Webkit cannot style progress so we fake it with a long shadow on the thumb element
 @function webkit-slider-thumb-shadow($i: 1) {
@@ -31,16 +31,20 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   border: 7px solid $thumb-color;
 } 
 
+@mixin hoverEffect() {
+  transition: border .2s ease-in-out;
+  border-color: darken($thumb-color, 10);
+}
+
 .sliderWrapper {
   max-width: 768px;
+  position: relative;
 }
 
 .slider {
-  display: block;
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
-  margin: 0;
   height: $height;
   overflow: hidden;
   cursor: pointer;
@@ -64,7 +68,6 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   top: 54%;
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
-
   @include thumb();
 }
 
@@ -126,25 +129,25 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
 
 .slider:hover {
   &::-webkit-slider-thumb {
-    //background-color: $thumb-hover-color;
+    position: relative;
+    @include hoverEffect;
   }
+
   &::-moz-range-thumb {
-    //background-color: $thumb-hover-color;
+    @include hoverEffect;
   }
+
   &::-ms-thumb {
-    //background-color: $thumb-hover-color;
+    @include hoverEffect;
   }
 }
 
 .slider:focus {
   &::-webkit-slider-thumb {
-    //background-color: $thumb-hover-color;
   }
   &::-moz-range-thumb {
-    //background-color: $thumb-hover-color;
   }
   &::-ms-thumb {
-    //background-color: $thumb-hover-color;
   }
 }
 
@@ -152,5 +155,6 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   width: 100%;
   display: block;
   text-align: center;
-  font-size: 18px;
+  font-size: 34px;
+  margin-bottom:25px;
 }
