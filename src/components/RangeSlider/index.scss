@@ -1,19 +1,18 @@
-// excess height to improve interactive area / accessibility
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
 $height: 30px;
 $thumb-height: 13px;
-$track-height: 3px;
+$track-height: 4px;
 
-// colours
-$upper-color: #cfcfcf;
-$lower-color: #0199ff;
-$thumb-color: #0199ff;
-$thumb-hover-color: #55c2ff;
+$upper-color: #ccc;
+$lower-color: $btn-secondary-bg;
+$thumb-color: $btn-secondary-bg;
+$thumb-hover-color: $btn-secondary-bg;
 
 $upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
 $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
 
-// Webkit cannot style progress so we fake it with a long shadow
-// on the thumb element
+// Webkit cannot style progress so we fake it with a long shadow on the thumb element
 @function webkit-slider-thumb-shadow($i: 1) {
   $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
   @if $i == 1 {
@@ -133,11 +132,14 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   }
 }
 
+// dont show tooltip above the slider handle in IE
 .slider::-ms-tooltip {
   display: none;
 }
 
-.slider-label {
+.sliderLabel {
+  width: 100%;
   display: block;
-  text-align: center
+  text-align: center;
+  font-size: 18px;
 }

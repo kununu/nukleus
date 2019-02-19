@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeSlider can handle input 1`] = `
+<RangeSlider
+  max={150000}
+  min={10000}
+  onChange={[Function]}
+  step={1000}
+>
+  <div
+    className="sliderWrapper"
+  >
+    <label
+      className="sliderLabel"
+      htmlFor="range-slider"
+    >
+      10,000 €
+    </label>
+    <input
+      className="slider"
+      id="range-slider"
+      max={150000}
+      min={10000}
+      name="range-slider"
+      onChange={[Function]}
+      onInput={[Function]}
+      step={1000}
+      type="range"
+      value={10000}
+    />
+  </div>
+</RangeSlider>
+`;
+
+exports[`Renders RangeSlider 1`] = `
+<div
+  className="sliderWrapper"
+>
+  <label
+    className="sliderLabel"
+    htmlFor="range-slider"
+  >
+    10,000 €
+  </label>
+  <input
+    className="slider"
+    id="range-slider"
+    max={150000}
+    min={10000}
+    name="range-slider"
+    onChange={[Function]}
+    onInput={[Function]}
+    step={1000}
+    type="range"
+    value={10000}
+  />
+</div>
+`;
