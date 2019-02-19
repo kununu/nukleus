@@ -1,8 +1,8 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 $height: 30px;
-$thumb-height: 13px;
-$track-height: 4px;
+$thumb-height: 24px;
+$track-height: 5px;
 
 $upper-color: #ccc;
 $lower-color: $btn-secondary-bg;
@@ -22,6 +22,14 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   }
   @return $val;
 }
+
+@mixin thumb() {
+  height: $thumb-height;
+  width: $thumb-height;
+  background: #fff;
+  border-radius: 100%;
+  border: 7px solid $thumb-color;
+} 
 
 .sliderWrapper {
   max-width: 768px;
@@ -53,15 +61,11 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  height: $thumb-height;
-  width: $thumb-height;
-  background: $thumb-color;
-  border-radius: 100%;
-  border: 0;
   top: 54%;
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
-  transition: background-color 150ms;
+
+  @include thumb();
 }
 
 // Firefox
@@ -79,12 +83,8 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
 .slider::-moz-range-thumb {
   appearance: none;
   margin: 0;
-  height: $thumb-height;
-  width: $thumb-height;
-  background: $thumb-color;
-  border-radius: 100%;
-  border: 0;
-  transition: background-color 150ms;
+  box-sizing: border-box;
+  @include thumb();
 }
 
 // Internet Exploder
@@ -119,22 +119,33 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   box-shadow: none;
 }
 
-.slider:hover,
-.slider:focus {
-  &::-webkit-slider-thumb {
-    background-color: $thumb-hover-color;
-  }
-  &::-moz-range-thumb {
-    background-color: $thumb-hover-color;
-  }
-  &::-ms-thumb {
-    background-color: $thumb-hover-color;
-  }
-}
-
 // dont show tooltip above the slider handle in IE
 .slider::-ms-tooltip {
   display: none;
+}
+
+.slider:hover {
+  &::-webkit-slider-thumb {
+    //background-color: $thumb-hover-color;
+  }
+  &::-moz-range-thumb {
+    //background-color: $thumb-hover-color;
+  }
+  &::-ms-thumb {
+    //background-color: $thumb-hover-color;
+  }
+}
+
+.slider:focus {
+  &::-webkit-slider-thumb {
+    //background-color: $thumb-hover-color;
+  }
+  &::-moz-range-thumb {
+    //background-color: $thumb-hover-color;
+  }
+  &::-ms-thumb {
+    //background-color: $thumb-hover-color;
+  }
 }
 
 .sliderLabel {
