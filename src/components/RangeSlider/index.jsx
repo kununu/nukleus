@@ -8,11 +8,7 @@ export default class RangeSlider extends React.Component {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
     step: PropTypes.number.isRequired,
-    onChange: PropTypes.func,
-  };
-
-  static defaultProps = {
-    onChange: () => { },
+    onChange: PropTypes.func.isRequired,
   };
 
   state = {
@@ -48,7 +44,6 @@ export default class RangeSlider extends React.Component {
           max={max}
           name="range-slider"
           value={value}
-          onInput={this.handleInput}
           onChange={this.handleInput}
           className={styles.slider}
         />
