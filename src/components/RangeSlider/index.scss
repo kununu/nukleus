@@ -71,6 +71,10 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   @include thumb();
 }
 
+.safari::-webkit-slider-thumb {
+  top: 50%;
+}
+
 // Firefox
 .slider::-moz-range-track,
 .slider::-moz-range-progress {

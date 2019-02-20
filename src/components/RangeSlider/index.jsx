@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import styles from './index.scss';
 
@@ -23,10 +24,15 @@ export default class RangeSlider extends React.Component {
     onChange();
   };
 
+  isSafari = () => !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+
   render () {
     const {step, min, max} = this.props;
     const {value} = this.state;
     const labelValue = `${value.toLocaleString('de')} €`;
+
+    // safari got a bug with rendering of boxshadow used for slider progress, add fix class
+    const safariClass = this.isSafari() ? styles.safari : '';
 
     return (
       <div className={styles.sliderWrapper}>
@@ -45,7 +51,7 @@ export default class RangeSlider extends React.Component {
           name="range-slider"
           value={value}
           onChange={this.handleInput}
-          className={styles.slider}
+          className={`${styles.slider} ${safariClass}`}
         />
       </div>
     );
