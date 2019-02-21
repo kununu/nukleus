@@ -36,11 +36,6 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   border-color: darken($thumb-color, 10);
 }
 
-.sliderWrapper {
-  max-width: 768px;
-  position: relative;
-}
-
 .slider {
   appearance: none;
   -webkit-appearance: none;
@@ -50,7 +45,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   cursor: pointer;
   
   &:focus {
-    outline: none;
+    // outline: none;
   }
 }
 
@@ -69,10 +64,6 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
   @include thumb();
-}
-
-.safari::-webkit-slider-thumb {
-  top: 50%;
 }
 
 // Firefox
