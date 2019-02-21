@@ -6,10 +6,6 @@ import {withInfo} from '@storybook/addon-info';
 
 import RangeSlider from './index';
 
-const onChange = () => {
-  console.log('external change event');
-};
-
 storiesOf('RangeSlider', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator((story, context) => withInfo('The range slider component!')(story)(context))
@@ -21,7 +17,7 @@ storiesOf('RangeSlider', module)
           min={10000}
           max={150000}
           step={1000}
-          onChange={onChange}
+          onChange={() => {}}
         />
       </div>
     </div>
