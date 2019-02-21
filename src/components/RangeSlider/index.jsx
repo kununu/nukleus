@@ -1,6 +1,6 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import styles from './index.scss';
 
@@ -12,48 +12,42 @@ export default class RangeSlider extends React.Component {
     onChange: PropTypes.func.isRequired,
   };
 
-  state = {
-    value: 10000,
+  constructor (props) {
+    super(props);
+    const {min} = this.props;
+
+    this.state = {value: min};
   }
 
   handleInput = (e) => {
-    // set value on the label above the slider
     const {onChange} = this.props;
+    const value = Number(e.target.value);
 
-    this.setState({value: Number(e.target.value)});
-    onChange();
+    this.setState({value});
+
+    onChange(value);
   };
 
-  isSafari = () => !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 
   render () {
     const {step, min, max} = this.props;
     const {value} = this.state;
-    const labelValue = `${value.toLocaleString('de')} €`;
 
     // safari got a bug with rendering of boxshadow used for slider progress, add fix class
-    const safariClass = this.isSafari() ? styles.safari : '';
+    // const safariClass = this.isSafari() ? styles.safari : '';
 
     return (
-      <div className={styles.sliderWrapper}>
-        <label
-          htmlFor="range-slider"
-          className={styles.sliderLabel}
-        >
-          {labelValue}
-        </label>
-        <input
-          id="range-slider"
-          type="range"
-          step={step}
-          min={min}
-          max={max}
-          name="range-slider"
-          value={value}
-          onChange={this.handleInput}
-          className={`${styles.slider} ${safariClass}`}
-        />
-      </div>
+      <input
+        id="range-slider"
+        type="range"
+        step={step}
+        min={min}
+        max={max}
+        name="range-slider"
+        value={value}
+        onChange={this.handleInput}
+        className={styles.slider}
+      />
     );
   }
 }

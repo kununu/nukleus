@@ -16,7 +16,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 @function webkit-slider-thumb-shadow($i: 1) {
   $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
   @if $i == 1 {
-    @for $k from 2 through 1000 {
+    @for $k from 2 through 2000 {
       $val: #{$val}, webkit-slider-thumb-shadow($k);
     }
   }
@@ -65,7 +65,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  top: 54%;
+  top: 51%;
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
   @include thumb();
@@ -144,21 +144,4 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   &::-ms-thumb {
     @include hoverEffect;
   }
-}
-
-.slider:focus {
-  &::-webkit-slider-thumb {
-  }
-  &::-moz-range-thumb {
-  }
-  &::-ms-thumb {
-  }
-}
-
-.sliderLabel {
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 34px;
-  margin-bottom:25px;
 }
