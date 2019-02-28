@@ -63,6 +63,12 @@ export default class Notification extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
   onClickClose = () => {
     const {onClose} = this.props;
 
@@ -117,7 +123,7 @@ export default class Notification extends React.Component {
     const {visible} = this.state;
 
     if (visible && !this.isError()) {
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.onTimeout();
       }, duration);
     }
