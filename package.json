@@ -30,7 +30,7 @@
     "@babel/register": "7.0.0",
     "@kununu/eslint-config": "1.0.5",
     "@storybook/addon-a11y": "4.1.13",
-    "@storybook/addon-actions": "4.1.13",
+    "@storybook/addon-actions": "5.0.0",
     "@storybook/addon-backgrounds": "4.1.13",
     "@storybook/addon-centered": "5.0.0",
     "@storybook/addon-events": "4.1.13",
