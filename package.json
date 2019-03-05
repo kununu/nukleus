@@ -48,7 +48,7 @@
     "@storybook/components": "4.1.13",
     "@storybook/core-events": "4.1.13",
     "@storybook/node-logger": "4.1.13",
-    "@storybook/react": "4.1.13",
+    "@storybook/react": "5.0.0",
     "autoprefixer": "9.4.9",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.1.0",
