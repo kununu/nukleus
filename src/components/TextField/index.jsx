@@ -236,9 +236,7 @@ export default class TextField extends React.Component {
 
     if (maxLength || requiredLabel) return (
       <>
-        <span className={styles.flexLabel}>
-          {children}
-        </span>
+        {children}
 
         <InfoLabel
           displayLength={displayLength}
@@ -274,9 +272,7 @@ export default class TextField extends React.Component {
           className={`${this.labelClassNames} ${flexStyles}`}
           htmlFor={id}
         >
-          <span>
-            {label}
-          </span>
+          {label}
 
           <InfoLabel
             displayLength={displayLength}
