@@ -38,7 +38,7 @@ storiesOf('TextField', module)
           autoFocus
           id="text-field"
           disable={boolean('disabled', false)}
-          displayLength={boolean('displayLength', false)}
+          displayLength={boolean('displayLength', true)}
           dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
           label={<span>
               <label>
@@ -62,7 +62,7 @@ storiesOf('TextField', module)
           requiredLabel={text('requiredLabel', 'required')}
           type={select('type', typeOptions, 'text')}
           placeholder={text('placeholder', 'Placeholder text')}
-          value={text('value', '')}
+          value={text('value', null)}
           name="text-field"
         />
       </div>

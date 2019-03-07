@@ -13,7 +13,8 @@ const InfoLabel = ({
   maxLength,
   requiredLabel,
 }) => {
-  if (requiredLabel && (!displayLength || inputValue.trim() === '')) {
+
+  if (requiredLabel && (!displayLength || (!inputValue || inputValue.trim() === ''))) {
     return (<span className={`${controlNote} ${styles.label}`}>{requiredLabel}</span>);
   }
 
