@@ -12,7 +12,7 @@ export default function InfoText ({text, infoStyle}) {
 }
 
 InfoText.propTypes = {
-  infoStyle: PropTypes.oneOf(['inline']),
+  infoStyle: PropTypes.oneOf(['inline', 'block']),
   text: PropTypes.string.isRequired,
 };
 
