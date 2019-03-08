@@ -5,14 +5,11 @@ import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
-import ToolTip from '../ToolTip';
 import {
   withKnobs, text, boolean, select, number,
 } from '@storybook/addon-knobs/react';
 
 import TextField from './index';
-
-const sanitizeWhitespaceRegex = /\r\n|\r|\n| +/g;
 
 const typeOptions = {
   Email: 'email',
@@ -38,18 +35,9 @@ storiesOf('TextField', module)
           autoFocus
           id="text-field"
           disable={boolean('disabled', false)}
-          displayLength={boolean('displayLength', true)}
+          displayLength={boolean('displayLength', false)}
           dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
-          label={<span>
-              <label>
-                meow
-            </label>
-            <ToolTip
-                label="test"
-                content="test"
-              />
-          </span>
-          }
+          label={text('label', 'TextField')}
           labelHidden={boolean('labelHidden', false)}
           inputStyle="block"
           highlightList={{bad: 'bad', fuck: 'fuck'}}
@@ -62,7 +50,7 @@ storiesOf('TextField', module)
           requiredLabel={text('requiredLabel', 'required')}
           type={select('type', typeOptions, 'text')}
           placeholder={text('placeholder', 'Placeholder text')}
-          value={text('value', null)}
+          value={text('value', '')}
           name="text-field"
         />
       </div>
@@ -133,23 +121,27 @@ storiesOf('TextField', module)
 
       <div style={{position: 'relative'}}>
         <TextField
-          id="12"
-          disable={false}
-          displayLength={true}
-          label="meow"
-          displayLength={true}
+          autoFocus
+          id="text-field"
+          disable={boolean('disabled', false)}
+          displayLength={boolean('displayLength', false)}
+          dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
+          label={text('label', 'TextField')}
+          labelHidden={boolean('labelHidden', false)}
+          inputStyle="block"
+          highlightList={{bad: 'bad', fuck: 'fuck'}}
+          minHeight={number('maxHeight', 80)}
+          maxLength={number('maxLength', 500)}
           onChange={action('onChange')}
           onFocus={action('onFocus')}
           onBlur={action('onBlur')}
           onClick={action('onClick')}
-          name="meow"
-          placeholder="meow"
-          inputStyle="mediumSize"
-          maxLength={300}
-          minHeight={80}
-          multiLine
-          isRequired={true}
-          requiredLabel="required"
+          requiredLabel={text('requiredLabel', 'required')}
+          type={select('type', typeOptions, 'text')}
+          placeholder={text('placeholder', 'Placeholder text')}
+          sanitizeValue={value => value.replace(/a/, 'b')}
+          value={text('value', '')}
+          name="text-field"
         />
       </div>
     </div>

@@ -234,7 +234,8 @@ export default class TextField extends React.Component {
       value,
     } = this.props;
 
-    if (maxLength || requiredLabel) return (
+    if (maxLength || requiredLabel) {
+      return (
       <>
         {children}
 
@@ -245,7 +246,8 @@ export default class TextField extends React.Component {
           requiredLabel={requiredLabel}
         />
       </>
-    );
+      );
+    }
 
     return children;
   }
