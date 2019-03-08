@@ -41,12 +41,20 @@ storiesOf('Table', module)
         },
         {
           accessor: 'color',
-          cell: val => (
-            <span style={{color: 'red'}}>
-              custom cell:
-              {val}
-            </span>
-          ),
+          cell: (val, item) => {
+            return (
+              <>
+                <span style={{color: 'red'}}>
+                  custom cell:
+                  {val}
+                </span>
+                <br />
+                <span>
+                  {item.name}
+                </span>
+              </>
+            );
+          },
           header: 'Fav color',
           sortable: true,
         },
