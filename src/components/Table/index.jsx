@@ -170,7 +170,7 @@ class Table extends Component {
     const value = item[accessor];
 
     if (typeof cell === 'function') {
-      return cell(value);
+      return cell(value, item);
     }
 
     return value;
