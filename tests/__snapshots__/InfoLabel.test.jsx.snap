@@ -2,7 +2,7 @@
 
 exports[`Renders an InfoLabel with a characterCounter 1`] = `
 <span
-  className="controlNote controlLabelRequired"
+  className="controlNote label"
 >
   <strong>
     0
@@ -14,7 +14,7 @@ exports[`Renders an InfoLabel with a characterCounter 1`] = `
 
 exports[`Renders an InfoLabel with a characterCounter and displays correct count and maxLength 1`] = `
 <span
-  className="controlNote controlLabelRequired"
+  className="controlNote label"
 >
   <strong>
     4
@@ -26,7 +26,7 @@ exports[`Renders an InfoLabel with a characterCounter and displays correct count
 
 exports[`Renders an InfoLabel with a characterCounter and displays the requiredLabel, when value isn't set 1`] = `
 <span
-  className="controlNote controlLabelRequired"
+  className="controlNote label"
 >
   required
 </span>
@@ -34,7 +34,7 @@ exports[`Renders an InfoLabel with a characterCounter and displays the requiredL
 
 exports[`Renders an InfoLabel without crashing 1`] = `
 <span
-  className="controlNote controlLabelRequired"
+  className="controlNote label"
 >
   required
 </span>

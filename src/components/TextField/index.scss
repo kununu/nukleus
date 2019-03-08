@@ -61,3 +61,13 @@
     position: static;
   }
 }
+
+.flexLabel {
+  display: flex;
+
+  span:last-child {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+}

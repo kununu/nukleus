@@ -226,6 +226,32 @@ export default class TextField extends React.Component {
     return classNames.join(' ');
   }
 
+  getItem = ({props: {children}}) => {
+    const {
+      displayLength,
+      maxLength,
+      requiredLabel,
+      value,
+    } = this.props;
+
+    if (maxLength || requiredLabel) {
+      return (
+      <>
+        {children}
+
+        <InfoLabel
+          displayLength={displayLength}
+          inputValue={value}
+          maxLength={maxLength}
+          requiredLabel={requiredLabel}
+        />
+      </>
+      );
+    }
+
+    return children;
+  }
+
   /**
    * generates the TextField label based on the Textfield label prop
    *
@@ -233,17 +259,29 @@ export default class TextField extends React.Component {
    */
   get label () {
     const {
+      displayLength,
       id,
       label,
+      maxLength,
+      requiredLabel,
+      value,
     } = this.props;
+    const flexStyles = (maxLength || requiredLabel) ? styles.flexLabel : '';
 
     if (typeof label === 'string') {
       return (
         <label
-          className={this.labelClassNames}
+          className={`${this.labelClassNames} ${flexStyles}`}
           htmlFor={id}
         >
           {label}
+
+          <InfoLabel
+            displayLength={displayLength}
+            inputValue={value}
+            maxLength={maxLength}
+            requiredLabel={requiredLabel}
+          />
         </label>
       );
     }
@@ -252,7 +290,7 @@ export default class TextField extends React.Component {
     // clickable element like a link or button inside a label
     // However to also add the labelContainer class, we need to return a cloned
     // element and not just the label - element itself
-    const classNames = [sharedStyles.labelContainer];
+    const classNames = [sharedStyles.labelContainer, flexStyles, this.labelClassNames];
 
     if (label.props.className) classNames.push(label.props.className);
 
@@ -262,6 +300,7 @@ export default class TextField extends React.Component {
         ...label.props,
         className: classNames.join(' '),
       },
+      this.getItem(label),
     );
   }
 
@@ -360,7 +399,6 @@ export default class TextField extends React.Component {
       autoComplete,
       autoFocus,
       disable,
-      displayLength,
       error,
       errorSubInfo,
       highlightList,
@@ -376,7 +414,6 @@ export default class TextField extends React.Component {
       pattern,
       placeholder,
       reference,
-      requiredLabel,
       rows,
       title,
       type,
@@ -392,12 +429,6 @@ export default class TextField extends React.Component {
         className={this.containerClassNames}
         id={`${name}-container`}
       >
-        <InfoLabel
-          displayLength={displayLength}
-          inputValue={value}
-          maxLength={maxLength}
-          requiredLabel={requiredLabel}
-        />
         {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
 
         {this.label}

@@ -71,14 +71,8 @@ exports[`Badwords should highlight correctly 1`] = `
     className="formGroup inline"
     id="text-field-container"
   >
-    <InfoLabel
-      displayLength={false}
-      inputValue="These are some bad words"
-      maxLength={500}
-      requiredLabel=""
-    />
     <span
-      className="labelContainer"
+      className="labelContainer flexLabel controlLabel"
     >
       <label
         htmlFor="text-field"
@@ -132,6 +126,12 @@ exports[`Badwords should highlight correctly 1`] = `
           </button>
         </div>
       </ToolTip>
+      <InfoLabel
+        displayLength={false}
+        inputValue=""
+        maxLength={500}
+        requiredLabel=""
+      />
     </span>
     <div
       className="inputContainer"
@@ -219,23 +219,23 @@ exports[`Changes output on value change manipulation 1`] = `
     className="formGroup inline paddingTop"
     id="text-field-container"
   >
-    <InfoLabel
-      displayLength={false}
-      inputValue="UGH"
-      maxLength={500}
-      requiredLabel="required"
-    >
-      <span
-        className="controlNote controlLabelRequired"
-      >
-        required
-      </span>
-    </InfoLabel>
     <label
-      className="controlLabel"
+      className="controlLabel flexLabel"
       htmlFor="text-field"
     >
       TextField
+      <InfoLabel
+        displayLength={false}
+        inputValue="test"
+        maxLength={500}
+        requiredLabel="required"
+      >
+        <span
+          className="controlNote label"
+        >
+          required
+        </span>
+      </InfoLabel>
     </label>
     <div
       className="inputContainer"
@@ -268,20 +268,20 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
   className="formGroup inline paddingTop"
   id="text-field-container"
 >
-  <span
-    className="controlNote controlLabelRequired"
-  >
-    <strong>
-      5
-    </strong>
-    /
-    500
-  </span>
   <label
-    className="controlLabel"
+    className="controlLabel flexLabel"
     htmlFor="text-field"
   >
     TextField
+    <span
+      className="controlNote label"
+    >
+      <strong>
+        5
+      </strong>
+      /
+      500
+    </span>
   </label>
   <div
     className="inputContainer"
@@ -313,16 +313,16 @@ exports[`Renders TextField with an error message without crashing 1`] = `
   className="formGroup inline paddingTop"
   id="text-field-container"
 >
-  <span
-    className="controlNote controlLabelRequired"
-  >
-    required
-  </span>
   <label
-    className="controlLabel controlLabelError"
+    className="controlLabel controlLabelError flexLabel"
     htmlFor="text-field"
   >
     TextField
+    <span
+      className="controlNote label"
+    >
+      required
+    </span>
   </label>
   <div
     className="inputContainer"
@@ -364,16 +364,16 @@ exports[`Renders TextField with multiline without crashing 1`] = `
   className="formGroup inline paddingTop"
   id="text-field-container"
 >
-  <span
-    className="controlNote controlLabelRequired"
-  >
-    required
-  </span>
   <label
-    className="controlLabel"
+    className="controlLabel flexLabel"
     htmlFor="text-field"
   >
     TextField
+    <span
+      className="controlNote label"
+    >
+      required
+    </span>
   </label>
   <div
     className="inputContainer"
@@ -404,16 +404,16 @@ exports[`Renders TextField without crashing 1`] = `
   className="formGroup inline paddingTop"
   id="text-field-container"
 >
-  <span
-    className="controlNote controlLabelRequired"
-  >
-    required
-  </span>
   <label
-    className="controlLabel"
+    className="controlLabel flexLabel"
     htmlFor="text-field"
   >
     TextField
+    <span
+      className="controlNote label"
+    >
+      required
+    </span>
   </label>
   <div
     className="inputContainer"
@@ -446,7 +446,7 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
   id="text-field-container"
 >
   <span
-    className="labelContainer"
+    className="labelContainer flexLabel controlLabel"
   >
     <label
       htmlFor="text-field"
@@ -511,7 +511,7 @@ exports[`Renders a medium size Textfield with multiline without crashing 1`] = `
   id="text-field-container"
 >
   <label
-    className="controlLabel controlLabelMediumSize"
+    className="controlLabel controlLabelMediumSize flexLabel"
     htmlFor="text-field"
   >
     TextField
