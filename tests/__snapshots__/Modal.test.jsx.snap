@@ -150,12 +150,14 @@ exports[`Renders Modal without crashing 1`] = `
                 onClick={[Function]}
                 outline={false}
                 text="Ok"
+                title=""
                 type="primary"
               >
                 <button
                   className="button primary"
                   disabled={false}
                   onClick={[Function]}
+                  title=""
                   type="button"
                 >
                   Ok
@@ -171,12 +173,14 @@ exports[`Renders Modal without crashing 1`] = `
                 onClick={[Function]}
                 outline={false}
                 text="Cancel"
+                title=""
                 type="secondary"
               >
                 <button
                   className="button secondary"
                   disabled={false}
                   onClick={[Function]}
+                  title=""
                   type="button"
                 >
                   Cancel
