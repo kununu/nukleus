@@ -107,21 +107,20 @@
     "react-dom": ">=16.0.0"
   },
   "scripts": {
-    "start": "start-storybook -s ./static -p 3000",
-    "build": "rimraf ./docs && build-storybook -s ./static -c .storybook -o docs",
     "babel": "cross-env NODE_ENV=dist babel ./src/components --out-dir ./dist/components --ignore 'src/components/**/story.js' && babel ./utils --out-dir ./dist/utils",
+    "build": "rimraf ./docs && build-storybook -s ./static -c .storybook -o docs",
+    "clean": "rimraf ./dist",
+    "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\"",
+    "dist": "npm run clean && npm run babel && npm run sass",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:js": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js",
+    "lint:sass": "sass-lint --verbose",
+    "prepare": "npm run dist",
     "presass": "node-sass ./src/components --output ./dist/components --importer node_modules/node-sass-module-importer",
     "sass": "postcss dist/components/**/*.css --replace --use autoprefixer --no-map",
-    "dist": "npm run clean && npm run babel && npm run sass",
-    "prepare": "npm run dist",
-    "clean": "rimraf ./dist",
-    "eslint": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js",
-    "eslint:fix": "eslint ./src/components ./tests --max-warnings 0 --ext jsx --ext js --fix",
-    "sasslint": "sass-lint --verbose",
-    "lint": "npm run eslint && npm run sasslint",
+    "start": "start-storybook -s ./static -p 3000",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage --testResultsProcessor=\"jest-junit\""
+    "test:watch": "jest --watch"
   },
   "jest-junit": {
     "output": "./coverage/junit.xml"
