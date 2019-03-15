@@ -236,16 +236,16 @@ export default class TextField extends React.Component {
 
     if (maxLength || requiredLabel) {
       return (
-      <>
-        {children}
+        <>
+          {children}
 
-        <InfoLabel
-          displayLength={displayLength}
-          inputValue={value}
-          maxLength={maxLength}
-          requiredLabel={requiredLabel}
-        />
-      </>
+          <InfoLabel
+            displayLength={displayLength}
+            inputValue={value}
+            maxLength={maxLength}
+            requiredLabel={requiredLabel}
+          />
+        </>
       );
     }
 
