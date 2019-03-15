@@ -46,7 +46,7 @@
     "@storybook/addon-viewport": "4.1.13",
     "@storybook/addons": "4.1.13",
     "@storybook/components": "4.1.13",
-    "@storybook/core-events": "4.1.13",
+    "@storybook/core-events": "5.0.1",
     "@storybook/node-logger": "4.1.13",
     "@storybook/react": "4.1.13",
     "autoprefixer": "9.5.0",
