@@ -5,6 +5,7 @@ exports[`Renders Button with outline 1`] = `
   className="button outline primary"
   disabled={false}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -16,6 +17,7 @@ exports[`Renders a custom theme button 1`] = `
   className="button customCssModuleClass"
   disabled={false}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -27,6 +29,7 @@ exports[`Renders a disabled Button 1`] = `
   className="button primary"
   disabled={true}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -38,6 +41,7 @@ exports[`Renders a full width button 1`] = `
   className="button fullWidth primary"
   disabled={false}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -49,6 +53,7 @@ exports[`Renders a mobile full width button 1`] = `
   className="button mobileFullWidth primary"
   disabled={false}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -60,6 +65,7 @@ exports[`Renders button without crashing 1`] = `
   className="button primary"
   disabled={false}
   onClick={[Function]}
+  title=""
   type="submit"
 >
   Test
@@ -75,6 +81,7 @@ exports[`Renders react-router anchor button without crashing 1`] = `
     disabled={false}
     href="/test"
     onClick={[Function]}
+    title=""
   >
     Button
   </a>
@@ -90,6 +97,7 @@ exports[`Renders simple anchor button without crashing 1`] = `
     disabled={false}
     href="/"
     onClick={null}
+    title=""
   >
     Button
   </a>

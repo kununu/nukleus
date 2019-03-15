@@ -25,6 +25,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
       <hr />
@@ -40,6 +41,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
       <hr />
@@ -55,6 +57,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
       <hr />
@@ -70,6 +73,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
       <hr />
@@ -104,6 +108,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
       <hr />
@@ -119,6 +124,7 @@ storiesOf('Button', module)
         onClick={action('click')}
         outline={boolean('outline', false)}
         text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
       />
 
     </div>

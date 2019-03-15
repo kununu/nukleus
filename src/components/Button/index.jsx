@@ -22,6 +22,7 @@ export default class Button extends React.Component {
       PropTypes.element,
       PropTypes.string,
     ]),
+    title: PropTypes.string,
     type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom']),
   };
 
@@ -35,6 +36,7 @@ export default class Button extends React.Component {
     onClick: null,
     outline: false,
     text: '',
+    title: '',
     type: 'primary',
   };
 
@@ -62,6 +64,7 @@ export default class Button extends React.Component {
       outline,
       text,
       htmlType,
+      title,
       type,
     } = this.props;
 
@@ -76,6 +79,7 @@ export default class Button extends React.Component {
     const props = {
       className: classes,
       disabled,
+      title,
       onClick: onClick && this.onClick,
     };
 
