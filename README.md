@@ -8,7 +8,6 @@ Welcome to [kununu's](https://wwww.kununu.com) collection of [React](https://fac
 
 [![Dependencies](https://david-dm.org/kununu/nukleus/master/status.svg)](https://david-dm.org/kununu/nukleus/master)
 [![Dev dependencies](https://david-dm.org/kununu/nukleus/master/dev-status.svg)](https://david-dm.org/kununu/nukleus/master?type=dev)
-[![Peer dependencies](https://david-dm.org/kununu/nukleus/master/dev-status.svg)](https://david-dm.org/kununu/nukleus/master?type=peer)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://kununu.github.io/nukleus)
 
 ## Features
