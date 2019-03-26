@@ -53,6 +53,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
         useShortMonthInDropdown={false}
       />
       <Error
+        id={null}
         info="Date is empty"
         subInfo={null}
       >

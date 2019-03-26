@@ -519,6 +519,7 @@ exports[`Renders an error if errors prop is set 1`] = `
       </div>
     </div>
     <Error
+      id={null}
       info="error"
       subInfo="Subinfo"
     >

@@ -25,3 +25,17 @@ exports[`Renders an Error with a subInfo Text component without crashing 1`] = `
   Helpful hint
 </span>
 `;
+
+exports[`Renders can have an optional ID attribute 1`] = `
+<span
+  className="error"
+  id="error-message"
+>
+  <strong
+    className="info"
+  >
+    Error
+  </strong>
+  Helpful hint
+</span>
+`;
