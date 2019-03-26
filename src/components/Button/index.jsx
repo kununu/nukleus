@@ -24,6 +24,7 @@ export default class Button extends React.Component {
     ]),
     title: PropTypes.string,
     type: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'link', 'custom']),
+    id: PropTypes.string,
   };
 
   static defaultProps = {
@@ -36,8 +37,9 @@ export default class Button extends React.Component {
     onClick: null,
     outline: false,
     text: '',
-    title: '',
+    title: null,
     type: 'primary',
+    id: null,
   };
 
   onClick = (e) => {
@@ -66,6 +68,7 @@ export default class Button extends React.Component {
       htmlType,
       title,
       type,
+      id,
     } = this.props;
 
     const classes = classNames({
@@ -81,6 +84,7 @@ export default class Button extends React.Component {
       disabled,
       title,
       onClick: onClick && this.onClick,
+      id,
     };
 
     if (link) {

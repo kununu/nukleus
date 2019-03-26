@@ -3,6 +3,7 @@
 exports[`Renders an Error component without crashing 1`] = `
 <span
   className="error"
+  id={null}
 >
   <strong
     className="info"
@@ -16,6 +17,21 @@ exports[`Renders an Error component without crashing 1`] = `
 exports[`Renders an Error with a subInfo Text component without crashing 1`] = `
 <span
   className="error"
+  id={null}
+>
+  <strong
+    className="info"
+  >
+    Error
+  </strong>
+  Helpful hint
+</span>
+`;
+
+exports[`it can have an optional ID attribute 1`] = `
+<span
+  className="error"
+  id="error-message"
 >
   <strong
     className="info"

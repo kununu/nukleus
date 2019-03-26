@@ -16,3 +16,13 @@ test('Renders an Error with a subInfo Text component without crashing', () => {
 
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('it can have an optional ID attribute', () => {
+  const component = renderer.create(<Error
+    info="Error"
+    subInfo="Helpful hint"
+    id="error-message"
+  />);
+
+  expect(component.toJSON()).toMatchSnapshot();
+});

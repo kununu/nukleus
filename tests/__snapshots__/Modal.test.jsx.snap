@@ -145,19 +145,21 @@ exports[`Renders Modal without crashing 1`] = `
                 disabled={false}
                 fullWidth={false}
                 htmlType="button"
+                id={null}
                 link={null}
                 mobileFullWidth={false}
                 onClick={[Function]}
                 outline={false}
                 text="Ok"
-                title=""
+                title={null}
                 type="primary"
               >
                 <button
                   className="button primary"
                   disabled={false}
+                  id={null}
                   onClick={[Function]}
-                  title=""
+                  title={null}
                   type="button"
                 >
                   Ok
@@ -168,19 +170,21 @@ exports[`Renders Modal without crashing 1`] = `
                 disabled={false}
                 fullWidth={false}
                 htmlType="button"
+                id={null}
                 link={null}
                 mobileFullWidth={false}
                 onClick={[Function]}
                 outline={false}
                 text="Cancel"
-                title=""
+                title={null}
                 type="secondary"
               >
                 <button
                   className="button secondary"
                   disabled={false}
+                  id={null}
                   onClick={[Function]}
-                  title=""
+                  title={null}
                   type="button"
                 >
                   Cancel

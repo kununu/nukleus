@@ -236,6 +236,7 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
     
     <span
       className="error"
+      id={null}
     >
       <strong
         className="info"

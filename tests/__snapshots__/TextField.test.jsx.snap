@@ -347,6 +347,7 @@ exports[`Renders TextField with an error message without crashing 1`] = `
     />
     <span
       className="error"
+      id={null}
     >
       <strong
         className="info"

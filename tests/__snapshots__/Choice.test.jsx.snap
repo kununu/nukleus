@@ -1278,11 +1278,13 @@ exports[`Renders an error if errors prop is set 1`] = `
       </div>
     </div>
     <Error
+      id={null}
       info="Test"
       subInfo="SubInfo"
     >
       <span
         className="error"
+        id={null}
       >
         <strong
           className="info"
