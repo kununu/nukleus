@@ -84,7 +84,6 @@ export default class Button extends React.Component {
       disabled,
       title,
       onClick: onClick && this.onClick,
-      id,
     };
 
     if (link) {
@@ -98,6 +97,7 @@ export default class Button extends React.Component {
     return (
       <button // eslint-disable-line react/button-has-type
         {...props}
+        {...(id ? {id} : {})}
         type={htmlType}
       >
         {text}

@@ -157,7 +157,6 @@ exports[`Renders Modal without crashing 1`] = `
                 <button
                   className="button primary"
                   disabled={false}
-                  id={null}
                   onClick={[Function]}
                   title=""
                   type="button"
@@ -182,7 +181,6 @@ exports[`Renders Modal without crashing 1`] = `
                 <button
                   className="button secondary"
                   disabled={false}
-                  id={null}
                   onClick={[Function]}
                   title=""
                   type="button"
