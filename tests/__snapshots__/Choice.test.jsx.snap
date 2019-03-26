@@ -1284,6 +1284,7 @@ exports[`Renders an error if errors prop is set 1`] = `
     >
       <span
         className="error"
+        id={null}
       >
         <strong
           className="info"

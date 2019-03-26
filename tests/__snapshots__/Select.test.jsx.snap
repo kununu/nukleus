@@ -213,6 +213,7 @@ exports[`Renders Select with an error message without crashing 1`] = `
     </select>
     <span
       className="error"
+      id={null}
     >
       <strong
         className="info"

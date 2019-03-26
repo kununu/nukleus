@@ -6,7 +6,7 @@ import styles from './index.scss';
 const Error = ({info, subInfo, id}) => (
   <span
     className={styles.error}
-    {...(id ? {id} : {})}
+    id={id}
   >
     <strong className={styles.info}>{info}</strong>
     {subInfo}

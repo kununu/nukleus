@@ -59,6 +59,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
       >
         <span
           className="error"
+          id={null}
         >
           <strong
             className="info"
@@ -203,6 +204,7 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
     
     <span
       className="error"
+      id={null}
     >
       <strong
         className="info"
