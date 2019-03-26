@@ -129,3 +129,15 @@ test('Does not fire onClick function when clicked if the button is disabled', ()
   component.find('.button').simulate('click');
   expect(spyFunc).not.toHaveBeenCalled();
 });
+
+test('can have optional ID attribute', () => {
+  const component = renderer.create(<Button
+    text="Test"
+    onClick={() => {}}
+    id="someId"
+  />);
+
+  const tree = component.toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
