@@ -50,12 +50,12 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   overflow: hidden;
   cursor: pointer;
   height: 26px;
-  margin: 25px 0 10px 0;
+  margin: 7px 0 10px 0;
 
   // fix slider height on IE11
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    margin: 10px 0 0 0;
     height: 74px;
+    margin-top: -8px;
   }
 
   &:focus {
