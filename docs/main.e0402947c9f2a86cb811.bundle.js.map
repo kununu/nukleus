@@ -1,0 +1,1 @@
+{"version":3,"file":"main.e0402947c9f2a86cb811.bundle.js","sources":["webpack:///./utils/executionEnvironment.js"],"sourcesContent":["export const isBrowser = typeof window !== 'undefined';\nexport const executionEnv = isBrowser ? 'browser' : 'server';\n"],"mappings":"AAAA","sourceRoot":""}

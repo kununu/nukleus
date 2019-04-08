@@ -12,18 +12,18 @@ const RangeSliderComponent = ({
   max,
   name,
   onBlur,
-  labelText,
   meta: {
     touched,
     error,
     value,
   },
   onChange,
+  label,
 }) => (
   <>
     <div className={styles.sliderWrapper}>
       <label htmlFor={id}>
-        {labelText}
+        {label}
         <input
           id={id}
           type="range"
@@ -41,6 +41,7 @@ const RangeSliderComponent = ({
     {(touched && error) && (
       <div className={styles.sliderErrorContainer}>
         <Error
+          id="salaryCurrencySliderError"
           info={error}
         />
       </div>
@@ -64,11 +65,11 @@ RangeSliderComponent.propTypes = {
       PropTypes.bool,
     ]),
   }).isRequired,
-  labelText: PropTypes.string,
+  label: PropTypes.string,
 };
 
 RangeSliderComponent.defaultProps = {
-  labelText: '',
+  label: '',
 };
 
 
