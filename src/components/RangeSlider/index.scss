@@ -45,8 +45,10 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 }
 
 .slider {
+  /* stylelint-disable */
   appearance: none;
   -webkit-appearance: none;
+  /* stylelint-enable */
   overflow: hidden;
   cursor: pointer;
   height: 26px;
@@ -94,8 +96,10 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 .slider::-webkit-slider-thumb {
   @include thumb;
   position: relative;
+  /* stylelint-disable */
   appearance: none;
   -webkit-appearance: none;
+  /* stylelint-enable */
   top: 50%;
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
@@ -115,7 +119,9 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
 .slider::-moz-range-thumb {
   @include thumb;
+  /* stylelint-disable */
   appearance: none;
+  /* stylelint-enable */
   margin: 0;
   box-sizing: border-box;
   display: block;
@@ -141,7 +147,9 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
 .slider::-ms-thumb {
   box-sizing: border-box;
+  /* stylelint-disable */
   appearance: none;
+  /* stylelint-enable */
   height: $thumb-height;
   width: $thumb-height;
   border-radius: 100%;
