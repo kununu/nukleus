@@ -5,15 +5,17 @@ import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
+import ThemeProvider from '../ThemeProvider';
 
 import Button from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('Button', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The button component!')(story)(context))
   .add('basics', () => (
-    <div>
+    <ThemeProvider theme={customTheme}>
       <h3>
         Primary button
       </h3>
@@ -92,7 +94,7 @@ storiesOf('Button', module)
       />
 
       <hr />
-    </div>
+    </ThemeProvider>
   ))
   .add('custom', () => (
     <div>
