@@ -41,7 +41,7 @@ const RangeSliderComponent = ({
     {(touched && error) && (
       <div className={styles.sliderErrorContainer}>
         <Error
-          id="salaryCurrencySliderError"
+          id={`${id}_error`}
           info={error}
         />
       </div>
