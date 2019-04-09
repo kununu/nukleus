@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders basic Table without crashing 1`] = `
+<div
+  className="sliderWrapper"
+>
+  <label
+    htmlFor="salaryCurrencySlider"
+  >
+    Slider label
+    <input
+      className="slider"
+      id="salaryCurrencySlider"
+      max={1000}
+      min={0}
+      name="amount"
+      onBlur={[Function]}
+      onChange={[Function]}
+      step={10}
+      type="range"
+      value={0}
+    />
+  </label>
+</div>
+`;
