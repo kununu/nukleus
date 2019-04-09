@@ -37,11 +37,9 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 }
 
 .sliderWrapper {
-  display: grid;
-  display: -ms-grid; 
-  grid-column-gap: 20px;
-  grid-template-columns: auto 70px; // NOSONAR
-  -ms-grid-columns: 75% 25%; // NOSONAR
+  label {
+    width: 100%;
+  }
 }
 
 .slider {

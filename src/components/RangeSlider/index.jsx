@@ -19,9 +19,10 @@ const RangeSliderComponent = ({
   },
   onChange,
   label,
+  containerClass,
 }) => (
   <>
-    <div className={styles.sliderWrapper}>
+    <div className={containerClass}>
       <label htmlFor={id}>
         {label}
         <input
@@ -66,10 +67,12 @@ RangeSliderComponent.propTypes = {
     ]),
   }).isRequired,
   label: PropTypes.string,
+  containerClass: PropTypes.string,
 };
 
 RangeSliderComponent.defaultProps = {
   label: '',
+  containerClass: styles.sliderWrapper,
 };
 
 
