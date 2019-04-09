@@ -38,17 +38,15 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
 .sliderWrapper {
   display: grid;
-  display: -ms-grid;
+  display: -ms-grid; 
   grid-column-gap: 20px;
-  grid-template-columns: auto 70px;
-  -ms-grid-columns: 75% 25%;
+  grid-template-columns: auto 70px; // NOSONAR
+  -ms-grid-columns: 75% 25%; // NOSONAR
 }
 
 .slider {
-  /* stylelint-disable */
-  appearance: none;
-  -webkit-appearance: none;
-  /* stylelint-enable */
+  appearance: none; // NOSONAR
+  -webkit-appearance: none; // NOSONAR
   overflow: hidden;
   cursor: pointer;
   height: 26px;
@@ -96,10 +94,9 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 .slider::-webkit-slider-thumb {
   @include thumb;
   position: relative;
-  /* stylelint-disable */
-  appearance: none;
-  -webkit-appearance: none;
-  /* stylelint-enable */
+  appearance: none; // NOSONAR
+  -webkit-appearance: none; // NOSONAR
+
   top: 50%;
   margin-top: (-$thumb-height/2);
   box-shadow: webkit-slider-thumb-shadow();
@@ -119,9 +116,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
 .slider::-moz-range-thumb {
   @include thumb;
-  /* stylelint-disable */
-  appearance: none;
-  /* stylelint-enable */
+  appearance: none; // NOSONAR
   margin: 0;
   box-sizing: border-box;
   display: block;
@@ -147,9 +142,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
 .slider::-ms-thumb {
   box-sizing: border-box;
-  /* stylelint-disable */
-  appearance: none;
-  /* stylelint-enable */
+  appearance: none; // NOSONAR
   height: $thumb-height;
   width: $thumb-height;
   border-radius: 100%;
