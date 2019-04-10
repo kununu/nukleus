@@ -6,17 +6,20 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import debounce from 'debounce';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
-import {
-  controlLabel,
-  controlNote,
-  formControl,
-  formControlError,
-  formGroup,
-  controlLabelRequired,
-  hidden,
-} from '../index.scss';
+// import {
+//   controlLabel,
+//   controlNote,
+//   formControl,
+//   formControlError,
+//   formGroup,
+//   controlLabelRequired,
+//   hidden,
+// } from '../index.scss';
+import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
 
@@ -185,65 +188,78 @@ export default class ComboboxComponent extends React.Component {
     } = this.state;
 
     return (
-      <div
-        className={`${formGroup} ${styles[inputStyles]} ${requiredLabel ? styles.paddingTop : ''}`}
-        id={`${name}-container`}
-      >
-        {requiredLabel && (
-        <span className={`${controlNote} ${controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...sharedStyles,
+            ...styles,
+            ...context,
+          }
+          const theme = themeable(allStyles)
 
-        <label
-          className={`${controlLabel} ${labelHidden && hidden} ${this.hasError() ? styles.controlLabelError : ''}`}
-          htmlFor={id}
-        >
-          {label}
-        </label>
+          return (
+            <div
+              className={theme('formGroup', inputStyles, `${requiredLabel ? 'paddingTop' : ''}`)}
+              id={`${name}-container`}
+            >
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
 
-        <div className={styles.container}>
-          <Autosuggest
-            suggestions={suggestions}
-            theme={styles}
-            error={error}
-            errorSubInfo={errorSubInfo}
-            onSuggestionSelected={this.handleSelection}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            shouldRenderSuggestions={() => true}
-            onSuggestionsClearRequested={() => true}
-            getSuggestionValue={this.getSuggestionValue}
-            renderSuggestion={this.renderSuggestion}
-            focusInputOnSuggestionClick={isSearchable}
-            inputProps={{
-              ...inputProps,
-              className: `${formControl} ${!isSearchable && styles.isNotSearchable} ${this.hasError() ? formControlError : ''}`,
-              disabled,
-              id,
-              name,
-              onBlur,
-              onChange: this.onChange,
-              onFocus,
-              placeholder,
-              required: isRequired,
-              value,
-            }}
-          />
+              <label
+                className={theme('controlLabel', `${labelHidden && 'hidden'}`, `${this.hasError() ? 'controlLabelError' : ''}`)}
+                htmlFor={id}
+              >
+                {label}
+              </label>
 
-          {handle ? (
-            <span className={styles.handle}>
-              {handle}
-            </span>
-          ) : ''}
+              <div className={theme('combobobxContainer')}>
+                <Autosuggest
+                  suggestions={suggestions}
+                  theme={allStyles}
+                  error={error}
+                  errorSubInfo={errorSubInfo}
+                  onSuggestionSelected={this.handleSelection}
+                  onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                  shouldRenderSuggestions={() => true}
+                  onSuggestionsClearRequested={() => true}
+                  getSuggestionValue={this.getSuggestionValue}
+                  renderSuggestion={this.renderSuggestion}
+                  focusInputOnSuggestionClick={isSearchable}
+                  inputProps={{
+                    ...inputProps,
+                    className: theme('formControl', `${!isSearchable && 'isNotSearchable'}`, `${this.hasError() ? 'formControlError' : ''}`),
+                    disabled,
+                    id,
+                    name,
+                    onBlur,
+                    onChange: this.onChange,
+                    onFocus,
+                    placeholder,
+                    required: isRequired,
+                    value,
+                  }}
+                />
 
-          {this.hasError() && (
-          <Error
-            info={error}
-            subInfo={errorSubInfo}
-          />
-          )}
-        </div>
-      </div>
+                {handle ? (
+                  <span className={theme('comboboxHandle')}>
+                    {handle}
+                  </span>
+                ) : ''}
+
+                {this.hasError() && (
+                <Error
+                  info={error}
+                  subInfo={errorSubInfo}
+                />
+                )}
+              </div>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

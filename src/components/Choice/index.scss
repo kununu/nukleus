@@ -1,16 +1,17 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.radioContainer {
+.choiceContainer {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  flex-wrap: wrap;
 
   * {
     box-sizing: border-box;
   }
 }
 
-.radioButton {
+.choiceButton {
   text-align: center;
   min-height: 50px;
   display: flex;
@@ -39,6 +40,7 @@
     transition: all .25s;
     border: 1px solid $blue;
     border-left: 0;
+    border-top: 0;
     color: $blue;
     display: flex;
     justify-content: center;
@@ -62,24 +64,72 @@
 
   &:first-child {
     label {
-      border-radius: $border-radius-base 0 0 $border-radius-base;
+      border-radius: 0;
       border-left: 1px solid $blue;
     }
   }
 
   &:last-child {
     label {
-      border-radius: 0 $border-radius-base $border-radius-base 0;
+      border-radius: 0;
+    }
+  }
+
+  @media (max-width: $screen-sm-max) {
+    flex: 0 0 50%;
+
+    // First Row
+    &:nth-child(-n+2) {
+      label {
+        border-top: 1px solid $blue;
+      }
+    }
+
+    // All Left Radio Buttons
+    &:nth-child(2n + 1) {
+      label {
+        border-left: 1px solid $blue;
+      }
+    }
+
+    // Style for border corners
+    // Top Left Corner
+    &:first-child {
+      label {
+        border-top-left-radius: $border-radius-base;
+      }
+    }
+
+    // Top Right Corner
+    &:nth-child(2) {
+      label {
+        border-top-right-radius: $border-radius-base;
+      }
+    }
+
+    // Bottom Left Corner
+    &:nth-child(2n + 1):nth-last-child(-n + 2) {
+      label {
+        border-bottom-left-radius: $border-radius-base;
+      }
+    }
+
+    // Bottom Right Corner
+    &:last-child,
+    &:nth-child(2n):nth-last-child(-n + 2) {
+      label {
+        border-bottom-right-radius: $border-radius-base;
+      }
     }
   }
 }
 
-.radioContainer.flexible {
+.choiceFlexible {
   @media (max-width: $screen-sm-max) {
     border: 1px solid $blue;
     border-radius: $border-radius-base;
 
-    .radioButton {
+    .choiceButton {
       display: flex;
       flex: 50%;
 
@@ -108,82 +158,6 @@
   }
 }
 
-[data-options-per-row] {
-  flex-wrap: wrap;
-
-  .radioButton {
-    label {
-      border-top: 0;
-    }
-
-    // Reset default border-radius for first and last child
-    &:first-child {
-
-      label {
-        border-radius: 0;
-      }
-    }
-
-    &:last-child {
-
-      label {
-        border-radius: 0;
-      }
-    }
-  }
-
-  // Mobile Styling
-  @media (max-width: $screen-sm-max) {
-    .radioButton {
-      flex: 0 0 50%;
-
-      // First Row
-      &:nth-child(-n+2) {
-        label {
-          border-top: 1px solid $blue;
-        }
-      }
-
-      // All Left Radio Buttons
-      &:nth-child(2n + 1) {
-        label {
-          border-left: 1px solid $blue;
-        }
-      }
-
-      // Style for border corners
-      // Top Left Corner
-      &:first-child {
-        label {
-          border-top-left-radius: $border-radius-base;
-        }
-      }
-
-      // Top Right Corner
-      &:nth-child(2) {
-        label {
-          border-top-right-radius: $border-radius-base;
-        }
-      }
-
-      // Bottom Left Corner
-      &:nth-child(2n + 1):nth-last-child(-n + 2) {
-        label {
-          border-bottom-left-radius: $border-radius-base;
-        }
-      }
-
-      // Bottom Right Corner
-      &:last-child,
-      &:nth-child(2n):nth-last-child(-n + 2) {
-        label {
-          border-bottom-right-radius: $border-radius-base;
-        }
-      }
-    }
-  }
-}
-
 @mixin options-per-row($count) {
   [data-options-per-row='#{$count}'] {
     display: flex;
@@ -199,7 +173,7 @@
     }
 
     @media (min-width: $screen-md-min) {
-      .radioButton {
+      .choiceButton {
         flex: 0 0 100% / $count;
 
         label {
@@ -208,43 +182,43 @@
       }
 
       // Target first row
-      .radioButton:nth-child(-n + #{$count}) {
+      .choiceButton:nth-child(-n + #{$count}) {
         label {
           border-top: 1px solid $blue;
         }
       }
 
-      // All left radioButtons
-      .radioButton:nth-child(#{$count}n + 1) {
+      // All left choiceButtons
+      .choiceButton:nth-child(#{$count}n + 1) {
         label {
           border-left: 1px solid $blue;
         }
       }
 
       // Top Left Corner
-      .radioButton:first-child {
+      .choiceButton:first-child {
         label {
           border-top-left-radius: $border-radius-base;
         }
       }
 
       // Top Right Corner
-      .radioButton:nth-child(#{$count}) {
+      .choiceButton:nth-child(#{$count}) {
         label {
           border-top-right-radius: $border-radius-base;
         }
       }
 
       // Bottom Left Corner
-      .radioButton:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) {
+      .choiceButton:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) {
         label {
           border-bottom-left-radius: $border-radius-base;
         }
       }
 
       // Bottom Right Corner
-      .radioButton:nth-child(#{$count}n):nth-last-child(-n + #{$count}),
-      .radioButton:last-child {
+      .choiceButton:nth-child(#{$count}n):nth-last-child(-n + #{$count}),
+      .choiceButton:last-child {
         label {
           border-bottom-right-radius: $border-radius-base;
         }

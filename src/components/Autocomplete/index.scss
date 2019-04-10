@@ -1,5 +1,14 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
+.comboboxContainer {
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
 .spinner {
   position: absolute;
   right: 13px;
@@ -22,12 +31,6 @@
   100% {
     transform: rotate(359deg);
   }
-}
-
-.suggestionInfo {
-  color: $gray-base-40;
-  font-size: $font-size-sm;
-  display: inline-block;
 }
 
 .suggestionsContainer {
@@ -58,6 +61,12 @@
   }
 }
 
+.suggestionInfo {
+  color: $gray-base-40;
+  font-size: $font-size-sm;
+  display: inline-block;
+}
+
 .suggestion {
   box-sizing: border-box;
   text-align: left;
@@ -77,13 +86,4 @@
 .suggestionsFooter {
   border-top: 1px solid $gray-base-03;
   padding: 8px 12px;
-}
-
-.autocompleteContainer {
-  position: relative;
-  width: 100%;
-
-  * {
-    box-sizing: border-box;
-  }
 }

@@ -189,11 +189,11 @@ export default class Autocomplete extends React.Component {
    */
   get labelClassNames () {
     const {labelHidden} = this.props;
-    const classNames = [sharedStyles.controlLabel];
+    const classNames = ['controlLabel'];
 
-    if (labelHidden) classNames.push(sharedStyles.hidden);
+    if (labelHidden) classNames.push('hidden');
 
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+    if (this.hasError()) classNames.push('controlLabelError');
   }
 
   getSuggestions = (value) => {
@@ -360,7 +360,7 @@ export default class Autocomplete extends React.Component {
             ...styles,
             ...context,
           }
-          
+
           const theme = themeable(allStyles);
 
           const classNames = ['formControl'];
@@ -409,7 +409,7 @@ export default class Autocomplete extends React.Component {
                 {label}
               </label>
 
-              <div className={styles.autocompleteContainer}>
+              <div className={theme('autocompleteContainer')}>
                 <Autosuggest
                   id={id}
                   focusFirstSuggestion
