@@ -102,7 +102,7 @@ export default class MultipleChoice extends React.Component {
 
     const inputStyles = inputStyle.split(' ');
 
-    const classNames = [sharedStyles.formGroup, sharedStyles.formGroupMultipleChoice];
+    const classNames = [sharedStyles.formGroup, styles.choiceContainer];
 
     // Inline Styles is shared in global index.scss, buttons is a local style
     if (inputStyles.includes('buttons')) classNames.push(styles.buttons);

@@ -16,34 +16,6 @@
   display: none !important;
 }
 
-.errorStyles {
-  background-color: $brand-danger;
-  border-radius: 4px;
-  font-size: 11px;
-  padding: 5px 12px;
-  text-transform: uppercase;
-  font-weight: $font-weight-regular;
-  color: $white;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 45px;
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: -5px;
-    right: 45%;
-    bottom: auto;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 6px 6px;
-    border-color: transparent transparent $brand-danger;
-  }
-}
-
 .formControl {
   box-shadow: inset 0 1px 1px rgba($black, .075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -147,32 +119,6 @@
   margin-bottom: $baseline-grid;
 }
 
-.formControlIcon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: $font-size-xl;
-  color: $gray-light;
-}
-
-.formGroupMultipleChoice {
-  &.inline {
-    align-items: flex-start;
-  }
-}
-
-.formControlLg .formControlIcon {
-  top: 20px;
-}
-
-.controlLabelLg {
-  font-size: $font-size-lg;
-
-  + .controlNote {
-    line-height: 26px;
-  }
-}
-
 .controlLabelRequired {
   text-transform: uppercase;
   font-size: $font-size-xxs;
@@ -185,18 +131,6 @@
     position: absolute;
     top: 0;
     right: 2px;
-  }
-}
-
-.unstyledButton {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  appearance: none;
-
-  &:focus {
-    outline: 0;
   }
 }
 
@@ -227,8 +161,7 @@
   }
 
   @media (min-width: $screen-xs-min) {
-    .controlLabelError,
-    .controlLabelMediumSize {
+    .controlLabelError {
       align-self: flex-start; // otherwise would be centered between Input Field and error
       display: flex;
       align-items: center;
@@ -242,22 +175,5 @@
 
   .choice:last-child {
     margin-bottom: 0;
-  }
-}
-
-.mediumSize {
-  input,
-  textarea {
-    height: 80px;
-  }
-}
-
-.labelContainer {
-  label {
-    margin: 0 10px 0 0;
-    width: auto;
-    color: $gray-base-90;
-    font-size: $font-size-base;
-    font-weight: $font-weight-semibold;
   }
 }

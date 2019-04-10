@@ -10,6 +10,12 @@
   }
 }
 
+.choiceContainer {
+  &.inline {
+    align-items: flex-start;
+  }
+}
+
 .choice {
   position: relative;
   display: block;

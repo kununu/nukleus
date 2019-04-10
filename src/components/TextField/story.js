@@ -90,7 +90,6 @@ storiesOf('TextField', module)
           dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
           requiredLabel={text('requiredLabel', 'required')}
           labelHidden={boolean('labelHidden', false)}
-          inputStyle="mediumSize"
           highlightList={{bad: 'bad'}}
           multiLine
           maxLength={number('maxHeight', 500)}

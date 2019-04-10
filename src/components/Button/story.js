@@ -15,7 +15,7 @@ storiesOf('Button', module)
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The button component!')(story)(context))
   .add('basics', () => (
-    <ThemeProvider theme={customTheme}>
+    <>
       <h3>
         Primary button
       </h3>
@@ -94,10 +94,7 @@ storiesOf('Button', module)
       />
 
       <hr />
-    </ThemeProvider>
-  ))
-  .add('custom', () => (
-    <div>
+
       <h3>
       Button that is an link
       </h3>
@@ -129,5 +126,22 @@ storiesOf('Button', module)
         title={text('title', 'This is some info about the button')}
       />
 
-    </div>
+      <hr />
+    </>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>Custom theme for buttons</h3>
+      
+      <Button
+        type="primary"
+        disabled={boolean('disabled', false)}
+        fullWidth={boolean('fullWidth', false)}
+        mobileFullWidth={boolean('mobileFullWidth', false)}
+        onClick={action('click')}
+        outline={boolean('outline', false)}
+        text={text('text', 'button')}
+        title={text('title', 'This is some info about the button')}
+      />
+    </ThemeProvider>
   ));

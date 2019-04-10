@@ -173,8 +173,6 @@ export default class TextField extends React.Component {
     // Check if TextField contains an error
     if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
 
-    if (inputStyles.indexOf('mediumSize') !== -1) classNames.push(sharedStyles.controlLabelMediumSize);
-
     return classNames.join(' ');
   }
 
@@ -290,7 +288,7 @@ export default class TextField extends React.Component {
     // clickable element like a link or button inside a label
     // However to also add the labelContainer class, we need to return a cloned
     // element and not just the label - element itself
-    const classNames = [sharedStyles.labelContainer, flexStyles, this.labelClassNames];
+    const classNames = [styles.textFieldContainer, flexStyles, this.labelClassNames];
 
     if (label.props.className) classNames.push(label.props.className);
 
