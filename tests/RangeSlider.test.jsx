@@ -10,8 +10,9 @@ test('Renders basic Table without crashing', () => {
       max={1000}
       step={10}
       name="amount"
-      onChange={() => {}}
+      onChange={() => { }}
       onBlur={() => { }}
+      onFocus={() => { }}
       label="Slider label"
       meta={{
         touched: false,

@@ -20,6 +20,7 @@ const RangeSliderComponent = ({
   onChange,
   label,
   containerClass,
+  onFocus,
 }) => (
   <>
     <div className={containerClass}>
@@ -35,6 +36,7 @@ const RangeSliderComponent = ({
           value={value}
           onChange={onChange}
           onBlur={onBlur}
+          onFocus={onFocus}
           className={styles.slider}
         />
       </label>
@@ -58,6 +60,7 @@ RangeSliderComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
   meta: PropTypes.shape({
     value: PropTypes.number.isRequired,
     touched: PropTypes.bool,
@@ -73,6 +76,7 @@ RangeSliderComponent.propTypes = {
 RangeSliderComponent.defaultProps = {
   label: '',
   containerClass: styles.sliderWrapper,
+  onFocus: null,
 };
 
 

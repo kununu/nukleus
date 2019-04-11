@@ -4,6 +4,7 @@ import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, number} from '@storybook/addon-knobs/react';
+import {action} from '@storybook/addon-actions';
 
 import RangeSlider from './index';
 
@@ -21,7 +22,8 @@ const RangeSliderExample = () => {
       step={number('sliderStep', 10)}
       name="amount"
       onChange={e => handleInput({...input, sliderValue: e.target.value})}
-      onBlur={() => { }}
+      onBlur={action('blur')}
+      onFocus={action('focus')}
       label={`Drag me! ${input.sliderValue || ''}`}
       meta={{
         touched: false,

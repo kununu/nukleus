@@ -16,6 +16,7 @@ exports[`Renders basic Table without crashing 1`] = `
       name="amount"
       onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       step={10}
       type="range"
       value={0}
