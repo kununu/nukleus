@@ -5,8 +5,10 @@ import {withOptions} from '@storybook/addon-options';
 import {withKnobs, select} from '@storybook/addon-knobs';
 import {withInfo} from '@storybook/addon-info';
 
+import ThemeProvider from '../ThemeProvider';
 
 import InfoBox from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('InfoBox', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -24,7 +26,7 @@ storiesOf('InfoBox', module)
           aria-label="button"
           role="img"
         >
-🔘
+        🔘
         </span>
         <InfoBox
           content="hi there how are you!"
@@ -43,4 +45,39 @@ storiesOf('InfoBox', module)
         />
       </div>
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <div style={{marginTop: '100px', textAlign: 'center'}}>
+        <div style={{
+          display: 'inline-block',
+          padding: '10px',
+          position: 'relative',
+        }}
+        >
+          <span
+            aria-label="button"
+            role="img"
+          >
+          🔘
+          </span>
+          <InfoBox
+            content="hi there how are you!"
+            position={
+              select(
+                'position',
+                {
+                  bottomLeft: 'bottomLeft',
+                  bottomRight: 'bottomRight',
+                  topLeft: 'topLeft',
+                  topRight: 'topRight',
+                },
+                'topLeft',
+              )
+            }
+          />
+        </div>
+      </div>
+    </ThemeProvider>
   ));
+

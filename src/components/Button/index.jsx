@@ -74,7 +74,7 @@ export default class Button extends React.Component {
       id,
     } = this.props;
 
-    const classes = classNames({
+    const classes = classNames({ 
       button: true,
       fullWidth: fullWidth,
       mobileFullWidth: mobileFullWidth,

@@ -6,7 +6,10 @@ import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
 import DatePicker from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('DatePicker', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -15,12 +18,7 @@ storiesOf('DatePicker', module)
   .add('basics', () => (
     <DatePicker
       dateFormat={text('dateFormat', 'dd/MM/yyyy')}
-      icon={(
-        <i
-          className="fa fa-calendar"
-          aria-hidden="true"
-        />
-)}
+      icon={<span>📅</span>}
       id="date-picker"
       inputStyle="block"
       isRequired={boolean('isRequired', false)}
@@ -38,4 +36,30 @@ storiesOf('DatePicker', module)
       showYearDropdown={boolean('showYearDropdown', false)}
       value={text('value', new Date())}
     />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>Custom theme for datePicker</h3>
+      
+      <DatePicker
+        dateFormat={text('dateFormat', 'dd/MM/yyyy')}
+        icon={<span>📅</span>}
+        id="date-picker"
+        inputStyle="block"
+        isRequired={boolean('isRequired', false)}
+        label="DatePicker"
+        labelHidden={boolean('labelHidden', false)}
+        name="date-picker"
+        onBlur={action('onBlur')}
+        onChange={action('onChange')}
+        onChangeRaw={action('onChangeRaw')}
+        onClick={action('onClick')}
+        onFocus={action('onFocus')}
+        requiredLabel={text('requiredLabel', 'required')}
+        showAbbreviatedMonthDropdown={boolean('showAbbreviatedMonthDropdown', false)}
+        showMonthDropdown={boolean('showMonthDropdown', false)}
+        showYearDropdown={boolean('showYearDropdown', false)}
+        value={text('value', new Date())}
+      />
+    </ThemeProvider>
   ));

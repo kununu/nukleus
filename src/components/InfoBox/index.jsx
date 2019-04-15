@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 export default class InfoBox extends React.Component {
@@ -100,12 +103,20 @@ export default class InfoBox extends React.Component {
     const CustomTag = typeof (content) === 'object' ? 'div' : 'p';
 
     return (
-      <CustomTag
-        ref={(container) => { this.container = container; }}
-        className={`${styles.infoBox} ${styles[position]}`}
-      >
-        {content}
-      </CustomTag>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+
+          return (
+            <CustomTag
+            ref={(container) => { this.container = container; }}
+            className={theme('infoBox', [position])}
+            >
+              {content}
+            </CustomTag>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

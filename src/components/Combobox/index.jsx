@@ -1,6 +1,3 @@
-// NOTE: we make extensive use of property initialiser for binding methods to the class instance:
-// onChange, getSuggestionValue etc.
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
@@ -10,19 +7,10 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import Error from '../Error';
-// import {
-//   controlLabel,
-//   controlNote,
-//   formControl,
-//   formControlError,
-//   formGroup,
-//   controlLabelRequired,
-//   hidden,
-// } from '../index.scss';
+
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
-
 
 export default class ComboboxComponent extends React.Component {
   static propTypes = {

@@ -114,5 +114,59 @@ storiesOf('ThemeProvider', module)
 
       <br />
       <br />
+
+      <h4>Custom DatePicker Styles</h4>
+      <p>
+        <code>.datePickerContainer</code> - Used to add any container specific styling such as position relative<br/>
+        <code>.datePickerInnerContainer</code> - Used to style inner container<br/>
+        <code>.datePickerIcon</code> - Used to style active suggestion box<br/>
+       
+        <small>* It also relies on the shared formGroup, formControl, formControlError, controlNote, controlLabel, controlLabelRequired and hidden styles</small>
+      </p>
+
+      <br />
+      <br />
+
+      <h4>Custom DropDown Styles</h4>
+      <p>
+        <code>.dropDownContainer</code> - Used to add any container specific styling such as position relative<br/>
+        <code>.dropDownToggle</code> - Used to style drop down selection button<br/>
+        <code>.dropDownItemList</code> - Used to style the drop down unordered list item<br/>
+        <code>.dropDownItem</code><br/> - Used to style the drop down specific list items<br/>
+        <code>.dropDownIcon</code> - Used to style the drop down item icons if there are any<br/>
+        <code>.up .down</code> - Used to style position specific class added via props<br/>
+        <code>.dark .light</code> - Used to style shade specific class added via props<br/>
+      </p>
+
+      <br />
+      <br />
+
+      <h4>Custom DropDown Styles</h4>
+      <p>
+        <code>.dropDownContainer</code> - Used to add any container specific styling such as position relative<br/>
+        <code>.dropDownToggle</code> - Used to style drop down selection button<br/>
+        <code>.dropDownItemList</code> - Used to style the drop down unordered list item<br/>
+        <code>.dropDownItem</code><br/> - Used to style the drop down specific list items<br/>
+        <code>.dropDownIcon</code> - Used to style the drop down item icons if there are any<br/>
+        <code>.up .down</code> - Used to style position specific class added via props<br/>
+        <code>.dark .light</code> - Used to style shade specific class added via props<br/>
+      </p>
+
+      <br />
+      <br />
+
+      <h4>Custom Error Styles</h4>
+      <p>
+        <code>.errorContainer</code> - Used to add any container specific styling such as position relative<br/>
+        <code>.errorInfo</code> - Used to style error content<br/>
+      </p>
+
+      <br />
+      <br />
+
+      <h4>Custom InfoBox Styles</h4>
+      <p>
+        <code>.infoBox</code> - Used for all styles<br/>
+      </p>
     </div>
   ));
