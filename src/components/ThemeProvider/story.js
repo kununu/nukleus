@@ -291,5 +291,27 @@ storiesOf('ThemeProvider', module)
       </p>
 
       <br />
+
+      <h4>Custom TextField Styles</h4>
+      <p>
+        <code>.textFieldContainer</code> - Used for styling the main container<br/>
+        <code>.innerTextFieldContainer</code> - Used to style the inner container<br/>
+        <code>.highlightOverlay</code> - Used to style the highlight overlay container<br/>
+        <code>.textarea</code> - Used to style the text area component<br/>
+        <code>.dynamicHeight</code> - Used to style dynamicHeight<br/>
+      </p>
+
+      <small>* It also relies on the shared formGroup, formControl, formControlError, paddingTop, controlLabel, controlLabelError, hidden, styles</small>
+      <br />
+
+      <h4>Custom ToolTip Styles</h4>
+      <p>
+        <code>.toolTipContainer</code> - Used for styling the tooltip container<br/>
+        <code>.toolTipButton</code> - Used to style actual tool tip icon<br/>
+      </p>
+
+      <br />
+      <br />
+      <br />
     </div>
   ));

@@ -5,7 +5,10 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, select} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
 import ToolTip from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('ToolTip', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -35,4 +38,22 @@ storiesOf('ToolTip', module)
         })}
       />
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>
+        Example of custom tooltip component
+      </h3>
+
+      <ToolTip
+        label={text('label', 'Tooltip')}
+        content={text('content', 'This could be useful')}
+        position={select('position', {
+          bottomLeft: 'bottomLeft',
+          bottomRight: 'bottomRight',
+          topLeft: 'topLeft',
+          topRight: 'topRight',
+        })}
+      />
+    </ThemeProvider>
   ));

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import InfoBox from '../InfoBox';
-import {unstyledButton} from '../index.scss';
 
 import styles from './index.scss';
 
@@ -128,27 +129,34 @@ export default class ToolTip extends React.Component {
     const {active} = this.state;
 
     return (
-      <div
-        ref={(container) => { this.container = container; }}
-        className={styles.toolTip}
-      >
-        <button
-          className={styles.toolTipButton}
-          onClick={this.onClick}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-          title={label}
-          type="button"
-        >
-          {icon}
-        </button>
-        {active && (
-        <InfoBox
-          content={content}
-          position={position}
-        />
-        )}
-      </div>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+          return (
+            <div
+              ref={(container) => { this.container = container; }}
+              className={theme('toolTip')}
+            >
+              <button
+                className={theme('toolTipButton')}
+                onClick={this.onClick}
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+                title={label}
+                type="button"
+              >
+                {icon}
+              </button>
+              {active && (
+              <InfoBox
+                content={content}
+                position={position}
+              />
+              )}
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

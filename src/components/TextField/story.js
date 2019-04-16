@@ -9,7 +9,10 @@ import {
   withKnobs, text, boolean, select, number,
 } from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
 import TextField from './index';
+import customTheme from './customTheme.scss';
 
 const typeOptions = {
   Email: 'email',
@@ -92,6 +95,7 @@ storiesOf('TextField', module)
           labelHidden={boolean('labelHidden', false)}
           highlightList={{bad: 'bad'}}
           multiLine
+          inputStyle="mediumSize"
           maxLength={number('maxHeight', 500)}
           minHeight={number('maxLength', 80)}
           onChange={action('onChange')}
@@ -144,4 +148,35 @@ storiesOf('TextField', module)
         />
       </div>
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>
+        Example of textField with custom Theme
+      </h3>
+      <div style={{position: 'relative'}}>
+        <TextField
+          autoFocus
+          id="text-field"
+          disable={boolean('disabled', false)}
+          displayLength={boolean('displayLength', false)}
+          dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
+          label={text('label', 'TextField')}
+          labelHidden={boolean('labelHidden', false)}
+          inputStyle="block"
+          highlightList={{bad: 'bad', fuck: 'fuck'}}
+          minHeight={number('maxHeight', 80)}
+          maxLength={number('maxLength', 500)}
+          onChange={action('onChange')}
+          onFocus={action('onFocus')}
+          onBlur={action('onBlur')}
+          onClick={action('onClick')}
+          requiredLabel={text('requiredLabel', 'required')}
+          type={select('type', typeOptions, 'text')}
+          placeholder={text('placeholder', 'Placeholder text')}
+          value={text('value', '')}
+          name="text-field"
+        />
+      </div>
+    </ThemeProvider>
   ));
