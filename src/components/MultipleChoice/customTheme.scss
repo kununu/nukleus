@@ -1,0 +1,99 @@
+// sass-lint:disable class-name-format
+
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+.buttons {
+  .choiceInnerContainer {
+    display: block;
+    width: auto;
+    margin-left: -6px;
+    margin-right: -6px;
+
+    @supports (display: flex) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  .choice {
+    display: inline-block;
+    padding: 5px;
+
+    &,
+    & + .choice {
+      margin: 0;
+    }
+
+    @supports (display: flex) {
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+
+    input {
+      display: block;
+      position: absolute;
+      margin-left: 4px;
+      opacity: 0;
+      z-index: -1;
+
+      & + label {
+        color: $green;
+        border: 2px solid $green;
+        transition: background-color .25s;
+        font-weight: $font-weight-semibold;
+        border-radius: 20px;
+
+        @media (max-width: $screen-sm-max) {
+          font-size: $font-size-xs;
+        }
+      }
+
+      & + label:hover,
+      &:focus + label {
+        background-color: transparent;
+        color: $green;
+      }
+
+      &:checked + label,
+      &:focus + label,
+      &:visited + label {
+        outline: 0;
+      }
+
+      &:active + label {
+        background-color: $green;
+        color: $white;
+      }
+
+      &:checked + label {
+        background-color: $green;
+        color: $white;
+
+        &,
+        &:hover {
+          background-color: $green;
+          color: $white;
+        }
+      }
+
+      & + label,
+      &:checked label {
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 8px;
+        text-align: center;
+        transition: background-color .25s;
+
+        @supports (display: flex) {
+          width: 100%;
+        }
+      }
+
+      & + label:before,
+      &:checked + label:before {
+        display: none;
+      }
+    }
+  }
+}

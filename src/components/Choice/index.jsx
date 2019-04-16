@@ -10,7 +10,6 @@ import Label from '../Label';
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
-
 export default class Choice extends React.Component {
   static propTypes = {
     checked: PropTypes.string,

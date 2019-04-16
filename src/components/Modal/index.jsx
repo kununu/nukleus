@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
 import classNames from 'classnames';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import Button from '../Button';
 
 import styles from './index.scss';
@@ -67,7 +70,7 @@ export default class Modal extends React.Component {
     this.setState({isOpen: true});
   }
 
-  renderFooter () {
+  renderFooter (theme) {
     const {
       actionText,
       cancelText,
@@ -75,7 +78,7 @@ export default class Modal extends React.Component {
 
     if (actionText || cancelText) {
       return (
-        <footer className={styles.modalFooter}>
+        <footer className={theme(modalFooter)}>
           {actionText && (
           <Button
             htmlType="button"
@@ -119,62 +122,61 @@ export default class Modal extends React.Component {
     };
 
     return (
-      open ? (
-        <AriaModal
-          {...overrideProps}
-          onExit={this.onExit}
-          underlayClass={
-            classNames(
-              styles.underlay,
-              {[styles.underlayHasEntered]: isOpen},
-            )
-          }
-          onEnter={this.onEnter}
-        >
-          <section className={
-            classNames(
-              styles.modal,
-              {[styles.isOpen]: isOpen},
-            )}
-          >
-            <header className={styles.modalHeader}>
-              <h1
-                id={titleId}
-                className={styles.modalTitle}
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+
+          return (
+            open ? (
+              <AriaModal
+                {...overrideProps}
+                onExit={this.onExit}
+                underlayClass={theme('underlay', `${isOpen ? 'underlayHasEntered' : ''}`)}
+                onEnter={this.onEnter}
               >
-                {titleText}
-              </h1>
-              <button
-                className={styles.closeButton}
-                id="nukleus-modal-close"
-                onClick={this.onExit}
-                title={closeText}
-                type="button"
-              >
-                <span role="presentation">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={styles.closeIcon}
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    xmlSpace="preserve"
-                    version="1.1"
-                    width="100%"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M9,7 L9,3.55271368e-15 L7,3.55271368e-15 L7,7 L7.10542736e-15,7 L7.10542736e-15,9 L7,9 L7,16 L9,16 L9,9 L16,9 L16,7 L9,7 Z"
-                      transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) "
-                    />
-                  </svg>
-                </span>
-              </button>
-            </header>
-            <div className={styles.modalBody}>{children}</div>
-            {this.renderFooter()}
-          </section>
-        </AriaModal>
-      ) : null
+                <section className={theme('modal', `${isOpen ? 'modalIsOpen' : ''}`)}
+                >
+                  <header className={theme('modalHeader')}>
+                    <h1
+                      id={titleId}
+                      className={theme('modalTitle')}
+                    >
+                      {titleText}
+                    </h1>
+                    <button
+                      className={theme('modalCloseButton')}
+                      id="nukleus-modal-close"
+                      onClick={this.onExit}
+                      title={closeText}
+                      type="button"
+                    >
+                      <span role="presentation">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={theme('modalCloseIcon')}
+                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                          xmlSpace="preserve"
+                          version="1.1"
+                          width="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M9,7 L9,3.55271368e-15 L7,3.55271368e-15 L7,7 L7.10542736e-15,7 L7.10542736e-15,9 L7,9 L7,16 L9,16 L9,9 L16,9 L16,7 L9,7 Z"
+                            transform="translate(8.000000, 8.000000) rotate(-45.000000) translate(-8.000000, -8.000000) "
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </header>
+                  <div className={theme('modalBody')}>{children}</div>
+                  {this.renderFooter(theme)}
+                </section>
+              </AriaModal>
+            ) : null
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

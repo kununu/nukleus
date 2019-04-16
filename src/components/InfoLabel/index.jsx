@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  controlNote,
-} from '../index.scss';
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
+import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
 
@@ -13,18 +14,26 @@ const InfoLabel = ({
   maxLength,
   requiredLabel,
 }) => {
-  if (requiredLabel && (!displayLength || (!inputValue || inputValue.trim() === ''))) {
-    return (<span className={`${controlNote} ${styles.label}`}>{requiredLabel}</span>);
-  }
+  return (
+    <ThemeContext.Consumer>
+      {(context) => {
+        const theme = themeable({...sharedStyles, ...styles, ...context});
 
-  // Show requiredLabel if available and user hasn't typed any inputValues
-  return displayLength ? (
-    <span className={`${controlNote} ${styles.label}`}>
-      <strong>{inputValue.length}</strong>
-      /
-      {maxLength}
-    </span>
-  ) : null;
+        if (requiredLabel && (!displayLength || (!inputValue || inputValue.trim() === ''))) {
+          return (<span className={theme('controlNote', 'infoLabel')}>{requiredLabel}</span>);
+        }
+    
+        // Show requiredLabel if available and user hasn't typed any inputValues
+        return displayLength ? (
+          <span className={theme('controlNote', 'infoLabel')}>
+            <strong>{inputValue.length}</strong>
+            /
+            {maxLength}
+          </span>
+        ) : null;
+      }}
+    </ThemeContext.Consumer>
+  )
 };
 
 InfoLabel.propTypes = {

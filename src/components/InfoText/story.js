@@ -7,7 +7,10 @@ import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import TextField from '../TextField';
 
+import ThemeProvider from '../ThemeProvider';
+
 import InfoText from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('InfoText', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -27,4 +30,19 @@ storiesOf('InfoText', module)
         />
       </div>
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <TextField
+        id="text-field"
+        label="TextField"
+        name="text-field"
+      />
+
+      <div>
+        <InfoText
+          text={text('text', 'I am an info text.')}
+        />
+      </div>
+    </ThemeProvider>
   ));

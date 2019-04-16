@@ -7,7 +7,10 @@ import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Button from '../Button';
 
+import ThemeProvider from '../ThemeProvider';
+
 import Modal from './index';
+import customTheme from './customTheme.scss';
 
 class ModalExample extends Component {
   constructor (props) {
@@ -52,4 +55,9 @@ storiesOf('Modal', module)
   .addDecorator((story, context) => withInfo('The modal component! You can wrap any children components that you like in this fabulous modal.')(story)(context))
   .add('basics', () => (
     <ModalExample />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <ModalExample />
+    </ThemeProvider>
   ));

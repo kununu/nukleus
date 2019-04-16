@@ -139,7 +139,6 @@ storiesOf('ThemeProvider', module)
       </p>
 
       <br />
-      <br />
 
       <h4>Custom DropDown Styles</h4>
       <p>
@@ -153,7 +152,6 @@ storiesOf('ThemeProvider', module)
       </p>
 
       <br />
-      <br />
 
       <h4>Custom Error Styles</h4>
       <p>
@@ -162,11 +160,61 @@ storiesOf('ThemeProvider', module)
       </p>
 
       <br />
-      <br />
 
       <h4>Custom InfoBox Styles</h4>
       <p>
         <code>.infoBox</code> - Used for all styles<br/>
       </p>
+
+      <br />
+
+      <h4>Custom InfoLabel Styles</h4>
+      <p>
+        <code>.infoLabel</code> - Used for all styles<br/>
+      </p>
+
+      <br />
+
+      <h4>Custom InfoText Styles</h4>
+      <p>
+        <code>.infoText</code> - Used for all styles<br/>
+      </p>
+
+      <br />
+      
+      <h4>Custom Label Styles</h4>
+
+      <small>* It only relies on the shared controlLabel and srOnly styles</small>
+      <br />
+
+      <h4>Custom Modal Styles</h4>
+      <p>
+        <code>.underlay</code> - Styles that are passed to the Aria Modal component - used to animate the underlay.<br/>
+        <code>.underlayHasEntered</code> - Styles that are passed to the Aria Modal component. They style how the background should appear when modal is open.<br/>
+        <code>.modal</code> - Used to style the Modal container<br/>
+        <code>.modalIsOpen</code> - Used to animate the modal (Should be included if you use .modal<br/>
+        <code>.modalHeader</code> - Used to style modal header section<br/>
+        <code>.modalTitle</code> - Used to style the modal title<br/>
+        <code>.modalCloseButton</code> - Used to style the top right button<br/>
+        <code>.modalCloseIcon</code> - Used to style the top right button SVG to close the modal<br/>
+        <code>.modalBody</code> - Used to style the modal body section<br/>
+        <code>.modalFooter</code> - Used to style the footer section of the modal<br/>
+      </p>
+
+      <br />
+
+      <h4>Custom MultipleChoice Styles</h4>
+      <p>
+        <code>.choiceContainer</code> - Used to style the main outer container.<br/>
+        <code>.buttons</code> - Used to style secondary button styles (User prop inputStyle)<br/>
+        <code>.inline</code> - Used to style primary inline button styles (User prop inputStyle)<br/>
+        <code>.inlineLabel</code> - Used to add extra styles to the label when inline inputStyle is present<br/>
+        <code>.choiceInnerContainer</code> - Used to style the inner container<br/>
+        <code>.choice</code> - Used to style each choice block that wraps around the checkbox field<br/>
+      </p>
+
+      <small>* It also relies on the shared formGroup, formControl, controlNote and controlLabelRequired styles</small>
+
+      <br />
     </div>
   ));
