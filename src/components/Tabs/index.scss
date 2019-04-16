@@ -19,13 +19,11 @@
   }
 }
 
-.pointerDisabled {
+.tabPointerDisabled {
   pointer-events: none;
 }
 
 .defaultTabs {
-  @extend .tabs;
-
   .tabItem {
     @media (min-width: $screen-sm-min) {
       padding-right: 20px;
@@ -40,7 +38,7 @@
   display: block;
   text-decoration: none;
 
-  &.active {
+  &.tabActive {
     border-bottom: 2px solid $blue;
     color: $gray-base-90;
   }
@@ -50,7 +48,7 @@
   }
 }
 
-.active {
+.tabActive {
   .tabLink {
     font-weight: $font-weight-semibold;
     color: $text-color;
@@ -59,7 +57,6 @@
 }
 
 .blockTabs {
-  @extend .tabs;
   border-bottom: 0;
 
   @media (max-width: $screen-sm-min) {
@@ -97,7 +94,7 @@
     display: block;
     text-decoration: none;
 
-    &.active {
+    &.tabActive {
       border-top: 4px solid $blue;
       padding-top: 10px;
       border-bottom: 0;
@@ -113,7 +110,7 @@
       font-size: $font-size-base;
       padding: 17px 25px;
 
-      &.active {
+      &.tabActive {
         padding-top: 17px;
         border-top: 1px solid $gray-base-20;
         border-bottom: 1px solid $white;

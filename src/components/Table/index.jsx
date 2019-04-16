@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import IconCaretUp from '@kununu/kununu-icons/dist/CaretUp';
 import IconCaretDown from '@kununu/kununu-icons/dist/CaretDown';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 // Polyfill for ie11 which doesn't support
@@ -102,32 +105,32 @@ class Table extends Component {
    If the column is sortable the carets
    are added.
    */
-  renderSortable = ({sortable, accessor}, idx) => {
+  renderSortable = ({sortable, accessor}, idx, theme) => {
     if (!sortable) return '';
 
     return (
-      <div className={styles.sorting}>
+      <div className={theme('tableSortingContainer')}>
         <button
-          className={styles.sortingButton}
+          className={theme('tableSortingButton')}
           id="button-asc"
           key={`${idx}-asc`}
           onClick={() => this.handleSorting(accessor, 1)}
           type="button"
         >
           <IconCaretUp
-            className={styles.sortingArrowIcon}
+            className={theme('tableSortingArrowIcon')}
             ariaHidden
           />
         </button>
         <button
-          className={styles.sortingButton}
+          className={theme('tableSortingButton')}
           id="button-desc"
           key={`${idx}-desc`}
           onClick={() => this.handleSorting(accessor, -1)}
           type="button"
         >
           <IconCaretDown
-            className={styles.sortingArrowIcon}
+            className={theme('tableSortingArrowIcon')}
             ariaHidden
           />
         </button>
@@ -142,18 +145,18 @@ class Table extends Component {
    is sortable it will add a caret with the
    sorting functionality.
    */
-  renderHeaders = () => {
+  renderHeaders = (theme) => {
     const {columns} = this.props;
 
     // Map over columns and output
     // header value
     return columns.map((column, idx) => (
       <th key={`column-${idx}`}>
-        <div className={styles.sortingContainer}>
-          <div className={styles.sortingTitle}>
+        <div className={theme('tableHeaderContainer')}>
+          <div className={theme('tableHeader')}>
             {column.header}
           </div>
-          {this.renderSortable(column, idx)}
+          {this.renderSortable(column, idx, theme)}
         </div>
       </th>
     ));
@@ -199,16 +202,24 @@ class Table extends Component {
 
   render () {
     return (
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            {this.renderHeaders()}
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderBody()}
-        </tbody>
-      </table>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+
+          return (
+            <table className={theme('table')}>
+              <thead>
+                <tr>
+                  {this.renderHeaders(theme)}
+                </tr>
+              </thead>
+              <tbody>
+                {this.renderBody()}
+              </tbody>
+            </table>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

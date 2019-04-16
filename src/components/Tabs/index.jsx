@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import {clearfix} from '../index.scss';
 
 import styles from './index.scss';
@@ -20,22 +23,18 @@ export default class Tabs extends React.Component {
     theme: 'default',
   };
 
-  getNewProps (item) {
+  getNewProps (item, theme) {
     const {props} = item;
     const {hash: rootHash, pathname} = this.props;
     const itemHash = props.to && props.to.hash ? props.to.hash : '';
 
     // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
-    const localPathname = props.href || props.path || (props.to && props.to.pathname);
+    const localPathname = `${props.href || props.path || (props.to && props.to.pathname)}${itemHash}`;
+    const actualPathname = `${pathname}${rootHash}`;
+    const isActive = localPathname === actualPathname;
 
     return {
-      className: classNames(
-        props.className,
-        styles.tabLink,
-        {
-          [styles.active]: `${localPathname}${itemHash}` === `${pathname}${rootHash}`,
-        },
-      ),
+      className: theme(props.className, 'tabLink', `${isActive && 'tabActive'}`),
     };
   }
 
@@ -45,19 +44,23 @@ export default class Tabs extends React.Component {
     const styleName = `${theme}Tabs`;
 
     return (
-      <ul className={`${styles[styleName]} ${clearfix}`}>
-        {items.map((item, key) => (
-          <li
-            key={key} // eslint-disable-line react/no-array-index-key
-            className={classNames(
-              styles.tabItem,
-              {[styles.pointerDisabled]: items.length <= 1},
-            )}
-          >
-            {React.cloneElement(item, this.getNewProps(item))}
-          </li>
-        ))}
-      </ul>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+
+          return (
+            <ul className={theme('clearfix', 'tabs', styleName)}>
+              {items.map((item, key) => (
+                <li
+                key={key} // eslint-disable-line react/no-array-index-key
+                className={theme('tabItem', `${items.length <= 1 ? 'tabPointerDisabled' : ''}`)}>
+                  {React.cloneElement(item, this.getNewProps(item, theme))}
+                </li>
+              ))}
+            </ul>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

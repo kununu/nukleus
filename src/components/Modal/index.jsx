@@ -78,7 +78,7 @@ export default class Modal extends React.Component {
 
     if (actionText || cancelText) {
       return (
-        <footer className={theme(modalFooter)}>
+        <footer className={theme('modalFooter')}>
           {actionText && (
           <Button
             htmlType="button"

@@ -216,5 +216,80 @@ storiesOf('ThemeProvider', module)
       <small>* It also relies on the shared formGroup, formControl, controlNote and controlLabelRequired styles</small>
 
       <br />
+
+      <h4>Custom Notification Styles</h4>
+      <p>
+        <code>.notificationContainer</code> - Used to style the main outer container.<br/>
+        <code>.notificationContainer.visible.hidden</code> - Used to style hidden or visible states<br/>
+        <code>.notificationError</code> - If prop type is equal to error this will be added to the container<br/>
+        <code>.notificationCloseButton</code> - Used to style primary inline button styles (User prop inputStyle)<br/>
+        <code>.notificationIcon</code> - Used to style notification icon<br/>
+        <code>.choice</code> - Used to style each choice block that wraps around the checkbox field<br/>
+      </p>
+
+      <br />
+
+      <h4>Custom Paginator Styles</h4>
+      <p>
+        <code>.paginator</code> - Used to style the main outer container.<br/>
+        <code>.paginatorList</code> - Used to style hidden or visible states<br/>
+        <code>.pageActive</code> - If prop type is equal to error this will be added to the container<br/>
+        <code>.pageDisabled</code> - Used to style primary inline button styles (User prop inputStyle)<br/>
+      </p>
+      
+      <br />
+
+      <h4>Custom Select Styles</h4>
+      <p>
+        <code>.selectContainer</code> - Used to style the main outer container.<br/>
+        <code>.innerSelectContainer</code> - Used to the inner container<br/>
+        <code>.select</code> - Used to style select field<br/>
+        <code>.selectCaret</code> - Used to style custom select caret<br/>
+      </p>
+
+      <small>* It also relies on the shared formGroup, formControl, formControlError, inline, selectContainer, paddingTop, controlNote, controlLabelRequired, controlLabelError styles</small>
+      
+      <br />
+
+      <h4>Custom Stars Styles</h4>
+      <p>
+        <code>.starsContainer</code> - Used to style the stars container<br/>
+        <code>.starsStatic</code> - Used to add custom style for unselectable stars (User prop selectable)<br/>
+        <code>.starsRow</code> - Used to style the inner container<br/>
+        <code>.starsGroup</code> - Used to style the wrapper around the individual star<br/>
+        <code>.starsGroupHidden</code> - This class is added to the 0 index star to hide it if you like<br/>
+        <code>.starInputHidden</code> - If the stars are selectable this class is added to hide the added inputs<br/>
+        <code>.star</code> - Used to style the main star svg<br/>
+        <code>.starPath</code> - Used to style the svg path<br/>
+        <code>.starFill</code> - Used to style a selected star path<br/>
+        <code>.ratingStar</code> - Applied to the star component when it is selectable<br/>
+      </p>
+
+      <br />
+
+      <h4>Custom Table Styles</h4>
+      <p>
+        <code>.table</code> - Used to style the table<br/>
+        <code>.tableHeaderContainer</code> - Used to style the table header container<br/>
+        <code>.tableHeader</code> - Used to style table header<br/>
+        <code>.tableSortingContainer</code> - Used to style sorting container<br/>
+        <code>.tableSortingButton</code> - Used to style the sorting buttons<br/>
+        <code>.tableSortingArrowIcon</code> - Used to style the sorting icons<br/>
+      </p>
+
+      <br />
+
+      <h4>Custom Tabs Styles</h4>
+      <p>
+        <code>.tabs</code> - Used for tab base styles<br/>
+        <code>.defaultTabs</code> - Used to style default tab type<br/>
+        <code>.blockTabs</code> - Used to style block tab type<br/>
+        <code>.tabItem</code> - Used to style the tab item<br/>
+        <code>.tabPointerDisabled</code> - Applied to tabItem if there is less than two pages<br/>
+        <code>.tabActive</code> - Used to style the active tab<br/>
+        <code>.tabLink</code> - Used to style the link component passed to the item<br/>
+      </p>
+
+      <br />
     </div>
   ));

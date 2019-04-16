@@ -4,6 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 export default class Paginator extends React.Component {
@@ -86,30 +89,38 @@ export default class Paginator extends React.Component {
     const nextPage = currentPage !== totalPages ? currentPage + 1 : currentPage;
 
     return (
-      <div className={styles.paginator}>
-        <ul
-          className={styles.paginatorList}
-          role="navigation"
-          aria-label="Pagination"
-        >
-          <li className={(totalPages === 1 || !currentPage || currentPage === 1) ? styles.disabled : undefined}>
-            {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
-          </li>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
 
-          {totalPagesArray.map(item => (
-            <li
-              key={item}
-              className={currentPage === item ? styles.active : undefined}
-            >
-              {React.cloneElement(baseLink, this.getNewProps(item), item)}
-            </li>
-          ))}
+          return (
+            <div className={theme('paginator')}>
+              <ul
+                className={theme('paginatorList')}
+                role="navigation"
+                aria-label="Pagination"
+              >
+                <li className={(totalPages === 1 || !currentPage || currentPage === 1) ? theme('pageDisabled') : undefined}>
+                  {React.cloneElement(baseLink, this.getNewProps(previousPage), '<')}
+                </li>
 
-          <li className={currentPage === totalPages ? styles.disabled : undefined}>
-            {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
-          </li>
-        </ul>
-      </div>
+                {totalPagesArray.map(item => (
+                  <li
+                    key={item}
+                    className={currentPage === item ? theme('pageActive') : undefined}
+                  >
+                    {React.cloneElement(baseLink, this.getNewProps(item), item)}
+                  </li>
+                ))}
+
+                <li className={currentPage === totalPages ? theme('pageDisabled') : undefined}>
+                  {React.cloneElement(baseLink, this.getNewProps(nextPage), '>')}
+                </li>
+              </ul>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

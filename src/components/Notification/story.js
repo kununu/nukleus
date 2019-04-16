@@ -6,7 +6,10 @@ import {withInfo} from '@storybook/addon-info';
 import {action} from '@storybook/addon-actions';
 import {withKnobs, text, number} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
 import Notification from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('Notification', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -38,4 +41,14 @@ storiesOf('Notification', module)
       icon={<i className="fa fa-check" />}
       visible
     />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <Notification
+        onClose={action('onClose')}
+        message={text('message', 'Hi, I am a success notification box')}
+        icon={<i className="fa fa-check" />}
+        visible
+      />
+    </ThemeProvider>
   ));

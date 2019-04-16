@@ -1,11 +1,5 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.hiddenInput {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
 .starsContainer {
   width: 100%;
   display: table;
@@ -17,8 +11,12 @@
   }
 }
 
-.staticStars {
+.starsStatic {
   max-width: 90px;
+}
+
+.starsStatic .starsGroup {
+  padding: 0 2px;
 }
 
 .starsRow {
@@ -30,16 +28,47 @@
   padding: 0 10px;
 }
 
-.hideStarGroup {
+.starsGroupHidden {
   display: table-cell;
   width: 0;
 }
 
-.staticStars .starsGroup {
-  padding: 0 2px;
+.starInputHidden {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+
+  &:focus + label,
+  &checked + label {
+    .star {
+      @supports (display: flex) {
+        animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
+      }
+  
+      &:hover {
+        transform: none;
+      }
+    }
+  }
 }
 
-.path {
+.star {
+  transform: scale(1);
+  width: 100%;
+  height: 30px;
+  fill-opacity: 1;
+
+  @supports (display: flex) {
+    height: auto;
+    max-height: 100%;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    height: 50px;
+  }
+}
+
+.starPath {
   stroke-linejoin: round;
   stroke-width: 35px;
 }
@@ -57,45 +86,16 @@
     }
   }
 
-  .path {
+  .starPath {
     fill-opacity: 0;
     transition: all .2s ease;
     stroke-width: 30px;
 
-    &.fill {
+    &.starFill {
       fill-opacity: 1;
     }
   }
 }
-
-.star {
-  transform: scale(1);
-  width: 100%;
-  height: 30px;
-
-  @supports (display: flex) {
-    height: auto;
-    max-height: 100%;
-  }
-
-  @media (max-width: $screen-xs-max) {
-    height: 50px;
-  }
-}
-
-.hiddenInput:focus + label,
-.hiddenInput:checked + label {
-  .star {
-    @supports (display: flex) {
-      animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
-    }
-
-    &:hover {
-      transform: none;
-    }
-  }
-}
-
 
 @keyframes pulse {
   0% {

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 export default class Notification extends React.Component {
@@ -129,34 +132,38 @@ export default class Notification extends React.Component {
     }
 
     return (
-      <div
-        className={`
-          ${styles.container}
-          ${styles[visible ? 'visible' : 'hidden']}
-          ${this.isError() && styles.error}
-        `}
-      >
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
 
-        <p>
-          {closeMethod === 'onClick' && (
-          <button
-            className={styles.closeButton}
-            onClick={this.onClickClose}
-            type="button"
-          >
-            {closeIcon}
-          </button>
-          )}
+          return (
+            <div
+              className={theme('notificationContainer', `${visible ? 'visible' : 'hidden'}`, `${this.isError() ? 'notificationError' : ''}`)}                
+            >
 
-          {icon && (
-          <span className={styles[type]}>
-            {icon}
-          </span>
-          )}
+              <p>
+                {closeMethod === 'onClick' && (
+                <button
+                  className={theme('notificationCloseButton')}
+                  onClick={this.onClickClose}
+                  type="button"
+                >
+                  {closeIcon}
+                </button>
+                )}
 
-          {message}
-        </p>
-      </div>
+                {icon && (
+                <span className={theme('notificationIcon')}>
+                  {icon}
+                </span>
+                )}
+
+                {message}
+              </p>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

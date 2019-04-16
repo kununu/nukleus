@@ -4,7 +4,10 @@ import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 
+import ThemeProvider from '../ThemeProvider';
+
 import Table from './index';
+import customTheme from './customTheme.scss';
 
 storiesOf('Table', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -58,4 +61,56 @@ storiesOf('Table', module)
         },
       ]}
     />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <Table
+        dataRows={[
+          {
+            age: 11,
+            color: 'red',
+            name: 'Joe',
+          },
+          {
+            age: 20,
+            color: 'blue',
+            name: 'Merry',
+          },
+          {
+            age: 24,
+            color: 'green',
+            name: 'Paul',
+          },
+        ]}
+        columns={[
+          {
+            accessor: 'name',
+            header: 'Name',
+            sortable: true,
+          },
+          {
+            accessor: 'age',
+            header: 'Age',
+            sortable: false,
+          },
+          {
+            accessor: 'color',
+            cell: (val, item) => (
+              <>
+                <span style={{color: 'red'}}>
+                  custom cell:
+                  {val}
+                </span>
+                <br />
+                <span>
+                  {item.name}
+                </span>
+              </>
+            ),
+            header: 'Fav color',
+            sortable: true,
+          },
+        ]}
+      />
+    </ThemeProvider>
   ));

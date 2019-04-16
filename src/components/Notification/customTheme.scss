@@ -5,9 +5,8 @@
   padding: 20px;
   height: auto;
   min-height: 80px;
-  background-color: $teal;
-  border-radius: $border-radius-large;
-  border: 1px solid $teal-dark;
+  background-color: $green;
+  border-radius: 10px;
   position: fixed;
   left: 20px;
   z-index: 1060;
@@ -27,13 +26,9 @@
   }
 
   p {
-    color: $gray-base-30;
+    color: $white;
     margin-bottom: 6px;
     margin-top: $baseline-grid;
-  }
-
-  .notificationIcon {
-    color: $green;
   }
 }
 
@@ -47,32 +42,14 @@
   outline: 0;
 
   svg {
-    fill: $gray-base-30;
+    fill: $white;
     width: 16px;
     height: 16px;
   }
 }
 
-.notificationContainer.notificationError {
-  background-color: $brand-danger;
-  border-color: $red-dark;
-
-  p {
-    color: $white;
-    font-weight: $font-weight-semibold;
-  }
-
-  .notificationCloseButton {
-    color: $red-dark;
-  }
-
-  .notificationIcon {
-    color: $white;
-  }
-}
-
 .notificationContainer.visible {
-  animation-name: slideUp;
+  animation-name: slideRight;
   animation-duration: 1s;
   animation-fill-mode: both;
   opacity: 1;
@@ -84,7 +61,7 @@
   display: none;
 }
 
-@keyframes slideUp {
+@keyframes slideRight {
   0%,
   60%,
   75%,
@@ -95,22 +72,22 @@
 
   0% {
     opacity: 0;
-    transform: translateY(3000px);
+    transform: translateX(3000px);
   }
 
   60% {
-    transform: translateY(-20px);
+    transform: translateX(-20px);
   }
 
   75% {
-    transform: translateY(10px);
+    transform: translateX(10px);
   }
 
   90% {
-    transform: translateY(-5px);
+    transform: translateX(-5px);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }

@@ -9,28 +9,20 @@
     padding: 10px;
     vertical-align: bottom;
     font-weight: normal;
+    background: $gray-base-90;
+  }
 
-    span {
-      color: $gray-base-70;
-      text-align: left;
-      font-size: $font-size-small;
-      text-transform: uppercase;
+  tr {
+    border-bottom: 1px solid $gray-base-10;
+
+    &:hover {
+      background-color: $gray-base-10;
     }
   }
 
   td {
     border: 0;
     padding: 10px;
-  }
-
-  tbody {
-    tr:nth-of-type(odd) {
-      background-color: darken($gray-lightest, 1%);
-    }
-
-    tr:nth-of-type(even) {
-      border-bottom: 1px solid darken($gray-lightest, 1%);
-    }
   }
 
   @media (min-width: $screen-sm-min) {
@@ -42,20 +34,13 @@
 
 .tableHeaderContainer {
   position: relative;
-  color: $gray-base-70;
-  font-size: $font-size-small;
-  text-transform: uppercase;
-}
-
-.tableHeader {
-  text-align: left;
-  margin-right: 10px;
+  color: $white;
 }
 
 .tableSortingContainer {
   cursor: pointer;
   position: absolute;
-  right: -15px;
+  right: 0;
   bottom: 0;
 
   .tableSortingButton {
@@ -70,9 +55,9 @@
     display: inline;
 
     .tableSortingArrowIcon {
-      width: 8px;
-      height: 14px;
-      fill: $blue;
+      width: 15px;
+      height: 15px;
+      fill: $white;
     }
   }
 }
