@@ -6,7 +6,6 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import styles from './index.scss';
-
 export default class Button extends React.Component {
   static propTypes = {
     customTheme: PropTypes.string,
@@ -74,18 +73,18 @@ export default class Button extends React.Component {
       id,
     } = this.props;
 
-    const classes = classNames({ 
+    const classes = classNames({
       button: true,
-      fullWidth: fullWidth,
-      mobileFullWidth: mobileFullWidth,
-      outline: outline,
+      fullWidth,
+      mobileFullWidth,
+      outline,
       [type === 'custom' ? customTheme : type]: true,
-    }).split(' ')
+    }).split(' ');
 
     return (
       <ThemeContext.Consumer>
         {(context) => {
-          const theme = themeable({...styles, ...context})
+          const theme = themeable({...styles, ...context});
 
           const props = {
             className: theme(...classes),

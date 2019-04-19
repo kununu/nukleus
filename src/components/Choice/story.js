@@ -7,10 +7,12 @@ import {withInfo} from '@storybook/addon-info';
 import {
   withKnobs, text, boolean, number,
 } from '@storybook/addon-knobs/react';
+
 import ThemeProvider from '../ThemeProvider';
 
-import Choice from './index';
 import customTheme from './customTheme.scss';
+
+import Choice from './index';
 
 storiesOf('Choice', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -120,7 +122,7 @@ storiesOf('Choice', module)
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for choice</h3>
-      
+
       <Choice
         label={text('label', 'Choice')}
         labelHidden={boolean('labelHidden', false)}

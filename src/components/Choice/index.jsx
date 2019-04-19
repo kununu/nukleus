@@ -10,6 +10,7 @@ import Label from '../Label';
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
+
 export default class Choice extends React.Component {
   static propTypes = {
     checked: PropTypes.string,
@@ -183,8 +184,8 @@ export default class Choice extends React.Component {
             ...sharedStyles,
             ...styles,
             ...context,
-          }
-          const theme = themeable(allStyles)
+          };
+          const theme = themeable(allStyles);
 
           return (
             <div
@@ -198,7 +199,7 @@ export default class Choice extends React.Component {
               </span>
               )}
 
-              {label || heading ?
+              {label || heading ? (
                 <Label
                   htmlFor={heading}
                   value={label || heading}
@@ -206,7 +207,7 @@ export default class Choice extends React.Component {
                   classNames={theme(headingStyle)}
                   isTitle
                 />
-              : null}
+              ) : null}
 
               <div
                 className={theme('choiceContainer', `${options.length > 3 && optionsPerRow === null && 'choiceFlexible'}`)}

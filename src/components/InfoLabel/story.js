@@ -9,8 +9,9 @@ import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
 
-import InfoLabel from './index';
 import customTheme from './customTheme.scss';
+
+import InfoLabel from './index';
 
 const textInfo = 'The info label component! This tiny component is used to show additional info about a form field to the user. It can either show a required text or the character count. You can select this based on the displayLength true/false or with a requiredLabel string.';
 

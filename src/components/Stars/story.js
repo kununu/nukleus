@@ -8,8 +8,9 @@ import {withKnobs, number} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import Stars from './index';
 import customTheme from './customTheme.scss';
+
+import Stars from './index';
 
 storiesOf('Stars', module)
   .addDecorator(withOptions({...defaultOptions}))

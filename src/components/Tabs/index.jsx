@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import {clearfix} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
-
 
 export default class Tabs extends React.Component {
   static propTypes = {
@@ -40,20 +38,21 @@ export default class Tabs extends React.Component {
 
 
   render () {
-    const {items, theme} = this.props;
-    const styleName = `${theme}Tabs`;
+    const {items, theme: type} = this.props;
+    const styleName = `${type}Tabs`;
 
     return (
       <ThemeContext.Consumer>
         {(context) => {
-          const theme = themeable({...styles, ...context});
+          const theme = themeable({...sharedStyles, ...styles, ...context});
 
           return (
             <ul className={theme('clearfix', 'tabs', styleName)}>
               {items.map((item, key) => (
                 <li
-                key={key} // eslint-disable-line react/no-array-index-key
-                className={theme('tabItem', `${items.length <= 1 ? 'tabPointerDisabled' : ''}`)}>
+                  key={key} // eslint-disable-line react/no-array-index-key
+                  className={theme('tabItem', `${items.length <= 1 ? 'tabPointerDisabled' : ''}`)}
+                >
                   {React.cloneElement(item, this.getNewProps(item, theme))}
                 </li>
               ))}

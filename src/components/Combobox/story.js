@@ -7,10 +7,12 @@ import {withInfo} from '@storybook/addon-info';
 import {
   withKnobs, text, boolean, array,
 } from '@storybook/addon-knobs/react';
+
 import ThemeProvider from '../ThemeProvider';
 
-import Combobox from './index';
 import customTheme from './customTheme.scss';
+
+import Combobox from './index';
 
 storiesOf('Combobox', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -37,7 +39,7 @@ storiesOf('Combobox', module)
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for combobox</h3>
-      
+
       <Combobox
         handle={(
           <i

@@ -6,8 +6,9 @@ import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
 
-import Table from './index';
 import customTheme from './customTheme.scss';
+
+import Table from './index';
 
 storiesOf('Table', module)
   .addDecorator(withOptions({...defaultOptions}))

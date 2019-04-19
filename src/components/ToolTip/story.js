@@ -7,8 +7,9 @@ import {withKnobs, text, select} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import ToolTip from './index';
 import customTheme from './customTheme.scss';
+
+import ToolTip from './index';
 
 storiesOf('ToolTip', module)
   .addDecorator(withOptions({...defaultOptions}))

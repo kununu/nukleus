@@ -109,8 +109,8 @@ export default class InfoBox extends React.Component {
 
           return (
             <CustomTag
-            ref={(container) => { this.container = container; }}
-            className={theme('infoBox', [position])}
+              ref={(container) => { this.container = container; }}
+              className={theme('infoBox', [position])}
             >
               {content}
             </CustomTag>

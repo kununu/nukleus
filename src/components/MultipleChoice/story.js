@@ -7,8 +7,9 @@ import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
 
-import MultipleChoice from './index';
 import customTheme from './customTheme.scss';
+
+import MultipleChoice from './index';
 
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))

@@ -8,8 +8,9 @@ import {withKnobs, text, number} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import Notification from './index';
 import customTheme from './customTheme.scss';
+
+import Notification from './index';
 
 storiesOf('Notification', module)
   .addDecorator(withOptions({...defaultOptions}))

@@ -7,8 +7,9 @@ import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import ErrorComponent from './index';
 import customTheme from './customTheme.scss';
+
+import ErrorComponent from './index';
 
 storiesOf('Error', module)
   .addDecorator(withOptions({...defaultOptions}))

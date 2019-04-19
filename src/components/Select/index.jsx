@@ -199,7 +199,7 @@ export default class Select extends React.Component {
       title,
     } = this.props;
     const {value} = this.state;
-  
+
     const allOptions = (Object.keys(options).length && options) || items;
 
     const mappedOptions = Object.keys(allOptions)

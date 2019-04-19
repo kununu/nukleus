@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
+
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
@@ -8,8 +10,9 @@ import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import DatePicker from './index';
 import customTheme from './customTheme.scss';
+
+import DatePicker from './index';
 
 storiesOf('DatePicker', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -40,7 +43,7 @@ storiesOf('DatePicker', module)
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for datePicker</h3>
-      
+
       <DatePicker
         dateFormat={text('dateFormat', 'dd/MM/yyyy')}
         icon={<span>📅</span>}

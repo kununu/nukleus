@@ -11,8 +11,9 @@ import {
 
 import ThemeProvider from '../ThemeProvider';
 
-import TextField from './index';
 import customTheme from './customTheme.scss';
+
+import TextField from './index';
 
 const typeOptions = {
   Email: 'email',

@@ -6,11 +6,13 @@ import {action} from '@storybook/addon-actions';
 import {withMarkdownNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
+
 import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
 
 import Autocomplete from './index';
 
-import customTheme from './customTheme.scss';
 
 const staticData = {
   items: [
@@ -83,26 +85,26 @@ storiesOf('Autocomplete', module)
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for buttons</h3>
-      
+
       <p>
         Here is an example of an autocomplete with a custom theme.
       </p>
 
       <Autocomplete
-          inputStyle="block"
-          data={staticData}
-          id="autocompletes"
-          label={text('label', 'Autocomplete')}
-          name="autocomplete"
-          placeholder={text('placeholder', 'Type something...')}
-          isRequired
-          onSelectSuggestion={action('onSelectSuggestion')}
-          noSuggestionText={text('noSuggestionText', 'No results found')}
-          onFocus={action('onFocus')}
-          onBlur={action('onBlur')}
-          requiredLabel={text('requiredLabel', 'required')}
-          scrollOffset={70}
-          scrollTo
-        />
+        inputStyle="block"
+        data={staticData}
+        id="autocompletes"
+        label={text('label', 'Autocomplete')}
+        name="autocomplete"
+        placeholder={text('placeholder', 'Type something...')}
+        isRequired
+        onSelectSuggestion={action('onSelectSuggestion')}
+        noSuggestionText={text('noSuggestionText', 'No results found')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        requiredLabel={text('requiredLabel', 'required')}
+        scrollOffset={70}
+        scrollTo
+      />
     </ThemeProvider>
   ));

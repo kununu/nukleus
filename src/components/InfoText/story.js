@@ -6,11 +6,11 @@ import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import TextField from '../TextField';
-
 import ThemeProvider from '../ThemeProvider';
 
-import InfoText from './index';
 import customTheme from './customTheme.scss';
+
+import InfoText from './index';
 
 storiesOf('InfoText', module)
   .addDecorator(withOptions({...defaultOptions}))

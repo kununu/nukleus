@@ -6,8 +6,9 @@ import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
 
-import Tabs from './index';
 import customTheme from './customTheme.scss';
+
+import Tabs from './index';
 
 function updateUrl (e, path) {
   e.preventDefault();

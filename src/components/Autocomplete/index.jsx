@@ -194,6 +194,8 @@ export default class Autocomplete extends React.Component {
     if (labelHidden) classNames.push('hidden');
 
     if (this.hasError()) classNames.push('controlLabelError');
+
+    return classNames;
   }
 
   getSuggestions = (value) => {
@@ -359,7 +361,7 @@ export default class Autocomplete extends React.Component {
             ...sharedStyles,
             ...styles,
             ...context,
-          }
+          };
 
           const theme = themeable(allStyles);
 
@@ -386,7 +388,7 @@ export default class Autocomplete extends React.Component {
           return (
             <div
               ref={(node) => { this.node = node; }}
-              className={theme('formGroup',  inputStyle)}
+              className={theme('formGroup', inputStyle)}
               id={`${name}-container`}
             >
 
@@ -403,7 +405,7 @@ export default class Autocomplete extends React.Component {
               )}
 
               <label
-                className={theme(this.labelClassNames)}
+                className={theme(...this.labelClassNames)}
                 htmlFor={id}
               >
                 {label}

@@ -6,6 +6,7 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import styles from './index.scss';
+
 export default class DropDown extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
@@ -127,7 +128,7 @@ export default class DropDown extends Component {
               </ul>
               )}
             </div>
-          )
+          );
         }}
       </ThemeContext.Consumer>
     );

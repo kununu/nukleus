@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
-import classNames from 'classnames';
 
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
@@ -134,8 +133,7 @@ export default class Modal extends React.Component {
                 underlayClass={theme('underlay', `${isOpen ? 'underlayHasEntered' : ''}`)}
                 onEnter={this.onEnter}
               >
-                <section className={theme('modal', `${isOpen ? 'modalIsOpen' : ''}`)}
-                >
+                <section className={theme('modal', `${isOpen ? 'modalIsOpen' : ''}`)}>
                   <header className={theme('modalHeader')}>
                     <h1
                       id={titleId}

@@ -5,7 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {queryParamsToObject} from 'utils/params';
-
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
@@ -219,7 +218,7 @@ export default class TextField extends React.Component {
 
     if (requiredLabel || displayLength) classNames.push('paddingTop');
 
-    return classNames
+    return classNames;
   }
 
   getItem = ({props: {children}}) => {
@@ -262,7 +261,7 @@ export default class TextField extends React.Component {
       requiredLabel,
       value,
     } = this.props;
-    const flexStyles = (maxLength || requiredLabel) ? 'textFieldLabelFlex': '';
+    const flexStyles = (maxLength || requiredLabel) ? 'textFieldLabelFlex' : '';
 
     if (typeof label === 'string') {
       return (

@@ -120,7 +120,6 @@ export default class Notification extends React.Component {
       duration,
       icon,
       message,
-      type,
     } = this.props;
 
     const {visible} = this.state;
@@ -138,7 +137,7 @@ export default class Notification extends React.Component {
 
           return (
             <div
-              className={theme('notificationContainer', `${visible ? 'visible' : 'hidden'}`, `${this.isError() ? 'notificationError' : ''}`)}                
+              className={theme('notificationContainer', `${visible ? 'visible' : 'hidden'}`, `${this.isError() ? 'notificationError' : ''}`)}
             >
 
               <p>

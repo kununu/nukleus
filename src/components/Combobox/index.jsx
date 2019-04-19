@@ -7,7 +7,6 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import Error from '../Error';
-
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
@@ -182,8 +181,8 @@ export default class ComboboxComponent extends React.Component {
             ...sharedStyles,
             ...styles,
             ...context,
-          }
-          const theme = themeable(allStyles)
+          };
+          const theme = themeable(allStyles);
 
           return (
             <div

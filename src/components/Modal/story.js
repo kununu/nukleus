@@ -6,11 +6,11 @@ import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Button from '../Button';
-
 import ThemeProvider from '../ThemeProvider';
 
-import Modal from './index';
 import customTheme from './customTheme.scss';
+
+import Modal from './index';
 
 class ModalExample extends Component {
   constructor (props) {

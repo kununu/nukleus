@@ -7,8 +7,9 @@ import {withKnobs, number} from '@storybook/addon-knobs/react';
 
 import ThemeProvider from '../ThemeProvider';
 
-import Paginator from './index';
 import customTheme from './customTheme.scss';
+
+import Paginator from './index';
 
 storiesOf('Paginator', module)
   .addDecorator(withOptions({...defaultOptions}))

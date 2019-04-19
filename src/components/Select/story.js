@@ -10,8 +10,9 @@ import {
 
 import ThemeProvider from '../ThemeProvider';
 
-import Select from './index';
 import customTheme from './customTheme.scss';
+
+import Select from './index';
 
 storiesOf('Select', module)
   .addDecorator(withOptions({...defaultOptions}))

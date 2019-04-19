@@ -7,8 +7,9 @@ import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
 
-import InfoBox from './index';
 import customTheme from './customTheme.scss';
+
+import InfoBox from './index';
 
 storiesOf('InfoBox', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -80,4 +81,3 @@ storiesOf('InfoBox', module)
       </div>
     </ThemeProvider>
   ));
-

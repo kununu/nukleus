@@ -5,6 +5,7 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import sharedStyles from '../index.scss';
+
 import styles from './index.scss';
 
 export default function Label ({
@@ -17,7 +18,7 @@ export default function Label ({
   return (
     <ThemeContext.Consumer>
       {(context) => {
-        const theme = themeable({...sharedStyles, ...styles, ...context})
+        const theme = themeable({...sharedStyles, ...styles, ...context});
         const hidden = labelHidden ? 'srOnly' : '';
         const allClassNames = `${classNames} controlLabel ${hidden}`.split(' ');
 
@@ -39,8 +40,8 @@ export default function Label ({
         if (typeof value === 'string') {
           return (
             <label
-            htmlFor={id}
-            className={theme(...allClassNames)}
+              htmlFor={id}
+              className={theme(...allClassNames)}
             >
               {value}
             </label>

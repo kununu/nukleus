@@ -13,8 +13,8 @@ const Error = ({info, subInfo, id}) => (
 
       return (
         <span
-        className={theme('errorContainer')}
-        id={id}
+          className={theme('errorContainer')}
+          id={id}
         >
           <strong className={theme('errorInfo')}>{info}</strong>
           {subInfo}

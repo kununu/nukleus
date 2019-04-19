@@ -4,6 +4,7 @@ import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs} from '@storybook/addon-knobs/react';
+
 import ThemeProvider from '../ThemeProvider';
 
 import styles from './storyStyles.scss';

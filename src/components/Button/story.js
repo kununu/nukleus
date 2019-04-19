@@ -5,10 +5,12 @@ import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text, boolean} from '@storybook/addon-knobs/react';
+
 import ThemeProvider from '../ThemeProvider';
 
-import Button from './index';
 import customTheme from './customTheme.scss';
+
+import Button from './index';
 
 storiesOf('Button', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -132,7 +134,7 @@ storiesOf('Button', module)
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for buttons</h3>
-      
+
       <Button
         type="primary"
         disabled={boolean('disabled', false)}

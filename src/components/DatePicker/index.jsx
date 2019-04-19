@@ -202,7 +202,7 @@ export default class DatePickerComponent extends React.Component {
             ...sharedStyles,
             ...styles,
             ...context,
-          }
+          };
           const theme = themeable(allStyles);
 
           return (

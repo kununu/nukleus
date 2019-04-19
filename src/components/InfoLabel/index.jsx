@@ -13,28 +13,26 @@ const InfoLabel = ({
   inputValue,
   maxLength,
   requiredLabel,
-}) => {
-  return (
-    <ThemeContext.Consumer>
-      {(context) => {
-        const theme = themeable({...sharedStyles, ...styles, ...context});
+}) => (
+  <ThemeContext.Consumer>
+    {(context) => {
+      const theme = themeable({...sharedStyles, ...styles, ...context});
 
-        if (requiredLabel && (!displayLength || (!inputValue || inputValue.trim() === ''))) {
-          return (<span className={theme('controlNote', 'infoLabel')}>{requiredLabel}</span>);
-        }
-    
-        // Show requiredLabel if available and user hasn't typed any inputValues
-        return displayLength ? (
-          <span className={theme('controlNote', 'infoLabel')}>
-            <strong>{inputValue.length}</strong>
+      if (requiredLabel && (!displayLength || (!inputValue || inputValue.trim() === ''))) {
+        return (<span className={theme('controlNote', 'infoLabel')}>{requiredLabel}</span>);
+      }
+
+      // Show requiredLabel if available and user hasn't typed any inputValues
+      return displayLength ? (
+        <span className={theme('controlNote', 'infoLabel')}>
+          <strong>{inputValue.length}</strong>
             /
-            {maxLength}
-          </span>
-        ) : null;
-      }}
-    </ThemeContext.Consumer>
-  )
-};
+          {maxLength}
+        </span>
+      ) : null;
+    }}
+  </ThemeContext.Consumer>
+);
 
 InfoLabel.propTypes = {
   displayLength: PropTypes.bool,

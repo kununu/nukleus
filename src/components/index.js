@@ -1,4 +1,4 @@
-export ThemeProvider from "./ThemeProvider";
+export ThemeProvider from './ThemeProvider';
 export Autocomplete from './Autocomplete';
 export Button from './Button';
 export Choice from './Choice';
