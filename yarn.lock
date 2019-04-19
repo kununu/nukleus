@@ -1457,6 +1457,12 @@
   version "4.1.13"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.1.13.tgz#f919062bf1ffa9f90ab53138262e06d75e8f0d85"
 
+"@storybook/core-events@5.0.10":
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.0.10.tgz#6437f8b6a6c3c902fa2fbad8de992c5104115332"
+  dependencies:
+    core-js "^2.6.5"
+
 "@storybook/core@4.1.13":
   version "4.1.13"
   resolved "https://registry.yarnpkg.com/@storybook/core/-/core-4.1.13.tgz#a921d9c34a1feef09437603c510d03e3199fdcb4"
@@ -3476,7 +3482,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.5.7:
+core-js@^2.4.0, core-js@^2.5.7, core-js@^2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
