@@ -1,0 +1,179 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+$height: 30px;
+$thumb-height: 25px;
+$track-height: 5px;
+
+$upper-color: lighten($btn-secondary-bg, 40);
+$lower-color: $btn-secondary-bg;
+$thumb-color: $btn-secondary-bg;
+$thumb-hover-color: $btn-secondary-bg;
+
+$upper-background: linear-gradient(to top, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+
+// Webkit cannot style progress so we fake it with a long shadow on the thumb element
+@function webkit-slider-thumb-shadow($i: 1) {
+  $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+  @if $i == 1 {
+    @for $k from 2 through 2000 {
+      $val: #{$val}, webkit-slider-thumb-shadow($k);
+    }
+  }
+  @return $val;
+}
+
+@mixin thumb {
+  height: $thumb-height;
+  width: $thumb-height;
+  background: #fff;
+  border-radius: 100%;
+  border: 7px solid $thumb-color;
+}
+
+@mixin hover-effect {
+  transition: border .2s ease-in-out;
+  border-color: darken($thumb-color, 10);
+}
+
+.sliderWrapper {
+  label {
+    width: 100%;
+  }
+}
+
+.slider {
+  appearance: none; // NOSONAR
+  -webkit-appearance: none; // NOSONAR
+  overflow: hidden;
+  cursor: pointer;
+  height: 26px;
+  margin: 7px 0 10px 0;
+
+  // fix slider height on IE11
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    height: 74px;
+    margin-top: -8px;
+  }
+
+  &:focus {
+    position: relative;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      @include hover-effect;
+      background-color: $upper-color;
+    }
+
+    &::-moz-range-thumb {
+      @include hover-effect;
+      background-color: $upper-color;
+    }
+
+    &::-ms-thumb {
+      @include hover-effect;
+      background-color: $upper-color;
+    }
+  }
+
+  &::-moz-focus-inner {
+    outline: 0 none;
+    border: 0;
+  }
+}
+
+// Webkit
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $height;
+  background: $lower-background;
+}
+
+.slider::-webkit-slider-thumb {
+  @include thumb;
+  position: relative;
+  appearance: none; // NOSONAR
+  -webkit-appearance: none; // NOSONAR
+
+  top: 50%;
+  margin-top: (-$thumb-height/2);
+  box-shadow: webkit-slider-thumb-shadow();
+}
+
+// Firefox
+.slider::-moz-range-track,
+.slider::-moz-range-progress {
+  width: 100%;
+  height: $height;
+  background: $upper-background;
+}
+
+.slider::-moz-range-progress {
+  background: $lower-background;
+}
+
+.slider::-moz-range-thumb {
+  @include thumb;
+  appearance: none; // NOSONAR
+  margin: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+// Internet Exploder
+.slider::-ms-track {
+  width: 100%;
+  height: $height;
+  border: 0;
+  // color needed to hide track marks
+  color: transparent;
+  background: transparent;
+}
+
+.slider::-ms-fill-lower {
+  background: $lower-background;
+}
+
+.slider::-ms-fill-upper {
+  background: $upper-background;
+}
+
+.slider::-ms-thumb {
+  box-sizing: border-box;
+  appearance: none; // NOSONAR
+  height: $thumb-height;
+  width: $thumb-height;
+  border-radius: 100%;
+  transition: background-color 150ms;
+  // IE Edge thinks it can support -webkit prefixes
+  top: 0;
+  margin: 0;
+  box-shadow: none;
+
+  background: #fff;
+  border: 7px solid $thumb-color;
+}
+
+// dont show tooltip above the slider handle in IE
+.slider::-ms-tooltip {
+  display: none;
+}
+
+.slider:hover {
+  &::-webkit-slider-thumb {
+    @include hover-effect;
+    position: relative;
+  }
+
+  &::-moz-range-thumb {
+    @include hover-effect;
+  }
+
+  &::-ms-thumb {
+    @include hover-effect;
+  }
+}
+
+.sliderErrorContainer {
+  margin: -10px 0 10px 0;
+}

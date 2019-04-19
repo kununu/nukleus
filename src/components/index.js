@@ -17,3 +17,4 @@ export ToolTip from './ToolTip';
 export Select from './Select';
 export Stars from './Stars';
 export Modal from './Modal';
+export RangeSlider from './RangeSlider';
