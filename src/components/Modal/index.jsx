@@ -114,7 +114,7 @@ export default class Modal extends React.Component {
 
     const titleId = 'nukleus-modal-title'; // will be used for aria-labelledby
     const underlayClass = isOpen ? 'underlayHasEntered' : '';
-    const isOpenClass = sOpen ? 'modalIsOpen' : '';
+    const isOpenClass = isOpen ? 'modalIsOpen' : '';
     const overrideProps = {
       ...this.props,
       titleId,
