@@ -39,7 +39,7 @@ export default class DropDownItem extends Component {
           const theme = themeable(allStyles);
 
           return (
-            <li className={theme('dropDownItem', `${isActive ? styles.active : ''}`)}>
+            <li className={theme('dropDownItem', `${isActive ? 'active' : ''}`)}>
               {React.cloneElement(children, [], this.getItem(children, theme))}
             </li>
           );

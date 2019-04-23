@@ -96,7 +96,7 @@ export default class Button extends React.Component {
 
           if (link) {
             return (
-              <div className={disabled ? styles.disabledLink : ''}>
+              <div className={disabled ? theme('disabledLink') : ''}>
                 {React.cloneElement(link, props)}
               </div>
             );
