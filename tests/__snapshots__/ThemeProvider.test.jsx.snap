@@ -14,18 +14,3 @@ exports[`Renders correctly themed nukleus component 1`] = `
   </button>
 </div>
 `;
-
-exports[`Renders theme provider without crashing 1`] = `
-<div>
-  <button
-    className="button primary"
-    disabled={false}
-    id={null}
-    onClick={null}
-    title={null}
-    type="submit"
-  >
-    Test
-  </button>
-</div>
-`;
