@@ -490,9 +490,8 @@ per page depending on your needs and how many components you want to theme.
         <br />
       </p>
 
-      <small>* It also relies on the shared formGroup, formControl,
-        formControlError, inline, selectContainer, paddingTop, controlNote,
-        controlLabelRequired, controlLabelError styles</small>
+      <small>* It also relies on the shared formGroup, formControl, formControlError, inline,</small>
+      <small>selectContainer, paddingTop, controlNote, controlLabelRequired, controlLabelError styles</small>
 
       <br />
 
