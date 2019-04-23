@@ -2,6 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import {mount} from 'enzyme';
 import Modal from 'Modal'; // eslint-disable-line import/no-unresolved
+
 import * as themeable from '../utils/theming';
 
 themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;

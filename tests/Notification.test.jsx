@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import {mount, shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Notification from 'Notification'; // eslint-disable-line import/no-unresolved
+
 import * as themeable from '../utils/theming';
 
 themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;

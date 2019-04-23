@@ -6,6 +6,7 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import styles from './index.scss';
+
 export default class Button extends React.Component {
   static propTypes = {
     customTheme: PropTypes.string,

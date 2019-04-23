@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Error from 'Error'; // eslint-disable-line import/no-unresolved
+
 import * as themeable from '../utils/theming';
 
 themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;

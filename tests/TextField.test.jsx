@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import ToolTip from 'ToolTip'; // eslint-disable-line import/no-unresolved
 import TextField from 'TextField'; // eslint-disable-line import/no-unresolved
+
 import * as themeable from '../utils/theming';
 
 themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
