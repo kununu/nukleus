@@ -23,6 +23,7 @@
 }
 
 .highlightOverlay {
+  box-sizing: border-box;
   margin-bottom: 0;
   position: absolute;
   z-index: 40;

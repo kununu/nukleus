@@ -1,7 +1,7 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .select {
-  appearance: none;
+  appearance: none; // NOSONAR
   padding-right: 30px;
   padding-left: 30px;
   border-radius: 100px;

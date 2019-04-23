@@ -1,6 +1,7 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .notificationContainer {
+  box-sizing: border-box;
   width: 320px;
   padding: 20px;
   height: auto;

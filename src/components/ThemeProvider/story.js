@@ -10,7 +10,7 @@ storiesOf('ThemeProvider', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withNotes(''))
   .addDecorator((story, context) => withInfo('Theme provider component')(story)(context))
-  .add('basics', () => (
+  .add('basics', () => ( // NOSONAR
     <div>
       <h2>
         Theme Provider
@@ -490,7 +490,9 @@ per page depending on your needs and how many components you want to theme.
         <br />
       </p>
 
-      <small>* It also relies on the shared formGroup, formControl, formControlError, inline, selectContainer, paddingTop, controlNote, controlLabelRequired, controlLabelError styles</small>
+      <small>* It also relies on the shared formGroup, formControl,
+        formControlError, inline, selectContainer, paddingTop, controlNote,
+        controlLabelRequired, controlLabelError styles</small>
 
       <br />
 

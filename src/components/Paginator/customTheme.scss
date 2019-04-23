@@ -44,6 +44,7 @@
     &,
     &:hover,
     &:focus {
+      box-sizing: border-box;
       z-index: 3;
       cursor: default;
       pointer: disabled;
