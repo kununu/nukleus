@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly themed nukleus component 1`] = `
+<div>
+  <button
+    className="customTheme---button-14235 primary"
+    disabled={false}
+    id={null}
+    onClick={null}
+    title={null}
+    type="submit"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Renders theme provider without crashing 1`] = `
+<div>
+  <button
+    className="button primary"
+    disabled={false}
+    id={null}
+    onClick={null}
+    title={null}
+    type="submit"
+  >
+    Test
+  </button>
+</div>
+`;
