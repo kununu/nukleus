@@ -172,6 +172,8 @@ export default class MultipleChoice extends React.Component {
       requiredLabel,
     } = this.props;
 
+    const labelStyles = inputStyle === 'inline' ? 'inlineLabel' : '';
+
     return (
       <ThemeContext.Consumer>
         {(context) => {
@@ -190,7 +192,7 @@ export default class MultipleChoice extends React.Component {
 
               {label || heading ? (
                 <Label
-                  classNames={theme(`${inputStyle === 'inline' ? 'inlineLabel' : ''}`)}
+                  classNames={theme(labelStyles)}
                   isTitle
                   labelHidden={labelHidden}
                   value={label || heading}

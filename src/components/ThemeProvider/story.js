@@ -30,7 +30,9 @@ component. This is of course completely optional as nukleus comes with it's own 
         {' '}
         <code>context</code>
         {' '}
-to pass your theme to each component. This means you need to make sure that the ThemeProvider is wrapped around a parent of the component you are trying to customize. If you like you can even wrap it around the entire application or per page depending on your needs and how many components you want to theme.
+to pass your theme to each component. This means you need to make sure that the ThemeProvider is wrapped around a
+parent of the component you are trying to customize. If you like you can even wrap it around the entire application or
+per page depending on your needs and how many components you want to theme.
       </p>
       <hr />
       <h3>How does it work?</h3>

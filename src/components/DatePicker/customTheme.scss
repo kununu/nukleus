@@ -20,9 +20,9 @@
   font-size: $font-size-sm;
   color: $blue;
   background-color: $input-bg;
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  background-image: none;
   border: 1px solid $gray-base-20;
-  border-radius: $input-border-radius; // Note: This
+  border-radius: $input-border-radius;
 }
 
 .icon {

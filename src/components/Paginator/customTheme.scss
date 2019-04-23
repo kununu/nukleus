@@ -3,81 +3,73 @@
 .paginatorList {
   display: inline-block;
   padding-left: 0;
+}
 
-  * {
-    box-sizing: border-box;
+.paginatorList > li {
+  display: inline-block;
+  vertical-align: middle;
+
+  &:first-child > a {
+    margin-left: 0;
+    border-bottom-left-radius: $border-radius-base;
+    border-top-left-radius: $border-radius-base;
   }
 
-  > li {
-    display: inline-block;
-    vertical-align: middle;
+  &:last-child > a {
+    border-bottom-right-radius: $border-radius-base;
+    border-top-right-radius: $border-radius-base;
+  }
+}
 
-    > a {
-      position: relative;
-      float: left;
-      padding: $padding-base-vertical $padding-base-horizontal;
-      line-height: $line-height-base;
-      text-decoration: none;
+.paginatorList > li > a {
+  position: relative;
+  float: left;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  line-height: $line-height-base;
+  text-decoration: none;
+  color: $blue;
+  background-color: $white;
+  margin-left: -1px;
+  transition: color .25s;
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+    font-weight: bold;
+  }
+}
+
+.paginatorList .pageActive {
+  > a {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 3;
+      cursor: default;
+      pointer: disabled;
+      pointer-events: none;
       color: $blue;
+      border: 1px solid $green;
+      border-radius: 100px;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      padding: 3px 0 0;
+    }
+  }
+}
+
+.pageDisabled {
+  > a {
+    &,
+    &:hover,
+    &:focus {
+      pointer: disabled;
+      pointer-events: none;
+      color: $gray-light;
       background-color: $white;
-      margin-left: -1px;
-      transition: color .25s;
-
-      &:hover,
-      &:focus {
-        z-index: 2;
-        font-weight: bold;
-      }
-    }
-
-    &:first-child {
-      > a {
-        margin-left: 0;
-        border-bottom-left-radius: $border-radius-base;
-        border-top-left-radius: $border-radius-base;
-      }
-    }
-
-    &:last-child {
-      > a {
-        border-bottom-right-radius: $border-radius-base;
-        border-top-right-radius: $border-radius-base;
-      }
-    }
-
-    &.pageActive {
-      > a {
-        &,
-        &:hover,
-        &:focus {
-          z-index: 3;
-          cursor: default;
-          pointer: disabled;
-          pointer-events: none;
-          color: $blue;
-          border: 1px solid $green;
-          border-radius: 100px;
-          height: 30px;
-          width: 30px;
-          text-align: center;
-          padding: 3px 0 0;
-        }
-      }
-    }
-
-    &.pageDisabled {
-      > a {
-        &,
-        &:hover,
-        &:focus {
-          pointer: disabled;
-          pointer-events: none;
-          color: $gray-light;
-          background-color: $white;
-          border-color: #ddd;
-          cursor: not-allowed;
-        }
-      }
+      border-color: #ddd;
+      cursor: not-allowed;
     }
   }
 }

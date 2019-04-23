@@ -113,7 +113,8 @@ export default class Modal extends React.Component {
     } = this.props;
 
     const titleId = 'nukleus-modal-title'; // will be used for aria-labelledby
-
+    const underlayClass = isOpen ? 'underlayHasEntered' : '';
+    const isOpenClass = sOpen ? 'modalIsOpen' : '';
     const overrideProps = {
       ...this.props,
       titleId,
@@ -130,10 +131,10 @@ export default class Modal extends React.Component {
               <AriaModal
                 {...overrideProps}
                 onExit={this.onExit}
-                underlayClass={theme('underlay', `${isOpen ? 'underlayHasEntered' : ''}`)}
+                underlayClass={theme('underlay', underlayClass)}
                 onEnter={this.onEnter}
               >
-                <section className={theme('modal', `${isOpen ? 'modalIsOpen' : ''}`)}>
+                <section className={theme('modal', isOpenClass)}>
                   <header className={theme('modalHeader')}>
                     <h1
                       id={titleId}

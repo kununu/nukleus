@@ -39,12 +39,12 @@
   z-index: -1;
 
   &:focus + label,
-  &checked + label {
+  &:checked + label {
     .star {
       @supports (display: flex) {
         animation: pulse .8s cubic-bezier(.215, .61, .355, 1);
       }
-  
+
       &:hover {
         transform: none;
       }
@@ -56,7 +56,6 @@
   transform: scale(1);
   width: 100%;
   height: 30px;
-  fill-opacity: 1;
 
   @supports (display: flex) {
     height: auto;

@@ -29,71 +29,71 @@
       flex-shrink: 0;
       flex-grow: 1;
     }
+  }
 
-    input {
-      display: block;
-      position: absolute;
-      margin-left: 4px;
-      opacity: 0;
-      z-index: -1;
+  .choice input {
+    display: block;
+    position: absolute;
+    margin-left: 4px;
+    opacity: 0;
+    z-index: -1;
 
-      & + label {
-        color: $green;
-        border: 2px solid $green;
-        transition: background-color .25s;
-        font-weight: $font-weight-semibold;
-        border-radius: 20px;
+    & + label {
+      color: $green;
+      border: 2px solid $green;
+      transition: background-color .25s;
+      font-weight: $font-weight-semibold;
+      border-radius: 20px;
 
-        @media (max-width: $screen-sm-max) {
-          font-size: $font-size-xs;
-        }
+      @media (max-width: $screen-sm-max) {
+        font-size: $font-size-xs;
       }
+    }
 
-      & + label:hover,
-      &:focus + label {
-        background-color: transparent;
-        color: $green;
-      }
+    & + label:hover,
+    &:focus + label {
+      background-color: transparent;
+      color: $green;
+    }
 
-      &:checked + label,
-      &:focus + label,
-      &:visited + label {
-        outline: 0;
-      }
+    &:checked + label,
+    &:focus + label,
+    &:visited + label {
+      outline: 0;
+    }
 
-      &:active + label {
+    &:active + label {
+      background-color: $green;
+      color: $white;
+    }
+
+    &:checked + label {
+      background-color: $green;
+      color: $white;
+
+      &,
+      &:hover {
         background-color: $green;
         color: $white;
       }
+    }
 
-      &:checked + label {
-        background-color: $green;
-        color: $white;
+    & + label,
+    &:checked label {
+      background-color: transparent;
+      border-radius: 20px;
+      padding: 8px;
+      text-align: center;
+      transition: background-color .25s;
 
-        &,
-        &:hover {
-          background-color: $green;
-          color: $white;
-        }
+      @supports (display: flex) {
+        width: 100%;
       }
+    }
 
-      & + label,
-      &:checked label {
-        background-color: transparent;
-        border-radius: 20px;
-        padding: 8px;
-        text-align: center;
-        transition: background-color .25s;
-
-        @supports (display: flex) {
-          width: 100%;
-        }
-      }
-
-      & + label:before,
-      &:checked + label:before {
-        display: none;
-      }
+    & + label:before,
+    &:checked + label:before {
+      display: none;
     }
   }
 }
