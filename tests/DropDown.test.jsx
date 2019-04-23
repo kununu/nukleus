@@ -3,6 +3,9 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {DropDown, DropDownItem} from 'DropDown'; // eslint-disable-line import/no-unresolved
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
 
 test('Renders DropDown without crashing', () => {
   const component = renderer.create((

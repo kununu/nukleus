@@ -12,11 +12,11 @@ exports[`Renders Choice with a heading without crashing 1`] = `
     heading
   </div>
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -40,7 +40,7 @@ exports[`Renders Choice with a heading without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -64,7 +64,7 @@ exports[`Renders Choice with a heading without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -103,11 +103,11 @@ exports[`Renders Choice with a label without crashing 1`] = `
     heading
   </div>
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -131,7 +131,7 @@ exports[`Renders Choice with a label without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -155,7 +155,7 @@ exports[`Renders Choice with a label without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -189,11 +189,11 @@ exports[`Renders Choice with radio buttons without crashing 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -217,7 +217,7 @@ exports[`Renders Choice with radio buttons without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -241,7 +241,7 @@ exports[`Renders Choice with radio buttons without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -275,11 +275,11 @@ exports[`Renders a Choice with a disabled option without crashing 1`] = `
 >
   
   <div
-    className="radioContainer flexible"
+    className="choiceContainer choiceFlexible"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -303,7 +303,7 @@ exports[`Renders a Choice with a disabled option without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -327,7 +327,7 @@ exports[`Renders a Choice with a disabled option without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -351,7 +351,7 @@ exports[`Renders a Choice with a disabled option without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -385,11 +385,11 @@ exports[`Renders a Choice with checked from route 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -413,7 +413,7 @@ exports[`Renders a Choice with checked from route 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -437,7 +437,7 @@ exports[`Renders a Choice with checked from route 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={true}
@@ -471,11 +471,11 @@ exports[`Renders a Choice with custom style 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -499,7 +499,7 @@ exports[`Renders a Choice with custom style 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -523,7 +523,7 @@ exports[`Renders a Choice with custom style 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -557,11 +557,11 @@ exports[`Renders a Choice with custom style disabled 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -585,7 +585,7 @@ exports[`Renders a Choice with custom style disabled 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -609,7 +609,7 @@ exports[`Renders a Choice with custom style disabled 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -643,11 +643,11 @@ exports[`Renders a Choice with default checked without crashing 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -671,7 +671,7 @@ exports[`Renders a Choice with default checked without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={true}
@@ -695,7 +695,7 @@ exports[`Renders a Choice with default checked without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -729,11 +729,11 @@ exports[`Renders a Choice with no default checked from route if it is not an opt
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -757,7 +757,7 @@ exports[`Renders a Choice with no default checked from route if it is not an opt
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -781,7 +781,7 @@ exports[`Renders a Choice with no default checked from route if it is not an opt
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -815,11 +815,11 @@ exports[`Renders a Choice with no default checked from route if it is the other 
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -843,7 +843,7 @@ exports[`Renders a Choice with no default checked from route if it is the other 
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -867,7 +867,7 @@ exports[`Renders a Choice with no default checked from route if it is the other 
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -901,11 +901,11 @@ exports[`Renders a Choice with no default checked if it's not an option 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -929,7 +929,7 @@ exports[`Renders a Choice with no default checked if it's not an option 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -953,7 +953,7 @@ exports[`Renders a Choice with no default checked if it's not an option 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -987,11 +987,11 @@ exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row="3"
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1015,7 +1015,7 @@ exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1039,7 +1039,7 @@ exports[`Renders a Choice with optionsPerRow set without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1073,11 +1073,11 @@ exports[`Renders a disabled Choice without crashing 1`] = `
 >
   
   <div
-    className="radioContainer false"
+    className="choiceContainer false"
     data-options-per-row={null}
   >
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1101,7 +1101,7 @@ exports[`Renders a disabled Choice without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1125,7 +1125,7 @@ exports[`Renders a disabled Choice without crashing 1`] = `
       </label>
     </div>
     <div
-      className="radioButton"
+      className="choiceButton"
     >
       <input
         checked={false}
@@ -1198,11 +1198,11 @@ exports[`Renders an error if errors prop is set 1`] = `
     id="test-container"
   >
     <div
-      className="radioContainer false"
+      className="choiceContainer false"
       data-options-per-row={null}
     >
       <div
-        className="radioButton"
+        className="choiceButton"
         key="opA"
       >
         <input
@@ -1227,7 +1227,7 @@ exports[`Renders an error if errors prop is set 1`] = `
         </label>
       </div>
       <div
-        className="radioButton"
+        className="choiceButton"
         key="opB"
       >
         <input
@@ -1252,7 +1252,7 @@ exports[`Renders an error if errors prop is set 1`] = `
         </label>
       </div>
       <div
-        className="radioButton"
+        className="choiceButton"
         key="opC"
       >
         <input
@@ -1283,11 +1283,11 @@ exports[`Renders an error if errors prop is set 1`] = `
       subInfo="SubInfo"
     >
       <span
-        className="error"
+        className="errorContainer"
         id={null}
       >
         <strong
-          className="info"
+          className="errorInfo"
         >
           Test
         </strong>

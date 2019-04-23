@@ -91,7 +91,7 @@ exports[`Renders Modal without crashing 1`] = `
           }
         >
           <section
-            className="modal isOpen"
+            className="modal modalIsOpen"
           >
             <header
               className="modalHeader"
@@ -103,7 +103,7 @@ exports[`Renders Modal without crashing 1`] = `
                 Modal
               </h1>
               <button
-                className="closeButton"
+                className="modalCloseButton"
                 id="nukleus-modal-close"
                 onClick={[Function]}
                 title="Close"
@@ -113,7 +113,7 @@ exports[`Renders Modal without crashing 1`] = `
                   role="presentation"
                 >
                   <svg
-                    className="closeIcon"
+                    className="modalCloseIcon"
                     preserveAspectRatio="xMidYMid meet"
                     version="1.1"
                     viewBox="0 0 16 16"

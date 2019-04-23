@@ -47,7 +47,7 @@ exports[`Change status of MultipleChoice on onChange with lots of options 1`] = 
   requiredLabel=""
 >
   <div
-    className="formGroup formGroupMultipleChoice inline"
+    className="formGroup choiceContainer inline"
     id="choice[]-container"
   >
     <Label
@@ -64,7 +64,7 @@ exports[`Change status of MultipleChoice on onChange with lots of options 1`] = 
       </div>
     </Label>
     <div
-      className="inputContainer"
+      className="choiceInnerContainer"
     >
       <div
         className="choice"
@@ -219,7 +219,7 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
   requiredLabel=""
 >
   <div
-    className="formGroup formGroupMultipleChoice inline"
+    className="formGroup choiceContainer inline"
     id="choice[]-container"
   >
     <Label
@@ -236,7 +236,7 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
       </div>
     </Label>
     <div
-      className="inputContainer"
+      className="choiceInnerContainer"
     >
       <div
         className="choice"
@@ -268,7 +268,7 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
 
 exports[`Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice buttons"
+  className="formGroup choiceContainer buttons"
   id="choice[]-container"
 >
   
@@ -278,7 +278,7 @@ exports[`Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
     Button Choice
   </div>
   <div
-    className="inputContainer"
+    className="choiceInnerContainer"
   >
     <div
       className="choice"
@@ -307,7 +307,7 @@ exports[`Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
 
 exports[`Renders MultipleChoice without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline"
+  className="formGroup choiceContainer inline"
   id="choice[]-container"
 >
   
@@ -317,7 +317,7 @@ exports[`Renders MultipleChoice without crashing 1`] = `
     Test
   </div>
   <div
-    className="inputContainer"
+    className="choiceInnerContainer"
   >
     <div
       className="choice"
@@ -346,7 +346,7 @@ exports[`Renders MultipleChoice without crashing 1`] = `
 
 exports[`Renders MultipleCoices without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline"
+  className="formGroup choiceContainer inline"
   id="choice[]-container"
 >
   
@@ -356,7 +356,7 @@ exports[`Renders MultipleCoices without crashing 1`] = `
     MultipleChoice
   </div>
   <div
-    className="inputContainer"
+    className="choiceInnerContainer"
   >
     <div
       className="choice"
@@ -475,7 +475,7 @@ exports[`Renders an error if errors prop is set 1`] = `
   requiredLabel=""
 >
   <div
-    className="formGroup formGroupMultipleChoice buttons"
+    className="formGroup choiceContainer buttons"
     id="choice[]-container"
   >
     <Label
@@ -492,7 +492,7 @@ exports[`Renders an error if errors prop is set 1`] = `
       </div>
     </Label>
     <div
-      className="inputContainer"
+      className="choiceInnerContainer"
     >
       <div
         className="choice"
@@ -524,11 +524,11 @@ exports[`Renders an error if errors prop is set 1`] = `
       subInfo="Subinfo"
     >
       <span
-        className="error"
+        className="errorContainer"
         id={null}
       >
         <strong
-          className="info"
+          className="errorInfo"
         >
           error
         </strong>
@@ -541,7 +541,7 @@ exports[`Renders an error if errors prop is set 1`] = `
 
 exports[`Renders deprecated MultipleChoice without crashing 1`] = `
 <div
-  className="formGroup formGroupMultipleChoice inline"
+  className="formGroup choiceContainer inline"
   id="choice[]-container"
 >
   
@@ -551,7 +551,7 @@ exports[`Renders deprecated MultipleChoice without crashing 1`] = `
     Test
   </div>
   <div
-    className="inputContainer"
+    className="choiceInnerContainer"
   >
     <div
       className="choice"
