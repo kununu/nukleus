@@ -5,7 +5,9 @@ import renderer from 'react-test-renderer';
 import toJson from 'enzyme-to-json';
 import {mount} from 'enzyme';
 import Table from 'Table'; // eslint-disable-line import/no-unresolved
+import * as themeable from '../utils/theming';
 
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
 
 test('Renders basic Table without crashing', () => {
   const component = renderer.create((

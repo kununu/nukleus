@@ -33,11 +33,11 @@ exports[`Changes status on value change 1`] = `
   value="option"
 >
   <div
-    className="formGroup inline"
+    className="formGroup inline selectContainer"
     id="select-container"
   >
     <Label
-      classNames={Array []}
+      classNames=""
       id="select"
       isTitle={false}
       labelHidden={false}
@@ -51,11 +51,11 @@ exports[`Changes status on value change 1`] = `
       </label>
     </Label>
     <div
-      className="inputContainer"
+      className="innerSelectContainer"
     >
       <select
         autoFocus={false}
-        className="formControl select "
+        className="select formControl "
         disabled={false}
         id="select"
         name="select"
@@ -85,7 +85,7 @@ exports[`Changes status on value change 1`] = `
         </option>
       </select>
       <span
-        className="caret"
+        className="selectCaret"
       >
         <svg
           viewBox="-248 252.9 13.4 9.1"
@@ -105,7 +105,7 @@ exports[`Changes status on value change 1`] = `
 
 exports[`Renders Select with an array of items 1`] = `
 <div
-  className="formGroup inline"
+  className="formGroup inline selectContainer"
   id="select-container"
 >
   
@@ -116,11 +116,11 @@ exports[`Renders Select with an array of items 1`] = `
     Select
   </label>
   <div
-    className="inputContainer"
+    className="innerSelectContainer"
   >
     <select
       autoFocus={false}
-      className="formControl select "
+      className="select formControl "
       disabled={false}
       id="select"
       name="select"
@@ -149,7 +149,7 @@ exports[`Renders Select with an array of items 1`] = `
       </option>
     </select>
     <span
-      className="caret"
+      className="selectCaret"
     >
       <svg
         viewBox="-248 252.9 13.4 9.1"
@@ -168,7 +168,7 @@ exports[`Renders Select with an array of items 1`] = `
 
 exports[`Renders Select with an error message without crashing 1`] = `
 <div
-  className="formGroup inline"
+  className="formGroup inline selectContainer"
   id="select-container"
 >
   
@@ -179,11 +179,11 @@ exports[`Renders Select with an error message without crashing 1`] = `
     Select
   </label>
   <div
-    className="inputContainer"
+    className="innerSelectContainer"
   >
     <select
       autoFocus={false}
-      className="formControl select formControlError"
+      className="select formControl formControlError"
       disabled={false}
       id="select"
       name="select"
@@ -212,18 +212,18 @@ exports[`Renders Select with an error message without crashing 1`] = `
       </option>
     </select>
     <span
-      className="error"
+      className="errorContainer"
       id={null}
     >
       <strong
-        className="info"
+        className="errorInfo"
       >
         An Error
       </strong>
       with useful hints
     </span>
     <span
-      className="caret"
+      className="selectCaret"
     >
       <svg
         viewBox="-248 252.9 13.4 9.1"
@@ -242,7 +242,7 @@ exports[`Renders Select with an error message without crashing 1`] = `
 
 exports[`Renders Select without crashing 1`] = `
 <div
-  className="formGroup inline"
+  className="formGroup inline selectContainer"
   id="select-container"
 >
   
@@ -253,11 +253,11 @@ exports[`Renders Select without crashing 1`] = `
     Select
   </label>
   <div
-    className="inputContainer"
+    className="innerSelectContainer"
   >
     <select
       autoFocus={false}
-      className="formControl select "
+      className="select formControl "
       disabled={false}
       id="select"
       name="select"
@@ -286,7 +286,7 @@ exports[`Renders Select without crashing 1`] = `
       </option>
     </select>
     <span
-      className="caret"
+      className="selectCaret"
     >
       <svg
         viewBox="-248 252.9 13.4 9.1"
@@ -305,7 +305,7 @@ exports[`Renders Select without crashing 1`] = `
 
 exports[`Renders deprecated select without crashing 1`] = `
 <div
-  className="formGroup inline"
+  className="formGroup inline selectContainer"
   id="select-container"
 >
   
@@ -316,11 +316,11 @@ exports[`Renders deprecated select without crashing 1`] = `
     Select
   </label>
   <div
-    className="inputContainer"
+    className="innerSelectContainer"
   >
     <select
       autoFocus={false}
-      className="formControl select "
+      className="select formControl "
       disabled={false}
       id="select"
       name="select"
@@ -349,7 +349,7 @@ exports[`Renders deprecated select without crashing 1`] = `
       </option>
     </select>
     <span
-      className="caret"
+      className="selectCaret"
     >
       <svg
         viewBox="-248 252.9 13.4 9.1"

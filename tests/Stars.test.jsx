@@ -3,6 +3,9 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Stars from 'Stars'; // eslint-disable-line import/no-unresolved
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
 
 test('Renders static Stars without crashing', () => {
   const component = renderer.create(<Stars

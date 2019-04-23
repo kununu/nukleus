@@ -2,33 +2,33 @@
 
 exports[`Renders Tabs using the block theme without crashing 1`] = `
 <ul
-  className="blockTabs clearfix"
+  className="clearfix tabs blockTabs"
 >
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/"
     >
       First Tab
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/2"
     >
       Second Tab
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/3"
     >
       Third Tab
@@ -39,13 +39,13 @@ exports[`Renders Tabs using the block theme without crashing 1`] = `
 
 exports[`Renders Tabs with react-router links as items without crashing 1`] = `
 <ul
-  className="defaultTabs clearfix"
+  className="clearfix tabs defaultTabs"
 >
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/"
       onClick={[Function]}
     >
@@ -53,10 +53,10 @@ exports[`Renders Tabs with react-router links as items without crashing 1`] = `
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/2"
       onClick={[Function]}
     >
@@ -64,10 +64,10 @@ exports[`Renders Tabs with react-router links as items without crashing 1`] = `
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/3"
       onClick={[Function]}
     >
@@ -79,33 +79,33 @@ exports[`Renders Tabs with react-router links as items without crashing 1`] = `
 
 exports[`Renders Tabs with simple links as items without crashing 1`] = `
 <ul
-  className="defaultTabs clearfix"
+  className="clearfix tabs defaultTabs"
 >
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/"
     >
       First Tab
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/2"
     >
       Second Tab
     </a>
   </li>
   <li
-    className="tabItem"
+    className="tabItem "
   >
     <a
-      className="tabLink"
+      className=" tabLink false"
       href="/playground/3"
     >
       Third Tab

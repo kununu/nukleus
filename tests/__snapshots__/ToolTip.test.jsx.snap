@@ -25,7 +25,7 @@ exports[`Clicking on the ToolTip Button shows an InfoBox 1`] = `
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -85,7 +85,7 @@ exports[`Clicking twice on a ToolTip Button hides the InfoBox 1`] = `
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -135,7 +135,7 @@ exports[`Hovering and then leaving the ToolTip Button shows an InfoBox 1`] = `
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -185,7 +185,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox 1`] = `
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -252,7 +252,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -304,7 +304,7 @@ exports[`Renders ToolTip component with content as Object 1`] = `
   className="toolTip"
 >
   <button
-    className="unstyledButton"
+    className="toolTipButton"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -333,7 +333,7 @@ exports[`Renders ToolTip component without crashing 1`] = `
   className="toolTip"
 >
   <button
-    className="unstyledButton"
+    className="toolTipButton"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -382,7 +382,7 @@ exports[`Renders correct position bottomRight 1`] = `
     className="toolTip"
   >
     <button
-      className="unstyledButton"
+      className="toolTipButton"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}

@@ -173,7 +173,7 @@ test('Renders menu when button is clicked', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('click');
+  component.find('.dropDownContainer button').simulate('click');
 
   const tree = toJson(component);
 
@@ -189,7 +189,7 @@ test('Renders menu when hovered', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseenter');
 
   const tree = toJson(component);
 
@@ -205,8 +205,8 @@ test('Closes menu when not hovered', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
-  component.find('.container button').simulate('mouseleave');
+  component.find('.dropDownContainer button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseleave');
 
   const tree = toJson(component);
 
@@ -225,8 +225,8 @@ test('Does not open menu when hovered while showOnHover is enabled', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
-  component.find('.container button').simulate('mouseleave');
+  component.find('.dropDownContainer button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseleave');
 
   const tree = toJson(component);
 

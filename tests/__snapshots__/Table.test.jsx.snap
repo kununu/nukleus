@@ -8,25 +8,25 @@ exports[`Renders basic Table with custom cells 1`] = `
     <tr>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader
           </div>
           <div
-            className="sorting"
+            className="tableSortingContainer"
           >
             <button
-              className="sortingButton"
+              className="tableSortingButton"
               id="button-asc"
               onClick={[Function]}
               type="button"
             >
               <svg
                 aria-hidden={true}
-                className="sortingArrowIcon"
+                className="tableSortingArrowIcon"
                 viewBox="0 0 293 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -36,14 +36,14 @@ exports[`Renders basic Table with custom cells 1`] = `
               </svg>
             </button>
             <button
-              className="sortingButton"
+              className="tableSortingButton"
               id="button-desc"
               onClick={[Function]}
               type="button"
             >
               <svg
                 aria-hidden={true}
-                className="sortingArrowIcon"
+                className="tableSortingArrowIcon"
                 viewBox="0 0 293 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -57,25 +57,25 @@ exports[`Renders basic Table with custom cells 1`] = `
       </th>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader2
           </div>
           <div
-            className="sorting"
+            className="tableSortingContainer"
           >
             <button
-              className="sortingButton"
+              className="tableSortingButton"
               id="button-asc"
               onClick={[Function]}
               type="button"
             >
               <svg
                 aria-hidden={true}
-                className="sortingArrowIcon"
+                className="tableSortingArrowIcon"
                 viewBox="0 0 293 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -85,14 +85,14 @@ exports[`Renders basic Table with custom cells 1`] = `
               </svg>
             </button>
             <button
-              className="sortingButton"
+              className="tableSortingButton"
               id="button-desc"
               onClick={[Function]}
               type="button"
             >
               <svg
                 aria-hidden={true}
-                className="sortingArrowIcon"
+                className="tableSortingArrowIcon"
                 viewBox="0 0 293 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -135,10 +135,10 @@ exports[`Renders basic Table with initial sorting 1`] = `
     <tr>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader
           </div>
@@ -147,10 +147,10 @@ exports[`Renders basic Table with initial sorting 1`] = `
       </th>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader2
           </div>
@@ -219,18 +219,18 @@ exports[`Renders basic Table with sorting 1`] = `
           key="column-0"
         >
           <div
-            className="sortingContainer"
+            className="tableHeaderContainer"
           >
             <div
-              className="sortingTitle"
+              className="tableHeader"
             >
               testHeader
             </div>
             <div
-              className="sorting"
+              className="tableSortingContainer"
             >
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-asc"
                 key="0-asc"
                 onClick={[Function]}
@@ -238,11 +238,11 @@ exports[`Renders basic Table with sorting 1`] = `
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -253,7 +253,7 @@ exports[`Renders basic Table with sorting 1`] = `
                 </Icon>
               </button>
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-desc"
                 key="0-desc"
                 onClick={[Function]}
@@ -261,11 +261,11 @@ exports[`Renders basic Table with sorting 1`] = `
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -282,18 +282,18 @@ exports[`Renders basic Table with sorting 1`] = `
           key="column-1"
         >
           <div
-            className="sortingContainer"
+            className="tableHeaderContainer"
           >
             <div
-              className="sortingTitle"
+              className="tableHeader"
             >
               testHeader2
             </div>
             <div
-              className="sorting"
+              className="tableSortingContainer"
             >
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-asc"
                 key="1-asc"
                 onClick={[Function]}
@@ -301,11 +301,11 @@ exports[`Renders basic Table with sorting 1`] = `
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -316,7 +316,7 @@ exports[`Renders basic Table with sorting 1`] = `
                 </Icon>
               </button>
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-desc"
                 key="1-desc"
                 onClick={[Function]}
@@ -324,11 +324,11 @@ exports[`Renders basic Table with sorting 1`] = `
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -385,10 +385,10 @@ exports[`Renders basic Table without crashing 1`] = `
     <tr>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader
           </div>
@@ -397,10 +397,10 @@ exports[`Renders basic Table without crashing 1`] = `
       </th>
       <th>
         <div
-          className="sortingContainer"
+          className="tableHeaderContainer"
         >
           <div
-            className="sortingTitle"
+            className="tableHeader"
           >
             testHeader2
           </div>
@@ -469,18 +469,18 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
           key="column-0"
         >
           <div
-            className="sortingContainer"
+            className="tableHeaderContainer"
           >
             <div
-              className="sortingTitle"
+              className="tableHeader"
             >
               Name
             </div>
             <div
-              className="sorting"
+              className="tableSortingContainer"
             >
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-asc"
                 key="0-asc"
                 onClick={[Function]}
@@ -488,11 +488,11 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -503,7 +503,7 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
                 </Icon>
               </button>
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-desc"
                 key="0-desc"
                 onClick={[Function]}
@@ -511,11 +511,11 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -532,18 +532,18 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
           key="column-1"
         >
           <div
-            className="sortingContainer"
+            className="tableHeaderContainer"
           >
             <div
-              className="sortingTitle"
+              className="tableHeader"
             >
               Value
             </div>
             <div
-              className="sorting"
+              className="tableSortingContainer"
             >
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-asc"
                 key="1-asc"
                 onClick={[Function]}
@@ -551,11 +551,11 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -566,7 +566,7 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
                 </Icon>
               </button>
               <button
-                className="sortingButton"
+                className="tableSortingButton"
                 id="button-desc"
                 key="1-desc"
                 onClick={[Function]}
@@ -574,11 +574,11 @@ exports[`Sort table correctly based on comma seperated numbers within strings 1`
               >
                 <Icon
                   ariaHidden={true}
-                  className="sortingArrowIcon"
+                  className="tableSortingArrowIcon"
                 >
                   <svg
                     aria-hidden={true}
-                    className="sortingArrowIcon"
+                    className="tableSortingArrowIcon"
                     viewBox="0 0 293 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >

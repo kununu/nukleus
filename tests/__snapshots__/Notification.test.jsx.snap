@@ -26,15 +26,11 @@ exports[`Closes when the close button is clicked 1`] = `
   visible={true}
 >
   <div
-    className="
-          container
-          hidden
-          false
-        "
+    className="notificationContainer hidden "
   >
     <p>
       <button
-        className="closeButton"
+        className="notificationCloseButton"
         onClick={[Function]}
         type="button"
       >
@@ -60,15 +56,11 @@ exports[`Closes when the close button is clicked 1`] = `
 
 exports[`It shows content icon when defined in props 1`] = `
 <div
-  className="
-          container
-          visible
-          false
-        "
+  className="notificationContainer visible "
 >
   <p>
     <button
-      className="closeButton"
+      className="notificationCloseButton"
       onClick={[Function]}
       type="button"
     >
@@ -87,7 +79,7 @@ exports[`It shows content icon when defined in props 1`] = `
       </svg>
     </button>
     <span
-      className="success"
+      className="notificationIcon"
     >
       <i
         className="fa fa-check"
@@ -100,15 +92,11 @@ exports[`It shows content icon when defined in props 1`] = `
 
 exports[`Renders Notification without crashing 1`] = `
 <div
-  className="
-          container
-          visible
-          false
-        "
+  className="notificationContainer visible "
 >
   <p>
     <button
-      className="closeButton"
+      className="notificationCloseButton"
       onClick={[Function]}
       type="button"
     >

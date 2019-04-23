@@ -38,7 +38,7 @@ test('Renders Notification without crashing', () => {
 test('Closes when the close button is clicked', () => {
   const component = mount(notification);
 
-  component.find('.closeButton').simulate('click');
+  component.find('.notificationCloseButton').simulate('click');
   expect(toJson(component)).toMatchSnapshot();
 });
 
@@ -64,6 +64,6 @@ test('Calls onCloseClick when the close button is clicked', () => {
     onClose={spyFunc}
   />);
 
-  component.find('.closeButton').simulate('click');
+  component.find('.notificationCloseButton').simulate('click');
   expect(spyFunc).toHaveBeenCalled();
 });

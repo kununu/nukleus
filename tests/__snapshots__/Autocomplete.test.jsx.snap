@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Autocomplete tests:  Hides no suggestions on blur 1`] = `
+exports[`Hides no suggestions on blur 1`] = `
 <Autocomplete
   autoFocus={false}
   data={
@@ -180,7 +180,7 @@ exports[`Autocomplete tests:  Hides no suggestions on blur 1`] = `
 </Autocomplete>
 `;
 
-exports[`Autocomplete tests:  Renders Autocomplete with Error without crashing 1`] = `
+exports[`Renders Autocomplete with Error without crashing 1`] = `
 <div
   className="formGroup inline"
   id="autocomplete-container"
@@ -248,7 +248,7 @@ exports[`Autocomplete tests:  Renders Autocomplete with Error without crashing 1
 </div>
 `;
 
-exports[`Autocomplete tests:  Renders Autocomplete without crashing 1`] = `
+exports[`Renders Autocomplete without crashing 1`] = `
 <div
   className="formGroup inline"
   id="autocomplete-container"
@@ -305,7 +305,7 @@ exports[`Autocomplete tests:  Renders Autocomplete without crashing 1`] = `
 </div>
 `;
 
-exports[`Autocomplete tests:  Renders no suggestions container 1`] = `
+exports[`Renders no suggestions container 1`] = `
 <Autocomplete
   autoFocus={false}
   data={
@@ -915,7 +915,7 @@ exports[`Autocomplete tests:  Renders no suggestions container 1`] = `
 </Autocomplete>
 `;
 
-exports[`Autocomplete tests:  Renders suggestions container 1`] = `
+exports[`Renders suggestions container 1`] = `
 <Autocomplete
   autoFocus={false}
   data={
@@ -1525,7 +1525,7 @@ exports[`Autocomplete tests:  Renders suggestions container 1`] = `
 </Autocomplete>
 `;
 
-exports[`Autocomplete tests:  Updates value on selection 1`] = `
+exports[`Updates value on selection 1`] = `
 <Autocomplete
   autoFocus={false}
   data={
