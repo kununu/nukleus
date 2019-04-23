@@ -4,140 +4,148 @@ import {StaticRouter} from 'react-router';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Button from 'Button'; // eslint-disable-line import/no-unresolved
+import * as themeable from '../utils/theming';
+import { isArray } from 'util';
 
-test('Renders button without crashing', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-  />);
+describe('Button tests: ', () => {
+  beforeEach(() => {
+    themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+  });
 
-  const tree = component.toJSON();
+  it('Renders button without crashing', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+    />);
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
 
-test('Renders simple anchor button without crashing', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    link={<a href="/">Button</a>}
-  />);
+    expect(tree).toMatchSnapshot();
+  });
 
-  const tree = component.toJSON();
+  it('Renders simple anchor button without crashing', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      link={<a href="/">Button</a>}
+    />);
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
 
-test('Renders react-router anchor button without crashing', () => {
-  const component = renderer.create((
-    <StaticRouter
-      location="test"
-      context={{}}
-    >
-      <Button
-        text="Test"
-        link={<Link to={{pathname: '/test'}}>Button</Link>}
-      />
-    </StaticRouter>
-  ));
+    expect(tree).toMatchSnapshot();
+  });
 
-  const tree = component.toJSON();
+  it('Renders react-router anchor button without crashing', () => {
+    const component = renderer.create((
+      <StaticRouter
+        location="test"
+        context={{}}
+      >
+        <Button
+          text="Test"
+          link={<Link to={{pathname: '/test'}}>Button</Link>}
+        />
+      </StaticRouter>
+    ));
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
 
-test('Renders a disabled Button', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    disabled
-  />);
+    expect(tree).toMatchSnapshot();
+  });
 
-  const tree = component.toJSON();
+  it('Renders a disabled Button', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      disabled
+    />);
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
 
-test('Renders Button with outline', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    outline
-  />);
+    expect(tree).toMatchSnapshot();
+  });
 
-  const tree = component.toJSON();
+  it('Renders Button with outline', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      outline
+    />);
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
 
-test('Renders a full width button', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    fullWidth
-  />);
+    expect(tree).toMatchSnapshot();
+  });
 
-  const tree = component.toJSON();
+  it('Renders a full width button', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      fullWidth
+    />);
 
-  expect(tree).toMatchSnapshot();
-});
+    const tree = component.toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 
 
-test('Renders a mobile full width button', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    mobileFullWidth
-  />);
+  it('Renders a mobile full width button', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      mobileFullWidth
+    />);
 
-  const tree = component.toJSON();
+    const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
-});
+    expect(tree).toMatchSnapshot();
+  });
 
-test('Renders a custom theme button', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    type="custom"
-    customTheme="customCssModuleClass"
-  />);
+  it('Renders a custom theme button', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      type="custom"
+      customTheme="customCssModuleClass"
+    />);
 
-  const tree = component.toJSON();
+    const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
-});
+    expect(tree).toMatchSnapshot();
+  });
 
-test('Fires onClick function when clicked', () => {
-  const spyFunc = jest.fn();
-  const component = mount(<Button
-    text="Test"
-    onClick={spyFunc}
-  />);
+  it('Fires onClick function when clicked', () => {
+    const spyFunc = jest.fn();
+    const component = mount(<Button
+      text="Test"
+      onClick={spyFunc}
+    />);
 
-  component.find('.button').simulate('click');
-  expect(spyFunc).toHaveBeenCalled();
-});
+    component.find('.button').simulate('click');
+    expect(spyFunc).toHaveBeenCalled();
+  });
 
-test('Does not fire onClick function when clicked if the button is disabled', () => {
-  const spyFunc = jest.fn();
-  const component = mount(<Button
-    text="Test"
-    onClick={spyFunc}
-    disabled
-  />);
+  it('Does not fire onClick function when clicked if the button is disabled', () => {
+    const spyFunc = jest.fn();
+    const component = mount(<Button
+      text="Test"
+      onClick={spyFunc}
+      disabled
+    />);
 
-  component.find('.button').simulate('click');
-  expect(spyFunc).not.toHaveBeenCalled();
-});
+    component.find('.button').simulate('click');
+    expect(spyFunc).not.toHaveBeenCalled();
+  });
 
-test('can have optional ID attribute', () => {
-  const component = renderer.create(<Button
-    text="Test"
-    onClick={() => {}}
-    id="someId"
-  />);
+  it('can have optional ID attribute', () => {
+    const component = renderer.create(<Button
+      text="Test"
+      onClick={() => {}}
+      id="someId"
+    />);
 
-  const tree = component.toJSON();
+    const tree = component.toJSON();
 
-  expect(tree).toMatchSnapshot();
-});
+    expect(tree).toMatchSnapshot();
+  });
+})

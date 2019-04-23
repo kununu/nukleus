@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Button with outline 1`] = `
+exports[`Button tests:  Renders Button with outline 1`] = `
 <button
   className="button outline primary"
   disabled={false}
@@ -13,7 +13,7 @@ exports[`Renders Button with outline 1`] = `
 </button>
 `;
 
-exports[`Renders a custom theme button 1`] = `
+exports[`Button tests:  Renders a custom theme button 1`] = `
 <button
   className="button customCssModuleClass"
   disabled={false}
@@ -26,7 +26,7 @@ exports[`Renders a custom theme button 1`] = `
 </button>
 `;
 
-exports[`Renders a disabled Button 1`] = `
+exports[`Button tests:  Renders a disabled Button 1`] = `
 <button
   className="button primary"
   disabled={true}
@@ -39,7 +39,7 @@ exports[`Renders a disabled Button 1`] = `
 </button>
 `;
 
-exports[`Renders a full width button 1`] = `
+exports[`Button tests:  Renders a full width button 1`] = `
 <button
   className="button fullWidth primary"
   disabled={false}
@@ -52,7 +52,7 @@ exports[`Renders a full width button 1`] = `
 </button>
 `;
 
-exports[`Renders a mobile full width button 1`] = `
+exports[`Button tests:  Renders a mobile full width button 1`] = `
 <button
   className="button mobileFullWidth primary"
   disabled={false}
@@ -65,7 +65,7 @@ exports[`Renders a mobile full width button 1`] = `
 </button>
 `;
 
-exports[`Renders button without crashing 1`] = `
+exports[`Button tests:  Renders button without crashing 1`] = `
 <button
   className="button primary"
   disabled={false}
@@ -78,7 +78,7 @@ exports[`Renders button without crashing 1`] = `
 </button>
 `;
 
-exports[`Renders react-router anchor button without crashing 1`] = `
+exports[`Button tests:  Renders react-router anchor button without crashing 1`] = `
 <div
   className=""
 >
@@ -95,7 +95,7 @@ exports[`Renders react-router anchor button without crashing 1`] = `
 </div>
 `;
 
-exports[`Renders simple anchor button without crashing 1`] = `
+exports[`Button tests:  Renders simple anchor button without crashing 1`] = `
 <div
   className=""
 >
@@ -112,7 +112,7 @@ exports[`Renders simple anchor button without crashing 1`] = `
 </div>
 `;
 
-exports[`can have optional ID attribute 1`] = `
+exports[`Button tests:  can have optional ID attribute 1`] = `
 <button
   className="button primary"
   disabled={false}
