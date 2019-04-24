@@ -202,7 +202,7 @@ export default class ComboboxComponent extends React.Component {
                 {label}
               </label>
 
-              <div className={theme('combobobxContainer')}>
+              <div className={theme('comboboxContainer')}>
                 <Autosuggest
                   suggestions={suggestions}
                   theme={allStyles}
