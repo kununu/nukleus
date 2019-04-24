@@ -373,7 +373,7 @@ export default class Autocomplete extends React.Component {
 
           const inputProps = {
             autoFocus,
-            className: theme(classNames),
+            className: theme(...classNames),
             disabled,
             id,
             name,

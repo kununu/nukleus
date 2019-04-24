@@ -166,7 +166,7 @@ export default class TextField extends React.Component {
       labelHidden,
     } = this.props;
     const inputStyles = inputStyle.split(' ');
-    const classNames = ['controlLabel', ...inputStyles];
+    const classNames = ['controlLabel', 'labelContainer', ...inputStyles];
 
     // Check if label should be hidden
     if (labelHidden) classNames.push('hidden');

@@ -132,11 +132,10 @@ export default class ToolTip extends React.Component {
       <ThemeContext.Consumer>
         {(context) => {
           const theme = themeable({...styles, ...context});
-
           return (
             <div
               ref={(container) => { this.container = container; }}
-              className={theme('toolTip')}
+              className={theme('toolTipContainer')}
             >
               <button
                 className={theme('toolTipButton')}

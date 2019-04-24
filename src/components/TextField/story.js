@@ -14,6 +14,7 @@ import ThemeProvider from '../ThemeProvider';
 import customTheme from './customTheme.scss';
 
 import TextField from './index';
+import ToolTip from '../ToolTip';
 
 const typeOptions = {
   Email: 'email',
@@ -88,7 +89,20 @@ storiesOf('TextField', module)
       <div style={{position: 'relative'}}>
         <TextField
           id="text-field"
-          label={text('label', 'TextField')}
+          label={
+            <span>
+              <label
+                className="none"
+                htmlFor="headline"
+              >
+                meow
+              </label>
+              <ToolTip
+                label="meow"
+                content="meow"
+              />
+            </span>
+          }
           disable={boolean('disabled', false)}
           displayLength={boolean('displayLength', false)}
           dynamicTextareaHeight={boolean('dynamicTextareaHeight', true)}
