@@ -6,8 +6,6 @@ import themeable from 'utils/theming';
 
 import sharedStyles from '../index.scss';
 
-import styles from './index.scss';
-
 export default function Label ({
   classNames,
   id,
@@ -18,7 +16,7 @@ export default function Label ({
   return (
     <ThemeContext.Consumer>
       {(context) => {
-        const theme = themeable({...sharedStyles, ...styles, ...context});
+        const theme = themeable({...sharedStyles, ...context});
         const hidden = labelHidden ? 'srOnly' : '';
         const allClassNames = `${classNames} controlLabel ${hidden}`.split(' ');
 
