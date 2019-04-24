@@ -64,6 +64,10 @@
 
   .notificationCloseButton {
     color: $red-dark;
+
+    svg {
+      fill: $red-dark;
+    }
   }
 
   .notificationIcon {

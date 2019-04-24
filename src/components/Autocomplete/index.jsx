@@ -222,11 +222,11 @@ export default class Autocomplete extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.item;
 
-  getSpinner () {
+  getSpinner (theme) {
     const {spinner} = this.props;
 
     return spinner || (
-      <span className={styles.spinner}>
+      <span className={theme('spinner')}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -427,7 +427,7 @@ export default class Autocomplete extends React.Component {
                   theme={allStyles}
                 />
 
-                {isFetching && this.getSpinner()}
+                {isFetching && this.getSpinner(theme)}
 
                 {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ? (
                   <div className={theme('suggestionsContainer')}>
