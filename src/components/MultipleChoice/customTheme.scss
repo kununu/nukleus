@@ -70,12 +70,11 @@
     &:checked + label {
       background-color: $green;
       color: $white;
-
-      &,
-      &:hover {
-        background-color: $green;
-        color: $white;
-      }
+    }
+    
+    &:checked + label:hover {
+      background-color: $green;
+      color: $white;
     }
 
     & + label,

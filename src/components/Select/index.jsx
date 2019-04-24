@@ -145,6 +145,27 @@ export default class Select extends React.Component {
     return classNames;
   }
 
+  get options () {
+    const {
+      options,
+      items,
+      sort,
+    } = this.props;
+    const allOptions = (Object.keys(options).length && options) || items;
+
+    const mappedOptions = Object.keys(allOptions)
+      .map(key => ({
+        key: (allOptions)[key].key || key,
+        value: (allOptions)[key].value || (allOptions)[key],
+      }));
+
+    if (sort) {
+      return mappedOptions.sort(sort);
+    }
+
+    return mappedOptions;
+  }
+
   needsUpdate ({value, query}) {
     const {
       value: pValue,
@@ -188,29 +209,17 @@ export default class Select extends React.Component {
       label,
       labelHidden,
       isRequired,
-      items,
       name,
       onBlur,
       onFocus,
-      options,
       reference,
       requiredLabel,
-      sort,
       title,
     } = this.props;
     const {value} = this.state;
 
-    const allOptions = (Object.keys(options).length && options) || items;
-
-    const mappedOptions = Object.keys(allOptions)
-      .map(key => ({
-        key: (allOptions)[key].key || key,
-        value: (allOptions)[key].value || (allOptions)[key],
-      }));
-
-    if (sort) {
-      mappedOptions.sort(sort);
-    }
+    const errorClass = this.hasError() ? 'controlLabelError' : '';
+    const mappedOptions = this.options;
 
     return (
       <ThemeContext.Consumer>
@@ -231,7 +240,7 @@ export default class Select extends React.Component {
 
               {label || title ? (
                 <Label
-                  classNames={theme(`${this.hasError() ? 'controlLabelError' : ''}`)}
+                  classNames={theme(errorClass)}
                   id={id}
                   labelHidden={labelHidden}
                   value={label || title}
