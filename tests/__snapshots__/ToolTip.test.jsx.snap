@@ -22,7 +22,7 @@ exports[`Clicking on the ToolTip Button shows an InfoBox 1`] = `
   position="topLeft"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"
@@ -82,7 +82,7 @@ exports[`Clicking twice on a ToolTip Button hides the InfoBox 1`] = `
   position="topLeft"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"
@@ -132,7 +132,7 @@ exports[`Hovering and then leaving the ToolTip Button shows an InfoBox 1`] = `
   position="topLeft"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"
@@ -182,7 +182,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox 1`] = `
   position="topLeft"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"
@@ -249,7 +249,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
   position="topLeft"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"
@@ -301,7 +301,7 @@ exports[`Hovering on the ToolTip Button shows an InfoBox with Content as Object 
 
 exports[`Renders ToolTip component with content as Object 1`] = `
 <div
-  className="toolTip"
+  className="toolTipContainer"
 >
   <button
     className="toolTipButton"
@@ -330,7 +330,7 @@ exports[`Renders ToolTip component with content as Object 1`] = `
 
 exports[`Renders ToolTip component without crashing 1`] = `
 <div
-  className="toolTip"
+  className="toolTipContainer"
 >
   <button
     className="toolTipButton"
@@ -379,7 +379,7 @@ exports[`Renders correct position bottomRight 1`] = `
   position="bottomRight"
 >
   <div
-    className="toolTip"
+    className="toolTipContainer"
   >
     <button
       className="toolTipButton"

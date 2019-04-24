@@ -72,7 +72,7 @@ exports[`Badwords should highlight correctly 1`] = `
     id="text-field-container"
   >
     <span
-      className="textFieldLabelFlex controlLabel inline"
+      className="textFieldLabelFlex controlLabel labelContainer inline"
     >
       <label
         htmlFor="text-field"
@@ -100,7 +100,7 @@ exports[`Badwords should highlight correctly 1`] = `
         position="topLeft"
       >
         <div
-          className="toolTip"
+          className="toolTipContainer"
         >
           <button
             className="toolTipButton"
@@ -220,7 +220,7 @@ exports[`Changes output on value change manipulation 1`] = `
     id="text-field-container"
   >
     <label
-      className="textFieldLabelFlex controlLabel inline"
+      className="textFieldLabelFlex controlLabel labelContainer inline"
       htmlFor="text-field"
     >
       TextField
@@ -269,7 +269,7 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
   id="text-field-container"
 >
   <label
-    className="textFieldLabelFlex controlLabel inline"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
@@ -314,7 +314,7 @@ exports[`Renders TextField with an error message without crashing 1`] = `
   id="text-field-container"
 >
   <label
-    className="textFieldLabelFlex controlLabel inline controlLabelError"
+    className="textFieldLabelFlex controlLabel labelContainer inline controlLabelError"
     htmlFor="text-field"
   >
     TextField
@@ -366,7 +366,7 @@ exports[`Renders TextField with multiline without crashing 1`] = `
   id="text-field-container"
 >
   <label
-    className="textFieldLabelFlex controlLabel inline"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
@@ -406,7 +406,7 @@ exports[`Renders TextField without crashing 1`] = `
   id="text-field-container"
 >
   <label
-    className="textFieldLabelFlex controlLabel inline"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
@@ -447,7 +447,7 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
   id="text-field-container"
 >
   <span
-    className="textFieldLabelFlex controlLabel inline"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
   >
     <label
       htmlFor="text-field"
@@ -455,7 +455,7 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
       TextField
     </label>
     <div
-      className="toolTip"
+      className="toolTipContainer"
     >
       <button
         className="toolTipButton"
@@ -512,7 +512,7 @@ exports[`Renders a medium size Textfield with multiline without crashing 1`] = `
   id="text-field-container"
 >
   <label
-    className="textFieldLabelFlex controlLabel mediumSize"
+    className="textFieldLabelFlex controlLabel labelContainer mediumSize"
     htmlFor="text-field"
   >
     TextField
