@@ -15,8 +15,14 @@ const Error = ({info, subInfo, id}) => (
 
 
 Error.propTypes = {
-  info: PropTypes.string.isRequired,
-  subInfo: PropTypes.string,
+  info: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]).isRequired,
+  subInfo: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
   id: PropTypes.string,
 };
 
