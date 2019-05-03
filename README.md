@@ -14,6 +14,7 @@ Welcome to [kununu's](https://wwww.kununu.com) collection of [React](https://fac
 * Over 80% code coverage
 * Frequently updated
 * Wide range of form and UI components
+* Themeable
 
 <br />
 

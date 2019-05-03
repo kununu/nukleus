@@ -5,7 +5,11 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import DatePicker from 'DatePicker'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
 jest.mock('react-datepicker', () => 'DatePicker');
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
 
 function waitingForDebounce (cb) {
   setTimeout(cb, 550);

@@ -4,6 +4,10 @@ import {StaticRouter} from 'react-router';
 import renderer from 'react-test-renderer';
 import Tabs from 'Tabs'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders Tabs with react-router links as items without crashing', () => {
   const component = renderer.create((
     <StaticRouter

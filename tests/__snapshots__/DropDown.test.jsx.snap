@@ -9,12 +9,12 @@ exports[`Closes menu when not hovered 1`] = `
   title="Österreich"
 >
   <div
-    className="container down dark "
+    className="dropDownContainer down dark "
   >
     <button
       aria-expanded={false}
       aria-haspopup="listbox"
-      className="toggleButton"
+      className="dropDownToggle"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -36,12 +36,12 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
   title="Österreich"
 >
   <div
-    className="container down dark "
+    className="dropDownContainer down dark "
   >
     <button
       aria-expanded={false}
       aria-haspopup="listbox"
-      className="toggleButton"
+      className="dropDownToggle"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -56,12 +56,12 @@ exports[`Does not open menu when hovered while showOnHover is enabled 1`] = `
 
 exports[`Renders DropDown without crashing 1`] = `
 <div
-  className="container down dark "
+  className="dropDownContainer down dark "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton"
+    className="dropDownToggle"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -75,12 +75,12 @@ exports[`Renders DropDown without crashing 1`] = `
 
 exports[`Renders correctly when no icon is provided 1`] = `
 <div
-  className="container down dark "
+  className="dropDownContainer down dark "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton"
+    className="dropDownToggle"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -111,12 +111,12 @@ exports[`Renders menu when button is clicked 1`] = `
   }
 >
   <div
-    className="container down dark "
+    className="dropDownContainer down dark "
   >
     <button
       aria-expanded={true}
       aria-haspopup="listbox"
-      className="toggleButton"
+      className="dropDownToggle"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -135,7 +135,7 @@ exports[`Renders menu when button is clicked 1`] = `
     </button>
     <ul
       aria-labelledby="dropdown"
-      className="itemsList"
+      className="dropDownItemList"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       role="listbox"
@@ -153,14 +153,14 @@ exports[`Renders menu when button is clicked 1`] = `
         isActive={false}
       >
         <li
-          className="item "
+          className="dropDownItem "
         >
           <a
             href="/"
           >
             Österreich
             <span
-              className="icon"
+              className="dropDownIcon"
             >
               <span
                 aria-label="at"
@@ -186,12 +186,12 @@ exports[`Renders menu when hovered 1`] = `
   title="Österreich"
 >
   <div
-    className="container down dark "
+    className="dropDownContainer down dark "
   >
     <button
       aria-expanded={true}
       aria-haspopup="listbox"
-      className="toggleButton"
+      className="dropDownToggle"
       id="dropdown"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -202,7 +202,7 @@ exports[`Renders menu when hovered 1`] = `
     </button>
     <ul
       aria-labelledby="dropdown"
-      className="itemsList"
+      className="dropDownItemList"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       role="listbox"
@@ -213,7 +213,7 @@ exports[`Renders menu when hovered 1`] = `
         isActive={false}
       >
         <li
-          className="item "
+          className="dropDownItem "
         >
           <a
             href="/ch"
@@ -229,12 +229,12 @@ exports[`Renders menu when hovered 1`] = `
 
 exports[`Renders with direction up 1`] = `
 <div
-  className="container up dark "
+  className="dropDownContainer up dark "
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton"
+    className="dropDownToggle"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -256,12 +256,12 @@ exports[`Renders with direction up 1`] = `
 
 exports[`Renders with light shade 1`] = `
 <div
-  className="container up light pullRight"
+  className="dropDownContainer up light pullRight"
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton"
+    className="dropDownToggle"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -282,12 +282,12 @@ exports[`Renders with light shade 1`] = `
 
 exports[`Renders with pullRight and showOnHover false 1`] = `
 <div
-  className="container down dark pullRight"
+  className="dropDownContainer down dark pullRight"
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    className="toggleButton"
+    className="dropDownToggle"
     id="dropdown"
     onClick={[Function]}
     onMouseEnter={[Function]}

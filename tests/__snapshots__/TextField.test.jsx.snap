@@ -68,11 +68,11 @@ exports[`Badwords should highlight correctly 1`] = `
   value=""
 >
   <div
-    className="formGroup inline"
+    className="textFieldContainer formGroup inline"
     id="text-field-container"
   >
     <span
-      className="labelContainer flexLabel controlLabel"
+      className="textFieldLabelFlex controlLabel labelContainer inline"
     >
       <label
         htmlFor="text-field"
@@ -100,10 +100,10 @@ exports[`Badwords should highlight correctly 1`] = `
         position="topLeft"
       >
         <div
-          className="toolTip"
+          className="toolTipContainer"
         >
           <button
-            className="unstyledButton"
+            className="toolTipButton"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -134,7 +134,7 @@ exports[`Badwords should highlight correctly 1`] = `
       />
     </span>
     <div
-      className="inputContainer"
+      className="innerTextFieldContainer"
     >
       <div
         className="highlightOverlay formControl textarea dynamicHeight"
@@ -216,11 +216,11 @@ exports[`Changes output on value change manipulation 1`] = `
   value="test"
 >
   <div
-    className="formGroup inline paddingTop"
+    className="textFieldContainer formGroup inline paddingTop"
     id="text-field-container"
   >
     <label
-      className="controlLabel flexLabel"
+      className="textFieldLabelFlex controlLabel labelContainer inline"
       htmlFor="text-field"
     >
       TextField
@@ -231,14 +231,14 @@ exports[`Changes output on value change manipulation 1`] = `
         requiredLabel="required"
       >
         <span
-          className="controlNote label"
+          className="controlNote infoLabel"
         >
           required
         </span>
       </InfoLabel>
     </label>
     <div
-      className="inputContainer"
+      className="innerTextFieldContainer"
     >
       <input
         autoComplete="off"
@@ -265,16 +265,16 @@ exports[`Changes output on value change manipulation 1`] = `
 
 exports[`Renders A TextField with visible character counter without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="textFieldContainer formGroup inline paddingTop"
   id="text-field-container"
 >
   <label
-    className="controlLabel flexLabel"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
     <span
-      className="controlNote label"
+      className="controlNote infoLabel"
     >
       <strong>
         5
@@ -284,7 +284,7 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
     </span>
   </label>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <input
       autoComplete="off"
@@ -310,22 +310,22 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
 
 exports[`Renders TextField with an error message without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="textFieldContainer formGroup inline paddingTop"
   id="text-field-container"
 >
   <label
-    className="controlLabel controlLabelError flexLabel"
+    className="textFieldLabelFlex controlLabel labelContainer inline controlLabelError"
     htmlFor="text-field"
   >
     TextField
     <span
-      className="controlNote label"
+      className="controlNote infoLabel"
     >
       required
     </span>
   </label>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <input
       autoComplete="off"
@@ -346,11 +346,11 @@ exports[`Renders TextField with an error message without crashing 1`] = `
       value="test"
     />
     <span
-      className="error"
+      className="errorContainer"
       id={null}
     >
       <strong
-        className="info"
+        className="errorInfo"
       >
         An Error
       </strong>
@@ -362,22 +362,22 @@ exports[`Renders TextField with an error message without crashing 1`] = `
 
 exports[`Renders TextField with multiline without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="textFieldContainer formGroup inline paddingTop"
   id="text-field-container"
 >
   <label
-    className="controlLabel flexLabel"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
     <span
-      className="controlNote label"
+      className="controlNote infoLabel"
     >
       required
     </span>
   </label>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <textarea
       autoFocus={false}
@@ -402,22 +402,22 @@ exports[`Renders TextField with multiline without crashing 1`] = `
 
 exports[`Renders TextField without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="textFieldContainer formGroup inline paddingTop"
   id="text-field-container"
 >
   <label
-    className="controlLabel flexLabel"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
     htmlFor="text-field"
   >
     TextField
     <span
-      className="controlNote label"
+      className="controlNote infoLabel"
     >
       required
     </span>
   </label>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <input
       autoComplete="off"
@@ -443,11 +443,11 @@ exports[`Renders TextField without crashing 1`] = `
 
 exports[`Renders a TextField with a ToolTip without crashing 1`] = `
 <div
-  className="formGroup inline"
+  className="textFieldContainer formGroup inline"
   id="text-field-container"
 >
   <span
-    className="labelContainer flexLabel controlLabel"
+    className="textFieldLabelFlex controlLabel labelContainer inline"
   >
     <label
       htmlFor="text-field"
@@ -455,10 +455,10 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
       TextField
     </label>
     <div
-      className="toolTip"
+      className="toolTipContainer"
     >
       <button
-        className="unstyledButton"
+        className="toolTipButton"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -482,7 +482,7 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
     </div>
   </span>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <input
       autoComplete="off"
@@ -508,17 +508,17 @@ exports[`Renders a TextField with a ToolTip without crashing 1`] = `
 
 exports[`Renders a medium size Textfield with multiline without crashing 1`] = `
 <div
-  className="formGroup mediumSize"
+  className="textFieldContainer formGroup mediumSize"
   id="text-field-container"
 >
   <label
-    className="controlLabel controlLabelMediumSize flexLabel"
+    className="textFieldLabelFlex controlLabel labelContainer mediumSize"
     htmlFor="text-field"
   >
     TextField
   </label>
   <div
-    className="inputContainer"
+    className="innerTextFieldContainer"
   >
     <textarea
       autoFocus={false}

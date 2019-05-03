@@ -35,7 +35,7 @@ exports[`Renders a datepicker and send an error later 1`] = `
       DatePicker
     </label>
     <div
-      className="innerContainer"
+      className="datePickerInnerContainer"
     >
       <DatePicker
         className="formControl formControlError"
@@ -58,11 +58,11 @@ exports[`Renders a datepicker and send an error later 1`] = `
         subInfo={null}
       >
         <span
-          className="error"
+          className="errorContainer"
           id={null}
         >
           <strong
-            className="info"
+            className="errorInfo"
           >
             Date is empty
           </strong>
@@ -86,7 +86,7 @@ exports[`Renders a datepicker with a JSX label 1`] = `
     Date
   </label>
   <div
-    className="innerContainer"
+    className="datePickerInnerContainer"
   >
     <DatePicker
       className="formControl "
@@ -120,7 +120,7 @@ exports[`Renders a datepicker with labelHidden 1`] = `
     DatePicker
   </span>
   <div
-    className="innerContainer"
+    className="datePickerInnerContainer"
   >
     <DatePicker
       className="formControl "
@@ -149,7 +149,7 @@ exports[`Renders a datepicker without title and label 1`] = `
 >
   
   <div
-    className="innerContainer"
+    className="datePickerInnerContainer"
   >
     <DatePicker
       className="formControl "
@@ -184,7 +184,7 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
     DatePicker
   </label>
   <div
-    className="innerContainer"
+    className="datePickerInnerContainer"
   >
     <DatePicker
       className="formControl formControlError"
@@ -203,11 +203,11 @@ exports[`Renders datepicker with an error message without crashing 1`] = `
     />
     
     <span
-      className="error"
+      className="errorContainer"
       id={null}
     >
       <strong
-        className="info"
+        className="errorInfo"
       >
         An Error
       </strong>
@@ -230,7 +230,7 @@ exports[`Renders datepicker without crashing 1`] = `
     DatePicker
   </label>
   <div
-    className="innerContainer"
+    className="datePickerInnerContainer"
   >
     <DatePicker
       className="formControl "

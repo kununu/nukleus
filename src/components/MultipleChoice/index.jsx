@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
 import Label from '../Label';
@@ -102,38 +104,11 @@ export default class MultipleChoice extends React.Component {
 
     const inputStyles = inputStyle.split(' ');
 
-    const classNames = [sharedStyles.formGroup, sharedStyles.formGroupMultipleChoice];
+    const classNames = ['formGroup', 'choiceContainer', ...inputStyles];
 
-    // Inline Styles is shared in global index.scss, buttons is a local style
-    if (inputStyles.includes('buttons')) classNames.push(styles.buttons);
-    if (inputStyles.includes('inline')) classNames.push(sharedStyles.inline);
+    if (requiredLabel) classNames.push('paddingTop');
 
-    if (requiredLabel) classNames.push(styles.paddingTop);
-
-    return classNames.join(' ');
-  }
-
-  get label () {
-    const {
-      heading,
-      inputStyle,
-      label,
-      labelHidden,
-    } = this.props;
-
-    if (!label && !heading) return null;
-
-    const value = label || heading;
-    const classNames = inputStyle === 'inline' ? styles.inlineLabel : '';
-
-    return (
-      <Label
-        classNames={classNames}
-        isTitle
-        labelHidden={labelHidden}
-        value={value}
-      />
-    );
+    return classNames;
   }
 
   getChoicesToUpdate (newChoices) {
@@ -186,6 +161,10 @@ export default class MultipleChoice extends React.Component {
       error,
       errorSubInfo,
       isRequired,
+      inputStyle,
+      label,
+      labelHidden,
+      heading,
       name,
       onBlur,
       onFocus,
@@ -193,51 +172,68 @@ export default class MultipleChoice extends React.Component {
       requiredLabel,
     } = this.props;
 
+    const labelStyles = inputStyle === 'inline' ? 'inlineLabel' : '';
+
     return (
-      <div
-        className={this.containerClassNames}
-        id={`${name}-container`}
-      >
-        {requiredLabel && (
-        <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...sharedStyles, ...styles, ...context});
 
-        {this.label}
-
-        <div className={styles.inputContainer}>
-          {choices.map(choice => (
+          return (
             <div
-              className={styles.choice}
-              key={choice.id}
+              className={theme(...this.containerClassNames)}
+              id={`${name}-container`}
             >
-              <input
-                checked={choice.isChecked}
-                className={sharedStyles.formControl}
-                id={`${name}${choice.id}`}
-                key={choice.id}
-                name={name}
-                onBlur={onBlur}
-                onChange={() => this.onChange(choice)}
-                onFocus={onFocus}
-                ref={reference}
-                required={isRequired}
-                type="checkbox"
-                value={choice.value}
-              />
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
 
-              <label htmlFor={`${name}${choice.id}`}>{choice.label}</label>
+              {label || heading ? (
+                <Label
+                  classNames={theme(labelStyles)}
+                  isTitle
+                  labelHidden={labelHidden}
+                  value={label || heading}
+                />
+              ) : null }
+
+              <div className={theme('choiceInnerContainer')}>
+                {choices.map(choice => (
+                  <div
+                    className={theme('choice')}
+                    key={choice.id}
+                  >
+                    <input
+                      checked={choice.isChecked}
+                      className={theme('formControl')}
+                      id={`${name}${choice.id}`}
+                      key={choice.id}
+                      name={name}
+                      onBlur={onBlur}
+                      onChange={() => this.onChange(choice)}
+                      onFocus={onFocus}
+                      ref={reference}
+                      required={isRequired}
+                      type="checkbox"
+                      value={choice.value}
+                    />
+
+                    <label htmlFor={`${name}${choice.id}`}>{choice.label}</label>
+                  </div>
+                ))}
+              </div>
+              {this.hasError() && (
+              <Error
+                info={error}
+                subInfo={errorSubInfo}
+              />
+              )}
             </div>
-          ))}
-        </div>
-        {this.hasError() && (
-        <Error
-          info={error}
-          subInfo={errorSubInfo}
-        />
-        )}
-      </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

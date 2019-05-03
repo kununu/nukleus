@@ -2,20 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import isDate from 'date-fns/isDate';
-
 import 'react-datepicker/dist/react-datepicker.css';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
-import {
-  controlLabel,
-  controlLabelRequired,
-  controlNote,
-  formControl,
-  formControlError,
-  formGroup,
-  srOnly,
-} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
 
@@ -121,7 +114,7 @@ export default class DatePickerComponent extends React.Component {
     });
   };
 
-  get label () {
+  getLabel (theme) {
     const {
       id,
       title,
@@ -131,7 +124,7 @@ export default class DatePickerComponent extends React.Component {
 
     if (!label && !title) return null;
 
-    if (labelHidden) return <span className={srOnly}>{label || title}</span>;
+    if (labelHidden) return <span className={theme('srOnly')}>{label || title}</span>;
 
     /**
      * generates the TextField label based on the Textfield label prop
@@ -141,7 +134,7 @@ export default class DatePickerComponent extends React.Component {
     if (typeof label === 'string' || typeof title === 'string') {
       return (
         <label
-          className={`${controlLabel} ${this.hasError() ? styles.controlLabelError : ''}`}
+          className={theme('controlLabel', `${this.hasError() ? 'controlLabelError' : ''}`)}
           htmlFor={id}
         >
           {label || title}
@@ -157,7 +150,7 @@ export default class DatePickerComponent extends React.Component {
       label,
       {
         ...label.props,
-        className: controlLabel,
+        className: theme('controlLabel'),
       },
     );
   }
@@ -203,49 +196,62 @@ export default class DatePickerComponent extends React.Component {
     const {value} = this.state;
 
     return (
-      <div
-        className={`${formGroup} ${styles[inputStyle]} ${styles.datePickerContainer} ${requiredLabel ? styles.paddingTop : ''}`}
-        id={`${name}-container`}
-      >
-        {requiredLabel && (
-        <span className={`${controlNote} ${controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...sharedStyles,
+            ...styles,
+            ...context,
+          };
+          const theme = themeable(allStyles);
 
-        {this.label}
+          return (
+            <div
+              className={theme('formGroup', inputStyle, 'datePickerContainer', `${requiredLabel ? 'paddingTop' : ''}`)}
+              id={`${name}-container`}
+            >
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
 
-        <div className={styles.innerContainer}>
-          <DatePicker
-            className={`${formControl} ${this.hasError() ? formControlError : ''}`}
-            dateFormat={dateFormat}
-            disabled={disabled}
-            id={id}
-            name={name}
-            onBlur={onBlur}
-            onChange={this.onChange}
-            onFocus={onFocus}
-            required={isRequired}
-            selected={isDate(value) ? value : null}
-            showMonthDropdown={showMonthDropdown}
-            showYearDropdown={showYearDropdown}
-            useShortMonthInDropdown={showAbbreviatedMonthDropdown}
-          />
-          {icon ? (
-            <span className={styles.icon}>
-              {icon}
-            </span>
-          ) : ''}
+              {this.getLabel(theme)}
 
-          {this.hasError() && (
-          <Error
-            info={error}
-            subInfo={errorSubInfo}
-          />
-          )}
-        </div>
+              <div className={theme('datePickerInnerContainer')}>
+                <DatePicker
+                  className={theme('formControl', `${this.hasError() ? 'formControlError' : ''}`)}
+                  dateFormat={dateFormat}
+                  disabled={disabled}
+                  id={id}
+                  name={name}
+                  onBlur={onBlur}
+                  onChange={this.onChange}
+                  onFocus={onFocus}
+                  required={isRequired}
+                  selected={isDate(value) ? value : null}
+                  showMonthDropdown={showMonthDropdown}
+                  showYearDropdown={showYearDropdown}
+                  useShortMonthInDropdown={showAbbreviatedMonthDropdown}
+                />
 
-      </div>
+                {icon ? (
+                  <span className={theme('dropDownIcon')}>
+                    {icon}
+                  </span>
+                ) : ''}
+
+                {this.hasError() && (
+                <Error
+                  info={error}
+                  subInfo={errorSubInfo}
+                />
+                )}
+              </div>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

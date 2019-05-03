@@ -1,6 +1,6 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.radioContainer {
+.choiceContainer {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -10,7 +10,7 @@
   }
 }
 
-.radioButton {
+.choiceButton {
   text-align: center;
   min-height: 50px;
   display: flex;
@@ -74,12 +74,12 @@
   }
 }
 
-.radioContainer.flexible {
+.choiceContainer.choiceFlexible {
   @media (max-width: $screen-sm-max) {
     border: 1px solid $blue;
     border-radius: $border-radius-base;
 
-    .radioButton {
+    .choiceButton {
       display: flex;
       flex: 50%;
 
@@ -111,7 +111,7 @@
 [data-options-per-row] {
   flex-wrap: wrap;
 
-  .radioButton {
+  .choiceButton {
     label {
       border-top: 0;
     }
@@ -134,7 +134,7 @@
 
   // Mobile Styling
   @media (max-width: $screen-sm-max) {
-    .radioButton {
+    .choiceButton {
       flex: 0 0 50%;
 
       // First Row
@@ -199,7 +199,7 @@
     }
 
     @media (min-width: $screen-md-min) {
-      .radioButton {
+      .choiceButton {
         flex: 0 0 100% / $count;
 
         label {
@@ -208,43 +208,43 @@
       }
 
       // Target first row
-      .radioButton:nth-child(-n + #{$count}) {
+      .choiceButton:nth-child(-n + #{$count}) {
         label {
           border-top: 1px solid $blue;
         }
       }
 
       // All left radioButtons
-      .radioButton:nth-child(#{$count}n + 1) {
+      .choiceButton:nth-child(#{$count}n + 1) {
         label {
           border-left: 1px solid $blue;
         }
       }
 
       // Top Left Corner
-      .radioButton:first-child {
+      .choiceButton:first-child {
         label {
           border-top-left-radius: $border-radius-base;
         }
       }
 
       // Top Right Corner
-      .radioButton:nth-child(#{$count}) {
+      .choiceButton:nth-child(#{$count}) {
         label {
           border-top-right-radius: $border-radius-base;
         }
       }
 
       // Bottom Left Corner
-      .radioButton:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) {
+      .choiceButton:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) {
         label {
           border-bottom-left-radius: $border-radius-base;
         }
       }
 
       // Bottom Right Corner
-      .radioButton:nth-child(#{$count}n):nth-last-child(-n + #{$count}),
-      .radioButton:last-child {
+      .choiceButton:nth-child(#{$count}n):nth-last-child(-n + #{$count}),
+      .choiceButton:last-child {
         label {
           border-bottom-right-radius: $border-radius-base;
         }

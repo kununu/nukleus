@@ -1,83 +1,12 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.input {
-  cursor: pointer;
-}
-
-.inline {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  width: 100%;
-
-  @media (min-width: $screen-sm-min) {
-    padding-top: 6px;
-  }
-
-  label {
-    margin-right: 10px;
-    margin-bottom: 0;
-    width: 140px;
-
-    @media (max-width: $screen-xs-min) {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: $screen-xs-min) {
-    display: block;
-  }
-
-  &.paddingTop {
-    @media (min-width: $screen-sm-min) {
-      padding-top: 25px;
-    }
-  }
-
-  .controlLabelError {
-    align-self: flex-start; // otherwise would be centered between Input Field and error
-    display: flex;
-    align-items: center;
-    min-height: 46px; // height of input
-  }
-}
-
-.container {
+.comboboxContainer {
   position: relative;
   width: 100%;
   line-height: 1.65;
 
   * {
     box-sizing: border-box;
-  }
-
-  // Inline error definition
-  // Consider abstracting out to another component if we start using this a lot
-  .error {
-    border-radius: 4px;
-    font-size: 11px;
-    padding: 5px 12px;
-    text-transform: uppercase;
-    font-weight: $font-weight-regular;
-    color: $white;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 45px;
-
-    &:after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: -5px;
-      right: 45%;
-      bottom: auto;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 6px 6px;
-      border-color: transparent transparent $brand-danger;
-    }
   }
 }
 
@@ -86,8 +15,8 @@
   border-radius: $border-radius-base;
   background-clip: padding-box;
   font-size: $font-size-base;
-  min-width: 250px;
   width: 100%;
+  min-width: 250px;
   margin-top: 2px;
   background-color: $white;
   max-height: 300px;
@@ -95,26 +24,24 @@
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
   z-index: 3;
 
-  @media (max-width: $screen-xs-min) {
+  @media (max-width: $screen-xs-max) {
     left: 0;
     right: 0;
-    width: 100%;
+    border-radius: 0;
   }
 
-  span {
-    user-select: none;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
-}
-
-.suggestionsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .suggestion {
+  box-sizing: border-box;
   text-align: left;
   padding: 10px 20px;
 }
@@ -125,12 +52,7 @@
   cursor: pointer;
 }
 
-.smallText {
-  color: $gray-base-40;
-  font-style: italic;
-}
-
-.handle {
+.comboboxHandle {
   position: absolute;
   right: 15px;
   font-size: 11px;

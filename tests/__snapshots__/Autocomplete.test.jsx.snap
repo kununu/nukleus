@@ -58,7 +58,7 @@ exports[`Hides no suggestions on blur 1`] = `
   value="test"
 >
   <div
-    className="formGroup inline paddingTop"
+    className="formGroup inline"
     id="autocomplete-container"
   >
     <span
@@ -73,7 +73,7 @@ exports[`Hides no suggestions on blur 1`] = `
       Autocomplete
     </label>
     <div
-      className="autoCompleteContainer"
+      className="autocompleteContainer"
     >
       <Autosuggest
         alwaysRenderSuggestions={false}
@@ -85,7 +85,7 @@ exports[`Hides no suggestions on blur 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl ",
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -105,7 +105,7 @@ exports[`Hides no suggestions on blur 1`] = `
         renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
-        theme={null}
+        theme={Object {}}
       >
         <Autowhatever
           containerProps={Object {}}
@@ -116,7 +116,7 @@ exports[`Hides no suggestions on blur 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl ",
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -157,7 +157,7 @@ exports[`Hides no suggestions on blur 1`] = `
               aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
-              className="formControl "
+              className="formControl"
               disabled={true}
               id="autocompletes"
               key="react-autowhatever-autocompletes-input"
@@ -182,7 +182,7 @@ exports[`Hides no suggestions on blur 1`] = `
 
 exports[`Renders Autocomplete with Error without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="formGroup inline"
   id="autocomplete-container"
 >
   <span
@@ -197,7 +197,7 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
     Autocomplete
   </label>
   <div
-    className="autoCompleteContainer"
+    className="autocompleteContainer"
   >
     <div
       aria-expanded={false}
@@ -227,7 +227,6 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
         value="test"
       />
       <div
-        className="suggestionsContainer"
         id="react-autowhatever-autocompletes"
         role="listbox"
         style={Object {}}
@@ -235,11 +234,11 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
     </div>
     
     <span
-      className="error"
+      className="errorContainer"
       id={null}
     >
       <strong
-        className="info"
+        className="errorInfo"
       >
         An Error
       </strong>
@@ -251,7 +250,7 @@ exports[`Renders Autocomplete with Error without crashing 1`] = `
 
 exports[`Renders Autocomplete without crashing 1`] = `
 <div
-  className="formGroup inline paddingTop"
+  className="formGroup inline"
   id="autocomplete-container"
 >
   <span
@@ -266,7 +265,7 @@ exports[`Renders Autocomplete without crashing 1`] = `
     Autocomplete
   </label>
   <div
-    className="autoCompleteContainer"
+    className="autocompleteContainer"
   >
     <div
       aria-expanded={false}
@@ -281,7 +280,7 @@ exports[`Renders Autocomplete without crashing 1`] = `
         aria-controls="react-autowhatever-autocompletes"
         autoComplete="off"
         autoFocus={false}
-        className="formControl "
+        className="formControl"
         disabled={true}
         id="autocompletes"
         name="autocomplete"
@@ -296,7 +295,6 @@ exports[`Renders Autocomplete without crashing 1`] = `
         value="test"
       />
       <div
-        className="suggestionsContainer"
         id="react-autowhatever-autocompletes"
         role="listbox"
         style={Object {}}
@@ -365,7 +363,7 @@ exports[`Renders no suggestions container 1`] = `
   value="test"
 >
   <div
-    className="formGroup inline paddingTop"
+    className="formGroup inline"
     id="autocomplete-container"
   >
     <span
@@ -380,7 +378,7 @@ exports[`Renders no suggestions container 1`] = `
       Autocomplete
     </label>
     <div
-      className="autoCompleteContainer"
+      className="autocompleteContainer"
     >
       <Autosuggest
         alwaysRenderSuggestions={false}
@@ -392,7 +390,7 @@ exports[`Renders no suggestions container 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl ",
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -438,7 +436,7 @@ exports[`Renders no suggestions container 1`] = `
             },
           ]
         }
-        theme={null}
+        theme={Object {}}
       >
         <Autowhatever
           containerProps={Object {}}
@@ -449,7 +447,7 @@ exports[`Renders no suggestions container 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl ",
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -516,7 +514,7 @@ exports[`Renders no suggestions container 1`] = `
               aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
-              className="formControl "
+              className="formControl"
               disabled={true}
               id="autocompletes"
               key="react-autowhatever-autocompletes-input"
@@ -532,7 +530,6 @@ exports[`Renders no suggestions container 1`] = `
               value="z"
             />
             <div
-              className="suggestionsContainer"
               id="react-autowhatever-autocompletes"
               key="react-autowhatever-autocompletes-items-container"
               role="listbox"
@@ -976,7 +973,7 @@ exports[`Renders suggestions container 1`] = `
   value="test"
 >
   <div
-    className="formGroup inline paddingTop"
+    className="formGroup inline"
     id="autocomplete-container"
   >
     <span
@@ -991,7 +988,7 @@ exports[`Renders suggestions container 1`] = `
       Autocomplete
     </label>
     <div
-      className="autoCompleteContainer"
+      className="autocompleteContainer"
     >
       <Autosuggest
         alwaysRenderSuggestions={false}
@@ -1003,7 +1000,7 @@ exports[`Renders suggestions container 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl ",
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -1049,7 +1046,7 @@ exports[`Renders suggestions container 1`] = `
             },
           ]
         }
-        theme={null}
+        theme={Object {}}
       >
         <Autowhatever
           containerProps={Object {}}
@@ -1060,7 +1057,7 @@ exports[`Renders suggestions container 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl ",
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -1127,7 +1124,7 @@ exports[`Renders suggestions container 1`] = `
               aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
-              className="formControl "
+              className="formControl"
               disabled={true}
               id="autocompletes"
               key="react-autowhatever-autocompletes-input"
@@ -1143,7 +1140,6 @@ exports[`Renders suggestions container 1`] = `
               value="a"
             />
             <div
-              className="suggestionsContainer"
               id="react-autowhatever-autocompletes"
               key="react-autowhatever-autocompletes-items-container"
               role="listbox"
@@ -1587,7 +1583,7 @@ exports[`Updates value on selection 1`] = `
   value="test"
 >
   <div
-    className="formGroup inline paddingTop"
+    className="formGroup inline"
     id="autocomplete-container"
   >
     <span
@@ -1602,7 +1598,7 @@ exports[`Updates value on selection 1`] = `
       Autocomplete
     </label>
     <div
-      className="autoCompleteContainer"
+      className="autocompleteContainer"
     >
       <Autosuggest
         alwaysRenderSuggestions={false}
@@ -1614,7 +1610,7 @@ exports[`Updates value on selection 1`] = `
         inputProps={
           Object {
             "autoFocus": false,
-            "className": "formControl ",
+            "className": "formControl",
             "disabled": true,
             "id": "autocompletes",
             "name": "autocomplete",
@@ -1634,7 +1630,7 @@ exports[`Updates value on selection 1`] = `
         renderSuggestionsContainer={[Function]}
         shouldRenderSuggestions={[Function]}
         suggestions={Array []}
-        theme={null}
+        theme={Object {}}
       >
         <Autowhatever
           containerProps={Object {}}
@@ -1645,7 +1641,7 @@ exports[`Updates value on selection 1`] = `
           inputProps={
             Object {
               "autoFocus": false,
-              "className": "formControl ",
+              "className": "formControl",
               "disabled": true,
               "id": "autocompletes",
               "name": "autocomplete",
@@ -1686,7 +1682,7 @@ exports[`Updates value on selection 1`] = `
               aria-controls="react-autowhatever-autocompletes"
               autoComplete="off"
               autoFocus={false}
-              className="formControl "
+              className="formControl"
               disabled={true}
               id="autocompletes"
               key="react-autowhatever-autocompletes-input"

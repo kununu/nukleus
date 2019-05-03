@@ -4,13 +4,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
 import Label from '../Label';
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
-
 
 export default class Select extends React.Component {
   static propTypes = {
@@ -137,45 +138,32 @@ export default class Select extends React.Component {
    */
   get containerClassNames () {
     const {inputStyle, requiredLabel} = this.props;
-    const classNames = [sharedStyles.formGroup, sharedStyles[inputStyle]];
+    const classNames = ['formGroup', inputStyle, 'selectContainer'];
 
-    if (requiredLabel) classNames.push(styles.paddingTop);
+    if (requiredLabel) classNames.push('paddingTop');
 
-    return classNames.join(' ');
+    return classNames;
   }
 
-  /**
-   * determines which classNames should be added to the label of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get labelClassNames () {
-    if (this.hasError()) return sharedStyles.controlLabelError;
-
-    return [];
-  }
-
-  get label () {
+  get options () {
     const {
-      id,
-      label,
-      labelHidden,
-      title,
+      options,
+      items,
+      sort,
     } = this.props;
+    const allOptions = (Object.keys(options).length && options) || items;
 
-    if (!label && !title) return null;
+    const mappedOptions = Object.keys(allOptions)
+      .map(key => ({
+        key: (allOptions)[key].key || key,
+        value: (allOptions)[key].value || (allOptions)[key],
+      }));
 
-    const value = label || title;
+    if (sort) {
+      return mappedOptions.sort(sort);
+    }
 
-    return (
-      <Label
-        classNames={this.labelClassNames}
-        id={id}
-        labelHidden={labelHidden}
-        value={value}
-      />
-    );
+    return mappedOptions;
   }
 
   needsUpdate ({value, query}) {
@@ -218,104 +206,110 @@ export default class Select extends React.Component {
       error,
       errorSubInfo,
       id,
+      label,
+      labelHidden,
       isRequired,
-      items,
       name,
       onBlur,
       onFocus,
-      options,
       reference,
       requiredLabel,
-      sort,
+      title,
     } = this.props;
     const {value} = this.state;
 
-    const allOptions = (Object.keys(options).length && options) || items;
-
-    const mappedOptions = Object.keys(allOptions)
-      .map(key => ({
-        key: (allOptions)[key].key || key,
-        value: (allOptions)[key].value || (allOptions)[key],
-      }));
-
-    if (sort) {
-      mappedOptions.sort(sort);
-    }
+    const errorClass = this.hasError() ? 'controlLabelError' : '';
+    const mappedOptions = this.options;
 
     return (
-      <div
-        className={this.containerClassNames}
-        id={`${name}-container`}
-      >
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...sharedStyles, ...styles, ...context});
 
-        {requiredLabel && (
-        <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
-
-        {this.label}
-
-        <div className={styles.inputContainer}>
-          <select
-            autoFocus={autoFocus}
-            className={`${sharedStyles.formControl} ${styles.select} ${this.hasError() ? sharedStyles.formControlError : ''}`}
-            disabled={disabled}
-            id={id}
-            name={name}
-            onBlur={onBlur}
-            onChange={this.onChange}
-            onFocus={onFocus}
-            ref={reference}
-            required={isRequired}
-            value={value}
-          >
-
-            {defaultRequired && (
-            <option
-              hidden
-              value=""
+          return (
+            <div
+              className={theme(...this.containerClassNames)}
+              id={`${name}-container`}
             >
-              {defaultRequired}
-            </option>
-            )}
 
-            {defaultItem &&
-              <option value="">{defaultItem}</option>}
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
 
-            {mappedOptions.map(item => (
-              <option
-                key={item.key}
-                value={item.key}
-              >
-                {item.value}
-              </option>
-            ))}
-          </select>
+              {label || title ? (
+                <Label
+                  classNames={theme(errorClass)}
+                  id={id}
+                  labelHidden={labelHidden}
+                  value={label || title}
+                />
+              ) : null}
 
-          {this.hasError() && (
-          <Error
-            info={error}
-            subInfo={errorSubInfo}
-          />
-          )}
+              <div className={theme('innerSelectContainer')}>
+                <select
+                  autoFocus={autoFocus}
+                  className={theme('select', 'formControl', `${this.hasError() ? 'formControlError' : ''}`)}
+                  disabled={disabled}
+                  id={id}
+                  name={name}
+                  onBlur={onBlur}
+                  onChange={this.onChange}
+                  onFocus={onFocus}
+                  ref={reference}
+                  required={isRequired}
+                  value={value}
+                >
 
-          <span className={styles.caret}>
-            <svg
-              x="0px"
-              y="0px"
-              viewBox="-248 252.9 13.4 9.1"
-            >
-              <path
-                fill="#20292D"
-                d="M-235,255.7l-5.9,5.8c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0-0.3-0.1-0.4-0.2l-5.9-5.8c-0.1-0.2-0.1-0.3-0.1-0.4
-    c0-0.1,0-0.3,0.2-0.4l1.3-1.3c0.1-0.1,0.2-0.2,0.4-0.2s0.3,0.1,0.4,0.2l4.2,4.2l4.1-4.2c0.1-0.1,0.2-0.2,0.4-0.2
-    c0.1,0,0.3,0.1,0.4,0.2l1.2,1.3c0.1,0.1,0.2,0.2,0.2,0.4C-234.8,255.4-234.9,255.5-235,255.7z"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
+                  {defaultRequired && (
+                  <option
+                    hidden
+                    value=""
+                  >
+                    {defaultRequired}
+                  </option>
+                  )}
+
+                  {defaultItem &&
+                    <option value="">{defaultItem}</option>}
+
+                  {mappedOptions.map(item => (
+                    <option
+                      key={item.key}
+                      value={item.key}
+                    >
+                      {item.value}
+                    </option>
+                  ))}
+                </select>
+
+                {this.hasError() && (
+                <Error
+                  info={error}
+                  subInfo={errorSubInfo}
+                />
+                )}
+
+                <span className={theme('selectCaret')}>
+                  <svg
+                    x="0px"
+                    y="0px"
+                    viewBox="-248 252.9 13.4 9.1"
+                  >
+                    <path
+                      fill="#20292D"
+                      d="M-235,255.7l-5.9,5.8c-0.1,0.1-0.2,0.2-0.3,0.2c-0.1,0-0.3-0.1-0.4-0.2l-5.9-5.8c-0.1-0.2-0.1-0.3-0.1-0.4
+          c0-0.1,0-0.3,0.2-0.4l1.3-1.3c0.1-0.1,0.2-0.2,0.4-0.2s0.3,0.1,0.4,0.2l4.2,4.2l4.1-4.2c0.1-0.1,0.2-0.2,0.4-0.2
+          c0.1,0,0.3,0.1,0.4,0.2l1.2,1.3c0.1,0.1,0.2,0.2,0.2,0.4C-234.8,255.4-234.9,255.5-235,255.7z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

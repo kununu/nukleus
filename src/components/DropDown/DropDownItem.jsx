@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 export default class DropDownItem extends Component {
-  getItem = ({props: {children}}) => {
+  getItem = ({props: {children}}, theme) => {
     const {icon} = this.props;
 
     return (
@@ -12,7 +15,7 @@ export default class DropDownItem extends Component {
         {children}
 
         {icon && (
-        <span className={styles.icon}>
+        <span className={theme('dropDownIcon')}>
           {icon}
         </span>
         )}
@@ -27,9 +30,21 @@ export default class DropDownItem extends Component {
     } = this.props;
 
     return (
-      <li className={`${styles.item} ${isActive ? styles.active : ''}`}>
-        {React.cloneElement(children, [], this.getItem(children))}
-      </li>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...styles,
+            ...context,
+          };
+          const theme = themeable(allStyles);
+
+          return (
+            <li className={theme('dropDownItem', `${isActive ? 'active' : ''}`)}>
+              {React.cloneElement(children, [], this.getItem(children, theme))}
+            </li>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

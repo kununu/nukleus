@@ -32,27 +32,33 @@
       border-bottom: 1px solid darken($gray-lightest, 1%);
     }
   }
+
+  @media (min-width: $screen-sm-min) {
+    td, th {
+      padding: 12px 18px;
+    }
+  }
 }
 
-.sortingContainer {
+.tableHeaderContainer {
   position: relative;
   color: $gray-base-70;
   font-size: $font-size-small;
   text-transform: uppercase;
 }
 
-.sortingTitle {
+.tableHeader {
   text-align: left;
   margin-right: 10px;
 }
 
-.sorting {
+.tableSortingContainer {
   cursor: pointer;
   position: absolute;
   right: -15px;
   bottom: 0;
 
-  .sortingButton {
+  .tableSortingButton {
     background: none;
     color: inherit;
     border: 0;
@@ -63,18 +69,10 @@
     margin-left: 2px;
     display: inline;
 
-    .sortingArrowIcon {
+    .tableSortingArrowIcon {
       width: 8px;
       height: 14px;
       fill: $blue;
-    }
-  }
-}
-
-@media (min-width: $screen-sm-min) {
-  .table {
-    td, th {
-      padding: 12px 18px;
     }
   }
 }

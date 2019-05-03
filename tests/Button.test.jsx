@@ -5,6 +5,10 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import Button from 'Button'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders button without crashing', () => {
   const component = renderer.create(<Button
     text="Test"

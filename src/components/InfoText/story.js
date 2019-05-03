@@ -6,6 +6,9 @@ import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import TextField from '../TextField';
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
 
 import InfoText from './index';
 
@@ -27,4 +30,19 @@ storiesOf('InfoText', module)
         />
       </div>
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <TextField
+        id="text-field"
+        label="TextField"
+        name="text-field"
+      />
+
+      <div>
+        <InfoText
+          text={text('text', 'I am an info text.')}
+        />
+      </div>
+    </ThemeProvider>
   ));

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {isBrowser} from 'utils/executionEnvironment';
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import styles from './index.scss';
 
@@ -89,34 +91,46 @@ export default class DropDown extends Component {
     const {isOpen} = this.state;
 
     return (
-      <div className={`${styles.container} ${styles[direction]} ${styles[shade]} ${pullRight ? styles.pullRight : ''}`}>
-        <button
-          type="button"
-          id="dropdown"
-          className={styles.toggleButton}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-          onClick={this.onClick}
-          ref={(node) => { this.node = node; }}
-          aria-haspopup="listbox"
-          aria-expanded={isOpen}
-        >
-          {title}
-        </button>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...styles,
+            ...context,
+          };
+          const theme = themeable(allStyles);
 
-        {isOpen && (
-        <ul
-          className={styles.itemsList}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-          aria-labelledby="dropdown"
-          role="listbox"
-          tabIndex={0}
-        >
-          {children}
-        </ul>
-        )}
-      </div>
+          return (
+            <div className={theme('dropDownContainer', [direction], [shade], `${pullRight ? 'pullRight' : ''}`)}>
+              <button
+                type="button"
+                id="dropdown"
+                className={theme('dropDownToggle')}
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+                onClick={this.onClick}
+                ref={(node) => { this.node = node; }}
+                aria-haspopup="listbox"
+                aria-expanded={isOpen}
+              >
+                {title}
+              </button>
+
+              {isOpen && (
+              <ul
+                className={theme('dropDownItemList')}
+                onMouseEnter={this.onMouseEnter}
+                onMouseLeave={this.onMouseLeave}
+                aria-labelledby="dropdown"
+                role="listbox"
+                tabIndex={0}
+              >
+                {children}
+              </ul>
+              )}
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

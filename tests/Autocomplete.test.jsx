@@ -4,6 +4,10 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Autocomplete from 'Autocomplete'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 function waitingForDebounce (cb) {
   setTimeout(cb, 550);
 }

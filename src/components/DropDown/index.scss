@@ -2,32 +2,32 @@
 @import '~@kununu/kununu-theme-v2/scss/base/mixins';
 
 
-.container {
+.dropDownContainer {
   position: relative;
   padding: 0;
   margin: 0;
   display: inline-block;
 
   &.up {
-    .itemsList {
+    .dropDownItemList {
       top: auto;
       bottom: 100%;
       border-radius: $border-radius-base $border-radius-base 0 0;
     }
 
-    .item:first-child {
+    .dropDownItem:first-child {
       border-radius: $border-radius-base $border-radius-base 0 0;
     }
   }
 
   &.down {
-    .itemsList {
+    .dropDownItemList {
       top: 100%;
       left: 0;
       border-radius: 0 0 $border-radius-base $border-radius-base;
     }
 
-    .item:last-child {
+    .dropDownItem:last-child {
       border-radius: 0 0 $border-radius-base $border-radius-base;
     }
   }
@@ -40,11 +40,11 @@
   }
 
   &.light {
-    .toggleButton {
+    .dropDownToggle {
       color: $white;
     }
 
-    .item {
+    .dropDownItem {
       a {
         color: $text-color;
       }
@@ -52,7 +52,7 @@
   }
 }
 
-.toggleButton {
+.dropDownToggle {
   display: block;
   padding: 10px 15px;
   text-align: left;
@@ -72,7 +72,7 @@
   }
 }
 
-.itemsList {
+.dropDownItemList {
   position: absolute;
   left: 0;
   padding: 0;
@@ -83,7 +83,7 @@
   z-index: 1060;
 }
 
-.item {
+.dropDownItem {
   position: relative;
   display: block;
   padding: 0;
@@ -92,18 +92,6 @@
   list-style: none;
   cursor: pointer;
   @include clearfix();
-
-  .icon {
-    float: right;
-    margin-left: 10px;
-    line-height: 18px;
-
-    img,
-    span[role="img"] {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
 
   a {
     display: block;
@@ -120,5 +108,17 @@
   &.active,
   &:hover {
     background-color: $gray-base-03;
+  }
+}
+
+.dropDownIcon {
+  float: right;
+  margin-left: 10px;
+  line-height: 18px;
+
+  img,
+  span[role="img"] {
+    display: inline-block;
+    vertical-align: middle;
   }
 }

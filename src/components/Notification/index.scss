@@ -1,6 +1,6 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.container {
+.notificationContainer {
   width: 320px;
   padding: 20px;
   height: auto;
@@ -31,9 +31,13 @@
     margin-bottom: 6px;
     margin-top: $baseline-grid;
   }
+
+  .notificationIcon {
+    color: $green;
+  }
 }
 
-.closeButton {
+.notificationCloseButton {
   background-color: transparent;
   border: 0;
   position: absolute;
@@ -49,7 +53,7 @@
   }
 }
 
-.container.error {
+.notificationContainer.notificationError {
   background-color: $brand-danger;
   border-color: $red-dark;
 
@@ -58,20 +62,20 @@
     font-weight: $font-weight-semibold;
   }
 
-  .closeButton {
+  .notificationCloseButton {
     color: $red-dark;
+
+    svg {
+      fill: $red-dark;
+    }
+  }
+
+  .notificationIcon {
+    color: $white;
   }
 }
 
-.success {
-  color: $green;
-}
-
-.error {
-  color: $white;
-}
-
-.container.visible {
+.notificationContainer.visible {
   animation-name: slideUp;
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -80,7 +84,7 @@
   display: block;
 }
 
-.container.hidden {
+.notificationContainer.hidden {
   display: none;
 }
 

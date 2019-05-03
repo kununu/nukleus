@@ -5,6 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {queryParamsToObject} from 'utils/params';
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
@@ -163,19 +165,16 @@ export default class TextField extends React.Component {
       inputStyle,
       labelHidden,
     } = this.props;
-    const classNames = [sharedStyles.controlLabel];
-
     const inputStyles = inputStyle.split(' ');
+    const classNames = ['controlLabel', 'labelContainer', ...inputStyles];
 
     // Check if label should be hidden
-    if (labelHidden) classNames.push(sharedStyles.hidden);
+    if (labelHidden) classNames.push('hidden');
 
     // Check if TextField contains an error
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+    if (this.hasError()) classNames.push('controlLabelError');
 
-    if (inputStyles.indexOf('mediumSize') !== -1) classNames.push(sharedStyles.controlLabelMediumSize);
-
-    return classNames.join(' ');
+    return classNames;
   }
 
   /**
@@ -189,17 +188,17 @@ export default class TextField extends React.Component {
       highlightList,
       multiLine,
     } = this.props;
-    const classNames = [sharedStyles.formControl];
+    const classNames = ['formControl'];
 
     // Check if textarea styles need to be added
-    if (multiLine) classNames.push(styles.textarea);
+    if (multiLine) classNames.push('textarea');
 
-    if (multiLine && highlightList) classNames.push(styles.dynamicHeight);
+    if (multiLine && highlightList) classNames.push('dynamicHeight');
 
     // Check if error styles need to be added
-    if (this.hasError()) classNames.push(sharedStyles.formControlError);
+    if (this.hasError()) classNames.push('formControlError');
 
-    return classNames.join(' ');
+    return classNames;
   }
 
   /**
@@ -214,16 +213,12 @@ export default class TextField extends React.Component {
       inputStyle,
       requiredLabel,
     } = this.props;
-    const classNames = [sharedStyles.formGroup];
-
-    // Add all styles that are added via inputStyles
     const inputStyles = inputStyle.split(' ');
+    const classNames = ['textFieldContainer', 'formGroup', ...inputStyles];
 
-    inputStyles.map(style => classNames.push(sharedStyles[style]));
+    if (requiredLabel || displayLength) classNames.push('paddingTop');
 
-    if (requiredLabel || displayLength) classNames.push(sharedStyles.paddingTop);
-
-    return classNames.join(' ');
+    return classNames;
   }
 
   getItem = ({props: {children}}) => {
@@ -257,7 +252,7 @@ export default class TextField extends React.Component {
    *
    * @return {ReactElement} [Either returns a label or a react element with the added css class labelContainer]
    */
-  get label () {
+  getLabel = (theme) => {
     const {
       displayLength,
       id,
@@ -266,12 +261,12 @@ export default class TextField extends React.Component {
       requiredLabel,
       value,
     } = this.props;
-    const flexStyles = (maxLength || requiredLabel) ? styles.flexLabel : '';
+    const flexStyles = (maxLength || requiredLabel) ? 'textFieldLabelFlex' : '';
 
     if (typeof label === 'string') {
       return (
         <label
-          className={`${this.labelClassNames} ${flexStyles}`}
+          className={theme(flexStyles, ...this.labelClassNames)}
           htmlFor={id}
         >
           {label}
@@ -290,7 +285,7 @@ export default class TextField extends React.Component {
     // clickable element like a link or button inside a label
     // However to also add the labelContainer class, we need to return a cloned
     // element and not just the label - element itself
-    const classNames = [sharedStyles.labelContainer, flexStyles, this.labelClassNames];
+    const classNames = [flexStyles, ...this.labelClassNames];
 
     if (label.props.className) classNames.push(label.props.className);
 
@@ -298,7 +293,7 @@ export default class TextField extends React.Component {
       label,
       {
         ...label.props,
-        className: classNames.join(' '),
+        className: theme(...classNames),
       },
       this.getItem(label),
     );
@@ -425,71 +420,79 @@ export default class TextField extends React.Component {
     } = this.state;
 
     return (
-      <div
-        className={this.containerClassNames}
-        id={`${name}-container`}
-      >
-        {labelHidden && <span className={sharedStyles.srOnly}>{label}</span>}
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...sharedStyles, ...styles, ...context});
 
-        {this.label}
+          return (
+            <div
+              className={theme(...this.containerClassNames)}
+              id={`${name}-container`}
+            >
+              {labelHidden && <span className={theme('srOnly')}>{label}</span>}
 
-        <div className={styles.inputContainer}>
-          {highlightList ? (
-            <div className={`${styles.highlightOverlay} ${this.textFieldClassNames}`}>
-              {highlightedContent}
+              {this.getLabel(theme)}
+
+              <div className={theme('innerTextFieldContainer')}>
+                {highlightList ? (
+                  <div className={theme('highlightOverlay', ...this.textFieldClassNames)}>
+                    {highlightedContent}
+                  </div>
+                ) : null
+                }
+                {
+                  multiLine ? (
+                    <textarea
+                      autoFocus={autoFocus}
+                      className={theme(...this.textFieldClassNames)}
+                      disabled={disable}
+                      id={id}
+                      maxLength={maxLength}
+                      name={name}
+                      onBlur={onBlur}
+                      onChange={this.onChange}
+                      onFocus={onFocus}
+                      pattern={pattern}
+                      placeholder={placeholder}
+                      ref={reference}
+                      required={isRequired}
+                      rows={rows}
+                      style={this.textAreaStyles()}
+                      value={value}
+                    />
+                  ) : (
+                    <input
+                      autoComplete={autoComplete}
+                      autoFocus={autoFocus}
+                      className={theme(...this.textFieldClassNames)}
+                      disabled={disable}
+                      id={id}
+                      maxLength={maxLength}
+                      name={name}
+                      onBlur={onBlur}
+                      onChange={this.onChange}
+                      onFocus={onFocus}
+                      pattern={pattern}
+                      placeholder={placeholder}
+                      ref={reference}
+                      required={isRequired}
+                      title={title}
+                      type={type}
+                      value={value}
+                    />
+                  )}
+
+                {this.hasError() && (
+                <Error
+                  info={error}
+                  subInfo={errorSubInfo}
+                />
+                )}
+              </div>
             </div>
-          ) : null
-          }
-          {
-            multiLine ? (
-              <textarea
-                autoFocus={autoFocus}
-                className={this.textFieldClassNames}
-                disabled={disable}
-                id={id}
-                maxLength={maxLength}
-                name={name}
-                onBlur={onBlur}
-                onChange={this.onChange}
-                onFocus={onFocus}
-                pattern={pattern}
-                placeholder={placeholder}
-                ref={reference}
-                required={isRequired}
-                rows={rows}
-                style={this.textAreaStyles()}
-                value={value}
-              />
-            ) : (
-              <input
-                autoComplete={autoComplete}
-                autoFocus={autoFocus}
-                className={this.textFieldClassNames}
-                disabled={disable}
-                id={id}
-                maxLength={maxLength}
-                name={name}
-                onBlur={onBlur}
-                onChange={this.onChange}
-                onFocus={onFocus}
-                pattern={pattern}
-                placeholder={placeholder}
-                ref={reference}
-                required={isRequired}
-                title={title}
-                type={type}
-                value={value}
-              />
-            )}
-
-          {this.hasError() && (
-          <Error
-            info={error}
-            subInfo={errorSubInfo}
-          />
-          )}
-        </div>
-      </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

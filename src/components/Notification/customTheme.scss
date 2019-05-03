@@ -1,0 +1,89 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+.notificationContainer {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 20px;
+  height: auto;
+  min-height: 80px;
+  background-color: $green;
+  border-radius: 10px;
+  position: fixed;
+  left: 20px;
+  z-index: 1060;
+  display: none;
+
+  span {
+    padding-right: 8px;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  p {
+    color: $white;
+    margin-bottom: 6px;
+    margin-top: $baseline-grid;
+  }
+}
+
+.notificationCloseButton {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  cursor: pointer;
+  outline: 0;
+
+  svg {
+    fill: $white;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.notificationContainer.visible {
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 1;
+  bottom: 20px;
+  display: block;
+}
+
+.notificationContainer.hidden {
+  display: none;
+}
+
+@keyframes slideRight {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translateX(3000px);
+  }
+
+  60% {
+    transform: translateX(-20px);
+  }
+
+  75% {
+    transform: translateX(10px);
+  }
+
+  90% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -50,7 +50,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
       Combobox
     </label>
     <div
-      className="container"
+      className="comboboxContainer"
     >
       <Autosuggest
         alwaysRenderSuggestions={false}
@@ -118,7 +118,7 @@ exports[`Causes dropdown to show when input is focused 1`] = `
             },
           ]
         }
-        theme={null}
+        theme={Object {}}
       >
         <Autowhatever
           containerProps={Object {}}
@@ -823,7 +823,7 @@ exports[`Renders Combobox with an error message without crashing 1`] = `
     Combobox
   </label>
   <div
-    className="container"
+    className="comboboxContainer"
   >
     <div
       aria-expanded={false}
@@ -859,11 +859,11 @@ exports[`Renders Combobox with an error message without crashing 1`] = `
     </div>
     
     <span
-      className="error"
+      className="errorContainer"
       id={null}
     >
       <strong
-        className="info"
+        className="errorInfo"
       >
         An Error
       </strong>
@@ -886,7 +886,7 @@ exports[`Renders Combobox without crashing 1`] = `
     Combobox
   </label>
   <div
-    className="container"
+    className="comboboxContainer"
   >
     <div
       aria-expanded={false}
@@ -938,7 +938,7 @@ exports[`Searchable Combobox Renders notSearchableCombobox without crashing 1`] 
     Combobox
   </label>
   <div
-    className="container"
+    className="comboboxContainer"
   >
     <div
       aria-expanded={false}

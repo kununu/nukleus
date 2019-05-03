@@ -1,5 +1,14 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
+.autocompleteContainer {
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
 .spinner {
   position: absolute;
   right: 13px;
@@ -22,12 +31,6 @@
   100% {
     transform: rotate(359deg);
   }
-}
-
-.suggestionInfo {
-  color: $gray-base-40;
-  font-size: $font-size-sm;
-  display: inline-block;
 }
 
 .suggestionsContainer {
@@ -58,6 +61,12 @@
   }
 }
 
+.suggestionInfo {
+  color: $gray-base-40;
+  font-size: $font-size-sm;
+  display: inline-block;
+}
+
 .suggestion {
   box-sizing: border-box;
   text-align: left;
@@ -77,50 +86,4 @@
 .suggestionsFooter {
   border-top: 1px solid $gray-base-03;
   padding: 8px 12px;
-}
-
-.autoCompleteContainer {
-  position: relative;
-  width: 100%;
-
-  * {
-    box-sizing: border-box;
-  }
-}
-
-// Inline error definition
-// Consider abstracting out to another component if we start using this a lot
-.error {
-  border-radius: 4px;
-  font-size: 11px;
-  padding: 5px 12px;
-  text-transform: uppercase;
-  font-weight: $font-weight-regular;
-  background-color: $brand-danger;
-  color: $white;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 45px;
-
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($brand-danger, 10%);
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: -5px;
-    right: 45%;
-    bottom: auto;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 6px 6px;
-    border-color: transparent transparent $brand-danger;
-  }
 }

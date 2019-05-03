@@ -48,7 +48,7 @@
       }
     }
 
-    &.active {
+    &.pageActive {
       > a {
         &,
         &:hover,
@@ -64,7 +64,7 @@
       }
     }
 
-    &.disabled {
+    &.pageDisabled {
       > a {
         &,
         &:hover,

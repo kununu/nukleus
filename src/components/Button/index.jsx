@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 export default class Button extends React.Component {
@@ -72,36 +75,44 @@ export default class Button extends React.Component {
     } = this.props;
 
     const classes = classNames({
-      [styles.button]: true,
-      [styles.fullWidth]: fullWidth,
-      [styles.mobileFullWidth]: mobileFullWidth,
-      [styles.outline]: outline,
-      [type === 'custom' ? customTheme : styles[type]]: true,
-    });
-
-    const props = {
-      className: classes,
-      disabled,
-      title,
-      onClick: onClick && this.onClick,
-      id,
-    };
-
-    if (link) {
-      return (
-        <div className={disabled ? styles.disabledLink : ''}>
-          {React.cloneElement(link, props)}
-        </div>
-      );
-    }
+      button: true,
+      fullWidth,
+      mobileFullWidth,
+      outline,
+      [type === 'custom' ? customTheme : type]: true,
+    }).split(' ');
 
     return (
-      <button // eslint-disable-line react/button-has-type
-        {...props}
-        type={htmlType}
-      >
-        {text}
-      </button>
+      <ThemeContext.Consumer>
+        {(context) => {
+          const theme = themeable({...styles, ...context});
+
+          const props = {
+            className: theme(...classes),
+            disabled,
+            title,
+            onClick: onClick && this.onClick,
+            id,
+          };
+
+          if (link) {
+            return (
+              <div className={disabled ? theme('disabledLink') : ''}>
+                {React.cloneElement(link, props)}
+              </div>
+            );
+          }
+
+          return (
+            <button // eslint-disable-line react/button-has-type
+              {...props}
+              type={htmlType}
+            >
+              {text}
+            </button>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

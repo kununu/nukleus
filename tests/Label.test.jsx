@@ -2,6 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Label from 'Label'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders a label without crashing', () => {
   const component = renderer.create(<Label
     id="2"

@@ -1,16 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import styles from './index.scss';
 
 const Error = ({info, subInfo, id}) => (
-  <span
-    className={styles.error}
-    id={id}
-  >
-    <strong className={styles.info}>{info}</strong>
-    {subInfo}
-  </span>
+  <ThemeContext.Consumer>
+    {(context) => {
+      const theme = themeable({...styles, ...context});
+
+      return (
+        <span
+          className={theme('errorContainer')}
+          id={id}
+        >
+          <strong className={theme('errorInfo')}>{info}</strong>
+          {subInfo}
+        </span>
+      );
+    }}
+  </ThemeContext.Consumer>
 );
 
 

@@ -32,7 +32,7 @@
   }
 }
 
-.innerContainer {
+.datePickerInnerContainer {
   position: relative;
 
   > div {
@@ -40,7 +40,7 @@
   }
 }
 
-.icon {
+.dropDownIcon {
   position: absolute;
   z-index: 1;
   font-size: $font-size-lg;

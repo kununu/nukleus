@@ -4,6 +4,10 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Combobox from 'Combobox'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 const combobox = (
   <Combobox
     name="name"

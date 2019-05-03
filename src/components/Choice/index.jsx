@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {queryParamsToObject} from 'utils/params';
-
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 
 import Error from '../Error';
 import Label from '../Label';
-import {
-  controlLabelRequired,
-  controlNote,
-  formGroup,
-} from '../index.scss';
+import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
 
@@ -139,29 +136,6 @@ export default class Choice extends React.Component {
     }
   }
 
-  get label () {
-    const {
-      heading,
-      headingStyle,
-      label,
-      labelHidden,
-    } = this.props;
-
-    if (!label && !heading) return null;
-
-    const value = label || heading;
-
-    return (
-      <Label
-        htmlFor={heading}
-        value={value}
-        labelHidden={labelHidden}
-        classNames={headingStyle}
-        isTitle
-      />
-    );
-  }
-
   isOptionDisabled (option) {
     const {disabled} = this.props;
 
@@ -188,7 +162,11 @@ export default class Choice extends React.Component {
       customTheme,
       error,
       errorSubInfo,
+      heading,
+      headingStyle,
       isRequired,
+      label,
+      labelHidden,
       name,
       onBlur,
       onFocus,
@@ -200,60 +178,81 @@ export default class Choice extends React.Component {
     const {checked} = this.state;
 
     return (
-      <div
-        className={formGroup}
-        id={`${name}-container`}
-      >
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...sharedStyles,
+            ...styles,
+            ...context,
+          };
+          const theme = themeable(allStyles);
 
-        {requiredLabel && (
-        <span className={`${controlNote} ${controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
-
-        {this.label}
-
-        <div
-          className={`${styles.radioContainer} ${options.length > 3 && optionsPerRow === null && styles.flexible}`}
-          data-options-per-row={optionsPerRow}
-        >
-          {options.map((item, idx) => (
+          return (
             <div
-              className={styles.radioButton}
-              key={item.id}
+              className={theme('formGroup')}
+              id={`${name}-container`}
             >
-              <input
-                type="radio"
-                value={item.value}
-                id={`${name}${item.id}`}
-                name={name}
-                checked={checked === item.value}
-                onBlur={onBlur}
-                onChange={e => this.onChange(item, e)}
-                onFocus={onFocus}
-                onClick={e => this.onClick(item, e)}
-                ref={reference}
-                required={isRequired}
-              />
-              <label
-                disabled={this.isOptionDisabled(item)}
-                id={idx}
-                htmlFor={`${name}${item.id}`}
-                className={customTheme}
-              >
-                {item.label}
-              </label>
-            </div>
-          ))}
-        </div>
 
-        {this.hasError() && (
-        <Error
-          info={error}
-          subInfo={errorSubInfo}
-        />
-        )}
-      </div>
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
+
+              {label || heading ? (
+                <Label
+                  htmlFor={heading}
+                  value={label || heading}
+                  labelHidden={labelHidden}
+                  classNames={theme(headingStyle)}
+                  isTitle
+                />
+              ) : null}
+
+              <div
+                className={theme('choiceContainer', `${options.length > 3 && optionsPerRow === null && 'choiceFlexible'}`)}
+                data-options-per-row={optionsPerRow}
+              >
+                {options.map((item, idx) => (
+                  <div
+                    className={theme('choiceButton')}
+                    key={item.id}
+                  >
+                    <input
+                      type="radio"
+                      value={item.value}
+                      id={`${name}${item.id}`}
+                      name={name}
+                      checked={checked === item.value}
+                      onBlur={onBlur}
+                      onChange={e => this.onChange(item, e)}
+                      onFocus={onFocus}
+                      onClick={e => this.onClick(item, e)}
+                      ref={reference}
+                      required={isRequired}
+                    />
+                    <label
+                      disabled={this.isOptionDisabled(item)}
+                      id={idx}
+                      htmlFor={`${name}${item.id}`}
+                      className={theme(customTheme)}
+                    >
+                      {item.label}
+                    </label>
+                  </div>
+                ))}
+              </div>
+
+              {this.hasError() && (
+              <Error
+                info={error}
+                subInfo={errorSubInfo}
+              />
+              )}
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

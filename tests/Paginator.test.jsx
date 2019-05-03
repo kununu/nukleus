@@ -4,6 +4,10 @@ import {StaticRouter} from 'react-router';
 import renderer from 'react-test-renderer';
 import Paginator from 'Paginator'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders Paginator with react-router links without crashing', () => {
   const component = renderer.create((
     <StaticRouter

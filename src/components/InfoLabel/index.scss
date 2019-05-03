@@ -1,10 +1,10 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.label {
-    text-transform: uppercase;
-    font-size: $font-size-xxs;
-    color: $gray-base-60;
-    font-style: normal;
-    text-align: right;
-    font-weight: $font-weight-light;
-  }
+.infoLabel {
+  text-transform: uppercase;
+  font-size: $font-size-xxs;
+  color: $gray-base-60;
+  font-style: normal;
+  text-align: right;
+  font-weight: $font-weight-light;
+}

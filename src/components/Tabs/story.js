@@ -4,6 +4,10 @@ import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-
 import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Tabs from './index';
 
 function updateUrl (e, path) {
@@ -78,5 +82,38 @@ storiesOf('Tabs', module)
         pathname={window.parent.location.pathname}
         theme="block"
       />
+    </div>
+  ))
+  .add('custom', () => (
+    <div>
+      <h3>
+        Example of tabs with custom theme
+      </h3>
+      <ThemeProvider theme={customTheme}>
+        <Tabs
+          items={[
+            <a
+              onClick={e => updateUrl(e, '/')}
+              href="/"
+            >
+              First Tab
+            </a>,
+            <a
+              onClick={e => updateUrl(e, '/2')}
+              href="/2"
+            >
+              Second Tab
+            </a>,
+            <a
+              onClick={e => updateUrl(e, '/3')}
+              href="/3"
+            >
+              Third Tab
+            </a>,
+          ]}
+          pathname={window.parent.location.pathname}
+          theme="block"
+        />
+      </ThemeProvider>
     </div>
   ));

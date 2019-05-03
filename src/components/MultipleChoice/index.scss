@@ -2,11 +2,9 @@
 
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.inlineLabel {
-  @media (min-width: $screen-xs-min) {
-    margin-right: 10px;
-    margin-bottom: 0;
-    width: 140px;
+.choiceContainer {
+  &.inline {
+    align-items: flex-start;
   }
 }
 
@@ -70,23 +68,21 @@
   }
 }
 
-form .inline {
-  > div:first-child {
-    color: $gray-base-60;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 11px;
-    min-width: 60px;
+.inlineLabel {
+  @media (min-width: $screen-xs-min) {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 140px;
   }
 }
 
-.inputContainer {
+.choiceInnerContainer {
   position: relative;
   width: 100%;
 }
 
 .buttons {
-  .inputContainer {
+  .choiceInnerContainer {
     display: block;
     width: auto;
     margin-left: -6px;

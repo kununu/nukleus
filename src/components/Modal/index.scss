@@ -15,7 +15,7 @@
   }
 }
 
-.isOpen {
+.modalIsOpen {
   opacity: 1;
   transform: scale(1);
 }
@@ -60,7 +60,7 @@
   padding: 20px;
 }
 
-.closeButton {
+.modalCloseButton {
   width: 16px;
   height: 16px;
   border: 0;
@@ -78,7 +78,7 @@
   }
 }
 
-.closeIcon {
+.modalCloseIcon {
   display: block;
   width: 16px;
   height: 16px;

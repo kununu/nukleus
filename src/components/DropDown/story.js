@@ -5,13 +5,14 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
 import styles from './storyStyles.scss';
 
 import {
   DropDown,
   DropDownItem,
 } from './index';
-
 
 const DropDownInfo = () => (
   <div>
@@ -918,4 +919,40 @@ prop by default
         </div>
       </div>
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={styles}>
+      <DropDownInfo />
+      <div style={{
+        display: 'block',
+        margin: '70px auto 0',
+        width: '75%',
+      }}
+      >
+        <div style={{
+          background: '#f1f1f1',
+          padding: '20px',
+        }}
+        >
+          <div style={{background: '#18242b'}}>
+            <DropDown
+              direction="down"
+              showOnHover={false}
+              pullRight
+              shade="light"
+              title={activeCountry()}
+            >
+              {countries.map((item, index) => (
+                <DropDownItem
+                  key={index} // eslint-disable-line react/no-array-index-key
+                  icon={item.icon}
+                >
+                  {item.link}
+                </DropDownItem>
+              ))}
+            </DropDown>
+          </div>
+        </div>
+      </div>
+    </ThemeProvider>
   ));

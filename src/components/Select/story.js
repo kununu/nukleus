@@ -8,6 +8,10 @@ import {
   withKnobs, text, boolean, select, object,
 } from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Select from './index';
 
 storiesOf('Select', module)
@@ -138,4 +142,31 @@ storiesOf('Select', module)
         })}
       />
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <div style={{position: 'relative'}}>
+        <Select
+          autoFocus={boolean('autoFocus', true)}
+          label={text('label', 'Fruit')}
+          labelHidden={boolean('labelHidden', false)}
+          name={text('name', 'fruit1')}
+          id={text('id', 'fruit1')}
+          isRequired={boolean('isRequired', false)}
+          inputStyle={select('inputStyle', {
+            block: 'block',
+            inline: 'inline',
+          }, 'block')}
+          onChange={action('onChange')}
+          onBlur={action('onBlur')}
+          onFocus={action('onFocus')}
+          requiredLabel={text('requiredLabel', 'required')}
+          items={object('items', {
+            'option-1': 'Banana',
+            'option-2': 'Apple',
+            'option-3': 'Orange',
+          })}
+        />
+      </div>
+    </ThemeProvider>
   ));

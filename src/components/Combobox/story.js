@@ -8,6 +8,10 @@ import {
   withKnobs, text, boolean, array,
 } from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Combobox from './index';
 
 storiesOf('Combobox', module)
@@ -16,12 +20,7 @@ storiesOf('Combobox', module)
   .addDecorator((story, context) => withInfo('The combobox is a select box / text input combo')(story)(context))
   .add('basics', () => (
     <Combobox
-      handle={(
-        <i
-          className="fa fa-chevron-down"
-          aria-hidden="true"
-        />
-)}
+      handle="&#x25BC;"
       name="name"
       inputStyles="block"
       isSearchable={boolean('isSearchable', true)}
@@ -36,4 +35,31 @@ storiesOf('Combobox', module)
       placeholder={text('placeholder', 'type m')}
       items={array('items', ['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone'], ', ')}
     />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>Custom theme for combobox</h3>
+
+      <Combobox
+        handle={(
+          <i
+            className="fa fa-chevron-down"
+            aria-hidden="true"
+          />
+        )}
+        name="name"
+        inputStyles="block"
+        isSearchable={boolean('isSearchable', true)}
+        label={text('label', 'Combobox')}
+        labelHidden={boolean('lableHidden', false)}
+        id="name"
+        onSelect={action('onSelect')}
+        onChange={action('onChange')}
+        onBlur={action('onBlur')}
+        onFocus={action('onFocus')}
+        isRequired={boolean('isRequired', false)}
+        placeholder={text('placeholder', 'type m')}
+        items={array('items', ['music', 'maths', 'manga', 'morning', 'musical', 'mania', 'message', 'metal', 'micro', 'macro', 'microphone'], ', ')}
+      />
+    </ThemeProvider>
   ));

@@ -1,0 +1,63 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+.table {
+  min-width: 0;
+  width: 100%;
+  overflow-x: auto;
+
+  th {
+    padding: 10px;
+    vertical-align: bottom;
+    font-weight: normal;
+    background: $gray-base-90;
+  }
+
+  tr {
+    border-bottom: 1px solid $gray-base-10;
+
+    &:hover {
+      background-color: $gray-base-10;
+    }
+  }
+
+  td {
+    border: 0;
+    padding: 10px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    td, th {
+      padding: 12px 18px;
+    }
+  }
+}
+
+.tableHeaderContainer {
+  position: relative;
+  color: $white;
+}
+
+.tableSortingContainer {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  .tableSortingButton {
+    background: none;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-left: 2px;
+    display: inline;
+
+    .tableSortingArrowIcon {
+      width: 15px;
+      height: 15px;
+      fill: $white;
+    }
+  }
+}

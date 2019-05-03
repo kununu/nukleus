@@ -4,16 +4,16 @@ import Autosuggest from 'react-autosuggest';
 import Scroll from 'react-scroll';
 import debounce from 'debounce';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
 import getElementPositionY from 'utils/elementPosition';
 import {queryParamsToObject} from 'utils/params';
 import isMobile from 'utils/mobileDetection';
-
 
 import Error from '../Error';
 import sharedStyles from '../index.scss';
 
 import styles from './index.scss';
-
 
 export default class Autocomplete extends React.Component {
   static propTypes = {
@@ -182,21 +182,6 @@ export default class Autocomplete extends React.Component {
   }
 
   /**
-   * determines which classNames should be added to the container div of
-   * the component
-   *
-   * @return {string} [list of classNames split by space]
-   */
-  get containerClassNames () {
-    const {inputStyle, requiredLabel} = this.props;
-    const classNames = [sharedStyles.formGroup, sharedStyles[inputStyle]];
-
-    if (requiredLabel) classNames.push(styles.paddingTop);
-
-    return classNames.join(' ');
-  }
-
-  /**
    * determines which classNames should be added to the label of
    * the component
    *
@@ -204,13 +189,13 @@ export default class Autocomplete extends React.Component {
    */
   get labelClassNames () {
     const {labelHidden} = this.props;
-    const classNames = [sharedStyles.controlLabel];
+    const classNames = ['controlLabel'];
 
-    if (labelHidden) classNames.push(sharedStyles.hidden);
+    if (labelHidden) classNames.push('hidden');
 
-    if (this.hasError()) classNames.push(sharedStyles.controlLabelError);
+    if (this.hasError()) classNames.push('controlLabelError');
 
-    return classNames.join(' ');
+    return classNames;
   }
 
   getSuggestions = (value) => {
@@ -237,11 +222,11 @@ export default class Autocomplete extends React.Component {
 
   getSuggestionValue = suggestion => suggestion.item;
 
-  getSpinner () {
+  getSpinner (theme) {
     const {spinner} = this.props;
 
     return spinner || (
-      <span className={styles.spinner}>
+      <span className={theme('spinner')}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -332,7 +317,6 @@ export default class Autocomplete extends React.Component {
       return (
         <div
           {...containerProps}
-          className={styles.suggestionsContainer}
         >
           {children}
         </div>
@@ -355,6 +339,7 @@ export default class Autocomplete extends React.Component {
       label,
       labelHidden,
       id,
+      inputStyle,
       isRequired,
       name,
       noSuggestionText,
@@ -369,83 +354,103 @@ export default class Autocomplete extends React.Component {
       value,
     } = this.state;
 
-    const inputProps = {
-      autoFocus,
-      className: `${sharedStyles.formControl} ${this.hasError() ? sharedStyles.formControlError : ''}`,
-      disabled,
-      id,
-      name,
-      onBlur: this.onBlur,
-      onChange: this.onChange,
-      onFocus: this.onFocus,
-      placeholder,
-      required: isRequired,
-      value,
-    };
-
     return (
-      <div
-        ref={(node) => { this.node = node; }}
-        className={this.containerClassNames}
-        id={`${name}-container`}
-      >
+      <ThemeContext.Consumer>
+        {(context) => {
+          const allStyles = {
+            ...sharedStyles,
+            ...styles,
+            ...context,
+          };
 
-        {requiredLabel && (
-        <span className={`${sharedStyles.controlNote} ${sharedStyles.controlLabelRequired}`}>
-          {requiredLabel}
-        </span>
-        )}
+          const theme = themeable(allStyles);
 
-        {labelHidden && (
-        <span className={sharedStyles.srOnly}>
-          {label}
-        </span>
-        )}
+          const classNames = ['formControl'];
 
-        <label
-          className={this.labelClassNames}
-          htmlFor={id}
-        >
-          {label}
-        </label>
-
-        <div className={styles.autoCompleteContainer}>
-          <Autosuggest
-            id={id}
-            focusFirstSuggestion
-            focusInputOnSuggestionClick={!isMobile}
-            getSuggestionValue={this.getSuggestionValue}
-            inputProps={inputProps}
-            onSuggestionSelected={this.onSuggestionSelected}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            renderSuggestion={this.renderSuggestion}
-            renderSuggestionsContainer={this.renderSuggestionsContainer}
-            suggestions={suggestions}
-            theme={styles}
-          />
-
-          {isFetching && this.getSpinner()}
-
-          {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ? (
-            <div className={styles.suggestionsContainer}>
-              <ul>
-                <li className={styles.suggestion}>
-                  {noSuggestionText}
-                </li>
-              </ul>
-            </div>
-          ) : ''
+          if (this.hasError()) {
+            classNames.push('formControlError');
           }
 
-          {this.hasError() && (
-          <Error
-            info={error}
-            subInfo={errorSubInfo}
-          />
-          )}
-        </div>
-      </div>
+          const inputProps = {
+            autoFocus,
+            className: theme(...classNames),
+            disabled,
+            id,
+            name,
+            onBlur: this.onBlur,
+            onChange: this.onChange,
+            onFocus: this.onFocus,
+            placeholder,
+            required: isRequired,
+            value,
+          };
+
+          return (
+            <div
+              ref={(node) => { this.node = node; }}
+              className={theme('formGroup', inputStyle)}
+              id={`${name}-container`}
+            >
+
+              {requiredLabel && (
+              <span className={theme('controlNote', 'controlLabelRequired')}>
+                {requiredLabel}
+              </span>
+              )}
+
+              {labelHidden && (
+              <span className={theme('srOnly')}>
+                {label}
+              </span>
+              )}
+
+              <label
+                className={theme(...this.labelClassNames)}
+                htmlFor={id}
+              >
+                {label}
+              </label>
+
+              <div className={theme('autocompleteContainer')}>
+                <Autosuggest
+                  id={id}
+                  focusFirstSuggestion
+                  focusInputOnSuggestionClick={!isMobile}
+                  getSuggestionValue={this.getSuggestionValue}
+                  inputProps={inputProps}
+                  onSuggestionSelected={this.onSuggestionSelected}
+                  onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                  onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                  renderSuggestion={this.renderSuggestion}
+                  renderSuggestionsContainer={this.renderSuggestionsContainer}
+                  suggestions={suggestions}
+                  theme={allStyles}
+                />
+
+                {isFetching && this.getSpinner(theme)}
+
+                {hasInitialized && showNoSuggestionsText && !isFetching && !suggestions.length && value ? (
+                  <div className={theme('suggestionsContainer')}>
+                    <ul>
+                      <li className={theme('suggestion')}>
+                        {noSuggestionText}
+                      </li>
+                    </ul>
+                  </div>
+                ) : ''
+                }
+
+                {this.hasError() && (
+                <Error
+                  info={error}
+                  subInfo={errorSubInfo}
+                />
+                )}
+              </div>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

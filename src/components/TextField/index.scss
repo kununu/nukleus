@@ -1,11 +1,15 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.inputContainer {
+.innerTextFieldContainer {
   position: relative;
   width: 100%;
 
   * {
     box-sizing: border-box;
+  }
+
+  textarea {
+    height: 80px;
   }
 }
 
@@ -18,7 +22,8 @@
   }
 }
 
-.inputContainer .highlightOverlay {
+.highlightOverlay {
+  box-sizing: border-box;
   margin-bottom: 0;
   position: absolute;
   z-index: 40;
@@ -62,8 +67,17 @@
   }
 }
 
-.flexLabel {
+.textFieldLabelFlex label {
+  margin: 0 10px 0 0;
+  width: auto;
+  color: $gray-base-90;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+}
+
+.textFieldLabelFlex {
   display: flex;
+  
 
   span:last-child {
     display: flex;

@@ -1,6 +1,6 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
-.error {
+.errorContainer {
   display: block;
   width: 100%;
   margin-top: $baseline-grid;
@@ -10,6 +10,6 @@
   border-radius: $input-border-radius;
 }
 
-.info {
+.errorInfo {
   display: block;
 }

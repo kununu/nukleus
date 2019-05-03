@@ -5,6 +5,10 @@ import {withOptions} from '@storybook/addon-options';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, number} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Paginator from './index';
 
 storiesOf('Paginator', module)
@@ -17,4 +21,13 @@ storiesOf('Paginator', module)
       query={window.parent.location.search}
       baseLink={<a href="/">baselink</a>}
     />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <Paginator
+        totalPages={number('totalPages', 5)}
+        query={window.parent.location.search}
+        baseLink={<a href="/">baselink</a>}
+      />
+    </ThemeProvider>
   ));

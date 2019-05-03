@@ -6,6 +6,9 @@ import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
 
 import Button from '../Button';
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
 
 import Modal from './index';
 
@@ -52,4 +55,9 @@ storiesOf('Modal', module)
   .addDecorator((story, context) => withInfo('The modal component! You can wrap any children components that you like in this fabulous modal.')(story)(context))
   .add('basics', () => (
     <ModalExample />
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <ModalExample />
+    </ThemeProvider>
   ));

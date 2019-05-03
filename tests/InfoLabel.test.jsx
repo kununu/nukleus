@@ -2,6 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import InfoLabel from 'InfoLabel'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders an InfoLabel without crashing', () => {
   const component = renderer.create(<InfoLabel requiredLabel="required" />);
 

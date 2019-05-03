@@ -4,6 +4,10 @@ import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {DropDown, DropDownItem} from 'DropDown'; // eslint-disable-line import/no-unresolved
 
+import * as themeable from '../utils/theming';
+
+themeable.default = () => (...args) => Array.isArray(args) ? args.join(' ') : args;
+
 test('Renders DropDown without crashing', () => {
   const component = renderer.create((
     <DropDown title="Products">
@@ -170,7 +174,7 @@ test('Renders menu when button is clicked', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('click');
+  component.find('.dropDownContainer button').simulate('click');
 
   const tree = toJson(component);
 
@@ -186,7 +190,7 @@ test('Renders menu when hovered', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseenter');
 
   const tree = toJson(component);
 
@@ -202,8 +206,8 @@ test('Closes menu when not hovered', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
-  component.find('.container button').simulate('mouseleave');
+  component.find('.dropDownContainer button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseleave');
 
   const tree = toJson(component);
 
@@ -222,8 +226,8 @@ test('Does not open menu when hovered while showOnHover is enabled', () => {
     </DropDown>
   ));
 
-  component.find('.container button').simulate('mouseenter');
-  component.find('.container button').simulate('mouseleave');
+  component.find('.dropDownContainer button').simulate('mouseenter');
+  component.find('.dropDownContainer button').simulate('mouseleave');
 
   const tree = toJson(component);
 

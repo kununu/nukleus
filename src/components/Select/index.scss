@@ -16,7 +16,7 @@
   }
 }
 
-.inputContainer {
+.innerSelectContainer {
   position: relative;
   width: 100%;
 
@@ -25,7 +25,7 @@
   }
 }
 
-.caret {
+.selectCaret {
   position: absolute;
   right: 15px;
   top: ($input-height-base / 2.5);
@@ -36,38 +36,5 @@
   svg {
     width: 10px;
     height: 10px;
-  }
-}
-
-.inline {
-  position: relative;
-
-  @media (min-width: $screen-sm-min) {
-    padding-top: 6px;
-  }
-
-  @media (min-width: $screen-xs-min) {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-
-  label {
-    margin-right: 10px;
-    margin-bottom: 0;
-    width: 140px;
-  }
-
-  &.paddingTop {
-    @media (min-width: $screen-sm-min) {
-      padding-top: 25px;
-    }
-  }
-
-  .controlLabelError {
-    align-self: flex-start; // otherwise would be centered between Input Field and error
-    display: flex;
-    align-items: center;
-    min-height: 46px; // height of input
   }
 }

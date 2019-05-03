@@ -26,6 +26,14 @@
               "replacement": "../../utils/params",
             },
             {
+              "original": "utils/theming",
+              "replacement": "../../utils/theming",
+            },
+            {
+              "original": "utils/themeContext",
+              "replacement": "../../utils/themeContext",
+            },
+            {
               "original": "./index.scss",
               "replacement": "./index.css"
             },

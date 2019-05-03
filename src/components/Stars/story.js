@@ -6,6 +6,10 @@ import {action} from '@storybook/addon-actions';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, number} from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Stars from './index';
 
 storiesOf('Stars', module)
@@ -130,4 +134,24 @@ storiesOf('Stars', module)
         value={2.3}
       />
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <div style={{maxWidth: '300px'}}>
+        <h3>
+          Example of stars with custom theme
+        </h3>
+
+        <Stars
+          colors={[
+            '#ff464e',
+            '#fe8e17',
+            '#fec327',
+            '#7cb532',
+            '#96d04a']}
+          name="stars2"
+          selectable
+        />
+      </div>
+    </ThemeProvider>
   ));

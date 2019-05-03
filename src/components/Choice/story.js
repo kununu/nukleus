@@ -8,6 +8,10 @@ import {
   withKnobs, text, boolean, number,
 } from '@storybook/addon-knobs/react';
 
+import ThemeProvider from '../ThemeProvider';
+
+import customTheme from './customTheme.scss';
+
 import Choice from './index';
 
 storiesOf('Choice', module)
@@ -114,4 +118,47 @@ storiesOf('Choice', module)
         ]}
       />
     </div>
+  ))
+  .add('custom', () => (
+    <ThemeProvider theme={customTheme}>
+      <h3>Custom theme for choice</h3>
+
+      <Choice
+        label={text('label', 'Choice')}
+        labelHidden={boolean('labelHidden', false)}
+        name="basic"
+        disabled={boolean('disabled', false)}
+        onChange={action('onChange')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        checked={text('checked', 'option-a')}
+        optionsPerRow={number(
+          'optionsPerRow',
+          '3',
+          {
+            max: 7,
+            min: 1,
+            range: true,
+          },
+        )}
+        options={[
+          {
+            id: 'option-a',
+            label: 'Option A',
+            value: 'option-a',
+          },
+          {
+            id: 'option-b',
+            label: 'Option B',
+            value: 'option-b',
+          },
+          {
+            id: 'option-c',
+            label: 'Option C',
+            value: 'option-c',
+          },
+        ]}
+      />
+    </ThemeProvider>
   ));
