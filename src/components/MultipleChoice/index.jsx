@@ -35,6 +35,7 @@ export default class MultipleChoice extends React.Component {
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
+      type: PropTypes.string,
     })),
     query: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     reference: PropTypes.func,
@@ -60,7 +61,7 @@ export default class MultipleChoice extends React.Component {
   };
 
   state = {
-    choices: (this.props.options.length && this.props.options) || this.props.choices, // eslint-disable-line react/destructuring-assignment
+    choices: this.getCorrectChoiceValues(this.props), // eslint-disable-line react/destructuring-assignment
     showError: false,
   };
 
@@ -76,12 +77,22 @@ export default class MultipleChoice extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
+    const newChoiceValues = this.getCorrectChoiceValues(nextProps);
+    const oldChoiceValues = this.getCorrectChoiceValues(this.props);
+
     const {query} = this.props;
     const {choices} = this.state;
+
+    if (newChoiceValues !== oldChoiceValues) {
+      this.setState({
+        choices: newChoiceValues,
+      });
+    }
 
     // We do not yet control the state when the query does not change,
     // for instance when updates are triggered by tweaking with other components.
     if (nextProps.query === query) return;
+
     if (!nextProps.query[nextProps.name]) {
       this.updateValue(choices, 'unchecked');
     } else {
@@ -109,6 +120,10 @@ export default class MultipleChoice extends React.Component {
     if (requiredLabel) classNames.push('paddingTop');
 
     return classNames;
+  }
+
+  getCorrectChoiceValues ({options, choices}) {
+    return options.length && options || choices;
   }
 
   getChoicesToUpdate (newChoices) {
@@ -202,7 +217,7 @@ export default class MultipleChoice extends React.Component {
               <div className={theme('choiceInnerContainer')}>
                 {choices.map(choice => (
                   <div
-                    className={theme('choice')}
+                    className={theme('choice', choice.type)}
                     key={choice.id}
                   >
                     <input
@@ -216,7 +231,7 @@ export default class MultipleChoice extends React.Component {
                       onFocus={onFocus}
                       ref={reference}
                       required={isRequired}
-                      type="checkbox"
+                      type={choice.type || 'checkbox'}
                       value={choice.value}
                     />
 

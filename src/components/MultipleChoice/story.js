@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
@@ -11,29 +11,52 @@ import customTheme from './customTheme.scss';
 
 import MultipleChoice from './index';
 
+const Test = () => {
+  const stuff = [
+    {
+      id: 'option-a',
+      isChecked: false,
+      label: 'option a',
+      value: true,
+    },
+    {
+      id: 'option-b',
+      isChecked: true,
+      label: 'option b',
+      value: false,
+    }
+  ];
+
+  const [test, setTest] = useState(stuff);
+  const updateTest = () => {
+    setTest([
+      ...stuff,
+      {
+        id: 'option-c',
+        isChecked: true,
+        label: 'option c',
+        value: false,
+      }
+    ]);
+  }
+  return (
+    <>
+      <button onClick={() => updateTest()}>hi</button>
+      <MultipleChoice
+        name="choices"
+        label={text('label', 'MultipleChoice')}
+        options={test}
+      />
+    </>
+  )
+};
+
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The MultipleChoice component!')(story)(context))
   .add('basics', () => (
-    <MultipleChoice
-      name="choices[]"
-      label={text('label', 'MultipleChoice')}
-      options={
-      [
-        {
-          id: 'option-a',
-          isChecked: true,
-          label: 'option a',
-          value: 'option-a',
-        },
-        {
-          id: 'option-b',
-          isChecked: false,
-          label: 'option b',
-          value: 'option-b',
-        }]}
-    />
+    <Test />
   ))
   .add('Button style', () => (
     <MultipleChoice
