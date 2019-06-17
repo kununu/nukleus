@@ -12,7 +12,7 @@ import styles from './index.scss';
 
 export default class MultipleChoice extends React.Component {
   static propTypes = {
-    choices: PropTypes.arrayOf(PropTypes.shape({
+    choices: PropTypes.arrayOf(PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
@@ -31,7 +31,7 @@ export default class MultipleChoice extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.shape({
+    options: PropTypes.arrayOf(PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
@@ -60,7 +60,7 @@ export default class MultipleChoice extends React.Component {
   };
 
   state = {
-    choices: this.getCorrectChoiceValues(this.props), // eslint-disable-line react/destructuring-assignment
+    choices: this.getCorrectChoiceValues(this.props),
     showError: false,
   };
 
@@ -84,7 +84,7 @@ export default class MultipleChoice extends React.Component {
 
     // If new options props are passed to the component
     // We replace the current options with the new ones.
-    if (JSON.stringify(newChoiceValues) !==  JSON.stringify(oldChoiceValues)) {
+    if (JSON.stringify(newChoiceValues) !== JSON.stringify(oldChoiceValues)) {
       this.setState({
         choices: newChoiceValues,
       });
@@ -123,8 +123,8 @@ export default class MultipleChoice extends React.Component {
     return classNames;
   }
 
-  getCorrectChoiceValues ({options, choices}) {
-    return options.length && options || choices;
+  static getCorrectChoiceValues ({options, choices}) {
+    return (options.length && options) || choices;
   }
 
   getChoicesToUpdate (newChoices) {
