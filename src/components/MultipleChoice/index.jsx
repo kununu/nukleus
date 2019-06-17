@@ -83,7 +83,9 @@ export default class MultipleChoice extends React.Component {
     const {query} = this.props;
     const {choices} = this.state;
 
-    if (newChoiceValues !== oldChoiceValues) {
+    // If new options props are passed to the component
+    // We replace the current options with the new ones.
+    if (JSON.stringify(newChoiceValues) !==  JSON.stringify(oldChoiceValues)) {
       this.setState({
         choices: newChoiceValues,
       });
