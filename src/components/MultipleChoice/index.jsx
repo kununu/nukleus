@@ -35,7 +35,6 @@ export default class MultipleChoice extends React.Component {
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
-      type: PropTypes.string,
     })),
     query: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     reference: PropTypes.func,
@@ -219,7 +218,7 @@ export default class MultipleChoice extends React.Component {
               <div className={theme('choiceInnerContainer')}>
                 {choices.map(choice => (
                   <div
-                    className={theme('choice', choice.type)}
+                    className={theme('choice')}
                     key={choice.id}
                   >
                     <input
@@ -233,7 +232,7 @@ export default class MultipleChoice extends React.Component {
                       onFocus={onFocus}
                       ref={reference}
                       required={isRequired}
-                      type={choice.type || 'checkbox'}
+                      type="checkbox"
                       value={choice.value}
                     />
 
