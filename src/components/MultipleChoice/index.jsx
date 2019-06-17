@@ -60,7 +60,7 @@ export default class MultipleChoice extends React.Component {
   };
 
   state = {
-    choices: this.getCorrectChoiceValues(this.props),
+    choices: MultipleChoice.getCorrectChoiceValues(this.props),
     showError: false,
   };
 
@@ -76,8 +76,8 @@ export default class MultipleChoice extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
-    const newChoiceValues = this.getCorrectChoiceValues(nextProps);
-    const oldChoiceValues = this.getCorrectChoiceValues(this.props);
+    const newChoiceValues = MultipleChoice.getCorrectChoiceValues(nextProps);
+    const oldChoiceValues = MultipleChoice.getCorrectChoiceValues(this.props);
 
     const {query} = this.props;
     const {choices} = this.state;
