@@ -17,6 +17,7 @@ export default class MultipleChoice extends React.Component {
       isChecked: PropTypes.bool,
       label: PropTypes.string,
     })),
+    disabled: PropTypes.oneOf(['none', 'all', 'uncheckedOnly', 'checkedOnly']),
     error: PropTypes.string,
     errorSubInfo: PropTypes.string,
     heading: PropTypes.string,
@@ -43,6 +44,7 @@ export default class MultipleChoice extends React.Component {
 
   static defaultProps = {
     choices: [],
+    disabled: 'none',
     error: null,
     errorSubInfo: null,
     heading: null,
@@ -171,6 +173,13 @@ export default class MultipleChoice extends React.Component {
     return showError && error;
   }
 
+  isDisabled (checked) {
+    const {disabled} = this.props;
+
+    if (disabled === 'all' || (disabled === 'uncheckedOnly' && !checked) || (disabled === 'checkedOnly' && checked)) return true;
+    return false;
+  }
+
   render () {
     const {choices} = this.state;
     const {
@@ -234,6 +243,7 @@ export default class MultipleChoice extends React.Component {
                       required={isRequired}
                       type="checkbox"
                       value={choice.value}
+                      disabled={this.isDisabled(choice.isChecked)}
                     />
 
                     <label htmlFor={`${name}${choice.id}`}>{choice.label}</label>

@@ -65,6 +65,11 @@
         background-size: 100%;
       }
     }
+
+    &:disabled + label {
+      cursor: not-allowed;
+      opacity: .65;
+    }
   }
 }
 
@@ -165,6 +170,18 @@
       & + label:before,
       &:checked + label:before {
         display: none;
+      }
+
+      &:disabled:not(:checked) + label {
+        background-color: $gray-base-10;
+        border: 1px solid $gray-base-20;
+        color: $gray-base-80;
+        cursor: not-allowed;
+      }
+
+      &:disabled:checked + label {
+        cursor: not-allowed;
+        opacity: .65;
       }
     }
   }
