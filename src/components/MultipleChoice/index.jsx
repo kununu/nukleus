@@ -12,7 +12,7 @@ import styles from './index.scss';
 
 export default class MultipleChoice extends React.Component {
   static propTypes = {
-    choices: PropTypes.arrayOf(PropTypes.shape({
+    choices: PropTypes.arrayOf(PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
@@ -31,7 +31,7 @@ export default class MultipleChoice extends React.Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.shape({
+    options: PropTypes.arrayOf(PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
       id: PropTypes.string,
       isChecked: PropTypes.bool,
       label: PropTypes.string,
@@ -60,7 +60,7 @@ export default class MultipleChoice extends React.Component {
   };
 
   state = {
-    choices: (this.props.options.length && this.props.options) || this.props.choices, // eslint-disable-line react/destructuring-assignment
+    choices: MultipleChoice.getCorrectChoiceValues(this.props),
     showError: false,
   };
 
@@ -76,12 +76,24 @@ export default class MultipleChoice extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.error) this.showError();
+    const newChoiceValues = MultipleChoice.getCorrectChoiceValues(nextProps);
+    const oldChoiceValues = MultipleChoice.getCorrectChoiceValues(this.props);
+
     const {query} = this.props;
     const {choices} = this.state;
+
+    // If new options props are passed to the component
+    // We replace the current options with the new ones.
+    if (JSON.stringify(newChoiceValues) !== JSON.stringify(oldChoiceValues)) {
+      this.setState({
+        choices: newChoiceValues,
+      });
+    }
 
     // We do not yet control the state when the query does not change,
     // for instance when updates are triggered by tweaking with other components.
     if (nextProps.query === query) return;
+
     if (!nextProps.query[nextProps.name]) {
       this.updateValue(choices, 'unchecked');
     } else {
@@ -109,6 +121,10 @@ export default class MultipleChoice extends React.Component {
     if (requiredLabel) classNames.push('paddingTop');
 
     return classNames;
+  }
+
+  static getCorrectChoiceValues ({options, choices}) {
+    return (options.length && options) || choices;
   }
 
   getChoicesToUpdate (newChoices) {
