@@ -273,6 +273,171 @@ exports[`Changes status on MultipleChoice onChange 1`] = `
 </MultipleChoice>
 `;
 
+exports[`Correctly renders MultipleChoice with disabled inputs 1`] = `
+<div
+  className="formGroup choiceContainer buttons"
+  id="choices-container"
+>
+  
+  <div
+    className="choiceInnerContainer"
+  >
+    <div
+      className="choice"
+    >
+      <input
+        checked={false}
+        className="formControl"
+        disabled={true}
+        id="choicesoption-1"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-1"
+      >
+        option 1
+      </label>
+    </div>
+    <div
+      className="choice"
+    >
+      <input
+        checked={true}
+        className="formControl"
+        disabled={true}
+        id="choicesoption-2"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-2"
+      >
+        option 2
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Correctly renders MultipleChoice with disabled inputs 2`] = `
+<div
+  className="formGroup choiceContainer inline"
+  id="choices-container"
+>
+  
+  <div
+    className="choiceInnerContainer"
+  >
+    <div
+      className="choice"
+    >
+      <input
+        checked={false}
+        className="formControl"
+        disabled={false}
+        id="choicesoption-1"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-1"
+      >
+        option 1
+      </label>
+    </div>
+    <div
+      className="choice"
+    >
+      <input
+        checked={true}
+        className="formControl"
+        disabled={true}
+        id="choicesoption-2"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-2"
+      >
+        option 2
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Correctly renders MultipleChoice with disabled inputs 3`] = `
+<div
+  className="formGroup choiceContainer buttons"
+  id="choices-container"
+>
+  
+  <div
+    className="choiceInnerContainer"
+  >
+    <div
+      className="choice"
+    >
+      <input
+        checked={false}
+        className="formControl"
+        disabled={true}
+        id="choicesoption-1"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-1"
+      >
+        option 1
+      </label>
+    </div>
+    <div
+      className="choice"
+    >
+      <input
+        checked={true}
+        className="formControl"
+        disabled={false}
+        id="choicesoption-2"
+        name="choices"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <label
+        htmlFor="choicesoption-2"
+      >
+        option 2
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Renders MultipleChoice with inputStyle buttons without crashing 1`] = `
 <div
   className="formGroup choiceContainer buttons"

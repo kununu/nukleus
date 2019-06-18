@@ -215,6 +215,53 @@ test('Changing a MultipleChoice returns correct values in onChange Event', (done
   component.find({value: 'option-2'}).simulate('change');
 });
 
+test('Correctly renders MultipleChoice with disabled inputs', () => {
+  const choices = [
+    {
+      id: 'option-1',
+      isChecked: false,
+      label: 'option 1',
+    },
+    {
+      id: 'option-2',
+      isChecked: true,
+      label: 'option 2',
+    },
+  ];
+
+  const allDisabled = renderer.create(
+    <MultipleChoice
+      inputStyle="buttons"
+      name="choices"
+      choices={choices}
+      disabled="all"
+    />,
+  );
+
+  expect(allDisabled.toJSON()).toMatchSnapshot();
+
+  const checkedDisabled = renderer.create(
+    <MultipleChoice
+      name="choices"
+      choices={choices}
+      disabled="checkedOnly"
+    />,
+  );
+
+  expect(checkedDisabled.toJSON()).toMatchSnapshot();
+
+  const uncheckedDisabled = renderer.create(
+    <MultipleChoice
+      inputStyle="buttons"
+      name="choices"
+      choices={choices}
+      disabled="uncheckedOnly"
+    />,
+  );
+
+  expect(uncheckedDisabled.toJSON()).toMatchSnapshot();
+});
+
 describe('MultipleChoice Events', () => {
   const initialOptions = [
     {
