@@ -2,7 +2,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
-import {withKnobs, text} from '@storybook/addon-knobs/react';
+import {withKnobs, text, select} from '@storybook/addon-knobs/react';
 import {withInfo} from '@storybook/addon-info';
 
 import ThemeProvider from '../ThemeProvider';
@@ -10,6 +10,13 @@ import ThemeProvider from '../ThemeProvider';
 import customTheme from './customTheme.scss';
 
 import MultipleChoice from './index';
+
+const disabledOptions = {
+  none: 'none',
+  all: 'all',
+  checkedOnly: 'checkedOnly',
+  uncheckedOnly: 'uncheckedOnly',
+};
 
 storiesOf('MultipleChoice', module)
   .addDecorator(withOptions({...defaultOptions}))
@@ -33,6 +40,7 @@ storiesOf('MultipleChoice', module)
           label: 'option b',
           value: 'option-b',
         }]}
+      disabled={select('Disabled', disabledOptions, 'none')}
     />
   ))
   .add('Button style', () => (
@@ -83,6 +91,7 @@ storiesOf('MultipleChoice', module)
         label: 'Goldfish',
         value: 'option-7',
       }]}
+      disabled={select('Disabled', disabledOptions, 'none')}
     />
   ))
   .add('Custom', () => (
