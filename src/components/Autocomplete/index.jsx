@@ -111,7 +111,6 @@ export default class Autocomplete extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     const {
-      data,
       query,
       name,
     } = this.props;
