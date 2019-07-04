@@ -1,0 +1,144 @@
+@import '~@kununu/kununu-theme-v2/scss/base/variables';
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+  margin: 200px 400px;
+}
+
+.svgwrapper {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.svgmeter {
+  transform: rotateX(-180deg);
+  width: 100%;
+  height: 100%;
+}
+
+.outsideWrapper {
+  height: 200px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.gradient {
+  stop:first-child {
+    stop-color: $green;
+    stop-opacity: 1;
+  }
+  stop:last-child {
+    stop-color: $blue;
+    stop-opacity: 1;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 873;
+  }
+}
+
+.low2 {
+  stroke-dashoffset: 1330;
+  animation: dash 1.5s ease-in-out forwards;
+  opacity: .1;
+}
+
+.pointerContainer,
+.pointerContainer2 {
+  position: absolute;
+  transform-origin: bottom center;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  width: 20px;
+  height: 69px;
+  margin: 0 auto;
+  animation: rotate 2s ease;
+}
+
+.pointerWrapper {
+  &:before,
+  &:after {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 0 auto;
+    background-color: $gray-base-10;
+    border-radius: 50%;
+    right: 0;
+    left: 0;
+    bottom: 2px;
+  }
+
+  &:after {
+    background-color: $white;
+    width: 5px;
+    height: 5px;
+    left: -11px;
+    bottom: 13px;
+  }
+
+  &:before {
+    background-color: $gray-base-10;
+    width: 30px;
+    height: 30px;
+    left: -12px;
+    bottom: 2px;
+  }
+}
+
+.arrow,
+.arrow2 {
+  position: absolute;
+  fill: $blue;
+  left: 0;
+  right: 0;
+  top: -115px;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .3));
+}
+
+.arrow2 {
+  fill: $green;
+  top: -132px;
+}
+
+.pointerContainer2 {
+  bottom: 25px;
+  left: -12px;
+}
+
+.pointer {
+  transform: scale(1.4, 1.5);
+  width: 20px;
+  fill: $green;
+
+
+  path {
+    transform-origin: bottom center;
+  }
+}
+
+.pointer2 {
+  transform: scale(1.2, 1.5);
+  width: 20px;
+  fill: $blue;
+
+  path {
+    transform-origin: bottom center;
+  }
+
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+};
