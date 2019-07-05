@@ -2,12 +2,12 @@
 
 $height: 30px;
 $thumb-height: 25px;
-$track-height: 5px;
+$track-height: 4px;
 
-$upper-color: lighten($btn-secondary-bg, 40);
-$lower-color: $btn-secondary-bg;
-$thumb-color: $btn-secondary-bg;
-$thumb-hover-color: $btn-secondary-bg;
+$upper-color: lighten($red, 40);
+$lower-color: $blue;
+$thumb-color: $red;
+$thumb-hover-color: $blue;
 
 $upper-background: linear-gradient(to top, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
 $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;

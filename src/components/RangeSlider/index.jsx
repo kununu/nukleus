@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ThemeContext from 'utils/themeContext';
+import themeable from 'utils/theming';
+
 import Error from '../Error';
 
+import IncreaseAmountBtn from './icons/icn-increase-btn';
+import DecreaseAmountBtn from './icons/icn-decrease-btn';
 import styles from './index.scss';
 
 const RangeSliderComponent = ({
@@ -19,38 +24,93 @@ const RangeSliderComponent = ({
   },
   onChange,
   label,
-  containerClass,
   onFocus,
-}) => (
-  <>
-    <div className={containerClass}>
-      <label htmlFor={id}>
-        {label}
-        <input
-          id={id}
-          type="range"
-          step={step}
-          min={min}
-          max={max}
-          name={name}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          className={styles.slider}
-        />
-      </label>
-    </div>
-    {(touched && error) && (
-      <div className={styles.sliderErrorContainer}>
-        <Error
-          id={`${id}_error`}
-          info={error}
-        />
-      </div>
-    )}
-  </>
-);
+}) => {
+  const dispatchSyntheticEvent = (val) => {
+    onChange({
+      target: {
+        name: id,
+        value: String(val),
+      },
+    });
+  };
+
+  return (
+    <ThemeContext.Consumer>
+      {(context) => {
+        const theme = themeable({...styles, ...context});
+
+        return (
+          <>
+            <label htmlFor={id}>{label}</label>
+            <div
+              className={theme('sliderGridContainer')}
+              id="salary-slider-container"
+            >
+              <button
+                type="button"
+                id="decreaseSalaryAmountBtn"
+                className={theme('modifyAmountBtn')}
+                onClick={() => {
+                  const currentValue = Number(value);
+
+                  if (currentValue > min) {
+                    const updatedValue = currentValue - step;
+
+                    dispatchSyntheticEvent(updatedValue);
+                  }
+                }}
+              >
+                <DecreaseAmountBtn />
+              </button>
+              <div className={theme('rangeSliderWrapper')}>
+                <input
+                  id={id}
+                  type="range"
+                  step={step}
+                  min={min}
+                  max={max}
+                  name={name}
+                  value={value}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  onFocus={onFocus}
+                  className={theme('slider')}
+                />
+              </div>
+              <button
+                type="button"
+                id="increaseSalaryAmountBtn"
+                className={theme('modifyAmountBtn')}
+                onClick={() => {
+                  const currentValue = Number(value);
+
+                  if (currentValue < max) {
+                    const updatedValue = currentValue + step;
+
+                    dispatchSyntheticEvent(updatedValue);
+                  }
+                }}
+              >
+                <IncreaseAmountBtn />
+              </button>
+            </div>
+            {(touched && error) && (
+            <div className={theme('sliderErrorContainer')}>
+              <Error
+                id={`${id}_error`}
+                info={error}
+              />
+            </div>
+            )}
+          </>
+        );
+      }
+      }
+    </ThemeContext.Consumer>
+  );
+};
+
 
 RangeSliderComponent.propTypes = {
   id: PropTypes.string.isRequired,
@@ -59,7 +119,7 @@ RangeSliderComponent.propTypes = {
   step: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  onBlur: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   meta: PropTypes.shape({
     value: PropTypes.number.isRequired,
@@ -70,13 +130,12 @@ RangeSliderComponent.propTypes = {
     ]),
   }).isRequired,
   label: PropTypes.string,
-  containerClass: PropTypes.string,
 };
 
 RangeSliderComponent.defaultProps = {
   label: '',
-  containerClass: styles.sliderWrapper,
   onFocus: null,
+  onBlur: null,
 };
 
 
