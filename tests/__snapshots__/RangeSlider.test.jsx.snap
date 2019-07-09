@@ -1,26 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders basic Table without crashing 1`] = `
-<div
-  className="sliderWrapper"
->
+Array [
   <label
     htmlFor="salaryCurrencySlider"
   >
     Slider label
-    <input
-      className="slider"
-      id="salaryCurrencySlider"
-      max={1000}
-      min={0}
-      name="amount"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      step={10}
-      type="range"
-      value={0}
-    />
-  </label>
-</div>
+  </label>,
+  <div
+    className="sliderGridContainer"
+    id="salary-slider-container"
+  >
+    <button
+      className="modifyAmountBtn"
+      id="decreaseSalaryAmountBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        height="25px"
+        viewBox="0 0 32 32"
+        width="25px"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="none"
+          strokeWidth="1"
+        >
+          <g
+            transform="translate(-52.000000, -822.000000)"
+          >
+            <g
+              transform="translate(53.000000, 823.000000)"
+            >
+              <circle
+                cx="15"
+                cy="15"
+                r="15"
+                stroke="#2186DB"
+              />
+              <polygon
+                fill="#2186DB"
+                fillRule="nonzero"
+                points="12.25 13.8779297 17.6425781 13.8779297 17.6425781 15.8652344 12.25 15.8652344"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </button>
+    <div
+      className="rangeSliderWrapper"
+    >
+      <input
+        className="slider"
+        id="salaryCurrencySlider"
+        max={1000}
+        min={0}
+        name="amount"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        step={10}
+        type="range"
+        value={0}
+      />
+    </div>
+    <button
+      className="modifyAmountBtn"
+      id="increaseSalaryAmountBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        height="25px"
+        viewBox="0 0 32 32"
+        width="25px"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="none"
+          strokeWidth="1"
+        >
+          <g
+            transform="translate(-9.000000, -822.000000)"
+          >
+            <g
+              transform="translate(10.000000, 823.000000)"
+            >
+              <circle
+                cx="15"
+                cy="15"
+                r="15"
+                stroke="#2186DB"
+              />
+              <polygon
+                fill="#2186DB"
+                fillRule="nonzero"
+                points="9.56445312 16.2949219 9.56445312 14.4902344 14.2480469 14.4902344 14.2480469 9.77441406 16.0849609 9.77441406 16.0849609 14.4902344 20.7685547 14.4902344 20.7685547 16.2949219 16.0849609 16.2949219 16.0849609 21 14.2480469 21 14.2480469 16.2949219"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>,
+]
 `;
