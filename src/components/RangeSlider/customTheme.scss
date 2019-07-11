@@ -2,12 +2,12 @@
 
 $height: 30px;
 $thumb-height: 25px;
-$track-height: 5px;
+$track-height: 4px;
 
-$upper-color: lighten($btn-secondary-bg, 40);
-$lower-color: $btn-secondary-bg;
-$thumb-color: $btn-secondary-bg;
-$thumb-hover-color: $btn-secondary-bg;
+$upper-color: lighten($red, 40);
+$lower-color: $blue;
+$thumb-color: $red;
+$thumb-hover-color: $blue;
 
 $upper-background: linear-gradient(to top, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
 $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
@@ -156,6 +156,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 .slider:hover {
   &::-webkit-slider-thumb {
     @include hover-effect;
+    position: relative;
   }
 
   &::-moz-range-thumb {
@@ -164,23 +165,33 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
 
   &::-ms-thumb {
     @include hover-effect;
-  } 
+  }
 }
+
 
 .sliderGridContainer {
   width: 100%;
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px auto 40px;
 }
 
 .rangeSliderWrapper { // NOSONAR
+  padding: 0 30px;
   width: 100%;
-  padding: 0 5px;
+
+  @supports (display: grid) {
+    padding: 0;
+  }
 }
 
 .modifyAmountBtn {
+  @supports (display: grid) {
+    position: relative;
+  }
+
   display: block;
-  width: 40px;
+  width: 35px;
   height: 40px;
   margin-top: 2px;
   background: none;
@@ -188,9 +199,17 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   padding: 0;
   text-align: left;
 
+  // fix for IOS9 and IE11
+  position: absolute;
+  left: 0;
+
   &:last-of-type {
     margin-left: auto;
     text-align: right;
+
+    // fix for IOS9 and IE11
+    top: 0;
+    right: 0;
   }
 
   svg {
