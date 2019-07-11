@@ -173,7 +173,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   display: flex;
 }
 
-.rangeSliderWrapper {
+.rangeSliderWrapper { // NOSONAR
   width: 100%;
   padding: 0 5px;
 }

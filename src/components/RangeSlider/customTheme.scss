@@ -176,7 +176,7 @@ $lower-background: linear-gradient(to top, $lower-color, $lower-color) 100% 50% 
   grid-template-columns: 40px auto 40px;
 }
 
-.rangeSliderWrapper {
+.rangeSliderWrapper { // NOSONAR
   padding: 0 30px;
   width: 100%;
 
