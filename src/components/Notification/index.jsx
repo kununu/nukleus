@@ -124,7 +124,7 @@ export default class Notification extends React.Component {
 
     const {visible} = this.state;
 
-    if (visible && !this.isError()) {
+    if (visible) {
       this.timeout = setTimeout(() => {
         this.onTimeout();
       }, duration);
