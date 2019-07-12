@@ -94,6 +94,8 @@
     width: 13px;
     height: 13px;
     border: 4px solid $gray-base-30;
+    backface-visibility: hidden;
+    transform-style: preserve-3d; 
     border-radius: 50%;
   }
 }
