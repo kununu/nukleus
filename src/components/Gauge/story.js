@@ -10,6 +10,17 @@ storiesOf('Gauge', module)
   .addDecorator(withOptions({...defaultOptions}))
   .add('basics', () => (
     <div style={{maxWidth: '1000px'}}>
-      <Gauge />
+      <Gauge
+        leftLabel="Traditional"
+        rightLabel="Modern"
+        smallHand={{
+          value: 90,
+          legend: 'Industry Average',
+        }}
+        bigHand={{
+          value: 90,
+          legend: 'Expedia',
+        }}
+      />
     </div>
   ));

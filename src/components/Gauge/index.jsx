@@ -3,43 +3,51 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
+function rgb2hex(rgb) {
+  return `#${((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1)}`;
+}
 
-const Gauge = ({smallHand, bigHand}) => {  
-  const hex2rgb = (hex) => {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? [
-        parseInt(result[1], 16),
-        parseInt(result[2], 16),
-        parseInt(result[3], 16)
-    ] : null;
-  };
+function hex2rgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
-  // Inverse of the above
-  const rgb2hex = (rgb) => {
-    return "#" + ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
-  };
+  return result ? [
+      parseInt(result[1], 16),
+      parseInt(result[2], 16),
+      parseInt(result[3], 16)
+  ] : null;
+}
 
-  const interpolateColor = (color1, color2, factor = .5) => {
-    const result = color1.slice();
-    for (var i=0;i<3;i++) {
-      result[i] = Math.round(result[i] + factor*(color2[i]-color1[i]));
+function interpolateColor(color1, color2, factor = .5) {
+  const result = color1.slice();
+
+    for (var i = 0; i < 3; i++) {
+        result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
     }
-    return result;
-  };
-  const beginColor =hex2rgb('#2681B0');
-  const endColor = hex2rgb('#A5CC48');
-  // debugger
-  // console.log('inerpolate', interpolateColor(beginColor, endColor, 1));
 
-  const getFillColor = (val) => {
-    console.log('MEOW', val);
-    if (val <= 30) return '#006DC0';
-    if (val <= 60) return '#007CB5';
-    if (val <= 90) return '#3A9D9C';
-    if (val <= 120) return '#5EAD85';
-    if (val <= 150) return '#85BE68';
-    return '#93C45C';
+    return rgb2hex(result);
+}
+
+function interpolateColors(color1, color2, steps) {
+  const stepFactor = 1 / (steps - 1);
+  const interpolatedColorArray = [];
+
+  for (var i = 0; i < steps; i++) {
+    interpolatedColorArray.push(interpolateColor(color1, color2, stepFactor * i));
   }
+  
+  return interpolatedColorArray;
+}
+
+
+const Gauge = ({
+  leftLabel,
+  rightLabel,
+  smallHand,
+  bigHand
+}) => { 
+  const beginColor = hex2rgb('#2681B0');
+  const endColor = hex2rgb('#A5CC48');
+  const interpolatedColors = interpolateColors(beginColor, endColor, 181);
 
   return (
     <div className={styles.container}>
@@ -72,10 +80,10 @@ const Gauge = ({smallHand, bigHand}) => {
         </svg>
 
         <div
-          style={{transform: `rotate(${smallHand}deg)`}}
+          style={{transform: `rotate(${smallHand.value}deg)`}}
           className={styles.smallHand}>
           <svg
-            fill={getFillColor(smallHand)}
+            fill={interpolatedColors[smallHand.value]}
             className={styles.arm}
             viewBox="0 0 84 17"
           >
@@ -86,10 +94,10 @@ const Gauge = ({smallHand, bigHand}) => {
         </div>
 
         <div
-          style={{transform: `rotate(${bigHand}deg)`}}
+          style={{transform: `rotate(${bigHand.value}deg)`}}
           className={styles.bigHand}>
           <svg
-            fill={getFillColor(bigHand)}
+            fill={interpolatedColors[bigHand.value]}
             className={styles.arm}
             viewBox="0 0 84 17"
           >
@@ -101,24 +109,38 @@ const Gauge = ({smallHand, bigHand}) => {
       </div>
 
       <div className={styles.labels}>
-        <div>meow</div>
-        <div>meow</div>
+        <div>{leftLabel}</div>
+        <div>{rightLabel}</div>
       </div>
-      <div>
-        legend
+
+      <div className={styles.legend}>
+        <div className={styles.legendSmall}>
+          {bigHand.legend}
+        </div>
+        <div className={styles.legendBig}>
+          {smallHand.legend}
+        </div>
       </div>
     </div>
   );
 };
 
 Gauge.propTypes = {
-  smallHand: PropTypes.number,
-  bigHand: PropTypes.number,
+  bigHand: PropTypes.shape({
+    value: PropTypes.number,
+    legend: PropTypes.string,
+  }),
+  leftLabel: PropTypes.string.isRequired,
+  rightLabel: PropTypes.string.isRequired,
+  smallHand: PropTypes.shape({
+    value: PropTypes.number,
+    legend: PropTypes.string,
+  }),
 }
 
 Gauge.defaultProps = {
-  smallHand: 100,
-  bigHand: 120,
+  bigHand: 90,
+  smallHand: 90,
 }
 
 export default Gauge;
