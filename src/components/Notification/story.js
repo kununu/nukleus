@@ -19,6 +19,7 @@ storiesOf('Notification', module)
   .add('error', () => (
     <Notification
       type="error"
+      closeMethod={text('closeMethod', 'onTimeout')}
       onClose={action('onClose')}
       message={text('message', 'Hi, I am an error notification box')}
       icon={<i className="fa fa-cross" />}
