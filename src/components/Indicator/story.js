@@ -11,6 +11,10 @@ storiesOf('Indicator', module)
   .add('basics', () => (
     <div style={{maxWidth: '1000px'}}>
       <Indicator
+        minLabel="Work"
+        maxLabel="Life"
+        mainIndicator={80}
+        secondaryIndicator={40}
         title="Work-Life Balance"
       />
     </div>

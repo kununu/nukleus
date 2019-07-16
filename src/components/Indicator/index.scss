@@ -1,48 +1,108 @@
 @import '~@kununu/kununu-theme-v2/scss/base/variables';
 
 .container {
-  width: 500px;
+  width: 50%;
   margin: 50px 20px;
-  // text-align: center;
 }
 
 .title {
   font-weight: $font-weight-bold;
   font-size: $font-size-h3;
-  margin: 5px 0 25px;
+  margin: 5px 0 10px;
   text-align: center;
 }
 
-.bar {
+.indicatorBar {
   width: 100%;
   height: 10px;
   border-radius: 3px;
   background: rgb(38,129,176);
-  background: linear-gradient(90deg, $blue 0%, rgba(165,204,72,1) 100%);
+  background: linear-gradient(90deg, #095ac6 0%, #afca5d 100%);
 
-  &:before {
-    content: ' ';
-    display: block;
-    border-top: 1px dashed $gray-base-20;
-    position: relative;
-    top: -12px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 50%;
+    width: 90%;
+    opacity: 0.3;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #095ac6 0%, #afca5d 100%);
+    filter: blur(6px);
   }
 }
 
-.indicator {
+.clipPath {
+  animation: slide 2.5s ease;
+}
+
+.gradient {
+  stop {
+    stop-opacity: 1;
+  }
+}
+
+.primaryIndicator {
+  width: 100%;
+  height: 15px;
   position: relative;
-  text-align: left;
+  z-index: 12;
+}
+
+.secondaryIndicator {
+  width: 0;
+  position: absolute;
+  animation: slide 2.5s ease;
+  bottom: 12px;
+  z-index: 1;
 
   svg {
-    width: 14px;
+    width: 12px;
+    height: 13px;
+    fill: $gray-base-30;
   }
-  
-  span {
-    position: absolute;
-    animation: slide 2s ease;
-    bottom: 10px;
-    z-index: 1;
+}
+
+.secondaryIndicator,
+.primaryIndicator {
+  svg {
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .2));
   }
+}
+
+.indicatorWrapper {
+  position: relative;
+  text-align: left;
+}
+
+.block {
+  width: 100%;
+  height: 20px;
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  width: 100%;
+
+  line {
+    stroke: $gray-base-60;
+    stroke-width: .5;
+    stroke-linecap: round;
+    stroke-dasharray: 1, 5;
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  color: $gray-base-50;
 }
 
 @keyframes slide {
