@@ -26,16 +26,18 @@ export default class Tabs extends React.Component {
     const {hash: rootHash, pathname} = this.props;
     const itemHash = props.to && props.to.hash ? props.to.hash : '';
 
+    // Option to manually set tab active on TNP
+    const isTabActive = props.active;
+
     // Depending on which link it is (from react-router, from react-server, simple link) we need to access the local pathname according to the respective API
     const localPathname = `${props.href || props.path || (props.to && props.to.pathname)}${itemHash}`;
     const actualPathname = `${pathname}${rootHash}`;
     const isActive = localPathname === actualPathname;
 
     return {
-      className: theme(props.className, 'tabLink', `${isActive && 'tabActive'}`),
+      className: theme(props.className, 'tabLink', `${isTabActive || isActive && 'tabActive'}`),
     };
   }
-
 
   render () {
     const {items, theme: type} = this.props;
