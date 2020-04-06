@@ -84,6 +84,7 @@ export default class Modal extends React.Component {
             onClick={this.onAction}
             text={actionText}
             type="primary"
+            id="nukleus-modal-action-btn"
           />
           )}
           {cancelText && (
@@ -92,6 +93,7 @@ export default class Modal extends React.Component {
             onClick={this.onExit}
             text={cancelText}
             type="secondary"
+            id="nukleus-modal-cancel-btn"
           />
           )}
         </footer>
