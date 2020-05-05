@@ -70,7 +70,7 @@
     "file-loader": "3.0.1",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.5.0",
-    "jest-junit": "6.3.0",
+    "jest-junit": "10.0.0",
     "node-sass": "4.11.0",
     "node-sass-module-importer": "0.1.0",
     "postcss-cli": "6.1.2",
