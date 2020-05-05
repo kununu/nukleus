@@ -34,7 +34,7 @@
     "@storybook/addon-backgrounds": "4.1.18",
     "@storybook/addon-centered": "4.1.18",
     "@storybook/addon-events": "4.1.18",
-    "@storybook/addon-info": "4.1.18",
+    "@storybook/addon-info": "5.3.18",
     "@storybook/addon-jest": "4.1.18",
     "@storybook/addon-knobs": "4.1.18",
     "@storybook/addon-links": "4.1.18",
