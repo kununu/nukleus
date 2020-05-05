@@ -38,7 +38,7 @@
     "@storybook/addon-jest": "4.1.18",
     "@storybook/addon-knobs": "4.1.18",
     "@storybook/addon-links": "4.1.18",
-    "@storybook/addon-notes": "4.1.18",
+    "@storybook/addon-notes": "5.3.18",
     "@storybook/addon-options": "4.1.18",
     "@storybook/addon-storyshots": "4.1.18",
     "@storybook/addon-storyshots-puppeteer": "4.1.18",
