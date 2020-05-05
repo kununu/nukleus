@@ -1,3 +1,4 @@
 module.exports = {
-  stories: ['../src/defaultStory.js'],
+  //stories: ['../src/components/ThemeProvider/story.js'],
+  stories: ['../src/components/**/story.[tj]s'],
 };
