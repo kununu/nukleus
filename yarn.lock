@@ -1382,6 +1382,12 @@
   version "4.1.18"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-4.1.18.tgz#0c445c9ff72c83cee90efae99dbc6807daab1a12"
 
+"@storybook/core-events@5.3.19":
+  version "5.3.19"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.19.tgz#18020cd52e0d8ef0973a8e9622a10d5f99796f79"
+  dependencies:
+    core-js "^3.0.1"
+
 "@storybook/core@4.1.18":
   version "4.1.18"
   resolved "https://registry.yarnpkg.com/@storybook/core/-/core-4.1.18.tgz#c51e4781a5cd39a712dddf33876de0ee30fb1190"
@@ -3411,7 +3417,7 @@ core-js-pure@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.0.1.tgz#37358fb0d024e6b86d443d794f4e37e949098cbe"
 
-core-js@2.6.5, core-js@^2.4.0, core-js@^2.5.7:
+core-js@2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
@@ -3423,13 +3429,13 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.6.5:
+core-js@^2.4.0, core-js@^2.5.7, core-js@^2.6.5:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
 
-core-js@^3.0.0:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.1.4.tgz#3a2837fc48e582e1ae25907afcd6cf03b0cc7a07"
+core-js@^3.0.0, core-js@^3.0.1:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
