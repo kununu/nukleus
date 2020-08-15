@@ -29,7 +29,7 @@
     "@babel/preset-stage-0": "7.0.0",
     "@babel/register": "7.4.4",
     "@kununu/eslint-config": "1.0.6",
-    "@storybook/addon-a11y": "4.1.18",
+    "@storybook/addon-a11y": "6.0.7",
     "@storybook/addon-actions": "4.1.18",
     "@storybook/addon-backgrounds": "4.1.18",
     "@storybook/addon-centered": "4.1.18",
