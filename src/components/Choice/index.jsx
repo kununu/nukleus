@@ -39,7 +39,7 @@ export default class Choice extends React.Component {
       ]),
       value: PropTypes.string,
     })).isRequired,
-    optionsPerRow: PropTypes.oneOf(['3', '4', '5', '6', '7', 3, 4, 5, 6, 7, null]),
+    optionsPerRow: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', 1, 2, 3, 4, 5, 6, 7, null]),
     query: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
