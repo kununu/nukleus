@@ -197,13 +197,13 @@
     }
 
     .choiceButton label {
-      border: 1px solid $light-blue-grey;
+      border: 1px solid $blue;
       border-top: 0;
       border-radius: 0;
     }
 
     .choiceButton:first-child label {
-      border-top: 1px solid $light-blue-grey;
+      border-top: 1px solid $blue;
       border-top-right-radius: $border-radius-base;
       border-top-left-radius: $border-radius-base;
     }
