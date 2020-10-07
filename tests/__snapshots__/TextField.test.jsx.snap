@@ -274,7 +274,7 @@ exports[`Renders A TextField with visible character counter without crashing 1`]
   >
     TextField
     <span
-      className="controlNote infoLabel"
+      className="controlNote infoLabel infoLabelCount"
     >
       <strong>
         5

@@ -2,7 +2,7 @@
 
 exports[`Renders an InfoLabel with a characterCounter 1`] = `
 <span
-  className="controlNote infoLabel"
+  className="controlNote infoLabel infoLabelCount"
 >
   <strong>
     0
@@ -14,7 +14,7 @@ exports[`Renders an InfoLabel with a characterCounter 1`] = `
 
 exports[`Renders an InfoLabel with a characterCounter and displays correct count and maxLength 1`] = `
 <span
-  className="controlNote infoLabel"
+  className="controlNote infoLabel infoLabelCount"
 >
   <strong>
     4
