@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import {queryParamsToObject} from 'utils/params';
 import ThemeContext from 'utils/themeContext';
@@ -39,13 +40,14 @@ export default class Choice extends React.Component {
       ]),
       value: PropTypes.string,
     })).isRequired,
-    optionsPerRow: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', 1, 2, 3, 4, 5, 6, 7, null]),
+    optionsPerRow: PropTypes.oneOf(['2', '3', '4', '5', '6', '7', 2, 3, 4, 5, 6, 7, null]),
     query: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
     ]),
     reference: PropTypes.func,
     requiredLabel: PropTypes.string,
+    mobileSingleCol: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -67,6 +69,7 @@ export default class Choice extends React.Component {
     query: {},
     reference: () => {},
     requiredLabel: '',
+    mobileSingleCol: false,
   };
 
   state = {
@@ -174,6 +177,7 @@ export default class Choice extends React.Component {
       optionsPerRow,
       reference,
       requiredLabel,
+      mobileSingleCol,
     } = this.props;
     const {checked} = this.state;
 
@@ -189,7 +193,9 @@ export default class Choice extends React.Component {
 
           return (
             <div
-              className={theme('formGroup')}
+              className={classnames(theme('formGroup'), {
+                [theme('mobileSingleCol')]: mobileSingleCol,
+              })}
               id={`${name}-container`}
             >
 

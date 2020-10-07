@@ -308,13 +308,13 @@ export default class TextField extends React.Component {
       onHighlight,
     } = this.props;
 
-    return userInputArray.map((part) => {
+    return userInputArray.map((part, index) => {
       if (highlightList[part.toLowerCase()]) {
         onHighlight();
         return (
           <span
             className={styles.highlighted}
-            key={part}
+            key={`${part}-${index}`} // eslint-disable-line react/no-array-index-key
           >
             {part}
           </span>
