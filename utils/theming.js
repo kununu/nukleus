@@ -1,6 +1,6 @@
-export default theme => {
-  return (...names) => names
+const theming = theme => (...names) => names
   .map(name => theme[name] || name)
   .filter(x => x)
-  .join(" ");
-}
+  .join(' ');
+
+export default theming;

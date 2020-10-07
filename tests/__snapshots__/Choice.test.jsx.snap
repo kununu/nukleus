@@ -1164,6 +1164,7 @@ exports[`Renders an error if errors prop is set 1`] = `
   isRequired={false}
   label={null}
   labelHidden={false}
+  mobileSingleCol={false}
   name="test"
   onBlur={[Function]}
   onChange={[Function]}

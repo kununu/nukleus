@@ -147,14 +147,14 @@ exports[`Badwords should highlight correctly 1`] = `
          
         <span
           className="highlighted"
-          key="bad"
+          key="bad-6"
         >
           bad
         </span>
          
         <span
           className="highlighted"
-          key="words"
+          key="words-8"
         >
           words
         </span>
