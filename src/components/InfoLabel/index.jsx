@@ -24,7 +24,7 @@ const InfoLabel = ({
 
       // Show requiredLabel if available and user hasn't typed any inputValues
       return displayLength ? (
-        <span className={theme('controlNote', 'infoLabel')}>
+        <span className={theme('controlNote', 'infoLabel', 'infoLabelCount')}>
           <strong>{inputValue.length}</strong>
             /
           {maxLength}
