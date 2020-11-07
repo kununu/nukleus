@@ -97,7 +97,7 @@
     "date-fns": "2.0.0-alpha.25",
     "debounce": "1.2.0",
     "prop-types": "15.7.2",
-    "query-string": "6.4.0",
+    "query-string": "6.13.7",
     "react-aria-modal": "4.0.0",
     "react-autosuggest": "9.4.3",
     "react-datepicker": "2.2.0",
