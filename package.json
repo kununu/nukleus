@@ -55,7 +55,7 @@
     "babel-loader": "8.0.5",
     "babel-plugin-transform-rename-import": "2.3.0",
     "bootstrap-sass": "3.4.1",
-    "core-js": "2.6.5",
+    "core-js": "3.8.2",
     "cross-env": "5.2.0",
     "css-loader": "2.1.1",
     "enzyme": "3.9.0",
