@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class Button extends React.Component {
   static propTypes = {

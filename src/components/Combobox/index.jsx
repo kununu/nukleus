@@ -7,9 +7,9 @@ import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
 import Error from '../Error';
-import sharedStyles from '../index.scss';
+import sharedStyles from '../index.module.scss';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class ComboboxComponent extends React.Component {
   static propTypes = {
