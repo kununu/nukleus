@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+    labels:
+      - "dependencies"
+    versioning-strategy: auto
+    # By default Dependabot has a limit of the number of open PR for version updates
+    # and security updates. 
+    # See other defaults in here: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
