@@ -66,7 +66,7 @@ export default class MultipleChoice extends React.Component {
     showError: false,
   };
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () { // eslint-disable-line
     // Show error, if already set
     const {query, name, error} = this.props;
 
@@ -76,7 +76,7 @@ export default class MultipleChoice extends React.Component {
     this.updateValue(this.getChoicesToUpdate(query[name]), 'checked');
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { // eslint-disable-line
     if (nextProps.error) this.showError();
     const newChoiceValues = MultipleChoice.getCorrectChoiceValues(nextProps);
     const oldChoiceValues = MultipleChoice.getCorrectChoiceValues(this.props);

@@ -72,25 +72,26 @@ export default class Choice extends React.Component {
     mobileSingleCol: false,
   };
 
-  constructor (props) {
-    super(props);
+  state = {
+    checked: this.props.checked, // eslint-disable-line react/destructuring-assignment
+    showError: false,
+  };
 
+  UNSAFE_componentWillMount () { //eslint-disable-line
     const {
-      error,
       name,
       query,
-      checked,
-    } = props;
+    } = this.props;
 
     const queryObject = queryParamsToObject(query);
 
-    this.state = {
-      checked: queryObject[name] || checked,
-      showError: Boolean(error) || false,
-    };
+    // Show error, if already set
+    if (!queryObject[name]) return;
+
+    this.setState({checked: queryObject[name]});
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { //eslint-disable-line
     const {
       checked,
       query,
