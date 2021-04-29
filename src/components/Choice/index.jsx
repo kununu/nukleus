@@ -81,9 +81,12 @@ export default class Choice extends React.Component {
     const {
       name,
       query,
+      error,
     } = this.props;
 
     const queryObject = queryParamsToObject(query);
+
+    if (error !== null) this.showError();
 
     // Show error, if already set
     if (!queryObject[name]) return;

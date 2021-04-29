@@ -56,7 +56,7 @@ export default class Notification extends React.Component {
 
   state = {visible: this.props.visible}; // eslint-disable-line react/destructuring-assignment
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { // eslint-disable-line
     if (this.newNotificationWillOverrideExisting(nextProps.message)) {
       // Briefly set visible state to false to show animation again
       this.setState({visible: false});
