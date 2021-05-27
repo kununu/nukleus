@@ -174,7 +174,10 @@ export default class Autocomplete extends React.Component {
     }
 
     if (onSelectSuggestion) {
-      onSelectSuggestion(suggestion);
+      const {suggestions} = this.state;
+      const suggestionIndex = suggestions.indexOf(suggestion);
+
+      onSelectSuggestion(suggestion, suggestionIndex);
     }
   }
 
