@@ -195,7 +195,7 @@ test('Changing an Autocomplete calls the onChange Event', () => {
 });
 
 
-test('Clicking an autocomplete suggestion emits the item and the index', () => {
+test('Clicking an autocomplete suggestion emits the item plus other data such as index and search term', () => {
   const spyFunc = jest.fn();
   const component = mount(<Autocomplete
     data={{items: [{item: 'apple', itemInfo: 'US'}, {item: 'alpha', itemInfo: 'Vienna'}]}}
@@ -209,5 +209,5 @@ test('Clicking an autocomplete suggestion emits the item and the index', () => {
   component.find('input').hostNodes().simulate('focus');
   component.find('#react-autowhatever-autocompletes--item-1').hostNodes().simulate('click');
 
-  expect(spyFunc).toHaveBeenCalledWith({item: 'alpha', itemInfo: 'Vienna'}, 1);
+  expect(spyFunc).toHaveBeenCalledWith({item: 'alpha', itemInfo: 'Vienna'}, {index: 1, searchTerm: 'a'});
 });
