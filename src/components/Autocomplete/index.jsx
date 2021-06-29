@@ -86,6 +86,7 @@ export default class Autocomplete extends React.Component {
 
   state = {
     hasInitialized: false,
+    isActive: this.props.autoFocus || false,
     showError: false,
     showNoSuggestionsText: false,
     suggestions: this.props.data.items || [], // eslint-disable-line react/destructuring-assignment
@@ -134,7 +135,7 @@ export default class Autocomplete extends React.Component {
   onFocus = (ev) => {
     const {onFocus} = this.props;
 
-    this.setState({showNoSuggestionsText: true});
+    this.setState({isActive: true, showNoSuggestionsText: true});
 
     // Prevents autoscroll if element is not
     // in the DOM
@@ -149,7 +150,7 @@ export default class Autocomplete extends React.Component {
     const {onBlur} = this.props;
 
     this.hideNoSuggestionsText();
-    this.setState({hasInitialized: false});
+    this.setState({hasInitialized: false, isActive: false});
     onBlur(ev);
   }
 
