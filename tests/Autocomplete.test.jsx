@@ -190,14 +190,14 @@ test('Focus/Blur an Autocomplete sets isActive properly', () => {
 });
 
 test('Passing autofocus initializes isActive with true', () => {
-  const component = mount(<Autocomplete 
+  const component = mount(<Autocomplete
     autoFocus
     data={{items: []}}
     id="autocompletes"
     label="Autocomplete"
     name="autocomplete"
   />);
-console.log(component.state());
+
   expect(component.state().isActive).toEqual(true);
 });
 
