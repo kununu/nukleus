@@ -179,6 +179,28 @@ test('Bluring an Autocomplete calls the onBlur Event', () => {
   expect(spyFunc.mock.calls.length).toBe(1);
 });
 
+test('Focus/Blur an Autocomplete sets isActive properly', () => {
+  const component = mount(staticAutocomplete);
+
+  expect(component.state().isActive).toEqual(false);
+  component.find('input').simulate('focus');
+  expect(component.state().isActive).toEqual(true);
+  component.find('input').simulate('blur');
+  expect(component.state().isActive).toEqual(false);
+});
+
+test('Passing autofocus initializes isActive with true', () => {
+  const component = mount(<Autocomplete
+    autoFocus
+    data={{items: []}}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete"
+  />);
+
+  expect(component.state().isActive).toEqual(true);
+});
+
 test('Changing an Autocomplete calls the onChange Event', () => {
   const spyFunc = jest.fn();
   const component = mount(<Autocomplete
