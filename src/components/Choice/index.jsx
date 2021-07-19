@@ -77,23 +77,24 @@ export default class Choice extends React.Component {
     showError: false,
   };
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () { //eslint-disable-line
     const {
-      error,
       name,
       query,
+      error,
     } = this.props;
+
     const queryObject = queryParamsToObject(query);
 
-    // Show error, if already set
     if (error !== null) this.showError();
 
+    // Show error, if already set
     if (!queryObject[name]) return;
 
     this.setState({checked: queryObject[name]});
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { //eslint-disable-line
     const {
       checked,
       query,

@@ -99,7 +99,7 @@ export default class Select extends React.Component {
     value: this.props.value || '', // eslint-disable-line react/destructuring-assignment
   };
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () { //eslint-disable-line
     const {
       error,
       name,
@@ -113,7 +113,7 @@ export default class Select extends React.Component {
     if (error !== null) this.showError();
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { //eslint-disable-line
     const {name} = this.props;
 
     if (nextProps.error) this.showError();

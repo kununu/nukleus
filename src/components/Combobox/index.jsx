@@ -66,14 +66,14 @@ export default class ComboboxComponent extends React.Component {
 
   debouncedLoadSuggestions = debounce(this.loadSuggestions, this.props.debounceRate); // eslint-disable-line react/destructuring-assignment
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () { //eslint-disable-line
     const {error} = this.props;
 
     // Show error, if already set
     if (error !== null) this.showError();
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) { //eslint-disable-line
     const {inputValue} = this.props;
 
     if (nextProps.error) this.showError();
