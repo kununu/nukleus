@@ -179,6 +179,28 @@ test('Bluring an Autocomplete calls the onBlur Event', () => {
   expect(spyFunc.mock.calls.length).toBe(1);
 });
 
+test('Focus/Blur an Autocomplete sets isActive properly', () => {
+  const component = mount(staticAutocomplete);
+
+  expect(component.state().isActive).toEqual(false);
+  component.find('input').simulate('focus');
+  expect(component.state().isActive).toEqual(true);
+  component.find('input').simulate('blur');
+  expect(component.state().isActive).toEqual(false);
+});
+
+test('Passing autofocus initializes isActive with true', () => {
+  const component = mount(<Autocomplete
+    autoFocus
+    data={{items: []}}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete"
+  />);
+
+  expect(component.state().isActive).toEqual(true);
+});
+
 test('Changing an Autocomplete calls the onChange Event', () => {
   const spyFunc = jest.fn();
   const component = mount(<Autocomplete
@@ -192,4 +214,22 @@ test('Changing an Autocomplete calls the onChange Event', () => {
   component.find('input').simulate('change', {target: {value: 'test'}});
   component.find('input').simulate('change', {target: {value: 'test2'}});
   expect(spyFunc.mock.calls.length).toBe(2);
+});
+
+
+test('Clicking an autocomplete suggestion emits the item plus other data such as index and search term', () => {
+  const spyFunc = jest.fn();
+  const component = mount(<Autocomplete
+    data={{items: [{item: 'apple', itemInfo: 'US'}, {item: 'alpha', itemInfo: 'Vienna'}]}}
+    id="autocompletes"
+    label="Autocomplete"
+    name="autocomplete"
+    onSelectSuggestion={spyFunc}
+  />);
+
+  component.find('input').hostNodes().simulate('change', {target: {value: 'a'}});
+  component.find('input').hostNodes().simulate('focus');
+  component.find('#react-autowhatever-autocompletes--item-1').hostNodes().simulate('click');
+
+  expect(spyFunc).toHaveBeenCalledWith({item: 'alpha', itemInfo: 'Vienna'}, {index: 1, searchTerm: 'a'});
 });

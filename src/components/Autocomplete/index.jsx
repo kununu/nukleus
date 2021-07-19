@@ -86,6 +86,7 @@ export default class Autocomplete extends React.Component {
 
   state = {
     hasInitialized: false,
+    isActive: this.props.autoFocus || false, // eslint-disable-line react/destructuring-assignment, react/no-unused-state
     showError: false,
     showNoSuggestionsText: false,
     suggestions: this.props.data.items || [], // eslint-disable-line react/destructuring-assignment
@@ -134,7 +135,7 @@ export default class Autocomplete extends React.Component {
   onFocus = (ev) => {
     const {onFocus} = this.props;
 
-    this.setState({showNoSuggestionsText: true});
+    this.setState({isActive: true, showNoSuggestionsText: true}); // eslint-disable-line react/no-unused-state
 
     // Prevents autoscroll if element is not
     // in the DOM
@@ -149,7 +150,7 @@ export default class Autocomplete extends React.Component {
     const {onBlur} = this.props;
 
     this.hideNoSuggestionsText();
-    this.setState({hasInitialized: false});
+    this.setState({hasInitialized: false, isActive: false}); // eslint-disable-line react/no-unused-state
     onBlur(ev);
   }
 
@@ -174,7 +175,10 @@ export default class Autocomplete extends React.Component {
     }
 
     if (onSelectSuggestion) {
-      onSelectSuggestion(suggestion);
+      const {suggestions, value: searchTerm} = this.state;
+      const index = suggestions.indexOf(suggestion);
+
+      onSelectSuggestion(suggestion, {index, searchTerm});
     }
   }
 

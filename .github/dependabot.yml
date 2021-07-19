@@ -7,7 +7,9 @@ updates:
       day: "saturday"
     labels:
       - "dependencies"
+    # Disable automatic rebasing to prevent overloading our CICD system
+    rebase-strategy: "disabled"
     versioning-strategy: auto
     # By default Dependabot has a limit of the number of open PR for version updates
-    # and security updates. 
+    # and security updates.
     # See other defaults in here: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates

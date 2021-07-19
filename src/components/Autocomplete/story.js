@@ -42,7 +42,7 @@ storiesOf('Autocomplete', module)
           </h3>
 
           <Autocomplete
-            autofocus
+            autoFocus
             data={staticData}
             id="autocompletes"
             label={text('label', 'Autocomplete')}
