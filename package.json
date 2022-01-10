@@ -1,6 +1,6 @@
 {
   "name": "nukleus",
-  "version": "16.0.0",
+  "version": "16.1.1",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
@@ -31,7 +31,7 @@
     "@kununu/eslint-config": "1.0.6",
     "@storybook/addon-a11y": "4.1.18",
     "@storybook/addon-actions": "4.1.18",
-    "@storybook/addon-backgrounds": "4.1.18",
+    "@storybook/addon-backgrounds": "5.3.22",
     "@storybook/addon-centered": "4.1.18",
     "@storybook/addon-events": "4.1.18",
     "@storybook/addon-info": "4.1.18",
