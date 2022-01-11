@@ -305,7 +305,8 @@ export default class TextField extends React.Component {
       onHighlight,
     } = this.props;
 
-    const getHighlightedWord = () => `<span class="${styles.highlighted}">$&</span>`;
+    // returning all 3 possible capture groups ($1, $2 and $3)
+    const getHighlightedWord = () => `$1<span class="${styles.highlighted}">$2</span>$3`;
 
     // escape special characters, e.g.: * = \*
     // $& means the whole matched string
@@ -314,16 +315,15 @@ export default class TextField extends React.Component {
     return Object.keys(highlightList).reduce((acc, highlightWord) => {
       if (acc.includes(highlightWord)) onHighlight();
 
-
       // Regex:
       // Basically we want to replace all occurrences in this string by wrapping them with a span tag
-      // \b   at beginning ignores start or whitespace
-      // \b   at end ignores end or whitespace
-      // the two \b make sure that we don't have false positives because word is inside other word, e.g.: matching for "ly" should not lead to positive match in "positively"
+      // (^|\s) beginning of string or whitespace
+      // ($|\s) end of string or whitespace
+      // g all occurrences
+      // i case insensitive
+      // the two surrounding groups make sure that we don't have false positives because word is inside other word, e.g.: matching for "ly" should not lead to positive match in "positively"
       //
-      // g    all occurrences
-      // i    case insensitive
-      return acc.replace(new RegExp(`\\b${escapeRegExp(highlightWord)}\\b`, 'gi'), getHighlightedWord());
+      return acc.replace(new RegExp(`(^|\\s)(${escapeRegExp(highlightWord)})($|\\s)`, 'gi'), getHighlightedWord());
     }, contents);
   }
 
