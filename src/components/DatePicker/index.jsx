@@ -1,9 +1,9 @@
-/* eslint-disable import/order, import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import isDate from 'date-fns/isDate';
 import 'react-datepicker/dist/react-datepicker.css';
+
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 

@@ -300,28 +300,26 @@ export default class TextField extends React.Component {
   }
 
   getHighlightedContent = (contents) => {
-    const contentRegex = /([^a-zA-ZäöüÄÖÜß]+)/;
-    const userInputArray = contents.split(contentRegex);
-
     const {
       highlightList,
       onHighlight,
     } = this.props;
 
-    return userInputArray.map((part, index) => {
-      if (highlightList[part.toLowerCase()]) {
-        onHighlight();
-        return (
-          <span
-            className={styles.highlighted}
-            key={`${part}-${index}`} // eslint-disable-line react/no-array-index-key
-          >
-            {part}
-          </span>
-        );
-      }
-      return part;
-    });
+    const getHighlightedWord = () => `<span class="${styles.highlighted}">$&</span>`;
+
+    return Object.keys(highlightList).reduce((acc, highlightWord) => {
+      if (acc.includes(highlightWord)) onHighlight();
+
+      // Regex:
+      // Basically we want to replace all occurrences in this string by wrapping them with a span tag
+      // \b   at beginning ignores start or whitespace
+      // \b   at end ignores end or whitespace
+      // the two \b make sure that we don't have false positives because word is inside other word, e.g.: matching for "ly" should not lead to positive match in "positively"
+      //
+      // g    all occurrences
+      // i    case insensitive
+      return acc.replace(new RegExp(`\\b${highlightWord}\\b`, 'gi'), getHighlightedWord(highlightWord));
+    }, contents);
   }
 
   setDynamicTextAreaHeight = (target) => {
@@ -435,9 +433,12 @@ export default class TextField extends React.Component {
 
               <div className={theme('innerTextFieldContainer')}>
                 {highlightList ? (
-                  <div className={theme('highlightOverlay', ...this.textFieldClassNames)}>
-                    {highlightedContent}
-                  </div>
+                  <div
+                    className={theme('highlightOverlay', ...this.textFieldClassNames)}
+                    dangerouslySetInnerHTML={{
+                      __html: highlightedContent,
+                    }}
+                  />
                 ) : null
                 }
                 {
