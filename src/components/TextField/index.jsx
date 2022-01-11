@@ -307,8 +307,13 @@ export default class TextField extends React.Component {
 
     const getHighlightedWord = () => `<span class="${styles.highlighted}">$&</span>`;
 
+    // escape special characters, e.g.: * = \*
+    // $& means the whole matched string
+    const escapeRegExp = string => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
     return Object.keys(highlightList).reduce((acc, highlightWord) => {
       if (acc.includes(highlightWord)) onHighlight();
+
 
       // Regex:
       // Basically we want to replace all occurrences in this string by wrapping them with a span tag
@@ -318,7 +323,7 @@ export default class TextField extends React.Component {
       //
       // g    all occurrences
       // i    case insensitive
-      return acc.replace(new RegExp(`\\b${highlightWord}\\b`, 'gi'), getHighlightedWord(highlightWord));
+      return acc.replace(new RegExp(`\\b${escapeRegExp(highlightWord)}\\b`, 'gi'), getHighlightedWord());
     }, contents);
   }
 
