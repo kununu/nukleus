@@ -313,8 +313,6 @@ export default class TextField extends React.Component {
     const escapeRegExp = string => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
     return Object.keys(highlightList).reduce((acc, highlightWord) => {
-      if (acc.includes(highlightWord)) onHighlight();
-
       // Regex:
       // Basically we want to replace all occurrences in this string by wrapping them with a span tag
       // (^|\s) beginning of string or whitespace
@@ -323,7 +321,12 @@ export default class TextField extends React.Component {
       // i case insensitive
       // the two surrounding groups make sure that we don't have false positives because word is inside other word, e.g.: matching for "ly" should not lead to positive match in "positively"
       //
-      return acc.replace(new RegExp(`(^|\\s)(${escapeRegExp(highlightWord)})($|\\s)`, 'gi'), getHighlightedWord());
+      const replacedAcc = acc.replace(new RegExp(`(^|\\s)(${escapeRegExp(highlightWord)})($|\\s)`, 'gi'), getHighlightedWord());
+
+      // check if there was a new match, in that case call onHighlight
+      if (replacedAcc !== acc) onHighlight();
+
+      return replacedAcc;
     }, contents);
   }
 
