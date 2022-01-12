@@ -1,6 +1,6 @@
 {
   "name": "nukleus",
-  "version": "16.1.1",
+  "version": "16.2.0-beta.4",
   "description": "Shared components repo for kununu projects",
   "main": "dist/components/index.js",
   "repository": {
