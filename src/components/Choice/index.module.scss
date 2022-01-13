@@ -108,7 +108,7 @@
   }
 }
 
-[data-options-per-row] {
+.choiceContainer[data-options-per-row] {
   flex-wrap: wrap;
 
   .choiceButton {
@@ -216,7 +216,7 @@
 }
 
 @mixin options-per-row($count) {
-  [data-options-per-row='#{$count}'] {
+  .choiceContainer[data-options-per-row='#{$count}'] {
     display: flex;
 
     @supports(display: grid) {

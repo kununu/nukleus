@@ -10,9 +10,9 @@ import themeable from 'utils/theming';
 
 import Error from '../Error';
 import InfoLabel from '../InfoLabel';
-import sharedStyles from '../index.scss';
+import sharedStyles from '../index.module.scss';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class TextField extends React.Component {
   static propTypes = {

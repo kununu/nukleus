@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 const Error = ({info, subInfo, id}) => (
   <ThemeContext.Consumer>

@@ -6,7 +6,7 @@ import themeable from 'utils/theming';
 
 import InfoBox from '../InfoBox';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class ToolTip extends React.Component {
   static propTypes = {

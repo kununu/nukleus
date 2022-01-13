@@ -8,9 +8,9 @@ import themeable from 'utils/theming';
 
 import Error from '../Error';
 import Label from '../Label';
-import sharedStyles from '../index.scss';
+import sharedStyles from '../index.module.scss';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class Choice extends React.Component {
   static propTypes = {

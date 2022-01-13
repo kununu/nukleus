@@ -11,9 +11,9 @@ import {queryParamsToObject} from 'utils/params';
 import isMobile from 'utils/mobileDetection';
 
 import Error from '../Error';
-import sharedStyles from '../index.scss';
+import sharedStyles from '../index.module.scss';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class Autocomplete extends React.Component {
   static propTypes = {

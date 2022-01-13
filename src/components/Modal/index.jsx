@@ -7,7 +7,7 @@ import themeable from 'utils/theming';
 
 import Button from '../Button';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 
 export default class Modal extends React.Component {

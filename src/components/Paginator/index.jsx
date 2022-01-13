@@ -7,7 +7,7 @@ import queryString from 'query-string';
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default class Paginator extends React.Component {
   static propTypes = {

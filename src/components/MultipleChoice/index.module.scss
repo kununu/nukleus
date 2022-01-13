@@ -6,6 +6,13 @@
   &.inline {
     align-items: flex-start;
   }
+
+  // bug workaround for MS Edge
+  // MS Edge does not recalculate style for :disabled pseudo-class followed by sibling combinator
+  // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/11295231/
+  [disabled] ~ dummy { // NOSONAR
+    width: auto;
+  }
 }
 
 .choice {
@@ -187,9 +194,4 @@
   }
 }
 
-// bug workaround for MS Edge
-// MS Edge does not recalculate style for :disabled pseudo-class followed by sibling combinator
-// https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/11295231/
-[disabled] ~ dummy { // NOSONAR
-  width: auto;
-}
+

@@ -34,12 +34,12 @@
               "replacement": "../../utils/themeContext",
             },
             {
-              "original": "./index.scss",
-              "replacement": "./index.css"
+              "original": "./index.module.scss",
+              "replacement": "./index.module.css"
             },
             {
-              "original": "../index.scss",
-              "replacement": "../index.css"
+              "original": "../index.module.scss",
+              "replacement": "../index.module.css"
             }
           ],
         }],

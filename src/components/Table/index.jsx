@@ -7,7 +7,7 @@ import IconCaretDown from '@kununu/kununu-icons/dist/CaretDown';
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 // Polyfill for ie11 which doesn't support
 // Number.isNaN
