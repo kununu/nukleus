@@ -300,7 +300,7 @@ export default class TextField extends React.Component {
   }
 
   getHighlightedContent = (contents) => {
-    const contentRegex = /([^a-zA-ZäöüÄÖÜß]+)/;
+    const contentRegex = /([^a-zA-ZäöüÄÖÜß\\_\-\\*\\']+)/;
     const userInputArray = contents.split(contentRegex);
 
     const {
