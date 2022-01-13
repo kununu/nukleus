@@ -32,7 +32,7 @@
     "@storybook/addon-a11y": "4.1.18",
     "@storybook/addon-actions": "4.1.18",
     "@storybook/addon-backgrounds": "4.1.18",
-    "@storybook/addon-centered": "4.1.18",
+    "@storybook/addon-centered": "5.3.13",
     "@storybook/addon-events": "4.1.18",
     "@storybook/addon-info": "4.1.18",
     "@storybook/addon-jest": "4.1.18",
