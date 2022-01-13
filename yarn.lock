@@ -1126,9 +1126,9 @@
   dependencies:
     eslint-config-airbnb "17.1.0"
 
-"@kununu/kununu-icons@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@kununu/kununu-icons/-/kununu-icons-1.6.1.tgz#c8559c4d97781fb15e064a704a39b15a33f5ed60"
+"@kununu/kununu-icons@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@kununu/kununu-icons/-/kununu-icons-1.8.0.tgz#cf7337eb739fb8dc6967fc9d3b282d6c2226cbb2"
 
 "@kununu/kununu-theme-v2@2.0.2":
   version "2.0.2"
