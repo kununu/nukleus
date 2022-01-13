@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Select from 'Select'; // eslint-disable-line import/no-unresolved
+import Select from 'Select'; // eslint-disable-line
 
 import * as themeable from '../utils/theming';
 

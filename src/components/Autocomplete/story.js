@@ -3,7 +3,6 @@ import {storiesOf} from '@storybook/react';
 import {defaultOptions} from 'defaultOptions'; // eslint-disable-line import/no-unresolved
 import {withOptions} from '@storybook/addon-options';
 import {action} from '@storybook/addon-actions';
-import {withMarkdownNotes} from '@storybook/addon-notes';
 import {withInfo} from '@storybook/addon-info';
 import {withKnobs, text} from '@storybook/addon-knobs/react';
 
@@ -12,7 +11,6 @@ import ThemeProvider from '../ThemeProvider';
 import customTheme from './customTheme.scss';
 
 import Autocomplete from './index';
-
 
 const staticData = {
   items: [
@@ -28,7 +26,7 @@ storiesOf('Autocomplete', module)
   .addDecorator(withOptions({...defaultOptions}))
   .addDecorator(withKnobs)
   .addDecorator((story, context) => withInfo('The Autocomplete can be used with static or dynamic data and works especially well with state librarys such as redux. To easily customize your spinner you can add pass an element as a spinner prop! To fetch data dynamically you should use the onGetSuggestions param to update the data being passed to the data component. <br /> To enable auto scroll on focus you need to use scrollTo and set a scrollOffset')(story)(context))
-  .add('With static data', withMarkdownNotes('The Autocomplete can be used with static or dynamic data and works especially well with state librarys such as redux. To easily customize your spinner you can add pass an element as a spinner prop! To fetch data dynamically you should use the onGetSuggestions param to update the data being passed to the data component. <br /> To enable auto scroll on focus you need to use scrollTo and set a scrollOffset')(() => (
+  .add('With static data', () => (
     <div>
       <h1>
         Autocomplete
@@ -81,7 +79,7 @@ storiesOf('Autocomplete', module)
         </div>
       </div>
     </div>
-  )))
+  ))
   .add('custom', () => (
     <ThemeProvider theme={customTheme}>
       <h3>Custom theme for buttons</h3>

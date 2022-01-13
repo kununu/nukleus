@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 
 import { configure, addDecorator } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
@@ -13,3 +13,4 @@ function loadStories() {
 }
 
 configure(loadStories, module);
+ */

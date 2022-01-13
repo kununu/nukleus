@@ -1,15 +1,18 @@
 const path = require("path");
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.push({
+module.exports = ({ config }) => {
+  config.module.rules.push({
     test: /\.scss$/,
     exclude: /node_modules|main\.scss/,
     use: [
       'style-loader',
-      'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+      'css-loader',
       {
         loader: 'postcss-loader',
         options: {
+          modules: {
+            localIdentName: "[name]__[local]___[hash:base64:5]",
+          },	
           plugins: function () {
             return [
               require('autoprefixer')
@@ -20,7 +23,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
       'sass-loader'
     ]
   });
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /main\.scss$/,
     exclude: /node_modules/,
     use: [
@@ -39,9 +42,9 @@ module.exports = (baseConfig, env, defaultConfig) => {
       'sass-loader'
     ]
   });
-  defaultConfig.resolve.alias = {
+  config.resolve.alias = {
     utils: path.resolve(__dirname, "../utils"),
     defaultOptions: path.resolve(__dirname, "./defaultOptions"),
   }
-  return defaultConfig;
+  return config;
 };
