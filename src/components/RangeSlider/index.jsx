@@ -8,7 +8,7 @@ import Error from '../Error';
 
 import IncreaseAmountBtn from './icons/icn-increase-btn';
 import DecreaseAmountBtn from './icons/icn-decrease-btn';
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 const RangeSliderComponent = ({
   id,

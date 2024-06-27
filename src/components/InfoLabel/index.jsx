@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import ThemeContext from 'utils/themeContext';
 import themeable from 'utils/theming';
 
-import sharedStyles from '../index.scss';
+import sharedStyles from '../index.module.scss';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 const InfoLabel = ({
   displayLength,
