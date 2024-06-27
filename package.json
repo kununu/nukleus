@@ -26,7 +26,7 @@
     "@babel/polyfill": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@babel/preset-react": "7.0.0",
-    "@babel/preset-stage-0": "7.0.0",
+    "@babel/preset-stage-0": "7.8.3",
     "@babel/register": "7.4.4",
     "@kununu/eslint-config": "1.0.6",
     "@storybook/addon-a11y": "4.1.18",
