@@ -81,7 +81,7 @@
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-test-renderer": "16.8.4",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.2",
     "sass-lint": "1.12.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
