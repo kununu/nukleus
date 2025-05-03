@@ -1178,18 +1178,13 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-backgrounds@4.1.18":
-  version "4.1.18"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-4.1.18.tgz#514de73a074f4364b5f249120b41b2122761bbf2"
+"@storybook/addon-backgrounds@8.1.11":
+  version "8.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-8.1.11.tgz#83d361abee4ca6e4e8a2bd5de37f1006d705aa19"
   dependencies:
-    "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.1.18"
-    "@storybook/core-events" "4.1.18"
-    core-js "^2.5.7"
-    eventemitter3 "^3.1.0"
-    global "^4.3.2"
-    prop-types "^15.6.2"
-    util-deprecate "^1.0.2"
+    "@storybook/global" "^5.0.0"
+    memoizerific "^1.11.3"
+    ts-dedent "^2.0.0"
 
 "@storybook/addon-centered@4.1.18":
   version "4.1.18"
@@ -1450,6 +1445,10 @@
     webpack "^4.23.1"
     webpack-dev-middleware "^3.4.0"
     webpack-hot-middleware "^2.24.3"
+
+"@storybook/global@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/global/-/global-5.0.0.tgz#b793d34b94f572c1d7d9e0f44fac4e0dbc9572ed"
 
 "@storybook/mantra-core@^1.7.2":
   version "1.7.2"
@@ -7140,6 +7139,10 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+map-or-similar@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/map-or-similar/-/map-or-similar-1.5.0.tgz#6de2653174adfb5d9edc33c69d3e92a1b76faf08"
+
 map-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
@@ -7203,6 +7206,12 @@ mem@^4.0.0:
     map-age-cleaner "^0.1.1"
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
+
+memoizerific@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/memoizerific/-/memoizerific-1.11.3.tgz#7c87a4646444c32d75438570905f2dbd1b1a805a"
+  dependencies:
+    map-or-similar "^1.5.0"
 
 memory-fs@^0.2.0:
   version "0.2.0"
@@ -10484,6 +10493,10 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-1.0.3.tgz#f813b5a8c86b40da59606722b144e3225799f47d"
   dependencies:
     glob "^7.1.2"
+
+ts-dedent@^2.0.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.2.0.tgz#39e4bd297cd036292ae2394eb3412be63f563bb5"
 
 tslib@^1.9.0:
   version "1.9.3"
